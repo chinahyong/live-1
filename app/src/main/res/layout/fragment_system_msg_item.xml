@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/subject_list_item_selector"
+                android:orientation="vertical"
+                android:paddingBottom="10dip"
+                android:paddingLeft="12dip"
+                android:paddingRight="12dip"
+                android:paddingTop="10dip">
+
+    <TextView
+        android:id="@+id/item_nickname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="股水电沙发了将丧生的归属感闪电购三大发了个加速的过奖了阿斯顿噶闪电购乐尽哀生刚大浪阿斯顿管理局拉升就够了阿斯顿关机了阿斯钢数个"
+        android:textColor="@color/a_text_color_999999"
+        android:textSize="@dimen/a_text_size_40"/>
+
+    <LinearLayout
+        android:id="@+id/item_content_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/item_nickname"
+        android:layout_marginTop="6dip">
+
+        <TextView
+            android:id="@+id/item_content"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:text="股水电沙发了将丧生的归属感"
+            android:textColor="@color/a_text_color_666666"
+            android:textSize="@dimen/a_text_size_42"/>
+
+        <TextView
+            android:id="@+id/item_unread"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/icon_unread_bg"
+            android:gravity="center"
+            android:text="NEW"
+            android:textColor="@color/a_text_color_ffffff"
+            android:textSize="@dimen/a_text_size_30"
+            android:visibility="gone"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/item_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/item_content_layout"
+        android:layout_marginBottom="10dip"
+        android:layout_marginTop="2dip"
+        android:text="10分钟前"
+        android:textColor="@color/a_text_color_aaaaaa"
+        android:textSize="@dimen/a_text_size_30"/>
+
+</RelativeLayout>

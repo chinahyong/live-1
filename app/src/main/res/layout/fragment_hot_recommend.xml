@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:background="@android:color/white"
+              android:orientation="vertical"
+              android:paddingBottom="7dp">
+    <LinearLayout
+        android:id="@+id/item_official_recommend_text_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="18dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+        <View
+            android:layout_width="50dp"
+            android:layout_height="1dp"
+            android:layout_marginRight="20dp"
+            android:background="@color/a_text_color_da500e"/>
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/icon_recommend"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="7dp"
+            android:text="@string/official_recommend"
+            android:textColor="@color/a_text_color_da500e"
+            android:textSize="12sp"/>
+        <View
+            android:layout_width="50dp"
+            android:layout_height="1dp"
+            android:layout_marginLeft="20dp"
+            android:background="@color/a_text_color_da500e"/>
+    </LinearLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <com.viewpagerindicator.CirclePageIndicator
+        android:id="@+id/page_indicator"
+        android:layout_width="match_parent"
+        android:layout_height="8dp"
+        app:centered="true"
+        app:radius="4dp"
+        android:layout_marginTop="7dp"/>
+</LinearLayout>

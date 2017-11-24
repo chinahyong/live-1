@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <!-- 会话列表面板 title布局 -->
+    <RelativeLayout
+        android:id="@+id/live_conversation_list_title_layout"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/a_bg_color_ffffff">
+
+        <Button
+            android:id="@+id/live_conversation_buy_prop"
+            android:layout_width="92dp"
+            android:layout_height="28dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="12dp"
+            android:background="@drawable/btn_buy_conversation_prop_selector"
+            android:gravity="center"
+            android:text="@string/live_conversation_buy_prop"
+            android:textColor="@color/a_text_d9d9d9_ffffff_selector"
+            android:textSize="@dimen/a_text_size_45"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/live_conversation_title"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="@string/message"
+            android:textColor="@color/a_text_color_333333"
+            android:textSize="@dimen/a_text_size_52"/>
+
+        <TextView
+            android:id="@+id/live_ignore_chat"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:gravity="center"
+            android:text="@string/live_ignore_message"
+            android:textColor="@color/a_text_color_666666"
+            android:textSize="@dimen/a_text_size_48"/>
+
+        <View
+            style="@style/divider_horizontal"
+            android:layout_alignParentBottom="true"/>
+    </RelativeLayout>
+    <!-- 会话面板 title 布局 -->
+    <RelativeLayout
+        android:id="@+id/live_conversation_title_layout"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:background="@color/a_bg_color_ffffff"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/live_conversation_back"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:src="@drawable/btn_conversation_back_selector"/>
+
+        <TextView
+            android:id="@+id/live_conversation_target_name"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:gravity="center"/>
+
+        <ImageView
+            android:id="@+id/live_conversation_person"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:src="@drawable/icon_message_home_page"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentBottom="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_shadow_line"/>
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/live_rong_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/a_bg_color_f5f5f5">
+        <!-- 代码动态添加 会话列表面板 -->
+
+        <!-- 代码动态添加 会话面板 -->
+
+    </FrameLayout>
+</LinearLayout>

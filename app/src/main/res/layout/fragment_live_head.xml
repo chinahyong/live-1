@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:background="@color/a_bg_backgroup_color"
+              android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/focus_layout"
+        android:layout_width="match_parent"
+        android:layout_height="64dip"
+        android:background="@drawable/a_bg_f6f1ea_e6ded7_selector"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="12dip"
+        android:paddingRight="12dip"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/live_me_focus"
+            android:textColor="@color/a_text_color_aaaaaa"
+            android:textSize="@dimen/a_text_size_40"
+            android:textStyle="bold"/>
+
+        <RelativeLayout
+            android:id="@+id/focus_listview"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dip"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/my_info_img_user_1"
+                android:layout_width="40dip"
+                android:layout_height="40dip"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/shape_circle_stroke_2_333333"
+                android:contentDescription="@string/app_name"
+                android:padding="2dip"
+                android:scaleType="fitXY"
+                android:src="@drawable/bg_user_default"
+                android:visibility="gone"/>
+
+            <ImageView
+                android:id="@+id/my_info_img_user_2"
+                android:layout_width="40dip"
+                android:layout_height="40dip"
+                android:layout_marginRight="-12dip"
+                android:layout_toLeftOf="@id/my_info_img_user_1"
+                android:background="@drawable/shape_circle_stroke_2_333333"
+                android:contentDescription="@string/app_name"
+                android:padding="2dip"
+                android:scaleType="fitXY"
+                android:src="@drawable/bg_user_default"
+                android:visibility="gone"/>
+
+            <ImageView
+                android:id="@+id/my_info_img_user_3"
+                android:layout_width="40dip"
+                android:layout_height="40dip"
+                android:layout_marginRight="-12dip"
+                android:layout_toLeftOf="@id/my_info_img_user_2"
+                android:background="@drawable/shape_circle_stroke_2_333333"
+                android:contentDescription="@string/app_name"
+                android:padding="2dip"
+                android:scaleType="fitXY"
+                android:src="@drawable/bg_user_default"
+                android:visibility="gone"/>
+
+            <ImageView
+                android:id="@+id/my_info_img_user_4"
+                android:layout_width="40dip"
+                android:layout_height="40dip"
+                android:layout_marginRight="-12dip"
+                android:layout_toLeftOf="@id/my_info_img_user_3"
+                android:background="@drawable/shape_circle_stroke_2_333333"
+                android:contentDescription="@string/app_name"
+                android:padding="2dip"
+                android:scaleType="fitXY"
+                android:src="@drawable/bg_user_default"
+                android:visibility="gone"/>
+
+            <ImageView
+                android:id="@+id/my_info_img_user_5"
+                android:layout_width="40dip"
+                android:layout_height="40dip"
+                android:layout_marginRight="-12dip"
+                android:layout_toLeftOf="@id/my_info_img_user_4"
+                android:background="@drawable/shape_circle_stroke_2_333333"
+                android:contentDescription="@string/app_name"
+                android:padding="2dip"
+                android:scaleType="fitXY"
+                android:src="@drawable/bg_user_default"
+                android:visibility="gone"/>
+
+            <ImageView
+                android:id="@+id/my_info_img_user_6"
+                android:layout_width="40dip"
+                android:layout_height="40dip"
+                android:layout_marginRight="-12dip"
+                android:layout_toLeftOf="@id/my_info_img_user_5"
+                android:background="@drawable/shape_circle_stroke_2_333333"
+                android:contentDescription="@string/app_name"
+                android:padding="2dip"
+                android:scaleType="fitXY"
+                android:src="@drawable/bg_user_default"
+                android:visibility="gone"/>
+
+            <ImageView
+                android:id="@+id/my_info_img_user_7"
+                android:layout_width="40dip"
+                android:layout_height="40dip"
+                android:layout_marginRight="-12dip"
+                android:layout_toLeftOf="@id/my_info_img_user_6"
+                android:background="@drawable/shape_circle_stroke_2_333333"
+                android:contentDescription="@string/app_name"
+                android:padding="2dip"
+                android:scaleType="fitXY"
+                android:src="@drawable/bg_user_default"
+                android:visibility="gone"/>
+        </RelativeLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dip"
+            android:background="@drawable/a_bg_f3f3f3_e6e6e6_selector"
+            android:scaleType="center"
+            android:src="@drawable/icon_more_right_1"/>
+    </LinearLayout>
+
+    <View
+        style="@style/divider_horizontal"
+        android:visibility="gone"/>
+
+    <LinearLayout
+        android:id="@+id/tariler_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dip"
+            android:paddingLeft="12dip"
+            android:text="@string/live_trailer"
+            android:textColor="@color/a_text_color_aaaaaa"
+            android:textSize="@dimen/a_text_size_40"
+            android:textStyle="bold"
+            android:visibility="gone"/>
+
+        <tv.live.bx.ui.HorizontalListView
+            android:id="@+id/tariler_listview"
+            android:layout_width="match_parent"
+            android:layout_height="92dip"
+            android:layout_marginBottom="12dip"
+            android:layout_marginLeft="12dip"
+            android:layout_marginRight="12dip"
+            android:layout_marginTop="10dip"
+            android:cacheColorHint="#00000000"
+            android:divider="#00000000"
+            android:dividerHeight="12dip"
+            android:fadingEdge="none"
+            android:listSelector="#00000000"
+            android:visibility="gone">
+        </tv.live.bx.ui.HorizontalListView>
+
+        <View
+            style="@style/divider_horizontal"
+            android:visibility="gone"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dip"
+        android:paddingLeft="12dip"
+        android:text="@string/live_hot_anchor"
+        android:textColor="@color/a_text_color_aaaaaa"
+        android:textSize="@dimen/a_text_size_40"
+        android:textStyle="bold"
+        android:visibility="gone"/>
+
+    <View
+        android:id="@+id/item_divider"
+        android:layout_width="match_parent"
+        android:layout_height="10dip"
+        android:background="@color/black"
+        android:visibility="gone"/>
+
+</LinearLayout>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/ic_bg_toast">
+
+    <TextView
+        android:gravity="center"
+        android:id="@+id/band_toast_content1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6.67dp"
+        android:layout_marginLeft="8.33dp"
+        android:layout_marginRight="8.33dp"
+        android:layout_marginBottom="6.67dp"
+        android:text="此礼物用于提升主播热门排名"
+        android:textSize="@dimen/a_text_size_36"/>
+
+</RelativeLayout>

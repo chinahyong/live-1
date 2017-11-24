@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="@dimen/login_reward_layout_width"
+    android:layout_height="wrap_content"
+    android:background="@color/trans"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="@dimen/login_reward_layout_width"
+        android:layout_height="wrap_content" >
+
+        <View
+            android:id="@+id/reward_title_blank"
+            android:layout_width="match_parent"
+            android:layout_height="12dp"
+            android:background="@color/trans" >
+        </View>
+
+        <ImageView
+            android:id="@+id/reward_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/reward_title_blank"
+            android:layout_marginLeft="12dip"
+            android:layout_marginRight="12dip"
+            android:background="@drawable/dialog_top_bar"
+            android:scaleType="center"
+            android:src="@drawable/login_reward_title" />
+
+        <ImageView
+            android:id="@+id/reward_close"
+            android:layout_width="23.33dip"
+            android:layout_height="23.33dip"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/icon_close" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="12dip"
+        android:layout_marginRight="12dip"
+        android:background="@color/a_bg_color_ffedcf"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dip"
+            android:orientation="horizontal"
+            android:paddingLeft="4dip"
+            android:paddingRight="4dip" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" >
+
+                    <ImageView
+                        android:id="@+id/reward_1"
+                        android:layout_width="@dimen/login_reward_image_width"
+                        android:layout_height="@dimen/login_reward_image_heigth"
+                        android:src="@drawable/bg_reward_selector" />
+
+                    <tv.live.bx.ui.StrokeTextView
+                        android:id="@+id/reward_money1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@id/reward_1"
+                        android:layout_centerHorizontal="true"
+                        android:text="@string/login_reward_money"
+                        android:textColor="@color/login_reward_text_selector"
+                        android:textSize="@dimen/a_text_size_42"
+                        android:textStyle="bold"
+                        app:strokeTextColor="@color/a_text_color_ffffff" />
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/reward_text_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="3.33dp"
+                    android:background="@drawable/bg_login_reward_selector"
+                    android:gravity="center"
+                    android:text="@string/login_reward_text1"
+                    android:textColor="@color/a_text_color_ffffff"
+                    android:textSize="@dimen/a_text_size_30" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="0dip"
+                android:layout_height="1dip"
+                android:layout_weight="1" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" >
+
+                    <ImageView
+                        android:id="@+id/reward_2"
+                        android:layout_width="@dimen/login_reward_image_width"
+                        android:layout_height="@dimen/login_reward_image_heigth"
+                        android:src="@drawable/bg_reward_selector" />
+
+                    <tv.live.bx.ui.StrokeTextView
+                        android:id="@+id/reward_money2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@id/reward_2"
+                        android:layout_centerHorizontal="true"
+                        android:text="@string/login_reward_money"
+                        android:textColor="@color/login_reward_text_selector"
+                        android:textSize="@dimen/a_text_size_42"
+                        android:textStyle="bold"
+                        app:strokeTextColor="@color/a_text_color_ffffff" />
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/reward_text_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="3.33dp"
+                    android:background="@drawable/bg_login_reward_selector"
+                    android:gravity="center"
+                    android:text="@string/login_reward_text2"
+                    android:textColor="@color/a_text_color_ffffff"
+                    android:textSize="@dimen/a_text_size_30" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="0dip"
+                android:layout_height="1dip"
+                android:layout_weight="1" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" >
+
+                    <ImageView
+                        android:id="@+id/reward_3"
+                        android:layout_width="@dimen/login_reward_image_width"
+                        android:layout_height="@dimen/login_reward_image_heigth"
+                        android:src="@drawable/bg_reward_selector" />
+
+                    <tv.live.bx.ui.StrokeTextView
+                        android:id="@+id/reward_money3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@id/reward_3"
+                        android:layout_centerHorizontal="true"
+                        android:text="@string/login_reward_money"
+                        android:textColor="@color/login_reward_text_selector"
+                        android:textSize="@dimen/a_text_size_42"
+                        android:textStyle="bold"
+                        app:strokeTextColor="@color/a_text_color_ffffff" />
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/reward_text_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="3.33dp"
+                    android:background="@drawable/bg_login_reward_selector"
+                    android:gravity="center"
+                    android:text="@string/login_reward_text3"
+                    android:textColor="@color/a_text_color_ffffff"
+                    android:textSize="@dimen/a_text_size_30" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="0dip"
+                android:layout_height="1dip"
+                android:layout_weight="1" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" >
+
+                    <ImageView
+                        android:id="@+id/reward_4"
+                        android:layout_width="@dimen/login_reward_image_width"
+                        android:layout_height="@dimen/login_reward_image_heigth"
+                        android:src="@drawable/bg_reward_selector" />
+
+                    <tv.live.bx.ui.StrokeTextView
+                        android:id="@+id/reward_money4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@id/reward_4"
+                        android:layout_centerHorizontal="true"
+                        android:text="@string/login_reward_money"
+                        android:textColor="@color/login_reward_text_selector"
+                        android:textSize="@dimen/a_text_size_42"
+                        android:textStyle="bold"
+                        app:strokeTextColor="@color/a_text_color_ffffff" />
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/reward_text_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="3.33dp"
+                    android:background="@drawable/bg_login_reward_selector"
+                    android:gravity="center"
+                    android:text="@string/login_reward_text4"
+                    android:textColor="@color/a_text_color_ffffff"
+                    android:textSize="@dimen/a_text_size_30" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dip"
+            android:orientation="horizontal" >
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <ImageView
+                    android:id="@+id/reward_5"
+                    android:layout_width="@dimen/login_reward_image_width"
+                    android:layout_height="@dimen/login_reward_image_heigth"
+                    android:src="@drawable/bg_reward_selector" />
+
+                <tv.live.bx.ui.StrokeTextView
+                    android:id="@+id/reward_money5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@id/reward_5"
+                    android:layout_centerHorizontal="true"
+                    android:text="@string/login_reward_money"
+                    android:textColor="@color/login_reward_text_selector"
+                    android:textSize="@dimen/a_text_size_42"
+                    android:textStyle="bold"
+                    app:strokeTextColor="@color/a_text_color_ffffff" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="@dimen/login_reward_ect_width"
+                android:layout_height="1dip" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <ImageView
+                    android:id="@+id/reward_6"
+                    android:layout_width="@dimen/login_reward_image_width"
+                    android:layout_height="@dimen/login_reward_image_heigth"
+                    android:src="@drawable/bg_reward_selector" />
+
+                <tv.live.bx.ui.StrokeTextView
+                    android:id="@+id/reward_money6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@id/reward_6"
+                    android:layout_centerHorizontal="true"
+                    android:text="@string/login_reward_money"
+                    android:textColor="@color/login_reward_text_selector"
+                    android:textSize="@dimen/a_text_size_42"
+                    android:textStyle="bold"
+                    app:strokeTextColor="@color/a_text_color_ffffff" />
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/reward_etc"
+                android:layout_width="@dimen/login_reward_ect_width"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/icon_etc"
+                android:visibility="invisible" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <ImageView
+                    android:id="@+id/reward_7"
+                    android:layout_width="@dimen/login_reward_image_width"
+                    android:layout_height="@dimen/login_reward_image_heigth"
+                    android:src="@drawable/bg_reward_selector" />
+
+                <tv.live.bx.ui.StrokeTextView
+                    android:id="@+id/reward_money7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@id/reward_7"
+                    android:layout_centerHorizontal="true"
+                    android:text="@string/login_reward_money"
+                    android:textColor="@color/login_reward_text_selector"
+                    android:textSize="@dimen/a_text_size_42"
+                    android:textStyle="bold"
+                    app:strokeTextColor="@color/a_text_color_ffffff" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:orientation="horizontal" >
+
+            <LinearLayout
+                android:layout_width="@dimen/login_reward_image_width"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/reward_text_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="3.33dp"
+                    android:background="@drawable/bg_login_reward_selector"
+                    android:gravity="center"
+                    android:text="@string/login_reward_text5"
+                    android:textColor="@color/a_text_color_ffffff"
+                    android:textSize="@dimen/a_text_size_30" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="@dimen/login_reward_ect_width"
+                android:layout_height="1dip" />
+
+            <LinearLayout
+                android:layout_width="@dimen/login_reward_image_width"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/reward_text_6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="3.33dp"
+                    android:background="@drawable/bg_login_reward_selector"
+                    android:gravity="center"
+                    android:text="@string/login_reward_text6"
+                    android:textColor="@color/a_text_color_ffffff"
+                    android:textSize="@dimen/a_text_size_30" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="@dimen/login_reward_ect_width"
+                android:layout_height="1dip" />
+
+            <LinearLayout
+                android:layout_width="@dimen/login_reward_image_width"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/reward_text_7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="3.33dp"
+                    android:background="@drawable/bg_login_reward_selector"
+                    android:gravity="center"
+                    android:text="@string/login_reward_text7"
+                    android:textColor="@color/a_text_color_ffffff"
+                    android:textSize="@dimen/a_text_size_30" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/reward_sure"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="10dip"
+            android:layout_marginTop="10dip"
+            android:src="@drawable/btn_reward_selector" />
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="12dip"
+        android:layout_marginRight="12dip"
+        android:src="@drawable/dialog_foot_bar" />
+
+</LinearLayout>

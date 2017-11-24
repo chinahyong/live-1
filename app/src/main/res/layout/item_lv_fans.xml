@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/a_bg_ffffff_f0f0f0_selector"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="57.33dip"
+        android:paddingLeft="15dip"
+        android:paddingRight="15dip" >
+
+        <ImageView
+            android:id="@+id/item_photo"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
+            android:background="@drawable/bg_user_default"
+            android:contentDescription="@string/app_name" />
+
+        <ImageView
+            android:id="@+id/item_photo_v"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/item_photo"
+            android:layout_alignRight="@+id/item_photo"
+            android:src="@drawable/ic_icon_v" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="12dip"
+            android:layout_toRightOf="@+id/item_photo"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/item_nickname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxLength="12"
+                    android:text="股水电沙发了将丧生的归属感闪电购"
+                    android:textColor="@color/a_text_color_333333"
+                    android:textSize="@dimen/a_text_size_40" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="10dip"
+                    android:text="@string/message_focus_tip"
+                    android:textColor="@color/a_text_color_da500e"
+                    android:textSize="@dimen/a_text_size_40" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/item_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="4dip"
+                android:text="09月18日"
+                android:textColor="@color/a_text_color_aaaaaa"
+                android:textSize="@dimen/a_text_size_30" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>

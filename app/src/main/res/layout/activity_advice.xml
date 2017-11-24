@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/a_bg_color_f0f0f0"
+              android:orientation="vertical">
+
+    <include layout="@layout/a_common_top_bar"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="15dp"
+        android:text="@string/welcome_advise"
+        android:textColor="@color/text_gray"
+        android:textSize="@dimen/a_text_size_42"/>
+
+    <EditText
+        android:id="@+id/advice_et_content"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="15sp"
+        android:background="@drawable/shape_bg_white"
+        android:gravity="top"
+        android:hint="@string/input_advise"
+        android:padding="8dp"
+        android:textColor="@color/text_gray"
+        android:textSize="@dimen/a_text_size_42"/>
+
+    <EditText
+        android:id="@+id/advice_et_contact"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/shape_bg_white"
+        android:hint="@string/your_contact"
+        android:padding="8dp"
+        android:singleLine="true"
+        android:textColor="@color/text_gray"
+        android:textSize="@dimen/a_text_size_42"/>
+
+
+    <Button
+        android:id="@+id/advice_btn_submit"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/btn_bg_send_selector"
+        android:text="@string/submit_advise"
+        android:textColor="@color/a_text_color_333333"
+        android:textSize="@dimen/a_text_size_48"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/advise_msg"
+        android:textColor="@color/a_text_color_999999"
+        android:textSize="@dimen/a_text_size_36"
+        android:visibility="gone"/>
+
+</LinearLayout>

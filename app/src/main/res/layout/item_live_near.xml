@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/item_live_new_photo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:scaleType="centerCrop"/>
+
+    <ImageView
+        android:id="@+id/item_live_new_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5.33dip"
+        android:layout_marginTop="5.33dip"
+        android:contentDescription="@string/app_name"
+        android:gravity="center"
+        android:src="@drawable/icon_btn_living_new"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="31dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/masking_item_text_bg"
+        android:paddingLeft="8.66dip"
+        android:paddingRight="8.66dip">
+
+        <TextView
+            android:id="@+id/item_live_near_distance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:lines="1"
+            android:textColor="@color/a_text_color_ffffff"
+            android:textSize="@dimen/a_text_size_30"/>
+
+        <TextView
+            android:id="@+id/item_live_nickname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="3dip"
+            android:layout_toLeftOf="@id/item_live_near_distance"
+            android:ellipsize="end"
+            android:lines="1"
+            android:textColor="@color/a_text_color_ffffff"
+            android:textSize="@dimen/a_text_size_36"
+            android:textStyle="bold"/>
+    </RelativeLayout>
+</RelativeLayout>

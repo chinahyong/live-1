@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:descendantFocusability="blocksDescendants">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dip"
+        android:layout_gravity="top">
+        <ImageView
+            android:id="@+id/item_user_photo"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:background="@drawable/shape_circle_ffffff"
+            android:contentDescription="@string/app_name"
+            android:padding="1dip"
+            android:scaleType="centerInside"
+            android:src="@drawable/bg_user_default" />
+        <ImageView
+            android:id="@+id/item_user_photo_v"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_icon_v"
+            android:layout_alignBottom="@id/item_user_photo"
+            android:layout_alignRight="@id/item_user_photo"/>
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:id="@+id/item_danmu_bg"
+        android:layout_width="wrap_content"
+        android:layout_height="50.66dip"
+        android:background="@drawable/danmu_bg"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dip"
+            android:layout_marginRight="15dip"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/item_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="哈哈嘎嘎啥地方输卵管"
+                android:textColor="@color/a_text_color_333333"
+                android:textSize="@dimen/a_text_size_36"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/item_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dip"
+                android:ellipsize="none"
+                android:lines="1"
+                android:text="哈哈嘎嘎我额头惊世毒妃啥地方了就爱上了干大事的高楼大厦伽伽三道杠撒来电管家萨的概率私搭乱建按个"
+                android:textColor="@color/a_text_color_fe1212"
+                android:textSize="@dimen/a_text_size_42"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

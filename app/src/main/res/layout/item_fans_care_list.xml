@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="68dp"
+        android:background="#ffffff">
+        <ImageView
+            android:id="@+id/fans_care_headpic"
+            android:layout_width="41dp"
+            android:layout_height="41dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="12dp"
+            android:src="@drawable/bg_user_default"/>
+
+        <TextView
+            android:layout_centerVertical="true"
+            android:id="@+id/fans_care_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/fans_care_headpic"
+            android:ellipsize="end"
+            android:maxWidth="130dp"
+            android:singleLine="true"
+            android:text=""
+            android:textColor="#333333"
+            android:textSize="15sp"
+        />
+
+        <ImageView
+            android:id="@+id/fans_care_sex"
+            android:layout_width="17dp"
+            android:layout_height="17dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="4dp"
+            android:layout_toRightOf="@id/fans_care_name"
+            android:src="@drawable/icon_my_info_man"/>
+        <ImageView
+            android:id="@+id/fans_care_level"
+            android:layout_width="17dp"
+            android:layout_height="17dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="4dp"
+            android:layout_toRightOf="@id/fans_care_sex"
+            android:src="@drawable/icon_my_info_man"/>
+        <ImageView
+            android:id="@+id/fans_care_ticket"
+            android:layout_width="32dp"
+            android:layout_height="17dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="4dp"
+            android:layout_toRightOf="@id/fans_care_level"
+            android:src="@drawable/icon_sixinka"
+            android:visibility="gone"/>
+
+        <TextView
+            android:textSize="13sp"
+            android:id="@+id/fans_care_state"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="12dp"
+            android:text="今日已发"
+            android:textColor="@color/a_text_color_999999"
+            android:visibility="gone"/>
+        <View
+            android:layout_width="347dp"
+            android:layout_height="1px"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:background="@color/a_bg_color_e6e6e6"></View>
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

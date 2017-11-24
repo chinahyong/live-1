@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/white"
+              android:orientation="vertical">
+    <include layout="@layout/a_common_top_bar"/>
+
+    <EditText android:id="@+id/edit_ip_address" android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:hint="请输入网址"
+              android:maxLines="1"
+              android:singleLine="true"
+              android:textColor="@color/a_text_color_333333"
+              android:textColorHint="@color/a_text_color_999999"
+              android:textSize="@dimen/a_text_size_42"/>
+    <Button
+        android:id="@+id/ping_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dip"
+        android:text="开始"
+        android:textColor="@color/a_text_color_333333"
+        android:textSize="@dimen/a_text_size_42"
+    />
+
+    <TextView
+        android:id="@+id/ping_info_tv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dip"
+        android:textColor="@color/a_text_color_333333"
+        android:textSize="@dimen/a_text_size_42"/>
+
+</LinearLayout>

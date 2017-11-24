@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:background="@drawable/shape_corner_ffffff"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:id="@+id/item_top_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dip"
+            android:layout_marginRight="12dip"
+            android:layout_marginTop="12dip" >
+
+            <ImageView
+                android:id="@+id/item_photo"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:background="@drawable/bg_user_default"
+                android:contentDescription="@string/app_name"
+                android:scaleType="centerCrop" />
+
+            <ImageView
+                android:id="@+id/item_photo_v"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_alignBottom="@+id/item_photo"
+                android:layout_alignRight="@+id/item_photo"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_icon_v"
+                android:visibility="gone" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dip"
+                android:layout_toRightOf="@id/item_photo" >
+
+                <TextView
+                    android:id="@+id/item_nickname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="股水电"
+                    android:textColor="@color/a_text_color_da500e"
+                    android:textSize="@dimen/a_text_size_36" />
+
+                <ImageView
+                    android:id="@+id/item_userlevel"
+                    android:layout_width="45dp"
+                    android:layout_height="15dp"
+                    android:layout_marginLeft="4dp"
+                    android:layout_toRightOf="@id/item_nickname"
+                    android:src="@drawable/userlevel_0"
+                    android:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/item_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/item_nickname"
+                    android:layout_marginTop="3dip"
+                    android:text="刚刚"
+                    android:textColor="@color/a_text_color_b4b4b4"
+                    android:textSize="@dimen/a_text_size_24" />
+
+                <TextView
+                    android:id="@+id/item_level"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:gravity="center"
+                    android:textColor="@color/a_text_color_b4b4b4"
+                    android:textSize="@dimen/a_text_size_24"
+                    android:visibility="visible" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/item_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="52dip"
+            android:layout_marginRight="6dip"
+            android:layout_marginTop="6dip"
+            android:autoLink="web"
+            android:textColorLink="@color/a_text_color_da500e"
+            android:lineSpacingExtra="3dip"
+            android:text="股水电股水电上股水电上股水电上股水电上股水电上股水电上股水电上股水电上股水电上股水电上上"
+            android:textColor="@color/a_text_color_666666"
+            android:textSize="@dimen/a_text_size_36" />
+
+        <LinearLayout
+            android:id="@+id/item_picture_grid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dip"
+            android:layout_marginRight="10dip"
+            android:background="@color/a_bg_color_000000"
+            android:orientation="vertical" >
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="6dip"
+            android:layout_marginLeft="6dip"
+            android:layout_marginRight="6dip" >
+
+            <ImageView
+                android:id="@+id/item_more"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:contentDescription="@string/app_name"
+                android:padding="6dip"
+                android:src="@drawable/btn_fan_post_more_selector"
+                android:visibility="visible" />
+
+            <ImageView
+                android:id="@+id/item_replay"
+                android:layout_width="25.33dip"
+                android:layout_height="25.33dip"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="9.33dip"
+                android:layout_toLeftOf="@id/item_more"
+                android:padding="6dip"
+                android:src="@drawable/btn_comment_selector" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/item_relay_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dip"
+            android:layout_marginLeft="49.33dip"
+            android:orientation="vertical"
+            android:visibility="visible" >
+
+            <View style="@style/divider_horizontal" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dip"
+                android:gravity="center_vertical"
+                android:lineSpacingExtra="3dip"
+                android:text="理发师防盗锁答案士大夫"
+                android:textColor="@color/a_text_color_303030"
+                android:textSize="@dimen/a_text_size_36" />
+        </LinearLayout>
+
+        <View style="@style/divider_horizontal" />
+    </LinearLayout>
+
+</FrameLayout>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" >
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="6.66dp"
+        android:background="@drawable/bg_pop_more"
+        android:orientation="vertical"
+        android:paddingLeft="2dip"
+        android:paddingRight="2dip"
+        android:paddingTop="6dip" >
+
+        <RelativeLayout
+            android:id="@+id/item1_layout"
+            android:layout_width="98dp"
+            android:layout_height="39.33dp"
+            android:background="@drawable/btn_more_bg_selector"
+            android:gravity="center_vertical|center_horizontal" >
+
+            <ImageView
+                android:id="@+id/icon1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/btn_clooect_nor" />
+
+            <TextView
+                android:id="@+id/item_text1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="13.33dp"
+                android:layout_toRightOf="@id/icon1"
+                android:text="@string/commutity_collect_cancel"
+                android:textColor="@color/a_text_color_ffffff"
+                android:textSize="@dimen/a_text_size_42" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="98dp"
+            android:layout_height="1px"
+            android:background="@color/a_bg_color_989898" />
+
+        <RelativeLayout
+            android:id="@+id/item2_layout"
+            android:layout_width="98dp"
+            android:layout_height="39.33dp"
+            android:background="@drawable/btn_more_bg_selector"
+            android:gravity="center_vertical|center_horizontal" >
+
+            <ImageView
+                android:id="@+id/icon2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icon_share_sm" />
+
+            <TextView
+                android:id="@+id/item_text2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="13.33dp"
+                android:layout_toRightOf="@id/icon2"
+                android:text="@string/commutity_share_item"
+                android:textColor="@color/a_text_color_ffffff"
+                android:textSize="@dimen/a_text_size_42" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="98dp"
+            android:layout_height="1px"
+            android:background="@color/a_bg_color_989898" />
+
+        <RelativeLayout
+            android:id="@+id/item3_layout"
+            android:layout_width="98dp"
+            android:layout_height="39.33dp"
+            android:background="@drawable/btn_more_bg_selector"
+            android:gravity="center_vertical|center_horizontal" >
+
+            <ImageView
+                android:id="@+id/icon3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icon_warning_sm" />
+
+            <TextView
+                android:id="@+id/item_text3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="13.33dp"
+                android:layout_toRightOf="@id/icon3"
+                android:text="@string/commutity_report_item"
+                android:textColor="@color/a_text_color_ffffff"
+                android:textSize="@dimen/a_text_size_42" />
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>

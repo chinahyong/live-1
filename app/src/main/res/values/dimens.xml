@@ -1,0 +1,70 @@
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="thumnail_default_width">200dip</dimen>
+    <dimen name="thumnail_default_height">130dip</dimen>
+    <!-- 主播列表页图片显示的大小 -->
+    <dimen name="list_item_imageview_width">170dip</dimen>
+    <dimen name="list_item_imageview_heigth">200dip</dimen>
+
+    <!-- 上滑动加载更多View高度 -->
+    <dimen name="list_footer_loader_view_height">60dp</dimen>
+    <!-- 列表提示View的高度 -->
+    <dimen name="list_hintview_height">60dp</dimen>
+    <!-- 列表提示项中状态图标距离左右文字的距离 -->
+    <dimen name="list_hintview_icontotext">10dp</dimen>
+    <!-- 提示文字TextView的宽度 -->
+    <dimen name="list_hintview_txt_width">100dp</dimen>
+    <dimen name="text_line_spacing_extra">5dp</dimen>
+    <dimen name="text_line_spacing_extra_double">10dp</dimen>
+
+    <!-- 栏目背景的数据 -->
+    <dimen name="layout_top_title_bg_height">48dp</dimen>
+    <dimen name="layout_buttom_bg_height">44dp</dimen>
+    <dimen name="layout_title_btn_margin_rigth">16dp</dimen>
+    <dimen name="layout_left_pading">10dp</dimen>
+    <dimen name="layout_right_pading">10dp</dimen>
+    <!-- 播放界面 -->
+    <dimen name="layout_paly_left_pading">8dip</dimen>
+    <dimen name="layout_paly_right_pading">8dip</dimen>
+
+    <!-- 线宽 -->
+    <dimen name="line_width">1dip</dimen>
+    <dimen name="image_add_maopao_width">73.33dp</dimen>
+    <dimen name="pickimage_gridlist_item_space">4dp</dimen>
+
+    <!-- 欢迎页面 -->
+    <dimen name="welcome_margin_top">16.66dip</dimen>
+    <dimen name="welcome_margin_buttom">30dip</dimen>
+
+    <!-- 排行榜 -->
+    <dimen name="rank_head_top1_image_width">100dip</dimen>
+    <dimen name="rank_head_top1_image_width_2">98dip</dimen>
+    <dimen name="rank_head_top2_image_width">70.33dp</dimen>
+
+    <!-- 首页登录奖励 -->
+    <dimen name="login_reward_layout_width">320dip</dimen>
+    <dimen name="login_reward_image_width">69.33dip</dimen>
+    <dimen name="login_reward_image_heigth">70.80dip</dimen>
+    <dimen name="login_reward_ect_width">19dp</dimen>
+    <dimen name="image_emoji_width">21.33dp</dimen>
+
+    <!-- 社区最新，热门按钮 -->
+    <dimen name="community_hot_width">133dp</dimen>
+    <!-- 向导页面 -->
+    <dimen name="guide_indicator_margin_buttom">32dip</dimen>
+    <dimen name="guide_margin_top">42dip</dimen>
+    <dimen name="guide_experience_margin_buttom">13dip</dimen>
+    <!-- 礼物面板 -->
+    <dimen name="live_gift_viewpage_width">186.66dip</dimen>
+    <dimen name="live_gift_layout_width">276dip</dimen>
+
+    <!-- 会话面板的高度-->
+    <dimen name="live_conversation_layout_heigth">296dp</dimen>
+    <!-- 帖子输入框表情面板的高度-->
+    <dimen name="post_input_emotion_layout_heigth">150dip</dimen>
+    <!-- 帖子输入框额外功能的高度-->
+    <dimen name="post_input_addition_layout_heigth">112dip</dimen>
+</resources>

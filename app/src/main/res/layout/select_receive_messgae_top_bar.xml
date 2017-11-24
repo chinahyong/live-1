@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/top_bar_layout" >
+
+    <RelativeLayout
+        android:id="@+id/top_left"
+        android:layout_width="@dimen/layout_top_title_bg_height"
+        android:layout_height="match_parent"
+        android:visibility="visible" >
+
+        <ImageView
+            android:id="@+id/top_left_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/a_common_btn_back_selector" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/top_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:ellipsize="marquee"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:singleLine="true"
+        android:layout_marginLeft="@dimen/layout_top_title_bg_height"
+        android:layout_marginRight="@dimen/layout_top_title_bg_height"
+        android:text=""
+        android:textColor="@color/a_text_color_333333"
+        android:textSize="@dimen/a_text_size_45"
+        android:textStyle="bold" />
+
+    <RelativeLayout
+        android:id="@+id/top_right"
+        android:layout_width="@dimen/layout_top_title_bg_height"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:visibility="gone" >
+
+        <ImageView
+            android:id="@+id/top_right_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/btn_post_right_selector" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/top_right_text_bg"
+        android:layout_width="@dimen/layout_top_title_bg_height"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="5dip"
+        android:visibility="gone" >
+
+        <TextView
+            android:id="@+id/top_right_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="提交"
+            android:textColor="@color/a_text_ffffff_e6ded7_selector"
+            android:textSize="@dimen/a_text_size_45" />
+    </RelativeLayout>
+    
+    
+    
+
+    
+
+</RelativeLayout>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/white"
+              android:gravity="center_horizontal"
+              android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="36dip">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/rank_day_btn"
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:paddingLeft="5dip"
+                android:paddingRight="5dip"
+                android:text="@string/rank_dayP"
+                android:textColor="@color/a_main_tab_text_selector"
+                android:textSize="@dimen/a_text_size_36"/>
+
+            <TextView
+                android:id="@+id/rank_week_btn"
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:paddingLeft="5dip"
+                android:paddingRight="5dip"
+                android:text="@string/rank_weekP"
+                android:textColor="@color/a_main_tab_text_selector"
+                android:textSize="@dimen/a_text_size_36"/>
+            <TextView
+                android:id="@+id/rank_month_btn"
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:paddingLeft="5dip"
+                android:paddingRight="5dip"
+                android:text="@string/rank_monthP"
+                android:visibility="gone"
+                android:textColor="@color/a_main_tab_text_selector"
+                android:textSize="@dimen/a_text_size_36"/>
+
+            <TextView
+                android:id="@+id/rank_total_btn"
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:paddingLeft="5dip"
+                android:paddingRight="5dip"
+                android:text="@string/rank_totalP"
+                android:textColor="@color/a_main_tab_text_selector"
+                android:textSize="@dimen/a_text_size_36"/>
+        </LinearLayout>
+
+        <com.viewpagerindicator.UnderlinePageIndicator
+            android:id="@+id/indicator"
+            android:layout_width="fill_parent"
+            android:layout_height="2dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/trans"
+            app:selectedColor="@color/a_bg_color_ff333333"/>
+    </RelativeLayout>
+
+    <!-- 场贡献率 -->
+
+    <TextView
+        android:id="@+id/rank_instruction"
+        android:layout_width="match_parent"
+        android:layout_height="27.33dip"
+        android:background="@color/a_bg_backgroup_color"
+        android:gravity="center_vertical"
+        android:paddingLeft="12dip"
+        android:paddingRight="12dip"
+        android:text="@string/rank_totalP"
+        android:textColor="@color/a_text_color_b4b4b4"
+        android:textSize="@dimen/a_text_size_36"/>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/rank_viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:persistentDrawingCache="animation"/>
+
+</LinearLayout>

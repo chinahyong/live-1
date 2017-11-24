@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="132.33dp"
+    android:layout_height="wrap_content"
+    android:background="@drawable/sendgift_pop_bg"
+    android:orientation="vertical"
+    android:paddingBottom="9dip"
+    android:paddingLeft="2dip"
+    android:paddingRight="2dip"
+    android:paddingTop="3dip" >
+
+    <ListView
+        android:id="@+id/send_gifts_num_lv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/trans"
+        android:cacheColorHint="@color/trans"
+        android:divider="@color/a_bg_color_e6e6e6"
+        android:dividerHeight="0.66dp"
+        android:listSelector="@null"
+        android:visibility="visible" >
+    </ListView>
+
+</LinearLayout>

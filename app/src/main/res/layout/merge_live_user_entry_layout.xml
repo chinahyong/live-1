@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/item_user_entry_bg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dip"
+        android:background="@drawable/bg_guard_user_entry_year">
+        <TextView
+            android:id="@+id/item_user_guard_entry_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="36dip"
+            android:text="@string/live_user_guard_entry_text"
+            android:textColor="@color/a_text_color_ffffff"
+            android:textSize="@dimen/a_text_size_42"
+            android:textStyle="bold"
+            android:visibility="gone"/>
+        <ImageView
+            android:id="@+id/item_level"
+            android:layout_width="45dp"
+            android:layout_height="15dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="8dip"
+            android:layout_toRightOf="@id/item_user_guard_entry_text"
+            android:src="@drawable/userlevel_0"
+            android:visibility="visible"/>
+        <tv.live.bx.ui.TypeTextView
+            android:id="@+id/item_user_entry_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="3dip"
+            android:layout_toRightOf="@id/item_level"
+            android:maxLines="1"
+            android:textSize="@dimen/a_text_size_42"
+            android:textStyle="bold"/>
+
+    </RelativeLayout>
+    <ImageView
+        android:id="@+id/item_effect_background"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:src="@drawable/effect_user_entry"
+        android:visibility="visible"/>
+</FrameLayout>

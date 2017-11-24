@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@+id/playing_chat_layout"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/trans"
+              android:clickable="true"
+              android:orientation="vertical">
+
+    <tv.live.bx.ui.ChatListView
+        android:id="@+id/playing_chat_lv_chat"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:cacheColorHint="@color/trans"
+        android:divider="@color/trans"
+        android:dividerHeight="4dip"
+        android:fadingEdge="none"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:listSelector="@color/trans"
+        android:scrollbars="none">
+    </tv.live.bx.ui.ChatListView>
+
+</LinearLayout>

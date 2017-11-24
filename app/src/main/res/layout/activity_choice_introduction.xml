@@ -1,0 +1,52 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/a_bg_backgroup_color"
+    android:orientation="vertical"
+    tools:context="tv.live.bx.activities.ChoiceIntroductionActivity" >
+
+    <include layout="@layout/a_common_top_bar" />
+
+    <LinearLayout
+        android:id="@+id/choice_introduction_ll_introduction"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/a_bg_backgroup_color"
+        android:orientation="vertical"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp" >
+
+        <EditText
+            android:id="@+id/choice_introduction_edt_introduction"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="20dip"
+            android:background="@null"
+            android:ems="10"
+            android:maxLines="2"
+            android:focusable="true"
+            android:maxLength="30"
+            android:padding="5dip"
+            android:paddingLeft="10dp"
+            android:textColor="@color/a_text_color_333333"
+            android:textColorHint="@color/text_gray"
+            android:textSize="@dimen/a_text_size_42"
+            tools:ignore="TextFields">
+        </EditText>
+
+        <View style="@style/divider_horizontal_ffa200" />
+
+        <TextView
+            android:id="@+id/edit_tip"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dip"
+            android:layout_marginTop="11dp"
+            android:text="@string/input_remind_words"
+            android:textColor="@color/a_text_color_999999"
+            android:textSize="@dimen/a_text_size_32" />
+    </LinearLayout>
+
+</LinearLayout>

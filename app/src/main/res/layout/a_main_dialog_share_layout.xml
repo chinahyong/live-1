@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/a_bg_color_c0000000"
+    android:orientation="horizontal" >
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="1px"
+        android:layout_weight="1" />
+
+    <LinearLayout
+        android:id="@+id/fragment_share_weixin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/a_share_weixin_icon_selector" >
+        </ImageView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="13dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/share_dialog_weixin"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/a_text_size_42" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="1px"
+        android:layout_weight="1" />
+
+    <LinearLayout
+        android:id="@+id/fragment_share_pengyouyuan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/a_share_friend_icon_selector" >
+        </ImageView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="13dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/share_dialog_pengyouquan"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/a_text_size_42" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="1px"
+        android:layout_weight="1" />
+
+    <LinearLayout
+        android:id="@+id/fragment_share_weibo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/a_share_weibo_icon_selector" >
+        </ImageView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="13dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/share_dialog_weibo"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/a_text_size_42" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="1px"
+        android:layout_weight="1" />
+
+    <LinearLayout
+        android:id="@+id/fragment_share_qqzone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/a_share_qqzone_icon_selector" >
+        </ImageView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="13dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/share_dialog_qqzone"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/a_text_size_42" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="1px"
+        android:layout_weight="1" />
+
+    <LinearLayout
+        android:id="@+id/fragment_share_qq"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/a_share_qq_icon_selector" >
+        </ImageView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="13dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/share_dialog_qq"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/a_text_size_42" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="1px"
+        android:layout_weight="1" />
+
+    <Button
+        android:id="@+id/btn_cancel"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/a_button_height_bg_144"
+        android:layout_marginTop="16.66dp"
+        android:background="@drawable/a_main_button_selector"
+        android:text="@string/cancel"
+        android:textColor="@color/a_text_color_787878"
+        android:textSize="@dimen/a_text_size_50"
+        android:visibility="gone" />
+
+</LinearLayout>

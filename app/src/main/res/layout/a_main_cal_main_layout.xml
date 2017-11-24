@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/main_frame_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/main_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/layout_top_title_bg_height"
+        android:layout_alignParentBottom="true">
+
+        <tv.live.bx.ui.SingleTabWidget
+            android:id="@+id/main_tabs"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/a_bg_color_fafafa"
+            android:gravity="center_vertical"/>
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/cal_frame_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/main_layout">
+    </FrameLayout>
+
+    <View
+        style="@style/divider_horizontal"
+        android:layout_below="@id/cal_frame_layout"/>
+
+    <ImageView
+        android:id="@+id/more_add"
+        android:layout_width="54dp"
+        android:layout_height="54dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="4dip"
+        android:background="@drawable/btn_live_begin_selector"/>
+
+</RelativeLayout>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@drawable/subject_list_item_selector"
+              android:orientation="vertical"
+              android:paddingLeft="12dp"
+              android:paddingRight="12dp">
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dip"
+        android:layout_marginTop="12dip"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:id="@+id/item_lv_focus_photo"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/bg_user_default"
+            android:contentDescription="@string/app_name">
+        </ImageView>
+
+        <TextView
+            android:id="@+id/item_lv_focus_nickname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="12dip"
+            android:layout_toRightOf="@id/item_lv_focus_photo"
+            android:ellipsize="end"
+            android:text="safds"
+            android:textColor="@color/a_text_color_333333"
+            android:textSize="@dimen/a_text_size_42"/>
+
+        <ImageView
+            android:id="@+id/item_user_level"
+            android:layout_width="20dip"
+            android:layout_height="10dip"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="8dip"
+            android:layout_toRightOf="@id/item_lv_focus_nickname"/>
+
+        <ImageView
+            android:id="@+id/item_user_gender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="6dip"
+            android:layout_toRightOf="@id/item_user_level"/>
+
+        <ImageView
+            android:id="@+id/item_user_blacklist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:clickable="true"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/btn_black_list"
+            android:visibility="visible"/>
+
+
+    </RelativeLayout>
+
+    <View style="@style/divider_horizontal"/>
+
+</LinearLayout>

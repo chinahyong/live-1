@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/loading_container"
+    style="@style/Base.MM"
+    android:gravity="center"
+    android:orientation="vertical" >
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="@style/progress_bar_circle" />
+
+    <TextView
+        android:id="@+id/emptyview_text"
+        style="@style/Base.WW"
+        android:padding="10dp"
+        android:text="@string/a_loading_text"
+        android:textColor="@color/event_item_expire_text"
+        android:textSize="14sp" />
+
+</LinearLayout>

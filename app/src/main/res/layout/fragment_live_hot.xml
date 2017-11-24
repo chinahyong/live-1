@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <include
+        layout="@layout/a_common_loadingprogress_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone"/>
+
+    <tv.live.bx.ui.widget.CustomRefreshLayout
+        android:id="@+id/refresh_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <tv.live.bx.ui.EmptyRecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbarStyle="outsideOverlay"/>
+    </tv.live.bx.ui.widget.CustomRefreshLayout>
+
+    <LinearLayout
+        android:id="@+id/new_message_tip_layout"
+        android:layout_width="102dp"
+        android:layout_height="40dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="198dip"
+        android:background="@drawable/btn_new_message"
+        android:paddingLeft="12dip"
+        android:paddingRight="12dip"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/new_message_tip"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="12dip"
+            android:text="@string/home_live_new_message_tip"
+            android:textColor="@color/a_text_color_e98516"
+            android:textSize="@dimen/a_text_size_42"/>
+    </LinearLayout>
+
+</RelativeLayout>

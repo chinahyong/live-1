@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/trans"
+    android:gravity="center_horizontal"
+    android:orientation="vertical" >
+
+    <include layout="@layout/a_common_top_bar" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/a_bg_backgroup_color" >
+
+        <include
+            layout="@layout/a_common_loadingprogress_layout"
+            android:visibility="gone" />
+
+        <tv.live.bx.ui.PullRefreshListView
+            android:id="@+id/playing_rank_listview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:cacheColorHint="#00000000"
+            android:divider="@null"
+            android:dividerHeight="0dip"
+            android:fadingEdge="none"
+            android:footerDividersEnabled="false"
+            android:headerDividersEnabled="false"
+            android:listSelector="#00000000"
+            android:paddingTop="4dip" >
+        </tv.live.bx.ui.PullRefreshListView>
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/page_item_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dip"
+        android:background="@drawable/bg_rank_tab"
+        android:orientation="horizontal"
+        android:padding="2dip"
+        android:visibility="gone" >
+
+        <Button
+            android:id="@+id/rank_day_btn"
+            android:layout_width="47dp"
+            android:layout_height="27.66dp"
+            android:background="@drawable/bg_rank_btn_selector"
+            android:text="@string/rank_day"
+            android:textColor="@color/a_bg_color_ffffff"
+            android:textSize="@dimen/a_text_size_42" />
+
+        <Button
+            android:id="@+id/rank_week_btn"
+            android:layout_width="47dp"
+            android:layout_height="27.66dp"
+            android:background="@drawable/bg_rank_btn_selector"
+            android:text="@string/rank_week"
+            android:textColor="@color/a_bg_color_ffffff"
+            android:textSize="@dimen/a_text_size_42" />
+
+        <Button
+            android:id="@+id/rank_mouth_btn"
+            android:layout_width="47dp"
+            android:layout_height="27.66dp"
+            android:background="@drawable/bg_rank_btn_selector"
+            android:text="@string/rank_month"
+            android:textColor="@color/a_bg_color_ffffff"
+            android:textSize="@dimen/a_text_size_42" />
+
+        <Button
+            android:id="@+id/rank_total_btn"
+            android:layout_width="47dp"
+            android:layout_height="27.66dp"
+            android:background="@drawable/bg_rank_btn_selector"
+            android:text="@string/rank_total"
+            android:textColor="@color/a_bg_color_ffffff"
+            android:textSize="@dimen/a_text_size_42" />
+    </LinearLayout>
+    <!-- 场贡献率 -->
+
+    <ListView
+        android:id="@+id/day_rank"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:cacheColorHint="@color/trans"
+        android:divider="@null"
+        android:visibility="gone" />
+
+    <ListView
+        android:id="@+id/week_rank"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:cacheColorHint="@color/trans"
+        android:visibility="gone" />
+
+    <ListView
+        android:id="@+id/month_rank"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:cacheColorHint="@color/trans"
+        android:visibility="gone" />
+
+    <ListView
+        android:id="@+id/total_rank"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:cacheColorHint="@color/trans"
+        android:visibility="gone" />
+
+</LinearLayout>

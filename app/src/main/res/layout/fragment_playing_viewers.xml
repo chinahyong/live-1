@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/trans"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical" >
+
+        <RadioGroup
+            android:layout_width="204dip"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dip"
+            android:background="@drawable/bg_rank_tab"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="2dip" >
+
+            <RadioButton
+                android:id="@+id/fragment_playing_viewers_rbt_administrator"
+                android:layout_width="0dip"
+                android:layout_height="27.66dp"
+                android:layout_weight="1"
+                android:background="@drawable/select_contribution"
+                android:button="@null"
+                android:checked="true"
+                android:gravity="center"
+                android:textColor="@color/a_rank_text_selector"
+                android:textSize="@dimen/a_text_size_42" />
+
+            <RadioButton
+                android:id="@+id/fragment_playing_viewers_rbt_audience"
+                android:layout_width="0dip"
+                android:layout_height="27.66dp"
+                android:layout_weight="1"
+                android:background="@drawable/select_contribution"
+                android:button="@null"
+                android:gravity="center"
+                android:textColor="@color/a_rank_text_selector"
+                android:textSize="@dimen/a_text_size_42" />
+        </RadioGroup>
+
+        <LinearLayout
+            android:id="@+id/fragment_playing_viewers_ll_administrator"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical"
+            android:visibility="visible" >
+
+            <ListView
+                android:id="@+id/fragment_playing_viewers_administrator_lv"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:cacheColorHint="@color/trans"
+                android:divider="@null" >
+            </ListView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/fragment_playing_viewers_ll_audience"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical"
+            android:visibility="gone" >
+
+            <ListView
+                android:id="@+id/fragment_playing_viewers_audience_lv"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:cacheColorHint="@color/trans"
+                android:divider="@null" >
+            </ListView>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

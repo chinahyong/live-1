@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <LinearLayout
+        android:id="@+id/playing_ll_chat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/a_bg_color_ffffff"
+        android:orientation="vertical" >
+
+        <View
+            android:id="@+id/send_other_layout"
+            android:layout_width="match_parent"
+            android:layout_height="0dip"
+            android:layout_weight="1"
+            android:background="@color/trans"
+            android:visibility="gone" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/edt_input_frame" />
+
+        <LinearLayout
+            android:id="@+id/playing_ll_edt_input"
+            android:layout_width="match_parent"
+            android:layout_height="56.66dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/layout_paly_left_pading"
+            android:paddingRight="@dimen/layout_paly_left_pading"
+            android:visibility="visible" >
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="35dp"
+                android:layout_weight="1" >
+
+                <ImageView
+                    android:id="@+id/playing_iv_clear_msg_content"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerVertical="true"
+                    android:contentDescription="@string/app_name"
+                    android:padding="8dp"
+                    android:src="@drawable/ic_clear"
+                    android:visibility="gone" />
+
+                <EditText
+                    android:id="@+id/playing_et_msg_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5dip"
+                    android:layout_toRightOf="@id/playing_iv_clear_msg_content"
+                    android:background="@color/trans"
+                    android:gravity="center_vertical"
+                    android:hint="@string/click_to_chat_with_player"
+                    android:textColor="@color/text_gray"
+                    android:textColorHint="@color/text_light_gray"
+                    android:textSize="13.33sp" />
+
+                <ImageView
+                    android:id="@+id/playing_iv_emotion"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentTop="true"
+                    android:contentDescription="@string/app_name"
+                    android:padding="5.5dp"
+                    android:src="@drawable/ic_emotion" />
+
+                <View
+                    style="@style/divider_horizontal"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/a_bg_color_dbdbdb" />
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/playing_btn_send_msg"
+                android:layout_width="74.33dp"
+                android:layout_height="35dp"
+                android:layout_marginLeft="8dp"
+                android:background="@drawable/btn_chat_send_selector"
+                android:text="@string/send_msg"
+                android:textColor="@color/a_text_color_333333"
+                android:textSize="13.33sp"
+                android:visibility="visible" />
+        </LinearLayout>
+
+        <GridView
+            android:id="@+id/playing_gv_eomotions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:listSelector="@drawable/selector_emotion"
+            android:numColumns="7"
+            android:paddingBottom="5dp"
+            android:verticalSpacing="10dp"
+            android:visibility="gone" >
+        </GridView>
+    </LinearLayout>
+
+</merge>

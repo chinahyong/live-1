@@ -1,0 +1,24 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/playing_rl_root"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <!-- 相机显示view -->
+
+    <com.tencent.rtmp.ui.TXCloudVideoView
+        android:id="@+id/video_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <ImageView
+        android:id="@+id/preview_back_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"/>
+    <!-- 直播主页面 -->
+
+    <include
+        layout="@layout/live_cover_layout"
+        android:visibility="visible"/>
+
+</RelativeLayout>

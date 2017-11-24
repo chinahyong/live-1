@@ -1,0 +1,25 @@
+{
+    "w":-1,
+    "h":-1,
+    "marginTop":0,
+    "duration":15000,
+    "actions":[
+
+    ],
+    "layers":[
+        {
+            "id":2,
+            "type":"SVG",
+            "folder":"svg",
+            "value":"data.json",
+            "w":-1,
+            "h":-2,
+            "startX":0,
+            "startY":0,
+            "startShowTime":0,
+            "loop":false,
+            "duration":15000,
+            "endVisible":true
+        }
+    ]
+}

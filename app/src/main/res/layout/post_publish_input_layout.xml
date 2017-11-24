@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <LinearLayout
+        android:id="@+id/playing_ll_chat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/trans"
+        android:orientation="vertical"
+        android:visibility="visible" >
+
+        <RelativeLayout
+            android:id="@+id/post_module_layout"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:background="@drawable/a_bg_ffffff_f0f0f0_selector"
+            android:paddingLeft="12dip"
+            android:paddingRight="12dip"
+            android:visibility="visible" >
+
+            <ImageView
+                android:id="@+id/list"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:src="@drawable/list" />
+
+            <TextView
+                android:id="@+id/module_explain"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="12dip"
+                android:layout_toRightOf="@id/list"
+                android:text="@string/commutity_send_group"
+                android:textColor="@color/a_text_color_666666"
+                android:textSize="@dimen/a_text_size_40" />
+
+            <Button
+                android:id="@+id/post_module_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/module_explain"
+                android:background="@null"
+                android:text="@string/post_module_hit"
+                android:textColor="@color/a_text_color_da500e"
+                android:textSize="@dimen/a_text_size_40"
+                android:visibility="visible" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="15dip"
+                android:background="@drawable/a_bg_f3f3f3_e6e6e6_selector"
+                android:scaleType="center"
+                android:src="@drawable/icon_more_right_1" />
+        </RelativeLayout>
+
+        <View style="@style/divider_horizontal" />
+
+        <LinearLayout
+            android:id="@+id/playing_ll_edt_input"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:background="@color/a_bg_color_ffffff"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="20dip"
+            android:paddingRight="20dip"
+            android:visibility="visible" >
+
+            <ImageView
+                android:id="@+id/playing_iv_emotion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/btn_smile_selector" />
+        </LinearLayout>
+
+        <include
+            android:id="@+id/playing_gv_eomotions"
+            layout="@layout/send_msg_tool"
+            android:visibility="gone" />
+    </LinearLayout>
+
+</merge>

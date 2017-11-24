@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="roundedimageview">
+        <attr name="border_thickness" format="dimension"/>
+        <attr name="border_inside_color" format="color"/>
+        <attr name="border_outside_color" format="color"></attr>
+    </declare-styleable>
+
+    <!-- 下拉刷新页面 -->
+    <declare-styleable name="PullnReleaseHintView">
+        <attr name="pull_hint_view" format="reference"/>
+        <attr name="wait_hint_view" format="reference"/>
+    </declare-styleable>
+    <declare-styleable name="ListPullnReleaseHintView">
+
+        <!-- 箭头 -->
+        <attr name="arrow" format="reference"/>
+        <!-- 进度圆环 -->
+        <attr name="progress_ring" format="reference"/>
+        <!-- 文字提示 -->
+        <attr name="txt_hint" format="reference"/>
+        <!-- 提示用户下拉的文字 -->
+        <attr name="pull_to_invoke" format="string|reference"/>
+        <!-- 提示用户释放的文字 -->
+        <attr name="release_to_invoke" format="string|reference"/>
+    </declare-styleable>
+    <!-- 载入数据等待页面 -->
+    <declare-styleable name="LoadingProgress">
+        <attr name="LoadingEmptyLayout" format="reference"/>
+        <attr name="LoadingImage" format="reference"/>
+        <attr name="LoadingProgress" format="reference"/>
+        <attr name="LoadingInfo" format="reference"/>
+    </declare-styleable>
+
+    <attr name="textwidth" format="integer"/>
+    <attr name="typeface">
+        <enum name="normal" value="0"/>
+        <enum name="sans" value="1"/>
+        <enum name="serif" value="2"/>
+        <enum name="monospace" value="3"/>
+    </attr>
+
+    <declare-styleable name="CYTextView">
+        <attr name="textwidth"/>
+        <attr name="textSize" format="dimension"/>
+        <attr name="textColor" format="reference|color"/>
+        <attr name="lineSpacingExtra" format="dimension"/>
+        <attr name="typeface"/>
+    </declare-styleable>
+
+    <!-- 字体描边颜色 -->
+    <declare-styleable name="StrokeTextView">
+        <attr name="strokeTextColor" format="color"/>
+    </declare-styleable>
+
+    <!-- 垂直滚动文本 -->
+    <declare-styleable name="VerticalTextview">
+        <!-- 字体颜色 -->
+        <attr name="verticalTextColor" format="color"/>
+        <!-- 字体大小 -->
+        <attr name="verticalTextSize" format="dimension"/>
+        <!-- 字体style -->
+        <attr name="verticalTextStyle" format="integer"/>
+        <!-- 字体描边颜色 -->
+        <attr name="verticalStrokeTextColor" format="color"/>
+    </declare-styleable>
+    <!-- 根据内容添加一组垂直滚动文本 -->
+    <declare-styleable name="AutoVerticalLinearLayout">
+        <!-- 字体颜色 -->
+        <attr name="autoVerticalTextColor" format="color"/>
+        <!-- 字体大小 -->
+        <attr name="autoVerticalTextSize" format="dimension"/>
+        <!-- 字体style -->
+        <attr name="autoVerticalTextStyle" format="integer"/>
+        <!-- 字体描边颜色 -->
+        <attr name="autoVerticalStrokeTextColor" format="color"/>
+    </declare-styleable>
+
+    <!-- ConvenientBanner -->
+    <declare-styleable name="ConvenientBanner">
+        <attr name="canLoop" format="boolean"/>
+    </declare-styleable>
+    <!-- 直播间连击按钮的自定义动效 -->
+    <declare-styleable name="RippleBackground">
+        <attr name="rb_color" format="color"/>
+        <attr name="rb_strokeWidth" format="dimension"/>
+        <attr name="rb_radius" format="dimension"/>
+        <attr name="rb_duration" format="integer"/>
+        <attr name="rb_rippleAmount" format="integer"/>
+        <attr name="rb_scale" format="float"/>
+        <attr name="rb_type" format="enum">
+            <enum name="fillRipple" value="0"/>
+            <enum name="strokeRipple" value="1"/>
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="RoundAngleRelativeLayout">
+        <attr name="topLeftRadius" format="dimension"/>
+        <attr name="topRightRadius" format="dimension"/>
+        <attr name="bottomLeftRadius" format="dimension"/>
+        <attr name="bottomRightRadius" format="dimension"/>
+    </declare-styleable>
+
+</resources>

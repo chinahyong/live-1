@@ -1,0 +1,448 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/a_bg_color_33000000">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="14.66dip"
+        android:layout_marginTop="18.66dp"
+        android:orientation="horizontal">
+
+        <ToggleButton
+            android:id="@+id/playing_btn_location_change"
+            android:layout_width="16.66dp"
+            android:layout_height="20.66dp"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/a_location_switch_selector"
+            android:button="@color/trans"
+            android:checked="true"
+            android:textOff=""
+            android:textOn=""/>
+
+        <TextView
+            android:id="@+id/playing_tv_location_city"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="3dp"
+            android:elevation="5dp"
+            android:gravity="center"
+            android:shadowColor="@color/a_bg_color_33000000"
+            android:shadowDx="0.33"
+            android:shadowDy="3"
+            android:shadowRadius="3"
+            android:text="@string/location_default"
+            android:textColor="@color/a_text_color_ffffff"
+            android:textSize="@dimen/a_text_size_42"/>
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/playing_btn_camera_change"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="15dip"
+        android:layout_marginTop="17dp"
+        android:layout_toLeftOf="@+id/playing_btn_back"
+        android:paddingLeft="5dip"
+        android:paddingRight="5dip"
+        android:paddingTop="3dip"
+        android:src="@drawable/a_camera_dir_selector"
+        android:visibility="visible"/>
+
+    <ImageView
+        android:id="@+id/playing_btn_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="15dip"
+        android:layout_marginTop="17dp"
+        android:paddingLeft="5dip"
+        android:paddingRight="5dip"
+        android:paddingTop="3dip"
+        android:src="@drawable/btn_live_back_selector"
+        android:visibility="visible"/>
+
+    <RelativeLayout
+        android:id="@+id/live_title_layout"
+        android:layout_width="match_parent"
+        android:layout_height="129.66dp"
+        android:layout_marginLeft="14dp"
+        android:layout_marginRight="14dp"
+        android:layout_marginTop="150dp"
+        android:background="@drawable/shape_bg_title_circle">
+
+        <EditText
+            android:id="@+id/live_topic_title"
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:layout_above="@+id/live_ll_tag"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="6.66dp"
+            android:layout_marginRight="6.66dp"
+            android:background="@color/trans"
+            android:gravity="center|left"
+            android:hint="@string/live_title_hint"
+            android:maxLength="30"
+            android:maxLines="3"
+            android:scrollbars="vertical"
+            android:textColor="@color/white"
+            android:textColorHint="@color/a_text_color_b2b2b2"
+            android:textSize="@dimen/a_text_size_66"/>
+
+        <TextView
+            android:id="@+id/live_tv_hot_topic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:padding="10dp"
+            android:text="@string/live_ready_title"
+            android:textColor="@color/a_text_color_da500e"
+            android:textSize="@dimen/a_text_size_42"
+            android:visibility="gone"/>
+
+        <View
+            android:id="@+id/title_line"
+            style="@style/divider_horizontal"
+            android:layout_below="@id/live_topic_title"
+            android:layout_marginLeft="8.66dp"
+            android:layout_marginRight="8.66dp"/>
+
+        <LinearLayout
+            android:id="@+id/live_ll_tag"
+            android:layout_width="wrap_content"
+            android:layout_height="39dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="16.66dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icon_live_tag"/>
+
+            <TextView
+                android:id="@+id/live_tv_select_tag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:text="@string/live_ready_add_tag"
+                android:textColor="@color/a_text_color_ffffff"
+                android:textSize="@dimen/a_text_size_45"/>
+
+            <TextView
+                android:id="@+id/live_tv_tag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="7dp"
+                android:background="@drawable/ic_bg_tag"
+                android:gravity="center"
+                android:textColor="@color/a_text_color_ffffff"
+                android:textSize="@dimen/a_text_size_45"
+                android:visibility="gone"/>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/live_screen_oriention"
+        android:layout_width="match_parent"
+        android:layout_height="49.66dp"
+        android:layout_below="@id/live_title_layout"
+        android:layout_marginLeft="14dp"
+        android:layout_marginRight="14dp"
+        android:layout_marginTop="11.33dp"
+        android:background="@drawable/shape_bg_title_circle">
+
+        <RadioGroup
+            android:id="@+id/live_screen_rg_oriention"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="16.33dp"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/live_screen_rb_land"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@null"
+                android:checked="true"
+                android:drawableLeft="@drawable/selector_radio"
+                android:drawablePadding="13.33dp"
+                android:text="@string/live_screen_landscape"
+                android:textColor="@color/a_text_99ffffff_ffffff_selector"
+                android:textSize="@dimen/a_text_size_41"/>
+
+            <RadioButton
+                android:id="@+id/live_screen_rb_portrait"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="66dp"
+                android:button="@null"
+                android:drawableLeft="@drawable/selector_radio"
+                android:drawablePadding="13.33dp"
+                android:text="@string/live_screen_portrait"
+                android:textColor="@color/a_text_99ffffff_ffffff_selector"
+                android:textSize="@dimen/a_text_size_41"/>
+        </RadioGroup>
+    </RelativeLayout>
+
+    <include
+        android:id="@+id/live_tip_layout"
+        layout="@layout/dialog_live_share_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/live_screen_oriention"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="21.33dp"/>
+
+    <RelativeLayout
+        android:id="@+id/live_layout_logo"
+        android:layout_width="293.33dip"
+        android:layout_height="164.33dip"
+        android:layout_below="@+id/playing_btn_back"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="53.33dp"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/live_logo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"/>
+
+        <Button
+            android:id="@+id/live_logo_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="10dip"
+            android:background="@drawable/btn_live_logo_edit_selector"/>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/live_screen_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/live_tip_layout"
+        android:layout_below="@id/live_tip_layout"
+        android:layout_marginTop="18dip"
+        android:text="@string/live_screen_status_text"
+        android:textColor="@color/a_text_color_ffa200"
+        android:textSize="@dimen/a_text_size_40"
+        android:visibility="gone"/>
+
+    <RadioGroup
+        android:id="@+id/live_screen_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/live_tip_layout"
+        android:layout_below="@id/live_screen_text"
+        android:layout_marginTop="8dip"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <RadioButton
+            android:id="@+id/live_screen_portrait"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_portitra_selector"
+            android:button="@null"
+            android:checked="true"
+            android:gravity="center"
+            android:text="@string/live_screen_portrait"
+            android:textColor="@color/a_text_ffffff_ffa200_selector"
+            android:textSize="@dimen/a_text_size_40"/>
+
+        <RadioButton
+            android:id="@+id/live_screen_landscape"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dip"
+            android:background="@drawable/btn_portitra_selector"
+            android:button="@null"
+            android:gravity="center"
+            android:text="@string/live_screen_landscape"
+            android:textColor="@color/a_text_ffffff_ffa200_selector"
+            android:textSize="@dimen/a_text_size_40"/>
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/live_clarity_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/live_tip_layout"
+        android:layout_below="@id/live_screen_layout"
+        android:layout_marginTop="18dip"
+        android:text="@string/live_screen_clarity_text"
+        android:textColor="@color/a_text_color_ffa200"
+        android:textSize="@dimen/a_text_size_40"
+        android:visibility="gone"/>
+
+    <LinearLayout
+        android:id="@+id/login_ll_protocal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/live_screen_layout"
+        android:layout_marginTop="4dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:shadowColor="@color/a_bg_color_99000000"
+            android:shadowDy="3"
+            android:shadowRadius="1"
+            android:text="@string/live_live_protocol"
+            android:textColor="@color/a_text_color_666666"
+            android:textSize="@dimen/a_text_size_40"/>
+
+        <TextView
+            android:id="@+id/live_agree_protocal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:shadowColor="@color/a_bg_color_99000000"
+            android:shadowDy="3"
+            android:shadowRadius="1"
+            android:text="@string/live_live_protocol_click"
+            android:textColor="@color/a_bg_color_ccffffff"
+            android:textSize="@dimen/a_text_size_42"/>
+    </LinearLayout>
+
+
+    <RadioGroup
+        android:id="@+id/live_clarity_layout"
+        android:layout_width="293.33dp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/live_tip_layout"
+        android:layout_below="@id/live_clarity_text"
+        android:layout_marginTop="28dip"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/live_clarity_standart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_portitra_nor_selector"
+            android:button="@null"
+            android:gravity="center"
+            android:textColor="@color/a_text_ffffff_ffa200_selector"
+            android:textSize="@dimen/a_text_size_40"/>
+
+        <RadioButton
+            android:id="@+id/live_clarity_hight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dip"
+            android:background="@drawable/btn_portitra_high_selector"
+            android:button="@null"
+            android:checked="true"
+            android:gravity="center"
+            android:textColor="@color/a_text_ffffff_ffa200_selector"
+            android:textSize="@dimen/a_text_size_40"/>
+
+        <RadioButton
+            android:id="@+id/live_clarity_super"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dip"
+            android:background="@drawable/btn_portitra_higher_selector"
+            android:button="@null"
+            android:gravity="center"
+            android:textColor="@color/a_text_ffffff_ffa200_selector"
+            android:textSize="@dimen/a_text_size_40"/>
+    </RadioGroup>
+
+    <HorizontalScrollView
+        android:id="@+id/senior_template"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/trans"
+        android:clipToPadding="true"
+        android:fadingEdge="none"
+        android:fillViewport="true"
+        android:overScrollMode="never"
+        android:paddingLeft="4dp"
+        android:scrollbars="none"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:id="@+id/template_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:baselineAligned="true"
+            android:clipToPadding="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:layout_width="64.66dp"
+                android:layout_height="64.66dp">
+
+                <ImageView
+                    android:id="@+id/gifts_bottom_info_img_bg"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/bg_gift_nor"
+                    android:contentDescription="@string/app_name"></ImageView>
+
+                <ImageView
+                    android:id="@+id/gifts_bottom_info_img"
+                    android:layout_width="42dp"
+                    android:layout_height="42dp"
+                    android:layout_centerInParent="true"
+                    android:contentDescription="@string/app_name"
+                    android:src="@null"></ImageView>
+
+                <TextView
+                    android:id="@+id/gifts_bottom_info_tv_rose_count"
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/shape_bg_circle_blue"
+                    android:gravity="center"
+                    android:text="1"
+                    android:textColor="@color/a_text_color_333333"
+                    android:textSize="10sp"
+                    android:visibility="gone"/>
+            </RelativeLayout>
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <View
+        android:id="@+id/divide_line"
+        android:layout_width="match_parent"
+        android:layout_height="1dip"
+        android:layout_above="@id/senior_template"
+        android:background="@color/a_bg_color_ffffff"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/senior_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/divide_line"
+        android:text="@string/live_senior_text"
+        android:textColor="@color/a_text_color_ffa200"
+        android:textSize="@dimen/a_text_size_42"
+        android:visibility="gone"/>
+
+</RelativeLayout>

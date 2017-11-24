@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/subject_list_item_selector"
+    android:orientation="vertical"
+    android:paddingLeft="12dip"
+    android:paddingRight="12dip" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="6.66dp" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dip" >
+
+            <ImageView
+                android:id="@+id/item_photo"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerVertical="true"
+                android:background="@drawable/bg_user_default"
+                android:contentDescription="@string/app_name" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/item_photo"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/item_nickname"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:maxLength="12"
+                        android:text="股水电沙发了将丧生的归属感闪电购"
+                        android:textColor="@color/a_text_color_333333"
+                        android:textSize="@dimen/a_text_size_42" />
+
+                    <ImageView
+                        android:id="@+id/item_userlevel"
+                        android:layout_width="45dp"
+                        android:layout_height="15dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="5.33dp"
+                        android:src="@drawable/userlevel_0" />
+
+                    <TextView
+                        android:id="@+id/item_time"
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:gravity="right"
+                        android:text="09月18日"
+                        android:textColor="@color/a_text_color_aaaaaa"
+                        android:textSize="@dimen/a_text_size_30" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/item_reply_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dip"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:text="水电费杀死低估了结算单噶了告诉低估了井冈山的咖喱感觉到嗦嘎塑料袋刚加上了大塑料袋刚"
+                    android:textColor="@color/a_text_color_666666"
+                    android:textSize="@dimen/a_text_size_40" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="6dip"
+            android:layout_marginLeft="50dip"
+            android:layout_marginTop="12dip" >
+
+            <TextView
+                android:id="@+id/item_content_prefix"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="在“"
+                android:textColor="@color/a_text_color_999999"
+                android:textSize="@dimen/a_text_size_32" />
+
+            <TextView
+                android:id="@+id/item_content"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="水电费萨芬撒地方手动阀放大撒发生的发生发送阿斯蒂芬啊打发发发发阿斯顿发 发发生的爱疯阿斯顿发爱疯爱疯爱疯阿发达发送到按时"
+                android:textColor="@color/a_text_color_999999"
+                android:textSize="@dimen/a_text_size_32" />
+
+            <TextView
+                android:id="@+id/item_content_suffix"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="”回复"
+                android:textColor="@color/a_text_color_999999"
+                android:textSize="@dimen/a_text_size_32" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View style="@style/divider_horizontal" />
+
+</LinearLayout>

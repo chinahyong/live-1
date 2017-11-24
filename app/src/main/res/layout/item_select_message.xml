@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/select_item_layout"
+        android:layout_width="match_parent"
+        android:layout_height="67dp">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="46dp"
+            android:background="@color/a_bg_color_e6e6e6"></View>
+
+        <RelativeLayout
+            android:id="@+id/select_message_cb_layout"
+            android:layout_width="46dp"
+            android:layout_height="match_parent">
+        <CheckBox
+            android:clickable="false"
+            android:enabled="false"
+            android:id="@+id/select_message_cb"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="12dp"
+            android:background="@drawable/cb_select_message_selector"
+            android:button="@null"/>
+        </RelativeLayout>
+        <ImageView
+            android:id="@+id/select_message_head_pic"
+            android:layout_width="41dp"
+            android:layout_height="41dp"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/select_message_cb_layout"
+            android:src="@drawable/bg_user_default"/>
+
+        <TextView
+            android:maxWidth="95dp"
+            android:text=""
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:id="@+id/select_message_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/select_message_head_pic"
+            android:textColor="#333333"
+            android:textSize="15sp"/>
+
+        <ImageView
+            android:id="@+id/select_message_sex"
+            android:layout_width="17dp"
+            android:layout_height="17dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="4dp"
+            android:layout_toRightOf="@id/select_message_name"
+            android:src="@drawable/icon_my_info_man"/>
+
+        <ImageView
+            android:id="@+id/select_message_level"
+            android:layout_width="17dp"
+            android:layout_height="17dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="4dp"
+            android:layout_toRightOf="@id/select_message_sex"
+            android:src="@drawable/icon_my_info_man"/>
+
+        <ImageView
+            android:visibility="gone"
+            android:id="@+id/select_message_card"
+            android:layout_width="32dp"
+            android:layout_height="17dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="4dp"
+            android:layout_toRightOf="@id/select_message_level"
+            android:src="@drawable/icon_sixinka"/>
+
+        <TextView
+            android:textSize="13sp"
+            android:layout_marginLeft="15dp"
+            android:visibility="visible"
+            android:id="@+id/select_message_state"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="12dp"
+            android:text="今日已发"
+            android:textColor="@color/a_text_color_999999"/>
+    </RelativeLayout>
+</RelativeLayout>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <!-- The PullToRefreshListView replaces a standard ListView widget. -->
+
+    <com.handmark.pulltorefresh.library.PullToRefreshZoomListView
+        android:id="@+id/pull_refresh_list"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/a_bg_color_f0f0f0"
+        android:cacheColorHint="#00000000"
+        android:divider="@color/a_bg_color_f0f0f0"
+        android:dividerPadding="10dip"
+        android:fadingEdge="none"
+        android:fastScrollEnabled="false"
+        android:footerDividersEnabled="false"
+        android:headerDividersEnabled="false"
+        android:listSelector="#00000000"
+        android:scrollbars="none"
+        android:smoothScrollbar="true" />
+
+    <ImageView
+        android:id="@+id/top_backgroud"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/app_name"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bg_fan_detail_head"
+        android:visibility="visible" />
+
+    <RelativeLayout
+        android:id="@+id/top_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/layout_top_title_bg_height"
+        android:background="@color/trans" >
+
+        <RelativeLayout
+            android:id="@+id/top_left"
+            android:layout_width="@dimen/layout_top_title_bg_height"
+            android:layout_height="match_parent"
+            android:visibility="visible" >
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_centerInParent="true"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/a_common_btn_back_selector" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/top_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:ellipsize="marquee"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:singleLine="true"
+            android:text="title"
+            android:textColor="@color/a_text_color_ffffff"
+            android:textSize="@dimen/a_text_size_45"
+            android:textStyle="bold" />
+
+        <RelativeLayout
+            android:id="@+id/top_right"
+            android:layout_width="@dimen/layout_top_title_bg_height"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:visibility="visible" >
+
+            <ImageView
+                android:id="@+id/top_right_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/btn_more_fan_selector" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/top_right_text_bg"
+            android:layout_width="@dimen/layout_top_title_bg_height"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="5dip"
+            android:visibility="gone" >
+
+            <TextView
+                android:id="@+id/top_right_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="提交"
+                android:textColor="@color/a_text_909090_dbdbdb_selector"
+                android:textSize="@dimen/a_text_size_50" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/publicBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="28.66dp"
+        android:layout_marginRight="16.66dp"
+        android:src="@drawable/btn_publish_bg_selector"
+        android:visibility="gone" />
+
+</RelativeLayout>

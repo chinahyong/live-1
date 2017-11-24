@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- 重新定义颜色 -->
+    <color name="a_text_color_000000">#000000</color>
+    <color name="a_text_color_00a9e9">#00a9e9</color>
+    <color name="a_text_color_001826">#001826</color>
+    <color name="a_text_color_058249">#058249</color>
+    <color name="a_text_color_303030">#303030</color>
+    <color name="a_text_color_333333">#333333</color>
+    <color name="a_text_color_5d5d5d">#5d5d5d</color>
+    <color name="a_text_color_5f5f5f">#5f5f5f</color>
+    <color name="a_text_color_6e6d67">#6e6d67</color>
+    <color name="a_text_color_666666">#666666</color>
+    <color name="a_text_color_787878">#787878</color>
+    <color name="a_text_color_7b7b7b">#7b7b7b</color>
+    <color name="a_text_color_7bffc7">#7bffc7</color>
+    <color name="a_text_color_808080">#808080</color>
+    <color name="a_text_color_909090">#909090</color>
+    <color name="a_text_color_959595">#959595</color>
+    <color name="a_text_color_cc959595">#cc959595</color>
+    <color name="a_text_color_999999">#999999</color>
+    <color name="a_text_color_9f9f9f">#9f9f9f</color>
+    <color name="a_text_color_a0a0a0">#a0a0a0</color>
+    <color name="a_text_color_aaaaaa">#aaaaaa</color>
+    <color name="a_text_color_ababab">#ababab</color>
+    <color name="a_text_color_b0b0b0">#b0b0b0</color>
+    <color name="a_text_color_b2b2b2">#b2b2b2</color>
+    <color name="a_text_color_b4b4b4">#b4b4b4</color>
+    <color name="a_text_color_c2edee">#c2edee</color>
+    <color name="a_text_color_c8c8c8">#c8c8c8</color>
+    <color name="a_text_color_c4bdb2">#c4bdb2</color>
+    <color name="a_text_color_d53f06">#d53f06</color>
+    <color name="a_text_color_dd2916">#dd2916</color>
+    <color name="a_text_color_da500e">#4bbabc</color>
+    <color name="a_text_color_dbdbdb">#dbdbdb</color>
+    <color name="a_text_color_dcdcdc">#dcdcdc</color>
+    <color name="a_text_color_eaaf22">#eaaf22</color>
+    <color name="a_text_color_e98516">#e98516</color>
+    <color name="a_text_color_f01772">#f01772</color>
+    <color name="a_text_color_f0f0f0">#f0f0f0</color>
+    <color name="a_text_color_f0be43">#f0be43</color>
+    <color name="a_text_color_f05e5e">#f05e5e</color>
+    <color name="a_text_color_fbe089">#fbe089</color>
+    <color name="a_text_color_fe1212">#fe1212</color>
+    <color name="a_text_color_feeba7">#feeba7</color>
+    <color name="a_text_color_ff0000">#ff0000</color>
+    <color name="a_text_color_ffa200">#ffa200</color>
+    <color name="a_text_color_ffe3b2">#ffe3b2</color>
+    <color name="a_text_color_ffebac">#ffebac</color>
+    <color name="a_text_color_ff8400">#ff8400</color>
+    <color name="a_text_color_ff9000">#ff9000</color>
+    <color name="a_text_color_fff000">#fff000</color>
+    <color name="a_text_color_fffefe">#fffefe</color>
+    <color name="a_text_color_ffff00">#ffff00</color>
+    <color name="a_text_color_ffffff">#ffffff</color>
+    <color name="a_text_color_f99200">#f99200</color>
+    <color name="a_text_color_e9d138">#e9d138</color>
+    <color name="a_text_color_d9d9d9">#d9d9d9</color>
+    <color name="a_text_color_0eb8f6">#0eb8f6</color>
+    <color name="a_text_color_0eb9f9">#0eb9f9</color>
+    <color name="a_text_color_80999999">#80999999</color>
+    <color name="a_text_color_4bbabc">#4bbabc</color>
+    <color name="a_text_color_8b4f02">#8b4f02</color>
+    <color name="a_text_color_cc2b9698">#cc2b9698</color>
+    <color name="a_text_color_cc4bbabc">#cc4bbabc</color>
+    <color name="a_text_color_ccc6c6c6">#ccc6c6c6</color>
+    <!-- 60% 白色 -->
+    <color name="a_text_color_99ffffff">#99ffffff</color>
+    <!-- 半透明 白色 -->
+    <color name="a_text_color_80ffffff">#80ffffff</color>
+    <!-- 60%红色 -->
+    <color name="a_text_color_99da500e">#99da500e</color>
+    <!-- 60%红色 -->
+    <color name="a_text_color_99787878">#99787878</color>
+
+    <!-- pulltoreresh head的背景色 -->
+    <color name="a_pulltorefresh_head_text">#ff8c8c8c</color>
+
+</resources>

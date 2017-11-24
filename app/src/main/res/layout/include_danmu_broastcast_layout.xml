@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <tv.live.bx.danmu.DanmuBase.BroadcastDanmakuChannel
+        android:id="@+id/broadcastDanmuA"
+        android:layout_width="match_parent"
+        android:layout_height="88dip"/>
+
+    <tv.live.bx.danmu.DanmuBase.BroadcastDanmakuChannel
+        android:id="@+id/broadcastDanmuB"
+        android:layout_width="match_parent"
+        android:layout_height="88dip"
+        android:layout_marginTop="68dp"/>
+
+</RelativeLayout>

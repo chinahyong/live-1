@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/a_bg_backgroup_color">
+
+    <include
+        layout="@layout/a_common_loadingprogress_jump_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone"/>
+
+    <com.handmark.pulltorefresh.library.PullToRefreshGridView
+        xmlns:ptr="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/live_new_listview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:fadingEdge="none"
+        android:fastScrollEnabled="false"
+        android:footerDividersEnabled="false"
+        android:headerDividersEnabled="false"
+        android:verticalSpacing="7dp"
+        android:listSelector="#00000000"
+        android:stretchMode="spacingWidthUniform"
+        android:numColumns="2"
+        android:paddingTop="7dip"
+        android:scrollbarStyle="outsideOverlay"
+        android:smoothScrollbar="true"
+        ptr:ptrDrawable="@drawable/a_common_progress_circle"
+        ptr:ptrHeaderBackground="@color/a_bg_backgroup_color"
+        ptr:ptrHeaderTextColor="@color/a_pulltorefresh_head_text"
+        ptr:ptrListViewExtrasEnabled="true"
+        ptr:ptrMode="both"/>
+
+</RelativeLayout>

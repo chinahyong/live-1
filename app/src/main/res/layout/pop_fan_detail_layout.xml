@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" >
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="6.66dp"
+        android:background="@drawable/bg_fan_detail_pop"
+        android:orientation="vertical"
+        android:paddingLeft="2dip"
+        android:paddingRight="2dip"
+        android:paddingTop="6dip" >
+
+        <RelativeLayout
+            android:id="@+id/item1_layout"
+            android:layout_width="match_parent"
+            android:layout_height="39.33dp"
+            android:paddingLeft="20dip"
+            android:background="@drawable/a_bg_ffffff_dbdbdb_selector"
+            android:gravity="center_vertical" >
+
+            <ImageView
+                android:id="@+id/icon1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icon_new_pre_2" />
+
+            <TextView
+                android:id="@+id/item_text1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@id/icon1"
+                android:text="@string/commutity_fan_newpublic"
+                android:textColor="@color/a_text_color_666666"
+                android:textSize="@dimen/a_text_size_42" />
+        </RelativeLayout>
+
+        <RelativeLayout style="@style/divider_horizontal" />
+
+        <RelativeLayout
+            android:id="@+id/item2_layout"
+            android:layout_width="match_parent"
+            android:layout_height="39.33dp"
+            android:paddingLeft="20dip"
+            android:background="@drawable/subject_list_item_selector"
+            android:gravity="center_vertical" >
+
+            <ImageView
+                android:id="@+id/icon2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icon_comment_nor" />
+
+            <TextView
+                android:id="@+id/item_text2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@id/icon2"
+                android:text="@string/commutity_fan_newcomment"
+                android:textColor="@color/a_text_color_666666"
+                android:textSize="@dimen/a_text_size_42" />
+        </RelativeLayout>
+
+        <RelativeLayout style="@style/divider_horizontal" />
+
+        <RelativeLayout
+            android:id="@+id/item3_layout"
+            android:layout_width="match_parent"
+            android:layout_height="39.33dp"
+            android:paddingLeft="20dip"
+            android:background="@drawable/subject_list_item_selector"
+            android:gravity="center_vertical" >
+
+            <ImageView
+                android:id="@+id/icon3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icon_invite" />
+
+            <TextView
+                android:id="@+id/item_text3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dip"
+                android:layout_toRightOf="@id/icon3"
+                android:text="@string/commutity_fan_invite"
+                android:textColor="@color/a_text_color_666666"
+                android:textSize="@dimen/a_text_size_42" />
+        </RelativeLayout>
+
+        <RelativeLayout style="@style/divider_horizontal" />
+
+        <RelativeLayout
+            android:id="@+id/item4_layout"
+            android:layout_width="match_parent"
+            android:layout_height="39.33dp"
+            android:paddingLeft="20dip"
+            android:background="@drawable/subject_list_item_selector"
+            android:gravity="center_vertical" >
+
+            <ImageView
+                android:id="@+id/icon4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icon_ead_1" />
+
+            <TextView
+                android:id="@+id/item_text4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dip"
+                android:layout_toRightOf="@id/icon4"
+                android:text="@string/commutity_fan_quit"
+                android:textColor="@color/a_text_color_666666"
+                android:textSize="@dimen/a_text_size_42" />
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>

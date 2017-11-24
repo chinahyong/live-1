@@ -1,0 +1,134 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/a_bg_backgroup_color"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/layout_top_title_bg_height"
+        android:background="@color/a_bg_color_ffffff" >
+
+        <RelativeLayout
+            android:id="@+id/cancel"
+            android:layout_width="@dimen/layout_top_title_bg_height"
+            android:layout_height="match_parent"
+            android:visibility="visible" >
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_centerInParent="true"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/btn_back_selector" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/search_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:contentDescription="@string/app_name"
+            android:paddingLeft="12dip"
+            android:paddingRight="12dip"
+            android:text="@string/anchor_search_text"
+            android:textColor="@color/a_text_da500e_60_selector"
+            android:textSize="@dimen/a_text_size_42" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/search_tv"
+            android:layout_toRightOf="@id/cancel"
+            android:background="@drawable/icon_search_bg"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dip"
+                android:src="@drawable/icon_search_sm" />
+
+            <EditText
+                android:id="@+id/search_content"
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="12dip"
+                android:layout_weight="1"
+                android:background="@null"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:gravity="center_vertical"
+                android:hint="@string/commutity_fan_search_hit"
+                android:imeOptions="actionSearch"
+                android:inputType="text"
+                android:paddingRight="12dip"
+                android:singleLine="true"
+                android:textColor="@color/a_text_color_333333"
+                android:textColorHint="@color/a_text_color_999999"
+                android:textSize="@dimen/a_text_size_36" />
+
+            <ImageView
+                android:id="@+id/search_clear_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingRight="8dip"
+                android:src="@drawable/icon_del"
+                android:visibility="gone" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <View style="@style/divider_horizontal" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <include
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            layout="@layout/a_common_loadingprogress_layout"
+            android:visibility="gone" />
+
+        <tv.live.bx.ui.PullRefreshListView
+            android:id="@+id/author_listview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:cacheColorHint="#00000000"
+            android:divider="@null"
+            android:dividerHeight="0dip"
+            android:fadingEdge="none"
+            android:footerDividersEnabled="false"
+            android:headerDividersEnabled="false"
+            android:listSelector="#00000000"
+            android:paddingTop="4dip"
+            android:showDividers="middle" >
+        </tv.live.bx.ui.PullRefreshListView>
+
+        <LinearLayout
+            android:id="@+id/default_layotu"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/a_bg_color_ffffff"
+            android:orientation="vertical" >
+
+            <com.viewpagerindicator.TabPageIndicator
+                android:id="@+id/indicator"
+                android:layout_width="match_parent"
+                android:layout_height="43dip" />
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/viewPage"
+                android:layout_width="match_parent"
+                android:layout_height="0dip"
+                android:layout_weight="1"
+                android:background="@color/a_bg_backgroup_color" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>

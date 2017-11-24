@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" >
+
+    <RelativeLayout
+        android:id="@+id/anchor_info_layout"
+        android:layout_width="206.66dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:background="@drawable/bg_live_anchor_info_left"
+        android:padding="10dp"
+        android:paddingBottom="8dip" >
+
+        <RelativeLayout
+            android:id="@+id/item_nickname_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2.66dip" >
+
+            <TextView
+                android:id="@+id/fragment_playing_other_anchor_tv_nickname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="sdfsdf"
+                android:textColor="@color/a_text_color_ffffff"
+                android:textSize="@dimen/a_text_size_42" />
+
+            <ImageView
+                android:id="@+id/item_user_level"
+                android:layout_width="30dp"
+                android:layout_height="15dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="5.33dp"
+                android:layout_toRightOf="@id/fragment_playing_other_anchor_tv_nickname"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/user_anchor_1"
+                android:visibility="visible" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/fragment_playing_other_anchor_tv_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/item_nickname_layout"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="4.66dp"
+            android:textColor="@color/a_text_color_999999"
+            android:textSize="@dimen/a_text_size_36"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/fragment_playing_other_anchor_tv_introduction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/item_nickname_layout"
+            android:layout_marginTop="2dip"
+            android:maxLines="2"
+            android:text="sadfsdf"
+            android:textColor="@color/a_text_color_999999"
+            android:textSize="@dimen/a_text_size_36" />
+
+        <ProgressBar
+            android:id="@+id/my_level_progress"
+            style="@style/ProgressBar_Play_Horizontal"
+            android:layout_width="140dip"
+            android:layout_height="5dip"
+            android:layout_below="@+id/fragment_playing_other_anchor_tv_introduction"
+            android:layout_marginRight="10dip"
+            android:layout_marginTop="6dip"
+            android:max="100"
+            android:progress="50" />
+
+        <TextView
+            android:id="@+id/my_info_tv_jine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/my_level_progress"
+            android:layout_marginTop="6dp"
+            android:textColor="@color/a_text_color_999999"
+            android:textSize="@dimen/a_text_size_36" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/my_info_tv_jine"
+            android:gravity="center_vertical" >
+
+            <TextView
+                android:id="@+id/fragment_playing_other_anchor_tv_focus_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/a_text_color_ffe3b2"
+                android:textSize="@dimen/a_text_size_30" />
+
+            <View
+                android:layout_width="1dip"
+                android:layout_height="10dip"
+                android:layout_marginLeft="8dip"
+                android:background="@color/a_bg_color_000000" />
+
+            <TextView
+                android:id="@+id/my_audience_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dip"
+                android:textColor="@color/a_text_color_ffe3b2"
+                android:textSize="@dimen/a_text_size_30" />
+
+            <View
+                android:layout_width="1dip"
+                android:layout_height="10dip"
+                android:layout_marginLeft="8dip"
+                android:background="@color/a_bg_color_000000" />
+
+            <TextView
+                android:id="@+id/my_flower_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dip"
+                android:textColor="@color/a_text_color_ffe3b2"
+                android:textSize="@dimen/a_text_size_30" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/playing_btn_follow"
+        android:layout_width="86.66dip"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/anchor_info_layout"
+        android:layout_alignTop="@id/anchor_info_layout"
+        android:layout_toRightOf="@id/anchor_info_layout"
+        android:background="@drawable/bg_live_anchor_info_right"
+        android:text="@string/focus"
+        android:textColor="@color/a_text_color_ffffff"
+        android:textSize="@dimen/a_text_size_48" />
+
+</RelativeLayout>

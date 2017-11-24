@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <drawable name="transparent_background">#00000000</drawable>
+    <color name="trans">#00000000</color>
+    <color name="blue">#00A0E9</color>
+    <color name="dark_blue">#008FD1</color>
+    <color name="light_blue">#E4EEFA</color>
+    <color name="bg_chat_left">#E3EDF9</color>
+    <color name="bg_chat_right">#A6CCEF</color>
+    <color name="et_edge_blue">#A8CCEE</color>
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+    <color name="bg_light_gray">#F7F8FD</color>
+    <color name="nav_point_gray">#B2B9B2</color>
+    <color name="bg_btn_gray">#B2B2B2</color>
+    <color name="text_gray">#75797A</color>
+    <color name="text_light_gray">#a0a0a0</color>
+    <color name="text_dark_gray">#2E2E2E</color>
+    <color name="text_normal">#535456</color>
+    <color name="lv_divider">#D9D9D9</color>
+    <color name="bg_banner">#00A0EA</color>
+    <color name="edt_input_frame">#d5d6da</color>
+    <color name="menu_divider_gray">#DADADA</color>
+    <color name="edit_text_gray">#CBCBCB</color>
+    <color name="bg_btn_contribution">#E0E8F5</color>
+    <color name="red">#F50000</color>
+    <!-- 列表正在加载文字颜色 -->
+    <color name="event_item_expire_text">#ffaab2bd</color>
+    <color name="divider_horizontal">#e6e6e6</color>
+    <color name="divider_horizontal_e6e6e6">#e6e6e6</color>
+    <color name="divider_horizontal_obvious">#b6b6b6</color>
+    <!-- app背景色 -->
+    <color name="app_background">#f5f5f5</color>
+    <color name="content_text">#ff434a54</color>
+    <!-- 升级对话框颜色 -->
+    <color name="alertdialog_line">#c6c6c6</color>
+    <color name="actionsheet_blue">#037BFF</color>
+    <!-- 确认对话框字体颜色 -->
+    <color name="confirm_dialog_text">#8c8f90</color>
+
+    <color name="text_item_gb">#eaeaea</color>
+
+    <color name="camera_background">#ff353535</color>
+</resources>

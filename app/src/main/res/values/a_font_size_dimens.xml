@@ -1,0 +1,47 @@
+<resources>
+
+    <!-- 栏目文字字体大小 -->
+    <dimen name="layout_title_text_size_big">18sp</dimen>
+    <dimen name="layout_title_text_size_middle">15sp</dimen>
+    <dimen name="layout_title_text_size_small">10.66sp</dimen>
+
+    <!-- 重新定义字体大小 -->
+    <dimen name="a_text_size_158">52.66sp</dimen>
+    <dimen name="a_text_size_120">40sp</dimen>
+    <dimen name="a_text_size_78">26sp</dimen>
+    <dimen name="a_text_size_70">23.33sp</dimen>
+    <dimen name="a_text_size_66">22sp</dimen>
+    <dimen name="a_text_size_65">21.66sp</dimen>
+    <dimen name="a_text_size_62">20.66sp</dimen>
+    <dimen name="a_text_size_60">20sp</dimen>
+    <dimen name="a_text_size_57">19sp</dimen>
+    <dimen name="a_text_size_56">18.66sp</dimen>
+    <dimen name="a_text_size_55">18.33sp</dimen>
+    <dimen name="a_text_size_54">18sp</dimen>
+    <dimen name="a_text_size_52">17.33sp</dimen>
+    <dimen name="a_text_size_51">17sp</dimen>
+    <dimen name="a_text_size_50">16.66sp</dimen>
+    <dimen name="a_text_size_48">16sp</dimen>
+    <dimen name="a_text_size_46">15.33sp</dimen>
+    <dimen name="a_text_size_45">15sp</dimen>
+    <dimen name="a_text_size_44">14.66sp</dimen>
+    <dimen name="a_text_size_42">14sp</dimen>
+    <dimen name="a_text_size_41">13.66sp</dimen>
+    <dimen name="a_text_size_40">13.33sp</dimen>
+    <dimen name="a_text_size_39">13sp</dimen>
+    <dimen name="a_text_size_38">12.66sp</dimen>
+    <dimen name="a_text_size_37">12.33sp</dimen>
+    <dimen name="a_text_size_36">12sp</dimen>
+    <dimen name="a_text_size_35">11.66sp</dimen>
+    <dimen name="a_text_size_34">11.33sp</dimen>
+    <dimen name="a_text_size_33">11sp</dimen>
+    <dimen name="a_text_size_32">10.66sp</dimen>
+    <dimen name="a_text_size_31">10.33sp</dimen>
+    <dimen name="a_text_size_30">10sp</dimen>
+    <dimen name="a_text_size_28">9.33sp</dimen>
+    <dimen name="a_text_size_27">9sp</dimen>
+    <dimen name="a_text_size_25">8.33sp</dimen>
+    <dimen name="a_text_size_24">8sp</dimen>
+    <dimen name="a_text_size_20">6.66sp</dimen>
+
+</resources>

@@ -1,0 +1,161 @@
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+       xmlns:app="http://schemas.android.com/apk/res-auto">
+    <Button
+        android:id="@+id/live_btn_exit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="10dp"
+        android:background="@drawable/btn_exist_selector"/>
+
+    <LinearLayout
+        android:id="@+id/live_buttom_menu_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dip"
+        android:layout_toLeftOf="@id/live_btn_exit">
+
+        <Button
+            android:id="@+id/live_chat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dip"
+            android:layout_marginTop="10dip"
+            android:background="@drawable/btn_talk_foot_selector"/>
+
+        <RelativeLayout
+            android:id="@+id/live_connect_menu_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dip"
+            android:layout_marginTop="10dip"
+            android:visibility="gone">
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/live_connect_anim"
+                android:layout_width="40dip"
+                android:layout_height="40dip"
+                android:visibility="gone"
+                app:lottie_autoPlay="true"
+                app:lottie_fileName="lottie_live_invite.json"
+                app:lottie_loop="true"/>
+            <TextView
+                android:id="@+id/live_connect_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="1"
+                android:textColor="@color/a_text_color_ffffff"
+                android:textSize="@dimen/a_text_size_51"
+                android:visibility="gone"/>
+            <Button
+                android:id="@+id/live_connect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_live_connect_read_selector"
+                android:visibility="visible"/>
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/menu_line_2"
+            android:layout_width="1px"
+            android:layout_height="0dip"
+            android:layout_weight="1"/>
+
+        <FrameLayout
+            android:id="@+id/live_gift_btn_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dip"
+            android:layout_marginTop="10dp">
+
+            <Button
+                android:id="@+id/playing_rl_gift"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_gift_foot_selector"/>
+
+            <ImageView
+                android:id="@+id/live_gift_unread"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top|right|end"
+                android:src="@drawable/icon_44"
+                android:visibility="gone"/>
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/live_conversation_message_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dip"
+            android:layout_marginTop="10dip">
+
+            <Button
+                android:id="@+id/live_conversation_message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/btn_chat_message_selector"/>
+
+            <ImageView
+                android:id="@+id/live_conversation_message_unread"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top|right|end"
+                android:src="@drawable/icon_44"
+                android:visibility="gone"/>
+        </FrameLayout>
+
+
+        <Button
+            android:id="@+id/live_share"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dip"
+            android:layout_marginTop="10dip"
+            android:background="@drawable/btn_share_selector"
+            android:visibility="gone"/>
+
+
+        <Button
+            android:id="@+id/live_switch_srceen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dip"
+            android:layout_marginTop="10dip"
+            android:background="@drawable/btn_screen_selector"
+            android:visibility="gone"/>
+
+        <Button
+            android:id="@+id/live_bottom_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dip"
+            android:background="@drawable/btn_live_bottom_down_selector"
+            android:visibility="gone"/>
+
+        <Button
+            android:id="@+id/live_rank"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dip"
+            android:layout_marginTop="10dip"
+            android:background="@drawable/btn_gift_foot_selector"
+            android:visibility="gone"/>
+
+        <ImageView
+            android:id="@+id/gifts_bottom_info_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dip"
+            android:layout_marginTop="10dip"
+            android:background="@drawable/btn_flower_foot_selector"
+            android:contentDescription="@string/app_name"
+            android:visibility="gone">
+        </ImageView>
+
+    </LinearLayout>
+</merge>

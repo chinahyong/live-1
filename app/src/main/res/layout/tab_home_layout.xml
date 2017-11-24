@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@android:id/title"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:background="@drawable/btn_icon_triangle_selector"
+    android:focusableInTouchMode="true"
+    android:gravity="center"
+    android:paddingLeft="10.66dip"
+    android:paddingRight="10.66dip"
+    android:text="@string/rank_star"
+    android:textColor="@color/a_text_c4bdb2_ffffff_selector"
+    android:textSize="@dimen/a_text_size_42"/>
+

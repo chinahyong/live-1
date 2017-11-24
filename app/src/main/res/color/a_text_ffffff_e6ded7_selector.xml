@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:color="@color/a_bg_color_e6ded7" android:state_selected="true"></item>
+    <item android:color="@color/a_bg_color_e6ded7" android:state_pressed="true"></item>
+    <item android:color="@color/a_bg_color_e6ded7" android:state_checked="true"></item>
+    <item android:color="@color/a_bg_color_e6ded7" android:state_enabled="false"></item>
+    <item android:color="@color/a_bg_color_333333" android:state_enabled="true"></item>
+    <item android:color="@color/a_bg_color_333333" android:state_checked="false"></item>
+    <item android:color="@color/a_bg_color_333333"></item>
+
+</selector>

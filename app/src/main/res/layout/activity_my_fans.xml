@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/a_bg_backgroup_color"
+    android:orientation="vertical"
+    tools:context="tv.live.bx.activities.UserFansActivity" >
+
+    <include layout="@layout/a_common_top_bar" />
+
+    <com.lonzh.lib.widgets.XListView
+        android:id="@+id/my_fans_xlv"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:divider="@null"
+        android:listSelector="@color/trans" >
+    </com.lonzh.lib.widgets.XListView>
+
+</LinearLayout>

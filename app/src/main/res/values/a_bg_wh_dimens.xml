@@ -1,0 +1,10 @@
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <!-- 底部按钮背景高度 -->
+	<dimen name="a_button_height_bg_144">48dp</dimen>
+	<!-- 礼物背景底部栏 高度 -->
+	<dimen name="a_button_gift_head_bg_108">36dp</dimen>
+	<dimen name="a_button_gift_height_bg_135">45dp</dimen>
+	<dimen name="a_button_gift_height_bg_160">53.33dp</dimen>
+</resources>

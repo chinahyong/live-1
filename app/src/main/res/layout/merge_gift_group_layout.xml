@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:app="http://schemas.android.com/apk/res-auto"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dip"
+        android:layout_marginTop="3dip">
+
+        <RelativeLayout
+            android:id="@+id/item_user_layout"
+            android:layout_width="173.33dip"
+            android:layout_height="40dip"
+            android:layout_marginLeft="20dip"
+            android:layout_marginTop="22dip"
+            android:background="@drawable/bg_gift_effect"
+            android:gravity="center_vertical"
+            android:paddingLeft="28dip">
+
+            <TextView
+                android:id="@+id/item_user_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:shadowColor="@color/a_bg_color_000000"
+                android:shadowDy="3"
+                android:shadowRadius="5"
+                android:text="@string/live_status_timer"
+                android:textColor="@color/a_text_color_ffffff"
+                android:textSize="@dimen/a_text_size_36"
+                android:textStyle="bold"
+                android:visibility="visible"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/item_user_name"
+                android:layout_marginTop="4dip">
+
+                <TextView
+                    android:id="@+id/item_user_gift"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:shadowColor="@color/a_bg_color_000000"
+                    android:shadowDy="3"
+                    android:shadowRadius="5"
+                    android:text="@string/live_audience_num"
+                    android:textColor="@color/a_text_color_ffff00"
+                    android:textSize="@dimen/a_text_size_36"/>
+
+                <TextView
+                    android:id="@+id/item_user_gift_num"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:shadowColor="@color/a_bg_color_000000"
+                    android:shadowDy="3"
+                    android:shadowRadius="5"
+                    android:text="@string/live_audience_num"
+                    android:textColor="@color/a_text_color_ffff00"
+                    android:textSize="@dimen/a_text_size_36"
+                    android:textStyle="bold"
+                    android:visibility="gone"/>
+            </LinearLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/item_ll_user_gift_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/item_user_layout"
+            android:layout_marginLeft="5dip"
+            android:layout_toRightOf="@id/item_user_layout">
+
+            <tv.live.bx.ui.StrokeGradientTextView
+                android:id="@+id/item_user_gift_group_x"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dip"
+                android:text=" X "
+                android:textSize="@dimen/a_text_size_31"
+                android:textStyle="bold"
+                app:strokeTextColor="@color/a_text_color_8b4f02"/>
+
+            <tv.live.bx.ui.StrokeGradientTextView
+                android:id="@+id/item_user_gift_group"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/item_user_gift_group_x"
+                android:text="1"
+                android:textSize="@dimen/a_text_size_70"
+                android:textStyle="bold"
+                android:visibility="gone"
+                app:strokeTextColor="@color/a_text_color_8b4f02"/>
+
+            <tv.live.bx.ui.AutoVerticalLinearLayout
+                android:id="@+id/item_user_gift_group_ll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/item_user_gift_group"
+                android:visibility="gone"
+                app:autoVerticalStrokeTextColor="@color/a_text_color_8b4f02"
+                app:autoVerticalTextSize="@dimen/a_text_size_70"
+                app:autoVerticalTextStyle="1"/>
+
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/item_user_photo"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="22dip"
+            android:background="@drawable/shape_circle_ffffff"
+            android:contentDescription="@string/app_name"
+            android:padding="2dip"
+            android:scaleType="centerInside"
+            android:src="@drawable/bg_user_default"/>
+
+        <ImageView
+            android:id="@+id/item_gift_img"
+            android:layout_width="50dip"
+            android:layout_height="50dp"
+            android:layout_alignRight="@id/item_user_layout"
+            android:layout_centerVertical="true"
+            android:src="@drawable/bg_user_default"
+            android:visibility="invisible"/>
+    </RelativeLayout>
+
+</FrameLayout>

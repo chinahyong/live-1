@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/item_iv_photo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/masking_item_text_bg"
+        android:paddingBottom="7dip"
+        android:paddingLeft="8dip"
+        android:paddingRight="8dip"
+        android:paddingTop="7dp">
+        <TextView
+            android:id="@+id/item_tv_announcement"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="3dip"
+            android:ellipsize="end"
+            android:lines="1"
+            android:textColor="@color/a_text_color_ffffff"
+            android:textSize="@dimen/a_text_size_36"
+            android:textStyle="bold"/>
+
+
+        <TextView
+            android:id="@+id/item_tv_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_gravity="center_vertical"
+            android:drawablePadding="4dp"
+            android:drawableLeft="@drawable/icon_location_recommend"
+            android:gravity="center"
+            android:text="@string/location_default"
+            android:textColor="@color/a_text_color_ffffff"
+            android:textSize="@dimen/a_text_size_30"/>
+
+        <TextView
+            android:id="@+id/item_tv_online_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:lines="1"
+            android:textColor="@color/a_text_color_ffffff"
+            android:textSize="@dimen/a_text_size_30"/>
+
+
+    </RelativeLayout>
+</RelativeLayout>

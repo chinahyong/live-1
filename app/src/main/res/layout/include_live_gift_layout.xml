@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+       xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- 赠送礼物 布局开始 -->
+
+    <RelativeLayout
+        android:id="@+id/SendGifts"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:id="@+id/sendlayout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/live_gift_layout_width"
+            android:layout_alignParentBottom="true"
+            android:background="@color/a_bg_color_cc000000"
+            android:clickable="true"
+            android:orientation="vertical">
+
+
+            <RelativeLayout
+                android:id="@+id/gift_title"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/a_button_gift_head_bg_108">
+
+                <LinearLayout
+                    android:id="@+id/gift_switch_layout"
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:padding="2dip">
+
+                    <Button
+                        android:id="@+id/gift_switch_general"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:checked="true"
+                        android:gravity="center"
+                        android:text="@string/gift_general_text"
+                        android:textColor="@color/a_text_dcdcdc_ffffff_selector"
+                        android:textSize="@dimen/a_text_size_45"/>
+
+                    <FrameLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <FrameLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center">
+
+                            <Button
+                                android:id="@+id/gift_switch_guard"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@null"
+                                android:padding="4dip"
+                                android:text="@string/gift_guard_text"
+                                android:textColor="@color/a_text_dcdcdc_ffffff_selector"
+                                android:textSize="@dimen/a_text_size_45"/>
+
+                            <ImageView
+                                android:id="@+id/gift_switch_guard_unread"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="top|right|end"
+                                android:src="@drawable/icon_44"
+                                android:visibility="gone"/>
+                        </FrameLayout>
+
+                    </FrameLayout>
+                    <Button
+                        android:id="@+id/gift_switch_guard2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:checked="true"
+                        android:gravity="center"
+                        android:text="@string/gift_guard_2_text"
+                        android:textColor="@color/a_text_dcdcdc_ffffff_selector"
+                        android:textSize="@dimen/a_text_size_45"
+                        android:visibility="invisible"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="180dp"
+                    android:layout_height="2dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_below="@+id/gift_switch_layout"
+                    android:orientation="horizontal">
+
+                    <View
+                        android:id="@+id/gift_switch_general_view"
+                        android:layout_width="0dp"
+                        android:layout_height="2dp"
+                        android:layout_gravity="bottom"
+                        android:layout_weight="1"
+                        android:background="@color/a_bg_color_4bbabc"
+                        android:visibility="visible"/>
+
+                    <View
+                        android:id="@+id/gift_switch_guard_view"
+                        android:layout_width="0dp"
+                        android:layout_height="2dp"
+                        android:layout_gravity="bottom"
+                        android:layout_weight="1"
+                        android:background="@color/a_bg_color_4bbabc"
+                        android:visibility="invisible"/>
+
+                    <View
+                        android:id="@+id/gift_switch_guard2_view"
+                        android:layout_width="0dp"
+                        android:layout_height="2dp"
+                        android:layout_gravity="bottom"
+                        android:layout_weight="1"
+                        android:background="@color/a_bg_color_4bbabc"
+                        android:visibility="invisible"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_user_balance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="6dp"
+                        android:text="充值:"
+                        android:textColor="@color/a_text_color_da500e"
+                        android:textSize="@dimen/a_text_size_42"/>
+
+                    <TextView
+                        android:id="@+id/user_balance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0.0"
+                        android:textColor="@color/a_text_color_ffffff"
+                        android:textSize="@dimen/a_text_size_42"/>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:src="@drawable/ic_icon_live_recharge_arrow_right"/>
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/gift_recharge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="12.33dp"
+                    android:background="@drawable/bg_gift_rechange_selector"
+                    android:text="@string/recharge"
+                    android:textColor="@color/a_text_color_ffffff"
+                    android:textSize="@dimen/a_text_size_45"
+                    android:visibility="gone"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/ll_playing_gifts"
+                android:layout_width="match_parent"
+                android:layout_height="0dip"
+                android:layout_below="@id/gift_title"
+                android:layout_weight="1">
+
+                <LinearLayout
+                    android:id="@+id/playing_gifts_general"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <android.support.v4.view.ViewPager
+                        android:id="@+id/playing_gifts_bottom_pager"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dip"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:persistentDrawingCache="animation"/>
+
+                    <com.viewpagerindicator.IconPageIndicator
+                        android:id="@+id/indicator"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        app:LLmarginLeft="4dp"
+                        app:LLmarginRight="4dp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/playing_gifts_guard"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:visibility="invisible">
+
+                    <android.support.v4.view.ViewPager
+                        android:id="@+id/playing_gifts_guard_pager"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dip"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:persistentDrawingCache="animation"/>
+
+                    <com.viewpagerindicator.IconPageIndicator
+                        android:id="@+id/indicator_guard"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        app:LLmarginLeft="4dp"
+                        app:LLmarginRight="4dp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/playing_gifts_guard_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:visibility="invisible">
+
+                    <android.support.v4.view.ViewPager
+                        android:id="@+id/playing_gifts_guard_pager_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dip"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:persistentDrawingCache="animation"/>
+
+                    <com.viewpagerindicator.IconPageIndicator
+                        android:id="@+id/indicator_guard_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        app:LLmarginLeft="4dp"
+                        app:LLmarginRight="4dp"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/playing_gifts_guard_tip"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true"
+                    android:background="@color/a_bg_color_99000000"
+                    android:clickable="true"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:orientation="vertical">
+
+                        <TextView android:layout_width="wrap_content"
+                                  android:layout_height="wrap_content"
+                                  android:layout_gravity="center_horizontal"
+                                  android:lineSpacingExtra="5dip"
+                                  android:text="@string/live_guard_gift_send_text"
+                                  android:textColor="@color/a_text_color_ffffff"
+                                  android:textSize="@dimen/a_text_size_45"/>
+
+                        <Button
+                            android:id="@+id/playing_gifts_guard_tip_btn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="15dip"
+                            android:background="@drawable/btn_guard_open"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/playing_gifts_num"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <android.support.v4.view.ViewPager
+                        android:id="@+id/playing_gifts_num_pager"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dip"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:persistentDrawingCache="animation"/>
+
+                    <com.viewpagerindicator.IconPageIndicator
+                        android:id="@+id/indicator_num"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="3.33dip"
+                        android:visibility="gone"
+                        app:LLmarginLeft="4dp"
+                        app:LLmarginRight="4dp"/>
+                </LinearLayout>
+            </RelativeLayout>
+
+            <!-- 赠送礼物底部 -->
+
+            <RelativeLayout
+                android:id="@+id/ll_send"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/a_button_gift_height_bg_135"
+                android:layout_below="@+id/ll_playing_gifts"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp">
+
+                <ImageButton android:id="@+id/live_gift_ibtn_shop_bag"
+                             android:layout_width="wrap_content"
+                             android:layout_height="wrap_content"
+                             android:layout_centerVertical="true"
+                             android:background="@android:color/transparent"
+                             android:paddingBottom="5dp"
+                             android:paddingTop="5dp"
+                             android:src="@drawable/icon_more_shangchen"
+                             android:visibility="gone"/>
+
+                <ImageView
+                    android:id="@+id/live_gift_cur_iv"
+                    android:layout_width="33dp"
+                    android:layout_height="33dp"
+                    android:layout_centerInParent="true"
+                    android:layout_toLeftOf="@+id/gift_num_cur_select"
+                    android:padding="6dip"/>
+
+                <Button
+                    android:id="@+id/gift_num_cur_select"
+                    android:layout_width="67dp"
+                    android:layout_height="33dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toLeftOf="@+id/playing_gifts_bottom_btn_send"
+                    android:background="@drawable/sp_gift_send_border"
+                    android:drawablePadding="4dp"
+                    android:drawableRight="@drawable/icon_gift_more_right"
+                    android:gravity="center"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:text="1"
+                    android:textColor="@color/a_text_color_ffffff"
+                    android:textSize="@dimen/a_text_size_48"/>
+
+                <Button
+                    android:id="@+id/playing_gifts_bottom_btn_send"
+                    android:layout_width="67dp"
+                    android:layout_height="33dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/btn_bg_gift_send_selector"
+                    android:enabled="false"
+                    android:text="@string/send_btn_gifts"
+                    android:textColor="@color/a_text_color_ffffff"
+                    android:textSize="@dimen/a_text_size_51"
+                    android:textStyle="bold"/>
+
+            </RelativeLayout>
+        </LinearLayout>
+    </RelativeLayout>
+    <!-- 赠送礼物布局结束 -->
+
+</merge>

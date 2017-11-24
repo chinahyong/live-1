@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/a_bg_backgroup_color"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/message_support_layout"
+        android:layout_width="match_parent"
+        android:layout_height="57.33dip"
+        android:background="@drawable/a_bg_ffffff_f0f0f0_selector"
+        android:paddingLeft="15dip"
+        android:paddingRight="15dip" >
+
+        <ImageView
+            android:id="@+id/message_support_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:scaleType="center"
+            android:src="@drawable/icon_good" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="12dip"
+            android:layout_toRightOf="@id/message_support_title"
+            android:text="@string/message_me_support"
+            android:textColor="@color/a_text_color_333333"
+            android:textSize="@dimen/a_text_size_42" />
+
+        <TextView
+            android:id="@+id/message_support"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/bg_message_num"
+            android:gravity="center"
+            android:text="1"
+            android:textColor="@color/a_text_color_ffffff"
+            android:textSize="@dimen/a_text_size_30"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <View style="@style/divider_horizontal" />
+
+    <RelativeLayout
+        android:id="@+id/message_comment_layout"
+        android:layout_width="match_parent"
+        android:layout_height="57.33dip"
+        android:background="@drawable/a_bg_ffffff_f0f0f0_selector"
+        android:paddingLeft="15dip"
+        android:paddingRight="15dip" >
+
+        <ImageView
+            android:id="@+id/message_comment_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:scaleType="center"
+            android:src="@drawable/icon_comment" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="12dip"
+            android:layout_toRightOf="@id/message_comment_title"
+            android:text="@string/message_me_comment"
+            android:textColor="@color/a_text_color_333333"
+            android:textSize="@dimen/a_text_size_42" />
+
+        <TextView
+            android:id="@+id/message_comment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/bg_message_num"
+            android:gravity="center"
+            android:text="1"
+            android:textColor="@color/a_text_color_ffffff"
+            android:textSize="@dimen/a_text_size_30"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <View style="@style/divider_horizontal" />
+
+    <RelativeLayout
+        android:id="@+id/message_focus_layout"
+        android:layout_width="match_parent"
+        android:layout_height="57.33dip"
+        android:layout_marginBottom="16.66dip"
+        android:background="@drawable/a_bg_ffffff_f0f0f0_selector"
+        android:paddingLeft="15dip"
+        android:paddingRight="15dip" >
+
+        <ImageView
+            android:id="@+id/message_focus_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:scaleType="center"
+            android:src="@drawable/icon_foucs" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="12dip"
+            android:layout_toRightOf="@id/message_focus_title"
+            android:text="@string/message_me_focus"
+            android:textColor="@color/a_text_color_333333"
+            android:textSize="@dimen/a_text_size_42" />
+
+        <TextView
+            android:id="@+id/message_focus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/bg_message_num"
+            android:gravity="center"
+            android:text="1"
+            android:textColor="@color/a_text_color_ffffff"
+            android:textSize="@dimen/a_text_size_30"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <View
+        style="@style/divider_horizontal"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:id="@+id/message_task_layout"
+        android:layout_width="match_parent"
+        android:layout_height="57.33dip"
+        android:layout_marginBottom="16.66dip"
+        android:background="@drawable/a_bg_ffffff_f0f0f0_selector"
+        android:paddingLeft="15dip"
+        android:paddingRight="15dip"
+        android:visibility="gone" >
+
+        <ImageView
+            android:id="@+id/message_task_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:scaleType="center"
+            android:src="@drawable/icon_task" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="12dip"
+            android:layout_toRightOf="@id/message_task_title"
+            android:text="@string/message_me_task"
+            android:textColor="@color/a_text_color_333333"
+            android:textSize="@dimen/a_text_size_42" />
+
+        <TextView
+            android:id="@+id/message_task"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/bg_message_num"
+            android:gravity="center"
+            android:text="1"
+            android:textColor="@color/a_text_color_ffffff"
+            android:textSize="@dimen/a_text_size_30"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+</LinearLayout>

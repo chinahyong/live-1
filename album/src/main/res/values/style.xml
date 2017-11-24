@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Copyright 2017 Yan Zhenjie
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+<resources>
+
+    <style name="AlbumAppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
+
+    <style name="AlbumPopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
+
+    <!-- MatchParent -->
+
+    <style name="AlbumMatchParent">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <!-- WrapContent -->
+
+    <style name="AlbumWrapContent">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="AlbumWrapContent.WidthMatchParent">
+        <item name="android:layout_width">match_parent</item>
+    </style>
+
+    <style name="AlbumToolbar">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">?attr/actionBarSize</item>
+        <item name="android:textColorPrimary">@color/a_font_color_333333</item>
+    </style>
+
+    <style name="AlbumToolbar.PopupTheme">
+        <item name="android:textColorPrimary">@color/a_font_color_333333</item>
+    </style>
+
+    <!-- CheckBox -->
+
+    <style name="AlbumCheckBox" parent="Widget.AppCompat.CompoundButton.CheckBox"/>
+
+    <style name="AlbumCheckBox.WrapContent">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+
+    </style>
+
+    <style name="AlbumDialogStyle" parent="Theme.AppCompat.Light.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+
+    <style name="AlbumDialogStyle.Folder">
+        <item name="android:windowBackground">@null</item>
+    </style>
+
+    <style name="AlbumDialogStyle.Preview">
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:windowBackground">@null</item>
+    </style>
+
+    <style name="AlbumDialogStyle.Wait">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <item name="android:windowSoftInputMode">stateHidden</item>
+    </style>
+
+    <!-- Button -->
+    <style name="AlbumButtonText" parent="Widget.AppCompat.Button.ButtonBar.AlertDialog">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+</resources>

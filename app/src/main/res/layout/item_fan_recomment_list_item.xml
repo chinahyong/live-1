@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" >
+
+    <LinearLayout
+        android:layout_width="75dip"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="12dip"
+        android:background="@drawable/a_bg_f6f1ea_e6ded7_selector"
+        android:clickable="true"
+        android:gravity="center_horizontal"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:id="@+id/item_fanquan_logo"
+            android:layout_width="match_parent"
+            android:layout_height="75dip"
+            android:scaleType="centerCrop"
+            android:contentDescription="@string/app_name" >
+        </ImageView>
+
+        <TextView
+            android:id="@+id/item_fanquan_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dip"
+            android:ellipsize="end"
+            android:gravity="center_horizontal"
+            android:maxLines="1"
+            android:text="神码饭圈"
+            android:textColor="@color/a_text_color_999999"
+            android:textSize="@dimen/a_text_size_36" >
+        </TextView>
+
+        <TextView
+            android:id="@+id/item_fanquan_people"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dip"
+            android:text="神码饭圈"
+            android:textColor="@color/a_text_color_999999"
+            android:textSize="@dimen/a_text_size_30"
+            android:visibility="gone" >
+        </TextView>
+
+        <ImageView
+            android:id="@+id/item_fanquan_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dip"
+            android:src="@drawable/btn_add_nor"
+            android:visibility="gone" />
+    </LinearLayout>
+
+</LinearLayout>

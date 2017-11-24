@@ -1,0 +1,134 @@
+{
+    "w": -1,
+    "h": -1,
+    "marginTop": 0,
+    "duration": 7000,
+    "layers": [
+        {
+            "id": 0,
+            "type": "IMAGE",
+            "value": "images/bg_bottom1.png",
+            "w": -1,
+            "h": -1,
+            "startX": 0,
+            "startY": 0,
+            "startShowTime": 1000,
+            "loop": false,
+            "duration": 125,
+            "endVisible": false,
+            "actions": [ ]
+        },
+        {
+            "id": 1,
+            "type": "IMAGE",
+            "value": "images/bg_bottom2.png",
+            "w": -1,
+            "h": -1,
+            "startX": 0,
+            "startY": 0,
+            "startShowTime": 1125,
+            "loop": false,
+            "duration": 125,
+            "endVisible": false,
+            "actions": [ ]
+        },
+        {
+            "id": 2,
+            "type": "IMAGE",
+            "value": "images/bg_bottom3.png",
+            "w": -1,
+            "h": -1,
+            "startX": 0,
+            "startY": 0,
+            "startShowTime": 1250,
+            "loop": false,
+            "duration": 6375,
+            "endVisible": false,
+            "actions": [ ]
+        },
+        {
+            "id": 3,
+            "type": "IMAGE",
+            "value": "images/bg_center.png",
+            "w": -1,
+            "h": -1,
+            "startX": 0,
+            "startY": 0,
+            "startShowTime": 500,
+            "loop": false,
+            "duration": 6625,
+            "endVisible": false,
+            "actions": [
+                {
+                    "type": "scale",
+                    "keyframes": [
+                        {
+                            "fraction": 0,
+                            "value": 0.25
+                        },
+                        {
+                            "fraction": 1,
+                            "value": 1
+                        }
+                    ],
+                    "startTime": 500,
+                    "duration": 375
+                },
+                {
+                    "type": "trans",
+                    "keyframesX": [
+                        {
+                            "fraction": 0,
+                            "value": -640
+                        },
+                        {
+                            "fraction": 0.6,
+                            "value": 0
+                        },
+                        {
+                            "fraction": 0.8,
+                            "value": 2
+                        },
+                        {
+                            "fraction": 1,
+                            "value": 0
+                        }
+                    ],
+                    "keyframesY": [
+                        {
+                            "fraction": 0,
+                            "value": -751
+                        },
+                        {
+                            "fraction": 0.6,
+                            "value": 0
+                        },
+                        {
+                            "fraction": 0.8,
+                            "value": 3
+                        },
+                        {
+                            "fraction": 1,
+                            "value": 0
+                        }
+                    ],
+                    "startTime": 500,
+                    "duration": 625
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "type": "GIF",
+            "value": "images/bg_top.gif",
+            "w": -1,
+            "h": -1,
+            "startX": 0,
+            "startY": 0,
+            "startShowTime": 0,
+            "loop": false,
+            "duration": 7000,
+            "endVisible": true
+        }
+    ]
+}

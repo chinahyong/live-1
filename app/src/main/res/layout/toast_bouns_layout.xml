@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/bonus_toast_content"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentTop="true"
+    android:layout_centerHorizontal="true"
+    android:background="@drawable/ic_bg_toast"
+    android:gravity="center"
+    android:maxWidth="212dip"
+    android:paddingLeft="5dip"
+    android:paddingRight="5dip"
+    android:text="@string/live_gift_bonus_toast"
+    android:textColor="@color/a_text_color_ffffff"
+    android:textSize="@dimen/a_text_size_36"/>

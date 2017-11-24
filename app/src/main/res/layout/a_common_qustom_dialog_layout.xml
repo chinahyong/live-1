@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+    <LinearLayout
+        android:id="@+id/parentPanel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/a_common_base_dialog_bg"
+        android:orientation="vertical"
+        android:paddingBottom="10dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="30dp" >
+
+        <LinearLayout
+            android:id="@+id/contentPanel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:paddingBottom="34.67dp"
+            android:paddingLeft="13.34dp"
+            android:paddingRight="13.34dp"
+            android:paddingTop="26.67dp" >
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="none" >
+
+                <TextView
+                    android:id="@+id/message"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textColor="@color/content_text"
+                    android:textSize="18sp" />
+            </ScrollView>
+        </LinearLayout>
+
+        <ScrollView
+            android:id="@+id/customPanel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingBottom="26.67dp"
+            android:paddingLeft="13.34dp"
+            android:paddingRight="13.34dp"
+            android:paddingTop="26.67dp"
+            android:scrollbars="none"
+            android:visibility="gone" >
+        </ScrollView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/negative"
+                style="@style/btn_negative"
+                android:layout_width="0dp"
+                android:layout_height="46.67dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/positive"
+                style="@style/btn_send_style"
+                android:layout_width="0dp"
+                android:layout_height="46.67dp"
+                android:layout_weight="1"
+                android:visibility="gone" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/a_common_ic_dialog_alert" />
+
+</RelativeLayout>

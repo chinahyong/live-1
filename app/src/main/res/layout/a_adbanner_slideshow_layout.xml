@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <FrameLayout
+        android:id="@+id/fl_home_page"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_gravity="bottom"
+            android:gravity="bottom"
+            android:orientation="vertical"
+            android:visibility="gone" >
+
+            <TextView
+                android:id="@+id/iv_bottomNavPoint"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#90000000"
+                android:ellipsize="end"
+                android:focusable="true"
+                android:gravity="left|center_vertical"
+                android:maxLength="15"
+                android:paddingLeft="25dp"
+                android:singleLine="true"
+                android:textColor="#ffffff"
+                android:textSize="16sp" />
+        </RelativeLayout>
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/dotLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dip"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,74 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/cameraPreview_relative"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/a_bg_color_f0f0f0">
+    <!-- 七牛推流UI -->
+    <com.pili.pldroid.streaming.widget.AspectFrameLayout
+        android:id="@+id/cameraPreview_afl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:background="@color/a_bg_color_000000"
+        android:visibility="gone">
+        <include layout="@layout/camera_focus_indicator"/>
+    </com.pili.pldroid.streaming.widget.AspectFrameLayout>
+    <!-- 腾讯推流UI -->
+    <com.tencent.rtmp.ui.TXCloudVideoView
+        android:id="@+id/video_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"/>
+
+    <RelativeLayout
+        android:id="@+id/live_watermark_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="60.66dp">
+
+        <TextView
+            android:id="@+id/playing_activity_tv_uid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="8dp"
+            android:background="@drawable/bg_live_uid"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dip"
+            android:shadowColor="@color/a_text_color_001826"
+            android:shadowDy="3"
+            android:shadowRadius="3"
+            android:text="星光号：2343453"
+            android:textColor="@color/a_text_color_99ffffff"
+            android:textSize="@dimen/a_text_size_34"/>
+
+        <TextView
+            android:id="@+id/playing_activity_tv_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/playing_activity_tv_uid"
+            android:layout_marginRight="8dp"
+            android:shadowColor="@color/a_text_color_001826"
+            android:shadowDy="3"
+            android:shadowRadius="3"
+            android:text="2016.11.29"
+            android:visibility="gone"
+            android:textColor="@color/a_text_color_99ffffff"
+            android:textSize="@dimen/a_text_size_34"/>
+    </RelativeLayout>
+
+    <tv.live.bx.ui.FavorLayout
+        android:id="@+id/favorLayout"
+        android:layout_width="100dp"
+        android:layout_height="400dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="50dip"
+        android:layout_marginRight="50dp"
+        android:background="@color/trans"/>
+
+    <include layout="@layout/include_live_play_control_layout"/>
+
+</RelativeLayout>

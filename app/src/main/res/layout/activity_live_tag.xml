@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/a_bg_color_f0f0f0"
+              android:orientation="vertical">
+
+    <include layout="@layout/a_common_top_bar"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/a_bg_color_ffffff">
+
+        <include
+            layout="@layout/a_common_loadingprogress_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="gone"/>
+
+        <com.handmark.pulltorefresh.library.PullToRefreshHeaderGridView
+            android:id="@+id/live_tag_listview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="14dp"
+            android:layout_marginRight="14dp"
+            android:fadingEdge="none"
+            android:fastScrollEnabled="false"
+            android:footerDividersEnabled="false"
+            android:headerDividersEnabled="false"
+            android:horizontalSpacing="14.66dp"
+            android:listSelector="@color/trans"
+            android:numColumns="4"
+            android:scrollbarStyle="outsideOverlay"
+            android:smoothScrollbar="true"
+            android:stretchMode="columnWidth"
+            android:verticalSpacing="10dp">
+        </com.handmark.pulltorefresh.library.PullToRefreshHeaderGridView>
+    </RelativeLayout>
+</LinearLayout>

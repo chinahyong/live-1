@@ -1,0 +1,54 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:vpitab="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/layout_top_title_bg_height"
+        android:background="@color/a_bg_top_bar_color">
+
+        <ImageView
+            android:id="@+id/live_bar_search_btn"
+            android:layout_width="@dimen/layout_top_title_bg_height"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:clickable="true"
+            android:contentDescription="@string/app_name"
+            android:scaleType="centerInside"
+            android:src="@drawable/btn_icon_search_selector"
+            android:visibility="gone"/>
+
+        <com.viewpagerindicator.TabPageIndicator
+            android:id="@+id/main_live_tabs"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="16.66dp"
+            android:layout_marginRight="16.66dp"
+            android:layout_toLeftOf="@+id/rechargeBtn"
+            android:layout_toRightOf="@+id/live_bar_search_btn"
+            android:gravity="center_vertical"
+            vpitab:selectedTextSize="@dimen/a_text_size_48"/>
+
+        <ImageView
+            android:id="@+id/rechargeBtn"
+            android:layout_width="@dimen/layout_top_title_bg_height"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:contentDescription="@string/app_name"
+            android:scaleType="centerInside"
+            android:src="@drawable/btn_rank_selector"
+            android:visibility="gone"/>
+
+    </RelativeLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/live_frame_content_viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/a_bg_backgroup_color"/>
+
+</LinearLayout>

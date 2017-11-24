@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_mount_preview"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="tv.live.bx.activities.MountPreviewActivity"
+    android:clickable="true">
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bg_mount_preview"/>
+
+    <include
+        android:id="@+id/item_user_entry_layout"
+        layout="@layout/merge_live_user_entry_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="220dp"
+        android:layout_alignParentBottom="true"
+        android:visibility="invisible"/>
+
+
+    <com.gj.effect.GJEffectView
+        android:id="@+id/live_gift_effect"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"/>
+
+</RelativeLayout>

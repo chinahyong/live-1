@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/layout_buttom_bg_height"
+                android:background="@color/a_bg_color_f9f9f9">
+
+    <RelativeLayout
+        android:id="@+id/icon_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true">
+
+        <ImageView
+            android:id="@android:id/icon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/btn_user_selector"/>
+
+        <TextView
+            android:id="@android:id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@android:id/icon"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="2dp"
+            android:textColor="@color/a_text_4bbabc_999999_selector"
+            android:textSize="10sp"/>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/pop_number"
+        android:layout_width="7dp"
+        android:layout_height="7dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="1dip"
+        android:layout_toRightOf="@id/icon_layout"
+        android:background="@drawable/icon_44"
+        android:gravity="center"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/a_text_size_20"
+        android:visibility="gone"/>
+
+</RelativeLayout>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tv.live.bx.ui.ListFooterLoadView xmlns:android="http://schemas.android.com/apk/res/android"
+                                  android:layout_width="match_parent"
+                                  android:layout_height="wrap_content"
+                                  android:background="#00000000">
+
+    <FrameLayout
+        android:id="@+id/list_footer_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#00000000">
+
+        <LinearLayout
+            android:id="@+id/list_footer_loading"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/list_footer_loader_view_height"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:visibility="invisible">
+
+            <ImageView
+                android:id="@+id/list_footer_loading_img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/a_common_progress_circle"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:text="正在加载..."
+                android:textColor="@color/event_item_expire_text"
+                android:textSize="15dp"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/list_footer_no_more"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/list_footer_loader_view_height"
+            android:gravity="center"
+            android:text="没有更多数据"
+            android:textColor="@color/event_item_expire_text"
+            android:textSize="15dp"
+            android:visibility="invisible"/>
+
+        <TextView
+            android:id="@+id/list_footer_failed"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/list_footer_loader_view_height"
+            android:gravity="center"
+            android:text="加载失败，点击重试"
+            android:textColor="@color/event_item_expire_text"
+            android:textSize="15dp"
+            android:visibility="invisible"/>
+    </FrameLayout>
+
+
+</tv.live.bx.ui.ListFooterLoadView>

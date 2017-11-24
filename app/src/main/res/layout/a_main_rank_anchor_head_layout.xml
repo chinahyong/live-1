@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/list_head"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dip"
+        android:layout_marginRight="20dip"
+        android:layout_marginTop="10dip"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <ImageView
+                android:id="@+id/top2_image"
+                android:layout_width="@dimen/rank_head_top2_image_width"
+                android:layout_height="@dimen/rank_head_top2_image_width"
+                android:scaleType="centerCrop"
+                android:src="@drawable/bg_user_default" />
+
+            <ImageView
+                android:layout_width="@dimen/rank_head_top2_image_width"
+                android:layout_height="@dimen/rank_head_top2_image_width"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/user_top_bg_small" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="0dip"
+            android:layout_height="1dp"
+            android:layout_weight="1" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <ImageView
+                android:id="@+id/top1_image"
+                android:layout_width="@dimen/rank_head_top1_image_width_2"
+                android:layout_height="@dimen/rank_head_top1_image_width_2"
+                android:layout_centerInParent="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/bg_user_default" />
+
+            <ImageView
+                android:layout_width="@dimen/rank_head_top1_image_width"
+                android:layout_height="@dimen/rank_head_top1_image_width"
+                android:scaleType="centerCrop"
+                android:src="@drawable/user_top_bg_big" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="0dip"
+            android:layout_height="1dp"
+            android:layout_weight="1" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <ImageView
+                android:id="@+id/top3_image"
+                android:layout_width="@dimen/rank_head_top2_image_width"
+                android:layout_height="@dimen/rank_head_top2_image_width"
+                android:scaleType="centerCrop"
+                android:src="@drawable/bg_user_default" />
+
+            <ImageView
+                android:layout_width="@dimen/rank_head_top2_image_width"
+                android:layout_height="@dimen/rank_head_top2_image_width"
+                android:scaleType="centerCrop"
+                android:src="@drawable/user_top_bg_small" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dip"
+        android:layout_marginRight="20dip"
+        android:layout_marginTop="10dip"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="@dimen/rank_head_top2_image_width"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/top2Nick"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:lineSpacingExtra="3dip"
+                    android:maxLines="1"
+                    android:text="sdfsdf"
+                    android:textColor="@color/a_text_color_fe1212"
+                    android:textSize="@dimen/a_text_size_46" />
+
+                <ImageView
+                    android:id="@+id/top2_user_level"
+                    android:layout_width="45dp"
+                    android:layout_height="15dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="6.66dp"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/userlevel_0"
+                    android:visibility="visible" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/top2Num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="网上发的"
+                android:textColor="@color/a_text_color_999999"
+                android:textSize="@dimen/a_text_size_36" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="0dip"
+            android:layout_height="1dp"
+            android:layout_weight="1" />
+
+        <LinearLayout
+            android:layout_width="@dimen/rank_head_top1_image_width"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/top1Nick"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:lineSpacingExtra="3dip"
+                    android:maxLines="1"
+                    android:text="sdfsdf"
+                    android:textColor="@color/a_text_color_fe1212"
+                    android:textSize="@dimen/a_text_size_46" />
+
+                <ImageView
+                    android:id="@+id/top1_user_level"
+                    android:layout_width="45dp"
+                    android:layout_height="15dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="6.66dp"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/userlevel_0"
+                    android:visibility="visible" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/top1Num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="阿道夫"
+                android:textColor="@color/a_text_color_999999"
+                android:textSize="@dimen/a_text_size_36" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="0dip"
+            android:layout_height="1dp"
+            android:layout_weight="1" />
+
+        <LinearLayout
+            android:layout_width="@dimen/rank_head_top2_image_width"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/top3Nick"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:lineSpacingExtra="3dip"
+                    android:maxLines="1"
+                    android:text="dfsadfsdfsdf"
+                    android:textColor="@color/a_text_color_fe1212"
+                    android:textSize="@dimen/a_text_size_46" />
+
+                <ImageView
+                    android:id="@+id/top3_user_level"
+                    android:layout_width="45dp"
+                    android:layout_height="15dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="6.66dp"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/userlevel_0"
+                    android:visibility="visible" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/top3Num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="阿道夫"
+                android:textColor="@color/a_text_color_999999"
+                android:textSize="@dimen/a_text_size_36" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dip"
+        android:layout_marginRight="20dip"
+        android:layout_marginTop="9dip"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="centerInside"
+            android:src="@drawable/rank_crunchies" />
+    </LinearLayout>
+
+</LinearLayout>

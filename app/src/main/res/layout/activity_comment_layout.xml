@@ -1,0 +1,35 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/a_bg_backgroup_color"
+    android:orientation="vertical" >
+
+    <include
+        layout="@layout/a_common_top_bar"
+        android:visibility="visible" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <include
+            layout="@layout/a_common_loadingprogress_layout"
+            android:visibility="gone" />
+
+        <tv.live.bx.ui.PullRefreshListView
+            android:id="@+id/author_listview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/trans"
+            android:cacheColorHint="#00000000"
+            android:divider="@color/divider_horizontal"
+            android:dividerHeight="0.66dip"
+            android:fadingEdge="none"
+            android:footerDividersEnabled="false"
+            android:headerDividersEnabled="false"
+            android:listSelector="#00000000" >
+        </tv.live.bx.ui.PullRefreshListView>
+    </FrameLayout>
+
+</LinearLayout>

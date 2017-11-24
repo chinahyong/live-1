@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/item_danmu_photo"
+        android:layout_width="132dp"
+        android:layout_height="88dip"
+        android:layout_centerVertical="true"
+        android:contentDescription="@string/app_name"
+        android:scaleType="centerInside"
+        android:src="@drawable/item_danmu_photo"/>
+
+
+    <RelativeLayout
+        android:id="@+id/item_text_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="77dip"
+        android:orientation="horizontal">
+
+        <RelativeLayout android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignRight="@+id/item_content"
+                        android:layout_centerVertical="true">
+            <ImageView
+                android:id="@+id/item_danmu_bg"
+                android:layout_width="match_parent"
+                android:layout_height="29dip"
+                android:background="@drawable/bg_broastcast_danmu"
+                android:contentDescription="@string/app_name"
+                android:scaleType="centerCrop"/>
+
+            <ImageView android:id="@+id/item_broastcast_up"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:layout_alignLeft="@id/item_danmu_bg"
+                       android:layout_alignTop="@id/item_danmu_bg"
+                       android:src="@drawable/bg_broastcast_up"/>
+            <ImageView android:id="@+id/item_broastcast_down"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:layout_alignBottom="@id/item_danmu_bg"
+                       android:layout_alignRight="@id/item_danmu_bg"
+                       android:src="@drawable/bg_broastcast_down"/>
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/item_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:ellipsize="none"
+            android:gravity="center_vertical"
+            android:maxLines="1"
+            android:maxWidth="135dip"
+            android:paddingLeft="20dip"
+            android:paddingRight="20dip"
+            android:text="方式是大纲"
+            android:textColor="@color/a_text_color_ffffff"
+            android:textSize="@dimen/a_text_size_45"
+            android:textStyle="bold"/>
+
+    </RelativeLayout>
+    <ImageView
+        android:id="@+id/item_embellish"
+        android:layout_width="88dip"
+        android:layout_height="88dip"
+        android:layout_alignRight="@id/item_text_layout"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="-26dip"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bg_danmu_broastcast_embellish"/>
+
+</RelativeLayout>

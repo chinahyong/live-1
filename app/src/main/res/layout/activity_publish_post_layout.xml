@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/a_bg_backgroup_color"
+    android:orientation="vertical" >
+
+    <include layout="@layout/a_common_top_bar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:padding="12dip" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_corner_ffffff"
+            android:orientation="horizontal"
+            android:padding="12dip" >
+
+            <tv.live.bx.ui.AutoHeightGridView
+                android:id="@+id/gridView"
+                android:layout_width="@dimen/image_add_maopao_width"
+                android:layout_height="wrap_content"
+                android:background="@color/trans"
+                android:cacheColorHint="#00000000"
+                android:columnWidth="@dimen/image_add_maopao_width"
+                android:gravity="center"
+                android:horizontalSpacing="8dp"
+                android:listSelector="#00000000"
+                android:numColumns="1"
+                android:stretchMode="none"
+                android:verticalSpacing="8dp" />
+
+            <EditText
+                android:id="@+id/post_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dip"
+                android:background="@color/trans"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:gravity="top"
+                android:hint="@string/post_content_hit"
+                android:inputType="textMultiLine"
+                android:lineSpacingExtra="3dp"
+                android:maxLength="4000"
+                android:minHeight="200dip"
+                android:textColor="@color/a_text_color_666666"
+                android:textColorHint="@color/a_text_color_dbdbdb"
+                android:textSize="@dimen/a_text_size_42" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dip"
+            android:gravity="center_vertical" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/commutity_syn"
+                android:textColor="@color/a_text_color_909090"
+                android:textSize="@dimen/a_text_size_45" />
+
+            <CheckBox
+                android:id="@+id/friendCircle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dip"
+                android:button="@drawable/btn_friend_circle_selector" />
+
+            <CheckBox
+                android:id="@+id/sinaCircle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dip"
+                android:button="@drawable/btn_sina_circle_selector" />
+
+            <CheckBox
+                android:id="@+id/spaceCircle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dip"
+                android:button="@drawable/btn_space_circle_selector" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <include layout="@layout/post_publish_input_layout" />
+
+</LinearLayout>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    android:orientation="vertical" >
+
+    <SurfaceView
+        android:id="@+id/video_recorder_surfaceview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/video_recorder_progressBar"/>
+	<ImageView
+        android:id="@+id/video_recorder_camera_dir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/video_recorder_progressBar"
+        android:layout_marginBottom="15dp"
+        android:layout_marginLeft="15dp"
+        android:background="@drawable/a_camera_dir_selector" />
+	<ImageView
+        android:id="@+id/anchor_camera_play"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        android:background="@drawable/a_camera_play_selector" />
+    <ProgressBar
+        android:id="@+id/video_recorder_progressBar"
+        android:layout_alignParentBottom="true"
+        style="@style/ProgressBar_Corder_Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="6dp"
+        android:progress="0" />
+
+</RelativeLayout>

@@ -1,0 +1,147 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/a_bg_color_ffffff"
+              android:orientation="vertical">
+
+    <include layout="@layout/a_common_top_bar"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="54dip"
+        android:paddingLeft="15dip"
+        android:paddingRight="15dip">
+
+        <ImageView
+            android:id="@+id/iv_account"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/icon_phone_2"/>
+
+        <EditText
+            android:id="@+id/et_mobile_phone"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/btn_get_code"
+            android:layout_toRightOf="@id/iv_account"
+            android:background="@color/trans"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:hint="@string/input_mobile"
+            android:inputType="phone"
+            android:maxLength="11"
+            android:maxLines="1"
+            android:paddingLeft="12dip"
+            android:textColor="@color/a_text_color_333333"
+            android:textColorHint="@color/a_text_color_c8c8c8"
+            android:textSize="@dimen/a_text_size_45">
+        </EditText>
+
+        <Button
+            android:id="@+id/btn_get_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/btn_bind_get_code"
+            android:enabled="false"
+            android:paddingLeft="10dip"
+            android:paddingRight="10dip"
+            android:text="@string/get_verify_code"
+            android:textColor="@color/a_text_color_ffffff"
+            android:textSize="@dimen/a_text_size_42"/>
+    </RelativeLayout>
+
+    <View style="@style/divider_horizontal"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="54dip"
+        android:background="@color/trans"
+        android:paddingLeft="15dip"
+        android:paddingRight="15dip">
+        <ImageView
+            android:id="@+id/iv_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/icon_code"/>
+        <EditText
+            android:id="@+id/et_verify_code"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toLeftOf="@+id/btn_code_clear"
+            android:layout_toRightOf="@id/iv_code"
+            android:background="@color/trans"
+            android:hint="@string/input_verify_code"
+            android:inputType="number"
+            android:maxLength="4"
+            android:maxLines="1"
+            android:paddingLeft="12dip"
+            android:textColor="@color/a_text_color_333333"
+            android:textColorHint="@color/a_text_color_c8c8c8"
+            android:textSize="@dimen/a_text_size_45">
+        </EditText>
+        <Button
+            android:id="@+id/btn_code_clear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/bind_close"
+            android:visibility="gone"/>
+    </RelativeLayout>
+
+    <View style="@style/divider_horizontal"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:paddingLeft="15dip"
+        android:paddingRight="15dip">
+        <ImageView
+            android:id="@+id/iv_psw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/icon_suo"/>
+        <EditText
+            android:id="@+id/et_new_pwd"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@id/iv_psw"
+            android:background="@color/trans"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:hint="@string/register_input_password"
+            android:inputType="textPassword"
+            android:maxLength="16"
+            android:maxLines="1"
+            android:paddingLeft="12dp"
+            android:textColor="@color/a_text_color_333333"
+            android:textColorHint="@color/a_text_color_c8c8c8"
+            android:textSize="@dimen/a_text_size_45">
+        </EditText>
+    </RelativeLayout>
+
+    <View style="@style/divider_horizontal"/>
+
+    <Button
+        android:id="@+id/btn_submit"
+        android:layout_width="240dip"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="60dip"
+        android:background="@drawable/btn_bind"
+        android:enabled="false"
+        android:text="@string/bind_text"
+        android:textColor="@color/a_text_color_ffffff"
+        android:textSize="@dimen/a_text_size_48"
+        android:textStyle="bold"/>
+
+</LinearLayout>

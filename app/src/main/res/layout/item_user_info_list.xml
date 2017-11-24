@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@drawable/subject_list_item_selector"
+              android:orientation="vertical"
+              android:paddingLeft="12dp"
+              android:paddingRight="12dp">
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dip"
+        android:layout_marginTop="12dip"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:id="@+id/item_lv_focus_photo"
+            android:layout_width="33.33dp"
+            android:layout_height="33.33dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/bg_user_default"
+            android:contentDescription="@string/app_name">
+        </ImageView>
+
+        <ImageView
+            android:id="@+id/item_lv_focus_photo_v"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/item_lv_focus_photo"
+            android:layout_alignRight="@id/item_lv_focus_photo"
+            android:src="@drawable/ic_icon_v"
+            android:visibility="gone"/>
+
+        <ImageView
+            android:id="@+id/isPlaying"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/item_lv_focus_photo"
+            android:layout_alignRight="@id/item_lv_focus_photo"
+            android:src="@drawable/icon_liveing"
+            android:visibility="gone"/>
+
+        <ImageView
+            android:id="@+id/item_user_focus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:clickable="true"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/btn_focus_selector"
+            android:visibility="visible"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="12dip"
+            android:layout_marginRight="3dip"
+            android:layout_toLeftOf="@id/item_user_focus"
+            android:layout_toRightOf="@+id/item_lv_focus_photo"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/item_lv_focus_nickname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="safds"
+                android:textColor="@color/a_text_color_da500e"
+                android:textSize="@dimen/a_text_size_42"/>
+
+            <TextView
+                android:id="@+id/item_lv_focus_intro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dip"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="safds"
+                android:textColor="@color/a_text_color_999999"
+                android:textSize="@dimen/a_text_size_32"/>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <View style="@style/divider_horizontal"/>
+
+</LinearLayout>

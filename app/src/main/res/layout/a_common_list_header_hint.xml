@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tv.live.bx.ui.ListPullnReleaseHintView xmlns:android="http://schemas.android.com/apk/res/android"
+                                        xmlns:app="http://schemas.android.com/apk/res-auto"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="@dimen/list_hintview_height"
+                                        app:arrow="@+id/list_header_hint_arrow"
+                                        app:progress_ring="@+id/list_header_hint_progress_ring"
+                                        app:pull_hint_view="@+id/list_header_hint_pull"
+                                        app:pull_to_invoke="@string/a_list_hint_pulldown_to_refresh"
+                                        app:release_to_invoke="@string/a_list_hint_release_to_refresh"
+                                        app:txt_hint="@+id/list_header_hint_txt_hint"
+                                        app:wait_hint_view="@+id/list_header_hint_wait">
+
+    <LinearLayout
+        android:id="@id/list_header_hint_wait"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@id/list_header_hint_progress_ring"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/a_common_progress_animated" />
+
+        <TextView
+            android:layout_width="@dimen/list_hintview_txt_width"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/list_hintview_icontotext"
+            android:text="@string/a_list_hint_loading"
+            android:textColor="#ff8c8c8c" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@id/list_header_hint_pull"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@id/list_header_hint_arrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/a_common_list_hintview_pull_down" />
+
+        <TextView
+            android:id="@id/list_header_hint_txt_hint"
+            android:layout_width="@dimen/list_hintview_txt_width"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/list_hintview_icontotext"
+            android:gravity="center"
+            android:text="@string/a_list_hint_pulldown_to_refresh"
+            android:textColor="#ff8c8c8c" />
+    </LinearLayout>
+
+</tv.live.bx.ui.ListPullnReleaseHintView>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:animationCache="false">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="360dp"
+        android:layout_below="@id/item_divider"
+        android:layout_marginTop="10dp">
+
+        <ImageView
+            android:id="@+id/item_lv_player_iv_photo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/icon_loading_mini"
+            android:contentDescription="@string/app_name"
+            android:scaleType="centerCrop"/>
+
+        <ImageView
+            android:id="@+id/item_lv_player_iv_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="10dip"
+            android:layout_marginTop="10dip"
+            android:src="@drawable/live_isliving"/>
+
+        <LinearLayout
+            android:id="@+id/item_lv_player_ll_online_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="49dp"
+            android:layout_marginTop="14dip"
+            android:background="@drawable/live_author_num"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="6dp"
+                android:src="@drawable/ic_icon_online"/>
+
+            <TextView
+                android:id="@+id/item_lv_player_tv_online_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="8dp"
+                android:text="@string/live_online_num"
+                android:textColor="@color/a_text_color_ffffff"
+                android:textSize="@dimen/a_text_size_36"/>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/ic_bg_000000_tran">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/icon_location_open"/>
+                <TextView
+                    android:id="@+id/item_lv_player_tv_live_location"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="3dp"
+                    android:text="外星人?"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"/>
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/item_lv_player_tv_nickname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/item_lv_player_title"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="16dp"
+                android:maxLines="1"
+                android:gravity="center"
+                android:text=""
+                android:textColor="@color/a_text_color_ffffff"
+                android:textSize="@dimen/a_text_size_120"/>
+
+            <TextView
+                android:id="@+id/item_lv_player_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="18dip"
+                android:gravity="center"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text=""
+                android:textColor="@color/a_text_color_ffffff"
+                android:textSize="@dimen/a_text_size_54"/>
+        </RelativeLayout>
+    </RelativeLayout>
+</RelativeLayout>

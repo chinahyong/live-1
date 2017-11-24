@@ -1,0 +1,651 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="tv.live.bx">
+
+    <uses-sdk
+        android:minSdkVersion="15"
+        android:targetSdkVersion="19"/>
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_LOGS"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <!-- renren sso Permission for Unit Test -->
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.SET_DEBUG_APP"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.USE_CREDENTIALS"/>
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+
+    <!-- 同盾设备指纹 -->
+    <uses-permission android:name="android.permission.BATTERY_STATS"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_UPDATES"/>
+
+    <!-- Optional for location -->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS"/>
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.INTERACT_ACROSS_USERS_FULL"/>
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS"/>
+    <!-- 直播 -->
+    <uses-permission android:name="android.permission.CAMERA"/>
+
+    <uses-feature android:name="android.hardware.camera.autofocus"/>
+
+    <!-- 开启闪光灯权限 -->
+    <uses-permission android:name="android.permission.FLASHLIGHT"/>
+    <!-- 系统alert权限 -->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+
+    <uses-feature android:name="android.hardware.camera"/>
+    <uses-feature android:name="android.hardware.camera.flash"/>
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true"/>
+
+    <!-- 推送结束 android:persistent="true"持久化为 true；防止你的app挂后台被回收。 -->
+    <application
+        android:name=".SampleApplication"
+        android:allowBackup="true"
+        android:alwaysRetainTaskState="true"
+        android:hardwareAccelerated="true"
+        android:icon="@drawable/icon_logo"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:persistent="true"
+        android:theme="@style/AppTheme">
+
+        <!--
+        glide 配置
+        <meta-data
+            android:name="com.bumptech.glide.integration.okhttp3.OkHttpGlideModule"
+            android:value="GlideModule"/
+        -->
+        <!-- 同盾指纹配置 -->
+        <meta-data
+            android:name="tv.live.bx.imageloader.glide.MyGlideModule"
+            android:value="GlideModule"/>
+        <meta-data
+            android:name="PARTNER_CODE"
+            android:value="guojiang"/>
+        <!-- EvtLog日志信息是否打印标志 -->
+        <meta-data
+            android:name="error_log_enable"
+            android:value="true">
+        </meta-data>
+        <meta-data
+            android:name="debug_log_enable"
+            android:value="true">
+        </meta-data>
+
+        <!--
+        **友盟统计*
+        <meta-data
+            android:name="UMENG_CHANNEL"
+            android:value="and-360" >
+        </meta-data>
+        -->
+        <!-- 友盟AppKey，合并统计后，不需要修改key -->
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="${UMENG_KEY}">
+        </meta-data>
+
+        <!-- Required. For publish channel feature -->
+        <!-- JPUSH_CHANNEL 是为了方便开发者统计APK分发渠道。 -->
+        <!-- 例如: -->
+        <!-- 发到 Google Play 的APK可以设置为 google-play; -->
+        <!-- 发到其他市场的 APK 可以设置为 xxx-market。 -->
+        <!-- 目前这个渠道统计功能的报表还未开放。 -->
+        <!-- Required  . Enable it you can get statistics data with channel -->
+
+        <activity
+            android:name="tv.live.bx.activities.WelcomeActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppFullTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+
+                <data
+                    android:host="www.guojiang.tv"
+                    android:scheme="myapp"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="tv.live.bx.activities.CalMainActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/StyledIndicators">
+        </activity>
+        <activity
+            android:name="tv.live.bx.activities.WebViewActivity"
+            android:hardwareAccelerated="false"
+            android:screenOrientation="portrait">
+
+        </activity>
+        <activity
+            android:name="tv.live.bx.live.activities.LiveMediaPlayerActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppBaseTheme"
+            android:windowSoftInputMode="stateHidden|adjustResize">
+        </activity>
+        <activity
+            android:name="tv.live.bx.activities.LoginActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="tv.live.bx.activities.Login2Activity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="tv.live.bx.activities.Register1Activity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="tv.live.bx.activities.Register2Activity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="tv.live.bx.activities.SettingsActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="tv.live.bx.activities.AboutActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="tv.live.bx.activities.PingActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="tv.live.bx.activities.MsgSettingsActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="tv.live.bx.activities.AnimSettingsActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="tv.live.bx.activities.AdviceActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustPan">
+        </activity>
+        <activity
+            android:name="tv.live.bx.activities.GetBackPwdActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <!--
+        <activity
+            android:name="com.efeizao.feizao.activities.RechargeActivity"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:scheme="wx1210ec9238fff4c5" />
+            </intent-filter>
+        </activity>
+        -->
+        <activity
+            android:name="tv.live.bx.activities.EditDataActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="tv.live.bx.activities.MyFocusActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="tv.live.bx.activities.ChoiceAgeActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="tv.live.bx.activities.CheckUpdateActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="tv.live.bx.activities.UserFansActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="tv.live.bx.activities.UserDynamicActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="tv.live.bx.activities.ChoiceHeightActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="tv.live.bx.activities.ChoiceIntroductionActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="tv.live.bx.activities.ChoiceWeightActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="tv.live.bx.activities.ChoiceNameActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="tv.live.bx.activities.RecommendActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppFullTheme"/>
+        <!-- 友盟使用 -->
+
+
+        <!-- 腾讯SSO授权的Activity注册 -->
+        <activity
+            android:name="com.umeng.qq.tencent.AuthActivity"
+            android:launchMode="singleTask"
+            android:noHistory="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+
+                <data android:scheme="${TENCENT_QQ_ID}"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.umeng.qq.tencent.AssistActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+
+        <!-- 微信回调activity -->
+        <activity
+            android:name="tv.live.bx.wxapi.WXEntryActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+
+        <!-- 微博回调activity -->
+        <activity
+            android:name="tv.live.bx.WBShareActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="com.sina.weibo.sdk.action.ACTION_SDK_REQ_ACTIVITY"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+
+        <!-- 支付宝支付 -->
+        <activity
+            android:name="com.alipay.sdk.app.H5PayActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:exported="false"
+            android:screenOrientation="behind">
+        </activity>
+        <activity
+            android:name="com.alipay.sdk.auth.AuthActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:exported="false"
+            android:screenOrientation="behind">
+        </activity>
+
+        <!-- 支付宝授权 -->
+        <activity
+            android:name="com.alipay.sdk.app.H5AuthActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:exported="false"
+            android:screenOrientation="behind">
+        </activity>
+
+        <!-- *************************    分享相关的注册 END **************************** -->
+        <uses-library
+            android:name="com.google.android.maps"
+            android:required="false"/>
+        <uses-library android:name="android.test.runner"/>
+        <!-- 极光 -->
+        <receiver
+            android:name="tv.live.bx.receiver.JPushReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.REGISTRATION"/>
+                <!-- Required 用户注册SDK的intent -->
+                <action android:name="cn.jpush.android.intent.MESSAGE_RECEIVED"/>
+                <!-- Required 用户接收SDK消息的intent -->
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED"/>
+                <!-- Required 用户接收SDK通知栏信息的intent -->
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_OPENED"/>
+                <!-- Required 用户打开自定义通知栏的intent -->
+                <action android:name="cn.jpush.android.intent.CONNECTION"/>
+                <!-- 接收网络变化 连接/断开 since 1.6.3 -->
+                <category android:name="${applicationId}"/>
+            </intent-filter>
+        </receiver>
+
+        <!-- eric -->
+        <activity
+            android:name="tv.live.bx.activities.AppUpdateActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/activity_dialog">
+        </activity>
+        <activity
+            android:name="tv.live.bx.ui.cropimage.CropImageActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="tv.live.bx.activities.ReportActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="tv.live.bx.activities.MeMessageActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="tv.live.bx.activities.PostDetailActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="tv.live.bx.activities.PostActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="tv.live.bx.activities.ImageBrowserActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/ActivityBaseTheme">
+        </activity>
+        <activity
+            android:name="tv.live.bx.activities.PostPublishActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <!-- CameraSDK相册选取 -->
+        <activity
+            android:name="tv.live.bx.common.photopick.PhotoPickDetailActivity"
+            android:process=":pickimage"
+            android:screenOrientation="portrait"
+            android:theme="@style/TranslateTheme"/>
+        <activity
+            android:name="tv.live.bx.common.photopick.PhotoPickActivity"
+            android:process=":pickimage"
+            android:screenOrientation="portrait"
+            android:theme="@style/TranslateTheme"/>
+        <activity
+            android:name="tv.live.bx.activities.ShareDialogActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="behind"
+            android:theme="@style/activity_dialog">
+        </activity>
+        <activity
+            android:name="tv.live.bx.live.activities.LiveCameraStreamActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppBaseTheme"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize">
+        </activity>
+        <activity
+            android:name="tv.live.bx.live.activities.LiveRecordStreamActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppBaseTheme"
+            android:windowSoftInputMode="stateHidden|adjustResize">
+        </activity>
+        <activity
+            android:name="com.tencent.rtmp.video.TXScreenCapture$TXScreenCaptureAssistantActivity"
+            android:theme="@android:style/Theme.Translucent"/>
+        <!-- android:process=":screenRecord" -->
+
+        <activity
+            android:name="tv.live.bx.activities.PreviewLivePlayActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppFullTranTheme"
+            android:windowSoftInputMode="stateHidden|adjustResize">
+        </activity>
+        <activity
+            android:name="tv.live.bx.activities.LiveTagActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name="tv.live.bx.activities.LiveReadyWebActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTranslateTheme">
+        </activity>
+        <activity
+            android:name="tv.live.bx.activities.HotTopicActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="tv.live.bx.activities.PersonTaskActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="tv.live.bx.activities.MeAnchorActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="tv.live.bx.activities.ProductRecommentActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="tv.live.bx.activities.AnchorSearchActivity"
+            android:configChanges="orientation|keyboardHidden|locale"
+            android:screenOrientation="portrait"
+            android:theme="@style/ActivityBaseTheme"
+            android:windowSoftInputMode="stateVisible|adjustPan">
+        </activity>
+        <activity
+            android:name="tv.live.bx.activities.GuideActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppBaseTheme">
+        </activity>
+        <activity
+            android:name="tv.live.bx.activities.AddFanActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/StyledIndicators">
+        </activity>
+        <activity
+            android:name="tv.live.bx.activities.FanDetailActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppBaseTheme">
+        </activity>
+        <activity
+            android:name="tv.live.bx.activities.FanMenberSearchActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppBaseTheme">
+        </activity>
+        <activity
+            android:name="tv.live.bx.activities.CreateFanActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="tv.live.bx.activities.FanEditActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="tv.live.bx.activities.EditInfoActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="tv.live.bx.activities.UserInviterActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="tv.live.bx.activities.GroupPostDetailActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="tv.live.bx.activities.GroupPostPublishActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <!-- 2.0版本的相关组件 -->
+        <activity
+            android:name="tv.live.bx.activities.LiveTypeActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="tv.live.bx.activities.RankActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="tv.live.bx.activities.MeFanActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="tv.live.bx.activities.MeFanSelectActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/ActivityBaseTheme">
+        </activity>
+        <activity
+            android:name="tv.live.bx.activities.MeReplyActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="tv.live.bx.activities.MeCollectActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="tv.live.bx.activities.SuportActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="tv.live.bx.activities.MeFocusActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="tv.live.bx.activities.MeTaskActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="tv.live.bx.activities.PersonInfoActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="tv.live.bx.activities.UserFocusActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="tv.live.bx.activities.GroupManageLogActivity"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <!-- Live 主播报名 -->
+        <activity
+            android:name="tv.live.bx.activities.AnchorActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="tv.live.bx.activities.AnchorCameraActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+        </activity>
+        <activity
+            android:name="tv.live.bx.live.activities.LiveRankActivity"
+            android:label="@string/title_activity_playing_rank"
+            android:screenOrientation="portrait"
+            android:theme="@style/StyledIndicators">
+        </activity>
+        <activity
+            android:name="tv.live.bx.activities.ConversationActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+
+                <data
+                    android:host="com.tuhao.kuaishou"
+                    android:pathPrefix="/conversation/"
+                    android:scheme="rong"/>
+            </intent-filter>
+        </activity>
+
+        <!-- 2.0版本相关组件结束 -->
+
+        <activity
+            android:name="tv.live.bx.live.activities.LiveWebViewActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/ActivityDialogTranslucent">
+        </activity>
+        <activity
+            android:name="tv.live.bx.activities.SelectReceivedMessageActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="tv.live.bx.activities.PhoneBindActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="tv.live.bx.activities.AccountSaleActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="tv.live.bx.activities.EditAlbumActivity"
+            android:screenOrientation="portrait"/>
+
+        <!-- 图片选择器 -->
+        <activity
+            android:name="com.yanzhenjie.album.AlbumActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:windowSoftInputMode="stateAlwaysHidden|stateHidden"/>
+
+        <!-- 微信支付 -->
+        <activity
+            android:name="tv.live.bx.wxapi.WXPayEntryActivity"
+            android:exported="true"
+            android:launchMode="singleTop"
+            android:theme="@android:style/Theme.Translucent"/>
+
+        <receiver android:name="tv.live.bx.AppRegister">
+            <intent-filter>
+                <action android:name="com.tencent.mm.plugin.openapi.Intent.ACTION_REFRESH_WXAPP"/>
+            </intent-filter>
+        </receiver>
+        <!-- 高德地图 -->
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="${AMAP_KEY}"/>
+
+        <service android:name="com.amap.api.location.APSService"/>
+        <service
+            android:name="com.tinker.android.service.SampleResultService"
+            android:exported="false"/>
+
+        <activity
+            android:name="tv.live.bx.activities.MountPreviewActivity"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <activity
+            android:name="tv.live.bx.activities.GiftEffectPreviewActivity"
+            android:screenOrientation="portrait">
+        </activity>
+    </application>
+
+</manifest>

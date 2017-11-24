@@ -1,0 +1,46 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/layout_top_title_bg_height"
+        android:background="@color/a_bg_top_bar_color">
+
+        <TextView
+            android:id="@+id/me_message_top_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="@dimen/layout_top_title_bg_height"
+            android:layout_marginRight="@dimen/layout_top_title_bg_height"
+            android:singleLine="true"
+            android:text="@string/message"
+            android:textColor="@color/a_text_color_ffffff"
+            android:textSize="@dimen/a_text_size_52"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/me_message_ignore_message"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:gravity="center"
+            android:text="@string/live_ignore_message"
+            android:textColor="@color/a_text_color_666666"
+            android:textSize="@dimen/a_text_size_48"/>
+    </RelativeLayout>
+
+    <View
+        style="@style/divider_horizontal"
+        android:visibility="gone"/>
+
+    <fragment
+        android:id="@+id/conversationlist"
+        android:name="com.efeizao.bx.rongcloud.fragment.RongCloudConversationListFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</LinearLayout>

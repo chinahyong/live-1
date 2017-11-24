@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <integer name="config_activity_animation_time">300</integer>
+    <integer name="cx_start_year">1901</integer>
+    <integer name="cx_end_year">2035</integer>
+
+    <integer-array name="cx_repeat_type_value">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </integer-array>
+
+    <integer name="content_lines">2</integer>
+
+    <!-- 短信验证码长度：6位 -->
+    <integer name="identifying_lengthd">6</integer>
+
+    <!-- 活动共享界面的GridView列数 -->
+    <integer name="event_share_grid_colunm_num">4</integer>
+
+</resources>

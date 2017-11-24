@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/shape_bg_white"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="5dp" >
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="请选择直播时间" />
+
+        <TimePicker
+            android:id="@+id/datepickert"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_bg_white"
+            android:calendarViewShown="false" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dip"
+        android:orientation="horizontal"
+        android:paddingLeft="1px" >
+
+        <Button
+            android:id="@+id/negative"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/cancel"
+            android:textColor="@color/a_text_color_909090"
+            android:textSize="@dimen/a_text_size_50"
+            android:visibility="visible" />
+
+        <Button
+            android:id="@+id/positive"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="设置"
+            android:textColor="@color/a_text_color_da500e"
+            android:textSize="@dimen/a_text_size_50"
+            android:visibility="visible" />
+    </LinearLayout>
+
+</LinearLayout>

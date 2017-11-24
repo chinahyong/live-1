@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:id="@+id/playing_ll_chat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/a_bg_color_f9f9f9"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <View
+            android:id="@+id/send_other_layout"
+            android:layout_width="match_parent"
+            android:layout_height="0dip"
+            android:layout_weight="1"
+            android:background="@color/trans"
+            android:visibility="gone"/>
+
+        <LinearLayout
+            android:id="@+id/playing_ll_edt_input"
+            android:layout_width="match_parent"
+            android:layout_height="44dip"
+            android:background="@color/white"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/layout_paly_left_pading"
+            android:paddingRight="@dimen/layout_paly_left_pading"
+            android:visibility="visible">
+
+            <ImageView
+                android:id="@+id/playing_iv_emotion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/btn_smile_selector"/>
+
+            <ImageView
+                android:id="@+id/playing_iv_add"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dip"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/btn_pictrue_small_selector"/>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="8dip"
+                android:layout_weight="1"
+                android:background="@drawable/a_common_radius_nor_bg">
+
+                <ImageView
+                    android:id="@+id/playing_iv_clear_msg_content"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerVertical="true"
+                    android:contentDescription="@string/app_name"
+                    android:padding="8dp"
+                    android:src="@drawable/ic_clear"
+                    android:visibility="gone"/>
+
+                <EditText
+                    android:id="@+id/playing_et_msg_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_toRightOf="@id/playing_iv_clear_msg_content"
+                    android:background="@null"
+                    android:gravity="center_vertical"
+                    android:hint="@string/click_to_chat_with_player"
+                    android:imeOptions="actionSend|flagNoExtractUi"
+                    android:paddingLeft="8dip"
+                    android:paddingRight="8dip"
+                    android:textColor="@color/a_text_color_666666"
+                    android:textColorHint="@color/a_text_color_b4b4b4"
+                    android:textSize="@dimen/a_text_size_40"/>
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/playing_btn_send_msg"
+                android:layout_width="42.33dp"
+                android:layout_height="28dip"
+                android:layout_marginLeft="8dp"
+                android:background="@drawable/btn_chat_send_selector"
+                android:text="@string/send_msg"
+                android:textColor="@color/a_text_color_666666"
+                android:textSize="@dimen/a_text_size_40"
+                android:visibility="visible"/>
+        </LinearLayout>
+
+        <include
+            android:id="@+id/playing_gv_eomotions"
+            layout="@layout/send_msg_tool"
+            android:visibility="gone"/>
+
+        <include
+            android:id="@+id/playing_gv_additions"
+            layout="@layout/send_msg_addition"
+            android:visibility="gone"/>
+
+    </LinearLayout>
+
+</merge>

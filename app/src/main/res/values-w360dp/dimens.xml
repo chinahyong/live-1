@@ -1,0 +1,21 @@
+<resources>
+
+    <!-- 排行榜 -->
+    <dimen name="rank_head_top1_image_width">114dip</dimen>
+    <dimen name="rank_head_top1_image_width_2">112dip</dimen>
+    <dimen name="rank_head_top2_image_width">81.33dp</dimen>
+    <!-- 首页登录奖励 -->
+    <dimen name="login_reward_layout_width">360dip</dimen>
+    <dimen name="login_reward_image_width">78dip</dimen>
+    <dimen name="login_reward_image_heigth">79.66dip</dimen>
+    <dimen name="login_reward_ect_width">21.33dp</dimen>
+    <!-- 社区最新，热门按钮 -->
+    <dimen name="community_hot_width">150dp</dimen>
+    <!-- 向导页面 -->
+    <dimen name="guide_indicator_margin_buttom">36dip</dimen>
+    <dimen name="guide_margin_top">47dip</dimen>
+    <dimen name="guide_experience_margin_buttom">16dip</dimen>
+    <!-- 礼物面板 -->
+    <dimen name="live_gift_viewpage_width">210dip</dimen>
+
+</resources>

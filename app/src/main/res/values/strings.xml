@@ -1,0 +1,970 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools"
+           tools:locale="zh-rCN">
+
+    <string name="xlistview_header_hint_normal">下拉刷新</string>
+    <string name="xlistview_header_hint_ready">松开刷新数据</string>
+    <string name="xlistview_header_hint_loading">正在加载…</string>
+    <string name="xlistview_header_last_time">上次更新时间：</string>
+    <string name="xlistview_footer_hint_normal">查看更多</string>
+    <string name="xlistview_footer_hint_ready">松开载入更多</string>
+
+    <!-- 下拉刷新列表 -->
+    <string name="a_common_network_refresh">获取数据失败，请点击刷新</string>
+    <string name="a_loading_text">正在加载…</string>
+    <string name="a_loading_failed">加载失败了,点击重新加载</string>
+    <string name="a_loading_list_null">暂无内容</string>
+    <string name="a_pull_to_refresh_pull_label">下拉可以刷新</string>
+    <string name="a_overefresh_update">更新于</string>
+    <string name="a_pull_to_refresh_release_label">松开可以刷新</string>
+
+    <!-- 下拉列表提示信息 -->
+    <string name="a_list_hint_loading">正在加载…</string>
+    <string name="a_list_hint_pulldown_to_refresh">下拉可以刷新</string>
+    <string name="a_list_hint_release_to_refresh">释放可以刷新</string>
+    <string name="a_list_hint_pullup_to_load_more">上拉以加载更多</string>
+    <string name="a_list_hint_release_to_load_more">释放以加载更多</string>
+    <string name="a_main_exit_confirm">再按一次退出星光直播</string>
+    <string name="a_playing_exit_confirm">再按一次退出直播间</string>
+
+    <!-- 数据加载选项 -->
+    <string name="a_progress_loading">数据加载中，请稍后…</string>
+    <string name="a_progress_loadfailed">数据加载失败，点击重试!</string>
+    <string name="a_list_data_empty">没有数据，点击重新加载</string>
+    <string name="a_tips_net_error">加载失败,请检查网络连接</string>
+    <string name="a_progress_sending_message">正在发送…</string>
+
+    <!-- 首页 -->
+    <string name="home_sign_tip">您还不是主播，是否要报名？</string>
+    <string name="home_sign">去报名</string>
+    <string name="home_hot">精选</string>
+    <string name="home_hot_group">精选饭圈</string>
+    <string name="home_hot_dynamic">精选动态</string>
+    <string name="home_me_group">我的饭圈</string>
+    <string name="home_all">显示全部</string>
+    <string name="home_new_dynamic">最新动态</string>
+    <string name="home_live_msg">╥﹏╥..</string>
+    <string name="home_live_new_message_tip">有新内容</string>
+    <string name="welcome_sign_error_tip">该应用被篡改过，请到官方正规渠道下载.</string>
+
+    <!-- Tab标签 -->
+    <string name="a_main_home">首页</string>
+    <string name="a_main_tab_anchor">直播</string>
+    <string name="a_main_tab_setting">设置</string>
+    <string name="a_main_tab_rank">排行</string>
+    <string name="a_main_tab_community">社区</string>
+    <string name="a_main_tab_community_title">广场</string>
+    <string name="a_main_tab_me">我的</string>
+    <string name="a_tab_me_title">个人中心</string>
+    <string name="a_main_exit_message">确认退出星光直播吗？</string>
+
+    <!-- 播放界面 -->
+    <string name="chat_text">聊天</string>
+    <string name="audience_text">观众</string>
+    <string name="rank_text">排行</string>
+    <string name="other_text">其他</string>
+    <string name="private_chat_text">私聊</string>
+    <string name="gift_give">送礼</string>
+    <string name="play_loading">加载中...</string>
+    <string name="anchor_resting">主播正在休息呢</string>
+    <string name="paly_gift_num_empty">礼物数量不能少于1</string>
+    <string name="ban_tip">被 %1$s 禁言</string>
+    <string name="unban_tip">被 %1$s 解禁</string>
+    <string name="setadmin_tip">被 %1$s 设置为管理</string>
+    <string name="unsetadmin_tip">被 %1$s 取消管理</string>
+    <string name="ti_room">被 %1$s 踢出房间</string>
+    <string name="ti_room_2">您已被 %1$s 踢出房间</string>
+    <string name="anchor_update_coin">还差%1$s经验可升级</string>
+
+    <!-- 网络链接 -->
+    <string name="network_title">网络连接提示</string>
+    <string name="network_setting_msg">哎呀~网络没有连接，是否去设置网络?</string>
+    <string name="network_2G_msg">网络已切换到2G/3G/4G，是否继续播放?</string>
+    <string name="network_2G_msg_2">您正在使用2G/3G/4G网络播放视频</string>
+    <string name="network_continue">继续</string>
+    <string name="network_quit">退出</string>
+    <string name="server_error">服务器异常</string>
+
+    <!-- 主播列表 -->
+    <string name="anchor_search_hit">搜索主播昵称或ID</string>
+    <string name="anchor_search_text">搜索</string>
+    <string name="anchor_search_text_empty">请输入搜索关键字</string>
+    <string name="anchor_search_empty">没有找到相关的主播哦</string>
+    <string name="anchor_search_fail">加载数据失败.</string>
+    <string name="anchor_tab_hot">热门</string>
+    <string name="anchor_tab_new">新人</string>
+    <string name="anchor_tab_near">附近</string>
+    <string name="anchor_tab_recommend">推荐</string>
+    <string name="anchor_btn_live_new">去看其他精彩直播</string>
+    <string name="anchor_live_new_empty_msg">还没有最新开播的主播哦（▼へ▼メ）</string>
+    <string name="anchor_live_focus_empty_msg">你还没有关注过任何主播呢(；′⌒`)</string>
+    <string name="anchor_live_tag_live_empty_msg">该分类下暂时没有主播开播哦(；′⌒`)</string>
+    <string name="anchor_live_focus_live_empty_msg">你关注的主播还没有开播哦(；′⌒`)</string>
+    <string name="live_location_fail_tip">请在手机设置中开启GPS或WLAN定位服务以看到附近用户</string>
+    <string name="live_start_location">开启定位</string>
+
+    <!-- 设置界面 -->
+    <string name="message_title">温馨提示</string>
+    <string name="logout_msg">真的要离开吗？</string>
+    <string name="logout_cancel">再看看</string>
+    <string name="setting_open_notification_msg">打开系统消息通知，才能收到主播开播提醒哦</string>
+
+    <!-- 播放界面  分享对话框 -->
+    <string name="share_dialog_title">分享到</string>
+    <string name="share_dialog_weixin">微信</string>
+    <string name="share_dialog_pengyouquan">朋友圈</string>
+    <string name="share_dialog_weibo">微博</string>
+    <string name="share_dialog_qqzone">QQ空间</string>
+    <string name="share_dialog_qq">QQ</string>
+    <string name="share_dialog_renren">人人网</string>
+    <string name="gift_general_text">热门</string>
+    <string name="gift_guard_text">背包</string>
+    <string name="gift_guard_2_text">守护</string>
+
+    <!-- 排行界面 -->
+    <string name="rank_day">日</string>
+    <string name="rank_week">周</string>
+    <string name="rank_month">月</string>
+    <string name="rank_total">总</string>
+    <string name="rank_star">明星榜</string>
+    <string name="rank_popularity">热门榜</string>
+    <string name="rank_wealth">财富榜</string>
+    <string name="rank_dayP">日榜</string>
+    <string name="rank_weekP">周榜</string>
+    <string name="rank_monthP">月榜</string>
+    <string name="rank_totalP">总榜</string>
+    <string name="rank_totalP_num">贡献%1$s星光</string>
+    <string name="rank_star_day_explain">日榜为当天获得星光前10名的播主，每日0点清空重计</string>
+    <string name="rank_star_week_explain">周榜为本周获得星光前10名的播主，每周日0点清空重计</string>
+    <string name="rank_star_month_explain">月榜为本月收到星光前100名的播主，每月1号0点清空重计</string>
+    <string name="rank_star_total_explain">总榜为获得星光前10名的播主</string>
+
+    <string name="rank_popularity_day_explain">日榜为过去24小时获得鲜花数前10名的播主</string>
+    <string name="rank_popularity_week_explain">周榜为过去1周获得鲜花数前10名的播主</string>
+    <string name="rank_popularity_total_explain">人气榜为收到鲜花前10名的播主</string>
+    <string name="rank_wealth_day_explain">日榜为当天送出克拉数前10名的用户，每日0点清空重计</string>
+    <string name="rank_wealth_week_explain">周榜为本周送出克拉数前10名的用户，每周日0点清空重计</string>
+    <string name="rank_wealth_total_explain">总榜为送出克拉数前10名的用户</string>
+    <string name="rank_totalP_num_label">星光数</string>
+    <string name="rank_no_data">趁没人赶紧上榜吧n(*≧▽≦*)n</string>
+    <string name="rank_net_err">网太渣啊，点击重新加载</string>
+
+    <!-- 社区模块 -->
+    <string name="commutity_post">动态详情</string>
+    <string name="relay_loading_failed">回复信息加载失败,点击重新加载</string>
+    <string name="me_speak">我来说两句...</string>
+    <string name="relay_tip">暂无评论，快来抢沙发吧</string>
+    <string name="edit_post">发帖</string>
+    <string name="commutity_reply">回复</string>
+    <string name="commutity_view">围观</string>
+    <string name="commutity_host">楼主</string>
+    <string name="commutity_collect">收藏</string>
+    <string name="commutity_collect_cancel">取消收藏</string>
+    <string name="commutity_delete">删除</string>
+    <string name="commutity_click_flush">点击刷新楼层</string>
+    <string name="commutity_share_item">分享</string>
+    <string name="commutity_report_item">举报</string>
+    <string name="commutity_catelory_all">全部</string>
+    <string name="commutity_catelory_switch">切换栏目</string>
+    <string name="commutity_catelory_post_count">话题%1$s</string>
+    <string name="commutity_catelory_replay_count">回复%1$s</string>
+    <string name="commutity_catelory_new_replay">最新回复</string>
+    <string name="commutity_catelory_hot">热帖</string>
+    <string name="commutity_catelory_text">#"%1$s"#</string>
+    <string name="commutity_tab_hot">热门</string>
+    <string name="commutity_tab_fan">饭圈</string>
+    <string name="commutity_add_fan">加入饭圈</string>
+    <string name="commutity_create_fan">创建饭圈</string>
+    <string name="commutity_access_fan">进入饭圈</string>
+    <string name="commutity_fan_host">圈主</string>
+    <string name="commutity_fan_unlock_text">%1$s/%2$s 还需%3$s人可以解锁</string>
+    <string name="commutity_fan_search_hit">搜索饭圈</string>
+    <string name="commutity_fan_freeze">冻结中</string>
+    <string name="commutity_fan_unlock">已解锁</string>
+    <string name="commutity_fan_add_text">已加入</string>
+    <string name="commutity_fan_add_tip">加入后才可去饭圈里愉快地玩耍哦~</string>
+    <string name="commutity_fan_activate_tip">饭圈被激活后才可以在里面愉快地玩耍~</string>
+    <string name="commutity_fan_add_succuss">你已成功加入该饭圈~</string>
+    <string name="commutity_fan_search_empty_tip">未搜到您要找的饭圈，不如自己去创建一个吧</string>
+    <string name="commutity_fan_search_tip">点击查找《%1$s"》相关的饭圈</string>
+    <string name="commutity_fan_create_tip">此功能暂未开放，你可以去直播间为主播创建饭圈</string>
+    <string name="commutity_fan_popularity">人气</string>
+    <string name="commutity_fan_post">帖子</string>
+    <string name="commutity_fan_fans">粉丝</string>
+    <string name="commutity_menber_admin">管理员</string>
+    <string name="commutity_fan_post_nodata">暂无帖子数据</string>
+    <string name="commutity_fan_nodata">没有更多数据</string>
+    <string name="commutity_fan_menber_num">群成员：%1$s人</string>
+    <string name="commutity_fan_menber_search_hit">搜索成员</string>
+    <string name="commutity_fan_menber_status_create">创建</string>
+    <string name="commutity_fan_menber_status_add">加入</string>
+    <string name="commutity_fan_menber_search_empty">没有找到相关的成员哦</string>
+    <string name="commutity_fan_menber_titil">圈成员</string>
+    <string name="commutity_fan_menber_help">饭圈帮助</string>
+    <string name="commutity_fan_newpublic">最新发表</string>
+    <string name="commutity_fan_newcomment">最新评论</string>
+    <string name="commutity_fan_invite">邀请好友</string>
+    <string name="commutity_fan_quit">退出饭圈</string>
+    <string name="commutity_fan_logo_tip">上传饭圈封面图，吸引更多粉丝~</string>
+    <string name="commutity_fan_empty_logo_tip">必须上传饭圈封面图~</string>
+    <string name="commutity_fan_create_explain_tip">
+        说明：为了帮您增加饭圈的人气和活跃度，创建饭圈后，饭圈初始处于冻结状态，需要集齐30人加入此圈，此圈才能被解锁；\n\n祝您玩的开心~
+    </string>
+    <string name="commutity_fan_created">你已经创建过啦，把机会留给别人吧</string>
+    <string name="commutity_share_post_title">%1$s在星光发表了一个动态，快来围观~</string>
+    <string name="commutity_group_add">加入</string>
+    <string name="commutity_group_added">已加入</string>
+    <string name="commutity_comfirm_delete_post">确认要删除？</string>
+    <string name="commutity_syn">同步到</string>
+    <string name="commutity_send_group">发送到圈子：</string>
+    <string name="commutity_post_share_content">我在星光TV的时间线</string>
+    <string name="commutity_log_manage">管理日志</string>
+    <string name="commutity_user_ban_tip">已禁言</string>
+    <string name="commutity_manage_expain">圈主和管理员有义务保持饭圈内高质量的内容，请合理使用你们的权利，共同培育圈子的茁壮成长~</string>
+    <string name="commutity_manage_log_tip">%1$s %2$s</string>
+    <string name="commutity_image_save_success">已保存到本地相册</string>
+    <string name="commutity_image_save_fail">保存失败</string>
+    <string name="commutity_select_image_small">图片尺寸太小，换个大点儿的吧(*￣m￣)</string>
+    <string name="commutity_select_image_big">图片太大，换一张吧</string>
+
+    <!-- 编辑饭圈页面 -->
+    <string name="edit_fan_head">头像</string>
+    <string name="edit_fan_name">饭圈名</string>
+    <string name="edit_fan_host_name">圈主</string>
+    <string name="edit_fan_menber_num">成员</string>
+    <string name="edit_fan_detail">饭圈描述</string>
+    <string name="edit_fan_background">饭圈背景</string>
+    <string name="edit_fan_title_tip">饭圈标题输入1~10个字符</string>
+    <string name="create_fan_title_hint">输入饭圈名称，如吴亦凡（1-10个字符）</string>
+    <string name="edit_fan_success">恭喜，你的饭圈已创建成功，记得集齐30个小伙伴来解锁哦~</string>
+    <string name="edit_fan_content_tip">一句话描述饭圈，让更多粉丝懂ta~（2-40字符）
+        示例：胡歌、我最美好时光便是在银屏上看见了你，
+        我愿你不辜负自己的韶光
+    </string>
+    <string name="edit_fan_content_toast">正文长度应该在2－40以内</string>
+    <string name="edit_fan_title">更改标题</string>
+    <string name="edit_fan_content">更改描述</string>
+
+    <!--关注页面-->
+    <string name="fans_care_no_fans1">还没有人关注你，所以你无法获得这笔额</string>
+    <string name="fans_care_no_fans2">外的收益~亏大了!!赶紧去开播吸粉吧!!!</string>
+
+    <!-- 发帖 -->
+    <string name="post_name_hit">标题输入5~15个字符</string>
+    <string name="post_content_hit">写下你此刻的心情...</string>
+    <string name="post_module_hit">选择板块</string>
+    <string name="post_publish_title">发布动态</string>
+    <string name="post_select_moudle_text">选择板块</string>
+    <string name="post_moudle_empty_tip">请选择一个饭圈哦~</string>
+    <string name="post_content_less_tip">图片或内容至少一个不能为空哦~</string>
+    <string name="post_title_more_tip">标题在100字以内哦~</string>
+    <string name="post_save_tip">保存为草稿？</string>
+    <string name="post_save_cancel">不保存</string>
+    <string name="post_save_sure">保存</string>
+
+    <!-- 选图，查看图 -->
+    <string name="delete_title">确定删除该条会话吗？</string>
+    <string name="delete">删除</string>
+    <string name="sure_delete">确定删除？</string>
+
+    <!-- 我的界面 -->
+    <string name="me_collect">我的收藏</string>
+    <string name="me_reply">我的回复</string>
+    <string name="me_message">我的消息</string>
+    <string name="me_replay_no_data">你还没有任何回复哦~</string>
+    <string name="me_message_no_data">你还没有任何消息哦~</string>
+    <string name="me_collect_no_data">你还没有收藏任何帖子哦~</string>
+    <string name="me_post">帖子</string>
+    <string name="me_public">发表</string>
+    <string name="me_collect_title">收藏</string>
+    <string name="me_reply_title">回复</string>
+    <string name="tip_login_title">亲，需要登录哦，请登录!</string>
+    <string name="me_focus_text">我的关注 %1$s</string>
+    <string name="me_follow_text">我的粉丝 %1$s</string>
+    <string name="me_update_coin">还需要消耗%1$s克拉即可升级</string>
+    <string name="me_balance_text">克拉</string>
+    <string name="me_diandian_text">点点</string>
+    <string name="me_tast">做任务</string>
+    <string name="me_tuijian">精品推荐</string>
+    <string name="me_tuijian_loaddown">下载</string>
+    <string name="me_tuijian_tick_text">开始下载"%1$s"</string>
+    <string name="me_anchor">主播报名</string>
+    <string name="me_invite">邀请好友</string>
+    <string name="me_anchor_ad">成为星光主播，实现你的明星梦想！\n星光直播支持手机直播，0成本一键开播，做自己生活的导演。</string>
+    <string name="me_message_tab_comments">评论</string>
+    <string name="me_message_tab_system">系统</string>
+    <string name="me_shrinkage_up">点击收起&amp;gt;&amp;gt;</string>
+    <string name="me_shrinkage_down">点击查看详情&amp;gt;&amp;gt;</string>
+    <string name="me_income">我的收益</string>
+    <string name="me_income_tip">我的收益</string>
+    <string name="me_redpackage">我的红包</string>
+    <string name="me_level">我的等级</string>
+    <string name="me_prop">我的道具</string>
+    <string name="me_anchor_level">主播等级</string>
+    <string name="me_income_right_text">提现</string>
+    <string name="me_anchor_status_failure">未通过</string>
+    <string name="me_anchor_status_sucess">已通过</string>
+    <string name="me_anchor_user_id">ID：</string>
+    <string name="me_ali_pay_succ">支付成功</string>
+    <string name="me_ali_pay_fail">支付失败</string>
+    <string name="me_ali_pay_ing">支付结果确认中</string>
+    <string name="me_black_list_no_data">你还没有任何黑名单</string>
+    <string name="me_setting_black_list">黑名单</string>
+    <string name="me_setting_account_text">为了保证您的账户安全，请绑定手机号</string>
+    <string name="me_update_user_bg">背景更换成功</string>
+    <string name="system_gallery_select">从手机相册选择</string>
+    <string name="system_camera">拍照</string>
+    <string name="system_gallery">相册</string>
+    <string name="me_knapsack">我的背包</string>
+    <string name="shop">商城</string>
+
+    <!-- 设置页面 -->
+    <string name="setting_account">账户</string>
+    <string name="setting_account_sale">账户与安全</string>
+    <string name="setting_account_status_sale">已保护</string>
+    <string name="setting_account_status_unsale">未保护</string>
+    <string name="setting_account_sale_level_low">当前账号安全级别：非常低</string>
+    <string name="setting_account_sale_level_high">当前账号安全级别：高</string>
+    <string name="setting_account_sale_warn">
+        启用账号保护后，盗号者在其他手机上无法直接登陆你的app。账号保护需要绑定你本人的手机号，通过下发短信验证身份。
+    </string>
+    <string name="setting_account_sale_title">账号保护</string>
+    <string name="setting_account_bind_content">手机绑定：%1$s</string>
+    <string name="setting_account_bind_tip">绑定手机号</string>
+    <string name="setting_account_aries">白羊座</string>
+    <string name="setting_account_taurus">金牛座</string>
+    <string name="setting_account_gemini">双子座</string>
+    <string name="setting_account_cancer">巨蟹座</string>
+    <string name="setting_account_leo">狮子座</string>
+    <string name="setting_account_virgo">处女座</string>
+    <string name="setting_account_libra">天秤座</string>
+    <string name="setting_account_scorpio">天蝎座</string>
+    <string name="setting_account_sagittarius">射手座</string>
+    <string name="setting_account_capricorn">摩羯座</string>
+    <string name="setting_account_aquarius">水瓶座</string>
+    <string name="setting_account_pisces">双鱼座</string>
+    <string name="setting_account_constellation">星座</string>
+    <string name="settting_open_notification">成功开启通知推送</string>
+    <string name="settting_close_notification">成功关闭通知推送</string>
+    <!-- 主播报名页面 -->
+    <string name="anchor_step_1">1</string>
+    <string name="anchor_step_2">2</string>
+    <string name="anchor_step_3">3</string>
+    <string name="anchor_step_status_1">提交资料</string>
+    <string name="anchor_step_status_2">官方审核</string>
+    <string name="anchor_step_status_2_ing">审核中</string>
+    <string name="anchor_step_status_2_end">已审核</string>
+    <string name="anchor_step_status_3">审核结果</string>
+    <string name="anchor_title">主播报名</string>
+    <string name="anchor_phone_msg">请输入手机号</string>
+    <string name="anchor_mobile_addr">+86</string>
+    <string name="anchor_qq_msg">请输入QQ号</string>
+    <string name="anchor_note_msg">备注其他信息，如：推荐人(选填)</string>
+    <string name="anchor_result_one">恭喜你成为星光新生代主播</string>
+    <string name="anchor_result_two">小舞台成就大梦想</string>
+    <string name="anchor_result_three">期待你的精彩放送</string>
+    <string name="anchor_message_title">温馨提示:</string>
+    <string name="anchor_message_no">1、该视频仅用于主播个人认证，其他用户看不到；\n
+        2、录制时请保持五官清晰，佩戴口罩、墨镜或用手遮挡会影响审核结果；\n
+        3、录制过程中请做10s简短的自我介绍，若画面基本没动或完全静止，会影响审核结果；\n
+        4、提交资料后24小时内通知审核结果；\n
+        5、备注填写推荐人更容易通过审核哦；如无内地手机号或者QQ，可以在备注里填写其他联系方式；\n
+        6、如需帮助，请联系客服QQ：800163937
+    </string>
+    <string name="anchor_message_success">可以加入主播QQ群与其他主播一起交流哦~\n星光主播群号：476155931</string>
+    <string name="anchor_msg_begin">提示：请保持光线效果明亮，且清晰地\n显示你的正面，尽量使用高像素的\n摄像头进行录制</string>
+    <string name="anchor_msg_complete">提示：请先确认您录制的视频，满意后再\n上传，审核期间不能重新录制提交</string>
+    <string name="anchor_recoder_video">录制视频</string>
+    <string name="anchor_camera_begin">开始录制</string>
+    <string name="anchor_camera_restart">重新录制</string>
+    <string name="anchor_camera_complete">完成</string>
+    <string name="anchor_dialog_msg_content">摄像头/录音无法开启\n请手动设置权限\n\n
+        <b>方法1：</b>
+        \n在手机系统设置找到星光应用，将相机/录音权限设置为允许\n<b>方法2：</b>\n检查当前摄像头是否被其他应用占用
+    </string>
+    <string name="anchor_dialog_msg_exit">退出</string>
+    <string name="anchor_dialog_msg_sure">知道了</string>
+    <string name="anchor_toast_player_exception">视频文件异常</string>
+    <string name="anchor_toast_record_exception">录像设备异常</string>
+    <string name="anchor_toast_first_image_exception">获取视频第一帧失败</string>
+    <string name="anchor_toast_commit_success">提交成功</string>
+
+    <!-- 我的关注页面 -->
+    <string name="love_list_data_empty">你还没有任何关注哦~</string>
+    <string name="love_playing">播放中</string>
+
+    <!-- 主播直播页面 -->
+    <string name="live_notify_friend">通知好友或粉丝来围观</string>
+    <string name="live_status_ready">准备直播</string>
+    <string name="live_title_hint">今天想播点儿啥呢？</string>
+    <string name="live_start">开始直播</string>
+    <string name="live_ready">准备中...</string>
+    <string name="live_ready_title">#热门话题</string>
+    <string name="live_ready_add_tag">选择直播类型</string>
+    <string name="string_state_ready">准备直播</string>
+    <string name="string_state_preparing">正在预览</string>
+    <string name="string_state_connecting">正在连接</string>
+    <string name="string_state_streaming">正在直播</string>
+    <string name="string_state_netblocking">NETBLOCKING, STOPPING</string>
+    <string name="string_state_con_timeout">CONNECTION TIMEOUT</string>
+    <string name="live_exit">结束当前直播？</string>
+    <string name="live_senior_text">滤镜</string>
+    <string name="live_audience_num">观众%1$s人</string>
+    <string name="live_status_timer">直播中 %1$s</string>
+    <string name="live_status_ing">直播中...</string>
+    <string name="live_share_text">分享</string>
+    <string name="live_stop_live_text">结束直播</string>
+    <string name="live_report">举 报</string>
+    <string name="live_share">分 享</string>
+    <string name="live_focus_cancel">取消关注</string>
+    <string name="live_anchor_focus_num">粉丝%1$s</string>
+    <string name="live_anchor_audience_num">观众%1$s</string>
+    <string name="live_anchor_flower_num">鲜花%1$s</string>
+    <string name="live_error">直播推流错误</string>
+    <string name="live_screen_status_text">选择直播模式</string>
+    <string name="live_screen_clarity_text">选择清晰度</string>
+    <string name="live_screen_portrait">竖屏模式</string>
+    <string name="live_screen_landscape">横屏模式</string>
+    <string name="live_clarity_standard">流畅</string>
+    <string name="live_clarity_high">高清</string>
+    <string name="live_clarity_super">超清</string>
+    <string name="live_fan_freeze_tip">该饭圈还处于冻结状态，还需%1$s人加入才能解锁，快去喊小伙伴来帮忙吧。</string>
+    <string name="live_fan_invide">喊一声</string>
+    <string name="live_fan_unjoned_tip">加入ta的饭圈后才能查看有趣机智的帖子，并和里面的小伙伴们一起愉快地玩耍哟~</string>
+    <string name="live_video_quality_change">视频质量改变~</string>
+    <string name="live_speak_tip">对TA说</string>
+    <string name="live_line_user">连线</string>
+    <string name="live_person_info_tip">TA的主页</string>
+    <string name="live_chat_tip">私信</string>
+    <string name="live_flower_tip">爱心</string>
+    <string name="live_setting_mannger_tip">设为管理</string>
+    <string name="live_remove_mannger_tip">取消管理</string>
+    <string name="live_signature_empty_tip">这家伙有点懒，什么也没写</string>
+    <string name="live_gift_num_tip">%1$s个</string>
+    <string name="live_gift_group_num_tip">%1$s</string>
+    <string name="live_gift_name_tip">%1$s</string>
+    <string name="live_gif_gift_name_tip">送%1$sX%2$s</string>
+    <string name="live_gift_cur_num">x%1$s(%2$s)</string>
+    <string name="live_gift_cur_num_default">x1(一心一意)</string>
+    <string name="live_toast_submit_title_success">直播主题提交成功</string>
+    <string name="live_pao_rank">星光贡献榜</string>
+    <string name="live_toast_logo_is_null">上传一张封面，让更多人认识你吧</string>
+    <string name="live_i_want">我要直播</string>
+    <string name="live_filter_no_support_tip">当前设备不支持美颜功能</string>
+    <string name="live_blance_lack_tip">当前余额不足，充值后才能继续送礼，是否去充值？</string>
+    <string name="live_topic_empty_msg">暂无话题</string>
+    <string name="live_anchor_no_stream">直播已结束</string>
+    <string name="live_ignore_message">忽略未读</string>
+    <string name="live_unfocused">未关注</string>
+    <string name="live_focused">已关注</string>
+    <string name="live_anchor_go_away_tip">系统消息：主播稍微离开一会儿，马上回来，不要走开哦</string>
+    <string name="live_anchor_back_tip">系统消息：主播回来啦，精彩继续</string>
+    <string name="live_manager_title">我的房管</string>
+    <string name="live_manager_num">（%1$s）</string>
+    <string name="live_manager_list_data_empty">你还没有房管哦~</string>
+    <string name="live_report_anchor_msg">举报内容</string>
+    <string name="live_report_upload_img_msg">上传举报截图</string>
+    <string name="live_report_upload_img_resolve_msg">上传举报截图</string>
+    <string name="live_report_msg">认真举报的，官方核实后，将予以奖励；\n
+        若胡乱举报，一经核实，则有可能被封号；\n
+        请大家慎重举报，共同维护星光的良好环境！
+    </string>
+    <string name="live_user_entry_text">来了</string>
+    <string name="live_user_guard_entry_text">爱的守护神</string>
+    <string name="live_guard_gift_title">背包规则说明</string>
+    <string name="live_guard_gift_message">
+        1.背包格子有限，请合理使用哦~\n2.不同的用户等级有不同数量的格子~\n3.背包满后，要先将背包里的物品使用后才能领取其他物品哦~
+    </string>
+    <string name="location_default">外星人?</string>
+    <string name="location_loading">正在获取位置</string>
+    <string name="live_current_uid">星光ID：%1$s</string>
+    <string name="live_live_protocol">直播即代表你同意</string>
+    <string name="live_live_protocol_click">《开播协议》</string>
+    <string name="live_guard_gift_send_text">成为ta的守护了才能\n赠送专属礼物哦~</string>
+    <string name="live_gift_bonus">连击</string>
+    <string name="live_gift_bonus_toast">连续赠送该礼物最高可获得100倍克拉返利</string>
+    <string name="live_tag_head_1">直播内容</string>
+    <string name="live_tag_head_2">(选择准确的内容，更容易上热门)</string>
+    <string name="live_exist">确认结束直播吗？</string>
+    <string name="live_hot_rank_title">热门排名</string>
+    <string name="live_conversation_buy_prop">购买私信卡</string>
+    <string name="live_conversation_use_prop">使用私信卡</string>
+    <string name="popwindow_conversation_prop_message1">使用私信才能与对方聊天</string>
+    <string name="popwindow_conversation_prop_message2">私信是与主播1V1私密的开始哦</string>
+    <string name="popwindow_conversation_prop_result_num">您有%1$s张私信卡</string>
+    <string name="conversation_message_unread">对方给你发了%1$s条新消息</string>
+    <string name="conversation_message">对方给你发了消息</string>
+    <string name="live_new_user_welfare">新手福利</string>
+    <string name="live_red_packet_click_get">点击领取</string>
+    <string name="live_report_success">举报成功</string>
+    <string name="popwindow_conversation_look_person_info">查看她的主页</string>
+    <string name="live_report_not_image">请上传截图哦</string>
+    <string name="live_report_not_content">请选择要举报的原因</string>
+    <string name="live_report_not_login">举报需要登录，请登录</string>
+    <string name="live_connect_list_title">连线申请列表</string>
+    <string name="live_connect_list_description">最多显示12条最新申请消息</string>
+    <string name="live_connect_cancel_tip">对方已取消和您连线</string>
+    <string name="live_connect_cancel_yourself_tip">您已取消连线</string>
+    <string name="live_connect_permission_tip">获取权限失败，请重试</string>
+    <string name="live_connect_conneccting_tip">您当前正在连线，结束后才可更换连线对象</string>
+    <string name="live_connect_title">与主播连线互动</string>
+    <string name="live_connect_request_title">已申请与主播连线互动</string>
+    <string name="live_connect_by_anchor_title">主播申请与您连线</string>
+    <string name="live_connect_connecting_title">您与主播正在连线</string>
+    <string name="live_connect_cancel">取消连线</string>
+    <string name="live_connect_canceling">连线取消中...</string>
+    <string name="live_connect_connect">立即连线</string>
+    <string name="live_connect_connecting">连线申请中...</string>
+    <string name="live_connect">连线</string>
+    <string name="live_push_warning_net_busy">当前主播的上行网络质量很差，观众端已经出现了卡顿</string>
+    <string name="live_connect_audio_connecting">通话中...</string>
+    <string name="live_connect_request_empty">当前还没有人申请连线哦~</string>
+    <string name="live_connect_exit">结束\n当前连线？</string>
+    <string name="live_invite_wait_tip">等待应答\n(%1$ds)</string>
+    <string name="live_invite_leave_tip">用户失联啦(ㄒoㄒ)</string>
+    <string name="live_ignore_connect">忽略</string>
+    <string name="live_accept_connect">接受</string>
+    <string name="live_connect_switch_screen_tip">使用连线功能时无法切换横屏</string>
+    <string name="live_dialog_error_tip">直播画面已结束~</string>
+    <string name="live_restart">重新开始</string>
+    <string name="live_quit">退出</string>
+    <string name="live_red_packet_title">抢到红包</string>
+    <string name="live_red_packet_money_unit">元</string>
+    <string name="live_red_packet_subtitle">已存入“我的红包-官方红包”</string>
+    <string name="live_red_packet_fast_get">立即领取</string>
+    <string name="live_red_packet_get_mount">20</string>
+    <string name="live_red_packet_get_mount_msg">您还有一个红包待领取</string>
+    <string name="live_red_packet_empty_msg">今日红包已领完，明天再来可继续领取</string>
+    <string name="live_red_packet_empty_hide">不再显示</string>
+    <string name="live_red_packet_empty_invite">
+        <u>邀请好友，赢取更多现金红包</u>
+    </string>
+    <string name="live_package_gift_max_c">无法送出超过当前格子礼物数量的礼物哦</string>
+    <string name="live_need_focus">喜欢主播就点点关注咯，关注主播可以收到ta的开播通知福利哦</string>
+    <string name="live_forget_focus">不要福利</string>
+    <string name="live_focus_he">关注TA</string>
+    <string name="live_hot_rank_next_list">下一轮排名</string>
+    <string name="live_hot_rank_next_need">与下一轮热一差</string>
+    <string name="live_hot_rank_is_owner">这是你自己</string>
+    <string name="live_hot_rank_count">成为热门第一</string>
+
+
+    <!-- 首页直播页面 -->
+    <string name="live_me_focus">我关注的</string>
+    <string name="live_trailer">直播预告</string>
+    <string name="live_hot_anchor">热门播主</string>
+    <string name="live_new_anchor">新人主播</string>
+    <string name="live_online_num">%1$s人在看</string>
+    <string name="live_search_tip">点击查找《%1$s"》相关的主播</string>
+    <string name="live_input_danmu_tip">发送弹幕消息,10克拉/条</string>
+    <string name="live_record_error_title">开播提示</string>
+    <string name="live_record_error">安卓5.0.0系统以下的手机不支持此功能哦，试试【普通直播】吧</string>
+    <string name="live_record_cancel">录屏结束</string>
+    <string name="live_record_live">录屏直播</string>
+    <string name="live_common_live">普通直播</string>
+
+    <!-- WXPayEntryActivity -->
+    <string name="pay_result_tip">星光直播微信支付结果页面</string>
+    <string name="pay_result_callback_msg" formatted="false">微信支付结果：%s</string>
+
+    <!-- 欢迎页面 -->
+    <string name="welcome_logo_text">播出星光灿烂</string>
+
+    <!-- 登录界面 -->
+    <string name="uninstall_weixin_tip">你还没有安装微信</string>
+    <string name="uninstall_qq_tip">你还没有安装QQ</string>
+    <string name="uninstall_sina_tip">你还没有安装新浪微博</string>
+    <string name="login_msg">无需注册 一键登录</string>
+    <string name="qq_version_lower">你的QQ版本太低，还不支持QQ钱包支付</string>
+
+
+    <!-- 编辑页面 -->
+    <string name="edit_user_head">头像</string>
+    <string name="edit_user_nick">昵称</string>
+    <string name="edit_user_id">用户ID</string>
+    <string name="edit_user_sex">性别</string>
+    <string name="edit_user_birthday">出生日期</string>
+    <string name="edit_user_signature">个性签名</string>
+    <string name="edit_user_save">保存</string>
+    <string name="edit_user_save_success">保存成功</string>
+    <string name="edit_user_title">个人信息</string>
+    <string name="edit_update_introduction">更改个性签名</string>
+    <string name="edit_update_username">更改昵称</string>
+    <string name="edit_update_sex">选择性别后将无法再修改，请慎重选择</string>
+    <string name="edit_update_sex_result">你选择的性别是： %1$s</string>
+    <string name="edit_update_toast_sex_no">您已修改过性别</string>
+    <string name="edit_album_checking">审核中...</string>
+    <string name="edit_album_failed">上传失败</string>
+    <string name="edit_album_count_max">总共只能上传32张图片哦</string>
+
+    <!-- 首页主页面 -->
+    <string name="login_reward_text1">第1天</string>
+    <string name="login_reward_text2">第2天</string>
+    <string name="login_reward_text3">第3天</string>
+    <string name="login_reward_text4">第4天</string>
+    <string name="login_reward_text5">第5天</string>
+    <string name="login_reward_text6">第6天</string>
+    <string name="login_reward_text7">第7天</string>
+    <string name="login_reward_last">第 %1$s天</string>
+    <string name="login_reward_money">%1$s点点</string>
+
+    <!-- 任务中心 -->
+    <string name="task_title">任务中心</string>
+    <string name="task_login_reward_text">今天登录奖励：</string>
+    <string name="task_login_reward_text_desc">连续登录可获得更多点点</string>
+    <string name="task_login_reward">领取</string>
+    <string name="task_login_rewarded">已领取</string>
+    <string name="task_anyway_title">每日任务（完成任务后自动获取奖励）</string>
+    <string name="task_online_text">在线达人</string>
+    <string name="task_online_text_desc">在任一个房间连续在线达15分钟</string>
+    <string name="task_send_gift_text">送礼达人（%1$s）</string>
+    <string name="task_send_gift_text_desc">为主播送出%1$s次付费礼物</string>
+    <string name="task_share_text">分享达人（分享后需要“返回星光”才有效哦）</string>
+    <string name="task_share_text_desc">分享主播直播页面或帖子%1$s次</string>
+    <string name="task_send_post_text">发帖达人</string>
+    <string name="task_send_post_text_desc">在社区发帖</string>
+    <string name="task_reply_post_text">回帖达人</string>
+    <string name="task_reply_post_text_desc">在社区回帖或点赞</string>
+    <string name="task_novice_title">新手任务（完成任务后自动获取奖励）</string>
+    <string name="task_focus_anchor_text">关注主播</string>
+    <string name="task_focus_anchor_text_desc">累计关注%1$s个主播</string>
+    <string name="task_update_headicon_text">被自己美哭啦</string>
+    <string name="task_update_headicon_text_desc">第一次换头像</string>
+    <string name="task_update_sign_text">我最个性</string>
+    <string name="task_update_sign_text_desc">第一次写个人签名</string>
+    <string name="task_recharge_text">我最任性</string>
+    <string name="task_recharge_text_desc">第一次完成充值</string>
+    <string name="task_send_rose_text">我是捧场王</string>
+    <string name="task_send_rose_text_desc">给主播送玫瑰</string>
+    <string name="task_first_sendpost_text">我有好文采</string>
+    <string name="task_first_sendpost_text_desc">第一次在社区发帖</string>
+    <string name="task_first_replypost_text">我是热心观众</string>
+    <string name="task_first_replypost_text_desc">第一次在社区点赞或回帖</string>
+    <string name="task_phone_text">下载手机app并登陆</string>
+    <string name="task_phone_text_desc">下载手机app并登陆</string>
+
+    <!-- 注册页面 -->
+    <string name="register_mobile">手机号</string>
+    <string name="register_mobile_86">+86</string>
+    <string name="register_mobile_verify">验证码</string>
+    <string name="register_protocol">注册即表示同意并接受</string>
+    <string name="register_protocol_click">用户协议</string>
+    <string name="register_nickname">用户名</string>
+    <string name="register_password">密码</string>
+    <string name="register_new_password">新密码</string>
+    <string name="register_sex">性别</string>
+    <string name="register_inviter">邀请人ID</string>
+    <string name="register_inviter_hit">如没有邀请人，请忽略</string>
+    <string name="register_sms_info">请稍等%1$s秒</string>
+    <string name="register_input_nickname">请输入昵称</string>
+    <string name="register_input_password">请输入密码</string>
+    <string name="login_protocol">登录即代表你同意</string>
+    <string name="bind_title">手机绑定</string>
+    <string name="bind_text">绑定</string>
+    <string name="bind_skip_text">跳过</string>
+    <string name="bind_phone_success">绑定成功</string>
+
+    <!-- 邀请好友 -->
+    <string name="invite_title">邀请好友</string>
+    <string name="invite_me_id_title">ID号</string>
+    <string name="invite_me_id">我的ID %1$s</string>
+    <string name="invite_id_title">邀请人ID</string>
+    <string name="invite_id_edit_tip">填写邀请人ID可获得1k点点奖励哦</string>
+    <string name="invite_me_invite_title">我邀请的人（%1$s）</string>
+    <string name="invite_me_invite_no_empty">还没有成功邀请到好友呢</string>
+    <string name="invite_reward_title">已积累的邀请奖励</string>
+    <string name="invite_id_success">已成功邀请</string>
+    <string name="invite_activity_regulation_title">活动规则：</string>
+    <string name="invite_activity_regulation">
+        1，您可以通过邀请按钮将您的星光ID发送给好友。好友可以直接点击邀请页面并用微信或者QQ登陆星光TV，也可以下载安装星光TV应用，在注册页面输入您的ID以回馈您的邀请。好友采用以上两种任意一种方法注册后您即可获得邀请礼包。\n
+        2，邀请礼包包含：1千点点，及在3个月内，邀请的好友充值金额的10%全部以克拉形式奖励给您。\n
+        3，被邀请人成功被邀请后也会获得1千点点的奖励。\n
+        4，所有的奖励均实时结算，由系统自动发放，并会以系统通知的形式告知您。\n
+        5，可以无限邀请好友。
+    </string>
+    <!-- 消息模块 -->
+    <string name="message_me_support">赞了我的</string>
+    <string name="message_me_comment">评论我的</string>
+    <string name="message_me_task">任务</string>
+    <string name="message_me_focus">关注我的</string>
+    <string name="message">消息</string>
+    <string name="message_system">系统消息</string>
+    <string name="message_comment_tip">评论了你</string>
+    <string name="message_focus_tip">关注了你</string>
+    <string name="message_support_tip">赞了你</string>
+    <string name="message_task_msg_title">任务奖励</string>
+    <string name="message_conversation_no_data">还没有人与你聊天，快找个人聊天吧</string>
+
+
+    <!-- 融云模块-->
+    <string name="rongcloud_empty_message_tip">消息不能为空</string>
+    <string name="rongcloud_conversation_copy_tip">复制</string>
+    <string name="rongcloud_conversation_delete_tip">删除</string>
+    <string name="rongcloud_message_unread_count">99+</string>
+    <string name="rongcloud_customer_title">官方客服</string>
+    <string name="rongcloud_user_ban_tip">你已被系统禁言(%1$s天后解禁),解除禁言后才能私信TA</string>
+    <string name="rongcloud_user_foreve_ban_tip">你已被系统禁言(永远后解禁),解除禁言后才能私信TA</string>
+    <string name="rongcloud_user_online_tip">您的账号在别的设备上登录，您被迫下线！如非本人操作，则密码可
+        能已泄露，建议修改密码。
+    </string>
+    <string name="rongcloud_user_logout">退出</string>
+    <string name="rongcloud_user_relogin">重新登录</string>
+    <string name="rongcloud_user_private_invite">[邀请你进行视频聊天]</string>
+    <string name="rongcloud_user_private_end">[已取消视频聊天]</string>
+    <string name="rongcloud_user_no_verified">请先进行主播实名认证哦</string>
+    <string name="rongcloud_user_insert_private_invite">邀请你进行</string>
+    <string name="rongcloud_user_insert_private_end">已取消</string>
+    <string name="rongcloud_user_private_text">视频聊天</string>
+    <string name="rongcloud_user_living">您正在直播，请结束后再开启视频聊天</string>
+
+    <!-- 个人中心 -->
+    <string name="person_live">直播</string>
+    <string name="person_anchor_level">主播等级</string>
+    <string name="person_anchor_fans">粉丝数%1$s</string>
+    <string name="person_live_status_unlive">未直播</string>
+    <string name="person_signature">个性签名</string>
+    <string name="person_guad">守护</string>
+    <string name="person_dynamic">动态</string>
+    <string name="person_fans">粉丝</string>
+    <string name="person_focus">关注</string>
+    <string name="person_dynamic_no_data">暂无动态</string>
+    <string name="person_fans_no_data">暂无粉丝</string>
+    <string name="person_focus_no_data">暂无关注</string>
+    <string name="person_edit_info">编辑个人资料</string>
+    <string name="person_anchor_live">LIVE</string>
+    <string name="person_anchor_rest">休息</string>
+    <string name="person_live_trailer">直播预告</string>
+    <string name="person_eidt_live_trailer">填写直播预告</string>
+    <string name="person_go_room">进入房间</string>
+    <string name="person_no_dynamic_tip">你还没有动态哦\n赶紧去饭圈发布信息吧ヽ(✿ﾟ▽ﾟ)ノ</string>
+    <string name="person_me_dynamic">我的动态</string>
+    <string name="person_ta_fans">TA的粉丝</string>
+    <string name="person_ta_fans_no_data">你还没有任何粉丝</string>
+    <string name="person_me_fans">我的粉丝</string>
+    <string name="person_ta_focus">TA的关注</string>
+    <string name="person_me_focus">我的关注</string>
+    <string name="person_focus_success">已成功关注</string>
+    <string name="person_remove_focus_success">已成功取消关注</string>
+    <string name="person_set_play_time_success">设置预播时间成功</string>
+    <string name="person_remove_play_time_success">删除预播时间成功</string>
+    <string name="person_black">拉黑</string>
+    <string name="person_remove_black_success">解除成功</string>
+    <string name="person_remove_black_fail">解除失败</string>
+    <string name="person_add_black_success">拉黑成功</string>
+    <string name="person_add_black_fail">拉黑失败</string>
+    <string name="person_close_black">解除拉黑</string>
+    <string name="person_sure_black">确认拉黑</string>
+    <string name="person_sure">确认</string>
+    <string name="person_black_title">拉黑后将无法收到对方私信\n确认要拉黑TA吗？</string>
+    <string name="person_close_black_title">取消拉黑后将能够收到对方私信\n确认要解除拉黑吗？</string>
+
+    <!-- 高级编辑图片 -->
+    <string name="picture_cut_title">裁剪图片</string>
+    <string name="fans_care_no_sended">暂无已发送私信的用户，点击切换全部列表</string>
+    <string name="fans_care_no_never_send">暂无未发送私信的用户，点击切换全部列表</string>
+    <string name="fans_care_notice">给粉丝发私信,陪粉丝聊天，可以额外获得大量的收益哦</string>
+    <string name="fans_care_fitler">筛选</string>
+
+    <!--  -->
+    <string name="app_name">星光直播</string>
+    <string name="slogan">千万情意 | 唯独为你</string>
+    <string name="copyright">Copyright@2015 guojiang.tv</string>
+    <string name="all_rights_reserved">All Rights Reserved</string>
+    <string name="recommend_follow">推荐关注</string>
+    <string name="sign_multiply">×</string>
+    <string name="status_palying">直播</string>
+    <string name="login">登录</string>
+    <string name="recharge">充值</string>
+    <string name="fz_recharge">克拉充值</string>
+    <string name="my_focus">我的关注</string>
+    <string name="save_changes">保存修改</string>
+    <string name="edite_data">编辑资料</string>
+    <string name="edite">编辑</string>
+    <string name="username">用户名</string>
+    <string name="input_username">请输入邮箱/手机号</string>
+    <string name="input_password">请输入密码</string>
+    <string name="forget_password">忘记密码</string>
+    <string name="input_new_password">请输入新的密码</string>
+    <string name="register">注册</string>
+    <string name="register2">填写个人资料</string>
+    <string name="new_register">新用户注册</string>
+    <string name="login_by_qq_account">使用 QQ 账号登录</string>
+    <string name="login_by_weixin_account">使用微信账号登录</string>
+    <string name="please_input_username">请输入用户名</string>
+    <string name="please_input_password">请输入密码</string>
+    <string name="username_min_length">用户名最短为6位字符</string>
+    <string name="nickname_min_length">昵称最短为3位字符</string>
+    <string name="password_min_length">密码最短为6位字符</string>
+    <string name="input_mobile">请输入11位手机号</string>
+    <string name="input_mobile_length">手机号为11位</string>
+    <string name="a_userinfo_input_right_phone_number">该手机号不存在</string>
+    <string name="a_userinfo_input_sex_not_modify">性别确认后无法再次修改</string>
+    <string name="a_userinfo_pwd_length_limit">请输入%1$d-%2$d位字符</string>
+    <string name="a_userinfo_sex_selected">请选择性别</string>
+    <string name="invalid_mobile">手机号不正确</string>
+    <string name="input_verify_code">请输入4位验证码</string>
+    <string name="get_verify_code">获取验证码</string>
+    <string name="currency_amount">当前金额/克拉</string>
+    <string name="recharge_amount">充值金额</string>
+    <string name="invalid_verify_code">验证码不正确</string>
+    <string name="next_step">下一步</string>
+    <string name="playing">直播</string>
+    <string name="playing_notice">直播通知</string>
+    <string name="are_playing">正在直播</string>
+    <string name="not_playing">休息</string>
+    <string name="immediate_payment">立即支付</string>
+    <string name="msg_settings">消息推送设置</string>
+    <string name="anim_setting">选择进场模式</string>
+    <string name="anim_setting_none">隐身进场</string>
+    <string name="anim_setting_superior">高级特效进场</string>
+    <string name="anim_setting_intro">说明：\n
+        1.18级及以上的用户才能解锁选择进场模式功能~\n
+        2.选择高级特效进场，则进入直播间时显示高级进场特效，可以享受万人瞩目的荣耀时刻哦~\n
+        3.选择隐身进场，则进入直播间时不提示，可以安静地做个吃瓜群众哦~\n
+    </string>
+    <string name="help">帮助</string>
+    <string name="settings">设置</string>
+    <string name="contact_cust">联系客服</string>
+    <string name="advice">意见反馈</string>
+    <string name="get_back_password">找回密码</string>
+    <string name="about">关于星光直播</string>
+    <string name="check_update">检查更新</string>
+    <string name="logout">退出账号</string>
+    <string name="your_nickname">你的昵称</string>
+    <string name="i_agree">我同意</string>
+    <string name="send_msg">发送</string>
+    <string name="cancel">取消</string>
+    <string name="determine">确定</string>
+    <string name="select_all">默认选中</string>
+    <string name="input_hint">您的意见对我们很重要...</string>
+    <string name="name_protocol">《服务条款》</string>
+    <string name="please_input_nickname">请输入2-10位字符</string>
+    <string name="register_success">恭喜您，注册成功</string>
+    <string name="protocol">服务条款</string>
+    <string name="protocol_content">
+        服务条款服务条款服务条款服务条款服务条款服务条款服务条款服务条款服务条款服务条款服务条款服务条款服务条款服务条款服务条款服务条款服务条款服务条款服务条款服务条款服务条款服务条款服务条款服务条款服务条款服务条款服务条款服务条款
+    </string>
+    <string name="about_content">星光直播-播出星光灿烂</string>
+    <string name="subject_nickname">昵称：</string>
+    <string name="subject_password">密码：</string>
+    <string name="subject_gender">性别：</string>
+    <string name="male">男</string>
+    <string name="female">女</string>
+    <string name="other">其他</string>
+    <string name="hint_nickname">2–10个字符</string>
+    <string name="hint_password">6–16位字符</string>
+    <string name="submit">提交</string>
+    <string name="click_to_chat_with_player">和大家聊会天...</string>
+    <string name="click_to_private_chat">与主播私聊...</string>
+    <string name="updata">升级</string>
+    <string name="back">返回</string>
+    <string name="change_account">切换账号</string>
+    <string name="my_fans">关注我的</string>
+    <string name="input_remind">请输入2~10个字符</string>
+    <string name="input_remind_words">最多输入30个字符</string>
+    <string name="focus">关注</string>
+    <string name="focused">已关注</string>
+    <string name="said_him">对他说</string>
+    <string name="chat_him">与他私聊</string>
+    <string name="update_prompt">不再提示本次更新</string>
+    <string name="input_age">请输入您的真实年龄</string>
+    <string name="input_height">输入真实的身高</string>
+    <string name="input_weight">输入真实的体重</string>
+    <string name="qq_login">登录</string>
+    <string name="qq_logout">退出当前账号</string>
+    <string name="title_activity_gifts">GiftsActivity</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="send_gifts">赠送礼物</string>
+    <string name="send_btn_gifts">赠送</string>
+    <string name="send_number_gifts">个</string>
+    <string name="send_gifts_10">10 (十全十美)</string>
+    <string name="send_gifts_30">30 (想你...)</string>
+    <string name="send_gifts_66">66 (一切顺利)</string>
+    <string name="send_gifts_188">188 (要抱抱)</string>
+    <string name="send_gifts_520">520 (我爱你)</string>
+    <string name="send_gifts_1314">1314 (一生一世)</string>
+    <string name="pink_content">色情内容</string>
+    <string name="spam">垃圾广告</string>
+    <string name="personal_attacks">人身攻击</string>
+    <string name="sensitive_information">敏感信息</string>
+    <string name="false_winning">虚假中奖</string>
+    <string name="report">举报</string>
+    <string name="field_contribution">场贡献榜</string>
+    <string name="week_contribution">周贡献榜</string>
+    <string name="private_chat">私聊</string>
+    <string name="anchor">主播</string>
+    <string name="share">分享</string>
+    <string name="anchor_info">主播资料</string>
+    <string name="administrator">管理员：0</string>
+    <string name="audience">观众：0</string>
+    <string name="share_content">星光直播分享</string>
+    <string name="weixin">微信</string>
+    <string name="pengyouquan">朋友圈</string>
+    <string name="weibo">微博</string>
+    <string name="kongjian">空间</string>
+    <string name="QQ">QQ</string>
+    <string name="renren">人人网</string>
+    <string name="tieba">贴吧</string>
+    <string name="give">送：</string>
+    <string name="input_advise">意见输入：</string>
+    <string name="your_contact">您的联系方式：方便我们及时联系您哦~</string>
+    <string name="submit_advise">提交反馈</string>
+    <string name="welcome_advise">hi，欢迎您给我们提意见哦~记得留下您的QQ或电话或
+        微信或邮箱等联系方式哦~以方便我们及时与您联系沟
+        通(づ￣3￣)づ╭❤～
+    </string>
+    <string name="advise_msg">您也可以关注我们的微信公众号“果酱时代”，在那里可
+        以及时和客服妹子联系哦~（微信通讯录-公众号页面右上
+        角点击“+”号，输入“果酱时代”，搜索，然后点击第
+        一个，进入后点关注，这样就可以与客服沟通啦~
+    </string>
+    <string name="common_dialog_permission_question_live_title">开启直播遇到问题了？</string>
+    <string name="common_dialog_permission_question_audio_title">星光直播无法获取麦克风权限</string>
+    <string name="camera">相机</string>
+    <string name="camera_device">摄像头</string>
+    <string name="camera_audio">麦克风</string>
+    <string name="common_dialog_permission_exception">手机%1$s无法开启？</string>
+    <string name="common_dialog_permission_method_1_title">解决方法1：</string>
+    <string name="common_dialog_permission_method_2_title">解决方法2：</string>
+    <string name="common_dialog_permission_method_1">在手机的系统设置中找到星光直播应用，将%1$s的权限设置为允许</string>
+    <string name="common_dialog_permission_method_2">检查当前%1$s是否被其他应用占用</string>
+    <string name="title_activity_playing_rank">PlayingRankActivity</string>
+    <string name="common_verify_info">认证：%1$s</string>
+    <string name="permission_camera">请开启摄像头权限</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="fans_care_me">关注我的</string>
+    <string name="fans_care_all">群发</string>
+    <string name="select_reciever_left_message">今日你还可以给0个粉丝发私信哦</string>
+    <string name="select_reciever_no_sended">暂无已发送私信的用户，点击切换全部列表</string>
+    <string name="select_reciever_no_never_send">暂无未发送私信的用户，点击切换全部列表</string>
+    <string name="select_reciever_no_reciever1">暂无收信人可选</string>
+    <string name="select_reciever_no_reciever2">原因可能是今天发信人数或条数已达上限</string>
+    <string name="select_reciever_next_step">下一步</string>
+    <string name="select_reciever_choose_all">全选</string>
+    <string name="batchj_sending_text">您将发送信息给0位粉丝</string>
+    <string name="batch_sending">发消息</string>
+    <string name="message_sended">信息已发送</string>
+    <string name="batch_sending_network_bad">网络不给力</string>
+    <string name="pop_filter_all">全部</string>
+    <string name="pop_filter_sended">今日已发</string>
+    <string name="pop_filter_never_send">今日未发</string>
+    <string name="select_receiver_title">选择收信人</string>
+    <string name="select_receiver_right_title">筛选</string>
+    <string name="official_recommend">官方推荐</string>
+    <string name="become_recommend">我要上推荐</string>
+    <string name="become_recommed_detail">点击了解上推荐详情</string>
+
+    <!-- 定义view的Tag key-->
+    <item name="tag_first" type="id">
+    </item>
+    <item name="tag_second" type="id">
+    </item>
+    <item name="glide_tag_id" type="id">
+    </item>
+    <!-- 连线面板的tag key -->
+    <item name="tag_connect_status" type="id">
+    </item>
+</resources>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<CheckBox xmlns:android="http://schemas.android.com/apk/res/android"
+          android:id="@+id/live_tag_item_name"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:background="@drawable/btn_bg_tag_selector"
+          android:button="@null"
+          android:clickable="false"
+          android:focusable="false"
+          android:gravity="center"
+          android:text="@string/live_new_anchor"
+          android:textColor="@color/a_text_666666_ffffff_selector"
+          android:textSize="@dimen/a_text_size_36"
+          android:textStyle="bold"/>
+

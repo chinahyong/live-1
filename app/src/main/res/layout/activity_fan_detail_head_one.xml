@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/trans"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="10dip"
+        android:paddingRight="10dip" >
+
+        <RelativeLayout
+            android:layout_width="66.66dip"
+            android:layout_height="66.66dip"
+            android:background="@drawable/bg_circle_head" >
+
+            <ImageView
+                android:id="@+id/item_fanquan_logo"
+                android:layout_width="63.66dp"
+                android:layout_height="63.66dp"
+                android:layout_centerInParent="true"
+                android:background="@drawable/bg_user_default"
+                android:contentDescription="@string/app_name"
+                android:scaleType="centerCrop" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="6.66dip" >
+
+            <tv.live.bx.ui.StrokeTextView
+                android:id="@+id/item_fanquan_nickname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="股水电"
+                android:textColor="@color/a_text_color_ffffff"
+                android:textSize="@dimen/a_text_size_42"
+                app:strokeTextColor="@color/a_bg_color_000000" />
+
+            <tv.live.bx.ui.StrokeTextView
+                android:id="@+id/item_fanquan_host"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/item_fanquan_nickname"
+                android:layout_marginTop="8dip"
+                android:gravity="center"
+                android:text="@string/commutity_fan_host"
+                android:textColor="@color/a_text_color_ffffff"
+                android:textSize="@dimen/a_text_size_36"
+                app:strokeTextColor="@color/a_bg_color_000000" />
+
+            <tv.live.bx.ui.StrokeTextView
+                android:id="@+id/item_fanquan_host_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/item_fanquan_host"
+                android:layout_alignTop="@id/item_fanquan_host"
+                android:layout_marginLeft="6.66dip"
+                android:layout_toRightOf="@id/item_fanquan_host"
+                android:gravity="center_vertical"
+                android:textColor="@color/a_text_color_ffffff"
+                android:textSize="@dimen/a_text_size_36"
+                app:strokeTextColor="@color/a_bg_color_000000" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <tv.live.bx.ui.StrokeTextView
+        android:id="@+id/item_fanquan_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dip"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
+        android:layout_marginTop="8dip"
+        android:maxLines="3"
+        android:text="股水电"
+        android:textColor="@color/a_text_color_ffffff"
+        android:textSize="@dimen/a_text_size_30"
+        app:strokeTextColor="@color/a_bg_color_000000" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40.66dip"
+        android:background="@color/a_bg_color_4c000000" >
+
+        <LinearLayout
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical" >
+
+            <tv.live.bx.ui.StrokeTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:text="@string/commutity_fan_popularity"
+                android:textColor="@color/a_text_color_ffffff"
+                android:textSize="@dimen/a_text_size_36"
+                app:strokeTextColor="@color/a_bg_color_000000" />
+
+            <tv.live.bx.ui.StrokeTextView
+                android:id="@+id/item_fanquan_popularity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dip"
+                android:gravity="center_vertical"
+                android:textColor="@color/a_text_color_ffffff"
+                android:textSize="@dimen/a_text_size_30"
+                app:strokeTextColor="@color/a_bg_color_000000" />
+        </LinearLayout>
+
+        <View
+            style="@style/divider_vertical"
+            android:background="@color/a_bg_color_000000" />
+
+        <LinearLayout
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical" >
+
+            <tv.live.bx.ui.StrokeTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:text="@string/commutity_fan_post"
+                android:textColor="@color/a_text_color_ffffff"
+                android:textSize="@dimen/a_text_size_36"
+                app:strokeTextColor="@color/a_bg_color_000000" />
+
+            <tv.live.bx.ui.StrokeTextView
+                android:id="@+id/item_fanquan_post"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dip"
+                android:gravity="center_vertical"
+                android:textColor="@color/a_text_color_ffffff"
+                android:textSize="@dimen/a_text_size_30"
+                app:strokeTextColor="@color/a_bg_color_000000" />
+        </LinearLayout>
+
+        <View
+            style="@style/divider_vertical"
+            android:background="@color/a_bg_color_000000" />
+
+        <LinearLayout
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical" >
+
+            <tv.live.bx.ui.StrokeTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:text="@string/commutity_fan_fans"
+                android:textColor="@color/a_text_color_ffffff"
+                android:textSize="@dimen/a_text_size_36"
+                app:strokeTextColor="@color/a_bg_color_000000" />
+
+            <tv.live.bx.ui.StrokeTextView
+                android:id="@+id/item_fanquan_fans"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dip"
+                android:gravity="center_vertical"
+                android:textColor="@color/a_text_color_ffffff"
+                android:textSize="@dimen/a_text_size_30"
+                app:strokeTextColor="@color/a_bg_color_000000" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/a_bg_backgroup_color"
+                android:orientation="vertical">
+    <tv.live.bx.ui.widget.CustomRefreshLayout
+        android:id="@+id/refresh_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <tv.live.bx.ui.widget.HeaderFooterGridView
+            android:id="@+id/gridView_new"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fastScrollEnabled="false"
+            android:listSelector="@android:color/transparent"
+            android:numColumns="3"
+            android:paddingBottom="7dp"
+            android:paddingTop="7dp"
+            android:scrollbarStyle="outsideOverlay"
+            android:smoothScrollbar="true"
+            android:stretchMode="spacingWidthUniform"
+            android:verticalSpacing="14dp"/>
+    </tv.live.bx.ui.widget.CustomRefreshLayout>
+
+    <include
+        layout="@layout/a_common_loadingprogress_jump_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone"/>
+</RelativeLayout>
