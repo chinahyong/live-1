@@ -9,14 +9,14 @@ import android.view.WindowManager;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 
-import com.efeizao.bx.R;
+import java.util.ArrayList;
+import java.util.List;
+
+import tv.live.bx.R;
 import tv.live.bx.common.Constants;
 import tv.live.bx.common.Utils;
 import tv.live.bx.imageloader.ImageLoaderUtil;
 import tv.live.bx.model.AlbumBean;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * 礼物GridView的适配器

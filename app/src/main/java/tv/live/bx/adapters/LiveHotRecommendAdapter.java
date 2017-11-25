@@ -9,15 +9,15 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import tv.live.bx.FeizaoApp;
-import com.efeizao.bx.R;
+import tv.live.bx.R;
 import tv.live.bx.common.Constants;
 import tv.live.bx.common.Utils;
 import tv.live.bx.imageloader.ImageLoaderUtil;
 import tv.live.bx.model.AnchorBean;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by BYC on 2017/7/14.

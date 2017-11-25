@@ -8,13 +8,13 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.efeizao.bx.R;
+import java.util.ArrayList;
+import java.util.List;
+
+import tv.live.bx.R;
 import tv.live.bx.config.UserInfoConfig;
 import tv.live.bx.imageloader.ImageLoaderUtil;
 import tv.live.bx.model.AnchorBean;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by Live on 2017/8/22.

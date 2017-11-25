@@ -8,8 +8,6 @@ import android.text.SpannableString;
 import android.text.style.ForegroundColorSpan;
 import android.util.Base64;
 
-import com.efeizao.bx.R;
-
 import java.io.UnsupportedEncodingException;
 import java.math.BigDecimal;
 import java.security.MessageDigest;
@@ -19,6 +17,8 @@ import java.util.List;
 import java.util.UUID;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import tv.live.bx.R;
 
 /**
  * @author

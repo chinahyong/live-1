@@ -24,11 +24,18 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.TextView.OnEditorActionListener;
 
-import com.efeizao.bx.R;
+import com.lonzh.lib.network.JSONParser;
+
+import org.json.JSONArray;
+
+import java.lang.ref.WeakReference;
+import java.util.List;
+import java.util.Map;
+
+import cn.efeizao.feizao.framework.net.impl.CallbackDataHandle;
+import tv.live.bx.R;
 import tv.live.bx.activities.base.BaseFragmentActivity;
 import tv.live.bx.adapters.MyFocusAdapter;
-import tv.live.bx.util.ActivityJumpUtil;
-import tv.live.bx.util.UiHelper;
 import tv.live.bx.common.BusinessUtils;
 import tv.live.bx.common.Constants;
 import tv.live.bx.common.MsgTypes;
@@ -39,15 +46,8 @@ import tv.live.bx.ui.ListFooterLoadView;
 import tv.live.bx.ui.LoadingProgress;
 import tv.live.bx.ui.LoadingProgress.onProgressClickListener;
 import tv.live.bx.ui.PullRefreshListView;
-import com.lonzh.lib.network.JSONParser;
-
-import org.json.JSONArray;
-
-import java.lang.ref.WeakReference;
-import java.util.List;
-import java.util.Map;
-
-import cn.efeizao.feizao.framework.net.impl.CallbackDataHandle;
+import tv.live.bx.util.ActivityJumpUtil;
+import tv.live.bx.util.UiHelper;
 
 /**
  * 主播搜索页面: AnchorSearchFragment.java

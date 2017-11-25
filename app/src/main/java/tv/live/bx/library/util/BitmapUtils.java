@@ -1,9 +1,5 @@
 package tv.live.bx.library.util;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
@@ -27,8 +23,12 @@ import android.net.Uri;
 import android.text.TextUtils;
 import android.util.StateSet;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
 import tv.live.bx.FeizaoApp;
-import com.efeizao.bx.R;
+import tv.live.bx.R;
 import tv.live.bx.common.Constants;
 
 /**

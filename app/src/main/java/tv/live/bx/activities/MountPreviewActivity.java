@@ -17,17 +17,18 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.efeizao.bx.R;
+import com.gj.effect.EffectComposition;
+import com.gj.effect.EffectGiftLoader;
+import com.gj.effect.GJEffectView;
+
+import tv.live.bx.R;
 import tv.live.bx.activities.base.BaseFragmentActivity;
-import tv.live.bx.util.UiHelper;
 import tv.live.bx.common.Constants;
 import tv.live.bx.common.Utils;
 import tv.live.bx.imageloader.ImageLoaderUtil;
 import tv.live.bx.library.util.EvtLog;
 import tv.live.bx.ui.TypeTextView;
-import com.gj.effect.EffectComposition;
-import com.gj.effect.EffectGiftLoader;
-import com.gj.effect.GJEffectView;
+import tv.live.bx.util.UiHelper;
 
 public class MountPreviewActivity extends BaseFragmentActivity implements View.OnClickListener {
 	//用户id

@@ -3,7 +3,7 @@ package tv.live.bx.activities;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.efeizao.bx.R;
+import tv.live.bx.R;
 import tv.live.bx.activities.base.BaseFragmentActivity;
 
 /**

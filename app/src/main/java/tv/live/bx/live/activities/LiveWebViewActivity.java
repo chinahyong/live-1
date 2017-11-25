@@ -7,15 +7,6 @@ import android.webkit.JavascriptInterface;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 
-import com.efeizao.bx.R;
-import tv.live.bx.activities.FanDetailActivity;
-import tv.live.bx.activities.LoginActivity;
-import tv.live.bx.activities.base.BaseFragmentActivity;
-import tv.live.bx.util.ActivityJumpUtil;
-import tv.live.bx.common.Constants;
-import tv.live.bx.common.Utils;
-import tv.live.bx.library.util.EvtLog;
-import tv.live.bx.ui.MyWebView;
 import com.lonzh.lib.network.LZCookieStore;
 
 import org.json.JSONObject;
@@ -24,6 +15,16 @@ import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ConcurrentLinkedQueue;
+
+import tv.live.bx.R;
+import tv.live.bx.activities.FanDetailActivity;
+import tv.live.bx.activities.LoginActivity;
+import tv.live.bx.activities.base.BaseFragmentActivity;
+import tv.live.bx.common.Constants;
+import tv.live.bx.common.Utils;
+import tv.live.bx.library.util.EvtLog;
+import tv.live.bx.ui.MyWebView;
+import tv.live.bx.util.ActivityJumpUtil;
 
 public class LiveWebViewActivity extends BaseFragmentActivity {
 

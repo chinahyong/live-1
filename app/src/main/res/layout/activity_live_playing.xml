@@ -39,7 +39,7 @@
             android:shadowColor="@color/a_text_color_001826"
             android:shadowDy="3"
             android:shadowRadius="3"
-            android:text="星光号：2343453"
+            android:text="比心号：2343453"
             android:textColor="@color/a_text_color_99ffffff"
             android:textSize="@dimen/a_text_size_34"/>
 

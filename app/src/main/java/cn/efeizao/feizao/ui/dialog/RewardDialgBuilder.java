@@ -1,7 +1,5 @@
 package cn.efeizao.feizao.ui.dialog;
 
-import org.json.JSONArray;
-
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -10,7 +8,9 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.efeizao.bx.R;
+import org.json.JSONArray;
+
+import tv.live.bx.R;
 import tv.live.bx.ui.StrokeTextView;
 
 /**

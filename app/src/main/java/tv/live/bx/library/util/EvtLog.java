@@ -4,8 +4,6 @@ package tv.live.bx.library.util;
 import android.text.TextUtils;
 import android.util.Log;
 
-import com.efeizao.bx.BuildConfig;
-
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.net.BindException;
@@ -20,6 +18,8 @@ import java.net.SocketTimeoutException;
 import java.net.URISyntaxException;
 import java.net.UnknownHostException;
 import java.net.UnknownServiceException;
+
+import tv.live.bx.BuildConfig;
 
 /**
  * 日志打印类.

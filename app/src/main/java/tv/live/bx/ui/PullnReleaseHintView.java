@@ -6,7 +6,7 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.widget.FrameLayout;
 
-import com.efeizao.bx.R;
+import tv.live.bx.R;
 
 
 /**

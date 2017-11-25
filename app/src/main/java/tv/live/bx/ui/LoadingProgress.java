@@ -12,7 +12,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.efeizao.bx.R;
+import tv.live.bx.R;
+
 
 @SuppressLint("NewApi")
 public class LoadingProgress extends LinearLayout {

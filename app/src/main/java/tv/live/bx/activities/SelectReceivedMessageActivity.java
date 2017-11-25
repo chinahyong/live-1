@@ -14,7 +14,6 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.efeizao.bx.R;
 import com.lonzh.lib.network.JSONParser;
 
 import org.json.JSONException;
@@ -26,6 +25,7 @@ import java.util.Map;
 
 import cn.efeizao.feizao.framework.net.impl.CallbackDataHandle;
 import tv.live.bx.FeizaoApp;
+import tv.live.bx.R;
 import tv.live.bx.activities.base.BaseFragmentActivity;
 import tv.live.bx.adapters.SelectMessageAdapter;
 import tv.live.bx.common.BusinessUtils;

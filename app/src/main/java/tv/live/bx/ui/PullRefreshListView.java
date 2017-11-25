@@ -24,10 +24,10 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.WrapperListAdapter;
 
-import com.efeizao.bx.R;
-import tv.live.bx.library.util.EvtLog;
-
 import java.lang.reflect.Field;
+
+import tv.live.bx.R;
+import tv.live.bx.library.util.EvtLog;
 
 /**
  * 下拉刷新控件

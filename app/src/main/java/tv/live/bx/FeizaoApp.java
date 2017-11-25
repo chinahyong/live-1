@@ -27,8 +27,7 @@ import android.os.StrictMode;
 import android.support.multidex.MultiDex;
 import android.util.DisplayMetrics;
 
-import com.efeizao.bx.BuildConfig;
-import com.efeizao.bx.R;
+
 import com.example.sdk.GT3GeetestUrl;
 import com.lonzh.lib.network.LZCookieStore;
 import com.pili.pldroid.streaming.StreamingEnv;

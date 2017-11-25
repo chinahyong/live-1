@@ -13,7 +13,8 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 
-import com.efeizao.bx.R;
+import tv.live.bx.R;
+
 
 @SuppressLint("ResourceAsColor")
 public class LiveShareDialog {

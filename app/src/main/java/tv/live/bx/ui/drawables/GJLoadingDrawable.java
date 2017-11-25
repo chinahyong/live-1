@@ -8,7 +8,7 @@ import android.graphics.drawable.Drawable;
 import android.graphics.drawable.NinePatchDrawable;
 
 import tv.live.bx.FeizaoApp;
-import com.efeizao.bx.R;
+import tv.live.bx.R;
 import tv.live.bx.common.Utils;
 
 /**

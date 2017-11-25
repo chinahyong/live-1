@@ -16,7 +16,13 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 
-import com.efeizao.bx.R;
+import org.json.JSONArray;
+
+import java.lang.ref.WeakReference;
+import java.util.HashMap;
+import java.util.Map;
+
+import tv.live.bx.R;
 import tv.live.bx.adapters.ChatListAdapter;
 import tv.live.bx.common.Constants;
 import tv.live.bx.common.MsgTypes;
@@ -24,12 +30,6 @@ import tv.live.bx.common.Utils;
 import tv.live.bx.emoji.ParseEmojiMsgUtil;
 import tv.live.bx.fragments.LiveChatFragment;
 import tv.live.bx.ui.ChatListView;
-
-import org.json.JSONArray;
-
-import java.lang.ref.WeakReference;
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * Created by Live on 2017/2/23.

@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.PopupWindow;
 import android.widget.TextView;
 
-import com.efeizao.bx.R;
+import tv.live.bx.R;
 import tv.live.bx.common.Constants;
 import tv.live.bx.config.AppConfig;
 

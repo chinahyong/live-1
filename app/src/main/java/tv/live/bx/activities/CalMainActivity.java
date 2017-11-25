@@ -26,7 +26,6 @@ import com.amap.api.location.AMapLocation;
 import com.amap.api.location.AMapLocationClient;
 import com.amap.api.location.AMapLocationClientOption;
 import com.amap.api.location.AMapLocationListener;
-import com.efeizao.bx.R;
 import com.lonzh.lib.network.JSONParser;
 import com.umeng.analytics.MobclickAgent;
 
@@ -41,6 +40,7 @@ import java.util.Map;
 
 import cn.efeizao.feizao.framework.net.impl.CallbackDataHandle;
 import tv.live.bx.FeizaoApp;
+import tv.live.bx.R;
 import tv.live.bx.activities.base.BaseFragmentActivity;
 import tv.live.bx.callback.LevelInfoReceiverListener;
 import tv.live.bx.callback.MyUserInfoCallbackDataHandle;
@@ -54,12 +54,10 @@ import tv.live.bx.config.AppConfig;
 import tv.live.bx.config.UserInfoConfig;
 import tv.live.bx.database.DatabaseUtils;
 import tv.live.bx.fragments.BaseFragment;
-import tv.live.bx.fragments.LiveFocusFragment;
 import tv.live.bx.fragments.LiveFragment;
 import tv.live.bx.fragments.MeFragment;
 import tv.live.bx.library.util.EvtLog;
 import tv.live.bx.library.util.TelephoneUtil;
-import tv.live.bx.listeners.GoHotClickListener;
 import tv.live.bx.listeners.OnUpdateListener;
 import tv.live.bx.live.activities.LiveBaseActivity;
 import tv.live.bx.receiver.LoginStatusChangeReceiver;

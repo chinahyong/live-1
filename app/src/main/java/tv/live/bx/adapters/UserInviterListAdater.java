@@ -8,11 +8,11 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import com.efeizao.bx.R;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+
+import tv.live.bx.R;
 
 /**
  * 饭圈成员适配器

@@ -14,7 +14,15 @@ import android.widget.RadioButton;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.efeizao.bx.R;
+import com.lonzh.lib.LZActivity;
+import com.lonzh.lib.network.HttpSession;
+
+import java.util.Set;
+
+import cn.jpush.android.api.JPushInterface;
+import cn.jpush.android.api.TagAliasCallback;
+import tv.live.bx.R;
+import tv.live.bx.callback.MyUserInfoCallbackDataHandle;
 import tv.live.bx.common.Business;
 import tv.live.bx.common.BusinessUtils;
 import tv.live.bx.common.Constants;
@@ -23,16 +31,8 @@ import tv.live.bx.common.MsgTypes;
 import tv.live.bx.common.Utils;
 import tv.live.bx.config.AppConfig;
 import tv.live.bx.config.UserInfoConfig;
-import tv.live.bx.callback.MyUserInfoCallbackDataHandle;
 import tv.live.bx.library.util.TelephoneUtil;
 import tv.live.bx.receiver.LoginStatusChangeReceiver;
-import com.lonzh.lib.LZActivity;
-import com.lonzh.lib.network.HttpSession;
-
-import java.util.Set;
-
-import cn.jpush.android.api.JPushInterface;
-import cn.jpush.android.api.TagAliasCallback;
 
 public class Register2Activity extends LZActivity {
 

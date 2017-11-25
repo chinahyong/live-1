@@ -9,7 +9,7 @@ import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.TextView;
 
-import com.efeizao.bx.R;
+import tv.live.bx.R;
 import tv.live.bx.common.Utils;
 
 /**

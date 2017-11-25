@@ -7,7 +7,8 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.widget.LinearLayout;
 
-import com.efeizao.bx.R;
+import tv.live.bx.R;
+
 
 @SuppressLint("NewApi")
 public class LoadingProgressEmptyJump extends LoadingProgress {

@@ -13,11 +13,10 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.efeizao.bx.R;
+import cn.efeizao.feizao.ui.dialog.CustomDialogBuilder;
+import tv.live.bx.R;
 import tv.live.bx.imageloader.ImageLoaderUtil;
 import tv.live.bx.listeners.ViewOnClickListener;
-
-import cn.efeizao.feizao.ui.dialog.CustomDialogBuilder;
 
 
 /**

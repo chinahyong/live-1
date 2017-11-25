@@ -102,7 +102,7 @@
         <!-- 友盟AppKey，合并统计后，不需要修改key -->
         <meta-data
             android:name="UMENG_APPKEY"
-            android:value="${UMENG_KEY}">
+            android:value="${UMENG_APPKEY}">
         </meta-data>
 
         <!-- Required. For publish channel feature -->
@@ -198,19 +198,6 @@
             android:name="tv.live.bx.activities.GetBackPwdActivity"
             android:screenOrientation="portrait">
         </activity>
-        <!--
-        <activity
-            android:name="com.efeizao.feizao.activities.RechargeActivity"
-            android:screenOrientation="portrait" >
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-
-                <data android:scheme="wx1210ec9238fff4c5" />
-            </intent-filter>
-        </activity>
-        -->
         <activity
             android:name="tv.live.bx.activities.EditDataActivity"
             android:screenOrientation="portrait">
@@ -269,7 +256,7 @@
                 <category android:name="android.intent.category.DEFAULT"/>
                 <category android:name="android.intent.category.BROWSABLE"/>
 
-                <data android:scheme="${TENCENT_QQ_ID}"/>
+                <data android:scheme="${TENCENT_APPID}"/>
             </intent-filter>
         </activity>
         <activity
@@ -404,14 +391,6 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppBaseTheme"
             android:windowSoftInputMode="stateAlwaysHidden|adjustResize">
-        </activity>
-        <activity
-            android:name="tv.live.bx.live.activities.LiveRecordStreamActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize"
-            android:launchMode="singleTop"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppBaseTheme"
-            android:windowSoftInputMode="stateHidden|adjustResize">
         </activity>
         <activity
             android:name="com.tencent.rtmp.video.TXScreenCapture$TXScreenCaptureAssistantActivity"
@@ -566,22 +545,7 @@
             android:name="tv.live.bx.live.activities.LiveRankActivity"
             android:label="@string/title_activity_playing_rank"
             android:screenOrientation="portrait"
-            android:theme="@style/StyledIndicators">
-        </activity>
-        <activity
-            android:name="tv.live.bx.activities.ConversationActivity"
-            android:screenOrientation="portrait">
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW"/>
-
-                <category android:name="android.intent.category.DEFAULT"/>
-
-                <data
-                    android:host="com.tuhao.kuaishou"
-                    android:pathPrefix="/conversation/"
-                    android:scheme="rong"/>
-            </intent-filter>
-        </activity>
+            android:theme="@style/StyledIndicators"/>
 
         <!-- 2.0版本相关组件结束 -->
 

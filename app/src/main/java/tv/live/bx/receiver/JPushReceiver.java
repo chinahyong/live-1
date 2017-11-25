@@ -10,19 +10,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
 
-import tv.live.bx.FeizaoApp;
-import com.efeizao.bx.R;
-import tv.live.bx.activities.GroupPostDetailActivity;
-import tv.live.bx.activities.MeMessageActivity;
-import tv.live.bx.activities.ShareDialogActivity;
-import tv.live.bx.activities.WebViewActivity;
-import tv.live.bx.util.ActivityJumpUtil;
-import tv.live.bx.common.BusinessUtils;
-import tv.live.bx.common.Constants;
-import tv.live.bx.config.AppConfig;
-import tv.live.bx.library.util.EvtLog;
-import tv.live.bx.library.util.PackageUtil;
-import tv.live.bx.live.activities.LiveMediaPlayerActivity;
 import com.lonzh.lib.network.HttpSession;
 
 import org.json.JSONException;
@@ -34,6 +21,19 @@ import java.util.Map;
 
 import cn.efeizao.feizao.framework.net.impl.CallbackDataHandle;
 import cn.jpush.android.api.JPushInterface;
+import tv.live.bx.FeizaoApp;
+import tv.live.bx.R;
+import tv.live.bx.activities.GroupPostDetailActivity;
+import tv.live.bx.activities.MeMessageActivity;
+import tv.live.bx.activities.ShareDialogActivity;
+import tv.live.bx.activities.WebViewActivity;
+import tv.live.bx.common.BusinessUtils;
+import tv.live.bx.common.Constants;
+import tv.live.bx.config.AppConfig;
+import tv.live.bx.library.util.EvtLog;
+import tv.live.bx.library.util.PackageUtil;
+import tv.live.bx.live.activities.LiveMediaPlayerActivity;
+import tv.live.bx.util.ActivityJumpUtil;
 
 /**
  * 自定义接收器

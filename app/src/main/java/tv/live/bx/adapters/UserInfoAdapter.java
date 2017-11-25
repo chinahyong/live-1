@@ -8,11 +8,11 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.efeizao.bx.R;
+import java.util.Map;
+
+import tv.live.bx.R;
 import tv.live.bx.common.Utils;
 import tv.live.bx.imageloader.ImageLoaderUtil;
-
-import java.util.Map;
 
 public class UserInfoAdapter extends MyBaseAdapter<String, String> {
 

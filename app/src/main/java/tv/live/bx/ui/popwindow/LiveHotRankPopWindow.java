@@ -15,17 +15,6 @@ import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.efeizao.bx.R;
-import tv.live.bx.adapters.LiveHotRankAdapter;
-import tv.live.bx.util.ActivityJumpUtil;
-import tv.live.bx.common.Utils;
-import tv.live.bx.config.UserInfoConfig;
-import tv.live.bx.imageloader.ImageLoaderUtil;
-import tv.live.bx.library.util.DateUtil;
-import tv.live.bx.model.AnchorBean;
-import tv.live.bx.ui.LoadingProgress;
-import tv.live.bx.ui.PullRefreshListView;
-
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -35,6 +24,17 @@ import java.util.List;
 import java.util.Map;
 import java.util.Timer;
 import java.util.TimerTask;
+
+import tv.live.bx.R;
+import tv.live.bx.adapters.LiveHotRankAdapter;
+import tv.live.bx.common.Utils;
+import tv.live.bx.config.UserInfoConfig;
+import tv.live.bx.imageloader.ImageLoaderUtil;
+import tv.live.bx.library.util.DateUtil;
+import tv.live.bx.model.AnchorBean;
+import tv.live.bx.ui.LoadingProgress;
+import tv.live.bx.ui.PullRefreshListView;
+import tv.live.bx.util.ActivityJumpUtil;
 
 /**
  * Created by Live on 8/22/17.
@@ -181,7 +181,7 @@ public class LiveHotRankPopWindow extends BasePopWindow {
 			if (!"1".equals(nextRank)) {
 				String needText = mContext.getResources().getString(R.string
 						.live_hot_rank_next_need) + "<font color='#4bbabc'> " + mDatas.get
-						("topOffset") + "</font>" + "星光";
+						("topOffset") + "</font>" + "比心";
 				mTvNeedNum.setText(Html.fromHtml(needText));
 			} else {
 				mTvNeedNum.setText("");

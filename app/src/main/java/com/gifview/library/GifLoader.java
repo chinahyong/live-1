@@ -7,14 +7,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.efeizao.bx.R;
-import tv.live.bx.library.file.load.AsyLoadTask;
-import tv.live.bx.library.file.load.DiskCache;
-import tv.live.bx.library.file.load.FileCache;
-import tv.live.bx.library.file.load.LoadTask;
-import tv.live.bx.library.file.load.LoadingListener;
-import tv.live.bx.library.util.EvtLog;
-
 import java.io.File;
 import java.io.IOException;
 import java.lang.ref.WeakReference;
@@ -24,6 +16,13 @@ import java.util.concurrent.ConcurrentHashMap;
 import pl.droidsonroids.gif.AnimationListener;
 import pl.droidsonroids.gif.GifDrawable;
 import pl.droidsonroids.gif.GifImageView;
+import tv.live.bx.R;
+import tv.live.bx.library.file.load.AsyLoadTask;
+import tv.live.bx.library.file.load.DiskCache;
+import tv.live.bx.library.file.load.FileCache;
+import tv.live.bx.library.file.load.LoadTask;
+import tv.live.bx.library.file.load.LoadingListener;
+import tv.live.bx.library.util.EvtLog;
 
 /**
  * @author Live

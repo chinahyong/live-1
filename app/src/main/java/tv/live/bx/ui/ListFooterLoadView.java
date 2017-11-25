@@ -9,7 +9,7 @@ import android.view.animation.LinearInterpolator;
 import android.view.animation.RotateAnimation;
 import android.widget.FrameLayout;
 
-import com.efeizao.bx.R;
+import tv.live.bx.R;
 
 
 /**

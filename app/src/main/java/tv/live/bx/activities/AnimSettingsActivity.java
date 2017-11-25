@@ -9,17 +9,17 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.umeng.analytics.MobclickAgent;
+
+import cn.efeizao.feizao.framework.net.impl.CallbackDataHandle;
 import tv.live.bx.FeizaoApp;
-import com.efeizao.bx.R;
+import tv.live.bx.R;
 import tv.live.bx.activities.base.BaseFragmentActivity;
 import tv.live.bx.common.BusinessUtils;
 import tv.live.bx.common.Constants;
 import tv.live.bx.common.MsgTypes;
 import tv.live.bx.common.Utils;
 import tv.live.bx.config.UserInfoConfig;
-import com.umeng.analytics.MobclickAgent;
-
-import cn.efeizao.feizao.framework.net.impl.CallbackDataHandle;
 
 public class AnimSettingsActivity extends BaseFragmentActivity implements View.OnClickListener {
 	private RelativeLayout mRlSuperior, mRlNone;

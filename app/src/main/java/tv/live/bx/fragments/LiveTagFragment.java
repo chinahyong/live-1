@@ -14,23 +14,6 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import tv.live.bx.FeizaoApp;
-import com.efeizao.bx.R;
-import tv.live.bx.activities.LiveTypeActivity;
-import tv.live.bx.adapters.LiveFragmentStatusAdapter;
-import tv.live.bx.adapters.LiveTagAdapter;
-import tv.live.bx.util.ActivityJumpUtil;
-import tv.live.bx.util.UiHelper;
-import tv.live.bx.common.BusinessUtils;
-import tv.live.bx.common.MsgTypes;
-import tv.live.bx.common.OperationHelper;
-import tv.live.bx.database.DatabaseUtils;
-import tv.live.bx.library.util.EvtLog;
-import tv.live.bx.listeners.GoHotClickListener;
-import tv.live.bx.ui.ListFooterLoadView;
-import tv.live.bx.ui.LoadingProgress.onProgressClickListener;
-import tv.live.bx.ui.LoadingProgressEmptyJump;
-import tv.live.bx.ui.PullRefreshListView;
 import com.lonzh.lib.network.JSONParser;
 import com.umeng.analytics.MobclickAgent;
 
@@ -42,6 +25,23 @@ import java.util.List;
 import java.util.Map;
 
 import cn.efeizao.feizao.framework.net.impl.CallbackDataHandle;
+import tv.live.bx.FeizaoApp;
+import tv.live.bx.R;
+import tv.live.bx.activities.LiveTypeActivity;
+import tv.live.bx.adapters.LiveFragmentStatusAdapter;
+import tv.live.bx.adapters.LiveTagAdapter;
+import tv.live.bx.common.BusinessUtils;
+import tv.live.bx.common.MsgTypes;
+import tv.live.bx.common.OperationHelper;
+import tv.live.bx.database.DatabaseUtils;
+import tv.live.bx.library.util.EvtLog;
+import tv.live.bx.listeners.GoHotClickListener;
+import tv.live.bx.ui.ListFooterLoadView;
+import tv.live.bx.ui.LoadingProgress.onProgressClickListener;
+import tv.live.bx.ui.LoadingProgressEmptyJump;
+import tv.live.bx.ui.PullRefreshListView;
+import tv.live.bx.util.ActivityJumpUtil;
+import tv.live.bx.util.UiHelper;
 
 /**
  * @author Live

@@ -9,7 +9,8 @@ import android.view.animation.RotateAnimation;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.efeizao.bx.R;
+import tv.live.bx.R;
+
 
 public class ListPullnReleaseHintView extends PullnReleaseHintView {
 

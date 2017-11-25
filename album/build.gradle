@@ -1,22 +1,19 @@
 apply plugin: rootProject.ext.plugins.library
 
+def andr = rootProject.ext.android
+def denpend = rootProject.ext.dependencies
 android {
-    compileSdkVersion rootProject.ext.android.compileSdkVersion
-    buildToolsVersion rootProject.ext.android.buildToolsVersion
+    compileSdkVersion andr.compileSdkVersion
+    buildToolsVersion andr.buildToolsVersion
 
     defaultConfig {
-        minSdkVersion rootProject.ext.android.minSdkVersion
-        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        minSdkVersion andr.minSdkVersion
+        targetSdkVersion andr.targetSdkVersion
     }
 }
 
 dependencies {
-    compile rootProject.ext.dependencies.appcompat
-    compile rootProject.ext.dependencies.design
-    compile rootProject.ext.dependencies.recyclerview
-    compile rootProject.ext.dependencies.fragment
-    compile rootProject.ext.dependencies.dialog
-    compile rootProject.ext.dependencies.mediascanner
-    compile rootProject.ext.dependencies.cardview
+    compile denpend.support
+    compile denpend.album
 }
 apply from: "maven.gradle"

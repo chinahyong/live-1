@@ -12,19 +12,20 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import tv.live.bx.FeizaoApp;
-import com.efeizao.bx.R;
-import tv.live.bx.activities.RankActivity;
-import tv.live.bx.adapters.RankListAdapter;
-import tv.live.bx.util.ActivityJumpUtil;
-import tv.live.bx.common.OperationHelper;
-import tv.live.bx.common.Utils;
-import tv.live.bx.fragments.BaseFragment;
-import tv.live.bx.model.RankBean;
 import com.viewpagerindicator.UnderlinePageIndicator;
 
 import java.util.HashMap;
 import java.util.Map;
+
+import tv.live.bx.FeizaoApp;
+import tv.live.bx.R;
+import tv.live.bx.activities.RankActivity;
+import tv.live.bx.adapters.RankListAdapter;
+import tv.live.bx.common.OperationHelper;
+import tv.live.bx.common.Utils;
+import tv.live.bx.fragments.BaseFragment;
+import tv.live.bx.model.RankBean;
+import tv.live.bx.util.ActivityJumpUtil;
 
 /**
  * 明星榜单页面

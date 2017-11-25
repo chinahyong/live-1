@@ -11,17 +11,18 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 
-import tv.live.bx.FeizaoApp;
-import com.efeizao.bx.R;
-import tv.live.bx.common.Utils;
-import tv.live.bx.imageloader.ImageLoaderUtil;
-import tv.live.bx.library.util.StringUtil;
 import com.umeng.analytics.MobclickAgent;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import tv.live.bx.FeizaoApp;
+import tv.live.bx.R;
+import tv.live.bx.common.Utils;
+import tv.live.bx.imageloader.ImageLoaderUtil;
+import tv.live.bx.library.util.StringUtil;
 
 public class RecommendListAdapter extends BaseAdapter {
 

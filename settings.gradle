@@ -1,1 +1,1 @@
-include ':app', ':album'
+include ':app', ':album','effect-lib'

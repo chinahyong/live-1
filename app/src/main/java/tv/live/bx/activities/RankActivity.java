@@ -11,9 +11,13 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.TextView;
 
-import com.efeizao.bx.R;
+import org.json.JSONObject;
+
+import java.lang.ref.WeakReference;
+
+import cn.efeizao.feizao.framework.net.impl.CallbackDataHandle;
+import tv.live.bx.R;
 import tv.live.bx.activities.base.BaseFragmentActivity;
-import tv.live.bx.util.UiHelper;
 import tv.live.bx.common.BusinessUtils;
 import tv.live.bx.common.Constants;
 import tv.live.bx.common.JacksonUtil;
@@ -24,12 +28,7 @@ import tv.live.bx.fragments.ranking.RankStarFragment;
 import tv.live.bx.fragments.ranking.RankWealthFragment;
 import tv.live.bx.model.RankBean;
 import tv.live.bx.ui.LoadingProgress;
-
-import org.json.JSONObject;
-
-import java.lang.ref.WeakReference;
-
-import cn.efeizao.feizao.framework.net.impl.CallbackDataHandle;
+import tv.live.bx.util.UiHelper;
 
 /**
  * 排行版（明星榜、财富榜、人气榜）

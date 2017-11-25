@@ -18,20 +18,6 @@ import com.amap.api.location.AMapLocation;
 import com.amap.api.location.AMapLocationClient;
 import com.amap.api.location.AMapLocationClientOption;
 import com.amap.api.location.AMapLocationListener;
-import tv.live.bx.FeizaoApp;
-import com.efeizao.bx.R;
-import tv.live.bx.adapters.LiveNearListAdapter;
-import tv.live.bx.util.ActivityJumpUtil;
-import tv.live.bx.util.UiHelper;
-import tv.live.bx.common.BusinessUtils;
-import tv.live.bx.common.MsgTypes;
-import tv.live.bx.common.OperationHelper;
-import tv.live.bx.common.Utils;
-import tv.live.bx.library.util.EvtLog;
-import tv.live.bx.listeners.GoHotClickListener;
-import tv.live.bx.ui.ListFooterLoadView;
-import tv.live.bx.ui.LoadingProgress.onProgressClickListener;
-import tv.live.bx.ui.LoadingProgressEmptyJump;
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.Mode;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.OnLastItemVisibleListener;
@@ -46,6 +32,20 @@ import java.util.List;
 import java.util.Map;
 
 import cn.efeizao.feizao.framework.net.impl.CallbackDataHandle;
+import tv.live.bx.FeizaoApp;
+import tv.live.bx.R;
+import tv.live.bx.adapters.LiveNearListAdapter;
+import tv.live.bx.common.BusinessUtils;
+import tv.live.bx.common.MsgTypes;
+import tv.live.bx.common.OperationHelper;
+import tv.live.bx.common.Utils;
+import tv.live.bx.library.util.EvtLog;
+import tv.live.bx.listeners.GoHotClickListener;
+import tv.live.bx.ui.ListFooterLoadView;
+import tv.live.bx.ui.LoadingProgress.onProgressClickListener;
+import tv.live.bx.ui.LoadingProgressEmptyJump;
+import tv.live.bx.util.ActivityJumpUtil;
+import tv.live.bx.util.UiHelper;
 
 
 /**

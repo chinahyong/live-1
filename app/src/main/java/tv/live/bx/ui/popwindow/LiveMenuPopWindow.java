@@ -3,7 +3,8 @@ package tv.live.bx.ui.popwindow;
 import android.app.Activity;
 import android.widget.Button;
 
-import com.efeizao.bx.R;
+import tv.live.bx.R;
+
 
 /**
  * @author Live

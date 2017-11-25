@@ -8,9 +8,11 @@ buildscript {
     dependencies {
         classpath 'com.android.tools.build:gradle:2.3.3'
         classpath "com.tencent.tinker:tinker-patch-gradle-plugin:${TINKER_VERSION}"
-        classpath 'com.antfortune.freeline:gradle:0.8.7'
         classpath 'com.github.dcendents:android-maven-gradle-plugin:1.5'
         classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7.3'
+        // Java 8 新特性兼容
+        classpath 'me.tatarka:gradle-retrolambda:3.7.0'
+        classpath 'com.jakewharton:butterknife-gradle-plugin:8.8.1'
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
@@ -20,6 +22,7 @@ allprojects {
     repositories {
         jcenter()
         maven { url 'https://dl.bintray.com/tinker/maven' }
+        maven { url 'https://www.jitpack.io' }
     }
 }
 

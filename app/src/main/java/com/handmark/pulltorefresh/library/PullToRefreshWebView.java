@@ -24,7 +24,8 @@ import android.util.AttributeSet;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 
-import com.efeizao.bx.R;
+import tv.live.bx.R;
+
 
 public class PullToRefreshWebView extends PullToRefreshBase<WebView> {
 

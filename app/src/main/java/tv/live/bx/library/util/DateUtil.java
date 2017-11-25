@@ -1,6 +1,5 @@
 package tv.live.bx.library.util;
 
-import com.efeizao.bx.R;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -9,6 +8,8 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
+
+import tv.live.bx.R;
 
 /**
  * Title: DateUtil Description: 时间日期工具类 Copyright: Copyright (c) 2008

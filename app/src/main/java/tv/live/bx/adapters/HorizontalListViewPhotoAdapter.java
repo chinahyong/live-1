@@ -8,14 +8,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-import com.efeizao.bx.R;
+import java.util.ArrayList;
+import java.util.List;
+
+import tv.live.bx.R;
 import tv.live.bx.common.Constants;
 import tv.live.bx.imageloader.ImageLoaderUtil;
 import tv.live.bx.listeners.RecyclerViewOnItemClickListener;
 import tv.live.bx.model.AlbumBean;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class HorizontalListViewPhotoAdapter extends RecyclerView.Adapter<HorizontalListViewPhotoAdapter.ImageHolder> {
 	private ArrayList<AlbumBean> mPhotoDatas;

@@ -24,20 +24,6 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import tv.live.bx.FeizaoApp;
-import com.efeizao.bx.R;
-import tv.live.bx.activities.CalMainActivity;
-import tv.live.bx.activities.LoginActivity;
-import tv.live.bx.activities.PostPublishActivity;
-import tv.live.bx.adapters.CommutityFragementStatusAdapter;
-import tv.live.bx.util.ActivityJumpUtil;
-import tv.live.bx.common.AsyncTaskThreadPool;
-import tv.live.bx.common.Constants;
-import tv.live.bx.common.MsgTypes;
-import tv.live.bx.database.DatabaseUtils;
-import tv.live.bx.imageloader.ImageLoaderUtil;
-import tv.live.bx.library.util.EvtLog;
-import tv.live.bx.tasks.BaseRunnable;
 import com.umeng.analytics.MobclickAgent;
 import com.viewpagerindicator.TabPageIndicator;
 
@@ -45,6 +31,21 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import tv.live.bx.FeizaoApp;
+import tv.live.bx.R;
+import tv.live.bx.activities.CalMainActivity;
+import tv.live.bx.activities.LoginActivity;
+import tv.live.bx.activities.PostPublishActivity;
+import tv.live.bx.adapters.CommutityFragementStatusAdapter;
+import tv.live.bx.common.AsyncTaskThreadPool;
+import tv.live.bx.common.Constants;
+import tv.live.bx.common.MsgTypes;
+import tv.live.bx.database.DatabaseUtils;
+import tv.live.bx.imageloader.ImageLoaderUtil;
+import tv.live.bx.library.util.EvtLog;
+import tv.live.bx.tasks.BaseRunnable;
+import tv.live.bx.util.ActivityJumpUtil;
 
 /**
  * 社区页面 Title: CommutityFragment.java

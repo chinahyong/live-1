@@ -38,7 +38,6 @@ import com.amap.api.location.AMapLocation;
 import com.amap.api.location.AMapLocationClient;
 import com.amap.api.location.AMapLocationClientOption;
 import com.amap.api.location.AMapLocationListener;
-import com.efeizao.bx.R;
 import com.lonzh.lib.network.JSONParser;
 import com.tencent.rtmp.ITXLivePushListener;
 import com.tencent.rtmp.TXLiveConstants;
@@ -59,6 +58,7 @@ import java.util.Map;
 
 import cn.efeizao.feizao.framework.net.impl.CallbackDataHandle;
 import tv.live.bx.FeizaoApp;
+import tv.live.bx.R;
 import tv.live.bx.activities.base.BaseFragmentActivity;
 import tv.live.bx.adapters.LiveTagListAdapter;
 import tv.live.bx.common.BusinessUtils;
@@ -870,7 +870,7 @@ public class PreviewLivePlayActivity extends ShareDialogActivity
 //		mLivePushConfig.setPauseFlag(TXLiveConstants.PAUSE_FLAG_PAUSE_VIDEO | TXLiveConstants.PAUSE_FLAG_PAUSE_AUDIO);
 
 		mLivePushConfig.setFrontCamera(mCurrentCameraDir);
-		mLivePushConfig.setBeautyFilter(5, 3);
+//		mLivePushConfig.setBeautyFilter(5, 3);
 		if (!isSupportHWEncode()) {
 			mLivePushConfig.setHardwareAcceleration(TXLiveConstants.ENCODE_VIDEO_SOFTWARE);
 		} else {
@@ -884,10 +884,10 @@ public class PreviewLivePlayActivity extends ShareDialogActivity
 		mLivePusher.setPushListener(this);
 		mLivePusher.startCameraPreview(mLiveVideoView);
 //        mLivePusher.startScreenCapture();
-		int[] ver = TXLivePusher.getSDKVersion();
-		if (ver != null && ver.length >= 4) {
-			EvtLog.e(TAG, String.format("rtmp sdk version:%d.%d.%d.%d ", ver[0], ver[1], ver[2], ver[3]));
-		}
+//		int[] ver = TXLivePusher.getSDKVersion();
+//		if (ver != null && ver.length >= 4) {
+//			EvtLog.e(TAG, String.format("rtmp sdk version:%d.%d.%d.%d ", ver[0], ver[1], ver[2], ver[3]));
+//		}
 
 	}
 

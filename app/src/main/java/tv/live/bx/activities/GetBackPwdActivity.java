@@ -11,14 +11,15 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
 
+import com.lonzh.lib.LZActivity;
+
 import tv.live.bx.FeizaoApp;
-import com.efeizao.bx.R;
+import tv.live.bx.R;
 import tv.live.bx.common.Business;
 import tv.live.bx.common.Constants;
 import tv.live.bx.common.MsgTypes;
 import tv.live.bx.common.OperationHelper;
 import tv.live.bx.common.Utils;
-import com.lonzh.lib.LZActivity;
 
 public class GetBackPwdActivity extends LZActivity {
 

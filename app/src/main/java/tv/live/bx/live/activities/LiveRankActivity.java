@@ -5,15 +5,16 @@ import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.view.View.OnClickListener;
 
-import com.efeizao.bx.R;
-import tv.live.bx.activities.base.BaseFragmentActivity;
-import tv.live.bx.adapters.LiveRankFragmentPagerAdapter;
 import com.viewpagerindicator.TabPageIndicator;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import tv.live.bx.R;
+import tv.live.bx.activities.base.BaseFragmentActivity;
+import tv.live.bx.adapters.LiveRankFragmentPagerAdapter;
 
 /**
  * LiveRankActivity.java Description:直播间泡泡排行榜

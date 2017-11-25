@@ -53,18 +53,6 @@ import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import tv.live.bx.FeizaoApp;
-import com.efeizao.bx.R;
-import tv.live.bx.activities.LoginActivity;
-import tv.live.bx.activities.Register1Activity;
-import tv.live.bx.util.ActivityJumpUtil;
-import tv.live.bx.util.UiHelper;
-import tv.live.bx.config.AppConfig;
-import tv.live.bx.imageloader.ImageLoaderUtil;
-import tv.live.bx.imageloader.ImageSize;
-import tv.live.bx.imageloader.SimpleImageLoadingListener;
-import tv.live.bx.ui.VerticalImageSpan;
-
 import junit.framework.Assert;
 
 import org.json.JSONException;
@@ -99,6 +87,18 @@ import javax.crypto.BadPaddingException;
 import javax.crypto.Cipher;
 import javax.crypto.IllegalBlockSizeException;
 import javax.crypto.NoSuchPaddingException;
+
+import tv.live.bx.FeizaoApp;
+import tv.live.bx.R;
+import tv.live.bx.activities.LoginActivity;
+import tv.live.bx.activities.Register1Activity;
+import tv.live.bx.config.AppConfig;
+import tv.live.bx.imageloader.ImageLoaderUtil;
+import tv.live.bx.imageloader.ImageSize;
+import tv.live.bx.imageloader.SimpleImageLoadingListener;
+import tv.live.bx.ui.VerticalImageSpan;
+import tv.live.bx.util.ActivityJumpUtil;
+import tv.live.bx.util.UiHelper;
 
 
 public class Utils {

@@ -1,8 +1,5 @@
 package tv.live.bx.ui;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Context;
@@ -20,7 +17,11 @@ import android.widget.LinearLayout.LayoutParams;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
-import com.efeizao.bx.R;
+import java.util.ArrayList;
+import java.util.List;
+
+import tv.live.bx.R;
+
 
 @SuppressLint("ResourceAsColor")
 public class ActionSheetDialog {

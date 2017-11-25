@@ -28,9 +28,10 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ListAdapter;
 
-import com.efeizao.bx.R;
 import com.handmark.pulltorefresh.library.internal.EmptyViewMethodAccessor;
 import com.handmark.pulltorefresh.library.internal.LoadingLayout;
+
+import tv.live.bx.R;
 
 public class PullToRefreshZoomListView extends PullToRefreshAdapterViewBase<PullToZoomListView> {
 

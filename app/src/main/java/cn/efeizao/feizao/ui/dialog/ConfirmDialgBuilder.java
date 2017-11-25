@@ -10,7 +10,8 @@ import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
-import com.efeizao.bx.R;
+import tv.live.bx.R;
+
 
 /**
  * Title: QustomDialogBuilder.java</br> Description: 自定义对话框</br> Copyright:

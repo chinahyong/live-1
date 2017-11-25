@@ -6,7 +6,6 @@
  */
 package tv.live.bx.common;
 
-import com.efeizao.bx.R;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -20,6 +19,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+
+import tv.live.bx.R;
 
 public class XListViewHeader extends LinearLayout {
 	private LinearLayout mContainer;

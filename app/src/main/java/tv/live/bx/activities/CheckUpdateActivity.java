@@ -4,8 +4,9 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
-import com.efeizao.bx.R;
 import com.lonzh.lib.LZActivity;
+
+import tv.live.bx.R;
 
 public class CheckUpdateActivity extends LZActivity {
 	private Button moBtnCancel, moBtnUpdate;

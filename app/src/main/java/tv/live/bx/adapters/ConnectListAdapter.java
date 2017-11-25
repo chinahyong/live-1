@@ -11,13 +11,13 @@ import android.widget.Checkable;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.efeizao.bx.R;
+import java.util.Iterator;
+
+import tv.live.bx.R;
 import tv.live.bx.common.Constants;
 import tv.live.bx.common.Utils;
 import tv.live.bx.imageloader.ImageLoaderUtil;
 import tv.live.bx.websocket.model.InviteVideoChat;
-
-import java.util.Iterator;
 
 /**
  * Created by Live on 2017/6/9.

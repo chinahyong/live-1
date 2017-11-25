@@ -7,10 +7,10 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.efeizao.bx.R;
-import tv.live.bx.imageloader.ImageLoaderUtil;
-
 import java.util.ArrayList;
+
+import tv.live.bx.R;
+import tv.live.bx.imageloader.ImageLoaderUtil;
 
 /**
  * Created by chenchao on 15/5/6.

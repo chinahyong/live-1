@@ -11,10 +11,10 @@ import android.widget.DatePicker.OnDateChangedListener;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.efeizao.bx.R;
-
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+
+import tv.live.bx.R;
 
 /**
  * 日期时间选择控件 使用方法： private EditText inputDate;//需要设置的日期时间文本编辑框 private String

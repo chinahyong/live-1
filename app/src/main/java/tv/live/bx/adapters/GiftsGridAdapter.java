@@ -15,13 +15,13 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.efeizao.bx.R;
-import tv.live.bx.common.Utils;
-import tv.live.bx.imageloader.ImageLoaderUtil;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+
+import tv.live.bx.R;
+import tv.live.bx.common.Utils;
+import tv.live.bx.imageloader.ImageLoaderUtil;
 
 /**
  * 礼物GridView的适配器

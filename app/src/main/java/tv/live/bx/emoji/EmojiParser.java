@@ -1,13 +1,5 @@
 package tv.live.bx.emoji;
 
-import java.io.InputStream;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-
-import org.xmlpull.v1.XmlPullParser;
-import org.xmlpull.v1.XmlPullParserFactory;
-
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.text.Spannable;
@@ -16,7 +8,16 @@ import android.text.TextUtils;
 import android.text.style.ImageSpan;
 import android.util.Log;
 
-import com.efeizao.bx.R;
+import org.xmlpull.v1.XmlPullParser;
+import org.xmlpull.v1.XmlPullParserFactory;
+
+import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
+import tv.live.bx.R;
+
 
 public class EmojiParser {
 	private static final String TAG = EmojiParser.class.getSimpleName();

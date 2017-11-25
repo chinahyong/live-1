@@ -6,16 +6,17 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.LinearLayout;
 
-import com.efeizao.bx.R;
+import com.handmark.pulltorefresh.library.PullToRefreshBase;
+import com.handmark.pulltorefresh.library.PullToRefreshHeaderGridView;
+
+import java.io.Serializable;
+
+import tv.live.bx.R;
 import tv.live.bx.activities.base.BaseFragmentActivity;
 import tv.live.bx.adapters.LiveTagListAdapter;
 import tv.live.bx.config.AppConfig;
 import tv.live.bx.ui.ListFooterLoadView;
 import tv.live.bx.ui.LoadingProgress;
-import com.handmark.pulltorefresh.library.PullToRefreshBase;
-import com.handmark.pulltorefresh.library.PullToRefreshHeaderGridView;
-
-import java.io.Serializable;
 
 /**
  * Description:LiveTagActivity.java 通过标签获取直播列表

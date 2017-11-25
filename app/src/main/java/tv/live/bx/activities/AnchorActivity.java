@@ -1,11 +1,5 @@
 package tv.live.bx.activities;
 
-import java.io.File;
-import java.util.Map;
-
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.graphics.Typeface;
@@ -24,19 +18,26 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import cn.efeizao.feizao.framework.net.impl.CallbackDataHandle;
 
-import com.efeizao.bx.R;
+import com.lonzh.lib.network.JSONParser;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.File;
+import java.util.Map;
+
+import cn.efeizao.feizao.framework.net.impl.CallbackDataHandle;
+import tv.live.bx.R;
 import tv.live.bx.activities.base.BaseFragmentActivity;
-import tv.live.bx.util.ActivityJumpUtil;
-import tv.live.bx.util.UiHelper;
 import tv.live.bx.common.BusinessUtils;
 import tv.live.bx.common.Constants;
 import tv.live.bx.common.MsgTypes;
 import tv.live.bx.common.Utils;
 import tv.live.bx.library.util.DateUtil;
 import tv.live.bx.library.util.EvtLog;
-import com.lonzh.lib.network.JSONParser;
+import tv.live.bx.util.ActivityJumpUtil;
+import tv.live.bx.util.UiHelper;
 /**
  * Title: AnchorActivity.java Description:主播报名界面
  * @author Live

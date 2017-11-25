@@ -10,14 +10,14 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.efeizao.bx.R;
+import java.util.ArrayList;
+import java.util.List;
+
+import tv.live.bx.R;
 import tv.live.bx.common.Constants;
 import tv.live.bx.common.Utils;
 import tv.live.bx.imageloader.ImageLoaderUtil;
 import tv.live.bx.model.RankBean;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * 排行版适配器

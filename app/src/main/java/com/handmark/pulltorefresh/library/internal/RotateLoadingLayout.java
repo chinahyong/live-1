@@ -23,9 +23,10 @@ import android.view.animation.Animation;
 import android.view.animation.RotateAnimation;
 import android.widget.ImageView.ScaleType;
 
-import com.efeizao.bx.R;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.Mode;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.Orientation;
+
+import tv.live.bx.R;
 
 public class RotateLoadingLayout extends LoadingLayout {
 

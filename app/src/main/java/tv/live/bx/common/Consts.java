@@ -2,11 +2,11 @@ package tv.live.bx.common;
 
 import android.util.SparseArray;
 
-import tv.live.bx.FeizaoApp;
-import com.efeizao.bx.R;
-
 import java.util.HashMap;
 import java.util.Map;
+
+import tv.live.bx.FeizaoApp;
+import tv.live.bx.R;
 
 public class Consts {
 	// 服务器地址
@@ -29,7 +29,7 @@ public class Consts {
 	public static final String DOWNLOAD_URL_SERVER = "http://www.guojiang.tv/help/app";
 
 	public static final String SHARE_URI_IMG = "";
-	public static final String SHARE_TITLE = "星光直播";
+	public static final String SHARE_TITLE = "比心直播";
 
 	// 欢迎页停留时间(ms)
 	public static final int DURATION_WELCOME_ACTIVITY = 2000;

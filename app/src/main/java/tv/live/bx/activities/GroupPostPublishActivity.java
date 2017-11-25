@@ -33,9 +33,18 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
-import com.efeizao.bx.R;
-import tv.live.bx.util.ActivityJumpUtil;
-import tv.live.bx.util.UiHelper;
+import com.lonzh.lib.network.JSONParser;
+
+import org.json.JSONObject;
+
+import java.io.File;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+
+import cn.efeizao.feizao.framework.net.impl.CallbackDataHandle;
+import tv.live.bx.R;
 import tv.live.bx.common.BusinessUtils;
 import tv.live.bx.common.Constants;
 import tv.live.bx.common.MsgTypes;
@@ -58,17 +67,8 @@ import tv.live.bx.library.util.Global;
 import tv.live.bx.library.util.HtmlTagHandler;
 import tv.live.bx.ui.ActionSheetDialog;
 import tv.live.bx.ui.SelectMoudleDialog;
-import com.lonzh.lib.network.JSONParser;
-
-import org.json.JSONObject;
-
-import java.io.File;
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-
-import cn.efeizao.feizao.framework.net.impl.CallbackDataHandle;
+import tv.live.bx.util.ActivityJumpUtil;
+import tv.live.bx.util.UiHelper;
 
 public class GroupPostPublishActivity extends ShareDialogActivity implements OnClickListener {
 	public static final int PHOTO_MAX_COUNT = 1;

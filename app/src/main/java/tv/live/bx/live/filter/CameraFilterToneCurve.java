@@ -1,5 +1,10 @@
 package tv.live.bx.live.filter;
 
+import android.content.Context;
+import android.graphics.Point;
+import android.graphics.PointF;
+import android.opengl.GLES20;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.ByteBuffer;
@@ -8,12 +13,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 
-import android.content.Context;
-import android.graphics.Point;
-import android.graphics.PointF;
-import android.opengl.GLES20;
-
-import com.efeizao.bx.R;
+import tv.live.bx.R;
 import tv.live.bx.live.gles.GlUtil;
 
 /**

@@ -1,12 +1,5 @@
 package tv.live.bx.activities;
 
-import java.lang.ref.WeakReference;
-import java.util.List;
-import java.util.Map;
-
-import org.json.JSONArray;
-import org.json.JSONObject;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Message;
@@ -20,13 +13,20 @@ import android.widget.AbsListView.OnScrollListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.LinearLayout;
-import cn.efeizao.feizao.framework.net.impl.CallbackDataHandle;
 
-import com.efeizao.bx.R;
+import com.lonzh.lib.network.JSONParser;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import java.lang.ref.WeakReference;
+import java.util.List;
+import java.util.Map;
+
+import cn.efeizao.feizao.framework.net.impl.CallbackDataHandle;
+import tv.live.bx.R;
 import tv.live.bx.activities.base.BaseFragmentActivity;
 import tv.live.bx.adapters.MeSystemMsgListAdapter;
-import tv.live.bx.util.ActivityJumpUtil;
-import tv.live.bx.util.UiHelper;
 import tv.live.bx.common.AsyncTaskThreadPool;
 import tv.live.bx.common.BusinessUtils;
 import tv.live.bx.common.Constants;
@@ -38,7 +38,8 @@ import tv.live.bx.ui.LoadingProgress;
 import tv.live.bx.ui.LoadingProgress.onProgressClickListener;
 import tv.live.bx.ui.PullRefreshListView;
 import tv.live.bx.ui.PullnReleaseHintView;
-import com.lonzh.lib.network.JSONParser;
+import tv.live.bx.util.ActivityJumpUtil;
+import tv.live.bx.util.UiHelper;
 
 /**
  * MeMessageFragment

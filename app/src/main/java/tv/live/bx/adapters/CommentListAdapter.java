@@ -9,17 +9,17 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
 import tv.live.bx.FeizaoApp;
-import com.efeizao.bx.R;
+import tv.live.bx.R;
 import tv.live.bx.common.Utils;
 import tv.live.bx.imageloader.ImageLoaderUtil;
 import tv.live.bx.library.util.DateUtil;
 import tv.live.bx.library.util.HtmlUtil;
 import tv.live.bx.library.util.NetworkImageGetter;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
 
 /**
  * 评论适配器 ClassName: MeReplyListAdapter <br/>

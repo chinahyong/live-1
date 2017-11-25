@@ -6,16 +6,18 @@ import android.graphics.Canvas;
 import android.graphics.Paint.Style;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
+import android.support.v7.widget.AppCompatTextView;
 import android.text.TextPaint;
 import android.util.AttributeSet;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.efeizao.bx.R;
+import tv.live.bx.R;
+
 
 /* StrokeTextView的目标是给文字描边 实现方法是两个TextView叠加,只有描边的TextView为底,实体TextView叠加在上面
  * 看上去文字就有个不同颜色的边框了 */
-public class StrokeTextView extends TextView {
+public class StrokeTextView extends AppCompatTextView {
 	protected TextView borderText = null;// /用于描边的TextView
 	// 默认白色
 	protected int strokeTextColor = getResources().getColor(R.color.a_text_color_ffffff);

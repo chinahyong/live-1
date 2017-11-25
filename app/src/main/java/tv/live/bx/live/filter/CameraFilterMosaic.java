@@ -1,11 +1,11 @@
 package tv.live.bx.live.filter;
 
-import java.nio.FloatBuffer;
-
 import android.content.Context;
 import android.opengl.GLES20;
 
-import com.efeizao.bx.R;
+import java.nio.FloatBuffer;
+
+import tv.live.bx.R;
 import tv.live.bx.live.gles.GlUtil;
 
 /**

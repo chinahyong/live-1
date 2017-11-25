@@ -5,7 +5,8 @@ import android.content.Context;
 import android.view.View;
 import android.view.View.OnClickListener;
 
-import com.efeizao.bx.R;
+import tv.live.bx.R;
+
 
 /**
  * Title: CustomDialogBuilder.java</br> Description: 自定义对话框基类</br> Copyright:

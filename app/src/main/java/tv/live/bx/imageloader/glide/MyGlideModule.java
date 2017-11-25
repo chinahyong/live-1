@@ -6,7 +6,9 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.GlideBuilder;
 import com.bumptech.glide.module.GlideModule;
 import com.bumptech.glide.request.target.ViewTarget;
-import com.efeizao.bx.R;
+
+import tv.live.bx.R;
+
 
 /**
  * Created by Administrator on 2017/5/23.

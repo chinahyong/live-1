@@ -10,7 +10,7 @@ import android.widget.CursorAdapter;
 import android.widget.ImageView;
 
 import tv.live.bx.FeizaoApp;
-import com.efeizao.bx.R;
+import tv.live.bx.R;
 import tv.live.bx.common.photopick.PhotoPickActivity.GridViewCheckTag;
 import tv.live.bx.imageloader.ImageLoaderUtil;
 

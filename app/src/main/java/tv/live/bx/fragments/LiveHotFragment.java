@@ -12,27 +12,6 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import tv.live.bx.FeizaoApp;
-import com.efeizao.bx.R;
-import tv.live.bx.activities.FanDetailActivity;
-import tv.live.bx.activities.GroupPostDetailActivity;
-import tv.live.bx.activities.MyFocusActivity;
-import tv.live.bx.activities.WebViewActivity;
-import tv.live.bx.adapters.LiveHotAdapter;
-import tv.live.bx.util.ActivityJumpUtil;
-import tv.live.bx.util.UiHelper;
-import tv.live.bx.common.BusinessUtils;
-import tv.live.bx.common.Consts;
-import tv.live.bx.common.MsgTypes;
-import tv.live.bx.common.OperationHelper;
-import tv.live.bx.library.util.EvtLog;
-import tv.live.bx.model.AnchorBean;
-import tv.live.bx.ui.EmptyRecyclerView;
-import tv.live.bx.ui.ListFooterLoadView;
-import tv.live.bx.ui.LoadingProgress;
-import tv.live.bx.ui.LoadingProgress.onProgressClickListener;
-import tv.live.bx.ui.drawables.LiveHotDividerDrawable;
-import tv.live.bx.ui.widget.CustomRefreshLayout;
 import com.lonzh.lib.network.JSONParser;
 import com.umeng.analytics.MobclickAgent;
 import com.wxy.adbanner.entity.AdInfo;
@@ -49,6 +28,27 @@ import java.util.Map;
 
 import cn.efeizao.feizao.framework.net.impl.CallbackDataHandle;
 import cn.efeizao.feizao.ui.dialog.CustomDialogBuilder;
+import tv.live.bx.FeizaoApp;
+import tv.live.bx.R;
+import tv.live.bx.activities.FanDetailActivity;
+import tv.live.bx.activities.GroupPostDetailActivity;
+import tv.live.bx.activities.MyFocusActivity;
+import tv.live.bx.activities.WebViewActivity;
+import tv.live.bx.adapters.LiveHotAdapter;
+import tv.live.bx.common.BusinessUtils;
+import tv.live.bx.common.Consts;
+import tv.live.bx.common.MsgTypes;
+import tv.live.bx.common.OperationHelper;
+import tv.live.bx.library.util.EvtLog;
+import tv.live.bx.model.AnchorBean;
+import tv.live.bx.ui.EmptyRecyclerView;
+import tv.live.bx.ui.ListFooterLoadView;
+import tv.live.bx.ui.LoadingProgress;
+import tv.live.bx.ui.LoadingProgress.onProgressClickListener;
+import tv.live.bx.ui.drawables.LiveHotDividerDrawable;
+import tv.live.bx.ui.widget.CustomRefreshLayout;
+import tv.live.bx.util.ActivityJumpUtil;
+import tv.live.bx.util.UiHelper;
 
 /**
  * @author Live

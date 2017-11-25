@@ -8,7 +8,8 @@ import android.view.WindowManager;
 import android.widget.LinearLayout;
 
 import tv.live.bx.FeizaoApp;
-import com.efeizao.bx.R;
+import tv.live.bx.R;
+
 
 /**
  * Created by Live on 2017/2/23.

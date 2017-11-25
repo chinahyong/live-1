@@ -13,19 +13,20 @@ import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.efeizao.bx.R;
-import tv.live.bx.util.ActivityJumpUtil;
+import com.lonzh.lib.LZActivity;
+
+import java.io.Serializable;
+import java.util.HashMap;
+import java.util.Map;
+
+import tv.live.bx.R;
 import tv.live.bx.common.Business;
 import tv.live.bx.common.Constants;
 import tv.live.bx.common.MsgTypes;
 import tv.live.bx.common.Utils;
 import tv.live.bx.common.WebConstants;
 import tv.live.bx.library.util.TelephoneUtil;
-import com.lonzh.lib.LZActivity;
-
-import java.io.Serializable;
-import java.util.HashMap;
-import java.util.Map;
+import tv.live.bx.util.ActivityJumpUtil;
 
 public class Register1Activity extends LZActivity {
 

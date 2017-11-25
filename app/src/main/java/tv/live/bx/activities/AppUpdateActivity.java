@@ -17,18 +17,18 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+
 import cn.efeizao.feizao.fmk.appupdate.ActivityCallBack;
 import cn.efeizao.feizao.fmk.appupdate.DefaultUpdateObserver;
 import cn.efeizao.feizao.ui.dialog.QustomDialogBuilder;
 import cn.efeizao.feizao.update.AppUpdateManager;
-
-import com.efeizao.bx.R;
-import tv.live.bx.util.UiHelper;
+import tv.live.bx.R;
 import tv.live.bx.common.Constants;
 import tv.live.bx.library.util.EvtLog;
 import tv.live.bx.library.util.FileUtil;
 import tv.live.bx.library.util.StringUtil;
 import tv.live.bx.library.util.UserPreference;
+import tv.live.bx.util.UiHelper;
 
 /**
  * Title: AppUpdateActivity.java Description: 应用升级对话框界面 Copyright: Copyright (c)

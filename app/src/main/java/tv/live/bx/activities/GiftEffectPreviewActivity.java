@@ -10,15 +10,16 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
-import com.efeizao.bx.R;
+import com.gj.effect.EffectComposition;
+import com.gj.effect.EffectGiftLoader;
+import com.gj.effect.GJEffectView;
+
+import tv.live.bx.R;
 import tv.live.bx.activities.base.BaseFragmentActivity;
 import tv.live.bx.config.UserInfoConfig;
 import tv.live.bx.imageloader.ImageLoaderUtil;
 import tv.live.bx.library.util.EvtLog;
 import tv.live.bx.ui.StrokeTextView;
-import com.gj.effect.EffectComposition;
-import com.gj.effect.EffectGiftLoader;
-import com.gj.effect.GJEffectView;
 
 /**
  * 直播间礼物动效预览页面

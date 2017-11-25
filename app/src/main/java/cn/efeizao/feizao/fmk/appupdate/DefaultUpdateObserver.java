@@ -15,10 +15,10 @@ import android.os.Build;
 import android.util.Log;
 import android.widget.RemoteViews;
 
-import com.efeizao.bx.R;
-
 import java.io.File;
 import java.util.UUID;
+
+import tv.live.bx.R;
 
 /**
  * Title: 默认的下载观察者 (类或者接口名称) Description: XXXX (简单对此类或接口的名字进行描述) Copyright:

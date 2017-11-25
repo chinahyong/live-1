@@ -15,11 +15,11 @@ import android.widget.ImageView;
 import android.widget.PopupWindow;
 import android.widget.TextView;
 
-import com.efeizao.bx.R;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+
+import tv.live.bx.R;
 
 /**
  * 社区帖子分类

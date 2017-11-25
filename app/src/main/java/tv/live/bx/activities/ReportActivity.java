@@ -17,10 +17,16 @@ import android.widget.Button;
 import android.widget.GridView;
 import android.widget.ImageView;
 
+import com.umeng.analytics.MobclickAgent;
+
+import java.io.File;
+import java.lang.ref.WeakReference;
+import java.util.ArrayList;
+
+import cn.efeizao.feizao.framework.net.impl.CallbackDataHandle;
 import tv.live.bx.FeizaoApp;
-import com.efeizao.bx.R;
+import tv.live.bx.R;
 import tv.live.bx.activities.base.BaseFragmentActivity;
-import tv.live.bx.util.UiHelper;
 import tv.live.bx.common.BusinessUtils;
 import tv.live.bx.common.Constants;
 import tv.live.bx.common.MsgTypes;
@@ -36,13 +42,7 @@ import tv.live.bx.library.util.BitmapUtils;
 import tv.live.bx.library.util.EvtLog;
 import tv.live.bx.library.util.FileUtil;
 import tv.live.bx.ui.ActionSheetDialog;
-import com.umeng.analytics.MobclickAgent;
-
-import java.io.File;
-import java.lang.ref.WeakReference;
-import java.util.ArrayList;
-
-import cn.efeizao.feizao.framework.net.impl.CallbackDataHandle;
+import tv.live.bx.util.UiHelper;
 
 
 public class ReportActivity extends BaseFragmentActivity implements OnClickListener {

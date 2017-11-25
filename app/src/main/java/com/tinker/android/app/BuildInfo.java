@@ -17,7 +17,7 @@
 package com.tinker.android.app;
 
 
-import com.efeizao.bx.BuildConfig;
+import tv.live.bx.BuildConfig;
 
 /**
  * Created by zhangshaowen on 16/6/30.

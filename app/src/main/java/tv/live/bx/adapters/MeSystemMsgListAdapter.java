@@ -1,7 +1,5 @@
 package tv.live.bx.adapters;
 
-import java.util.Map;
-
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -9,7 +7,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.efeizao.bx.R;
+import java.util.Map;
+
+import tv.live.bx.R;
 import tv.live.bx.common.Constants;
 import tv.live.bx.library.util.DateUtil;
 

@@ -11,7 +11,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.TextView;
 
-import com.efeizao.bx.R;
+import tv.live.bx.R;
 import tv.live.bx.activities.base.BaseFragmentActivity;
 import tv.live.bx.fragments.LiveChatFragment;
 import tv.live.bx.ui.ChatTextViewClickableSpan;

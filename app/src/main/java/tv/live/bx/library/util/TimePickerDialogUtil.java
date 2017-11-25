@@ -1,7 +1,5 @@
 package tv.live.bx.library.util;
 
-import java.util.Calendar;
-
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.Dialog;
@@ -14,7 +12,10 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.TimePicker.OnTimeChangedListener;
 
-import com.efeizao.bx.R;
+import java.util.Calendar;
+
+import tv.live.bx.R;
+
 
 /**
  * 日期时间选择控件 使用方法： private EditText inputDate;//需要设置的日期时间文本编辑框 private String

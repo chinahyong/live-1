@@ -16,9 +16,17 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.lonzh.lib.network.JSONParser;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import java.lang.ref.WeakReference;
+import java.util.Map;
+
+import cn.efeizao.feizao.framework.net.impl.CallbackDataHandle;
 import tv.live.bx.FeizaoApp;
-import com.efeizao.bx.R;
-import tv.live.bx.util.UiHelper;
+import tv.live.bx.R;
 import tv.live.bx.common.BusinessUtils;
 import tv.live.bx.common.Constants;
 import tv.live.bx.common.JacksonUtil;
@@ -29,15 +37,7 @@ import tv.live.bx.database.DatabaseUtils;
 import tv.live.bx.database.model.PersonInfo;
 import tv.live.bx.imageloader.ImageLoaderUtil;
 import tv.live.bx.library.util.EvtLog;
-import com.lonzh.lib.network.JSONParser;
-
-import org.json.JSONArray;
-import org.json.JSONObject;
-
-import java.lang.ref.WeakReference;
-import java.util.Map;
-
-import cn.efeizao.feizao.framework.net.impl.CallbackDataHandle;
+import tv.live.bx.util.UiHelper;
 
 /**
  * Title: CustomDialogBuilder.java</br> Description: 自定义对话框</br> Copyright:

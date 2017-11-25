@@ -14,20 +14,21 @@ import android.widget.TextView;
 import com.bigkoo.convenientbanner.ConvenientBanner;
 import com.bigkoo.convenientbanner.holder.CBViewHolderCreator;
 import com.bigkoo.convenientbanner.holder.NetworkImageHolderView;
-import tv.live.bx.FeizaoApp;
-import com.efeizao.bx.R;
-import tv.live.bx.common.OperationHelper;
-import tv.live.bx.common.Utils;
-import tv.live.bx.imageloader.ImageLoaderUtil;
-import tv.live.bx.library.util.EvtLog;
-import tv.live.bx.library.util.StringUtil;
-import tv.live.bx.model.AnchorBean;
 import com.umeng.analytics.MobclickAgent;
 import com.viewpagerindicator.CirclePageIndicator;
 import com.wxy.adbanner.entity.AdInfo;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import tv.live.bx.FeizaoApp;
+import tv.live.bx.R;
+import tv.live.bx.common.OperationHelper;
+import tv.live.bx.common.Utils;
+import tv.live.bx.imageloader.ImageLoaderUtil;
+import tv.live.bx.library.util.EvtLog;
+import tv.live.bx.library.util.StringUtil;
+import tv.live.bx.model.AnchorBean;
 
 /**
  * Created by BYC on 2017/7/14.

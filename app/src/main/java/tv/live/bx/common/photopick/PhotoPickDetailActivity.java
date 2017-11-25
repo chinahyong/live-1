@@ -1,7 +1,5 @@
 package tv.live.bx.common.photopick;
 
-import java.util.ArrayList;
-
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
@@ -18,7 +16,9 @@ import android.view.View;
 import android.widget.CheckBox;
 import android.widget.Toast;
 
-import com.efeizao.bx.R;
+import java.util.ArrayList;
+
+import tv.live.bx.R;
 import tv.live.bx.activities.PostPublishActivity;
 import tv.live.bx.activities.base.BaseActionBarActivity;
 import tv.live.bx.fragments.ImagePagerFragment;

@@ -16,10 +16,6 @@ import com.bumptech.glide.load.resource.drawable.GlideDrawable;
 import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.SimpleTarget;
 import com.bumptech.glide.request.target.Target;
-import com.efeizao.bx.R;
-import tv.live.bx.imageloader.ImageLoader;
-import tv.live.bx.imageloader.ImageLoadingListener;
-import tv.live.bx.ui.drawables.GJLoadingDrawable;
 import com.yanzhenjie.album.impl.AlbumImageLoader;
 
 import java.io.File;
@@ -27,6 +23,10 @@ import java.io.File;
 import jp.wasabeef.glide.transformations.BlurTransformation;
 import jp.wasabeef.glide.transformations.CropCircleTransformation;
 import jp.wasabeef.glide.transformations.RoundedCornersTransformation;
+import tv.live.bx.R;
+import tv.live.bx.imageloader.ImageLoader;
+import tv.live.bx.imageloader.ImageLoadingListener;
+import tv.live.bx.ui.drawables.GJLoadingDrawable;
 
 /**
  * Created by Live on 2017/5/11.

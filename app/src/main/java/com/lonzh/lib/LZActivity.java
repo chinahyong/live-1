@@ -21,7 +21,6 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.efeizao.bx.R;
 import com.lonzh.lib.exceptions.MsgTypeExists;
 import com.readystatesoftware.systembartint.SystemBarTintManager;
 import com.umeng.analytics.MobclickAgent;
@@ -30,6 +29,7 @@ import java.io.Serializable;
 import java.lang.ref.WeakReference;
 
 import cn.jpush.android.api.JPushInterface;
+import tv.live.bx.R;
 
 /**
  * 基础Activity

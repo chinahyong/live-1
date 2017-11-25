@@ -1,8 +1,5 @@
 package tv.live.bx.emoji;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import android.content.Context;
 import android.graphics.Color;
 import android.support.v4.view.ViewPager;
@@ -19,7 +16,11 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout.LayoutParams;
 
-import com.efeizao.bx.R;
+import java.util.ArrayList;
+import java.util.List;
+
+import tv.live.bx.R;
+
 
 public class SelectFaceHelper implements OnItemClickListener {
 	private static final String TAG = SelectFaceHelper.class.getSimpleName();

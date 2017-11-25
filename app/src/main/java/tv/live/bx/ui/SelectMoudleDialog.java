@@ -1,8 +1,5 @@
 package tv.live.bx.ui;
 
-import java.util.List;
-import java.util.Map;
-
 import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Context;
@@ -17,7 +14,10 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.GridView;
 
-import com.efeizao.bx.R;
+import java.util.List;
+import java.util.Map;
+
+import tv.live.bx.R;
 import tv.live.bx.adapters.SelectModuleGridAdapter;
 import tv.live.bx.adapters.SelectModuleGridAdapter.ISelectGridItemOnClick;
 

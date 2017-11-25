@@ -14,10 +14,10 @@ import android.view.animation.TranslateAnimation;
 import android.widget.TextSwitcher;
 import android.widget.ViewSwitcher;
 
-import com.efeizao.bx.R;
-import tv.live.bx.library.util.EvtLog;
-
 import java.util.ArrayList;
+
+import tv.live.bx.R;
+import tv.live.bx.library.util.EvtLog;
 
 /**
  * Created by Live on 2017/2/13.

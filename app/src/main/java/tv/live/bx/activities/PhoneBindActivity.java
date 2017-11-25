@@ -12,14 +12,6 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.efeizao.bx.R;
-import tv.live.bx.activities.base.BaseFragmentActivity;
-import tv.live.bx.common.BusinessUtils;
-import tv.live.bx.common.Constants;
-import tv.live.bx.common.MsgTypes;
-import tv.live.bx.common.Utils;
-import tv.live.bx.config.UserInfoConfig;
-import tv.live.bx.library.util.EvtLog;
 import com.lonzh.lib.network.JSONParser;
 
 import org.json.JSONObject;
@@ -28,8 +20,15 @@ import java.lang.ref.WeakReference;
 import java.util.Map;
 
 import cn.efeizao.feizao.framework.net.impl.CallbackDataHandle;
+import tv.live.bx.R;
+import tv.live.bx.activities.base.BaseFragmentActivity;
+import tv.live.bx.common.BusinessUtils;
+import tv.live.bx.common.Constants;
+import tv.live.bx.common.MsgTypes;
+import tv.live.bx.common.Utils;
+import tv.live.bx.config.UserInfoConfig;
+import tv.live.bx.library.util.EvtLog;
 
-import static com.efeizao.bx.R.string.get_verify_code;
 
 public class PhoneBindActivity extends BaseFragmentActivity implements OnClickListener {
 
@@ -132,7 +131,7 @@ public class PhoneBindActivity extends BaseFragmentActivity implements OnClickLi
 		} else {
 			moBtnSendVCode.setSelected(false);
 			moBtnSendVCode.setEnabled(true);
-			moBtnSendVCode.setText(get_verify_code);
+//			moBtnSendVCode.setText(get_verify_code);
 		}
 	}
 

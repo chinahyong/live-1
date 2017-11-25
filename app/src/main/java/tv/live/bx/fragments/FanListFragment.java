@@ -15,14 +15,23 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.LinearLayout;
 
+import com.lonzh.lib.network.JSONParser;
+import com.umeng.analytics.MobclickAgent;
+
+import org.json.JSONArray;
+
+import java.io.Serializable;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import cn.efeizao.feizao.framework.net.impl.CallbackDataHandle;
 import tv.live.bx.FeizaoApp;
-import com.efeizao.bx.R;
+import tv.live.bx.R;
 import tv.live.bx.activities.FanDetailActivity;
 import tv.live.bx.activities.LoginActivity;
 import tv.live.bx.activities.ShareDialogActivity;
 import tv.live.bx.adapters.FanListAdapter;
-import tv.live.bx.util.ActivityJumpUtil;
-import tv.live.bx.util.UiHelper;
 import tv.live.bx.common.AsyncTaskThreadPool;
 import tv.live.bx.common.BusinessUtils;
 import tv.live.bx.common.Constants;
@@ -36,17 +45,8 @@ import tv.live.bx.ui.ListFooterLoadView;
 import tv.live.bx.ui.LoadingProgress;
 import tv.live.bx.ui.LoadingProgress.onProgressClickListener;
 import tv.live.bx.ui.PullRefreshListView;
-import com.lonzh.lib.network.JSONParser;
-import com.umeng.analytics.MobclickAgent;
-
-import org.json.JSONArray;
-
-import java.io.Serializable;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import cn.efeizao.feizao.framework.net.impl.CallbackDataHandle;
+import tv.live.bx.util.ActivityJumpUtil;
+import tv.live.bx.util.UiHelper;
 
 /**
  * 饭圈列表 FanListFragment.java

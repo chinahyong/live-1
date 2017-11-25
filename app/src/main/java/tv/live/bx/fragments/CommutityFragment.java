@@ -10,13 +10,14 @@ import android.support.v4.app.FragmentTransaction;
 import android.view.View;
 import android.view.View.OnClickListener;
 
+import com.umeng.analytics.MobclickAgent;
+
 import tv.live.bx.FeizaoApp;
-import com.efeizao.bx.R;
+import tv.live.bx.R;
 import tv.live.bx.activities.CalMainActivity;
 import tv.live.bx.listeners.OnUpdateListener;
 import tv.live.bx.ui.SingleTabWidget;
 import tv.live.bx.ui.SingleTabWidget.OnTabChangedListener;
-import com.umeng.analytics.MobclickAgent;
 
 /**
  * 社区页面 Title: CommutityFragment.java

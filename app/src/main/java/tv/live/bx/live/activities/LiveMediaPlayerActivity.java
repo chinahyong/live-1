@@ -26,27 +26,6 @@ import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import tv.live.bx.FeizaoApp;
-import com.efeizao.bx.R;
-import tv.live.bx.activities.PersonInfoActivity;
-import tv.live.bx.activities.base.BaseFragmentActivity;
-import tv.live.bx.util.ActivityJumpUtil;
-import tv.live.bx.util.UiHelper;
-import tv.live.bx.common.BusinessUtils;
-import tv.live.bx.common.Constants;
-import tv.live.bx.common.MsgTypes;
-import tv.live.bx.common.OperationHelper;
-import tv.live.bx.common.PermissionUtil;
-import tv.live.bx.common.Utils;
-import tv.live.bx.config.AppConfig;
-import tv.live.bx.config.UserInfoConfig;
-import tv.live.bx.imageloader.ImageLoaderUtil;
-import tv.live.bx.library.util.EvtLog;
-import tv.live.bx.library.util.StringUtil;
-import tv.live.bx.websocket.WebSocketLiveEngine;
-import tv.live.bx.websocket.model.AcceptVideoChat;
-import tv.live.bx.websocket.model.InviteVideoChat;
-import tv.live.bx.websocket.model.VideoChat;
 import com.tencent.rtmp.ITXLivePlayListener;
 import com.tencent.rtmp.ITXLivePushListener;
 import com.tencent.rtmp.TXLiveConstants;
@@ -65,6 +44,27 @@ import java.util.Iterator;
 import java.util.Map;
 
 import cn.efeizao.feizao.framework.net.impl.CallbackDataHandle;
+import tv.live.bx.FeizaoApp;
+import tv.live.bx.R;
+import tv.live.bx.activities.PersonInfoActivity;
+import tv.live.bx.activities.base.BaseFragmentActivity;
+import tv.live.bx.common.BusinessUtils;
+import tv.live.bx.common.Constants;
+import tv.live.bx.common.MsgTypes;
+import tv.live.bx.common.OperationHelper;
+import tv.live.bx.common.PermissionUtil;
+import tv.live.bx.common.Utils;
+import tv.live.bx.config.AppConfig;
+import tv.live.bx.config.UserInfoConfig;
+import tv.live.bx.imageloader.ImageLoaderUtil;
+import tv.live.bx.library.util.EvtLog;
+import tv.live.bx.library.util.StringUtil;
+import tv.live.bx.util.ActivityJumpUtil;
+import tv.live.bx.util.UiHelper;
+import tv.live.bx.websocket.WebSocketLiveEngine;
+import tv.live.bx.websocket.model.AcceptVideoChat;
+import tv.live.bx.websocket.model.InviteVideoChat;
+import tv.live.bx.websocket.model.VideoChat;
 
 @SuppressLint("NewApi")
 public class LiveMediaPlayerActivity extends LiveBaseActivity implements OnClickListener, ITXLivePlayListener {
@@ -968,7 +968,7 @@ public class LiveMediaPlayerActivity extends LiveBaseActivity implements OnClick
 			//开启回声消除：连麦时必须开启，非连麦时不要开启
 			mLivePushConfig.enableAEC(true);
 			// 用户可默认开启美颜
-			mLivePushConfig.setBeautyFilter(5, 3);
+//			mLivePushConfig.setBeautyFilter(5, 3);
 			// 关闭聚焦
 			mLivePushConfig.setTouchFocus(false);
 			if (!isSupportHWEncode()) {
@@ -1033,11 +1033,11 @@ public class LiveMediaPlayerActivity extends LiveBaseActivity implements OnClick
 							+ status.getInt(TXLiveConstants.NET_STATUS_VIDEO_BITRATE) + "Kbps");
 				}
 			});
-			int[] ver = TXLivePusher.getSDKVersion();
-			if (ver != null && ver.length >= 4) {
-				EvtLog.e(TAG, String.format("rtmp sdk version:%d.%d.%d.%d ", ver[0], ver[1],
-						ver[2], ver[3]));
-			}
+//			int[] ver = TXLivePusher.getSDKVersion();
+//			if (ver != null && ver.length >= 4) {
+//				EvtLog.e(TAG, String.format("rtmp sdk version:%d.%d.%d.%d ", ver[0], ver[1],
+//						ver[2], ver[3]));
+//			}
 		}
 		// 4. 新的配置配置给pusher
 		mLivePusher.setConfig(mLivePushConfig);

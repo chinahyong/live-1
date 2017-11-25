@@ -27,10 +27,22 @@ import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+import com.lonzh.lib.network.JSONParser;
+
+import org.json.JSONArray;
+
+import java.io.File;
+import java.io.Serializable;
+import java.lang.ref.WeakReference;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import cn.efeizao.feizao.framework.net.impl.CallbackDataHandle;
 import tv.live.bx.FeizaoApp;
-import com.efeizao.bx.R;
+import tv.live.bx.R;
 import tv.live.bx.activities.base.BaseFragmentActivity;
-import tv.live.bx.util.UiHelper;
 import tv.live.bx.common.AsyncTaskThreadPool;
 import tv.live.bx.common.BusinessUtils;
 import tv.live.bx.common.Constants;
@@ -54,19 +66,7 @@ import tv.live.bx.library.util.Global;
 import tv.live.bx.tasks.BaseRunnable;
 import tv.live.bx.ui.SelectMoudleDialog;
 import tv.live.bx.ui.event.SimpleTextWatcher;
-import com.lonzh.lib.network.JSONParser;
-
-import org.json.JSONArray;
-
-import java.io.File;
-import java.io.Serializable;
-import java.lang.ref.WeakReference;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import cn.efeizao.feizao.framework.net.impl.CallbackDataHandle;
+import tv.live.bx.util.UiHelper;
 
 public class PostPublishActivity extends BaseFragmentActivity implements OnClickListener {
 	public static final int PHOTO_MAX_COUNT = 6;

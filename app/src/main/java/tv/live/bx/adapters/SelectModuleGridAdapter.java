@@ -1,8 +1,5 @@
 package tv.live.bx.adapters;
 
-import java.util.List;
-import java.util.Map;
-
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,7 +8,11 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import com.efeizao.bx.R;
+import java.util.List;
+import java.util.Map;
+
+import tv.live.bx.R;
+
 
 /**
  * 选择GridView的适配器

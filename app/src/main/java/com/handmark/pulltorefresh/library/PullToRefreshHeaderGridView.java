@@ -22,9 +22,10 @@ import android.os.Build.VERSION_CODES;
 import android.util.AttributeSet;
 import android.view.View;
 
-import com.efeizao.bx.R;
-import tv.live.bx.ui.HeaderGridView;
 import com.handmark.pulltorefresh.library.internal.EmptyViewMethodAccessor;
+
+import tv.live.bx.R;
+import tv.live.bx.ui.HeaderGridView;
 
 public class PullToRefreshHeaderGridView extends PullToRefreshAdapterViewBase<HeaderGridView> {
 

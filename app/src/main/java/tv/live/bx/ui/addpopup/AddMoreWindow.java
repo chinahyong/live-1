@@ -17,7 +17,8 @@ import android.widget.ImageView;
 import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
 
-import com.efeizao.bx.R;
+import tv.live.bx.R;
+
 
 @SuppressLint("NewApi")
 public class AddMoreWindow extends PopupWindow implements OnClickListener {

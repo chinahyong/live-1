@@ -6,13 +6,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 
-import com.efeizao.bx.R;
-import tv.live.bx.activities.base.BaseFragmentActivity;
-import tv.live.bx.common.BusinessUtils;
-import tv.live.bx.common.Consts;
-import tv.live.bx.common.Utils;
-import tv.live.bx.library.util.EvtLog;
-import tv.live.bx.ui.ShareDialog;
 import com.umeng.analytics.MobclickAgent;
 import com.umeng.analytics.social.UMPlatformData;
 import com.umeng.analytics.social.UMPlatformData.UMedia;
@@ -25,6 +18,14 @@ import com.umeng.socialize.media.UMImage;
 import com.umeng.socialize.media.UMWeb;
 
 import java.util.Map;
+
+import tv.live.bx.R;
+import tv.live.bx.activities.base.BaseFragmentActivity;
+import tv.live.bx.common.BusinessUtils;
+import tv.live.bx.common.Consts;
+import tv.live.bx.common.Utils;
+import tv.live.bx.library.util.EvtLog;
+import tv.live.bx.ui.ShareDialog;
 
 /**
  * @version 1.0

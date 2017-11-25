@@ -12,10 +12,10 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.efeizao.bx.R;
+import tv.live.bx.R;
 import tv.live.bx.activities.base.BaseFragmentActivity;
-import tv.live.bx.util.ActivityJumpUtil;
 import tv.live.bx.config.UserInfoConfig;
+import tv.live.bx.util.ActivityJumpUtil;
 
 public class AccountSaleActivity extends BaseFragmentActivity implements OnClickListener {
 

@@ -23,7 +23,6 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.efeizao.bx.R;
 import com.umeng.analytics.MobclickAgent;
 
 import java.io.File;
@@ -36,6 +35,7 @@ import java.util.Map;
 
 import cn.efeizao.feizao.framework.net.impl.CallbackDataHandle;
 import tv.live.bx.FeizaoApp;
+import tv.live.bx.R;
 import tv.live.bx.activities.AdviceActivity;
 import tv.live.bx.activities.PhoneBindActivity;
 import tv.live.bx.activities.SettingsActivity;

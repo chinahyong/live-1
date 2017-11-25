@@ -14,8 +14,8 @@
     <string name="a_update_download_failed">下载超时，请重试！</string>
     <string name="a_update_no_update">当前已经是最新版本</string>
     <string name="a_update_check_waitting">检测新版本，请稍候</string>
-    <string name="a_update_app_name">星光直播(v<xliff:g id="version">%1$s</xliff:g>)</string>
-    <string name="a_update_tick_text">开始下载星光直播(v<xliff:g id="version">%1$s</xliff:g>)</string>
+    <string name="a_update_app_name">比心直播(v<xliff:g id="version">%1$s</xliff:g>)</string>
+    <string name="a_update_tick_text">开始下载比心直播(v<xliff:g id="version">%1$s</xliff:g>)</string>
     <string name="exit_app">退出程序</string>
     <string name="a_setting_check_update">检测更新</string>
 

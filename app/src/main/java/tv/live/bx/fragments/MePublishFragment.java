@@ -18,13 +18,20 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.efeizao.bx.R;
+import com.lonzh.lib.network.JSONParser;
+
+import org.json.JSONArray;
+
+import java.lang.ref.WeakReference;
+import java.util.List;
+import java.util.Map;
+
+import cn.efeizao.feizao.framework.net.impl.CallbackDataHandle;
+import tv.live.bx.R;
 import tv.live.bx.activities.LoginActivity;
 import tv.live.bx.activities.PostActivity;
 import tv.live.bx.adapters.SubjectListAdapter;
 import tv.live.bx.adapters.SubjectListAdapter.IOnclickListener;
-import tv.live.bx.util.ActivityJumpUtil;
-import tv.live.bx.util.UiHelper;
 import tv.live.bx.common.AsyncTaskThreadPool;
 import tv.live.bx.common.BusinessUtils;
 import tv.live.bx.common.Constants;
@@ -40,15 +47,8 @@ import tv.live.bx.ui.ListFooterLoadView;
 import tv.live.bx.ui.LoadingProgress;
 import tv.live.bx.ui.LoadingProgress.onProgressClickListener;
 import tv.live.bx.ui.PullRefreshListView;
-import com.lonzh.lib.network.JSONParser;
-
-import org.json.JSONArray;
-
-import java.lang.ref.WeakReference;
-import java.util.List;
-import java.util.Map;
-
-import cn.efeizao.feizao.framework.net.impl.CallbackDataHandle;
+import tv.live.bx.util.ActivityJumpUtil;
+import tv.live.bx.util.UiHelper;
 
 /**
  * 我发布过的帖子列表 Title: MePublishFragment.java

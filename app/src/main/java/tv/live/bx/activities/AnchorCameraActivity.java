@@ -11,15 +11,15 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.TextView;
 
-import com.efeizao.bx.R;
+import java.io.File;
+import java.util.HashMap;
+import java.util.Map;
+
+import tv.live.bx.R;
 import tv.live.bx.activities.base.BaseFragmentActivity;
 import tv.live.bx.fragments.AnchorVideoFragment;
 import tv.live.bx.fragments.AnchorVideoFragment.OnRecordFinishListener;
 import tv.live.bx.library.util.FileUtil;
-
-import java.io.File;
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * Title: AnchorCameraActivity.java Description:主播报名视频录制

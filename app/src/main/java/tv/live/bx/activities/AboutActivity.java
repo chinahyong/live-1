@@ -7,11 +7,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import tv.live.bx.FeizaoApp;
-import com.efeizao.bx.R;
+import tv.live.bx.R;
 import tv.live.bx.activities.base.BaseFragmentActivity;
-import tv.live.bx.util.ChannelUtil;
 import tv.live.bx.common.Constants;
 import tv.live.bx.common.Utils;
+import tv.live.bx.util.ChannelUtil;
 
 public class AboutActivity extends BaseFragmentActivity {
 

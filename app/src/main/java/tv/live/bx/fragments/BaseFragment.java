@@ -11,16 +11,17 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import tv.live.bx.FeizaoApp;
-import com.efeizao.bx.R;
-import tv.live.bx.util.UiHelper;
-import tv.live.bx.common.PermissionUtil;
-import tv.live.bx.library.util.EvtLog;
-import tv.live.bx.listeners.OnUpdateListener;
 import com.squareup.leakcanary.RefWatcher;
 import com.umeng.analytics.MobclickAgent;
 
 import java.lang.ref.WeakReference;
+
+import tv.live.bx.FeizaoApp;
+import tv.live.bx.R;
+import tv.live.bx.common.PermissionUtil;
+import tv.live.bx.library.util.EvtLog;
+import tv.live.bx.listeners.OnUpdateListener;
+import tv.live.bx.util.UiHelper;
 
 /**
  * Title: TBaseFragment.java</br> Description: 界面Fragment基类</br> Copyright:

@@ -11,15 +11,6 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import tv.live.bx.FeizaoApp;
-import com.efeizao.bx.R;
-import tv.live.bx.activities.base.BaseFragmentActivity;
-import tv.live.bx.util.UiHelper;
-import tv.live.bx.common.BusinessUtils;
-import tv.live.bx.common.Constants;
-import tv.live.bx.common.MsgTypes;
-import tv.live.bx.common.Utils;
-import tv.live.bx.library.util.EvtLog;
 import com.lonzh.lib.network.JSONParser;
 import com.umeng.analytics.MobclickAgent;
 
@@ -31,6 +22,15 @@ import java.util.Iterator;
 import java.util.Map;
 
 import cn.efeizao.feizao.framework.net.impl.CallbackDataHandle;
+import tv.live.bx.FeizaoApp;
+import tv.live.bx.R;
+import tv.live.bx.activities.base.BaseFragmentActivity;
+import tv.live.bx.common.BusinessUtils;
+import tv.live.bx.common.Constants;
+import tv.live.bx.common.MsgTypes;
+import tv.live.bx.common.Utils;
+import tv.live.bx.library.util.EvtLog;
+import tv.live.bx.util.UiHelper;
 
 public class PersonTaskActivity extends BaseFragmentActivity implements OnClickListener, OnRefreshListener {
 

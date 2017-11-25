@@ -16,10 +16,16 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.load.resource.bitmap.GlideBitmapDrawable;
-import com.efeizao.bx.R;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+
+import tv.live.bx.R;
 import tv.live.bx.activities.base.BaseFragmentActivity;
 import tv.live.bx.adapters.ImageBrowserAdapter;
-import tv.live.bx.util.UiHelper;
 import tv.live.bx.imageloader.ImageLoaderUtil;
 import tv.live.bx.imageloader.ImageSize;
 import tv.live.bx.imageloader.SimpleImageLoadingListener;
@@ -28,12 +34,7 @@ import tv.live.bx.library.util.DateUtil;
 import tv.live.bx.library.util.EvtLog;
 import tv.live.bx.library.util.FileUtil;
 import tv.live.bx.ui.ScrollViewPager;
-
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
+import tv.live.bx.util.UiHelper;
 
 import static tv.live.bx.fragments.ImagePagerFragment.IMAGE_CACHE_PATH;
 import static tv.live.bx.fragments.ImagePagerFragment.IMAGE_FIX;

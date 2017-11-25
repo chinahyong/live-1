@@ -12,17 +12,17 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.TextView;
 
+import java.io.File;
+import java.io.IOException;
+
 import tv.live.bx.FeizaoApp;
-import com.efeizao.bx.R;
+import tv.live.bx.R;
 import tv.live.bx.activities.base.BaseFragmentActivity;
 import tv.live.bx.library.util.BitmapUtility;
 import tv.live.bx.library.util.BitmapUtils;
 import tv.live.bx.library.util.EvtLog;
 import tv.live.bx.library.util.FileUtil;
 import tv.live.bx.library.util.PackageUtil;
-
-import java.io.File;
-import java.io.IOException;
 
 /**
  * Title: CropImageActivity.java</br> Description: 裁剪图片界面</br> Copyright:

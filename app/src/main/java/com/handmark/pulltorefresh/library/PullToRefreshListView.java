@@ -29,9 +29,10 @@ import android.widget.FrameLayout;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 
-import com.efeizao.bx.R;
 import com.handmark.pulltorefresh.library.internal.EmptyViewMethodAccessor;
 import com.handmark.pulltorefresh.library.internal.LoadingLayout;
+
+import tv.live.bx.R;
 
 public class PullToRefreshListView extends PullToRefreshAdapterViewBase<ListView> {
 

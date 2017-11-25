@@ -49,10 +49,10 @@ import android.view.animation.LinearInterpolator;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
-import com.efeizao.bx.R;
-import tv.live.bx.common.Utils;
-
 import java.util.Random;
+
+import tv.live.bx.R;
+import tv.live.bx.common.Utils;
 
 /**
  * ClassName:FavorLayout <br/>

@@ -12,10 +12,6 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import tv.live.bx.FeizaoApp;
-import com.efeizao.bx.R;
-import tv.live.bx.library.util.TelephoneUtil;
-
 import java.lang.reflect.Field;
 
 import cn.efeizao.feizao.ui.dialog.ConfirmDialgBuilder;
@@ -23,6 +19,9 @@ import cn.efeizao.feizao.ui.dialog.CustomDialogBuilder;
 import cn.efeizao.feizao.ui.dialog.LiveStatusCustomDialogBuilder;
 import cn.efeizao.feizao.ui.dialog.PermissionDialogBuilder;
 import cn.jpush.android.api.JPushInterface;
+import tv.live.bx.FeizaoApp;
+import tv.live.bx.R;
+import tv.live.bx.library.util.TelephoneUtil;
 
 /**
  * Title: UiHelper.java Description: ui操作工具类 Copyright: Copyright (c) 2008

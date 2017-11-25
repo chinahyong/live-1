@@ -24,12 +24,12 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.efeizao.bx.R;
-import tv.live.bx.activities.PostPublishActivity;
-import tv.live.bx.activities.base.BaseActionBarActivity;
-
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
+
+import tv.live.bx.R;
+import tv.live.bx.activities.PostPublishActivity;
+import tv.live.bx.activities.base.BaseActionBarActivity;
 
 
 public class PhotoPickActivity extends BaseActionBarActivity implements LoaderManager.LoaderCallbacks<Cursor> {

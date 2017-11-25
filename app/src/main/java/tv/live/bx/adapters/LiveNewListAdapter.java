@@ -10,16 +10,16 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout.LayoutParams;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
 import tv.live.bx.FeizaoApp;
-import com.efeizao.bx.R;
+import tv.live.bx.R;
 import tv.live.bx.common.Constants;
 import tv.live.bx.common.Utils;
 import tv.live.bx.imageloader.ImageLoaderUtil;
 import tv.live.bx.library.util.EvtLog;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
 
 /**
  * title:最新主播列表适配器 ClassName: LiveNewListAdapter <br/>

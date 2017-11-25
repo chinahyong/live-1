@@ -39,7 +39,7 @@ public class WebConstants {
 	/**
 	 * 邀请注册
 	 */
-	public static String SHARE_INVATE_CONTENT = "来陪我一起看直播，更有星光大礼包等着你！我的星光ID是：%1$s~";
+	public static String SHARE_INVATE_CONTENT = "来陪我一起看直播，更有比心大礼包等着你！我的比心ID是：%1$s~";
 	public static String SHARE_INVATE_URL = "/user/invite/uid/%1$s";
 
 	/**

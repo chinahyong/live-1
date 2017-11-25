@@ -12,7 +12,8 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.efeizao.bx.R;
+import tv.live.bx.R;
+
 
 /**
  * Title: QustomDialogBuilder.java</br>

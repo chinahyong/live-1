@@ -19,7 +19,10 @@ import android.widget.TextView;
 
 import com.bumptech.glide.load.resource.bitmap.GlideBitmapDrawable;
 import com.bumptech.glide.request.target.Target;
-import com.efeizao.bx.R;
+
+import java.util.Random;
+
+import tv.live.bx.R;
 import tv.live.bx.common.Utils;
 import tv.live.bx.danmu.AnimationHelper;
 import tv.live.bx.imageloader.ImageLoaderUtil;
@@ -27,8 +30,6 @@ import tv.live.bx.imageloader.SimpleImageLoadingListener;
 import tv.live.bx.library.util.EvtLog;
 import tv.live.bx.library.util.HtmlUtil;
 import tv.live.bx.library.util.NetworkImageGetter;
-
-import java.util.Random;
 
 /**
  * Created by Live on 2016/5/12.

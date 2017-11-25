@@ -6,8 +6,9 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.efeizao.bx.R;
 import com.lonzh.lib.LZActivity;
+
+import tv.live.bx.R;
 
 public class ChoiceWeightActivity extends LZActivity {
 	public static final int RESULT_CODE_OK = 100;

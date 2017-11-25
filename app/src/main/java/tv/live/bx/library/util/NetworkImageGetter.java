@@ -11,8 +11,9 @@ import android.text.Html.ImageGetter;
 import android.widget.TextView;
 
 import com.bumptech.glide.request.target.Target;
+
 import tv.live.bx.FeizaoApp;
-import com.efeizao.bx.R;
+import tv.live.bx.R;
 import tv.live.bx.common.Constants;
 import tv.live.bx.common.Utils;
 import tv.live.bx.imageloader.ImageLoaderUtil;

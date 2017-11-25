@@ -11,22 +11,6 @@ import android.widget.AbsListView;
 import android.widget.AbsListView.OnScrollListener;
 import android.widget.ExpandableListView;
 
-import tv.live.bx.FeizaoApp;
-import com.efeizao.bx.R;
-import tv.live.bx.activities.base.BaseFragmentActivity;
-import tv.live.bx.adapters.FanExpandableAdapter;
-import tv.live.bx.util.ActivityJumpUtil;
-import tv.live.bx.util.UiHelper;
-import tv.live.bx.common.AsyncTaskThreadPool;
-import tv.live.bx.common.BusinessUtils;
-import tv.live.bx.common.Constants;
-import tv.live.bx.common.MsgTypes;
-import tv.live.bx.common.WebConstants;
-import tv.live.bx.library.util.EvtLog;
-import tv.live.bx.tasks.BaseRunnable;
-import tv.live.bx.ui.ListFooterLoadView;
-import tv.live.bx.ui.LoadingProgress;
-import tv.live.bx.ui.LoadingProgress.onProgressClickListener;
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.Mode;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.OnRefreshListener;
@@ -45,6 +29,22 @@ import java.util.List;
 import java.util.Map;
 
 import cn.efeizao.feizao.framework.net.impl.CallbackDataHandle;
+import tv.live.bx.FeizaoApp;
+import tv.live.bx.R;
+import tv.live.bx.activities.base.BaseFragmentActivity;
+import tv.live.bx.adapters.FanExpandableAdapter;
+import tv.live.bx.common.AsyncTaskThreadPool;
+import tv.live.bx.common.BusinessUtils;
+import tv.live.bx.common.Constants;
+import tv.live.bx.common.MsgTypes;
+import tv.live.bx.common.WebConstants;
+import tv.live.bx.library.util.EvtLog;
+import tv.live.bx.tasks.BaseRunnable;
+import tv.live.bx.ui.ListFooterLoadView;
+import tv.live.bx.ui.LoadingProgress;
+import tv.live.bx.ui.LoadingProgress.onProgressClickListener;
+import tv.live.bx.util.ActivityJumpUtil;
+import tv.live.bx.util.UiHelper;
 
 /**
  * FanFragment

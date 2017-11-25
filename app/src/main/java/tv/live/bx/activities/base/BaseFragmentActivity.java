@@ -24,10 +24,6 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.efeizao.bx.R;
-import tv.live.bx.util.UiHelper;
-import tv.live.bx.common.PermissionUtil;
-import tv.live.bx.library.util.EvtLog;
 import com.readystatesoftware.systembartint.SystemBarTintManager;
 import com.umeng.analytics.MobclickAgent;
 
@@ -35,6 +31,10 @@ import java.io.Serializable;
 import java.lang.ref.WeakReference;
 
 import cn.jpush.android.api.JPushInterface;
+import tv.live.bx.R;
+import tv.live.bx.common.PermissionUtil;
+import tv.live.bx.library.util.EvtLog;
+import tv.live.bx.util.UiHelper;
 
 /**
  * 基础Activity

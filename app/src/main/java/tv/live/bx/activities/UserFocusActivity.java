@@ -1,11 +1,5 @@
 package tv.live.bx.activities;
 
-import java.lang.ref.WeakReference;
-import java.util.List;
-import java.util.Map;
-
-import org.json.JSONArray;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Message;
@@ -20,13 +14,18 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.LinearLayout;
 
-import cn.efeizao.feizao.framework.net.impl.CallbackDataHandle;
+import com.lonzh.lib.network.JSONParser;
 
-import com.efeizao.bx.R;
+import org.json.JSONArray;
+
+import java.lang.ref.WeakReference;
+import java.util.List;
+import java.util.Map;
+
+import cn.efeizao.feizao.framework.net.impl.CallbackDataHandle;
+import tv.live.bx.R;
 import tv.live.bx.activities.base.BaseFragmentActivity;
 import tv.live.bx.adapters.UserInfoAdapter;
-import tv.live.bx.util.ActivityJumpUtil;
-import tv.live.bx.util.UiHelper;
 import tv.live.bx.common.BusinessUtils;
 import tv.live.bx.common.Constants;
 import tv.live.bx.common.MsgTypes;
@@ -36,7 +35,8 @@ import tv.live.bx.ui.ListFooterLoadView;
 import tv.live.bx.ui.LoadingProgress;
 import tv.live.bx.ui.LoadingProgress.onProgressClickListener;
 import tv.live.bx.ui.PullRefreshListView;
-import com.lonzh.lib.network.JSONParser;
+import tv.live.bx.util.ActivityJumpUtil;
+import tv.live.bx.util.UiHelper;
 
 /**
  * 用户的关注
@@ -188,7 +188,6 @@ public class UserFocusActivity extends BaseFragmentActivity implements OnItemCli
 	/**
 	 * 初始化下拉刷新ListView
 	 *
-	 * @param v
 	 * @param inflater
 	 */
 	private void initListView(LayoutInflater inflater) {

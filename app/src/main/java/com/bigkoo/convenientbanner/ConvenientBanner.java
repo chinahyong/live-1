@@ -20,13 +20,14 @@ import com.bigkoo.convenientbanner.holder.CBViewHolderCreator;
 import com.bigkoo.convenientbanner.listener.CBPageChangeListener;
 import com.bigkoo.convenientbanner.listener.OnItemClickListener;
 import com.bigkoo.convenientbanner.view.CBLoopViewPager;
-import com.efeizao.bx.R;
-import tv.live.bx.common.Utils;
 
 import java.lang.ref.WeakReference;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
+
+import tv.live.bx.R;
+import tv.live.bx.common.Utils;
 
 /**
  * 页面翻转控件，极方便的广告栏

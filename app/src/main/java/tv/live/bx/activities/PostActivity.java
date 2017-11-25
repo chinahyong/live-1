@@ -12,9 +12,10 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 
-import com.efeizao.bx.R;
+import java.util.List;
+
+import tv.live.bx.R;
 import tv.live.bx.activities.base.BaseFragmentActivity;
-import tv.live.bx.util.UiHelper;
 import tv.live.bx.fragments.MePublishFragment;
 import tv.live.bx.library.util.EvtLog;
 import tv.live.bx.library.util.TelephoneUtil;
@@ -22,8 +23,7 @@ import tv.live.bx.listeners.OnUpdateListener;
 import tv.live.bx.receiver.ConnectionChangeReceiver;
 import tv.live.bx.ui.SingleTabWidget;
 import tv.live.bx.ui.SingleTabWidget.OnTabChangedListener;
-
-import java.util.List;
+import tv.live.bx.util.UiHelper;
 
 /**
  * Title: PostActivity.java Description: 帖子主界面 Copyright: Copyright (c) 2008

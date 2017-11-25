@@ -12,9 +12,9 @@ import android.view.View;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.widget.RelativeLayout;
 
-import com.efeizao.bx.R;
-
 import java.util.ArrayList;
+
+import tv.live.bx.R;
 
 /**
  * Created by Live on 2017/2/15.

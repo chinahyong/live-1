@@ -14,8 +14,6 @@
  * the License. */
 package com.viewpagerindicator;
 
-import static android.view.ViewGroup.LayoutParams.FILL_PARENT;
-import static android.view.ViewGroup.LayoutParams.WRAP_CONTENT;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.support.v4.view.PagerAdapter;
@@ -28,7 +26,11 @@ import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
-import com.efeizao.bx.R;
+import tv.live.bx.R;
+
+import static android.view.ViewGroup.LayoutParams.FILL_PARENT;
+import static android.view.ViewGroup.LayoutParams.WRAP_CONTENT;
+
 
 /**
  * This widget implements the dynamic action bar tab behavior that can change

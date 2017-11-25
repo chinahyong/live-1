@@ -11,26 +11,26 @@ import android.view.View.OnClickListener;
 import android.view.WindowManager;
 import android.widget.ImageView;
 
-import tv.live.bx.FeizaoApp;
-import com.efeizao.bx.R;
-import tv.live.bx.activities.base.BaseFragmentActivity;
-import tv.live.bx.adapters.IconPageAdapter;
-import tv.live.bx.util.ActivityJumpUtil;
-import tv.live.bx.common.BusinessUtils;
-import tv.live.bx.common.Constants;
-import tv.live.bx.common.JacksonUtil;
-import tv.live.bx.common.MsgTypes;
-import tv.live.bx.common.Utils;
-import tv.live.bx.config.AppConfig;
-import tv.live.bx.callback.LevelInfoReceiverListener;
-import tv.live.bx.library.util.EvtLog;
-import tv.live.bx.library.util.TelephoneUtil;
 import com.viewpagerindicator.IconPageIndicator;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import cn.efeizao.feizao.framework.net.impl.CallbackDataHandle;
+import tv.live.bx.FeizaoApp;
+import tv.live.bx.R;
+import tv.live.bx.activities.base.BaseFragmentActivity;
+import tv.live.bx.adapters.IconPageAdapter;
+import tv.live.bx.callback.LevelInfoReceiverListener;
+import tv.live.bx.common.BusinessUtils;
+import tv.live.bx.common.Constants;
+import tv.live.bx.common.JacksonUtil;
+import tv.live.bx.common.MsgTypes;
+import tv.live.bx.common.Utils;
+import tv.live.bx.config.AppConfig;
+import tv.live.bx.library.util.EvtLog;
+import tv.live.bx.library.util.TelephoneUtil;
+import tv.live.bx.util.ActivityJumpUtil;
 
 public class GuideActivity extends BaseFragmentActivity implements OnClickListener {
 

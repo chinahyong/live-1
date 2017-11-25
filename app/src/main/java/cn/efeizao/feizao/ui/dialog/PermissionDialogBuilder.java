@@ -1,11 +1,12 @@
 package cn.efeizao.feizao.ui.dialog;
 
-import com.efeizao.bx.R;
 
 import android.app.Dialog;
 import android.content.Context;
 import android.view.View;
 import android.widget.TextView;
+
+import tv.live.bx.R;
 
 /**
  * Title: PermissionDialogBuilder.java Description: 自定义对话框(权限)

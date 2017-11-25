@@ -6,7 +6,8 @@ import android.view.View.OnClickListener;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.efeizao.bx.R;
+import tv.live.bx.R;
+
 
 /**
  * title:LiveStatusCustomDialogBuilder.java Description:我要直播消息提示

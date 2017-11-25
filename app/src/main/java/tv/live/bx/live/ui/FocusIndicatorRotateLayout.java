@@ -6,8 +6,9 @@ import android.os.Build;
 import android.util.AttributeSet;
 import android.util.Log;
 
-import com.efeizao.bx.R;
 import com.pili.pldroid.streaming.ui.FocusIndicator;
+
+import tv.live.bx.R;
 
 // A view that indicates the focus area or the metering area.
 public class FocusIndicatorRotateLayout extends RotateLayout implements FocusIndicator {

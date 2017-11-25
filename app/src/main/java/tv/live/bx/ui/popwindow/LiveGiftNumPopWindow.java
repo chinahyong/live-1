@@ -12,7 +12,7 @@ import android.widget.ListView;
 import android.widget.PopupWindow;
 import android.widget.SimpleAdapter;
 
-import com.efeizao.bx.R;
+import tv.live.bx.R;
 import tv.live.bx.adapters.GiftsNumAdapter;
 import tv.live.bx.library.util.EvtLog;
 import tv.live.bx.library.util.TelephoneUtil;

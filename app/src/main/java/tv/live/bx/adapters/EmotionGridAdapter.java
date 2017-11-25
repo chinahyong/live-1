@@ -7,7 +7,7 @@ import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
 
-import com.efeizao.bx.R;
+import tv.live.bx.R;
 import tv.live.bx.common.Utils;
 
 public class EmotionGridAdapter extends BaseAdapter {

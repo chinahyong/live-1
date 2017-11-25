@@ -16,8 +16,14 @@ import android.view.View.OnTouchListener;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 
+import org.json.JSONArray;
+
+import java.lang.ref.WeakReference;
+import java.util.HashMap;
+import java.util.Map;
+
 import tv.live.bx.FeizaoApp;
-import com.efeizao.bx.R;
+import tv.live.bx.R;
 import tv.live.bx.adapters.ChatListAdapter;
 import tv.live.bx.common.Constants;
 import tv.live.bx.common.MsgTypes;
@@ -26,12 +32,6 @@ import tv.live.bx.emoji.ParseEmojiMsgUtil;
 import tv.live.bx.library.util.HtmlUtil;
 import tv.live.bx.ui.ChatListView;
 import tv.live.bx.ui.ChatTextViewClickableSpan;
-
-import org.json.JSONArray;
-
-import java.lang.ref.WeakReference;
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * 聊天面板

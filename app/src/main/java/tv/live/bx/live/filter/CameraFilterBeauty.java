@@ -4,10 +4,10 @@ import android.content.Context;
 import android.opengl.GLES20;
 import android.util.Log;
 
-import com.efeizao.bx.R;
-import tv.live.bx.live.gles.GlUtil;
-
 import java.nio.FloatBuffer;
+
+import tv.live.bx.R;
+import tv.live.bx.live.gles.GlUtil;
 
 /**
  * Created by Live on 16/3/3.

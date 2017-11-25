@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.PopupWindow;
 import android.widget.SeekBar;
 
-import com.efeizao.bx.R;
+import tv.live.bx.R;
 import tv.live.bx.common.Utils;
 
 /**

@@ -14,22 +14,22 @@ import android.widget.LinearLayout.LayoutParams;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import tv.live.bx.FeizaoApp;
-import com.efeizao.bx.R;
-import tv.live.bx.util.ActivityJumpUtil;
-import tv.live.bx.common.Constants;
-import tv.live.bx.common.Utils;
-import tv.live.bx.imageloader.ImageLoaderUtil;
-import tv.live.bx.library.util.DateUtil;
-import tv.live.bx.library.util.HtmlUtil;
-import tv.live.bx.library.util.NetworkImageGetter;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+
+import tv.live.bx.FeizaoApp;
+import tv.live.bx.R;
+import tv.live.bx.common.Constants;
+import tv.live.bx.common.Utils;
+import tv.live.bx.imageloader.ImageLoaderUtil;
+import tv.live.bx.library.util.DateUtil;
+import tv.live.bx.library.util.HtmlUtil;
+import tv.live.bx.library.util.NetworkImageGetter;
+import tv.live.bx.util.ActivityJumpUtil;
 
 /**
  * 饭圈帖子列表适配器 ClassName: GroupSubjectListAdapter <br/>

@@ -4,9 +4,10 @@ import android.content.Context;
 import android.view.View;
 import android.widget.ImageView;
 
-import com.efeizao.bx.R;
-import tv.live.bx.imageloader.ImageLoaderUtil;
 import com.wxy.adbanner.entity.AdInfo;
+
+import tv.live.bx.R;
+import tv.live.bx.imageloader.ImageLoaderUtil;
 
 /**
  * Created by Sai on 15/8/4.

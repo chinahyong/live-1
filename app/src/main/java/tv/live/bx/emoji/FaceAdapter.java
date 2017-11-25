@@ -1,7 +1,5 @@
 package tv.live.bx.emoji;
 
-import java.util.List;
-
 import android.content.Context;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
@@ -10,7 +8,9 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 
-import com.efeizao.bx.R;
+import java.util.List;
+
+import tv.live.bx.R;
 
 
 public class FaceAdapter extends BaseAdapter {

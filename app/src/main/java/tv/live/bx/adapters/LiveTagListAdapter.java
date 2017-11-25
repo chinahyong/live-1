@@ -9,12 +9,12 @@ import android.widget.BaseAdapter;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 
-import com.efeizao.bx.R;
-import tv.live.bx.library.util.EvtLog;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+
+import tv.live.bx.R;
+import tv.live.bx.library.util.EvtLog;
 
 /**
  * title:最新主播列表适配器 ClassName: LiveNewListAdapter <br/>

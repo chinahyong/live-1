@@ -12,19 +12,6 @@ import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import tv.live.bx.FeizaoApp;
-import com.efeizao.bx.R;
-import tv.live.bx.activities.base.BaseFragmentActivity;
-import tv.live.bx.util.ActivityJumpUtil;
-import tv.live.bx.util.UiHelper;
-import tv.live.bx.common.BusinessUtils;
-import tv.live.bx.common.Constants;
-import tv.live.bx.common.MsgTypes;
-import tv.live.bx.common.Utils;
-import tv.live.bx.config.AppConfig;
-import tv.live.bx.config.UserInfoConfig;
-import tv.live.bx.library.util.EvtLog;
-import tv.live.bx.receiver.LoginStatusChangeReceiver;
 import com.lonzh.lib.network.JSONParser;
 import com.umeng.analytics.MobclickAgent;
 
@@ -38,8 +25,20 @@ import java.util.Set;
 import cn.efeizao.feizao.framework.net.impl.CallbackDataHandle;
 import cn.jpush.android.api.JPushInterface;
 import cn.jpush.android.api.TagAliasCallback;
+import tv.live.bx.FeizaoApp;
+import tv.live.bx.R;
+import tv.live.bx.activities.base.BaseFragmentActivity;
+import tv.live.bx.common.BusinessUtils;
+import tv.live.bx.common.Constants;
+import tv.live.bx.common.MsgTypes;
+import tv.live.bx.common.Utils;
+import tv.live.bx.config.AppConfig;
+import tv.live.bx.config.UserInfoConfig;
+import tv.live.bx.library.util.EvtLog;
+import tv.live.bx.receiver.LoginStatusChangeReceiver;
+import tv.live.bx.util.ActivityJumpUtil;
+import tv.live.bx.util.UiHelper;
 
-import static com.efeizao.bx.R.id.settings_rl_anim_settings;
 
 public class SettingsActivity extends BaseFragmentActivity implements OnClickListener {
 
@@ -71,7 +70,7 @@ public class SettingsActivity extends BaseFragmentActivity implements OnClickLis
 	}
 
 	protected void initMembers() {
-		moRlAnimSettings = (RelativeLayout) findViewById(settings_rl_anim_settings);
+		moRlAnimSettings = (RelativeLayout) findViewById(R.id.settings_rl_anim_settings);
 		moRlMsgSettings = (RelativeLayout) findViewById(R.id.settings_rl_msg_settings);
 		moRlAdvice = (RelativeLayout) findViewById(R.id.settings_rl_advice);
 		moRlGetBackPwd = (RelativeLayout) findViewById(R.id.settings_rl_get_back_pwd);

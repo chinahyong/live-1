@@ -30,24 +30,24 @@ import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.RelativeLayout.LayoutParams;
 
-import tv.live.bx.FeizaoApp;
-import com.efeizao.bx.R;
-import tv.live.bx.activities.AnchorCameraActivity;
-import tv.live.bx.activities.AnchorCameraActivity.OnVideoStatusCallback;
-import tv.live.bx.util.UiHelper;
-import tv.live.bx.camera.CameraHelper;
-import tv.live.bx.camera.RecorderHelper;
-import tv.live.bx.common.Utils;
-import tv.live.bx.library.util.BitmapUtils;
-import tv.live.bx.library.util.EvtLog;
-import tv.live.bx.library.util.FileUtil;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
+
+import tv.live.bx.FeizaoApp;
+import tv.live.bx.R;
+import tv.live.bx.activities.AnchorCameraActivity;
+import tv.live.bx.activities.AnchorCameraActivity.OnVideoStatusCallback;
+import tv.live.bx.camera.CameraHelper;
+import tv.live.bx.camera.RecorderHelper;
+import tv.live.bx.common.Utils;
+import tv.live.bx.library.util.BitmapUtils;
+import tv.live.bx.library.util.EvtLog;
+import tv.live.bx.library.util.FileUtil;
+import tv.live.bx.util.UiHelper;
 
 /**
  * Title: AnchorVideoFragment.java Description:主播报名视频预览页面

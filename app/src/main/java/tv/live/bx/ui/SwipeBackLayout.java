@@ -16,13 +16,13 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.Scroller;
 
-import tv.live.bx.FeizaoApp;
-import com.efeizao.bx.R;
-import tv.live.bx.common.Utils;
-import tv.live.bx.library.util.EvtLog;
-
 import java.util.LinkedList;
 import java.util.List;
+
+import tv.live.bx.FeizaoApp;
+import tv.live.bx.R;
+import tv.live.bx.common.Utils;
+import tv.live.bx.library.util.EvtLog;
 
 /**
  * 左右滑屏，让子view可以左右滑动；

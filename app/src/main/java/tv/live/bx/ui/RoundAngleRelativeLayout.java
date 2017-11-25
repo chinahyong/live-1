@@ -12,7 +12,8 @@ import android.graphics.RectF;
 import android.util.AttributeSet;
 import android.widget.RelativeLayout;
 
-import com.efeizao.bx.R;
+import tv.live.bx.R;
+
 
 /**
  * Created by Administrator on 2017/6/19.

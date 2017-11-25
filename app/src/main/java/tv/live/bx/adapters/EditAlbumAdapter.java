@@ -10,17 +10,17 @@ import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.efeizao.bx.R;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+import tv.live.bx.R;
 import tv.live.bx.common.Constants;
 import tv.live.bx.common.Utils;
 import tv.live.bx.imageloader.ImageLoaderUtil;
 import tv.live.bx.library.util.EvtLog;
 import tv.live.bx.listeners.ItemTouchCallbackListener;
 import tv.live.bx.model.AlbumBean;
-
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 
 /**
  * Created by Live on 2017/4/25.

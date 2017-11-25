@@ -1,8 +1,5 @@
 package tv.live.bx.fragments;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import android.os.Bundle;
 import android.os.Message;
 import android.view.View;
@@ -11,7 +8,10 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RadioButton;
 
-import com.efeizao.bx.R;
+import java.util.HashMap;
+import java.util.Map;
+
+import tv.live.bx.R;
 import tv.live.bx.adapters.AudienceAdapter;
 import tv.live.bx.common.Constants;
 import tv.live.bx.common.MsgTypes;

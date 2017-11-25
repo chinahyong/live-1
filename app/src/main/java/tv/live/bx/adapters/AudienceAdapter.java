@@ -9,13 +9,14 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.efeizao.bx.R;
-import tv.live.bx.common.Utils;
-import tv.live.bx.imageloader.ImageLoaderUtil;
 import com.lonzh.lib.LZBaseAdapter;
 
 import java.util.Iterator;
 import java.util.Map;
+
+import tv.live.bx.R;
+import tv.live.bx.common.Utils;
+import tv.live.bx.imageloader.ImageLoaderUtil;
 
 public class AudienceAdapter extends LZBaseAdapter<Map<String, String>> {
 	public static final int VIEWER_TYPE_ADMIN = 0;

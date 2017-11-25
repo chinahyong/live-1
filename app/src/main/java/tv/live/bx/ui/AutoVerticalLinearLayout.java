@@ -6,11 +6,11 @@ import android.graphics.Typeface;
 import android.util.AttributeSet;
 import android.widget.LinearLayout;
 
-import com.efeizao.bx.R;
-import tv.live.bx.library.util.EvtLog;
-
 import java.util.ArrayList;
 import java.util.List;
+
+import tv.live.bx.R;
+import tv.live.bx.library.util.EvtLog;
 
 /**
  * Created by Live on 2017/2/14.

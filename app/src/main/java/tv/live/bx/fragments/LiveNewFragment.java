@@ -12,20 +12,6 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
 import android.widget.TextView;
 
-import tv.live.bx.FeizaoApp;
-import com.efeizao.bx.R;
-import tv.live.bx.adapters.LiveNewListAdapter;
-import tv.live.bx.util.ActivityJumpUtil;
-import tv.live.bx.util.UiHelper;
-import tv.live.bx.common.BusinessUtils;
-import tv.live.bx.common.MsgTypes;
-import tv.live.bx.common.OperationHelper;
-import tv.live.bx.common.Utils;
-import tv.live.bx.listeners.GoHotClickListener;
-import tv.live.bx.ui.LoadingProgress.onProgressClickListener;
-import tv.live.bx.ui.LoadingProgressEmptyJump;
-import tv.live.bx.ui.widget.CustomRefreshLayout;
-import tv.live.bx.ui.widget.HeaderFooterGridView;
 import com.lonzh.lib.network.JSONParser;
 import com.umeng.analytics.MobclickAgent;
 
@@ -36,6 +22,20 @@ import java.util.List;
 import java.util.Map;
 
 import cn.efeizao.feizao.framework.net.impl.CallbackDataHandle;
+import tv.live.bx.FeizaoApp;
+import tv.live.bx.R;
+import tv.live.bx.adapters.LiveNewListAdapter;
+import tv.live.bx.common.BusinessUtils;
+import tv.live.bx.common.MsgTypes;
+import tv.live.bx.common.OperationHelper;
+import tv.live.bx.common.Utils;
+import tv.live.bx.listeners.GoHotClickListener;
+import tv.live.bx.ui.LoadingProgress.onProgressClickListener;
+import tv.live.bx.ui.LoadingProgressEmptyJump;
+import tv.live.bx.ui.widget.CustomRefreshLayout;
+import tv.live.bx.ui.widget.HeaderFooterGridView;
+import tv.live.bx.util.ActivityJumpUtil;
+import tv.live.bx.util.UiHelper;
 
 /**
  * Title: LiveNewFragment.java</br> Description: 主播列表最新主播</br> Copyright: *

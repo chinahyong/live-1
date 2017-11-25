@@ -536,11 +536,11 @@ public class Constants {
 	/**
 	 * 星探邀请标题
 	 */
-	public static String COMMON_TALENT_INVITE_TITLE = "快来报名成为星光主播！";
+	public static String COMMON_TALENT_INVITE_TITLE = "快来报名成为比心主播！";
 	/**
 	 * 星探邀请内容
 	 */
-	public static String COMMON_TALENT_INVITE_CONTENT = "点我报名成为星光主播，美好的你有美好的未来！";
+	public static String COMMON_TALENT_INVITE_CONTENT = "点我报名成为比心主播，美好的你有美好的未来！";
 
 	/**
 	 * 字段为真 的字符串形式

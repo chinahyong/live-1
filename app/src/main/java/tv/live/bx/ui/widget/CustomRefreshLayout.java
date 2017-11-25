@@ -18,7 +18,7 @@ import android.widget.AbsListView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 
-import com.efeizao.bx.R;
+import tv.live.bx.R;
 import tv.live.bx.common.Utils;
 import tv.live.bx.ui.ListFooterLoadView;
 import tv.live.bx.ui.PullnReleaseHintView;

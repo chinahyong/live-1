@@ -11,11 +11,11 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.efeizao.bx.R;
+import java.math.BigDecimal;
+
+import tv.live.bx.R;
 import tv.live.bx.common.Utils;
 import tv.live.bx.config.UserInfoConfig;
-
-import java.math.BigDecimal;
 
 /**
  * Title: CustomDialogBuilder.java</br> Description: 自定义对话框</br> Copyright:

@@ -14,11 +14,18 @@ import android.support.v7.widget.helper.ItemTouchHelper;
 import android.text.TextUtils;
 import android.view.View;
 
+import com.yanzhenjie.album.Album;
+
+import java.io.File;
+import java.lang.ref.WeakReference;
+import java.util.ArrayList;
+import java.util.List;
+
+import cn.efeizao.feizao.framework.net.impl.CallbackDataHandle;
 import tv.live.bx.FeizaoApp;
-import com.efeizao.bx.R;
+import tv.live.bx.R;
 import tv.live.bx.activities.base.BaseFragmentActivity;
 import tv.live.bx.adapters.EditAlbumAdapter;
-import tv.live.bx.util.UiHelper;
 import tv.live.bx.common.BusinessUtils;
 import tv.live.bx.common.Constants;
 import tv.live.bx.common.JacksonUtil;
@@ -32,14 +39,7 @@ import tv.live.bx.library.util.FileUtil;
 import tv.live.bx.listeners.ItemTouchCallbackListener;
 import tv.live.bx.listeners.OnItemTouchListener;
 import tv.live.bx.model.AlbumBean;
-import com.yanzhenjie.album.Album;
-
-import java.io.File;
-import java.lang.ref.WeakReference;
-import java.util.ArrayList;
-import java.util.List;
-
-import cn.efeizao.feizao.framework.net.impl.CallbackDataHandle;
+import tv.live.bx.util.UiHelper;
 
 import static tv.live.bx.activities.GroupPostPublishActivity.File_Dir;
 

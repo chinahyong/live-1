@@ -24,7 +24,7 @@
     <string name="a_list_hint_release_to_refresh">释放可以刷新</string>
     <string name="a_list_hint_pullup_to_load_more">上拉以加载更多</string>
     <string name="a_list_hint_release_to_load_more">释放以加载更多</string>
-    <string name="a_main_exit_confirm">再按一次退出星光直播</string>
+    <string name="a_main_exit_confirm">再按一次退出比心直播</string>
     <string name="a_playing_exit_confirm">再按一次退出直播间</string>
 
     <!-- 数据加载选项 -->
@@ -56,7 +56,7 @@
     <string name="a_main_tab_community_title">广场</string>
     <string name="a_main_tab_me">我的</string>
     <string name="a_tab_me_title">个人中心</string>
-    <string name="a_main_exit_message">确认退出星光直播吗？</string>
+    <string name="a_main_exit_message">确认退出比心直播吗？</string>
 
     <!-- 播放界面 -->
     <string name="chat_text">聊天</string>
@@ -133,11 +133,11 @@
     <string name="rank_weekP">周榜</string>
     <string name="rank_monthP">月榜</string>
     <string name="rank_totalP">总榜</string>
-    <string name="rank_totalP_num">贡献%1$s星光</string>
-    <string name="rank_star_day_explain">日榜为当天获得星光前10名的播主，每日0点清空重计</string>
-    <string name="rank_star_week_explain">周榜为本周获得星光前10名的播主，每周日0点清空重计</string>
-    <string name="rank_star_month_explain">月榜为本月收到星光前100名的播主，每月1号0点清空重计</string>
-    <string name="rank_star_total_explain">总榜为获得星光前10名的播主</string>
+    <string name="rank_totalP_num">贡献%1$s比心</string>
+    <string name="rank_star_day_explain">日榜为当天获得比心前10名的播主，每日0点清空重计</string>
+    <string name="rank_star_week_explain">周榜为本周获得比心前10名的播主，每周日0点清空重计</string>
+    <string name="rank_star_month_explain">月榜为本月收到比心前100名的播主，每月1号0点清空重计</string>
+    <string name="rank_star_total_explain">总榜为获得比心前10名的播主</string>
 
     <string name="rank_popularity_day_explain">日榜为过去24小时获得鲜花数前10名的播主</string>
     <string name="rank_popularity_week_explain">周榜为过去1周获得鲜花数前10名的播主</string>
@@ -145,7 +145,7 @@
     <string name="rank_wealth_day_explain">日榜为当天送出克拉数前10名的用户，每日0点清空重计</string>
     <string name="rank_wealth_week_explain">周榜为本周送出克拉数前10名的用户，每周日0点清空重计</string>
     <string name="rank_wealth_total_explain">总榜为送出克拉数前10名的用户</string>
-    <string name="rank_totalP_num_label">星光数</string>
+    <string name="rank_totalP_num_label">比心数</string>
     <string name="rank_no_data">趁没人赶紧上榜吧n(*≧▽≦*)n</string>
     <string name="rank_net_err">网太渣啊，点击重新加载</string>
 
@@ -211,13 +211,13 @@
         说明：为了帮您增加饭圈的人气和活跃度，创建饭圈后，饭圈初始处于冻结状态，需要集齐30人加入此圈，此圈才能被解锁；\n\n祝您玩的开心~
     </string>
     <string name="commutity_fan_created">你已经创建过啦，把机会留给别人吧</string>
-    <string name="commutity_share_post_title">%1$s在星光发表了一个动态，快来围观~</string>
+    <string name="commutity_share_post_title">%1$s在比心发表了一个动态，快来围观~</string>
     <string name="commutity_group_add">加入</string>
     <string name="commutity_group_added">已加入</string>
     <string name="commutity_comfirm_delete_post">确认要删除？</string>
     <string name="commutity_syn">同步到</string>
     <string name="commutity_send_group">发送到圈子：</string>
-    <string name="commutity_post_share_content">我在星光TV的时间线</string>
+    <string name="commutity_post_share_content">我在比心TV的时间线</string>
     <string name="commutity_log_manage">管理日志</string>
     <string name="commutity_user_ban_tip">已禁言</string>
     <string name="commutity_manage_expain">圈主和管理员有义务保持饭圈内高质量的内容，请合理使用你们的权利，共同培育圈子的茁壮成长~</string>
@@ -290,7 +290,7 @@
     <string name="me_tuijian_tick_text">开始下载"%1$s"</string>
     <string name="me_anchor">主播报名</string>
     <string name="me_invite">邀请好友</string>
-    <string name="me_anchor_ad">成为星光主播，实现你的明星梦想！\n星光直播支持手机直播，0成本一键开播，做自己生活的导演。</string>
+    <string name="me_anchor_ad">成为比心主播，实现你的明星梦想！\n比心直播支持手机直播，0成本一键开播，做自己生活的导演。</string>
     <string name="me_message_tab_comments">评论</string>
     <string name="me_message_tab_system">系统</string>
     <string name="me_shrinkage_up">点击收起&amp;gt;&amp;gt;</string>
@@ -360,7 +360,7 @@
     <string name="anchor_mobile_addr">+86</string>
     <string name="anchor_qq_msg">请输入QQ号</string>
     <string name="anchor_note_msg">备注其他信息，如：推荐人(选填)</string>
-    <string name="anchor_result_one">恭喜你成为星光新生代主播</string>
+    <string name="anchor_result_one">恭喜你成为比心新生代主播</string>
     <string name="anchor_result_two">小舞台成就大梦想</string>
     <string name="anchor_result_three">期待你的精彩放送</string>
     <string name="anchor_message_title">温馨提示:</string>
@@ -371,7 +371,7 @@
         5、备注填写推荐人更容易通过审核哦；如无内地手机号或者QQ，可以在备注里填写其他联系方式；\n
         6、如需帮助，请联系客服QQ：800163937
     </string>
-    <string name="anchor_message_success">可以加入主播QQ群与其他主播一起交流哦~\n星光主播群号：476155931</string>
+    <string name="anchor_message_success">可以加入主播QQ群与其他主播一起交流哦~\n比心主播群号：476155931</string>
     <string name="anchor_msg_begin">提示：请保持光线效果明亮，且清晰地\n显示你的正面，尽量使用高像素的\n摄像头进行录制</string>
     <string name="anchor_msg_complete">提示：请先确认您录制的视频，满意后再\n上传，审核期间不能重新录制提交</string>
     <string name="anchor_recoder_video">录制视频</string>
@@ -380,7 +380,7 @@
     <string name="anchor_camera_complete">完成</string>
     <string name="anchor_dialog_msg_content">摄像头/录音无法开启\n请手动设置权限\n\n
         <b>方法1：</b>
-        \n在手机系统设置找到星光应用，将相机/录音权限设置为允许\n<b>方法2：</b>\n检查当前摄像头是否被其他应用占用
+        \n在手机系统设置找到比心应用，将相机/录音权限设置为允许\n<b>方法2：</b>\n检查当前摄像头是否被其他应用占用
     </string>
     <string name="anchor_dialog_msg_exit">退出</string>
     <string name="anchor_dialog_msg_sure">知道了</string>
@@ -447,7 +447,7 @@
     <string name="live_gift_cur_num">x%1$s(%2$s)</string>
     <string name="live_gift_cur_num_default">x1(一心一意)</string>
     <string name="live_toast_submit_title_success">直播主题提交成功</string>
-    <string name="live_pao_rank">星光贡献榜</string>
+    <string name="live_pao_rank">比心贡献榜</string>
     <string name="live_toast_logo_is_null">上传一张封面，让更多人认识你吧</string>
     <string name="live_i_want">我要直播</string>
     <string name="live_filter_no_support_tip">当前设备不支持美颜功能</string>
@@ -467,7 +467,7 @@
     <string name="live_report_upload_img_resolve_msg">上传举报截图</string>
     <string name="live_report_msg">认真举报的，官方核实后，将予以奖励；\n
         若胡乱举报，一经核实，则有可能被封号；\n
-        请大家慎重举报，共同维护星光的良好环境！
+        请大家慎重举报，共同维护比心的良好环境！
     </string>
     <string name="live_user_entry_text">来了</string>
     <string name="live_user_guard_entry_text">爱的守护神</string>
@@ -477,7 +477,7 @@
     </string>
     <string name="location_default">外星人?</string>
     <string name="location_loading">正在获取位置</string>
-    <string name="live_current_uid">星光ID：%1$s</string>
+    <string name="live_current_uid">比心ID：%1$s</string>
     <string name="live_live_protocol">直播即代表你同意</string>
     <string name="live_live_protocol_click">《开播协议》</string>
     <string name="live_guard_gift_send_text">成为ta的守护了才能\n赠送专属礼物哦~</string>
@@ -564,11 +564,11 @@
     <string name="live_common_live">普通直播</string>
 
     <!-- WXPayEntryActivity -->
-    <string name="pay_result_tip">星光直播微信支付结果页面</string>
+    <string name="pay_result_tip">比心直播微信支付结果页面</string>
     <string name="pay_result_callback_msg" formatted="false">微信支付结果：%s</string>
 
     <!-- 欢迎页面 -->
-    <string name="welcome_logo_text">播出星光灿烂</string>
+    <string name="welcome_logo_text">播出比心灿烂</string>
 
     <!-- 登录界面 -->
     <string name="uninstall_weixin_tip">你还没有安装微信</string>
@@ -619,7 +619,7 @@
     <string name="task_online_text_desc">在任一个房间连续在线达15分钟</string>
     <string name="task_send_gift_text">送礼达人（%1$s）</string>
     <string name="task_send_gift_text_desc">为主播送出%1$s次付费礼物</string>
-    <string name="task_share_text">分享达人（分享后需要“返回星光”才有效哦）</string>
+    <string name="task_share_text">分享达人（分享后需要“返回比心”才有效哦）</string>
     <string name="task_share_text_desc">分享主播直播页面或帖子%1$s次</string>
     <string name="task_send_post_text">发帖达人</string>
     <string name="task_send_post_text_desc">在社区发帖</string>
@@ -676,7 +676,7 @@
     <string name="invite_id_success">已成功邀请</string>
     <string name="invite_activity_regulation_title">活动规则：</string>
     <string name="invite_activity_regulation">
-        1，您可以通过邀请按钮将您的星光ID发送给好友。好友可以直接点击邀请页面并用微信或者QQ登陆星光TV，也可以下载安装星光TV应用，在注册页面输入您的ID以回馈您的邀请。好友采用以上两种任意一种方法注册后您即可获得邀请礼包。\n
+        1，您可以通过邀请按钮将您的比心ID发送给好友。好友可以直接点击邀请页面并用微信或者QQ登陆比心TV，也可以下载安装比心TV应用，在注册页面输入您的ID以回馈您的邀请。好友采用以上两种任意一种方法注册后您即可获得邀请礼包。\n
         2，邀请礼包包含：1千点点，及在3个月内，邀请的好友充值金额的10%全部以克拉形式奖励给您。\n
         3，被邀请人成功被邀请后也会获得1千点点的奖励。\n
         4，所有的奖励均实时结算，由系统自动发放，并会以系统通知的形式告知您。\n
@@ -766,7 +766,7 @@
     <string name="fans_care_fitler">筛选</string>
 
     <!--  -->
-    <string name="app_name">星光直播</string>
+    <string name="app_name">比心直播</string>
     <string name="slogan">千万情意 | 唯独为你</string>
     <string name="copyright">Copyright@2015 guojiang.tv</string>
     <string name="all_rights_reserved">All Rights Reserved</string>
@@ -827,7 +827,7 @@
     <string name="contact_cust">联系客服</string>
     <string name="advice">意见反馈</string>
     <string name="get_back_password">找回密码</string>
-    <string name="about">关于星光直播</string>
+    <string name="about">关于比心直播</string>
     <string name="check_update">检查更新</string>
     <string name="logout">退出账号</string>
     <string name="your_nickname">你的昵称</string>
@@ -844,7 +844,7 @@
     <string name="protocol_content">
         服务条款服务条款服务条款服务条款服务条款服务条款服务条款服务条款服务条款服务条款服务条款服务条款服务条款服务条款服务条款服务条款服务条款服务条款服务条款服务条款服务条款服务条款服务条款服务条款服务条款服务条款服务条款服务条款
     </string>
-    <string name="about_content">星光直播-播出星光灿烂</string>
+    <string name="about_content">比心直播-播出比心灿烂</string>
     <string name="subject_nickname">昵称：</string>
     <string name="subject_password">密码：</string>
     <string name="subject_gender">性别：</string>
@@ -898,7 +898,7 @@
     <string name="anchor_info">主播资料</string>
     <string name="administrator">管理员：0</string>
     <string name="audience">观众：0</string>
-    <string name="share_content">星光直播分享</string>
+    <string name="share_content">比心直播分享</string>
     <string name="weixin">微信</string>
     <string name="pengyouquan">朋友圈</string>
     <string name="weibo">微博</string>
@@ -920,14 +920,14 @@
         一个，进入后点关注，这样就可以与客服沟通啦~
     </string>
     <string name="common_dialog_permission_question_live_title">开启直播遇到问题了？</string>
-    <string name="common_dialog_permission_question_audio_title">星光直播无法获取麦克风权限</string>
+    <string name="common_dialog_permission_question_audio_title">比心直播无法获取麦克风权限</string>
     <string name="camera">相机</string>
     <string name="camera_device">摄像头</string>
     <string name="camera_audio">麦克风</string>
     <string name="common_dialog_permission_exception">手机%1$s无法开启？</string>
     <string name="common_dialog_permission_method_1_title">解决方法1：</string>
     <string name="common_dialog_permission_method_2_title">解决方法2：</string>
-    <string name="common_dialog_permission_method_1">在手机的系统设置中找到星光直播应用，将%1$s的权限设置为允许</string>
+    <string name="common_dialog_permission_method_1">在手机的系统设置中找到比心直播应用，将%1$s的权限设置为允许</string>
     <string name="common_dialog_permission_method_2">检查当前%1$s是否被其他应用占用</string>
     <string name="title_activity_playing_rank">PlayingRankActivity</string>
     <string name="common_verify_info">认证：%1$s</string>

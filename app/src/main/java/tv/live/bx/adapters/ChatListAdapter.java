@@ -9,11 +9,11 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import com.efeizao.bx.R;
-import tv.live.bx.library.util.EvtLog;
-
 import java.util.LinkedList;
 import java.util.Map;
+
+import tv.live.bx.R;
+import tv.live.bx.library.util.EvtLog;
 
 public class ChatListAdapter extends BaseAdapter {
 	public static final int MAX_SIZE = 200;

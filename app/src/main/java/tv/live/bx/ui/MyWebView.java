@@ -14,17 +14,17 @@ import android.webkit.WebViewClient;
 import android.widget.FrameLayout;
 import android.widget.ProgressBar;
 
-import tv.live.bx.FeizaoApp;
-import com.efeizao.bx.R;
-import tv.live.bx.util.ChannelUtil;
-import tv.live.bx.common.Constants;
-import tv.live.bx.library.util.EvtLog;
-import tv.live.bx.library.util.PackageUtil;
-
 import java.lang.ref.WeakReference;
 import java.lang.reflect.Field;
 import java.util.Timer;
 import java.util.TimerTask;
+
+import tv.live.bx.FeizaoApp;
+import tv.live.bx.R;
+import tv.live.bx.common.Constants;
+import tv.live.bx.library.util.EvtLog;
+import tv.live.bx.library.util.PackageUtil;
+import tv.live.bx.util.ChannelUtil;
 
 /**
  * Created by Live on 2014/11/29.

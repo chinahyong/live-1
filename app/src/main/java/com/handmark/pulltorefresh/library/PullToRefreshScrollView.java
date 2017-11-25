@@ -23,7 +23,8 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.widget.ScrollView;
 
-import com.efeizao.bx.R;
+import tv.live.bx.R;
+
 
 public class PullToRefreshScrollView extends PullToRefreshBase<ScrollView> {
 

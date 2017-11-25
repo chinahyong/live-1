@@ -11,14 +11,15 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.RelativeLayout;
 
+import com.umeng.analytics.MobclickAgent;
+
 import tv.live.bx.FeizaoApp;
-import com.efeizao.bx.R;
+import tv.live.bx.R;
 import tv.live.bx.activities.GroupPostPublishActivity;
-import tv.live.bx.util.ActivityJumpUtil;
 import tv.live.bx.listeners.OnUpdateListener;
 import tv.live.bx.ui.SingleTabWidget;
 import tv.live.bx.ui.SingleTabWidget.OnTabChangedListener;
-import com.umeng.analytics.MobclickAgent;
+import tv.live.bx.util.ActivityJumpUtil;
 
 /**
  * 首页页面 Title: HomeFragment.java

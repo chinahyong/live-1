@@ -8,12 +8,12 @@ import android.text.SpannableStringBuilder;
 import android.text.style.ImageSpan;
 import android.util.Log;
 
-import tv.live.bx.FeizaoApp;
-import com.efeizao.bx.R;
-import tv.live.bx.ui.VerticalImageSpan;
-
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import tv.live.bx.FeizaoApp;
+import tv.live.bx.R;
+import tv.live.bx.ui.VerticalImageSpan;
 
 public class ParseEmojiMsgUtil {
 	private static final String TAG = ParseEmojiMsgUtil.class.getSimpleName();

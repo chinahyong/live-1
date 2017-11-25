@@ -11,8 +11,12 @@ import android.view.animation.LinearInterpolator;
 import android.widget.ImageView;
 
 import com.bumptech.glide.request.target.Target;
+import com.yanzhenjie.album.Album;
+
+import java.io.File;
+
 import tv.live.bx.FeizaoApp;
-import com.efeizao.bx.R;
+import tv.live.bx.R;
 import tv.live.bx.common.Constants;
 import tv.live.bx.imageloader.ImageLoaderUtil;
 import tv.live.bx.imageloader.SimpleImageLoadingListener;
@@ -25,9 +29,6 @@ import tv.live.bx.ui.ActionSheetDialog.OnSheetItemClickListener;
 import tv.live.bx.ui.ActionSheetDialog.SheetItemColor;
 import tv.live.bx.ui.photoview.PhotoView;
 import tv.live.bx.ui.photoview.PhotoViewAttacher;
-import com.yanzhenjie.album.Album;
-
-import java.io.File;
 
 /**
  * Created by chaochen on 2014-9-7.

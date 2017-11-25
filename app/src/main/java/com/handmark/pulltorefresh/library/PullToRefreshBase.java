@@ -34,12 +34,13 @@ import android.view.animation.Interpolator;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 
-import com.efeizao.bx.R;
 import com.handmark.pulltorefresh.library.internal.FlipLoadingLayout;
 import com.handmark.pulltorefresh.library.internal.LoadingLayout;
 import com.handmark.pulltorefresh.library.internal.RotateLoadingLayout;
 import com.handmark.pulltorefresh.library.internal.Utils;
 import com.handmark.pulltorefresh.library.internal.ViewCompat;
+
+import tv.live.bx.R;
 
 public abstract class PullToRefreshBase<T extends View> extends LinearLayout implements IPullToRefresh<T> {
 

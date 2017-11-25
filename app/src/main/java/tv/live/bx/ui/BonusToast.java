@@ -7,7 +7,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import tv.live.bx.FeizaoApp;
-import com.efeizao.bx.R;
+import tv.live.bx.R;
+
 
 /**
  * Created by Live on 2017/2/16.

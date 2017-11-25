@@ -6,10 +6,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.efeizao.bx.R;
-import tv.live.bx.common.Constants;
-
 import java.util.Map;
+
+import tv.live.bx.R;
+import tv.live.bx.common.Constants;
 
 /**
  * @author Live

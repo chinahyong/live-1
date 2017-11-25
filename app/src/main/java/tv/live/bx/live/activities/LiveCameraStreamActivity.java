@@ -32,33 +32,6 @@ import android.widget.PopupWindow.OnDismissListener;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.efeizao.bx.BuildConfig;
-import tv.live.bx.FeizaoApp;
-import com.efeizao.bx.R;
-import tv.live.bx.activities.base.BaseFragmentActivity;
-import tv.live.bx.adapters.ConnectListAdapter;
-import tv.live.bx.util.ActivityJumpUtil;
-import tv.live.bx.util.UiHelper;
-import tv.live.bx.common.BusinessUtils;
-import tv.live.bx.common.Constants;
-import tv.live.bx.common.MsgTypes;
-import tv.live.bx.common.OperationHelper;
-import tv.live.bx.common.Utils;
-import tv.live.bx.config.UserInfoConfig;
-import tv.live.bx.imageloader.ImageLoaderUtil;
-import tv.live.bx.library.util.DateUtil;
-import tv.live.bx.library.util.EvtLog;
-import tv.live.bx.library.util.StringUtil;
-import tv.live.bx.listeners.RecyclerViewOnItemClickListener;
-import tv.live.bx.live.Config;
-import tv.live.bx.live.gles.FBO;
-import tv.live.bx.live.ui.RotateLayout;
-import tv.live.bx.ui.EmptyRecyclerView;
-import tv.live.bx.ui.popwindow.LiveFilterPopWindow;
-import tv.live.bx.ui.popwindow.LiveMenuPopWindow;
-import tv.live.bx.websocket.model.AcceptVideoChat;
-import tv.live.bx.websocket.model.InviteVideoChat;
-import tv.live.bx.websocket.model.VideoChat;
 import com.pili.pldroid.streaming.CameraStreamingManager;
 import com.pili.pldroid.streaming.CameraStreamingSetting;
 import com.pili.pldroid.streaming.StreamingProfile;
@@ -86,6 +59,33 @@ import java.util.TimerTask;
 
 import cn.efeizao.feizao.framework.net.impl.CallbackDataHandle;
 import cn.efeizao.feizao.ui.dialog.LiveManagerCustomDialogBuilder;
+import tv.live.bx.BuildConfig;
+import tv.live.bx.FeizaoApp;
+import tv.live.bx.R;
+import tv.live.bx.activities.base.BaseFragmentActivity;
+import tv.live.bx.adapters.ConnectListAdapter;
+import tv.live.bx.common.BusinessUtils;
+import tv.live.bx.common.Constants;
+import tv.live.bx.common.MsgTypes;
+import tv.live.bx.common.OperationHelper;
+import tv.live.bx.common.Utils;
+import tv.live.bx.config.UserInfoConfig;
+import tv.live.bx.imageloader.ImageLoaderUtil;
+import tv.live.bx.library.util.DateUtil;
+import tv.live.bx.library.util.EvtLog;
+import tv.live.bx.library.util.StringUtil;
+import tv.live.bx.listeners.RecyclerViewOnItemClickListener;
+import tv.live.bx.live.Config;
+import tv.live.bx.live.gles.FBO;
+import tv.live.bx.live.ui.RotateLayout;
+import tv.live.bx.ui.EmptyRecyclerView;
+import tv.live.bx.ui.popwindow.LiveFilterPopWindow;
+import tv.live.bx.ui.popwindow.LiveMenuPopWindow;
+import tv.live.bx.util.ActivityJumpUtil;
+import tv.live.bx.util.UiHelper;
+import tv.live.bx.websocket.model.AcceptVideoChat;
+import tv.live.bx.websocket.model.InviteVideoChat;
+import tv.live.bx.websocket.model.VideoChat;
 
 @SuppressLint("NewApi")
 public class LiveCameraStreamActivity extends LiveBaseActivity implements ITXLivePushListener {
@@ -953,9 +953,9 @@ public class LiveCameraStreamActivity extends LiveBaseActivity implements ITXLiv
 	 */
 	public void switchBeautyFilter(boolean filter) {
 		if (filter) {
-			mLivePusher.setBeautyFilter(7, 3);
+//			mLivePusher.setBeautyFilter(7, 3);
 		} else {
-			mLivePusher.setBeautyFilter(0, 0);
+//			mLivePusher.setBeautyFilter(0, 0);
 		}
 	}
 
@@ -990,9 +990,9 @@ public class LiveCameraStreamActivity extends LiveBaseActivity implements ITXLiv
 
 			mLivePushConfig.setFrontCamera(mCurrentCameraDir);
 			if (mIsFilter) {
-				mLivePushConfig.setBeautyFilter(5, 3);
+//				mLivePushConfig.setBeautyFilter(5, 3);
 			} else {
-				mLivePushConfig.setBeautyFilter(0, 0);
+//				mLivePushConfig.setBeautyFilter(0, 0);
 			}
 			//		if (!isSupportHWEncode()) {
 			mLivePushConfig.setHardwareAcceleration(TXLiveConstants.ENCODE_VIDEO_SOFTWARE);
@@ -1016,11 +1016,11 @@ public class LiveCameraStreamActivity extends LiveBaseActivity implements ITXLiv
 			mLivePusher.setMirror(mCurrentCameraDir);
 			mLivePushVideoView.disableLog(true);
 			isStartCameraPreview = true;
-			int[] ver = TXLivePusher.getSDKVersion();
-			if (ver != null && ver.length >= 4) {
-				EvtLog.e(TAG, String.format("rtmp sdk version:%d.%d.%d.%d ", ver[0], ver[1],
-						ver[2], ver[3]));
-			}
+//			int[] ver = TXLivePusher.getSDKVersion();
+//			if (ver != null && ver.length >= 4) {
+//				EvtLog.e(TAG, String.format("rtmp sdk version:%d.%d.%d.%d ", ver[0], ver[1],
+//						ver[2], ver[3]));
+//			}
 		}
 	}
 

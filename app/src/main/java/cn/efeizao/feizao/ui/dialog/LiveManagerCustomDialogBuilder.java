@@ -11,15 +11,6 @@ import android.widget.AbsListView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import tv.live.bx.FeizaoApp;
-import com.efeizao.bx.R;
-import tv.live.bx.adapters.RoomManagerAdapter;
-import tv.live.bx.util.UiHelper;
-import tv.live.bx.common.BusinessUtils;
-import tv.live.bx.library.util.EvtLog;
-import tv.live.bx.ui.ListFooterLoadView;
-import tv.live.bx.ui.LoadingProgress;
-import tv.live.bx.ui.PullRefreshListView;
 import com.lonzh.lib.network.JSONParser;
 import com.umeng.analytics.MobclickAgent;
 
@@ -30,6 +21,15 @@ import java.util.List;
 import java.util.Map;
 
 import cn.efeizao.feizao.framework.net.impl.CallbackDataHandle;
+import tv.live.bx.FeizaoApp;
+import tv.live.bx.R;
+import tv.live.bx.adapters.RoomManagerAdapter;
+import tv.live.bx.common.BusinessUtils;
+import tv.live.bx.library.util.EvtLog;
+import tv.live.bx.ui.ListFooterLoadView;
+import tv.live.bx.ui.LoadingProgress;
+import tv.live.bx.ui.PullRefreshListView;
+import tv.live.bx.util.UiHelper;
 
 /**
  * Title: CustomDialogBuilder.java</br> Description: 自定义对话框</br> Copyright:

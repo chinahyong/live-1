@@ -7,9 +7,10 @@ import android.view.ViewGroup;
 import com.bigkoo.convenientbanner.holder.CBViewHolderCreator;
 import com.bigkoo.convenientbanner.holder.Holder;
 import com.bigkoo.convenientbanner.view.CBLoopViewPager;
-import com.efeizao.bx.R;
 
 import java.util.List;
+
+import tv.live.bx.R;
 
 /**
  * Created by Sai on 15/7/29.

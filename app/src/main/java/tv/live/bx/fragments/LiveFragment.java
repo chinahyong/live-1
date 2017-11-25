@@ -7,16 +7,6 @@ import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.view.View.OnClickListener;
 
-import tv.live.bx.FeizaoApp;
-import com.efeizao.bx.R;
-import tv.live.bx.activities.AnchorSearchActivity;
-import tv.live.bx.activities.RankActivity;
-import tv.live.bx.adapters.LiveFragmentStatusAdapter;
-import tv.live.bx.util.ActivityJumpUtil;
-import tv.live.bx.common.OperationHelper;
-import tv.live.bx.config.AppConfig;
-import tv.live.bx.listeners.GoHotClickListener;
-import tv.live.bx.listeners.OnUpdateListener;
 import com.umeng.analytics.MobclickAgent;
 import com.viewpagerindicator.TabPageIndicator;
 
@@ -24,6 +14,17 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import tv.live.bx.FeizaoApp;
+import tv.live.bx.R;
+import tv.live.bx.activities.AnchorSearchActivity;
+import tv.live.bx.activities.RankActivity;
+import tv.live.bx.adapters.LiveFragmentStatusAdapter;
+import tv.live.bx.common.OperationHelper;
+import tv.live.bx.config.AppConfig;
+import tv.live.bx.listeners.GoHotClickListener;
+import tv.live.bx.listeners.OnUpdateListener;
+import tv.live.bx.util.ActivityJumpUtil;
 
 /**
  * Title: AuthorFragment.java</br> Description: 主播Fragment</br> Copyright: *

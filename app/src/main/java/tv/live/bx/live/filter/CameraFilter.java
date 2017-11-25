@@ -1,14 +1,14 @@
 package tv.live.bx.live.filter;
 
-import java.nio.FloatBuffer;
-import java.util.LinkedList;
-
 import android.content.Context;
 import android.opengl.GLES11Ext;
 import android.opengl.GLES20;
 import android.util.Log;
 
-import com.efeizao.bx.R;
+import java.nio.FloatBuffer;
+import java.util.LinkedList;
+
+import tv.live.bx.R;
 import tv.live.bx.live.gles.GlUtil;
 
 /**

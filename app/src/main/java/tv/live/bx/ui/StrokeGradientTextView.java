@@ -9,7 +9,8 @@ import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
 
 import tv.live.bx.FeizaoApp;
-import com.efeizao.bx.R;
+import tv.live.bx.R;
+
 
 /**
  * 描边+ 指定字体 +字体上下渐变

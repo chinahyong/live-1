@@ -1,6 +1,7 @@
 package tv.live.bx.activities;
 
-import com.efeizao.bx.R;
+
+import tv.live.bx.R;
 
 public class LiveReadyWebActivity extends WebViewActivity {
 

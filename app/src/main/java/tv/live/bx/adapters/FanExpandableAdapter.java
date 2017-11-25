@@ -15,17 +15,17 @@ import android.widget.ExpandableListView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.efeizao.bx.R;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
+import tv.live.bx.R;
 import tv.live.bx.common.Constants;
 import tv.live.bx.common.Utils;
 import tv.live.bx.imageloader.ImageLoaderUtil;
 import tv.live.bx.library.util.BitmapHelper;
 import tv.live.bx.library.util.EvtLog;
 import tv.live.bx.ui.HorizontalListView;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
 
 /**
  * ClassName:FanExpandableAdapter Function: TODO ADD FUNCTION. Reason: TODO ADD

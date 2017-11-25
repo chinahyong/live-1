@@ -6,10 +6,10 @@ import android.view.View.OnClickListener;
 import android.widget.Toast;
 import android.widget.ToggleButton;
 
-import com.efeizao.bx.R;
 import com.lonzh.lib.LZActivity;
 
 import cn.jpush.android.api.JPushInterface;
+import tv.live.bx.R;
 
 public class MsgSettingsActivity extends LZActivity {
 	private ToggleButton moToButton;

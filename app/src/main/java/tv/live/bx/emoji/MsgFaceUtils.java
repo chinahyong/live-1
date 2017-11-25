@@ -1,9 +1,10 @@
 package tv.live.bx.emoji;
 
-import com.efeizao.bx.R;
 
 import java.util.HashMap;
 import java.util.Map;
+
+import tv.live.bx.R;
 
 public class MsgFaceUtils {
 

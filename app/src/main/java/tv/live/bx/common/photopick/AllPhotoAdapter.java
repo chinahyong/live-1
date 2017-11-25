@@ -6,7 +6,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import tv.live.bx.FeizaoApp;
-import com.efeizao.bx.R;
+import tv.live.bx.R;
+
 
 /**
  * Created by chenchao on 15/5/6.
