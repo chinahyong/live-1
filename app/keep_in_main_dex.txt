@@ -5,7 +5,7 @@
     *;
 }
 
--keep class com.efeizao.feizao.SampleApplication {
+-keep class tv.live.bx.SampleApplication {
     *;
 }
 

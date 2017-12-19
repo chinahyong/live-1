@@ -44,7 +44,7 @@ public class UserInfoAdapter extends MyBaseAdapter<String, String> {
 		Holder loHolder = (Holder) convertView.getTag();
 		@SuppressWarnings("unchecked")
 		Map<String, String> lmItem = (Map<String, String>) getItem(position);
-		ImageLoaderUtil.with().loadImageTransformRoundCircle(mContext, loHolder.moIvPhoto, lmItem.get("headPic"));
+		ImageLoaderUtil.getInstance().loadHeadPic(mContext, loHolder.moIvPhoto, lmItem.get("headPic"));
 
 		loHolder.moIvPhotoV.setVisibility(Utils.getBooleanFlag(lmItem.get("verified"))
 				? View.VISIBLE

@@ -130,7 +130,7 @@ public class SettingsActivity extends BaseFragmentActivity implements OnClickLis
 				// SettingsActivity.this));
 				JPushInterface.setAliasAndTags(mActivity, "", null, new TagAliasCallback() {
 					@Override
-					public void gotResult(int arg0, String arg1, Set<String> arg2) {
+					public void gotResult(int i, String s, Set set) {
 
 					}
 				});
@@ -254,7 +254,7 @@ public class SettingsActivity extends BaseFragmentActivity implements OnClickLis
 		switch (v.getId()) {
 			// 进场特效设置
 			case R.id.settings_rl_anim_settings:
-				MobclickAgent.onEvent(FeizaoApp.mConctext, "chooseModelOfEnterBroadcast");
+				MobclickAgent.onEvent(FeizaoApp.mContext, "chooseModelOfEnterBroadcast");
 				ActivityJumpUtil.gotoActivity(mActivity, AnimSettingsActivity.class, false, null, null);
 				break;
 			case R.id.top_left:
@@ -273,7 +273,7 @@ public class SettingsActivity extends BaseFragmentActivity implements OnClickLis
 				ActivityJumpUtil.gotoActivity(mActivity, GetBackPwdActivity.class, false, null, null);
 				break;
 			case R.id.settings_rl_check_update:
-				MobclickAgent.onEvent(FeizaoApp.mConctext, "updateVersions");
+				MobclickAgent.onEvent(FeizaoApp.mContext, "updateVersions");
 				moProgress = Utils.showProgress(mActivity);
 				BusinessUtils.getLastVersion(mActivity, new CheckForAppUpdateReceiverListener());
 				break;

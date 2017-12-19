@@ -1,5 +1,7 @@
 package tv.live.bx.activities;
 
+import static tv.live.bx.FeizaoApp.mContext;
+
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.graphics.Paint;
@@ -12,27 +14,23 @@ import android.view.View.OnClickListener;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
+import cn.efeizao.feizao.framework.net.impl.CallbackDataHandle;
+import cn.jpush.android.api.JPushInterface;
+import cn.jpush.android.api.TagAliasCallback;
+import cn.tongdun.android.shell.FMAgent;
+import cn.tongdun.android.shell.exception.FMException;
 import com.lonzh.lib.network.HttpSession;
 import com.lonzh.lib.network.JSONParser;
 import com.umeng.analytics.MobclickAgent;
 import com.umeng.socialize.UMAuthListener;
 import com.umeng.socialize.UMShareAPI;
 import com.umeng.socialize.bean.SHARE_MEDIA;
-
-import org.json.JSONObject;
-
 import java.io.Serializable;
 import java.lang.ref.WeakReference;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
-
-import cn.efeizao.feizao.framework.net.impl.CallbackDataHandle;
-import cn.jpush.android.api.JPushInterface;
-import cn.jpush.android.api.TagAliasCallback;
-import cn.tongdun.android.shell.FMAgent;
-import cn.tongdun.android.shell.exception.FMException;
+import org.json.JSONObject;
 import tv.live.bx.R;
 import tv.live.bx.activities.base.BaseFragmentActivity;
 import tv.live.bx.callback.MyUserInfoCallbackDataHandle;
@@ -48,8 +46,6 @@ import tv.live.bx.library.util.EvtLog;
 import tv.live.bx.library.util.TelephoneUtil;
 import tv.live.bx.receiver.LoginStatusChangeReceiver;
 import tv.live.bx.util.ActivityJumpUtil;
-
-import static tv.live.bx.FeizaoApp.mConctext;
 
 public class LoginActivity extends BaseFragmentActivity {
 	public static String TAG = "LoginActivity";
@@ -114,7 +110,7 @@ public class LoginActivity extends BaseFragmentActivity {
 		}
 		//如果配置文件不为空，则显示网络配置的登录背景
 		if(!TextUtils.isEmpty(AppConfig.getInstance().wallPaper)){
-			ImageLoaderUtil.with().loadImage(mActivity, mLoginBg, AppConfig.getInstance().wallPaper, 0, R.drawable.login_bg2);
+			ImageLoaderUtil.getInstance().loadImageAndDefault(mLoginBg, AppConfig.getInstance().wallPaper, R.drawable.login_bg2, R.drawable.login_bg2);
 		}
 
 	}
@@ -241,7 +237,7 @@ public class LoginActivity extends BaseFragmentActivity {
 				UserInfoConfig.getInstance().updateUserId(lsUid);
 				JPushInterface.setAliasAndTags(LoginActivity.this, lsUid, null, new TagAliasCallback() {
 					@Override
-					public void gotResult(int arg0, String arg1, Set<String> arg2) {
+					public void gotResult(int i, String s, Set set) {
 
 					}
 				});
@@ -269,8 +265,8 @@ public class LoginActivity extends BaseFragmentActivity {
 	// 上报极光注册号
 	private void reportRegisterId() {
 		// 获取极光注册号，传给后台，该过程不影响app启动
-		String registerId = JPushInterface.getRegistrationID(mConctext);
-		BusinessUtils.reportRegisterId(mConctext, new CallbackDataHandle() {
+		String registerId = JPushInterface.getRegistrationID(mContext);
+		BusinessUtils.reportRegisterId(mContext, new CallbackDataHandle() {
 			@Override
 			public void onCallback(boolean success, String errorCode, String errorMsg, Object result) {
 				if (success) {
@@ -292,7 +288,7 @@ public class LoginActivity extends BaseFragmentActivity {
 		BusinessUtils.reportDeviceId(mActivity, TelephoneUtil.getDeviceId(mActivity), TelephoneUtil.getMacAddress(mActivity), TelephoneUtil.getDeviceImei(mActivity));
 		// 同盾初始化
 		try {
-			FMAgent.init(mConctext, FMAgent.ENV_PRODUCTION);
+			FMAgent.init(mContext, FMAgent.ENV_PRODUCTION);
 		} catch (FMException e) {
 			e.printStackTrace();
 		}
@@ -336,7 +332,7 @@ public class LoginActivity extends BaseFragmentActivity {
 		public void onClick(View v) {
 			switch (v.getId()) {
 				case R.id.login_ll_by_qq:
-					MobclickAgent.onEvent(mConctext, "qqLogin");
+					MobclickAgent.onEvent(mContext, "qqLogin");
 					if (!umShareAPI.isInstall(LoginActivity.this, SHARE_MEDIA.QQ)) {
 						Toast.makeText(getApplicationContext(), R.string.uninstall_qq_tip, Toast.LENGTH_SHORT).show();
 						return;
@@ -344,7 +340,7 @@ public class LoginActivity extends BaseFragmentActivity {
 					umShareAPI.doOauthVerify(LoginActivity.this, SHARE_MEDIA.QQ, umAuthListener);
 					break;
 				case R.id.login_ll_by_weixin:
-					MobclickAgent.onEvent(mConctext, "wechatLogin");
+					MobclickAgent.onEvent(mContext, "wechatLogin");
 					if (!umShareAPI.isInstall(LoginActivity.this, SHARE_MEDIA.WEIXIN)) {
 						Toast.makeText(getApplicationContext(), R.string.uninstall_weixin_tip, Toast.LENGTH_SHORT).show();
 						return;
@@ -372,11 +368,11 @@ public class LoginActivity extends BaseFragmentActivity {
 					});
 					break;
 				case R.id.login_ll_by_weibo:
-					MobclickAgent.onEvent(mConctext, "weiboLogin");
+					MobclickAgent.onEvent(mContext, "weiboLogin");
 					umShareAPI.doOauthVerify(LoginActivity.this, SHARE_MEDIA.SINA, umAuthListener);
 					break;
 				case R.id.login_ll_by_phone:
-					MobclickAgent.onEvent(mConctext, "phoneLogin");
+					MobclickAgent.onEvent(mContext, "phoneLogin");
 					gotoActivityForResult(Login2Activity.class, REQUEST_LOGIN_BY_PHONE, null, null);
 					break;
 				case R.id.login_agree_protocal:

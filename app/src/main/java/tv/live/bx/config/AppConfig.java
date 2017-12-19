@@ -156,7 +156,8 @@ public class AppConfig {
 //		String tagId = Utils.getCfg(mActivity, Constants.COMMON_SF_NAME, "tag");
 //		String screenOriention = Utils.getCfg(mActivity, Constants.COMMON_SF_NAME, "record_screen_oriention");
 
-		SharedPreferences sp = FeizaoApp.mConctext.getSharedPreferences(Constants.COMMON_SF_NAME, Context.MODE_PRIVATE);
+		SharedPreferences sp = FeizaoApp.mContext
+            .getSharedPreferences(Constants.COMMON_SF_NAME, Context.MODE_PRIVATE);
 		//兼容以前版本，以前的字段全用String方式存储，新添加的在用对应的类型存储
 		config.levelConfigVersion = sp.getString(Constants.SF_LEVEL_CONFIG_VERSION, Constants.COMMON_LEVEL_CONFIG_VERSION);
 		config.appVersion = sp.getString("appVersion", "");
@@ -207,7 +208,8 @@ public class AppConfig {
 
 
 		//---首页tag信息解析------------------
-		SharedPreferences sp2 = FeizaoApp.mConctext.getSharedPreferences(Constants.SF_TAG_NAME, Context.MODE_PRIVATE);
+		SharedPreferences sp2 = FeizaoApp.mContext
+            .getSharedPreferences(Constants.SF_TAG_NAME, Context.MODE_PRIVATE);
 		try {
 			JSONArray jsonArray = new JSONArray(sp2.getString("tag", "[]"));
 			int length = jsonArray.length();
@@ -235,7 +237,8 @@ public class AppConfig {
 
 
 		//------------等级配置信息读取----------------
-		SharedPreferences loCfg = FeizaoApp.mConctext.getApplicationContext().getSharedPreferences(Constants.USER_SF_LEVEL_NAME, Context.MODE_PRIVATE);
+		SharedPreferences loCfg = FeizaoApp.mContext
+            .getApplicationContext().getSharedPreferences(Constants.USER_SF_LEVEL_NAME, Context.MODE_PRIVATE);
 		config.mLevelConfigInfo = (Map<String, String>) loCfg.getAll();
 
 		return config;
@@ -254,7 +257,8 @@ public class AppConfig {
 	 */
 	public void updateNewGuardTips(boolean hasNewGuard) {
 		sp_guard_new_tip = hasNewGuard;
-		SharedPreferences.Editor editor = FeizaoApp.mConctext.getSharedPreferences(Constants.COMMON_SF_NAME, Context.MODE_PRIVATE).edit();
+		SharedPreferences.Editor editor = FeizaoApp.mContext
+            .getSharedPreferences(Constants.COMMON_SF_NAME, Context.MODE_PRIVATE).edit();
 		editor.putString("sp_guard_new_tip", String.valueOf(hasNewGuard));
 		editor.commit();
 	}
@@ -264,7 +268,8 @@ public class AppConfig {
 	 */
 	public void updateLastShopVersionStatus() {
 		lastShopProductVersion = shopProductVersion;
-		SharedPreferences.Editor editor = FeizaoApp.mConctext.getSharedPreferences(Constants.COMMON_SF_NAME, Context.MODE_PRIVATE).edit();
+		SharedPreferences.Editor editor = FeizaoApp.mContext
+            .getSharedPreferences(Constants.COMMON_SF_NAME, Context.MODE_PRIVATE).edit();
 		editor.putInt("lastShopProductVersion", lastShopProductVersion);
 		editor.commit();
 
@@ -275,7 +280,7 @@ public class AppConfig {
 	 */
 	public void updateJpushRegistrationStatus(boolean status) {
 		jpushRegisted = status;
-		Utils.setCfg(FeizaoApp.mConctext, "jpushRegistrationId", String.valueOf(status));
+		Utils.setCfg(FeizaoApp.mContext, "jpushRegistrationId", String.valueOf(status));
 	}
 
 	/**
@@ -284,7 +289,8 @@ public class AppConfig {
 	public void updateCurrentLevelConfigVersion(String currentVersion) {
 		//Utils.setCfg(getApplicationContext(), Constants.SF_LEVEL_CONFIG_VERSION, mLevelConfigVersion);
 		currentLevelConfigVersion = currentVersion;
-		SharedPreferences.Editor editor = FeizaoApp.mConctext.getSharedPreferences(Constants.COMMON_SF_NAME, Context.MODE_PRIVATE).edit();
+		SharedPreferences.Editor editor = FeizaoApp.mContext
+            .getSharedPreferences(Constants.COMMON_SF_NAME, Context.MODE_PRIVATE).edit();
 		editor.putString("currentLevelConfigVersion", currentVersion);
 		editor.commit();
 	}
@@ -294,7 +300,8 @@ public class AppConfig {
 	 */
 	public void updateIsBackFromSelectedReceiver(boolean isBackFromSelectedReceiver) {
 		this.isBackFromSelectedReceiver = isBackFromSelectedReceiver;
-		SharedPreferences.Editor editor = FeizaoApp.mConctext.getSharedPreferences(Constants.COMMON_SF_NAME, Context.MODE_PRIVATE).edit();
+		SharedPreferences.Editor editor = FeizaoApp.mContext
+            .getSharedPreferences(Constants.COMMON_SF_NAME, Context.MODE_PRIVATE).edit();
 		editor.putString("isBackFromSelectedReceiver", String.valueOf(isBackFromSelectedReceiver));
 		editor.commit();
 	}
@@ -309,7 +316,8 @@ public class AppConfig {
 //		Utils.setCfg(mActivity, Constants.COMMON_SF_NAME, val);
 		this.record_screen_oriention = screenOriention;
 		this.tag = tag;
-		SharedPreferences.Editor editor = FeizaoApp.mConctext.getSharedPreferences(Constants.COMMON_SF_NAME, Context.MODE_PRIVATE).edit();
+		SharedPreferences.Editor editor = FeizaoApp.mContext
+            .getSharedPreferences(Constants.COMMON_SF_NAME, Context.MODE_PRIVATE).edit();
 		editor.putString("record_screen_oriention", String.valueOf(screenOriention));
 		editor.putString("tag", tag);
 		editor.commit();
@@ -320,7 +328,7 @@ public class AppConfig {
 	 */
 	public void updateHotRank(String rank) {
 		this.hotrank = rank;
-		Utils.setCfg(FeizaoApp.mConctext, "hotrank", rank);
+		Utils.setCfg(FeizaoApp.mContext, "hotrank", rank);
 
 	}
 
@@ -331,7 +339,7 @@ public class AppConfig {
 //		Utils.setCfg(PreviewLivePlayActivity.this, AppConfig.CLARITY_TYPE,
 //				String.valueOf(mClarityType));
 		this.clarity_type = clarity_type;
-		Utils.setCfg(FeizaoApp.mConctext, "clarity_type", String.valueOf(clarity_type));
+		Utils.setCfg(FeizaoApp.mContext, "clarity_type", String.valueOf(clarity_type));
 	}
 
 
@@ -348,7 +356,8 @@ public class AppConfig {
 		currentMedalsConfigVersion = currentVersion;
 		usermodel_base = imageBase;
 
-		SharedPreferences.Editor editor = FeizaoApp.mConctext.getSharedPreferences(Constants.COMMON_SF_NAME, Context.MODE_PRIVATE).edit();
+		SharedPreferences.Editor editor = FeizaoApp.mContext
+            .getSharedPreferences(Constants.COMMON_SF_NAME, Context.MODE_PRIVATE).edit();
 		editor.putString("currentMedalsConfigVersion", currentVersion);
 		editor.putString(Constants.USER_MODEL_PIX_BASE, imageBase);
 		editor.commit();
@@ -359,7 +368,8 @@ public class AppConfig {
 	 */
 	public void updateLoginStatus(boolean logged) {
 		this.isLogged = logged;
-		SharedPreferences.Editor editor = FeizaoApp.mConctext.getSharedPreferences(Constants.COMMON_SF_NAME, Context.MODE_PRIVATE).edit();
+		SharedPreferences.Editor editor = FeizaoApp.mContext
+            .getSharedPreferences(Constants.COMMON_SF_NAME, Context.MODE_PRIVATE).edit();
 		editor.putString("logged", String.valueOf(logged));
 		editor.commit();
 	}
@@ -402,7 +412,7 @@ public class AppConfig {
 //		Utils.setCfg(mActivity, Constants.SF_WELCOME_AD_IMAGE_URL, data.get("androidLaunghPic"));
 //		Utils.setCfg(mActivity, "mobileBindAlertInterval", data.get("mobileBindAlertInterval"));
 //		Utils.setCfg(mActivity, "privateText", data.get("privateText"));
-//		Utils.setCfg(FeizaoApp.mConctext, Constants.SF_LEVEL_CONFIG_VERSION, mLevelConfigVersion);
+//		Utils.setCfg(FeizaoApp.mContext, Constants.SF_LEVEL_CONFIG_VERSION, mLevelConfigVersion);
 
 		// 开播标签配置
 //		Utils.clearCfg(getApplicationContext(), Constants.SF_TAG_NAME);
@@ -418,7 +428,8 @@ public class AppConfig {
 //		Utils.setCfg(getApplicationContext(), Constants.SF_TAG_NAME, lmCfg);
 
 
-		SharedPreferences.Editor editor = FeizaoApp.mConctext.getSharedPreferences(Constants.COMMON_SF_NAME, Context.MODE_PRIVATE).edit();
+		SharedPreferences.Editor editor = FeizaoApp.mContext
+            .getSharedPreferences(Constants.COMMON_SF_NAME, Context.MODE_PRIVATE).edit();
 		editor.putString(Constants.SF_LEVEL_CONFIG_VERSION, levelConfigVersion);
 		editor.putString("appVersion", appVersion);
 		editor.putString("appUpdateType", String.valueOf(appUpdateType));
@@ -447,7 +458,8 @@ public class AppConfig {
 		editor.commit();
 
 		//保存tag信息
-		SharedPreferences.Editor editor1 = FeizaoApp.mConctext.getSharedPreferences(Constants.SF_TAG_NAME, Context.MODE_PRIVATE).edit();
+		SharedPreferences.Editor editor1 = FeizaoApp.mContext
+            .getSharedPreferences(Constants.SF_TAG_NAME, Context.MODE_PRIVATE).edit();
 		editor1.clear();
 		editor1.putString("tag", JacksonUtil.toJSon(moderatorTags));
 		editor1.putString("showRecommend", String.valueOf(showRecommend));
@@ -477,7 +489,7 @@ public class AppConfig {
 						.getString("pic"));
 			}
 			AppConfig.getInstance().updateCurrentLevelConfigVersion(mLevelConfigVersion);
-			Utils.setCfg(FeizaoApp.mConctext, Constants.USER_SF_LEVEL_NAME, mLevelConfigInfo);
+			Utils.setCfg(FeizaoApp.mContext, Constants.USER_SF_LEVEL_NAME, mLevelConfigInfo);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

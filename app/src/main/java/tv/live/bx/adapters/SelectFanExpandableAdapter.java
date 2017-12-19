@@ -264,7 +264,7 @@ public class SelectFanExpandableAdapter extends BaseExpandableListAdapter {
 		Map<String, Object> item = (Map<String, Object>) ((ArrayList) subcategory.get(groupPosition).get(KEY_GROUP))
 				.get(childPosition);
 
-		ImageLoaderUtil.with().loadImageTransformRoundCircle(mContext, ((AddHolder) loHolder).mFanLogo, (String) item.get("logo"));
+		ImageLoaderUtil.getInstance().loadHeadPic(mContext, ((AddHolder) loHolder).mFanLogo, (String) item.get("logo"));
 		// [status] -1:删除/0:禁用/1:启用/2:未审核/3:审核不通过/4:冻结
 		if (Constants.FAN_STATUS_FREEZE.equals(item.get("status"))) {
 			((AddHolder) loHolder).mFanLogLock.setVisibility(View.VISIBLE);

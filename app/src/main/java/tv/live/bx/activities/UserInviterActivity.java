@@ -247,7 +247,7 @@ public class UserInviterActivity extends BaseFragmentActivity implements OnClick
 			onBackPressed();
 			break;
 		case R.id.top_right:
-			MobclickAgent.onEvent(FeizaoApp.mConctext, "clickInviteButtonInInviteReward");
+			MobclickAgent.onEvent(FeizaoApp.mContext, "clickInviteButtonInInviteReward");
 			Map<String, String> shareInfo = new HashMap<String, String>();
 			shareInfo.put(ShareDialogActivity.Share_Content, shareContent);
 			shareInfo.put(ShareDialogActivity.Share_Title, shareTitle);

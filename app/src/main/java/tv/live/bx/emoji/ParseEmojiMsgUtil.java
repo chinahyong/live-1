@@ -44,9 +44,9 @@ public class ParseEmojiMsgUtil {
 			// int resId = Integer.parseInt(field.get(null).toString());
 			int resId = MsgFaceUtils.facesMap.get(key);
 			if (resId != 0) {
-				Drawable drawable = FeizaoApp.mConctext.getResources().getDrawable(resId);
-				drawable.setBounds(0, 0, (int) (FeizaoApp.mConctext.getResources().getDimension(R.dimen.image_emoji_width)),
-						(int) (FeizaoApp.mConctext.getResources().getDimension(R.dimen.image_emoji_width)));
+				Drawable drawable = FeizaoApp.mContext.getResources().getDrawable(resId);
+				drawable.setBounds(0, 0, (int) (FeizaoApp.mContext.getResources().getDimension(R.dimen.image_emoji_width)),
+						(int) (FeizaoApp.mContext.getResources().getDimension(R.dimen.image_emoji_width)));
 				VerticalImageSpan imageSpan = new VerticalImageSpan(drawable);
 				int end = matcher.start() + key.length();
 				spannableString.setSpan(imageSpan, matcher.start(), end, Spannable.SPAN_INCLUSIVE_EXCLUSIVE);

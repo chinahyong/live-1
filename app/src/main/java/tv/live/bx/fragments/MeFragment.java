@@ -260,11 +260,11 @@ public class MeFragment extends BaseFragment implements OnClickListener, OnRefre
 			if (lsPhoto.indexOf("://") == -1) {
 				lsPhoto = "file://" + lsPhoto;
 			}
-			ImageLoaderUtil.with().loadImageTransformRoundCircle(mActivity, moIvPhoto, lsPhoto);
+			ImageLoaderUtil.getInstance().loadHeadPic(mActivity, moIvPhoto, lsPhoto);
 		}
 		moIvPhotoV.setVisibility(UserInfoConfig.getInstance().isVerifyed() ? View.VISIBLE : View.GONE);
 		if (!TextUtils.isEmpty(level)) {
-			ImageLoaderUtil.with().loadImage(mActivity, mIvUserLevel, Utils.getLevelImageResourceUri(Constants.USER_LEVEL_PIX, level));
+			ImageLoaderUtil.getInstance().loadImage(mIvUserLevel, Utils.getLevelImageResourceUri(Constants.USER_LEVEL_PIX, level));
 			mTvLevel.setText(userLevelName);
 		}
 		moTvUserId.setText(UserInfoConfig.getInstance().id);
@@ -286,7 +286,7 @@ public class MeFragment extends BaseFragment implements OnClickListener, OnRefre
 		//主播等级
 		if (!TextUtils.isEmpty(moderatorLevel)) {
 			mIvUserAnchorLevel.setVisibility(View.VISIBLE);
-			ImageLoaderUtil.with().loadImage(mActivity, mIvUserAnchorLevel, Utils.getLevelImageResourceUri(Constants.USER_ANCHOR_LEVEL_PIX, moderatorLevel));
+			ImageLoaderUtil.getInstance().loadImage(mIvUserAnchorLevel, Utils.getLevelImageResourceUri(Constants.USER_ANCHOR_LEVEL_PIX, moderatorLevel));
 //			mTvAnchorLevel.setText(String.valueOf(UserInfoConfig.getInstance().moderatorLevel + 1));
 			mTvAnchorLevel.setText(moderatorLevelName);
 			mLlAnchorLevel.setVisibility(View.VISIBLE);
@@ -302,7 +302,7 @@ public class MeFragment extends BaseFragment implements OnClickListener, OnRefre
 			mTvIntroduction.setVisibility(View.GONE);
 		}
 		if (!TextUtils.isEmpty(bgImg)) {
-			ImageLoaderUtil.with().loadImage(mActivity, mIvBgImg, bgImg);
+			ImageLoaderUtil.getInstance().loadImage(mIvBgImg, bgImg);
 		}
 		//            if (!Utils.isStrEmpty(lsDesc))
 		//                moTvDesc.setText("简介：" + lsDesc);
@@ -379,7 +379,7 @@ public class MeFragment extends BaseFragment implements OnClickListener, OnRefre
 				imagePath = Constants.FILE_PXI + imagePath;
 			}
 			EvtLog.d(TAG, "ImagePath After Crop updatePickData: " + imagePath);
-			ImageLoaderUtil.with().loadImageTransformRoundCircle(mActivity, mIvBgImg, imagePath);
+			ImageLoaderUtil.getInstance().loadHeadPic(mActivity, mIvBgImg, imagePath);
 			mIvBgImg.setTag("");
 		}
 	}
@@ -474,7 +474,7 @@ public class MeFragment extends BaseFragment implements OnClickListener, OnRefre
 				showGetPhotoDialog();
 				break;
 			case R.id.my_info_edit:
-				MobclickAgent.onEvent(FeizaoApp.mConctext, "editInpersonalPage");
+				MobclickAgent.onEvent(FeizaoApp.mContext, "editInpersonalPage");
 				ActivityJumpUtil.toEditDataActivity(mActivity, true, 0);
 				break;
 			/**
@@ -482,28 +482,28 @@ public class MeFragment extends BaseFragment implements OnClickListener, OnRefre
 			 * @version 2.5.0
 			 */
 			case R.id.item_fans_layout:
-				MobclickAgent.onEvent(FeizaoApp.mConctext, "clickmyFollowlist");
+				MobclickAgent.onEvent(FeizaoApp.mContext, "clickmyFollowlist");
 				ActivityJumpUtil.toUserFansActivity(mActivity, UserInfoConfig.getInstance().id, true, REQUEST_CODE_FLUSH_ACTIVITY);
 				break;
 			case R.id.item_guard_layout:
 				ActivityJumpUtil.toWebViewActivity(mActivity, WebConstants.getFullWebMDomain(WebConstants.WEB_USER_GUARD_LIST_URL) + UserInfoConfig.getInstance().id, true, 0);
 				break;
 			case R.id.item_focus_layout:
-				MobclickAgent.onEvent(FeizaoApp.mConctext, "clickmyLovelist");
+				MobclickAgent.onEvent(FeizaoApp.mContext, "clickmyLovelist");
 				ActivityJumpUtil.toUserFocusActivity(mActivity, UserInfoConfig.getInstance().id, true, REQUEST_CODE_FLUSH_ACTIVITY);
 				break;
 
 			case R.id.me_income_layout:
-				MobclickAgent.onEvent(FeizaoApp.mConctext, "earnings");
+				MobclickAgent.onEvent(FeizaoApp.mContext, "earnings");
 				ActivityJumpUtil.toWebViewActivity(mActivity, WebConstants.getFullWebMDomain(WebConstants.COMMON_ME_INCOME_URL), true);
 				break;
 			case R.id.my_info_balance:
-				MobclickAgent.onEvent(FeizaoApp.mConctext, "clickPaopao");
-				OperationHelper.onEvent(FeizaoApp.mConctext, "clickPaopao", null);
+				MobclickAgent.onEvent(FeizaoApp.mContext, "clickPaopao");
+				OperationHelper.onEvent(FeizaoApp.mContext, "clickPaopao", null);
 				ActivityJumpUtil.toWebViewActivity(mActivity, WebConstants.getFullWebMDomain(WebConstants.RECHARGE_WEB_URL), true, RECHANGE_REQUEST_CODE);
 				break;
 			case R.id.my_info_backpack:
-				OperationHelper.onEvent(FeizaoApp.mConctext, "clickMyBackpackInMine", null);
+				OperationHelper.onEvent(FeizaoApp.mContext, "clickMyBackpackInMine", null);
 				ActivityJumpUtil.toWebViewActivity(mActivity, WebConstants.getFullWebMDomain(WebConstants.WEB_MY_BACKPACK), true, -1);
 				break;
 			/**
@@ -514,7 +514,7 @@ public class MeFragment extends BaseFragment implements OnClickListener, OnRefre
 				ActivityJumpUtil.gotoActivity(mActivity, AdviceActivity.class, false, null, null);
 				break;
 			case R.id.my_info_ll_setting:
-				MobclickAgent.onEvent(FeizaoApp.mConctext, "clickSettingButton");
+				MobclickAgent.onEvent(FeizaoApp.mContext, "clickSettingButton");
 				ActivityJumpUtil.gotoActivity(mActivity, SettingsActivity.class, false, null, null);
 				break;
 			/**
@@ -522,21 +522,21 @@ public class MeFragment extends BaseFragment implements OnClickListener, OnRefre
 			 * @version 2.5.0
 			 */
 			case R.id.my_info_level:
-				MobclickAgent.onEvent(FeizaoApp.mConctext, "level");
+				MobclickAgent.onEvent(FeizaoApp.mContext, "level");
 				Map<String, String> webInfo = new HashMap<>();
 				webInfo.put(WebViewActivity.URL, WebConstants.getFullWebMDomain(WebConstants.GET_MY_LEVEL_URL));
 				webInfo.put(WebViewActivity.IS_NOT_SHARE, String.valueOf(true));
 				ActivityJumpUtil.gotoActivity(mActivity, WebViewActivity.class, false, WebViewActivity.WEB_INFO, (Serializable) webInfo);
 				break;
 			case R.id.my_info_store:
-				OperationHelper.onEvent(FeizaoApp.mConctext, "clickStoreInMine", null);
+				OperationHelper.onEvent(FeizaoApp.mContext, "clickStoreInMine", null);
 				ActivityJumpUtil.toWebViewActivity(mActivity, WebConstants.getFullWebMDomain(WebConstants.WEB_STORE), true, -1);
 				//标记为已阅读
 				if (AppConfig.getInstance().hasNewShop())
 					AppConfig.getInstance().updateLastShopVersionStatus();
 				break;
 			case R.id.my_info_anchor_level:
-				MobclickAgent.onEvent(FeizaoApp.mConctext, "clickLevelOfBroadcaster");
+				MobclickAgent.onEvent(FeizaoApp.mContext, "clickLevelOfBroadcaster");
 				Map<String, String> webAnchorInfo = new HashMap<>();
 				webAnchorInfo.put(WebViewActivity.URL, WebConstants.getFullWebMDomain(WebConstants.GET_MY_ANCHOR_LEVEL_URL));
 				webAnchorInfo.put(WebViewActivity.IS_NOT_SHARE, String.valueOf(true));

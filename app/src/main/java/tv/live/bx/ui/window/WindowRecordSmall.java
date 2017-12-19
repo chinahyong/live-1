@@ -37,9 +37,9 @@ public class WindowRecordSmall extends LinearLayout implements View.OnTouchListe
 			@Override
 			public void onClick(View v) {
 				if (WindowRecordManager.getWindowRecordBig() == null || !WindowRecordManager.getWindowRecordBig().isShown()) {
-					recordWindowManager.createBigWindow(FeizaoApp.mConctext);
+					recordWindowManager.createBigWindow(FeizaoApp.mContext);
 				} else {
-					recordWindowManager.removeBigWindow(FeizaoApp.mConctext);
+					recordWindowManager.removeBigWindow(FeizaoApp.mContext);
 				}
 			}
 		});

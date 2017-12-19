@@ -32,7 +32,7 @@ import tv.live.bx.library.util.TelephoneUtil;
 public class UiHelper {
 	private static final String TAG = "UiHelper";
 
-	private static Toast mToast = Toast.makeText(FeizaoApp.mConctext, "", Toast.LENGTH_SHORT);
+	private static Toast mToast = Toast.makeText(FeizaoApp.mContext, "", Toast.LENGTH_SHORT);
 
 	private static Typeface mSTHeitiLightTf = null;
 

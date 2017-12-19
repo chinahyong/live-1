@@ -5,10 +5,6 @@
 
 package tv.live.bx.websocket.live;
 
-import tv.live.bx.websocket.model.AcceptVideoChat;
-import tv.live.bx.websocket.model.InviteVideoChat;
-import tv.live.bx.websocket.model.VideoChat;
-
 import org.json.JSONObject;
 
 
@@ -75,19 +71,6 @@ public interface WebSocketLiveCallBack extends WebSocketCallBack {
 
 	void onHotRank(JSONObject data);
 
-	void onMessageCardActive(JSONObject data);
-
-	void onInviteVideoChat(InviteVideoChat data);
-
-	void onCancelVideoChat(String uid);
-
-	void onUserRejectVideoChat(String uid);
-
-	void onAcceptVideoChat(AcceptVideoChat data);
-
-	void onVideoChatEnd(String uid, String mid, String pullUrl, String pushUrl, String msg, String endType);
-
 	void onChangeVideoPullUrl(String pullUrl);
 
-	void onVideoChat(VideoChat data);
 }

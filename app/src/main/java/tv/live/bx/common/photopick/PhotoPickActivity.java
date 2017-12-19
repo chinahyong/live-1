@@ -28,7 +28,6 @@ import java.util.ArrayList;
 import java.util.LinkedHashMap;
 
 import tv.live.bx.R;
-import tv.live.bx.activities.PostPublishActivity;
 import tv.live.bx.activities.base.BaseActionBarActivity;
 
 
@@ -43,7 +42,7 @@ public class PhotoPickActivity extends BaseActionBarActivity implements LoaderMa
     private final String CameraItem = "CameraItem";
     MenuItem mMenuItem;
     int mFolderId = 0;
-    private int mMaxPick = PostPublishActivity.PHOTO_MAX_COUNT;
+    private int mMaxPick = 6;
     private LayoutInflater mInflater;
     private TextView mFoldName;
     private View mListViewGroup;

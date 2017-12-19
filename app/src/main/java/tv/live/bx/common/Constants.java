@@ -243,15 +243,15 @@ public class Constants {
 //	public static DisplayImageOptions COMMON_OPTIONIMAGE_80 = new DisplayImageOptions.Builder()
 //			.showImageOnLoading(R.drawable.bg_user_default).showImageOnFail(R.drawable.bg_user_default)
 //			.bitmapConfig(Config.RGB_565).cacheInMemory(true).cacheOnDisc(true).cacheInMemory(true)
-//			.displayer(new RoundedBitmapDisplayer(Utils.dip2px(FeizaoApp.mConctext, 80f))).build();
+//			.displayer(new RoundedBitmapDisplayer(Utils.dip2px(FeizaoApp.mContext, 80f))).build();
 //
 //	public static DisplayImageOptions COMMON_OPTIONIMAGE_2 = new DisplayImageOptions.Builder()
 //			.bitmapConfig(Config.RGB_565).cacheInMemory(true).cacheOnDisc(true).cacheInMemory(true)
-//			.displayer(new RoundedBitmapDisplayer(Utils.dip2px(FeizaoApp.mConctext, 2.33f))).build();
+//			.displayer(new RoundedBitmapDisplayer(Utils.dip2px(FeizaoApp.mContext, 2.33f))).build();
 //
 //	public static DisplayImageOptions COMMON_OPTIONIMAGE_1 = new DisplayImageOptions.Builder()
 //			.bitmapConfig(Bitmap.Config.RGB_565).showImageOnLoading(R.drawable.icon_loading).cacheInMemory(true).cacheOnDisc(true)
-//			.imageScaleType(ImageScaleType.EXACTLY).displayer(new RoundedBitmapDisplayer(Utils.dip2px(FeizaoApp.mConctext, 1.33f))).build();
+//			.imageScaleType(ImageScaleType.EXACTLY).displayer(new RoundedBitmapDisplayer(Utils.dip2px(FeizaoApp.mContext, 1.33f))).build();
 
 	//图片圆角度
 	public static int COMMON_DISPLAY_IMAGE_CORNER_1 = (int) (1 * FeizaoApp.metrics.density);

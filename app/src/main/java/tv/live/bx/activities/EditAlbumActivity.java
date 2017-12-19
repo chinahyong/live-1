@@ -41,8 +41,6 @@ import tv.live.bx.listeners.OnItemTouchListener;
 import tv.live.bx.model.AlbumBean;
 import tv.live.bx.util.UiHelper;
 
-import static tv.live.bx.activities.GroupPostPublishActivity.File_Dir;
-
 /**
  * Created by Live on 2017/4/24.
  * Description:相册页面，点击添加图片，图片预览删除，图片排序
@@ -54,6 +52,7 @@ public class EditAlbumActivity extends BaseFragmentActivity implements ItemTouch
 	public static final int ACTIVITY_REQUEST_IMAGE_BROWSER = 102;
 	public static final int UPLOAD_SUCCED = 200;
 	public static final int UPLOAD_FAILED = -200;
+	public static final String File_Dir = "bx_upload";
 	private RecyclerView mPhotoListView;
 	private ItemTouchHelper mItemTouchHelper;
 	private ItemTouchCallbackListener mItemTouchListener;

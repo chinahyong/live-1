@@ -190,7 +190,7 @@ public class CalMainActivity extends BaseFragmentActivity implements OnClickList
 
 		//没有等级配置信息时，重新请求一遍，暂时的（3.1.5版本更新）
 		if (AppConfig.getInstance().mLevelConfigInfo.size() == 0) {
-			BusinessUtils.getLevelConfigInfo(FeizaoApp.mConctext, new LevelInfoReceiverListener(Constants.COMMON_LEVEL_CONFIG_VERSION));
+			BusinessUtils.getLevelConfigInfo(FeizaoApp.mContext, new LevelInfoReceiverListener(Constants.COMMON_LEVEL_CONFIG_VERSION));
 		}
 
 		//上报用户坐标
@@ -208,7 +208,7 @@ public class CalMainActivity extends BaseFragmentActivity implements OnClickList
 			mLocationClient.startLocation();
 			return;
 		}
-		mLocationClient = new AMapLocationClient(FeizaoApp.mConctext);
+		mLocationClient = new AMapLocationClient(FeizaoApp.mContext);
 		mLocationClient.setLocationOption(initMapOption());
 		mLocationClient.setLocationListener(locationListener);
 		mLocationClient.startLocation();
@@ -291,7 +291,7 @@ public class CalMainActivity extends BaseFragmentActivity implements OnClickList
 	private void liveStatus() {
 		// 判断房间号是否为空
 		if (AppConfig.getInstance().isLogged && !TextUtils.isEmpty(mRid)) {
-			MobclickAgent.onEvent(FeizaoApp.mConctext, "clickLiveButton");
+			MobclickAgent.onEvent(FeizaoApp.mContext, "clickLiveButton");
 			Map<String, String> lmItem = new HashMap<>();
 			lmItem.put("rid", mRid);
 			lmItem.put("isRecordLive", String.valueOf(isRecordLiveFlag));
@@ -352,10 +352,10 @@ public class CalMainActivity extends BaseFragmentActivity implements OnClickList
 
 	@Override
 	protected void onDestroy() {
-		MobclickAgent.onEvent(FeizaoApp.mConctext, "logout");
+		MobclickAgent.onEvent(FeizaoApp.mContext, "logout");
 		// 在onDestroy之前调用，移除所有的Fragment
 		removeAllFragment();
-		OperationHelper.onEventEnd(FeizaoApp.mConctext);
+		OperationHelper.onEventEnd(FeizaoApp.mContext);
 		super.onDestroy();
 		// 注销广播
 		unregisterLoginReceiver();
@@ -441,7 +441,7 @@ public class CalMainActivity extends BaseFragmentActivity implements OnClickList
 	public void onClick(View v) {
 		switch (v.getId()) {
 			case R.id.more_add:
-				OperationHelper.onEvent(FeizaoApp.mConctext, "switchLive", null);
+				OperationHelper.onEvent(FeizaoApp.mContext, "switchLive", null);
 				showMoreWindow(v);
 				break;
 			default:
@@ -702,7 +702,7 @@ public class CalMainActivity extends BaseFragmentActivity implements OnClickList
 
 							@Override
 							public void onClick(DialogInterface dialog, int which) {
-								ActivityJumpUtil.toLoginActivity(FeizaoApp.mConctext, true);
+								ActivityJumpUtil.toLoginActivity(FeizaoApp.mContext, true);
 							}
 						});
 				dialog.setCanceledOnTouchOutside(false);
@@ -939,7 +939,7 @@ public class CalMainActivity extends BaseFragmentActivity implements OnClickList
 								headPic = String.valueOf(userMap.get("headPic"));
 							}
 							// 更新本地数据库系统消息
-							DatabaseUtils.updatePersonInfoToDatabase(FeizaoApp.mConctext, uid, nickname, headPic);
+							DatabaseUtils.updatePersonInfoToDatabase(FeizaoApp.mContext, uid, nickname, headPic);
 							msg.obj = messageList.size();
 						} else {
 							msg.obj = null;

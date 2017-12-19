@@ -54,7 +54,7 @@ public class AboutActivity extends BaseFragmentActivity {
 		mIvLogo.setOnLongClickListener(new View.OnLongClickListener() {
 			@Override
 			public boolean onLongClick(View v) {
-				moTvVersion.append(" channel: " + ChannelUtil.getChannel(FeizaoApp.mConctext));
+				moTvVersion.append(" channel: " + ChannelUtil.getChannel(FeizaoApp.mContext));
 				v.setOnLongClickListener(null);
 				return false;
 			}

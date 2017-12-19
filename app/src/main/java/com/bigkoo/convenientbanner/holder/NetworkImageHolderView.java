@@ -3,10 +3,10 @@ package com.bigkoo.convenientbanner.holder;
 import android.content.Context;
 import android.view.View;
 import android.widget.ImageView;
-
 import com.wxy.adbanner.entity.AdInfo;
-
+import jp.wasabeef.glide.transformations.RoundedCornersTransformation;
 import tv.live.bx.R;
+import tv.live.bx.common.Utils;
 import tv.live.bx.imageloader.ImageLoaderUtil;
 
 /**
@@ -29,6 +29,8 @@ public class NetworkImageHolderView implements Holder<AdInfo> {
 
 	@Override
 	public void UpdateUI(Context context, int position, AdInfo data) {
-		ImageLoaderUtil.with().loadImage(context, imageView, data.getAdvImg(), R.drawable.icon_loading, -1);
+		ImageLoaderUtil.getInstance().loadImageCorner(context, imageView, data.getAdvImg(),
+			R.drawable.icon_loading, R.drawable.icon_loading,
+			Utils.dpToPx(5), RoundedCornersTransformation.CornerType.ALL);
 	}
 }

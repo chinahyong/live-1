@@ -294,8 +294,8 @@ public class LiveTagFragment extends BaseFragment implements OnClickListener, On
 		try {
 			Map<String, String> map = new HashMap<>();
 			map.put("tabId", mTag);
-			MobclickAgent.onEvent(FeizaoApp.mConctext, "clickBroadcasterSImgInClassificationTab");
-			OperationHelper.onEvent(FeizaoApp.mConctext, "clickBroadcasterSImgInClassificationTab", map);
+			MobclickAgent.onEvent(FeizaoApp.mContext, "clickBroadcasterSImgInClassificationTab");
+			OperationHelper.onEvent(FeizaoApp.mContext, "clickBroadcasterSImgInClassificationTab", map);
 			@SuppressWarnings("unchecked")
 			Map<String, Object> lmItem = (Map<String, Object>) mAuthorAdapter.getItem(position
 					- mListView.getHeaderViewsCount());

@@ -129,22 +129,22 @@ public class LiveFragment extends BaseFragment implements OnClickListener {
 				String id = String.valueOf(data.get(LiveFragmentStatusAdapter.ID));
 				int index = Integer.parseInt(id);
 				if (TAB_NEW == index) {
-					MobclickAgent.onEvent(FeizaoApp.mConctext, "clickNewButtonInIndex");
-					OperationHelper.onEvent(FeizaoApp.mConctext, "clickNewButtonInIndex", null);
+					MobclickAgent.onEvent(FeizaoApp.mContext, "clickNewButtonInIndex");
+					OperationHelper.onEvent(FeizaoApp.mContext, "clickNewButtonInIndex", null);
 				} else if (TAB_HOT == index) {
-					MobclickAgent.onEvent(FeizaoApp.mConctext, "clickFeatureButtonInIndex");
-					OperationHelper.onEvent(FeizaoApp.mConctext, "clickFeatureButtonInIndex", null);
+					MobclickAgent.onEvent(FeizaoApp.mContext, "clickFeatureButtonInIndex");
+					OperationHelper.onEvent(FeizaoApp.mContext, "clickFeatureButtonInIndex", null);
 				} else if (TAB_RECOMMEND == index) {
-					MobclickAgent.onEvent(FeizaoApp.mConctext, "clickRecommendButtonInIndex");
-					OperationHelper.onEvent(FeizaoApp.mConctext, "clickRecommendButtonInIndex", null);
+					MobclickAgent.onEvent(FeizaoApp.mContext, "clickRecommendButtonInIndex");
+					OperationHelper.onEvent(FeizaoApp.mContext, "clickRecommendButtonInIndex", null);
 				} else if (TAB_NEAR == index) {
-					MobclickAgent.onEvent(FeizaoApp.mConctext, "clickNearbyButtonInIndex");
-					OperationHelper.onEvent(FeizaoApp.mConctext, "clickNearbyButtonInIndex", null);
+					MobclickAgent.onEvent(FeizaoApp.mContext, "clickNearbyButtonInIndex");
+					OperationHelper.onEvent(FeizaoApp.mContext, "clickNearbyButtonInIndex", null);
 				} else {
 					Map<String, String> map = new HashMap<>();
 					map.put("tabId", String.valueOf(data.get(LiveFragmentStatusAdapter.ID)));
-					MobclickAgent.onEvent(FeizaoApp.mConctext, "clickClassificationButtonInIndex");
-					OperationHelper.onEvent(FeizaoApp.mConctext, "clickClassificationButtonInIndex", map);
+					MobclickAgent.onEvent(FeizaoApp.mContext, "clickClassificationButtonInIndex");
+					OperationHelper.onEvent(FeizaoApp.mContext, "clickClassificationButtonInIndex", map);
 				}
 				if (position == mCurTabIndex) {
 					Fragment f = mAdapter.getFragment(mCurTabIndex);
@@ -204,12 +204,12 @@ public class LiveFragment extends BaseFragment implements OnClickListener {
 	public void onClick(View v) {
 		switch (v.getId()) {
 			case R.id.live_bar_search_btn:
-				MobclickAgent.onEvent(FeizaoApp.mConctext, "searchOnIndex");
+				MobclickAgent.onEvent(FeizaoApp.mContext, "searchOnIndex");
 				ActivityJumpUtil.gotoActivity(mActivity, AnchorSearchActivity.class, false, null, null);
 				break;
 			// 排行榜
 			case R.id.rechargeBtn:
-				MobclickAgent.onEvent(FeizaoApp.mConctext, "searchOnIndex");
+				MobclickAgent.onEvent(FeizaoApp.mContext, "searchOnIndex");
 				ActivityJumpUtil.gotoActivity(mActivity, RankActivity.class, false, null, null);
 				break;
 		}

@@ -40,7 +40,7 @@ public class GiftNumKeybordDialog {
 			giftNum0;
 	private TextView giftNumClear;
 
-	private Toast toast = Toast.makeText(FeizaoApp.mConctext, R.string.paly_gift_num_empty, Toast.LENGTH_SHORT);
+	private Toast toast = Toast.makeText(FeizaoApp.mContext, R.string.paly_gift_num_empty, Toast.LENGTH_SHORT);
 	private Display display;
 	private OnItemClickListener itemClickListener;
 	private GiftNumOnClick onGiftNumOnClick = new GiftNumOnClick();

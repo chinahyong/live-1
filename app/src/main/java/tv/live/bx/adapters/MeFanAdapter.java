@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import jp.wasabeef.glide.transformations.RoundedCornersTransformation.CornerType;
 import tv.live.bx.R;
 import tv.live.bx.adapters.FanExpandableAdapter.OnItemClickListener;
 import tv.live.bx.common.Constants;
@@ -22,127 +23,127 @@ import tv.live.bx.imageloader.ImageLoaderUtil;
  * 推荐饭圈
  */
 public class MeFanAdapter extends BaseAdapter {
-	private Context moContext;
-	private List<Map<String, Object>> mlPlayers;
 
-	private OnItemClickListener mOnItemClickListener;
+    private Context moContext;
+    private List<Map<String, Object>> mlPlayers;
 
-	public MeFanAdapter(Context poContext) {
-		moContext = poContext;
-		mlPlayers = new ArrayList<Map<String, Object>>();
-	}
+    private OnItemClickListener mOnItemClickListener;
 
-	public void setOnItemClickListener(OnItemClickListener listener) {
-		this.mOnItemClickListener = listener;
-	}
+    public MeFanAdapter(Context poContext) {
+        moContext = poContext;
+        mlPlayers = new ArrayList<Map<String, Object>>();
+    }
 
-	/**
-	 * 清除绑定的数据，注意，此方法没有刷新UI
-	 */
-	public void clearData() {
-		mlPlayers.clear();
-	}
+    public void setOnItemClickListener(OnItemClickListener listener) {
+        this.mOnItemClickListener = listener;
+    }
 
-	/**
-	 * 添加数据，并自动刷新UI
-	 *
-	 * @param data
-	 */
-	public void addData(List<Map<String, Object>> data) {
-		if (data != null) {
-			mlPlayers.addAll(data);
-			notifyDataSetChanged();
-		}
-	}
+    /**
+     * 清除绑定的数据，注意，此方法没有刷新UI
+     */
+    public void clearData() {
+        mlPlayers.clear();
+    }
 
-	/**
-	 * 添加数据到第一项，并自动刷新
-	 *
-	 * @param item
-	 */
-	public void addFirstItem(Map<String, Object> item) {
-		if (item != null) {
-			mlPlayers.add(0, item);
-			notifyDataSetChanged();
-		}
-	}
+    /**
+     * 添加数据，并自动刷新UI
+     */
+    public void addData(List<Map<String, Object>> data) {
+        if (data != null) {
+            mlPlayers.addAll(data);
+            notifyDataSetChanged();
+        }
+    }
 
-	/**
-	 * @return 获取数据
-	 */
-	public List<Map<String, Object>> getData() {
-		return mlPlayers;
-	}
+    /**
+     * 添加数据到第一项，并自动刷新
+     */
+    public void addFirstItem(Map<String, Object> item) {
+        if (item != null) {
+            mlPlayers.add(0, item);
+            notifyDataSetChanged();
+        }
+    }
 
-	/**
-	 * @return 数据是否为空
-	 */
-	public boolean isDataEmpty() {
-		return mlPlayers.isEmpty();
-	}
+    /**
+     * @return 获取数据
+     */
+    public List<Map<String, Object>> getData() {
+        return mlPlayers;
+    }
 
-	@Override
-	public int getCount() {
-		return mlPlayers.size();
-	}
+    /**
+     * @return 数据是否为空
+     */
+    public boolean isDataEmpty() {
+        return mlPlayers.isEmpty();
+    }
 
-	@Override
-	public Object getItem(int position) {
-		return mlPlayers.get(position);
-	}
+    @Override
+    public int getCount() {
+        return mlPlayers.size();
+    }
 
-	@Override
-	public long getItemId(int position) {
-		return position;
-	}
+    @Override
+    public Object getItem(int position) {
+        return mlPlayers.get(position);
+    }
 
-	@SuppressLint({"InflateParams", "NewApi"})
-	@Override
-	public View getView(final int position, View convertView, ViewGroup parent) {
-		final Holder loHolder;
-		if (convertView == null) {
-			LayoutInflater loInflater = LayoutInflater.from(moContext);
-			convertView = loInflater.inflate(R.layout.item_me_fan_list, null);
-			loHolder = new Holder();
-			loHolder.mFanLogo = (ImageView) convertView.findViewById(R.id.item_fanquan_logo);
-			loHolder.mFanName = (TextView) convertView.findViewById(R.id.item_fanquan_name);
-			loHolder.mPeopleNum = (TextView) convertView.findViewById(R.id.item_fanquan_people);
-			loHolder.mFanAdd = (ImageView) convertView.findViewById(R.id.item_fanquan_add);
-			convertView.setTag(loHolder);
-		} else {
-			loHolder = (Holder) convertView.getTag();
-		}
-		@SuppressWarnings("unchecked")
-		Map<String, Object> subjectInfo = (Map<String, Object>) getItem(position);
+    @Override
+    public long getItemId(int position) {
+        return position;
+    }
 
-		ImageLoaderUtil.with().loadImageTransformRoundedCorners(moContext, loHolder.mFanLogo, (String) subjectInfo.get("logo"), Constants.COMMON_DISPLAY_IMAGE_CORNER_2);
+    @SuppressLint({"InflateParams", "NewApi"})
+    @Override
+    public View getView(final int position, View convertView, ViewGroup parent) {
+        final Holder loHolder;
+        if (convertView == null) {
+            LayoutInflater loInflater = LayoutInflater.from(moContext);
+            convertView = loInflater.inflate(R.layout.item_me_fan_list, null);
+            loHolder = new Holder();
+            loHolder.mFanLogo = (ImageView) convertView.findViewById(R.id.item_fanquan_logo);
+            loHolder.mFanName = (TextView) convertView.findViewById(R.id.item_fanquan_name);
+            loHolder.mPeopleNum = (TextView) convertView.findViewById(R.id.item_fanquan_people);
+            loHolder.mFanAdd = (ImageView) convertView.findViewById(R.id.item_fanquan_add);
+            convertView.setTag(loHolder);
+        } else {
+            loHolder = (Holder) convertView.getTag();
+        }
+        @SuppressWarnings("unchecked") Map<String, Object> subjectInfo = (Map<String, Object>) getItem(
+            position);
 
-		loHolder.mFanName.setText((String) subjectInfo.get("name"));
-		// loHolder.mFanAdd.setOnClickListener(new OnClickListener() {
-		// @Override
-		// public void onClick(View v) {
-		// if (mOnItemClickListener != null) {
-		// mOnItemClickListener.onClick(v,
-		// FanExpandableAdapter.CATEGORY_REMEMENT, mGroupPosition, position);
-		// }
-		// }
-		// });
-		// 显示标题
-		loHolder.mPeopleNum.setText(subjectInfo.get("memberTotal") + "人");
-		// if ("0".equals(subjectInfo.get("joined"))) {
-		// loHolder.mFanAdd.setImageResource(R.drawable.btn_add_nor);
-		// } else {
-		// loHolder.mFanAdd.setImageResource(R.drawable.btn_add_nor);
-		// }
+        ImageLoaderUtil.getInstance()
+            .loadImageCorner(moContext, loHolder.mFanLogo, subjectInfo.get("logo"),
+                Constants.COMMON_DISPLAY_IMAGE_CORNER_2, CornerType.ALL);
 
-		return convertView;
-	}
+        loHolder.mFanName.setText((String) subjectInfo.get("name"));
+        // loHolder.mFanAdd.setOnClickListener(new OnClickListener() {
+        // @Override
+        // public void onClick(View v) {
+        // if (mOnItemClickListener != null) {
+        // mOnItemClickListener.onClick(v,
+        // FanExpandableAdapter.CATEGORY_REMEMENT, mGroupPosition, position);
+        // }
+        // }
+        // });
+        // 显示标题
+        loHolder.mPeopleNum.setText(subjectInfo.get("memberTotal") + "人");
+        // if ("0".equals(subjectInfo.get("joined"))) {
+        // loHolder.mFanAdd.setImageResource(R.drawable.btn_add_nor);
+        // } else {
+        // loHolder.mFanAdd.setImageResource(R.drawable.btn_add_nor);
+        // }
 
-	class Holder {
-		ImageView mFanLogo;
-		TextView mPeopleNum;
-		TextView mFanName;
-		ImageView mFanAdd;
-	}
+        return convertView;
+    }
+
+    class Holder {
+
+        ImageView mFanLogo;
+        TextView mPeopleNum;
+        TextView mFanName;
+        ImageView mFanAdd;
+    }
 
 }

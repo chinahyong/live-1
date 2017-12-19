@@ -69,7 +69,7 @@ public class TelephoneUtil {
 	 * @return
 	 */
 	public static boolean isNetworkAvailable() {
-		Context context = FeizaoApp.mConctext;
+		Context context = FeizaoApp.mContext;
 		if (context == null) {
 			return false;
 		}
@@ -96,7 +96,7 @@ public class TelephoneUtil {
 
 	public static boolean isGPSAvailable() {
 		boolean result;
-		LocationManager locationManager = (LocationManager) FeizaoApp.mConctext
+		LocationManager locationManager = (LocationManager) FeizaoApp.mContext
 				.getSystemService(Context.LOCATION_SERVICE);
 		result = locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
 		EvtLog.d(TAG, "result:" + result);
@@ -331,7 +331,7 @@ public class TelephoneUtil {
 	 */
 	public static DisplayMetrics getDisplayMetrics() {
 		DisplayMetrics dm = new DisplayMetrics();
-		dm = FeizaoApp.mConctext.getResources().getDisplayMetrics();
+		dm = FeizaoApp.mContext.getResources().getDisplayMetrics();
 		float density = dm.density; // 屏幕密度（像素比例：0.75/1.0/1.5/2.0）
 		EvtLog.d(TAG + " DisplayMetrics", "density=" + density + "; dm.widthPixels=" + dm.widthPixels);
 		return dm;
@@ -456,11 +456,11 @@ public class TelephoneUtil {
 		localIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 		if (Build.VERSION.SDK_INT >= 9) {
 			localIntent.setAction("android.settings.APPLICATION_DETAILS_SETTINGS");
-			localIntent.setData(Uri.fromParts("package", FeizaoApp.mConctext.getPackageName(), null));
+			localIntent.setData(Uri.fromParts("package", FeizaoApp.mContext.getPackageName(), null));
 		} else if (Build.VERSION.SDK_INT <= 8) {
 			localIntent.setAction(Intent.ACTION_VIEW);
 			localIntent.setClassName("com.android.settings", "com.android.settings.InstalledAppDetails");
-			localIntent.putExtra("com.android.settings.ApplicationPkgName", FeizaoApp.mConctext.getPackageName());
+			localIntent.putExtra("com.android.settings.ApplicationPkgName", FeizaoApp.mContext.getPackageName());
 		}
 		context.startActivity(localIntent);
 	}

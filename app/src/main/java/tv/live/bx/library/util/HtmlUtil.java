@@ -143,7 +143,7 @@ public class HtmlUtil {
 			widget.setBackgroundColor(Color.parseColor("#00000000"));
 			Map<String, String> lmPageInfo = new HashMap<String, String>();
 			lmPageInfo.put(WebViewActivity.URL, mUrl);
-			ActivityJumpUtil.gotoActivity(FeizaoApp.mConctext, WebViewActivity.class, false, WebViewActivity.WEB_INFO,
+			ActivityJumpUtil.gotoActivity(FeizaoApp.mContext, WebViewActivity.class, false, WebViewActivity.WEB_INFO,
 					(Serializable) lmPageInfo);
 		}
 	}

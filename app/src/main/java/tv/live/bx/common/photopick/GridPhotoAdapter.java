@@ -76,7 +76,7 @@ class GridPhotoAdapter extends CursorAdapter {
 		holder = (GridViewHolder) view.getTag();
 
 		String path = ImageInfo.pathAddPreFix(cursor.getString(1));
-		ImageLoaderUtil.with().loadImage(mActivity, holder.icon, path, 0, R.drawable.image_not_exist);
+		ImageLoaderUtil.getInstance().loadImageAndDefault(holder.icon, path, 0, R.drawable.image_not_exist);
 		((GridViewCheckTag) holder.check.getTag()).path = path;
 
 		boolean picked = mActivity.isPicked(path);

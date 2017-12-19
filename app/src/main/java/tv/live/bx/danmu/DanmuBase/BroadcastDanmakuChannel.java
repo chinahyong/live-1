@@ -6,6 +6,7 @@ import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.NinePatchDrawableFactory;
 import android.os.Handler;
@@ -16,17 +17,14 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import com.bumptech.glide.load.resource.bitmap.GlideBitmapDrawable;
 import com.bumptech.glide.request.target.Target;
-
 import java.util.Random;
-
+import tv.guojiang.baselib.image.listener.ImageLoadingListener;
+import tv.live.bx.FeizaoApp;
 import tv.live.bx.R;
 import tv.live.bx.common.Utils;
 import tv.live.bx.danmu.AnimationHelper;
 import tv.live.bx.imageloader.ImageLoaderUtil;
-import tv.live.bx.imageloader.SimpleImageLoadingListener;
 import tv.live.bx.library.util.EvtLog;
 import tv.live.bx.library.util.HtmlUtil;
 import tv.live.bx.library.util.NetworkImageGetter;
@@ -107,9 +105,11 @@ public class BroadcastDanmakuChannel extends FrameLayout implements DanmakuChann
 				embellishIv.setVisibility(View.GONE);
 			} else {
 				if (entity.embellishImg.endsWith(".gif")) {
-					ImageLoaderUtil.with().loadGif(getContext(), embellishIv, entity.embellishImg);
+					ImageLoaderUtil.getInstance()
+						.loadHeadPicGif(FeizaoApp.mContext, embellishIv, entity.embellishImg);
 				} else {
-					ImageLoaderUtil.with().loadImage(getContext(), embellishIv, entity.embellishImg);
+					ImageLoaderUtil.getInstance()
+						.loadHeadPic(FeizaoApp.mContext, embellishIv, entity.embellishImg);
 				}
 			}
 
@@ -117,23 +117,42 @@ public class BroadcastDanmakuChannel extends FrameLayout implements DanmakuChann
 				photo.setVisibility(View.GONE);
 			} else {
 				if (entity.headUrl.endsWith(".gif")) {
-					ImageLoaderUtil.with().loadGif(getContext(), photo, entity.headUrl);
+					ImageLoaderUtil.getInstance()
+						.loadHeadPicGif(FeizaoApp.mContext, photo, entity.headUrl);
 				} else {
-					ImageLoaderUtil.with().loadImage(getContext(), photo, entity.headUrl);
+					ImageLoaderUtil.getInstance()
+						.loadHeadPic(FeizaoApp.mContext, photo, entity.headUrl);
 				}
 			}
+			ImageLoaderUtil.getInstance()
+				.loadImage(entity.backgroupImg, Target.SIZE_ORIGINAL, Target.SIZE_ORIGINAL,
+					new ImageLoadingListener() {
+						@Override
+						public void onLoadStarted(Drawable drawable) {
 
-			ImageLoaderUtil.with().loadImage(getContext(), entity.backgroupImg, Target.SIZE_ORIGINAL, Target.SIZE_ORIGINAL, new SimpleImageLoadingListener() {
-				@Override
-				public void onLoadingComplete(Drawable resource) {
-					EvtLog.e(TAG, "mStartAnimation onLoadingComplete");
-					if (resource != null && resource instanceof GlideBitmapDrawable) {
-						GlideBitmapDrawable bd = (GlideBitmapDrawable) resource;
-						Bitmap bm = bd.getBitmap();
-						backgroupView.setBackgroundDrawable(NinePatchDrawableFactory.convertBitmap(getResources(), bm, null));
-					}
-				}
-			});
+						}
+
+						@Override
+						public void onLoadFailed(Drawable drawable) {
+
+						}
+
+						@Override
+						public void onLoadingComplete(Drawable resource) {
+							EvtLog.e(TAG, "mStartAnimation onLoadingComplete");
+							if (resource != null && resource instanceof BitmapDrawable) {
+								BitmapDrawable bd = (BitmapDrawable) resource;
+								Bitmap bm = bd.getBitmap();
+								backgroupView.setBackgroundDrawable(NinePatchDrawableFactory
+									.convertBitmap(getResources(), bm, null));
+							}
+						}
+
+						@Override
+						public void onLoadCleared(Drawable drawable) {
+
+						}
+					});
 
 			if (mOnClickListener != null) {
 				view.setTag(entity.data);

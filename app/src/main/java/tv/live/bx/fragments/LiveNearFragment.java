@@ -139,7 +139,7 @@ public class LiveNearFragment extends BaseFragment implements OnClickListener, O
 	@Override
 	public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-		OperationHelper.onEvent(FeizaoApp.mConctext, "clickBbroadcasterSImgInNearbyTab", null);
+		OperationHelper.onEvent(FeizaoApp.mContext, "clickBbroadcasterSImgInNearbyTab", null);
 		Map<String, Object> lmItem = (Map<String, Object>) mLiveNearAdapter.getItem(position);
 		lmItem.put("rid", lmItem.get("rid"));
 		ActivityJumpUtil.toLiveMediaPlayerActivity(mActivity, lmItem);
@@ -261,7 +261,7 @@ public class LiveNearFragment extends BaseFragment implements OnClickListener, O
 
 			@Override
 			public void onPullDownToRefresh(PullToRefreshBase<GridView> refreshView) {
-				OperationHelper.onEvent(FeizaoApp.mConctext, "refreshInNearbyPageOfIndex", null);
+				OperationHelper.onEvent(FeizaoApp.mContext, "refreshInNearbyPageOfIndex", null);
 				// 加载Banner,anchor列表
 				reRequestData(false);
 			}
@@ -382,7 +382,7 @@ public class LiveNearFragment extends BaseFragment implements OnClickListener, O
 	 */
 	private void initLocation() {
 		if (mLocationClient == null) {
-			mLocationClient = new AMapLocationClient(FeizaoApp.mConctext);
+			mLocationClient = new AMapLocationClient(FeizaoApp.mContext);
 			mLocationClient.setLocationOption(initMapOption());
 			mLocationClient.setLocationListener(new AMapLocationListener() {
 				@Override

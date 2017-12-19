@@ -47,7 +47,7 @@ public class ConversationPropBuyDialogBuilder extends CustomDialogBuilder implem
 			if (uri.indexOf("://") == -1) {
 				uri = "file://" + uri;
 			}
-			ImageLoaderUtil.with().loadImageTransformRoundCircle(mContext, mIvHead, uri);
+			ImageLoaderUtil.getInstance().loadHeadPic(mContext, mIvHead, uri);
 		}
 	}
 

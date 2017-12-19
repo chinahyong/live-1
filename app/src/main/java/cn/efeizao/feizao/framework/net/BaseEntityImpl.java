@@ -56,7 +56,7 @@ public class BaseEntityImpl extends BaseEntity {
 			sb.append("version=").append(appVersion)
 					.append("&platform=").append(platform)
 					.append("&packageId=").append(Constants.PACKAGE_ID)
-					.append("&channel=").append(ChannelUtil.getChannel(FeizaoApp.mConctext))
+					.append("&channel=").append(ChannelUtil.getChannel(FeizaoApp.mContext))
 					.append("&deviceName=").append(URLEncoder.encode(TelephoneUtil.getDeviceName(), "UTF-8"))
 					.append("&androidVersion=").append(TelephoneUtil.getAndridVersion());
 

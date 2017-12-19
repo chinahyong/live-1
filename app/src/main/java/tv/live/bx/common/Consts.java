@@ -158,16 +158,16 @@ public class Consts {
 
 	public static final int PUSH_TYPE_AUTHOR_BEGIN_PLAYING = 0;// 我的关注
 	// 微信的appid:
-	public static final String WEIXIN_APPID = FeizaoApp.mConctext.getString(R.string.wx_id);
-	public static final String WEIXIN_APPSECRET = FeizaoApp.mConctext.getString(R.string.wx_secret);
+	public static final String WEIXIN_APPID = FeizaoApp.mContext.getString(R.string.wx_id);
+	public static final String WEIXIN_APPSECRET = FeizaoApp.mContext.getString(R.string.wx_secret);
 
 	// qq空间的appid
-	public static final String QQ_APPID = FeizaoApp.mConctext.getString(R.string.qq_id);
-	public static final String QQ_APPKEY = FeizaoApp.mConctext.getString(R.string.qq_key);
+	public static final String QQ_APPID = FeizaoApp.mContext.getString(R.string.qq_id);
+	public static final String QQ_APPKEY = FeizaoApp.mContext.getString(R.string.qq_key);
 
 	// 新浪微博
-	public static final String SINA_APPID = FeizaoApp.mConctext.getString(R.string.sina_id);
-	public static final String SINA_APPSECRET = FeizaoApp.mConctext.getString(R.string.sina_secret);
+	public static final String SINA_APPID = FeizaoApp.mContext.getString(R.string.sina_id);
+	public static final String SINA_APPSECRET = FeizaoApp.mContext.getString(R.string.sina_secret);
 
 	/**
 	 * 报错log日志发送邮箱用户名

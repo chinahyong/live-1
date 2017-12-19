@@ -22,7 +22,7 @@ public class StrokeGradientTextView extends StrokeTextView {
 	private Typeface mTypeface;
 	private LinearGradient mGradient;
 	// 字体纵向渐变色
-	private final static int GRADIENT_VERTICAL[] = {ContextCompat.getColor(FeizaoApp.mConctext, R.color.a_text_color_fff000), ContextCompat.getColor(FeizaoApp.mConctext, R.color.a_text_color_f99200)};
+	private final static int GRADIENT_VERTICAL[] = {ContextCompat.getColor(FeizaoApp.mContext, R.color.a_text_color_fff000), ContextCompat.getColor(FeizaoApp.mContext, R.color.a_text_color_f99200)};
 
 	public StrokeGradientTextView(Context context) {
 		super(context);
@@ -39,7 +39,7 @@ public class StrokeGradientTextView extends StrokeTextView {
 	@Override
 	protected void init() {
 		super.init();
-		mTypeface = Typeface.createFromAsset(FeizaoApp.mConctext.getAssets(), "font/Sansus Webissimo-Regular.ttf");
+		mTypeface = Typeface.createFromAsset(FeizaoApp.mContext.getAssets(), "font/Sansus Webissimo-Regular.ttf");
 		this.setTypeface(mTypeface);
 	}
 

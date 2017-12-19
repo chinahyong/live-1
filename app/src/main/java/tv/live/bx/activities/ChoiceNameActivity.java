@@ -116,7 +116,7 @@ public class ChoiceNameActivity extends BaseFragmentActivity {
 	private class OnDetermine implements OnClickListener {
 		@Override
 		public void onClick(View arg0) {
-			MobclickAgent.onEvent(FeizaoApp.mConctext, "saveUsernameModification");
+			MobclickAgent.onEvent(FeizaoApp.mContext, "saveUsernameModification");
 			String lsName = moEdtName.getText().toString().trim();
 			if (lsName.length() < 2 || lsName.length() > 10) {
 				showToast("请输入2-10个字符", TOAST_SHORT);

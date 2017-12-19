@@ -30,8 +30,6 @@ import cn.efeizao.feizao.framework.net.impl.CallbackDataHandle;
 import cn.efeizao.feizao.ui.dialog.CustomDialogBuilder;
 import tv.live.bx.FeizaoApp;
 import tv.live.bx.R;
-import tv.live.bx.activities.FanDetailActivity;
-import tv.live.bx.activities.GroupPostDetailActivity;
 import tv.live.bx.activities.MyFocusActivity;
 import tv.live.bx.activities.WebViewActivity;
 import tv.live.bx.adapters.LiveHotAdapter;
@@ -196,8 +194,8 @@ public class LiveHotFragment extends BaseFragment implements OnClickListener {
 		public void onInnerClick(int type, int pos) {
 			switch (type) {
 				case LiveHotAdapter.CLICK_TOTAL:
-					MobclickAgent.onEvent(FeizaoApp.mConctext, "clickBbroadcasterSImgInFeatureTab");
-					OperationHelper.onEvent(FeizaoApp.mConctext, "clickBbroadcasterSImgInFeatureTab", null);
+					MobclickAgent.onEvent(FeizaoApp.mContext, "clickBbroadcasterSImgInFeatureTab");
+					OperationHelper.onEvent(FeizaoApp.mContext, "clickBbroadcasterSImgInFeatureTab", null);
 					AnchorBean bean = mHotList.get(pos);
 					Map<String, Object> lmItem = new HashMap<>();
 					lmItem.put("rid", String.valueOf(bean.rid));
@@ -311,16 +309,6 @@ public class LiveHotFragment extends BaseFragment implements OnClickListener {
 			case Consts.BANNER_URL_TYPE_PLAYER:
 				ActivityJumpUtil.toLiveMediaPlayerActivity(mActivity, lmPageInfo);
 				break;
-			case Consts.BANNER_URL_TYPE_GROUP:
-				lmPageInfo.put("id", lmPageInfo.get("groupId"));
-				ActivityJumpUtil.gotoActivity(mActivity, FanDetailActivity.class, false, FanDetailActivity.FAN_INFO,
-						(Serializable) lmPageInfo);
-				break;
-			case Consts.BANNER_URL_TYPE_POST_DETAIL:
-				lmPageInfo.put("id", lmPageInfo.get("postId"));
-				ActivityJumpUtil.gotoActivity(mActivity, GroupPostDetailActivity.class, false, "subjectInfo",
-						(Serializable) lmPageInfo);
-				break;
 		}
 	}
 
@@ -340,7 +328,7 @@ public class LiveHotFragment extends BaseFragment implements OnClickListener {
 		switch (v.getId()) {
 			/** 我关注的主播列表Layout */
 			case R.id.focus_layout:
-				MobclickAgent.onEvent(FeizaoApp.mConctext, "clickmyLovelist");
+				MobclickAgent.onEvent(FeizaoApp.mContext, "clickmyLovelist");
 				ActivityJumpUtil.gotoActivity(mActivity, MyFocusActivity.class, false, null, null);
 				break;
 			case R.id.new_message_tip_layout:

@@ -1,5 +1,7 @@
 package tv.live.bx.activities;
 
+import static tv.live.bx.activities.EditAlbumActivity.File_Dir;
+
 import android.Manifest;
 import android.content.Intent;
 import android.net.Uri;
@@ -16,14 +18,12 @@ import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.GridView;
 import android.widget.ImageView;
-
+import cn.efeizao.feizao.framework.net.impl.CallbackDataHandle;
 import com.umeng.analytics.MobclickAgent;
-
 import java.io.File;
+import java.io.Serializable;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
-
-import cn.efeizao.feizao.framework.net.impl.CallbackDataHandle;
 import tv.live.bx.FeizaoApp;
 import tv.live.bx.R;
 import tv.live.bx.activities.base.BaseFragmentActivity;
@@ -105,7 +105,7 @@ public class ReportActivity extends BaseFragmentActivity implements OnClickListe
 				holder.uri = photoData.mImageinfo.path;
 //				holder.uri = data.toString();
 
-				ImageLoaderUtil.with().loadImage(mActivity, holder.image, holder.uri, 0, R.drawable.image_not_exist);
+				ImageLoaderUtil.getInstance().loadImageAndDefault(holder.image, holder.uri, 0, R.drawable.image_not_exist);
 			}
 
 			return holder.image;
@@ -276,7 +276,7 @@ public class ReportActivity extends BaseFragmentActivity implements OnClickListe
 				break;
 //			case R.id.top_right_text_bg:
 			case R.id.live_report_btn_commit:
-				MobclickAgent.onEvent(FeizaoApp.mConctext, "submitInReportPage");
+				MobclickAgent.onEvent(FeizaoApp.mContext, "submitInReportPage");
 				if (!AppConfig.getInstance().isLogged) {
 					Utils.requestLoginOrRegister(mActivity, getString(R.string.live_report_not_login), 0);
 					return;
@@ -327,7 +327,7 @@ public class ReportActivity extends BaseFragmentActivity implements OnClickListe
 	private String compressImageFils(PhotoData photoData) {
 		if (photoData == null)
 			return null;
-		String resultPath = FileUtil.getDiskCachePath(mActivity, GroupPostPublishActivity.File_Dir) + File.separator + "pic_0" + ".jpg";
+		String resultPath = FileUtil.getDiskCachePath(mActivity, File_Dir) + File.separator + "pic_0" + ".jpg";
 		boolean flag = BitmapUtils.writeImage(
 				BitmapUtility.LoadImageFromUrl(mActivity, photoData.uri, FeizaoApp.metrics.heightPixels),
 				resultPath, 30);
@@ -392,10 +392,23 @@ public class ReportActivity extends BaseFragmentActivity implements OnClickListe
 			mImageinfo = info;
 		}
 
-		public PhotoData(PostPublishActivity.PhotoDataSerializable data) {
+		public PhotoData(PhotoDataSerializable data) {
 			uri = Uri.parse(data.uriString);
 			serviceUri = data.serviceUri;
 			mImageinfo = data.mImageInfo;
+		}
+	}
+
+	// 因为PhotoData包含Uri，不能直接序列化，所以有了这个类
+	public static class PhotoDataSerializable implements Serializable {
+		String uriString = "";
+		String serviceUri = "";
+		ImageInfo mImageInfo;
+
+		public PhotoDataSerializable(PhotoData data) {
+			uriString = data.uri.toString();
+			serviceUri = data.serviceUri;
+			mImageInfo = data.mImageinfo;
 		}
 	}
 

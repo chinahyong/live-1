@@ -50,7 +50,8 @@ public class WindowRecordManager {
 				recordSmallWindowParams.width = WindowManager.LayoutParams.WRAP_CONTENT;
 				recordSmallWindowParams.height = WindowManager.LayoutParams.WRAP_CONTENT;
 				PackageManager pm = context.getPackageManager();
-				boolean permission = (PackageManager.PERMISSION_GRANTED == pm.checkPermission("android.permission.SYSTEM_ALERT_WINDOW", FeizaoApp.mConctext.getPackageName()));
+				boolean permission = (PackageManager.PERMISSION_GRANTED == pm.checkPermission("android.permission.SYSTEM_ALERT_WINDOW", FeizaoApp.mContext
+                    .getPackageName()));
 				if (permission) {
 					recordSmallWindowParams.type = WindowManager.LayoutParams.TYPE_PHONE;//设置窗口的window type
 				} else {
@@ -116,7 +117,8 @@ public class WindowRecordManager {
 				recordBigWindowParams.height = WindowManager.LayoutParams.WRAP_CONTENT;
 				recordBigWindowParams.format = PixelFormat.RGBA_8888;
 				PackageManager pm = context.getPackageManager();
-				boolean permission = (PackageManager.PERMISSION_GRANTED == pm.checkPermission("android.permission.SYSTEM_ALERT_WINDOW", FeizaoApp.mConctext.getPackageName()));
+				boolean permission = (PackageManager.PERMISSION_GRANTED == pm.checkPermission("android.permission.SYSTEM_ALERT_WINDOW", FeizaoApp.mContext
+                    .getPackageName()));
 				if (permission) {
 					recordBigWindowParams.type = WindowManager.LayoutParams.TYPE_PHONE;//设置窗口的window type
 				} else {

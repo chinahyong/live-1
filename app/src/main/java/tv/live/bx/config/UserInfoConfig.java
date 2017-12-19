@@ -126,16 +126,17 @@ public class UserInfoConfig {
 		//Utils.getCfg(mActivity, Constants.USER_SF_NAME, "mobile");
 		//Utils.getCfg(mActivity, Constants.USER_SF_NAME, "level");
 		//Utils.getCfg(mActivity, Constants.USER_SF_NAME, "lowkeyEnter");
-		//Utils.strBool(Utils.getCfg(FeizaoApp.mConctext, Constants.USER_SF_NAME, "isBan"));
-		//long bantime = Long.parseLong(Utils.getCfg(FeizaoApp.mConctext, Constants.USER_SF_NAME, "banLeftTime"));
-		//final String curUid = Utils.getCfg(FeizaoApp.mConctext, Constants.USER_SF_NAME, "id");
+		//Utils.strBool(Utils.getCfg(FeizaoApp.mContext, Constants.USER_SF_NAME, "isBan"));
+		//long bantime = Long.parseLong(Utils.getCfg(FeizaoApp.mContext, Constants.USER_SF_NAME, "banLeftTime"));
+		//final String curUid = Utils.getCfg(FeizaoApp.mContext, Constants.USER_SF_NAME, "id");
 		//"true".equals(Utils.getCfg(mActivity, Constants.USER_SF_NAME, "canEditSex"))
-		//String beginnerDeadline = Utils.getCfg(FeizaoApp.mConctext, Constants.USER_SF_NAME, "beginnerDeadline");
+		//String beginnerDeadline = Utils.getCfg(FeizaoApp.mContext, Constants.USER_SF_NAME, "beginnerDeadline");
 //		String account = Utils.getCfg(this, Constants.USER_SF_NAME, USER_NAME);
 //		mBalance = Utils.getCfg(mActivity, Constants.USER_SF_NAME, "coin", "0");
 
 		UserInfoConfig userInfo = new UserInfoConfig();
-		SharedPreferences sp = FeizaoApp.mConctext.getSharedPreferences(Constants.USER_SF_NAME, Context.MODE_PRIVATE);
+		SharedPreferences sp = FeizaoApp.mContext
+            .getSharedPreferences(Constants.USER_SF_NAME, Context.MODE_PRIVATE);
 		//兼容以前版本，全部用getString处理
 		userInfo.id = sp.getString("id", "0");
 		userInfo.nickname = sp.getString("nickname", "");
@@ -197,7 +198,7 @@ public class UserInfoConfig {
 	 * 登出
 	 */
 	public static void logout() {
-		Utils.clearCfg(FeizaoApp.mConctext, Constants.USER_SF_NAME);
+		Utils.clearCfg(FeizaoApp.mContext, Constants.USER_SF_NAME);
 		instance = null;
 	}
 
@@ -207,7 +208,8 @@ public class UserInfoConfig {
 	public void updateUsername(String name) {
 		//更新用户名
 		account = name;
-		SharedPreferences.Editor editor = FeizaoApp.mConctext.getSharedPreferences(Constants.USER_SF_NAME, Context.MODE_PRIVATE).edit();
+		SharedPreferences.Editor editor = FeizaoApp.mContext
+            .getSharedPreferences(Constants.USER_SF_NAME, Context.MODE_PRIVATE).edit();
 		editor.putString("username", name);
 		editor.commit();
 	}
@@ -220,7 +222,8 @@ public class UserInfoConfig {
 		//Utils.setCfg(mActivity, Constants.USER_SF_NAME, "coin", mBalance);
 		//更新用户名
 		this.coin = coin;
-		SharedPreferences.Editor editor = FeizaoApp.mConctext.getSharedPreferences(Constants.USER_SF_NAME, Context.MODE_PRIVATE).edit();
+		SharedPreferences.Editor editor = FeizaoApp.mContext
+            .getSharedPreferences(Constants.USER_SF_NAME, Context.MODE_PRIVATE).edit();
 		editor.putString("coin", coin);
 		editor.commit();
 	}
@@ -230,7 +233,8 @@ public class UserInfoConfig {
 	 */
 	public void updateFilterPer(float per){
 		this.filterPercent = per;
-		SharedPreferences.Editor editor = FeizaoApp.mConctext.getSharedPreferences(Constants.USER_SF_NAME, Context.MODE_PRIVATE).edit();
+		SharedPreferences.Editor editor = FeizaoApp.mContext
+            .getSharedPreferences(Constants.USER_SF_NAME, Context.MODE_PRIVATE).edit();
 		editor.putFloat("filterPercent", filterPercent);
 		editor.commit();
 	}
@@ -243,7 +247,8 @@ public class UserInfoConfig {
 //		Utils.setCfg(this, Constants.USER_SF_NAME, "signature", signature);
 		//更新用户名
 		this.signature = signature;
-		SharedPreferences.Editor editor = FeizaoApp.mConctext.getSharedPreferences(Constants.USER_SF_NAME, Context.MODE_PRIVATE).edit();
+		SharedPreferences.Editor editor = FeizaoApp.mContext
+            .getSharedPreferences(Constants.USER_SF_NAME, Context.MODE_PRIVATE).edit();
 		editor.putString("signature", signature);
 		editor.commit();
 	}
@@ -256,7 +261,8 @@ public class UserInfoConfig {
 	public void updateLaunchTime(long mCurLauchTime) {
 		//移植的代码
 		mLastLauchTimes = mCurLauchTime;
-		SharedPreferences.Editor editor = FeizaoApp.mConctext.getSharedPreferences(Constants.USER_SF_NAME, Context.MODE_PRIVATE).edit();
+		SharedPreferences.Editor editor = FeizaoApp.mContext
+            .getSharedPreferences(Constants.USER_SF_NAME, Context.MODE_PRIVATE).edit();
 		editor.putString("mLastLauchTimes", String.valueOf(mCurLauchTime));
 		editor.commit();
 	}
@@ -270,7 +276,8 @@ public class UserInfoConfig {
 		//移植的代码
 		//Utils.setCfg(Login2Activity.this, Constants.USER_SF_NAME, "id", lsUid);
 		this.id = id;
-		SharedPreferences.Editor editor = FeizaoApp.mConctext.getSharedPreferences(Constants.USER_SF_NAME, Context.MODE_PRIVATE).edit();
+		SharedPreferences.Editor editor = FeizaoApp.mContext
+            .getSharedPreferences(Constants.USER_SF_NAME, Context.MODE_PRIVATE).edit();
 		editor.putString("id", id);
 		editor.commit();
 	}
@@ -284,7 +291,8 @@ public class UserInfoConfig {
 		//移植的代码
 		//Utils.setCfg(this, Constants.USER_SF_NAME, "nickname", lsName);
 		this.nickname = nickname;
-		SharedPreferences.Editor editor = FeizaoApp.mConctext.getSharedPreferences(Constants.USER_SF_NAME, Context.MODE_PRIVATE).edit();
+		SharedPreferences.Editor editor = FeizaoApp.mContext
+            .getSharedPreferences(Constants.USER_SF_NAME, Context.MODE_PRIVATE).edit();
 		editor.putString("nickname", nickname);
 		editor.commit();
 	}
@@ -298,7 +306,8 @@ public class UserInfoConfig {
 		//移植的代码
 		//	Utils.setCfg(mActivity, Constants.USER_SF_NAME, "lowCoin", mDianDianBalance);
 		this.lowCoin = lowCoin;
-		SharedPreferences.Editor editor = FeizaoApp.mConctext.getSharedPreferences(Constants.USER_SF_NAME, Context.MODE_PRIVATE).edit();
+		SharedPreferences.Editor editor = FeizaoApp.mContext
+            .getSharedPreferences(Constants.USER_SF_NAME, Context.MODE_PRIVATE).edit();
 		editor.putString("lowCoin", lowCoin);
 		editor.commit();
 	}
@@ -311,7 +320,8 @@ public class UserInfoConfig {
 	public void updateMobile(String mobile) {
 		//移植的代码
 		this.mobile = mobile;
-		SharedPreferences.Editor editor = FeizaoApp.mConctext.getSharedPreferences(Constants.USER_SF_NAME, Context.MODE_PRIVATE).edit();
+		SharedPreferences.Editor editor = FeizaoApp.mContext
+            .getSharedPreferences(Constants.USER_SF_NAME, Context.MODE_PRIVATE).edit();
 		editor.putString("mobile", mobile);
 		editor.commit();
 	}
@@ -323,7 +333,8 @@ public class UserInfoConfig {
 		this.isIdVerifiedModerator = isIdVerifiedModerator;
 		//移植的代码--之前保存在了错误的地方
 		//Utils.setCfg(mActivity, "isIdVerifiedModerator", Constants.COMMON_TRUE);
-		SharedPreferences.Editor editor = FeizaoApp.mConctext.getSharedPreferences(Constants.USER_SF_NAME, Context.MODE_PRIVATE).edit();
+		SharedPreferences.Editor editor = FeizaoApp.mContext
+            .getSharedPreferences(Constants.USER_SF_NAME, Context.MODE_PRIVATE).edit();
 		editor.putString("isIdVerifiedModerator", String.valueOf(isIdVerifiedModerator));
 		editor.commit();
 	}
@@ -337,7 +348,8 @@ public class UserInfoConfig {
 		this.isShowRedMsgFlag = showRedMsgFlag;
 		//移植的代码--之前保存在了错误的地方
 		//Utils.setCfg(mActivity, "isIdVerifiedModerator", Constants.COMMON_TRUE);
-		SharedPreferences.Editor editor = FeizaoApp.mConctext.getSharedPreferences(Constants.USER_SF_NAME, Context.MODE_PRIVATE).edit();
+		SharedPreferences.Editor editor = FeizaoApp.mContext
+            .getSharedPreferences(Constants.USER_SF_NAME, Context.MODE_PRIVATE).edit();
 		editor.putString("isShowRedMsgFlag", showRedMsgFlag);
 		editor.commit();
 	}
@@ -346,7 +358,8 @@ public class UserInfoConfig {
 	 * 更新多个信息
 	 */
 	public void updateFromMap(Map<String, String> map) {
-		SharedPreferences.Editor editor = FeizaoApp.mConctext.getSharedPreferences(Constants.USER_SF_NAME, Context.MODE_PRIVATE).edit();
+		SharedPreferences.Editor editor = FeizaoApp.mContext
+            .getSharedPreferences(Constants.USER_SF_NAME, Context.MODE_PRIVATE).edit();
 		try {
 			Class<?> clazz = UserInfoConfig.class;
 			for (String key : map.keySet()) {
@@ -422,7 +435,8 @@ public class UserInfoConfig {
 		this.userLevelName = config.userLevelName;
 		this.verified = config.verified;
 
-		SharedPreferences.Editor editor = FeizaoApp.mConctext.getSharedPreferences(Constants.USER_SF_NAME, Context.MODE_PRIVATE).edit();
+		SharedPreferences.Editor editor = FeizaoApp.mContext
+            .getSharedPreferences(Constants.USER_SF_NAME, Context.MODE_PRIVATE).edit();
 		//兼容以前版本，全部用getString处理
 		//为了兼容updateFromMap--以后的字段也最好用putString存储
 		editor.putString("id", id);

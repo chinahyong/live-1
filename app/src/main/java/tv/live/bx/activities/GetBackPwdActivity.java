@@ -175,7 +175,7 @@ public class GetBackPwdActivity extends LZActivity {
 	private class OnSubmit implements OnClickListener {
 		@Override
 		public void onClick(View v) {
-			OperationHelper.onEvent(FeizaoApp.mConctext, "clickFinishInForgetPasswordPage", null);
+			OperationHelper.onEvent(FeizaoApp.mContext, "clickFinishInForgetPasswordPage", null);
 			// 1 获取用户输入
 			String lsMobile = moEtMobile.getText().toString().replaceAll("\\s+", "");
 			String lsVCode = moEtVerifyCode.getText().toString();

@@ -109,13 +109,13 @@ public class PlayingRankListAdapter extends MyBaseAdapter<String, Object> {
 			loHolder.moTvOrderNo.setText(String.valueOf(position + 1));
 		}
 		if (lmItem.get("headPic") != null)
-			ImageLoaderUtil.with().loadImageTransformRoundCircle(mContext, loHolder.moIvPhoto, (String) lmItem.get("headPic"));
+			ImageLoaderUtil.getInstance().loadHeadPic(mContext, loHolder.moIvPhoto, (String) lmItem.get("headPic"));
 		loHolder.moIvPhotoV.setVisibility(Utils.getBooleanFlag(lmItem.get("verified"))
 				? View.VISIBLE
 				: View.GONE);
 		loHolder.moTvMoney.setText(String.format(mContext.getString(R.string.rank_totalP_num),
 				(String) lmItem.get("cost")));
-		ImageLoaderUtil.with().loadImage(mContext, loHolder.mIvUserLevel, Utils.getLevelImageResourceUri(lmItem, false));
+		ImageLoaderUtil.getInstance().loadImage(loHolder.mIvUserLevel, Utils.getLevelImageResourceUri(lmItem, false));
 		if (lmItem.get("nickname") != null)
 			loHolder.moTvNickname.setText((String) lmItem.get("nickname"));
 

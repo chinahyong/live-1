@@ -189,7 +189,7 @@ public class LiveHotRankPopWindow extends BasePopWindow {
 		}
 		// 当前主播基本信息
 		if (mAnchorBean != null) {
-			ImageLoaderUtil.with().loadImageTransformRoundCircle(mContext, mIvHeadPic,
+			ImageLoaderUtil.getInstance().loadHeadPic(mContext, mIvHeadPic,
 					mAnchorBean.headPic);
 			mIvVerify.setVisibility(View.VISIBLE);
 			mTvNickName.setText(mAnchorBean.nickname);

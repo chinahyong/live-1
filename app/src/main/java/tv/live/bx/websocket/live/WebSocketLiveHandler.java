@@ -5,25 +5,17 @@
 package tv.live.bx.websocket.live;
 
 import android.text.TextUtils;
-
-import tv.live.bx.common.Constants;
-import tv.live.bx.common.JacksonUtil;
-import tv.live.bx.config.AppConfig;
-import tv.live.bx.library.util.EvtLog;
-import tv.live.bx.websocket.model.AcceptVideoChat;
-import tv.live.bx.websocket.model.InviteVideoChat;
-import tv.live.bx.websocket.model.VideoChat;
+import cn.efeizao.feizao.framework.net.NetConstants;
 import com.lonzh.lib.network.JSONParser;
-
-import org.json.JSONArray;
-import org.json.JSONObject;
-
+import de.tavendo.autobahn.WebSocketConnectionHandler;
 import java.lang.ref.WeakReference;
 import java.util.List;
 import java.util.Map;
-
-import cn.efeizao.feizao.framework.net.NetConstants;
-import de.tavendo.autobahn.WebSocketConnectionHandler;
+import org.json.JSONArray;
+import org.json.JSONObject;
+import tv.live.bx.common.Constants;
+import tv.live.bx.config.AppConfig;
+import tv.live.bx.library.util.EvtLog;
 
 /**
  * 直播消息处理类
@@ -230,53 +222,10 @@ public class WebSocketLiveHandler extends WebSocketConnectionHandler {
 				if (callback != null) {
 					callback.onHotRank((JSONObject) resultData);
 				}
-			} else if (Constants.ON_MESSAGE_CARD_ACTIVE.equals(methodName)) { //开通私信卡
-				if (callback != null) {
-					callback.onMessageCardActive((JSONObject) resultData);
-				}
-			} else if (Constants.ON_INVITE_VIDEO_CHAT.equals(methodName)) {    // 邀请连线
-				if (callback != null) {
-					callback.onInviteVideoChat(JacksonUtil.readValue((JSONObject) resultData, InviteVideoChat.class));
-				}
-			} else if (Constants.ON_CANCEL_VIDEO_CHAT.equals(methodName)) {    // 取消连线
-				if (callback != null) {
-					callback.onCancelVideoChat(((JSONObject) resultData).getString("uid"));
-				}
-			} else if (Constants.ON_USER_REJECT_VIDEO_CHAT.equals(methodName)) {    //用户拒绝主播连线
-				if (callback != null) {
-					callback.onUserRejectVideoChat(((JSONObject) resultData).getString("uid"));
-				}
-			} else if (Constants.ON_ACCEPT_VIDEO_CHAT.equals(methodName)) {    //接受连线
-				if (callback != null) {
-					JSONObject jsonObject = (JSONObject) resultData;
-					AcceptVideoChat data = new AcceptVideoChat();
-					data.setUid(jsonObject.getString("uid"));
-					data.setHeadPic(jsonObject.getString("headPic"));
-					data.setLevel(jsonObject.getInt("level"));
-					data.setNickname(jsonObject.getString("nickname"));
-					data.setVideoChatType(jsonObject.getInt("videoChatType"));
-
-					data.setUserPullUrl(jsonObject.optString("userPullUrl"));
-					data.setPushUrl(jsonObject.optString("pushUrl"));
-
-					data.setUserPushUrl(jsonObject.optString("userPushUrl"));
-
-					data.setPullUrl(jsonObject.optString("pullUrl"));
-					callback.onAcceptVideoChat(data);
-				}
-			} else if (Constants.ON_VIDEO_CHAT_END.equals(methodName)) {    //连线结束（一方关闭或者断线）
-				if (callback != null) {
-					JSONObject jsonObject = (JSONObject) resultData;
-					callback.onVideoChatEnd(jsonObject.getString("uid"), jsonObject.getString("mid"), jsonObject.optString("pullUrl"), jsonObject.optString("pushUrl"), jsonObject.optString("msg"), jsonObject.optString("endType"));
-				}
 			} else if (Constants.ON_CHANGE_VIDEO_PULL_URL.equals(methodName)) {    //主播推流切换观众需要更换拉流地址
 				if (callback != null) {
 					JSONObject jsonObject = (JSONObject) resultData;
 					callback.onChangeVideoPullUrl(jsonObject.getString("pullUrl"));
-				}
-			} else if (Constants.ON_VIDEO_CHAT.equals(methodName)) {    //连麦成功广播连麦用户信息
-				if (callback != null) {
-					callback.onVideoChat(JacksonUtil.readValue((JSONObject) resultData, VideoChat.class));
 				}
 			}
 		} catch (Exception e) {

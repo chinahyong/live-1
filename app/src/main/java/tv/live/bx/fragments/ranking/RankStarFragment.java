@@ -120,17 +120,17 @@ public class RankStarFragment extends BaseFragment implements RankActivity.IUpda
 		}
 		switch (position) {
 			case 0:
-				OperationHelper.onEvent(FeizaoApp.mConctext, "clickAnchorIconInDayRankingListOfStar", null);
+				OperationHelper.onEvent(FeizaoApp.mContext, "clickAnchorIconInDayRankingListOfStar", null);
 				mRankInstruction.setText(R.string.rank_star_day_explain);
 				mCurrentBtn = btnDay;
 				break;
 			case 1:
-				OperationHelper.onEvent(FeizaoApp.mConctext, "clickAnchorIconInWeekRankingListOfStar", null);
+				OperationHelper.onEvent(FeizaoApp.mContext, "clickAnchorIconInWeekRankingListOfStar", null);
 				mRankInstruction.setText(R.string.rank_star_week_explain);
 				mCurrentBtn = btnWeek;
 				break;
 			case 2:
-				OperationHelper.onEvent(FeizaoApp.mConctext, "clickAnchorIconInAllRankingListOfStar", null);
+				OperationHelper.onEvent(FeizaoApp.mContext, "clickAnchorIconInAllRankingListOfStar", null);
 				mRankInstruction.setText(R.string.rank_star_total_explain);
 				mCurrentBtn = btnTotal;
 				break;

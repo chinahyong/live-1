@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import java.util.ArrayList;
 import java.util.List;
 
+import jp.wasabeef.glide.transformations.RoundedCornersTransformation.CornerType;
 import tv.live.bx.R;
 import tv.live.bx.common.Constants;
 import tv.live.bx.common.Utils;
@@ -22,92 +23,95 @@ import tv.live.bx.model.AlbumBean;
  * 礼物GridView的适配器
  */
 public class PersonAlbumAdapter extends BaseAdapter {
-	//礼物类型
-	private Context mContext;
-	private AlbumGridClickListener lisGridItemOnClick;
 
-	private List<AlbumBean> giftsData = new ArrayList<>();
+    //礼物类型
+    private Context mContext;
+    private AlbumGridClickListener lisGridItemOnClick;
 
-	private void onSetIGiftGridItemOnClick(AlbumGridClickListener lisGridItemOnClick) {
-		this.lisGridItemOnClick = lisGridItemOnClick;
-	}
+    private List<AlbumBean> giftsData = new ArrayList<>();
 
-	/**
-	 * 构造方法
-	 *
-	 * @param context 上下文
-	 */
-	public PersonAlbumAdapter(Context context, AlbumGridClickListener lisGridItemOnClick) {
-		mContext = context;
-		this.lisGridItemOnClick = lisGridItemOnClick;
-	}
+    private void onSetIGiftGridItemOnClick(AlbumGridClickListener lisGridItemOnClick) {
+        this.lisGridItemOnClick = lisGridItemOnClick;
+    }
 
-	public void updateData(List<AlbumBean> data) {
-		giftsData = data;
-		notifyDataSetChanged();
-	}
+    /**
+     * 构造方法
+     * @param context 上下文
+     */
+    public PersonAlbumAdapter(Context context, AlbumGridClickListener lisGridItemOnClick) {
+        mContext = context;
+        this.lisGridItemOnClick = lisGridItemOnClick;
+    }
 
-	public int getCount() {
-		// TODO Auto-generated method stub
-		return giftsData.size();
-	}
+    public void updateData(List<AlbumBean> data) {
+        giftsData = data;
+        notifyDataSetChanged();
+    }
 
-	public Object getItem(int position) {
-		// TODO Auto-generated method stub
-		return giftsData.get(position);
-	}
+    public int getCount() {
+        // TODO Auto-generated method stub
+        return giftsData.size();
+    }
 
-	public long getItemId(int position) {
-		// TODO Auto-generated method stub
-		return position;
-	}
+    public Object getItem(int position) {
+        // TODO Auto-generated method stub
+        return giftsData.get(position);
+    }
 
-	public View getView(final int position, View convertView, final ViewGroup parent) {
-		Holder loHolder;
-		final AlbumBean data = giftsData.get(position);
-		if (convertView == null) {
-			loHolder = new Holder();
+    public long getItemId(int position) {
+        // TODO Auto-generated method stub
+        return position;
+    }
 
-			LayoutInflater loInflater = LayoutInflater.from(mContext);
-			convertView = loInflater.inflate(R.layout.item_edit_album, parent, false);
+    public View getView(final int position, View convertView, final ViewGroup parent) {
+        Holder loHolder;
+        final AlbumBean data = giftsData.get(position);
+        if (convertView == null) {
+            loHolder = new Holder();
 
-			WindowManager wm = (WindowManager) mContext.getSystemService(Context.WINDOW_SERVICE);
-			int width = wm.getDefaultDisplay().getWidth();
-			ViewGroup.LayoutParams layoutParams = convertView.getLayoutParams();
-			layoutParams.height = (width - 5 * Utils.dip2px(mContext, 5)) / 4;
-			layoutParams.width = layoutParams.height;
-			convertView.setLayoutParams(layoutParams);
-			loHolder.giftPhoto = (ImageView) convertView.findViewById(R.id.item_edit_album_photo);
-			convertView.setTag(loHolder);
-		} else {
-			loHolder = (Holder) convertView.getTag();
-		}
-		convertView.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				if (lisGridItemOnClick != null) {
-					lisGridItemOnClick.onClick(parent, v, position, data);
-				}
-			}
-		});
-		String url = data.getUrl();
-		if (!TextUtils.isEmpty(url)) {
-			if (url.indexOf("://") == -1) {
-				url = Constants.FILE_PXI + url;
-			}
-			ImageLoaderUtil.with().loadImageTransformRoundedCorners(mContext, loHolder.giftPhoto, url, Constants.COMMON_DISPLAY_IMAGE_CORNER_1);
-		}
-		return convertView;
-	}
+            LayoutInflater loInflater = LayoutInflater.from(mContext);
+            convertView = loInflater.inflate(R.layout.item_edit_album, parent, false);
 
-	/**
-	 * 用于点击礼物项的回调事件
-	 */
-	public interface AlbumGridClickListener {
-		void onClick(ViewGroup parent, View v, int position, AlbumBean data);
-	}
+            WindowManager wm = (WindowManager) mContext.getSystemService(Context.WINDOW_SERVICE);
+            int width = wm.getDefaultDisplay().getWidth();
+            ViewGroup.LayoutParams layoutParams = convertView.getLayoutParams();
+            layoutParams.height = (width - 5 * Utils.dip2px(mContext, 5)) / 4;
+            layoutParams.width = layoutParams.height;
+            convertView.setLayoutParams(layoutParams);
+            loHolder.giftPhoto = (ImageView) convertView.findViewById(R.id.item_edit_album_photo);
+            convertView.setTag(loHolder);
+        } else {
+            loHolder = (Holder) convertView.getTag();
+        }
+        convertView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (lisGridItemOnClick != null) {
+                    lisGridItemOnClick.onClick(parent, v, position, data);
+                }
+            }
+        });
+        String url = data.getUrl();
+        if (!TextUtils.isEmpty(url)) {
+            if (url.indexOf("://") == -1) {
+                url = Constants.FILE_PXI + url;
+            }
+            ImageLoaderUtil.getInstance().loadImageCorner(mContext, loHolder.giftPhoto, url,
+                Constants.COMMON_DISPLAY_IMAGE_CORNER_1, CornerType.ALL);
+        }
+        return convertView;
+    }
 
-	class Holder {
-		ImageView giftPhoto;
-	}
+    /**
+     * 用于点击礼物项的回调事件
+     */
+    public interface AlbumGridClickListener {
+
+        void onClick(ViewGroup parent, View v, int position, AlbumBean data);
+    }
+
+    class Holder {
+
+        ImageView giftPhoto;
+    }
 }

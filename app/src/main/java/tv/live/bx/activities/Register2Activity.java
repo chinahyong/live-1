@@ -118,7 +118,8 @@ public class Register2Activity extends LZActivity {
 						UserInfoConfig.getInstance().updateUserId(lsUid);
 						JPushInterface.setAliasAndTags(Register2Activity.this, lsUid, null, new TagAliasCallback() {
 							@Override
-							public void gotResult(int arg0, String arg1, Set<String> arg2) {
+							public void gotResult(int i, String s, Set set) {
+
 							}
 						});
 						BusinessUtils.getMyUserInfo(Register2Activity.this, new MyUserInfoCallbackDataHandle(callbackHandle));

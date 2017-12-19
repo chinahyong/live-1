@@ -17,7 +17,6 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
 import tv.live.bx.R;
-import tv.live.bx.activities.FanDetailActivity;
 import tv.live.bx.activities.LoginActivity;
 import tv.live.bx.activities.base.BaseFragmentActivity;
 import tv.live.bx.common.Constants;
@@ -191,32 +190,6 @@ public class LiveWebViewActivity extends BaseFragmentActivity {
 				@Override
 				public void run() {
 					onBackPressed();
-				}
-			});
-		}
-
-		@JavascriptInterface
-		public void goGroupDetail(final String groupId) {
-			runOnUiThread(new Runnable() {
-				@Override
-				public void run() {
-					Map<String, String> fanInfo = new HashMap<String, String>();
-					fanInfo.put("id", groupId);
-					ActivityJumpUtil.gotoActivity(mActivity, FanDetailActivity.class, false,
-							FanDetailActivity.FAN_INFO, (Serializable) fanInfo);
-				}
-			});
-		}
-
-		@JavascriptInterface
-		public void goPostDetail(final String postId) {
-			runOnUiThread(new Runnable() {
-				@Override
-				public void run() {
-					@SuppressWarnings("unchecked")
-					Map<String, String> lmItem = new HashMap<String, String>();
-					lmItem.put("id", postId);
-					ActivityJumpUtil.toGroupPostDetailActivity(mActivity, lmItem, null, 0);
 				}
 			});
 		}

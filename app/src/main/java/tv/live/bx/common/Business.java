@@ -759,8 +759,8 @@ public class Business {
 		httpPamas.put("version", appVersion);
 		httpPamas.put("platform", platform);
 		httpPamas.put("packageId", Constants.PACKAGE_ID);
-		httpPamas.put("channel", ChannelUtil.getChannel(FeizaoApp.mConctext));
-//		httpPamas.put("deviceId", TelephoneUtil.getDeviceImei(FeizaoApp.mConctext));
+		httpPamas.put("channel", ChannelUtil.getChannel(FeizaoApp.mContext));
+//		httpPamas.put("deviceId", TelephoneUtil.getDeviceImei(FeizaoApp.mContext));
 	}
 
 	/**

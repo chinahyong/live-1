@@ -57,9 +57,14 @@
         android:glEsVersion="0x00020000"
         android:required="true"/>
 
+    <permission
+        android:name="tv.live.bx.permission.JPUSH_MESSAGE"
+        android:protectionLevel="signature"/>
+    <uses-permission android:name="tv.live.bx.permission.JPUSH_MESSAGE"/>
+
     <!-- 推送结束 android:persistent="true"持久化为 true；防止你的app挂后台被回收。 -->
     <application
-        android:name=".SampleApplication"
+        android:name="tv.live.bx.SampleApplication"
         android:allowBackup="true"
         android:alwaysRetainTaskState="true"
         android:hardwareAccelerated="true"
@@ -69,16 +74,7 @@
         android:persistent="true"
         android:theme="@style/AppTheme">
 
-        <!--
-        glide 配置
-        <meta-data
-            android:name="com.bumptech.glide.integration.okhttp3.OkHttpGlideModule"
-            android:value="GlideModule"/
-        -->
         <!-- 同盾指纹配置 -->
-        <meta-data
-            android:name="tv.live.bx.imageloader.glide.MyGlideModule"
-            android:value="GlideModule"/>
         <meta-data
             android:name="PARTNER_CODE"
             android:value="guojiang"/>
@@ -219,10 +215,6 @@
             android:screenOrientation="portrait">
         </activity>
         <activity
-            android:name="tv.live.bx.activities.UserDynamicActivity"
-            android:screenOrientation="portrait">
-        </activity>
-        <activity
             android:name="tv.live.bx.activities.ChoiceHeightActivity"
             android:screenOrientation="portrait">
         </activity>
@@ -347,25 +339,9 @@
             android:screenOrientation="portrait">
         </activity>
         <activity
-            android:name="tv.live.bx.activities.MeMessageActivity"
-            android:screenOrientation="portrait">
-        </activity>
-        <activity
-            android:name="tv.live.bx.activities.PostDetailActivity"
-            android:screenOrientation="portrait">
-        </activity>
-        <activity
-            android:name="tv.live.bx.activities.PostActivity"
-            android:screenOrientation="portrait">
-        </activity>
-        <activity
             android:name="tv.live.bx.activities.ImageBrowserActivity"
             android:screenOrientation="portrait"
             android:theme="@style/ActivityBaseTheme">
-        </activity>
-        <activity
-            android:name="tv.live.bx.activities.PostPublishActivity"
-            android:screenOrientation="portrait">
         </activity>
         <!-- CameraSDK相册选取 -->
         <activity
@@ -426,10 +402,6 @@
             android:screenOrientation="portrait">
         </activity>
         <activity
-            android:name="tv.live.bx.activities.ProductRecommentActivity"
-            android:screenOrientation="portrait">
-        </activity>
-        <activity
             android:name="tv.live.bx.activities.AnchorSearchActivity"
             android:configChanges="orientation|keyboardHidden|locale"
             android:screenOrientation="portrait"
@@ -442,42 +414,11 @@
             android:theme="@style/AppBaseTheme">
         </activity>
         <activity
-            android:name="tv.live.bx.activities.AddFanActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/StyledIndicators">
-        </activity>
-        <activity
-            android:name="tv.live.bx.activities.FanDetailActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppBaseTheme">
-        </activity>
-        <activity
-            android:name="tv.live.bx.activities.FanMenberSearchActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppBaseTheme">
-        </activity>
-        <activity
-            android:name="tv.live.bx.activities.CreateFanActivity"
-            android:screenOrientation="portrait">
-        </activity>
-        <activity
-            android:name="tv.live.bx.activities.FanEditActivity"
-            android:screenOrientation="portrait">
-        </activity>
-        <activity
             android:name="tv.live.bx.activities.EditInfoActivity"
             android:screenOrientation="portrait">
         </activity>
         <activity
             android:name="tv.live.bx.activities.UserInviterActivity"
-            android:screenOrientation="portrait">
-        </activity>
-        <activity
-            android:name="tv.live.bx.activities.GroupPostDetailActivity"
-            android:screenOrientation="portrait">
-        </activity>
-        <activity
-            android:name="tv.live.bx.activities.GroupPostPublishActivity"
             android:screenOrientation="portrait">
         </activity>
         <!-- 2.0版本的相关组件 -->
@@ -487,27 +428,6 @@
         </activity>
         <activity
             android:name="tv.live.bx.activities.RankActivity"
-            android:screenOrientation="portrait">
-        </activity>
-        <activity
-            android:name="tv.live.bx.activities.MeFanActivity"
-            android:screenOrientation="portrait">
-        </activity>
-        <activity
-            android:name="tv.live.bx.activities.MeFanSelectActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/ActivityBaseTheme">
-        </activity>
-        <activity
-            android:name="tv.live.bx.activities.MeReplyActivity"
-            android:screenOrientation="portrait">
-        </activity>
-        <activity
-            android:name="tv.live.bx.activities.MeCollectActivity"
-            android:screenOrientation="portrait">
-        </activity>
-        <activity
-            android:name="tv.live.bx.activities.SuportActivity"
             android:screenOrientation="portrait">
         </activity>
         <activity
@@ -524,10 +444,6 @@
         </activity>
         <activity
             android:name="tv.live.bx.activities.UserFocusActivity"
-            android:screenOrientation="portrait">
-        </activity>
-        <activity
-            android:name="tv.live.bx.activities.GroupManageLogActivity"
             android:screenOrientation="portrait">
         </activity>
 
@@ -554,10 +470,6 @@
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
             android:theme="@style/ActivityDialogTranslucent">
-        </activity>
-        <activity
-            android:name="tv.live.bx.activities.SelectReceivedMessageActivity"
-            android:screenOrientation="portrait">
         </activity>
         <activity
             android:name="tv.live.bx.activities.PhoneBindActivity"
@@ -611,5 +523,4 @@
             android:screenOrientation="portrait">
         </activity>
     </application>
-
 </manifest>

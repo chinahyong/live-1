@@ -121,17 +121,17 @@ public class RankWealthFragment extends BaseFragment implements RankActivity.IUp
 		}
 		switch (position) {
 			case 0:
-				OperationHelper.onEvent(FeizaoApp.mConctext, "clickUserIconInDayRankingListOfTreasure", null);
+				OperationHelper.onEvent(FeizaoApp.mContext, "clickUserIconInDayRankingListOfTreasure", null);
 				mRankInstruction.setText(R.string.rank_wealth_day_explain);
 				mCurrentBtn = btnDay;
 				break;
 			case 1:
-				OperationHelper.onEvent(FeizaoApp.mConctext, "clickUserIconInWeekRankingListOfTreasure", null);
+				OperationHelper.onEvent(FeizaoApp.mContext, "clickUserIconInWeekRankingListOfTreasure", null);
 				mRankInstruction.setText(R.string.rank_wealth_week_explain);
 				mCurrentBtn = btnWeek;
 				break;
 			case 2:
-				OperationHelper.onEvent(FeizaoApp.mConctext, "clickUserIconInAllRankingListOfTreasure", null);
+				OperationHelper.onEvent(FeizaoApp.mContext, "clickUserIconInAllRankingListOfTreasure", null);
 				mRankInstruction.setText(R.string.rank_wealth_total_explain);
 				mCurrentBtn = btnTotal;
 				break;

@@ -299,7 +299,7 @@ public class BitmapUtils {
 		/* 把@相关的字符串转换成bitmap 然后使用DynamicDrawableSpan加入输入框中 */
 		name = Constants.COMMON_INSERT_POST_PIX + name + Constants.COMMON_INSERT_POST_PIX;
 		Paint paint = new Paint();
-		paint.setColor(FeizaoApp.mConctext.getResources().getColor(R.color.a_text_color_da500e));
+		paint.setColor(FeizaoApp.mContext.getResources().getColor(R.color.a_text_color_da500e));
 		paint.setAntiAlias(true);
 		paint.setTextSize(textSize);
 		Rect rect = new Rect();

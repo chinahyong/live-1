@@ -15,7 +15,7 @@ import android.view.ViewGroup;
 import android.webkit.JavascriptInterface;
 import android.webkit.ValueCallback;
 import android.widget.Toast;
-
+import cn.efeizao.feizao.framework.net.impl.CallbackDataHandle;
 import com.alipay.sdk.app.AuthTask;
 import com.alipay.sdk.app.PayTask;
 import com.lonzh.lib.network.JSONParser;
@@ -26,21 +26,16 @@ import com.tencent.mm.opensdk.openapi.WXAPIFactory;
 import com.umeng.socialize.UMAuthListener;
 import com.umeng.socialize.UMShareAPI;
 import com.umeng.socialize.bean.SHARE_MEDIA;
-
-import org.apache.http.NameValuePair;
-import org.apache.http.message.BasicNameValuePair;
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import java.io.File;
-import java.io.Serializable;
 import java.lang.ref.WeakReference;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
-
-import cn.efeizao.feizao.framework.net.impl.CallbackDataHandle;
+import org.apache.http.NameValuePair;
+import org.apache.http.message.BasicNameValuePair;
+import org.json.JSONException;
+import org.json.JSONObject;
 import tv.live.bx.FeizaoApp;
 import tv.live.bx.R;
 import tv.live.bx.activities.base.BaseFragmentActivity;
@@ -202,7 +197,7 @@ public class WebViewActivity extends BaseFragmentActivity implements IWebDataInt
 			boolean flag = intent.getBooleanExtra(WX_PAY_SUCCESS, false);
 			//如果微信支付成功
 			if (flag) {
-				OperationHelper.onEvent(FeizaoApp.mConctext, "theAmountOfRechargeSuccessful", null);
+				OperationHelper.onEvent(FeizaoApp.mContext, "theAmountOfRechargeSuccessful", null);
 				mWebView.loadUrl("javascript:payResultCallback(true,'')");
 			}
 			setIntent(intent);
@@ -328,7 +323,7 @@ public class WebViewActivity extends BaseFragmentActivity implements IWebDataInt
 				String resultStatus = payResult.getResultStatus();
 				// 判断resultStatus 为“9000”则代表支付成功，具体状态码代表含义可参考接口文档
 				if (TextUtils.equals(resultStatus, "9000")) {
-					OperationHelper.onEvent(FeizaoApp.mConctext, "theAmountOfRechargeSuccessful", null);
+					OperationHelper.onEvent(FeizaoApp.mContext, "theAmountOfRechargeSuccessful", null);
 					mWebView.loadUrl("javascript:payResultCallback(true,'')");
 				} else {
 					// 判断resultStatus 为非"9000"则代表可能支付失败
@@ -503,7 +498,7 @@ public class WebViewActivity extends BaseFragmentActivity implements IWebDataInt
 		@Override
 		public void onClick(View v) {
 			EvtLog.e(TAG, "toShareActivity ---------- ");
-			OperationHelper.onEvent(FeizaoApp.mConctext, "clickShareButtonInHtmlPage", null);
+			OperationHelper.onEvent(FeizaoApp.mContext, "clickShareButtonInHtmlPage", null);
 			ActivityJumpUtil.toShareActivity(mActivity, mShareInfo);
 		}
 	}
@@ -511,7 +506,7 @@ public class WebViewActivity extends BaseFragmentActivity implements IWebDataInt
 	public class gotoStore implements OnClickListener {
 		@Override
 		public void onClick(View v) {
-			OperationHelper.onEvent(FeizaoApp.mConctext, "clickStoreInMyBackpackPage", null);
+			OperationHelper.onEvent(FeizaoApp.mContext, "clickStoreInMyBackpackPage", null);
 			ActivityJumpUtil.toWebViewActivity(mActivity, WebConstants.getFullWebMDomain(WebConstants.WEB_STORE), true, -1);
 		}
 	}
@@ -519,7 +514,7 @@ public class WebViewActivity extends BaseFragmentActivity implements IWebDataInt
 	public class gotoMyBackpack implements OnClickListener {
 		@Override
 		public void onClick(View v) {
-			OperationHelper.onEvent(FeizaoApp.mConctext, "clickMyBackpackInStorePage", null);
+			OperationHelper.onEvent(FeizaoApp.mContext, "clickMyBackpackInStorePage", null);
 			ActivityJumpUtil.toWebViewActivity(mActivity, WebConstants.getFullWebMDomain(WebConstants.WEB_MY_BACKPACK), true, -1);
 		}
 	}
@@ -716,7 +711,7 @@ public class WebViewActivity extends BaseFragmentActivity implements IWebDataInt
 			runOnUiThread(new Runnable() {
 				@Override
 				public void run() {
-					OperationHelper.onEvent(FeizaoApp.mConctext, "clickWechatModeOfPayment", null);
+					OperationHelper.onEvent(FeizaoApp.mContext, "clickWechatModeOfPayment", null);
 					if (!msgApi.isWXAppInstalled()) {
 						Toast.makeText(getApplicationContext(), R.string.uninstall_weixin_tip, Toast.LENGTH_SHORT)
 								.show();
@@ -740,38 +735,12 @@ public class WebViewActivity extends BaseFragmentActivity implements IWebDataInt
 		}
 
 		@JavascriptInterface
-		public void goGroupDetail(final String groupId) {
-			runOnUiThread(new Runnable() {
-				@Override
-				public void run() {
-					Map<String, String> fanInfo = new HashMap<String, String>();
-					fanInfo.put("id", groupId);
-					ActivityJumpUtil.gotoActivity(mActivity, FanDetailActivity.class, false,
-							FanDetailActivity.FAN_INFO, (Serializable) fanInfo);
-				}
-			});
-		}
-
-		@JavascriptInterface
-		public void goPostDetail(final String postId) {
-			runOnUiThread(new Runnable() {
-				@Override
-				public void run() {
-					@SuppressWarnings("unchecked")
-					Map<String, String> lmItem = new HashMap<String, String>();
-					lmItem.put("id", postId);
-					ActivityJumpUtil.toGroupPostDetailActivity(mActivity, lmItem, null, 0);
-				}
-			});
-		}
-
-		@JavascriptInterface
 		public void roomDetail(final String rid) {
 			runOnUiThread(new Runnable() {
 				@Override
 				public void run() {
 					@SuppressWarnings("unchecked")
-					Map<String, Object> lmItem = new HashMap<String, Object>();
+					Map<String, Object> lmItem = new HashMap<>();
 					lmItem.put("rid", rid);
 					ActivityJumpUtil.toLiveMediaPlayerActivity(mActivity, lmItem);
 				}
@@ -859,7 +828,7 @@ public class WebViewActivity extends BaseFragmentActivity implements IWebDataInt
 				@Override
 				public void run() {
 					showProgressDialog();
-					OperationHelper.onEvent(FeizaoApp.mConctext, "clickZFBModeOfPayment", null);
+					OperationHelper.onEvent(FeizaoApp.mContext, "clickZFBModeOfPayment", null);
 					BusinessUtils.getAliPayData(mActivity, new AliPayCallbackData(WebViewActivity.this), payId);
 				}
 			});

@@ -15,11 +15,11 @@ import com.yanzhenjie.album.Album;
 
 import java.io.File;
 
+import tv.guojiang.baselib.image.listener.ImageLoadingListener;
 import tv.live.bx.FeizaoApp;
 import tv.live.bx.R;
 import tv.live.bx.common.Constants;
 import tv.live.bx.imageloader.ImageLoaderUtil;
-import tv.live.bx.imageloader.SimpleImageLoadingListener;
 import tv.live.bx.library.util.BitmapUtils;
 import tv.live.bx.library.util.DateUtil;
 import tv.live.bx.library.util.EvtLog;
@@ -163,7 +163,7 @@ public class ImagePagerFragment extends BaseFragment {
 		uri = uri.replace(Constants.FILE_PXI, "");
 		// 不是Uri地址,并且存在://，说明是网络地址
 		if (uri.indexOf("://") != -1) {
-			ImageLoaderUtil.with().loadImage(mActivity, uri, Target.SIZE_ORIGINAL, Target.SIZE_ORIGINAL, new SimpleImageLoadingListener() {
+			ImageLoaderUtil.getInstance().loadImage(uri, Target.SIZE_ORIGINAL, Target.SIZE_ORIGINAL, new ImageLoadingListener() {
 				@Override
 				public void onLoadStarted(Drawable placeholder) {
 					if (!isAdded()) {
@@ -174,7 +174,7 @@ public class ImagePagerFragment extends BaseFragment {
 				}
 
 				@Override
-				public void onLoadFailed(Exception e, Drawable errorDrawable) {
+				public void onLoadFailed(Drawable drawable) {
 					if (!isAdded()) {
 						return;
 					}

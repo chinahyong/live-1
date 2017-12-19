@@ -121,7 +121,7 @@ public class CommentListAdapter extends BaseAdapter {
 		@SuppressWarnings("unchecked")
 		Map<String, Object> subjectInfo = (Map<String, Object>) getItem(position);
 
-		ImageLoaderUtil.with().loadImageTransformRoundCircle(moContext, loHolder.moIvPhoto, (String) subjectInfo.get("fromHeadPic"));
+		ImageLoaderUtil.getInstance().loadHeadPic(moContext, loHolder.moIvPhoto, (String) subjectInfo.get("fromHeadPic"));
 		loHolder.moTvNickname.setText((String) subjectInfo.get("fromNickname"));
 		loHolder.moTvTimer
 				.setText(DateUtil.fmtTimemillsToTextFormat(Long.parseLong((String) subjectInfo.get("addTime"))));

@@ -1,166 +1,190 @@
 package tv.live.bx.imageloader;
 
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.support.annotation.NonNull;
+import android.support.annotation.DrawableRes;
 import android.widget.ImageView;
-
-import tv.live.bx.imageloader.glide.GlideImageLoader;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import jp.wasabeef.glide.transformations.RoundedCornersTransformation;
+import tv.guojiang.baselib.image.ImageDirector;
+import tv.guojiang.baselib.image.listener.ImageLoadingListener;
+import tv.guojiang.baselib.image.model.ImageConstants;
+import tv.guojiang.baselib.image.model.ImageSize;
+import tv.live.bx.FeizaoApp;
+import tv.live.bx.R;
 
 /**
- * Created by Administrator on 2017/5/17.
- * <p>
- * 特别提醒： loadImage(Context context...执行的时候，context对象不能onDestroy；
+ * @author Live
  */
 
 public class ImageLoaderUtil {
 
-	private static volatile ImageLoaderUtil mInstance;
+    // implements AlbumImageLoader
+    private static ImageLoaderUtil instance;
 
-	private static ImageLoader imageLoader;
+    public synchronized static ImageLoaderUtil getInstance() {
+        if (instance == null) {
+            synchronized (ImageLoaderUtil.class) {
+                if (instance == null) {
+                    instance = new ImageLoaderUtil();
+                }
+            }
+        }
+        return instance;
+    }
 
-	public static ImageLoaderUtil with() {
-		if (mInstance == null) {
-			synchronized (ImageLoaderUtil.class) {
-				if (mInstance == null) {
-					mInstance = new ImageLoaderUtil();
-				}
-			}
-		}
-		return mInstance;
-	}
+    /**
+     * 加载图片
+     *
+     * @param imageView {@link ImageView}.
+     * @param imagePath path from local SDCard.
+     * @param width target width.
+     * @param height target height.
+     */
+    //    @Override
+    public void loadImage(ImageView imageView, String imagePath, int width, int height) {
+        ImageDirector.getInstance(FeizaoApp.mContext).imageBuilder()
+            .imageUrl(imagePath)
+            .imageSize(width, height)
+            .scaleType(ImageView.ScaleType.FIT_XY)
+            .into(imageView);
+    }
 
-	private ImageLoaderUtil() {
-		if (imageLoader == null) {
-			//默认使用Glide加载方式
-			imageLoader = new GlideImageLoader();
-		}
-	}
+    /**
+     * 加载图片
+     *
+     * @param imageView {@link ImageView}.
+     * @param imagePath path from local SDCard.
+     */
+    //    @Override
+    public void loadImage(ImageView imageView, Object imagePath) {
+        ImageDirector.getInstance(FeizaoApp.mContext).imageBuilder()
+            .imageUrl(imagePath)
+            .imageSize(ImageSize.SIZE_ORIGINAL, ImageSize.SIZE_ORIGINAL)
+            .scaleType(ImageView.ScaleType.FIT_XY)
+            .into(imageView);
+    }
 
-	/**
-	 * Initialize ImageLoaderUtil.
-	 * 建议在application中调用此方法
-	 *
-	 * @param imageLoader {@link ImageLoader}.
-	 */
-	public static void initialize(ImageLoader imageLoader) {
-		imageLoader = imageLoader;
-	}
+    /**
+     * 加载图片，通过回调赋值
+     */
+    public void loadImage(Object imagePath, int width, int height,
+        ImageLoadingListener loadingListener) {
+        ImageDirector.getInstance(FeizaoApp.mContext).imageBuilder()
+            .imageUrl(imagePath)
+            .imageSize(width, height)
+            .imageLoadingListener(loadingListener)
+            .into(null);
+    }
 
-	/**
-	 * 加载并显示（高斯模糊图图片）
-	 *
-	 * @param context
-	 * @param imageView
-	 * @param imageUrl
-	 * @param showLodingId
-	 * @param showFailId
-	 */
-	public void loadImageTransformBlurTrans(Context context, ImageView imageView, String imageUrl, Integer showLodingId, Integer showFailId) {
-		imageLoader.loadImageTransformBlurTrans(context, imageView, imageUrl, showLodingId, showFailId);
-	}
+    /**
+     * 加载图片，默认失败图片
+     */
+    public void loadImage(ImageView imageView, Object imagePath,
+        @DrawableRes int loading, @DrawableRes int error,
+        int width, int height, DiskCacheStrategy diskCacheStrategy) {
+        ImageDirector.getInstance(FeizaoApp.mContext).imageBuilder()
+            .imageUrl(imagePath)
+            .loadingImage(loading)
+            .errorImage(error)
+            .diskCacheStrategy(diskCacheStrategy)
+            .into(imageView);
+    }
 
-	public void loadImageTransformBlurTrans(Context context, ImageView imageView, int imageId, Integer showLodingId, Integer showFailId) {
-		imageLoader.loadImageTransformBlurTrans(context, imageView, imageId, showLodingId, showFailId);
-	}
+    /**
+     * @param imageView
+     * @param imagePath
+     * @param diskCacheStrategy
+     */
+    public void loadImage(ImageView imageView, Object imagePath,
+        DiskCacheStrategy diskCacheStrategy) {
+        loadImage(imageView, imagePath, 0, 0, 0, 0, diskCacheStrategy);
+    }
 
-	/**
-	 * 加载并显示（圆形图）
-	 *
-	 * @param context
-	 * @param imageView
-	 * @param imageUrl
-	 */
-	public void loadImageTransformRoundCircle(Context context, ImageView imageView, String imageUrl) {
-		imageLoader.loadImageTransformRoundCircle(context, imageView, imageUrl);
-	}
+    /**
+     * 加载图片，默认失败图片
+     */
+    public void loadImageAndDefault(ImageView imageView, Object imagePath, @DrawableRes int loading,
+        @DrawableRes int error) {
+        ImageDirector.getInstance(FeizaoApp.mContext).imageBuilder()
+            .imageUrl(imagePath)
+            .loadingImage(loading)
+            .errorImage(error)
+            .into(imageView);
+    }
 
-	/**
-	 * 加载屏显示（圆角图）
-	 *
-	 * @param context
-	 * @param imageView
-	 * @param imageUrl
-	 * @param radius    角度
-	 */
-	public void loadImageTransformRoundedCorners(Context context, ImageView imageView, String imageUrl, int radius) {
-		imageLoader.loadImageTransformRoundedCorners(context, imageView, imageUrl, radius);
-	}
+    /**
+     * 加载头像
+     */
+    public void loadHeadPic(Context context, ImageView view, String imagePath) {
+        ImageDirector.getInstance(context).imageBuilder()
+            .imageUrl(imagePath)
+            .loadingImage(R.drawable.bg_user_default)
+            .errorImage(R.drawable.bg_user_default)
+            .imageTransformation(ImageConstants.IMAGE_TRANSFOR_CROP_CIRCLE)
+            .into(view);
+    }
 
-	public void loadImage(Context context, ImageView imageView, String imageUrl) {
-		imageLoader.loadImage(context, imageView, imageUrl);
-	}
+    /**
+     * 加载动态头像
+     */
+    public void loadHeadPicGif(Context context, ImageView view, String imagePath) {
+        ImageDirector.getInstance(context).imageBuilder()
+            .imageUrl(imagePath)
+            .loadingImage(R.drawable.bg_user_default)
+            .errorImage(R.drawable.bg_user_default)
+            .imageType(ImageConstants.IMAGE_TYPE_GIF)
+            .imageTransformation(ImageConstants.IMAGE_TRANSFOR_CROP_CIRCLE)
+            .into(view);
+    }
 
-	public void loadImage(Context context, ImageView imageView, Integer resourceId) {
-		imageLoader.loadImage(context, imageView, resourceId);
-	}
+    /**
+     * @param context
+     * @param view
+     * @param imagePath
+     * @param loading
+     * @param err
+     * @param radius
+     */
+    public void loadImageCorner(Context context, ImageView view, Object imagePath,
+        @DrawableRes int loading, @DrawableRes int err, int radius,
+        RoundedCornersTransformation.CornerType cornerType) {
+        ImageDirector.getInstance(context).imageBuilder()
+            .imageUrl(imagePath)
+            .loadingImage(loading)
+            .errorImage(err)
+            .imageTransformation(ImageConstants.IMAGE_TRANSFOR_CROP_CORNER)
+            .radius(radius)
+            .cornerType(cornerType)
+            .into(view);
+    }
 
-	/**
-	 * 加载指定大小的图片资源
-	 *
-	 * @param context
-	 * @param imageUrl
-	 * @param outWidth             Width and height must both be > 0 or Target#SIZE_ORIGINAL
-	 * @param outHeight
-	 * @param imageLoadingListener
-	 */
-	public void loadImage(@NonNull Context context, @NonNull String imageUrl, int outWidth, int outHeight, ImageLoadingListener imageLoadingListener) {
-		imageLoader.loadImage(context, imageUrl, outWidth, outHeight, imageLoadingListener);
-	}
+    /**
+     * 去除加载图跟失败图
+     */
+    public void loadImageCorner(Context context, ImageView view, Object imagePath, int radius,
+        RoundedCornersTransformation.CornerType cornerType) {
+        loadImageCorner(context, view, imagePath, 0, 0, radius, cornerType);
+    }
 
-	public void loadImage(Context context, ImageView imageView, String imageUrl, Integer showLodingId, Integer showFailId) {
-		imageLoader.loadImage(context, imageView, imageUrl, showLodingId, showFailId);
-	}
+    /**
+     * 高斯模糊
+     */
+    public void loadImageBlur(Context context, ImageView view, Object imagePath,
+        @DrawableRes int loading, @DrawableRes int err, int radius) {
+        ImageDirector.getInstance(context).imageBuilder()
+            .imageUrl(imagePath)
+            .loadingImage(loading)
+            .errorImage(err)
+            .imageTransformation(ImageConstants.IMAGE_TRANSFOR_BLUR)
+            .radius(radius)
+            .into(view);
+    }
 
-	public void loadImage(Context context, ImageView imageView, Integer resourceId, Integer showLodingId, Integer showFailId) {
-		imageLoader.loadImage(context, imageView, resourceId, showLodingId, showFailId);
-	}
+    /**
+     * 清除缓存
+     */
+    public void clearMemery(Context context) {
+        ImageDirector.getInstance(context).clearMemory();
+    }
 
-	/**
-	 * 加载图片到缓存，没有返回图片资源
-	 *
-	 * @param context
-	 * @param imageUrl
-	 */
-	public void loadImageOnlyDownload(Context context, String imageUrl) {
-		imageLoader.loadImageOnlyDownload(context, imageUrl);
-	}
-
-	/**
-	 * 同步加载图片资源. 注：不能在main线程使用
-	 *
-	 * @param context
-	 * @param imageUrl
-	 * @return
-	 */
-	public Bitmap loadImageSyn(Context context, String imageUrl) {
-		return imageLoader.loadImageSyn(context, imageUrl);
-	}
-
-	public Bitmap loadImageSyn(Context context, Integer resourceId) {
-		return imageLoader.loadImageSyn(context, resourceId);
-	}
-
-	/**
-	 * 加载并显示gif动画
-	 *
-	 * @param context
-	 * @param imageView
-	 * @param resourceId
-	 */
-	public void loadGif(Context context, ImageView imageView, Integer resourceId) {
-		imageLoader.loadGif(context, imageView, resourceId);
-	}
-
-	public void loadGif(Context context, ImageView imageView, String resourceUri) {
-		imageLoader.loadGif(context, imageView, resourceUri);
-	}
-
-	public void onLowMemory(Context context) {
-		imageLoader.onLowMemory(context);
-	}
-
-	public void onTrimMemory(Context context, int level) {
-		imageLoader.onTrimMemory(context, level);
-	}
 }

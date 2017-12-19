@@ -23,8 +23,6 @@ import cn.efeizao.feizao.framework.net.impl.CallbackDataHandle;
 import cn.jpush.android.api.JPushInterface;
 import tv.live.bx.FeizaoApp;
 import tv.live.bx.R;
-import tv.live.bx.activities.GroupPostDetailActivity;
-import tv.live.bx.activities.MeMessageActivity;
 import tv.live.bx.activities.ShareDialogActivity;
 import tv.live.bx.activities.WebViewActivity;
 import tv.live.bx.common.BusinessUtils;
@@ -57,10 +55,10 @@ public class JPushReceiver extends BroadcastReceiver {
 			String regId = bundle.getString(JPushInterface.EXTRA_REGISTRATION_ID);
 			EvtLog.d(TAG, "[MyReceiver] 接收Registration Id : " + regId);
 			// send the Registration Id to your server...
-			String sessionId = HttpSession.getInstance(FeizaoApp.mConctext).getCookie("PHPSESSID");
+			String sessionId = HttpSession.getInstance(FeizaoApp.mContext).getCookie("PHPSESSID");
 			// 存在sessionId 但 app初始化jpush未登记成功
 			if (!TextUtils.isEmpty(sessionId) && AppConfig.getInstance().jpushRegisted && !TextUtils.isEmpty(regId)) {
-				BusinessUtils.reportRegisterId(FeizaoApp.mConctext, new CallbackDataHandle() {
+				BusinessUtils.reportRegisterId(FeizaoApp.mContext, new CallbackDataHandle() {
 					@Override
 					public void onCallback(boolean success, String errorCode, String errorMsg, Object result) {
 						if (success) {
@@ -121,7 +119,7 @@ public class JPushReceiver extends BroadcastReceiver {
 				Intent intent = new Intent();
 				intent.setAction(MessageReceiver.ACTION_MESSAGE_INFO);
 				intent.putExtra(MessageReceiver.MESSAGE_TYPE, Constants.NOTIFICATION_TYPE_ME_MESSAGE);
-				FeizaoApp.mConctext.sendBroadcast(intent);
+				FeizaoApp.mContext.sendBroadcast(intent);
 			}
 			// 其他暂时没有
 
@@ -173,24 +171,6 @@ public class JPushReceiver extends BroadcastReceiver {
 
 				clickIntent.putExtra(WebViewActivity.WEB_INFO, (Serializable) lmItem);
 				context.startActivity(clickIntent);
-			} else if (Constants.NOTIFICATION_TYPE_POST.equals(type)) {
-				// 在这里可以自己写代码去定义用户点击后的行为
-				Intent clickIntent = new Intent();
-				clickIntent.setClass(context, GroupPostDetailActivity.class);
-				clickIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-
-				Map<String, String> subjectInfo = new HashMap<String, String>();
-				subjectInfo.put("id", object.getString("postId"));
-				clickIntent.putExtra("subjectInfo", (Serializable) subjectInfo);
-				context.startActivity(clickIntent);
-
-			} else if (Constants.NOTIFICATION_TYPE_ME_MESSAGE.equals(type)) {
-				// 在这里可以自己写代码去定义用户点击后的行为
-				Intent clickIntent = new Intent();
-				clickIntent.setClass(context, MeMessageActivity.class);
-				clickIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-				clickIntent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
-				context.startActivity(clickIntent);
 			}
 			// 其他暂时没有
 
@@ -207,7 +187,7 @@ public class JPushReceiver extends BroadcastReceiver {
 		try {
 			JSONObject msgJson = new JSONObject(message);
 			String msg = msgJson.getString("msg");
-			showNotification(context, FeizaoApp.mConctext.getResources().getString(R.string.app_name), msg, true);
+			showNotification(context, FeizaoApp.mContext.getResources().getString(R.string.app_name), msg, true);
 		} catch (JSONException e) {
 
 		}

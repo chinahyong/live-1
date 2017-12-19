@@ -60,7 +60,7 @@ public class AdviceActivity extends LZActivity {
 				moProgress = null;
 				switch (poMsg.what) {
 					case MsgTypes.FEEDBACK_SUCCESS:
-						OperationHelper.onEvent(FeizaoApp.mConctext, "clickFeedbackButtonSuccessful", null);
+						OperationHelper.onEvent(FeizaoApp.mContext, "clickFeedbackButtonSuccessful", null);
 						showToast("感谢您的宝贵意见", TOAST_SHORT);
 						onBackPressed();
 						break;
@@ -103,7 +103,7 @@ public class AdviceActivity extends LZActivity {
 	private class OnSubmit implements OnClickListener {
 		@Override
 		public void onClick(View arg0) {
-			OperationHelper.onEvent(FeizaoApp.mConctext, "clickFeedbackButton", null);
+			OperationHelper.onEvent(FeizaoApp.mContext, "clickFeedbackButton", null);
 			// 1 获取用户输入
 			String lsContent = moEtContent.getText().toString();
 			String lsContact = moEtContact.getText().toString();

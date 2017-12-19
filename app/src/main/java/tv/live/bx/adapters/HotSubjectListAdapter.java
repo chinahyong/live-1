@@ -142,7 +142,7 @@ public class HotSubjectListAdapter extends BaseAdapter {
 			if (jsonarray.length() <= 0) {
 				loHolder.moIvPhoto.setImageResource(R.drawable.icon_loading);
 			} else {
-				ImageLoaderUtil.with().loadImage(moContext, loHolder.moIvPhoto, (String) jsonarray.get(0));
+				ImageLoaderUtil.getInstance().loadImage(loHolder.moIvPhoto, jsonarray.get(0));
 			}
 
 		} catch (JSONException e) {

@@ -6,15 +6,12 @@ import android.content.DialogInterface;
 import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
 import android.graphics.Bitmap;
-import android.graphics.Rect;
 import android.hardware.Camera;
 import android.media.AudioManager;
 import android.opengl.GLSurfaceView;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Message;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.util.Log;
 import android.util.SparseArray;
@@ -29,25 +26,19 @@ import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow.OnDismissListener;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
-
+import cn.efeizao.feizao.framework.net.impl.CallbackDataHandle;
+import cn.efeizao.feizao.ui.dialog.LiveManagerCustomDialogBuilder;
 import com.pili.pldroid.streaming.CameraStreamingManager;
 import com.pili.pldroid.streaming.CameraStreamingSetting;
 import com.pili.pldroid.streaming.StreamingProfile;
 import com.pili.pldroid.streaming.widget.AspectFrameLayout;
-import com.tencent.rtmp.ITXLivePlayListener;
 import com.tencent.rtmp.ITXLivePushListener;
 import com.tencent.rtmp.TXLiveConstants;
-import com.tencent.rtmp.TXLivePlayConfig;
-import com.tencent.rtmp.TXLivePlayer;
 import com.tencent.rtmp.TXLivePushConfig;
 import com.tencent.rtmp.TXLivePusher;
 import com.tencent.rtmp.ui.TXCloudVideoView;
 import com.umeng.analytics.MobclickAgent;
-
-import org.json.JSONObject;
-
 import java.lang.ref.WeakReference;
 import java.util.Date;
 import java.util.HashMap;
@@ -56,36 +47,29 @@ import java.util.List;
 import java.util.Map;
 import java.util.Timer;
 import java.util.TimerTask;
-
-import cn.efeizao.feizao.framework.net.impl.CallbackDataHandle;
-import cn.efeizao.feizao.ui.dialog.LiveManagerCustomDialogBuilder;
+import org.json.JSONObject;
 import tv.live.bx.BuildConfig;
 import tv.live.bx.FeizaoApp;
 import tv.live.bx.R;
 import tv.live.bx.activities.base.BaseFragmentActivity;
-import tv.live.bx.adapters.ConnectListAdapter;
 import tv.live.bx.common.BusinessUtils;
 import tv.live.bx.common.Constants;
 import tv.live.bx.common.MsgTypes;
 import tv.live.bx.common.OperationHelper;
 import tv.live.bx.common.Utils;
 import tv.live.bx.config.UserInfoConfig;
-import tv.live.bx.imageloader.ImageLoaderUtil;
 import tv.live.bx.library.util.DateUtil;
 import tv.live.bx.library.util.EvtLog;
 import tv.live.bx.library.util.StringUtil;
-import tv.live.bx.listeners.RecyclerViewOnItemClickListener;
 import tv.live.bx.live.Config;
 import tv.live.bx.live.gles.FBO;
 import tv.live.bx.live.ui.RotateLayout;
-import tv.live.bx.ui.EmptyRecyclerView;
 import tv.live.bx.ui.popwindow.LiveFilterPopWindow;
 import tv.live.bx.ui.popwindow.LiveMenuPopWindow;
 import tv.live.bx.util.ActivityJumpUtil;
 import tv.live.bx.util.UiHelper;
 import tv.live.bx.websocket.model.AcceptVideoChat;
 import tv.live.bx.websocket.model.InviteVideoChat;
-import tv.live.bx.websocket.model.VideoChat;
 
 @SuppressLint("NewApi")
 public class LiveCameraStreamActivity extends LiveBaseActivity implements ITXLivePushListener {
@@ -130,24 +114,6 @@ public class LiveCameraStreamActivity extends LiveBaseActivity implements ITXLiv
 	 */
 	private LiveFilterPopWindow mfilterPopWindow;
 
-	/***
-	 * 底部连线列表
-	 */
-	private RelativeLayout mConnectListLayout; // 连线申请列表面板
-	private LinearLayout mConnectInviteEmpltyLayout;
-	private EmptyRecyclerView mConnectListView;        // 连线申请listview
-	private ConnectListAdapter mConnectListAdapter;    // 连线申请列表adapte
-	private TextView mConnectDescTv;//连线描述
-
-	/***
-	 * 底部右侧需要的UI
-	 */
-	private TextView mConnectWating;        //仅限主播侧显示(连线倒计时等待)
-	private TextView mConnectLeaveTv;//用户已离开
-	private LinearLayout mConnectVideoLoading;
-	private boolean mIsConnectWating;
-
-
 	private Timer mLiveTimer;
 	private long mStartLivingMills;
 	/**
@@ -175,16 +141,6 @@ public class LiveCameraStreamActivity extends LiveBaseActivity implements ITXLiv
 	public static final int PUSH_EVT_STOP = 0x1000;
 	public static final int PUSH_EVT_STOP_PREVIEW = 0x1001;
 	public static final int PUSH_EVT_STOP_PREVIEW_SHOW_DIALOG = 0x1002;
-
-
-	/***
-	 * 连麦播放库相关变量
-	 */
-	private TXLivePlayer mLivePlayer;
-	private TXLivePlayConfig mPlayConfig;
-	private String mLivePlayUrl;
-	//连麦小主播视频流是否断开
-	private boolean mLivePlayDisConnect;
 
 	/**
 	 * 是否开启美颜，默认开启：true（如果!isSupportHWEncode() 则为false）
@@ -232,29 +188,17 @@ public class LiveCameraStreamActivity extends LiveBaseActivity implements ITXLiv
 	@Override
 	protected void initMembers() {
 		super.initMembers();
-		mLiveTimerTv = (TextView) findViewById(R.id.live_status_time);
-		mLiveBottomList = (Button) findViewById(R.id.live_bottom_list);
+		mLiveTimerTv =  findViewById(R.id.live_status_time);
+		mLiveBottomList =  findViewById(R.id.live_bottom_list);
 
-		mLivePushVideoView = (TXCloudVideoView) findViewById(R.id.video_view);
+		mLivePushVideoView =  findViewById(R.id.video_view);
 
-		afl = (AspectFrameLayout) findViewById(R.id.cameraPreview_afl);
+		afl =  findViewById(R.id.cameraPreview_afl);
 		afl.setShowMode(AspectFrameLayout.SHOW_MODE.FULL);
 
 		mAnimation180 = AnimationUtils.loadAnimation(mActivity, R.anim.rotate_0_180_anim);
 		mAnimation0 = AnimationUtils.loadAnimation(mActivity, R.anim.rotate_180_0_anim);
 
-		//底部连线申请列表面板
-		mConnectListLayout = (RelativeLayout) findViewById(R.id.live_connect_list_layout_parent);
-		mConnectInviteEmpltyLayout = (LinearLayout) findViewById(R.id
-				.live_connect_invite_empty_layout);
-		mConnectListView = (EmptyRecyclerView) findViewById(R.id.live_connect_list_listview);
-		mConnectDescTv = (TextView) findViewById(R.id.live_connect_list_description);
-
-		// 底部右侧连线UI ， 等待用户接收提示
-		mConnectWating = (TextView) mConnectLivingLayout.findViewById(R.id.live_connect_waiting);
-		mConnectLeaveTv = (TextView) mConnectLivingLayout.findViewById(R.id.live_connect_leave);
-		mConnectVideoLoading = (LinearLayout) mConnectLivingLayout.findViewById(R.id
-				.live_connect_loading);
 	}
 
 	@Override
@@ -269,62 +213,11 @@ public class LiveCameraStreamActivity extends LiveBaseActivity implements ITXLiv
 		// 设置文本输入监听
 		this.setVolumeControlStream(AudioManager.STREAM_MUSIC);
 
-		initInviteLayout();
-		initConnectChat();
-	}
-
-	/**
-	 * 初始化连线布局
-	 */
-	private void initInviteLayout() {
-		GridLayoutManager layoutManager = new GridLayoutManager(mActivity, 4);
-		final int margin = Utils.dip2px(mActivity, 4);
-		mConnectListAdapter = new ConnectListAdapter(mActivity);
-		mConnectListView.setLayoutManager(layoutManager);
-		mConnectListView.setAdapter(mConnectListAdapter);
-		mConnectListView.addItemDecoration(new RecyclerView.ItemDecoration() {
-			@Override
-			public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView
-					.State state) {
-				super.getItemOffsets(outRect, view, parent, state);
-				outRect.set(margin, 0, margin, margin);
-			}
-		});
-		mConnectListView.setEmptyView(mConnectInviteEmpltyLayout);
-		mConnectListAdapter.setRecyclerViewOnItemClickListener(new RecyclerViewOnItemClickListener() {
-			@Override
-			public void onItemClick(View view, int position) {
-				if (R.id.live_connect_list_connect == view.getId() && !Utils.isFastDoubleClick()) {
-					InviteVideoChat data = mConnectListAdapter.getData(position);
-					AcceptVideoChatCallbackDataHandle callbackDataHandle = new
-							AcceptVideoChatCallbackDataHandle(LiveCameraStreamActivity.this);
-					BusinessUtils.acceptVideoChat(mActivity, callbackDataHandle, mmIntentRoomInfo
-							.get("rid"), InviteVideoChat.INVITE_TYPE_ANCHOR, data.getUid(), String
-							.valueOf(data.getVideoChatType()));
-					//隐藏邀请面板
-					mConnectListLayout.startAnimation(mDownOutAnimation);
-					mConnectListLayout.setVisibility(View.GONE);
-				} else {
-					mConnectListAdapter.setSelectItem(position);
-				}
-			}
-		});
-	}
-
-	/**
-	 * 初始化“连麦”窗口
-	 */
-	protected void initConnectChat() {
-		super.initConnectChat();
-		mConnectVideoLoading.setVisibility(View.GONE);
-		mConnectLeaveTv.setVisibility(View.GONE);
-		mConnectWating.setVisibility(View.GONE);
 	}
 
 	@Override
 	protected void setEventsListeners() {
 		super.setEventsListeners();
-		mConnectListLayout.setOnClickListener(this);
 		mLiveBottomList.setOnClickListener(this);
 	}
 
@@ -417,11 +310,6 @@ public class LiveCameraStreamActivity extends LiveBaseActivity implements ITXLiv
 
 	@Override
 	public void onBackPressed() {
-		if (mConnectListLayout.isShown()) {
-			mConnectListLayout.startAnimation(mDownOutAnimation);
-			mConnectListLayout.setVisibility(View.GONE);
-			return;
-		}
 		super.onBackPressed();
 	}
 
@@ -455,26 +343,14 @@ public class LiveCameraStreamActivity extends LiveBaseActivity implements ITXLiv
 				}, new DialogInterface.OnClickListener() {
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
-						MobclickAgent.onEvent(FeizaoApp.mConctext, "exitLiveRoom");
-						OperationHelper.onEvent(FeizaoApp.mConctext, "exitLiveRoom", null);
+						MobclickAgent.onEvent(FeizaoApp.mContext, "exitLiveRoom");
+						OperationHelper.onEvent(FeizaoApp.mContext, "exitLiveRoom", null);
 						finish();
 					}
 				});
 				break;
 			case R.id.live_bottom_list:
 				showMorePopWindow(v);
-				break;
-			// 无动效的时候连线点击事件
-			case R.id.live_connect:
-			case R.id.live_connect_anim:
-				OperationHelper.onEvent(FeizaoApp.mConctext, "clickLinkButtonInLivingRoom");
-				mConnectListAdapter.setAllRead();
-				mConnectListLayout.setVisibility(View.VISIBLE);
-				updateButtomConnectInfo();
-				break;
-			case R.id.live_connect_list_layout_parent:
-				mConnectListLayout.startAnimation(mDownOutAnimation);
-				mConnectListLayout.setVisibility(View.GONE);
 				break;
 		}
 	}
@@ -569,7 +445,7 @@ public class LiveCameraStreamActivity extends LiveBaseActivity implements ITXLiv
 					stopLivePush(PUSH_EVT_STOP_PREVIEW_SHOW_DIALOG);
 				} else if ((status == TXLiveConstants.PUSH_EVT_PUSH_BEGIN || status ==
 						CameraStreamingManager.STATE.STREAMING) && mLiveTimer == null) {
-					OperationHelper.onEvent(FeizaoApp.mConctext, "liveSuccessful", null);
+					OperationHelper.onEvent(FeizaoApp.mContext, "liveSuccessful", null);
 					mLiveTimerTv.setText(DateUtil.sdf3.format(new Date(mStartLivingMills)));
 					mLiveTimer = new Timer();
 					mLiveTimer.schedule(new TimerTask() {
@@ -631,82 +507,6 @@ public class LiveCameraStreamActivity extends LiveBaseActivity implements ITXLiv
 		}
 	}
 
-	/**
-	 * 发起连线成功
-	 *
-	 * @param uid 被邀请人uid
-	 */
-	protected void inviteVideoChatSucc(String uid) {
-		mConnectLivingLayout.setVisibility(View.VISIBLE);
-		mConnectLivingLayout.setTag(R.id.tag_second, uid);
-		mConnectWating.setVisibility(View.VISIBLE);
-		mIsConnectWating = true;
-		inviteChatCountdown(20, uid);
-	}
-
-	@Override
-	protected void cancelVideoChatSucc() {
-		super.cancelVideoChatSucc();
-		mIsConnectWating = false;
-		initConnectChat();
-	}
-
-	/**
-	 * 取消连线
-	 */
-	@Override
-	protected void endVideoChatSucc(JSONObject data) {
-		super.endVideoChatSucc(data);
-		changeTXToQiNiu(data.optString("pushUrl"));
-	}
-
-	/**
-	 * 同意连线
-	 */
-	@Override
-	protected void acceptVideoChatSucc(AcceptVideoChat acceptVideoChat) {
-		super.acceptVideoChatSucc(acceptVideoChat);
-		mConnectLivingLayout.setVisibility(View.VISIBLE);
-		mConnectLivingLayout.setTag(R.id.tag_second, acceptVideoChat.getUid());
-		try {
-			String pushUrl = StringUtil.base64Decode(acceptVideoChat.getPushUrl());
-			//如果同意连线后，推流地址不为空，且推流地址与之前不一致，就重新推流
-			if (!TextUtils.isEmpty(pushUrl)) {
-				mPushUrl = pushUrl;
-				//				stopLivePush(PUSH_EVT_STOP);
-			}
-			changeQiniuToTx(acceptVideoChat);
-
-			mConnectListAdapter.removeItem(acceptVideoChat.getUid());
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-
-	/**
-	 * 邀请连麦倒计时处理
-	 */
-	private void inviteChatCountdown(int times, final String uid) {
-		if (!mIsConnectWating) return;
-		if (times <= 0) {
-			initConnectChat();
-			BusinessUtils.cancelVideoChat(mActivity, new CancelVideoChatCallbackDataHandle
-					(LiveCameraStreamActivity.this), mmIntentRoomInfo.get("rid"), InviteVideoChat
-					.INVITE_TYPE_ANCHOR, uid);
-			mIsConnectWating = false;
-		} else {
-			mConnectWating.setText(String.format(mActivity.getString(R.string
-					.live_invite_wait_tip), times));
-			final int nextTime = times - 1;
-			postDelayed(new Runnable() {
-				@Override
-				public void run() {
-					inviteChatCountdown(nextTime, uid);
-				}
-			}, 1000);
-		}
-	}
-
 	@Override
 	public void initRoomData() {
 		super.initRoomData();
@@ -727,10 +527,6 @@ public class LiveCameraStreamActivity extends LiveBaseActivity implements ITXLiv
 			requestLiveParam();
 		}
 
-		//如果连麦为结束，且小主播视频流已断开
-		if (mIsLiveConnecting && mLivePlayDisConnect) {
-			startLivePlayer();
-		}
 	}
 
 	@Override
@@ -799,20 +595,6 @@ public class LiveCameraStreamActivity extends LiveBaseActivity implements ITXLiv
 	@Override
 	public void onClose(int code, String errosMsg) {
 		super.onClose(code, errosMsg);
-		//websocket断开，连麦状态也全部恢复默认状态
-		// 1、小主播视频区恢复
-		initConnectChat();
-		//2、如果拉流，则停止拉流
-		stopLivePlayer();
-		//3、连线面板也恢复到最初状态
-		if (mConnectListAdapter != null) {
-			mConnectListAdapter.clearData();
-			mConnectListAdapter.notifyDataSetChanged();
-		}
-		updateButtomConnectInfo();
-		//4、连麦状态变量恢复
-		mIsLiveConnecting = false;
-		mIsConnectWating = false;
 	}
 
 	@Override
@@ -842,7 +624,6 @@ public class LiveCameraStreamActivity extends LiveBaseActivity implements ITXLiv
 			mLiveScreenSwitchBtn.setVisibility(View.GONE);
 			//去掉守护列表，守护图标
 			mGuardLayout.setVisibility(View.GONE);
-			mConnectDescTv.setVisibility(View.INVISIBLE);
 		} else {
 			mPlayingActivityLeftLayout.setVisibility(View.VISIBLE);
 		}
@@ -852,14 +633,14 @@ public class LiveCameraStreamActivity extends LiveBaseActivity implements ITXLiv
 	protected void clickPersonInfoView(String type, String uid) {
 		//如果是私播
 		if (mIsPrivatePlay) {
-			MobclickAgent.onEvent(FeizaoApp.mConctext, "personalPageInPersonalCard");
+			MobclickAgent.onEvent(FeizaoApp.mContext, "personalPageInPersonalCard");
 			Map<String, String> personInfo = new HashMap<String, String>();
 			personInfo.put("id", uid);
 			ActivityJumpUtil.toPersonInfoActivity(mActivity, personInfo, 0);
 		} else {
 			if (Constants.USER_TYPE_OFFICIAL_ADMIN.equals(type) || Constants.USER_TYPE_ADMIN
 					.equals(type)) {
-				MobclickAgent.onEvent(FeizaoApp.mConctext, "cancelManagerByBroadcaster");
+				MobclickAgent.onEvent(FeizaoApp.mContext, "cancelManagerByBroadcaster");
 				BusinessUtils.removeRoomManager(mActivity, new CallbackDataHandle() {
 					@Override
 					public void onCallback(boolean success, String errorCode, String errorMsg,
@@ -870,7 +651,7 @@ public class LiveCameraStreamActivity extends LiveBaseActivity implements ITXLiv
 					}
 				}, uid);
 			} else {
-				MobclickAgent.onEvent(FeizaoApp.mConctext, "managerByBroadcaster");
+				MobclickAgent.onEvent(FeizaoApp.mContext, "managerByBroadcaster");
 				BusinessUtils.setRoomManager(mActivity, new CallbackDataHandle() {
 					@Override
 					public void onCallback(boolean success, String errorCode, String errorMsg,
@@ -892,21 +673,6 @@ public class LiveCameraStreamActivity extends LiveBaseActivity implements ITXLiv
 		BusinessUtils.requestVideoChat(mActivity, callbackDataHandle, mmIntentRoomInfo.get("rid")
 				, InviteVideoChat.INVITE_TYPE_ANCHOR, uid, String.valueOf(InviteVideoChat
 						.INVITE_CHAT_TYPE_VIDEO));
-	}
-
-	@Override
-	protected void clickEndVideoChat(String uid) {
-		super.clickEndVideoChat(uid);
-		//如果在等待连线中，则取消连线
-		if (mIsConnectWating) {
-			BusinessUtils.cancelVideoChat(mActivity, new CancelVideoChatCallbackDataHandle
-					(LiveCameraStreamActivity.this), mmIntentRoomInfo.get("rid"), InviteVideoChat
-					.INVITE_TYPE_ANCHOR, uid);
-		} else {
-			BusinessUtils.endVideoChat(mActivity, new EndVideoChatCallbackDataHandle
-					(LiveCameraStreamActivity.this), mmIntentRoomInfo.get("rid"), String.valueOf
-					(TYPE_LIVE_ANCHOR), uid);
-		}
 	}
 
 	@Override
@@ -1278,8 +1044,6 @@ public class LiveCameraStreamActivity extends LiveBaseActivity implements ITXLiv
 				false);
 		// 开始TX推流
 		startLivePush(mPushUrl);
-		// 播放小主播
-		startPlayConnectVideo(acceptVideoChat);
 	}
 
 	/**
@@ -1290,8 +1054,6 @@ public class LiveCameraStreamActivity extends LiveBaseActivity implements ITXLiv
 		if (mLivePusher != null) {
 			mLivePusher.setVideoQuality(mClarityType, false, false);
 		}
-		// 停止小主播
-		stopLivePlayer();
 		destroyLivePlayer();
 		// 停止TX 推流
 		stopLivePush(PUSH_EVT_STOP);
@@ -1356,106 +1118,6 @@ public class LiveCameraStreamActivity extends LiveBaseActivity implements ITXLiv
 		super.onUnsetAdmin(operatorUid, operatorNickname, setAdminUid, setAdminNickname);
 	}
 
-	@Override
-	public void onUserRejectVideoChat(String uid) {
-		super.onUserRejectVideoChat(uid);
-		mIsConnectWating = false;
-		initConnectChat();
-	}
-
-	@Override
-	public void onInviteVideoChat(InviteVideoChat data) {
-		mConnectListAdapter.addFirstItem(data);
-		updateButtomConnectInfo();
-	}
-
-	@Override
-	public void onCancelVideoChat(String uid) {
-		mConnectListAdapter.removeItem(uid);
-		updateButtomConnectInfo();
-	}
-
-	@Override
-	public void onVideoChatEnd(String uid, String mid, String pullUrl, String pushUrl, String
-			msg, String endType) {
-		// 如果不是大主播结束
-		if (!"2".equals(endType)) {
-			super.onVideoChatEnd(uid, mid, pullUrl, pushUrl, msg, endType);
-			changeTXToQiNiu(pushUrl);
-		}
-	}
-
-	@Override
-	public void onAcceptVideoChat(AcceptVideoChat data) {
-		super.onAcceptVideoChat(data);
-		//由于请求连麦成功就已经显示连麦面板了
-		mConnectWating.setVisibility(View.GONE);
-		mIsConnectWating = false;
-		//2、如果推流地址变了，需要重新推流
-		try {
-			String pushUrl = StringUtil.base64Decode(data.getPushUrl());
-			//如果同意连线后，推流地址不为空，且推流地址与之前不一致，就重新推流
-			// && !pushUrl.equals(this.mPushUrl)  ，因要替换推流库，再次不做地址相同判断
-			if (!TextUtils.isEmpty(pushUrl)) {
-				//				stopLivePush(PUSH_EVT_STOP);
-				mPushUrl = pushUrl;
-			}
-			changeQiniuToTx(data);
-			startPlayConnectVideo(data);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-
-	/**
-	 * 连线成功
-	 *
-	 * @param data
-	 */
-	@Override
-	public void onVideoChat(VideoChat data) {
-		super.onVideoChat(data);
-	}
-
-
-	/**
-	 * 更新底部连接按钮状态
-	 */
-	private void updateButtomConnectInfo() {
-		int unReadNum = mConnectListAdapter.getUnReadNum();
-		if (unReadNum > 0) {
-			mLiveConnectIv.setVisibility(View.INVISIBLE);
-			mLiveConnectNum.setVisibility(View.VISIBLE);
-			mLiveConenctAnim.setVisibility(View.VISIBLE);
-			mLiveConnectNum.setText(String.valueOf(unReadNum));
-		} else {
-			mLiveConnectIv.setVisibility(View.VISIBLE);
-			mLiveConenctAnim.setVisibility(View.GONE);
-			mLiveConnectNum.setVisibility(View.GONE);
-		}
-	}
-
-	/**
-	 * 开始播放连线视频
-	 *
-	 * @param data
-	 */
-	private void startPlayConnectVideo(AcceptVideoChat data) {
-		if (data.getVideoChatType() == InviteVideoChat.INVITE_CHAT_TYPE_MIC) {
-			mConnectAudioLivingLayout.setVisibility(View.VISIBLE);
-			ImageLoaderUtil.with().loadImageTransformRoundCircle(mActivity,
-					mConnectAudioLivingHeadPic, data.getHeadPic());
-			mConnectAudioLivingName.setText(data.getNickname());
-			ImageLoaderUtil.with().loadImage(mActivity, mConnectAudioLivingLevel, Utils
-					.getFiledDrawable(Constants.USER_LEVEL_PIX, String.valueOf(data.getLevel())));
-		}
-		//播放视频
-		mLiveConnectVideoView.setVisibility(View.VISIBLE);
-		mLivePlayUrl = StringUtil.base64Decode(data.getUserPullUrl());
-		startLivePlayer();
-	}
-
-
 	/**
 	 * 主播操作按钮监听
 	 */
@@ -1474,9 +1136,9 @@ public class LiveCameraStreamActivity extends LiveBaseActivity implements ITXLiv
 					if (mLivePusher != null) {
 						mIsFilter = !mIsFilter;
 						if (mIsFilter) {
-							MobclickAgent.onEvent(FeizaoApp.mConctext, "openBeautyByBroadcaster");
+							MobclickAgent.onEvent(FeizaoApp.mContext, "openBeautyByBroadcaster");
 						} else {
-							MobclickAgent.onEvent(FeizaoApp.mConctext, "closeBeautyByBroadcaster");
+							MobclickAgent.onEvent(FeizaoApp.mContext, "closeBeautyByBroadcaster");
 						}
 						switchBeautyFilter(mIsFilter);
 					} else {
@@ -1485,7 +1147,7 @@ public class LiveCameraStreamActivity extends LiveBaseActivity implements ITXLiv
 					break;
 				// 前后摄像头切换
 				case R.id.live_bottom_item_switch_caption:
-					MobclickAgent.onEvent(FeizaoApp.mConctext, "switchCameraInLiveRoom");
+					MobclickAgent.onEvent(FeizaoApp.mContext, "switchCameraInLiveRoom");
 					if (mLivePusher != null) {
 						switchCaption();
 					}
@@ -1494,7 +1156,7 @@ public class LiveCameraStreamActivity extends LiveBaseActivity implements ITXLiv
 					}
 					break;
 				case R.id.live_bottom_item_share:
-					MobclickAgent.onEvent(FeizaoApp.mConctext, "shareByBroadcaster");
+					MobclickAgent.onEvent(FeizaoApp.mContext, "shareByBroadcaster");
 					toShareLiveInfo();
 					break;
 			}
@@ -1554,105 +1216,10 @@ public class LiveCameraStreamActivity extends LiveBaseActivity implements ITXLiv
 				.NET_STATUS_VIDEO_BITRATE) + "Kbps");
 	}
 
-
-	/**
-	 * 开始播放连麦小主播视频
-	 */
-	private void startLivePlayer() {
-		if (mLivePlayer == null) {
-			mLivePlayer = new TXLivePlayer(this);
-			mLivePlayer.setPlayerView(mLiveConnectVideoView);
-			mLivePlayer.setPlayListener(new ITXLivePlayListener() {
-				@Override
-				public void onPlayEvent(int event, Bundle param) {
-					if (event == TXLiveConstants.PLAY_EVT_PLAY_BEGIN) {
-						mConnectLeaveTv.setVisibility(View.GONE);
-						mConnectVideoLoading.setVisibility(View.GONE);
-						mLivePlayDisConnect = false;
-						//						stopLoadingAnimation();
-					} else if (event == TXLiveConstants.PLAY_EVT_PLAY_PROGRESS) {
-						int progress = param.getInt(TXLiveConstants.EVT_PLAY_PROGRESS);
-						int duration = param.getInt(TXLiveConstants.EVT_PLAY_DURATION);
-					} else if (event == TXLiveConstants.PLAY_ERR_NET_DISCONNECT || event ==
-							TXLiveConstants.PLAY_EVT_PLAY_END) {
-						//如果连麦中
-						if (mIsLiveConnecting && !mNoNetworkFlag) {
-							mConnectLeaveTv.setVisibility(View.VISIBLE);
-							delayStartLivePlayer();
-						}
-					} else if (event == TXLiveConstants.PLAY_EVT_PLAY_LOADING) {
-						mConnectVideoLoading.setVisibility(View.VISIBLE);
-						//						startLoadingAnimation();
-					} else if (event == TXLiveConstants.PLAY_ERR_GET_RTMP_ACC_URL_FAIL) {
-						//如果连麦中
-						if (mIsLiveConnecting && !mNoNetworkFlag) {
-							delayStartLivePlayer();
-						}
-					}
-					String msg = param.getString(TXLiveConstants.EVT_DESCRIPTION);
-					EvtLog.e(TAG, "onPlayEvent event:" + event + " message:" + msg);
-				}
-
-				@Override
-				public void onNetStatus(Bundle status) {
-					EvtLog.d(TAG, "Current status, CPU:" + status.getString(TXLiveConstants
-							.NET_STATUS_CPU_USAGE) + ", RES:" + status.getInt(TXLiveConstants
-							.NET_STATUS_VIDEO_WIDTH) + "*" + status.getInt(TXLiveConstants
-							.NET_STATUS_VIDEO_HEIGHT) + ", SPD:" + status.getInt(TXLiveConstants
-							.NET_STATUS_NET_SPEED) + "Kbps" + ", FPS:" + status.getInt
-							(TXLiveConstants.NET_STATUS_VIDEO_FPS) + ", ARA:" + status.getInt
-							(TXLiveConstants.NET_STATUS_AUDIO_BITRATE) + "Kbps" + ", VRA:" +
-							status.getInt(TXLiveConstants.NET_STATUS_VIDEO_BITRATE) + "Kbps");
-				}
-			});
-
-			mPlayConfig = new TXLivePlayConfig();
-			mLivePlayer.setConfig(mPlayConfig);
-
-		}
-		if (!TextUtils.isEmpty(mLivePlayUrl)) {
-			int playType = TXLivePlayer.PLAY_TYPE_LIVE_RTMP;
-			if (mLivePlayUrl.contains("txSecret=")) {
-				playType = TXLivePlayer.PLAY_TYPE_LIVE_RTMP_ACC;
-			}
-			int result = mLivePlayer.startPlay(mLivePlayUrl, playType); // result返回值：0 success;
-			// -1 empty url; -2 invalid url; -3 invalid playType;
-			EvtLog.e(TAG, "startPlay pullUrl " + mLivePlayUrl + " result:" + result);
-		}
-	}
-
-	/**
-	 * 延时开始请求视频流
-	 */
-	private void delayStartLivePlayer() {
-		postDelayed(new Runnable() {
-			@Override
-			public void run() {
-				startLivePlayer();
-			}
-		}, 2000);
-	}
-
-	/**
-	 * 结束播放连麦小主播视频
-	 */
-	private void stopLivePlayer() {
-		mLivePlayDisConnect = true;
-		if (mLivePlayer != null) {
-			mLivePlayer.stopPlay(false);
-		}
-	}
-
 	/**
 	 * 销毁连麦视频播放器
 	 */
 	private void destroyLivePlayer() {
-		if (mLivePlayer != null) {
-			mLivePlayer.setPlayListener(null);
-			mLivePlayer.stopPlay(true);
-			mLivePlayer = null;
-		}
-
 		if (mLivePushDialog != null && mLivePushDialog.isShowing()) {
 			mLivePushDialog.dismiss();
 		}

@@ -129,25 +129,25 @@ public class AnchorListAdapter extends BaseAdapter {
 			loHolder = new Holder();
 			// loHolder.mUserLevel = (ImageView)
 			// convertView.findViewById(R.id.item_user_level);
-			loHolder.moIvPhoto = (ImageView) convertView.findViewById(R.id.item_lv_player_iv_photo);
+			loHolder.moIvPhoto =  convertView.findViewById(R.id.item_lv_player_iv_photo);
 			ViewGroup.LayoutParams lp = loHolder.moIvPhoto.getLayoutParams();
 			lp.width = mImageViewHeight;
 			lp.height = mImageViewHeight;
 			loHolder.moIvPhoto.setLayoutParams(lp);
-			loHolder.mUserHead = (ImageView) convertView.findViewById(R.id.item_head);
-			loHolder.moTvNickname = (TextView) convertView.findViewById(R.id.item_lv_player_tv_nickname);
-			loHolder.mTvOnline = (TextView) convertView.findViewById(R.id.item_lv_player_tv_online_num);
-			loHolder.mTvTitle = (TextView) convertView.findViewById(R.id.item_lv_player_title);
-			loHolder.moTvStatus = (ImageView) convertView.findViewById(R.id.item_lv_player_iv_status);
-			loHolder.mTvLocation = (TextView) convertView.findViewById(R.id.item_lv_player_tv_live_location);
+			loHolder.mUserHead =  convertView.findViewById(R.id.item_head);
+			loHolder.moTvNickname =  convertView.findViewById(R.id.item_lv_player_tv_nickname);
+			loHolder.mTvOnline =  convertView.findViewById(R.id.item_lv_player_tv_online_num);
+			loHolder.mTvTitle =  convertView.findViewById(R.id.item_lv_player_title);
+			loHolder.moTvStatus =  convertView.findViewById(R.id.item_lv_player_iv_status);
+			loHolder.mTvLocation =  convertView.findViewById(R.id.item_lv_player_tv_live_location);
 			convertView.setTag(loHolder);
 		} else {
 			loHolder = (Holder) convertView.getTag();
 		}
 
 		final Map<String, Object> lmRoom = mlPlayers.get(position);
-		ImageLoaderUtil.with().loadImage(moContext, loHolder.moIvPhoto, (String) lmRoom.get("headPic"));
-//		ImageLoaderUtil.with().loadImageTransformRoundCircle(moContext, loHolder.mUserHead, (String) lmRoom.get("headPic"));
+		ImageLoaderUtil.getInstance().loadImage(loHolder.moIvPhoto, lmRoom.get("headPic"));
+//		ImageLoaderUtil.getInstance().loadHeadPic(moContext, loHolder.mUserHead, (String) lmRoom.get("headPic"));
 		loHolder.mTvOnline.setText(String.format(moContext.getString(R.string.live_online_num),
 				(String) lmRoom.get("onlineNum")));
 //		loHolder.mTvPlayTime.setText(DateUtil.fmtTimemillsToTextFormat(Long.parseLong((String) lmRoom

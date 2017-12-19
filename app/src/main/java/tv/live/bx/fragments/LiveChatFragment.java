@@ -73,7 +73,7 @@ public class LiveChatFragment extends BaseFragment {
 	}
 
 	private void init(IClickUserName iclickUserName) {
-		mContext = FeizaoApp.mConctext.getApplicationContext();
+		mContext = FeizaoApp.mContext.getApplicationContext();
 		moAdapter = new ChatListAdapter(mContext);
 		this.mIClickUserNameWeakRef = new WeakReference<>(iclickUserName);
 	}

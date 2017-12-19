@@ -154,7 +154,7 @@ public class FanSubjectListAdapter extends BaseAdapter {
 		@SuppressWarnings("unchecked")
 		Map<String, Object> subjectInfo = (Map<String, Object>) getItem(position);
 
-		ImageLoaderUtil.with().loadImageTransformRoundCircle(moContext, loHolder.moIvPhoto, (String) subjectInfo.get("headPic"));
+		ImageLoaderUtil.getInstance().loadHeadPic(moContext, loHolder.moIvPhoto, (String) subjectInfo.get("headPic"));
 		if ("1".equals(subjectInfo.get("is_top"))) {
 			loHolder.mTop.setVisibility(View.VISIBLE);
 		} else {
@@ -179,7 +179,7 @@ public class FanSubjectListAdapter extends BaseAdapter {
 					imageview.setScaleType(ScaleType.CENTER_CROP);
 					loHolder.mPictureLayout.addView(imageview, params);
 					imageUrl.add((String) jsonarray.get(i));
-					ImageLoaderUtil.with().loadImage(moContext, imageview, (String) jsonarray.get(i));
+					ImageLoaderUtil.getInstance().loadImage(imageview, jsonarray.get(i));
 					imageview.setTag(i);
 					imageview.setOnClickListener(new OnClickListener() {
 
@@ -198,7 +198,7 @@ public class FanSubjectListAdapter extends BaseAdapter {
 		}
 		loHolder.moTvNickname.setText((String) subjectInfo.get("nickname"));
 		if (!TextUtils.isEmpty((String) subjectInfo.get("user_level"))) {
-			ImageLoaderUtil.with().loadImage(moContext, loHolder.mUserLevel, Utils.getLevelImageResourceUri(Constants.USER_LEVEL_PIX,
+			ImageLoaderUtil.getInstance().loadImage(loHolder.mUserLevel, Utils.getLevelImageResourceUri(Constants.USER_LEVEL_PIX,
 					(String) subjectInfo.get("user_level")));
 		}
 		if (!TextUtils.isEmpty((String) subjectInfo.get("last_reply_time"))) {

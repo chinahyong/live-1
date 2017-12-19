@@ -19,7 +19,7 @@ public class CacheConstants {
 	
 	public static final int IMG_CACHE_LIMIT = 500; // 图片缓存大小
 	public static final String IMG_CACHE_PATH = FileUtil.getDiskCachePath(
-			FeizaoApp.mConctext, Constants.IMAGE_CACHE_DIR); // 图片缓存目录
+			FeizaoApp.mContext, Constants.IMAGE_CACHE_DIR); // 图片缓存目录
 
 	/** 默认线程池大小为4 */
 	public static final int THREAD_POOL_SIZE = 4;

@@ -28,8 +28,6 @@ import java.util.Map;
 import cn.efeizao.feizao.framework.net.impl.CallbackDataHandle;
 import tv.live.bx.FeizaoApp;
 import tv.live.bx.R;
-import tv.live.bx.activities.FanDetailActivity;
-import tv.live.bx.activities.GroupPostDetailActivity;
 import tv.live.bx.activities.WebViewActivity;
 import tv.live.bx.adapters.LiveRecommendListAdapter;
 import tv.live.bx.common.BusinessUtils;
@@ -150,7 +148,7 @@ public class LiveRecommendFragment extends BaseFragment implements View.OnClickL
 		refreshLayout.setOnRefreshListener(new CustomRefreshLayout.OnRefreshListener() {
 			@Override
 			public void onRefresh() {
-				OperationHelper.onEvent(FeizaoApp.mConctext, "refreshInRecommendPageOfIndex", null);
+				OperationHelper.onEvent(FeizaoApp.mContext, "refreshInRecommendPageOfIndex", null);
 				// 加载Banner,anchor列表
 				reRequestData(false);
 			}
@@ -246,8 +244,8 @@ public class LiveRecommendFragment extends BaseFragment implements View.OnClickL
 				.setOnItemClickListener(new com.bigkoo.convenientbanner.listener.OnItemClickListener() {
 					@Override
 					public void onItemClick(int position) {
-						MobclickAgent.onEvent(FeizaoApp.mConctext, "clickbannerInIndex");
-						OperationHelper.onEvent(FeizaoApp.mConctext, "clickbannerInIndex", null);
+						MobclickAgent.onEvent(FeizaoApp.mContext, "clickbannerInIndex");
+						OperationHelper.onEvent(FeizaoApp.mContext, "clickbannerInIndex", null);
 						bannerOnClick(position);
 					}
 				});
@@ -268,16 +266,6 @@ public class LiveRecommendFragment extends BaseFragment implements View.OnClickL
 				break;
 			case Consts.BANNER_URL_TYPE_PLAYER:
 				ActivityJumpUtil.toLiveMediaPlayerActivity(mActivity, lmPageInfo);
-				break;
-			case Consts.BANNER_URL_TYPE_GROUP:
-				lmPageInfo.put("id", lmPageInfo.get("groupId"));
-				ActivityJumpUtil.gotoActivity(mActivity, FanDetailActivity.class, false, FanDetailActivity.FAN_INFO,
-						(Serializable) lmPageInfo);
-				break;
-			case Consts.BANNER_URL_TYPE_POST_DETAIL:
-				lmPageInfo.put("id", lmPageInfo.get("postId"));
-				ActivityJumpUtil.gotoActivity(mActivity, GroupPostDetailActivity.class, false, "subjectInfo",
-						(Serializable) lmPageInfo);
 				break;
 		}
 	}
@@ -307,7 +295,7 @@ public class LiveRecommendFragment extends BaseFragment implements View.OnClickL
 
 	@Override
 	public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-		OperationHelper.onEvent(FeizaoApp.mConctext, "clickBbroadcasterSImgInRecommendTab", null);
+		OperationHelper.onEvent(FeizaoApp.mContext, "clickBbroadcasterSImgInRecommendTab", null);
 		int pos = position - mGridView.getHeaderViewCount() * mGridView.getNumColumns();
 		if(pos >= mRecommendAdapter.getCount())
 			return;

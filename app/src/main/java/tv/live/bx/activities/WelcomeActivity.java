@@ -72,7 +72,7 @@ public class WelcomeActivity extends FragmentActivity {
 		mActivity = this;
 		TAG = getClass().getSimpleName();
 		setContentView(getLayoutRes());
-		OperationHelper.onEvent(FeizaoApp.mConctext, "openApp", null);
+		OperationHelper.onEvent(FeizaoApp.mContext, "openApp", null);
 		// 获取当前时间
 		mCurLauchTime = System.currentTimeMillis() / 1000;
 		mobileBindInterval = AppConfig.getInstance().mobileBindAlertInterval;
@@ -103,7 +103,7 @@ public class WelcomeActivity extends FragmentActivity {
 
 	protected void initMembers() {
 		mWelcomeImage = (ImageView) findViewById(R.id.welcome_ad);
-		ImageLoaderUtil.with().loadImage(FeizaoApp.mConctext, mWelcomeImage, AppConfig.getInstance().androidLaunghPic, 0, 0);
+		ImageLoaderUtil.getInstance().loadImage(mWelcomeImage, AppConfig.getInstance().androidLaunghPic);
 		startTimer();
 	}
 
@@ -149,7 +149,7 @@ public class WelcomeActivity extends FragmentActivity {
 		String sessionId = HttpSession.getInstance(mActivity).getCookie("PHPSESSID");
 		// 本地cookie 没有sessionId
 		if (TextUtils.isEmpty(sessionId)) {
-			BusinessUtils.appInit(FeizaoApp.mConctext, new CallbackDataHandle() {
+			BusinessUtils.appInit(FeizaoApp.mContext, new CallbackDataHandle() {
 				@Override
 				public void onCallback(boolean success, String errorCode, String errorMsg, Object result) {
 					if (success) {
@@ -170,9 +170,9 @@ public class WelcomeActivity extends FragmentActivity {
 	// 上报 极光注册号
 	private void reportRegisterId() {
 		// 获取极光注册号，传给后台，该过程不影响app启动
-		String registerId = JPushInterface.getRegistrationID(FeizaoApp.mConctext);
+		String registerId = JPushInterface.getRegistrationID(FeizaoApp.mContext);
 		if (!TextUtils.isEmpty(registerId)) {
-			BusinessUtils.reportRegisterId(FeizaoApp.mConctext, new CallbackDataHandle() {
+			BusinessUtils.reportRegisterId(FeizaoApp.mContext, new CallbackDataHandle() {
 				@Override
 				public void onCallback(boolean success, String errorCode, String errorMsg, Object result) {
 					if (success) {
@@ -196,9 +196,9 @@ public class WelcomeActivity extends FragmentActivity {
 		// 同盾初始化
 		try {
 //			if (BuildConfig.DEBUG) {
-//				FMAgent.init(FeizaoApp.mConctext, FMAgent.ENV_SANDBOX);
+//				FMAgent.init(FeizaoApp.mContext, FMAgent.ENV_SANDBOX);
 //			} else {
-			FMAgent.init(FeizaoApp.mConctext, FMAgent.ENV_PRODUCTION);
+			FMAgent.init(FeizaoApp.mContext, FMAgent.ENV_PRODUCTION);
 //			}
 		} catch (FMException e) {
 			e.printStackTrace();
@@ -259,7 +259,7 @@ public class WelcomeActivity extends FragmentActivity {
 				}
 				break;
 			case MsgTypes.GET_CONFIG_INFO_SUCCESS:
-				ImageLoaderUtil.with().loadImage(mActivity.getApplicationContext(), mWelcomeImage, AppConfig.getInstance().androidLaunghPic, 0, 0);
+				ImageLoaderUtil.getInstance().loadImage(mWelcomeImage, AppConfig.getInstance().androidLaunghPic);
 				break;
 
 			default:
@@ -374,13 +374,13 @@ public class WelcomeActivity extends FragmentActivity {
 					msg.what = MsgTypes.GET_CONFIG_INFO_SUCCESS;
 					sendMsg(msg);
 					if (levelVersion > currentVersion) {
-						BusinessUtils.getLevelConfigInfo(FeizaoApp.mConctext, new LevelInfoReceiverListener(AppConfig.getInstance().levelConfigVersion));
+						BusinessUtils.getLevelConfigInfo(FeizaoApp.mContext, new LevelInfoReceiverListener(AppConfig.getInstance().levelConfigVersion));
 					}
 
 					int modelConfigVersion = Integer.parseInt(AppConfig.getInstance().medalsConfigVersion);
 					int currentModelVersion = Integer.parseInt(AppConfig.getInstance().currentMedalsConfigVersion);
 					if (modelConfigVersion > currentModelVersion) {
-						BusinessUtils.getModelConfigInfo(FeizaoApp.mConctext, new ModelInfoReceiverListener(AppConfig.getInstance().medalsConfigVersion));
+						BusinessUtils.getModelConfigInfo(FeizaoApp.mContext, new ModelInfoReceiverListener(AppConfig.getInstance().medalsConfigVersion));
 					}
 					//得到上报日志域名
 					DomainConfig.getInstance().updateSafeStatDomain(AppConfig.getInstance().statDomain);

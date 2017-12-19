@@ -81,7 +81,7 @@ public class LiveHotRankAdapter extends MyBaseAdapter {
 			holder = (Holder) convertView.getTag();
 		}
 		AnchorBean data = mDatas.get(position);
-		ImageLoaderUtil.with().loadImageTransformRoundCircle(mContext, holder.ivHeadPic, data
+		ImageLoaderUtil.getInstance().loadHeadPic(mContext, holder.ivHeadPic, data
 				.headPic);
 		holder.ivVerified.setVisibility(data.verified ? View.VISIBLE : View.GONE);
 		holder.tvNickname.setText(data.nickname);

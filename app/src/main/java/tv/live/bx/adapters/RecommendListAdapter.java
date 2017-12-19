@@ -134,7 +134,7 @@ public class RecommendListAdapter extends BaseAdapter {
 
 		@SuppressWarnings("unchecked")
 		final Map<String, Object> lmRoom = mData.get(position);
-		ImageLoaderUtil.with().loadImageTransformRoundCircle(moContext, loHolder.mUserHead, (String) lmRoom.get("headPic"));
+		ImageLoaderUtil.getInstance().loadHeadPic(moContext, loHolder.mUserHead, (String) lmRoom.get("headPic"));
 		loHolder.moTvNickname.setText((String) lmRoom.get("nickname"));
 		loHolder.mUserHeadV.setVisibility(Utils.getBooleanFlag(lmRoom.get("verified").toString())
 				? View.VISIBLE
@@ -144,10 +144,10 @@ public class RecommendListAdapter extends BaseAdapter {
 			@Override
 			public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
 				if (isChecked) {
-					MobclickAgent.onEvent(FeizaoApp.mConctext,"clickChooseFollowInRecommendBroadcasterPage");
+					MobclickAgent.onEvent(FeizaoApp.mContext,"clickChooseFollowInRecommendBroadcasterPage");
 					checkFlagMap.put(position, String.valueOf(lmRoom.get("mid")));
 				} else {
-					MobclickAgent.onEvent(FeizaoApp.mConctext,"clickCancelFollowInRecommendBroadcasterPage");
+					MobclickAgent.onEvent(FeizaoApp.mContext,"clickCancelFollowInRecommendBroadcasterPage");
 					checkFlagMap.remove(position);
 				}
 			}

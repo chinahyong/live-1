@@ -121,8 +121,8 @@ public class LiveNewFragment extends BaseFragment implements OnClickListener, On
 		if (mPosition < 0 || mPosition >= mLiveNewAdapter.getCount()) {
 			return;
 		}
-		MobclickAgent.onEvent(FeizaoApp.mConctext, "clickBbroadcasterSImgInNewTab");
-		OperationHelper.onEvent(FeizaoApp.mConctext, "clickBbroadcasterSImgInNewTab", null);
+		MobclickAgent.onEvent(FeizaoApp.mContext, "clickBbroadcasterSImgInNewTab");
+		OperationHelper.onEvent(FeizaoApp.mContext, "clickBbroadcasterSImgInNewTab", null);
 		Map<String, Object> lmItem = (Map<String, Object>) mLiveNewAdapter.getItem(mPosition);
 		lmItem.put("rid", lmItem.get("rid"));
 		ActivityJumpUtil.toLiveMediaPlayerActivity(mActivity, lmItem);
@@ -206,7 +206,7 @@ public class LiveNewFragment extends BaseFragment implements OnClickListener, On
 		refreshLayout.setOnRefreshListener(new CustomRefreshLayout.OnRefreshListener() {
 			@Override
 			public void onRefresh() {
-				OperationHelper.onEvent(FeizaoApp.mConctext, "refreshInNewPageOfIndex", null);
+				OperationHelper.onEvent(FeizaoApp.mContext, "refreshInNewPageOfIndex", null);
 				// 加载Banner,anchor列表
 				reRequestData(false);
 			}

@@ -19,7 +19,6 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 import tv.live.bx.R;
-import tv.live.bx.activities.PostPublishActivity;
 import tv.live.bx.activities.base.BaseActionBarActivity;
 import tv.live.bx.fragments.ImagePagerFragment;
 
@@ -37,7 +36,7 @@ public class PhotoPickDetailActivity extends BaseActionBarActivity {
 	private ViewPager mViewPager;
 	private CheckBox mCheckBox;
 
-	private int mMaxPick = PostPublishActivity.PHOTO_MAX_COUNT;
+	private int mMaxPick = 6;
 	private MenuItem mMenuSend;
 	private final String actionbarTitle = "%d/%d";
 	Cursor mCursor;

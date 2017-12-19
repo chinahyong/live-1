@@ -19,12 +19,12 @@ public class BonusToast {
 	private static Toast mToast;
 
 	public static void showToast(SpannableString toastText) {
-		View layout = LayoutInflater.from(FeizaoApp.mConctext).inflate(R.layout.toast_bouns_layout, null);
+		View layout = LayoutInflater.from(FeizaoApp.mContext).inflate(R.layout.toast_bouns_layout, null);
 		TextView content = (TextView) layout.findViewById(R.id.bonus_toast_content);
 		content.setText(toastText);
 		//Toast的初始化
 		if (mToast == null) {
-			mToast = new Toast(FeizaoApp.mConctext);
+			mToast = new Toast(FeizaoApp.mContext);
 			mToast.setDuration(Toast.LENGTH_LONG);
 		}
 		mToast.setView(layout);

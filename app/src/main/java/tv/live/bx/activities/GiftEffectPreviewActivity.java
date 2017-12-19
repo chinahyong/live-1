@@ -143,7 +143,7 @@ public class GiftEffectPreviewActivity extends BaseFragmentActivity implements V
 
 	private void updateGifGiftInfo(String pname) {
 		UserInfoConfig userInfoConfig = UserInfoConfig.getInstance();
-		ImageLoaderUtil.with().loadImageTransformRoundCircle(mActivity.getApplicationContext(), mGiftGiftUserPhoto, userInfoConfig.headPic);
+		ImageLoaderUtil.getInstance().loadHeadPic(mActivity.getApplicationContext(), mGiftGiftUserPhoto, userInfoConfig.headPic);
 		mGiftGiftUserName.setText(userInfoConfig.nickname);
 		mGiftGiftTip.setText(mActivity.getResources().getString(R.string.live_gif_gift_name_tip, pname, "1"));
 	}

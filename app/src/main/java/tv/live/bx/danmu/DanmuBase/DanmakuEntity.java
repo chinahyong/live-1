@@ -34,7 +34,7 @@ public class DanmakuEntity {
 	}
 
 	private void init(JSONObject data) {
-		SpannableString nickname = HtmlUtil.htmlTextDeal(FeizaoApp.mConctext, data.optString("nickname"), null, null);
+		SpannableString nickname = HtmlUtil.htmlTextDeal(FeizaoApp.mContext, data.optString("nickname"), null, null);
 		SpannableStringBuilder ss = new SpannableStringBuilder(nickname);
 		// 发消息用户类别
 		if (!TextUtils.isEmpty(data.optString("type"))) {
@@ -46,13 +46,13 @@ public class DanmakuEntity {
 			ss.append(" ");// 留点空隙
 			ss.append(Utils.getImageToSpannableString(
 					Utils.getFiledDrawable(Constants.USER_GUARD_LEVEL_PIX, data.optString("guardType")),
-					Utils.dip2px(FeizaoApp.mConctext, 12)));
+					Utils.dip2px(FeizaoApp.mContext, 12)));
 		}
 		// 发消息用户等级
 		if (!TextUtils.isEmpty(data.optString("level"))) {
 			ss.append(" ");// 留点空隙
 			ss.append(Utils.getImageToSpannableString(Utils.getLevelImageResourceUri(Constants.USER_LEVEL_PIX, data.optString("level")),
-					Utils.dip2px(FeizaoApp.mConctext, 12)));
+					Utils.dip2px(FeizaoApp.mContext, 12)));
 		}
 		this.embellishImg = data.optString("starImg");
 		this.title = ss;

@@ -48,7 +48,8 @@ public class DomainConfig {
 	 */
 	private static DomainConfig readFromFile() {
 		DomainConfig config = new DomainConfig();
-		SharedPreferences sp = FeizaoApp.mConctext.getSharedPreferences(Constants.COMMON_SF_HTTP_DOMAIN_NAME, Context.MODE_PRIVATE);
+		SharedPreferences sp = FeizaoApp.mContext
+            .getSharedPreferences(Constants.COMMON_SF_HTTP_DOMAIN_NAME, Context.MODE_PRIVATE);
 		config.base_domain = sp.getString(Constants.COMMON_SF_BASE_DOMAIN, Consts.BASE_DOMAIN);
 		config.base_stat_domain = sp.getString(Constants.COMMON_SF_BASE_STAT_DOMAIN, Consts.BASE_STAT_DOMAIN);
 		config.base_m_domain = sp.getString(Constants.COMMON_SF_BASE_M_DOMAIN, Consts.BASE_M_DOMAIN);
@@ -69,7 +70,8 @@ public class DomainConfig {
 	public void updateSafeHttpDomain(String httpDomain) {
 		if (!TextUtils.isEmpty(httpDomain) && !base_http_domain.equals(httpDomain)) {
 			Consts.BASE_HTTP_DOMAIN = base_http_domain = httpDomain;
-			SharedPreferences.Editor editor = FeizaoApp.mConctext.getSharedPreferences(Constants.COMMON_SF_HTTP_DOMAIN_NAME, Context.MODE_PRIVATE).edit();
+			SharedPreferences.Editor editor = FeizaoApp.mContext
+                .getSharedPreferences(Constants.COMMON_SF_HTTP_DOMAIN_NAME, Context.MODE_PRIVATE).edit();
 			editor.putString(Constants.COMMON_SF_BASE_HTTP_DOMAIN, httpDomain);
 			editor.commit();
 		}
@@ -82,7 +84,8 @@ public class DomainConfig {
 		if(!TextUtils.isEmpty(statDomain) && !base_stat_domain.equals(statDomain)){
 			Consts.BASE_STAT_DOMAIN = base_stat_domain = statDomain;
 			Consts.updateBaseDomain();
-			SharedPreferences.Editor editor = FeizaoApp.mConctext.getSharedPreferences(Constants.COMMON_SF_HTTP_DOMAIN_NAME, Context.MODE_PRIVATE).edit();
+			SharedPreferences.Editor editor = FeizaoApp.mContext
+                .getSharedPreferences(Constants.COMMON_SF_HTTP_DOMAIN_NAME, Context.MODE_PRIVATE).edit();
 			editor.putString(Constants.COMMON_SF_BASE_STAT_DOMAIN, statDomain);
 			editor.commit();
 		}
@@ -96,7 +99,8 @@ public class DomainConfig {
 			base_m_domain = mDomain;
 			Consts.BASE_M_DOMAIN = DomainConfig.getInstance().base_m_domain;
 			Consts.updateBaseDomain();
-			SharedPreferences.Editor editor = FeizaoApp.mConctext.getSharedPreferences(Constants.COMMON_SF_HTTP_DOMAIN_NAME, Context.MODE_PRIVATE).edit();
+			SharedPreferences.Editor editor = FeizaoApp.mContext
+                .getSharedPreferences(Constants.COMMON_SF_HTTP_DOMAIN_NAME, Context.MODE_PRIVATE).edit();
 			editor.putString(Constants.COMMON_SF_BASE_M_DOMAIN, mDomain);
 			editor.commit();
 		}
@@ -114,7 +118,8 @@ public class DomainConfig {
 			String base_domain_tmp = job.getString("addr");
 			String http_domain_lists_tmp = StringUtil.base64Decode(job.getString("backList"));
 
-			SharedPreferences.Editor editor = FeizaoApp.mConctext.getSharedPreferences(Constants.COMMON_SF_HTTP_DOMAIN_NAME, Context.MODE_PRIVATE).edit();
+			SharedPreferences.Editor editor = FeizaoApp.mContext
+                .getSharedPreferences(Constants.COMMON_SF_HTTP_DOMAIN_NAME, Context.MODE_PRIVATE).edit();
 			if (!TextUtils.isEmpty(base_domain_tmp)) {
 				if(!base_domain.equals(base_domain_tmp)){
 					Consts.BASE_DOMAIN = base_domain = base_domain_tmp;

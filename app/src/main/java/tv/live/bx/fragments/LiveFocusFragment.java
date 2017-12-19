@@ -148,7 +148,7 @@ public class LiveFocusFragment extends BaseFragment implements OnClickListener, 
 		mListView.setTask(new Runnable() {
 			@Override
 			public void run() {
-				OperationHelper.onEvent(FeizaoApp.mConctext, "refreshInFollowPageOfIndex", null);
+				OperationHelper.onEvent(FeizaoApp.mContext, "refreshInFollowPageOfIndex", null);
 				// 请求主播数据
 				reRequestData(false);
 			}
@@ -287,7 +287,7 @@ public class LiveFocusFragment extends BaseFragment implements OnClickListener, 
 		}
 		/* umeng后台出现 outOfBounds，先捕获处理，暂未定位到原因 */
 		try {
-			OperationHelper.onEvent(FeizaoApp.mConctext,"clickBbroadcasterSImgInFollowTab", null);
+			OperationHelper.onEvent(FeizaoApp.mContext,"clickBbroadcasterSImgInFollowTab", null);
 			@SuppressWarnings("unchecked")
 			Map<String, Object> lmItem = (Map<String, Object>) mAuthorAdapter.getItem(position
 					- mListView.getHeaderViewsCount());

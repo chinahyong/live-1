@@ -118,7 +118,7 @@ public class ChoiceIntroductionActivity extends BaseFragmentActivity {
 	private class OnDetermine implements OnClickListener {
 		@Override
 		public void onClick(View arg0) {
-			MobclickAgent.onEvent(FeizaoApp.mConctext, "saveAutographModification");
+			MobclickAgent.onEvent(FeizaoApp.mContext, "saveAutographModification");
 			String lsIntroduction = moEdtIntroduction.getText().toString();
 			if (lsIntroduction.length() > 30) {
 				showToast("签名最长30个字", TOAST_SHORT);

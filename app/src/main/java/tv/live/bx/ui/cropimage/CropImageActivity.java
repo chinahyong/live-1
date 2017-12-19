@@ -43,7 +43,7 @@ public class CropImageActivity extends BaseFragmentActivity {
 
 	static final String IMAGE_NAME = "crop_result.jpg";
 
-	static final int CROP_WIDTH = PackageUtil.getScreenWidth(FeizaoApp.mConctext);
+	static final int CROP_WIDTH = PackageUtil.getScreenWidth(FeizaoApp.mContext);
 	static int CROP_HEIGHT = CROP_WIDTH;
 
 	private CropImageView mCropImageView;

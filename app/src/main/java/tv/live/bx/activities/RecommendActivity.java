@@ -152,11 +152,11 @@ public class RecommendActivity extends BaseFragmentActivity implements View.OnCl
 	public void onClick(View v) {
 		switch (v.getId()) {
 			case R.id.recommend_focus_close:
-				MobclickAgent.onEvent(FeizaoApp.mConctext, "clickCloseInRecommendBroadcasterPage");
+				MobclickAgent.onEvent(FeizaoApp.mContext, "clickCloseInRecommendBroadcasterPage");
 				ActivityJumpUtil.welcomeToMainActivity(this);
 				break;
 			case R.id.recommend_focus_commit:
-				MobclickAgent.onEvent(FeizaoApp.mConctext, "clickFinishInRecommendBroadcasterPage");
+				MobclickAgent.onEvent(FeizaoApp.mContext, "clickFinishInRecommendBroadcasterPage");
 				// 如果没有选中任何直接跳转主页，不做无效请求
 				if (mAdapter.getCheckedMap().size() <= 0) {
 					ActivityJumpUtil.welcomeToMainActivity(this);
@@ -215,7 +215,7 @@ public class RecommendActivity extends BaseFragmentActivity implements View.OnCl
 		}
 		/* umeng后台出现 outOfBounds，先捕获处理，暂未定位到原因 */
 		try {
-			OperationHelper.onEvent(FeizaoApp.mConctext, "clickAnchorIconInRecommendBroadcasterPage", null);
+			OperationHelper.onEvent(FeizaoApp.mContext, "clickAnchorIconInRecommendBroadcasterPage", null);
 			@SuppressWarnings("unchecked")
 			Map<String, String> lmItem = (Map<String, String>) mAdapter.getItem(position
 					- mListView.getHeaderViewsCount());

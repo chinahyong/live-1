@@ -134,7 +134,7 @@ public class EditDataActivity extends BaseFragmentActivity implements OnClickLis
 				if (lsPhoto.indexOf("://") == -1) {
 					lsPhoto = Constants.FILE_PXI + lsPhoto;
 				}
-				ImageLoaderUtil.with().loadImageTransformRoundCircle(mActivity, moIvPhoto, lsPhoto);
+				ImageLoaderUtil.getInstance().loadHeadPic(mActivity, moIvPhoto, lsPhoto);
 			}
 			// 昵称
 			moTvName.setText(lsNickname);
@@ -364,13 +364,13 @@ public class EditDataActivity extends BaseFragmentActivity implements OnClickLis
 				break;
 			// 编辑头像
 			case R.id.edit_data_ll_headpic:
-				MobclickAgent.onEvent(FeizaoApp.mConctext, "clickHead");
+				MobclickAgent.onEvent(FeizaoApp.mContext, "clickHead");
 				// 弹出选择图片的加载方式
 				showGetPhotoDialog();
 				break;
 			// 编辑性别
 			case R.id.edit_data_ll_sex:
-				MobclickAgent.onEvent(FeizaoApp.mConctext, "clickSex");
+				MobclickAgent.onEvent(FeizaoApp.mContext, "clickSex");
 				if (UserInfoConfig.getInstance().canEditSex)
 					showChangeSex();
 				else
@@ -378,17 +378,17 @@ public class EditDataActivity extends BaseFragmentActivity implements OnClickLis
 				break;
 			//编辑昵称
 			case R.id.edit_data_ll_name:
-				MobclickAgent.onEvent(FeizaoApp.mConctext, "clickUsername");
+				MobclickAgent.onEvent(FeizaoApp.mContext, "clickUsername");
 				gotoActivityForResult(ChoiceNameActivity.class, REQUEST_CODE_EDIT_NAME, PERSON_INFO, null);
 				break;
 			//编辑个签
 			case R.id.edit_data_ll_introduction:
-				MobclickAgent.onEvent(FeizaoApp.mConctext, "clickAutograph");
+				MobclickAgent.onEvent(FeizaoApp.mContext, "clickAutograph");
 				gotoActivityForResult(ChoiceIntroductionActivity.class, REQUEST_CODE_EDIT_INTRODUCTION, PERSON_INFO, null);
 				break;
 			// 编辑生日
 			case R.id.edit_data_ll_birthday:
-				MobclickAgent.onEvent(FeizaoApp.mConctext, "clickBirthday");
+				MobclickAgent.onEvent(FeizaoApp.mContext, "clickBirthday");
 				final String birth = moEdtBirthday.getText().toString();
 				SimpleDateFormat format = new SimpleDateFormat(DateUtil.DATE_FORMAT_3);
 				try {
@@ -450,7 +450,7 @@ public class EditDataActivity extends BaseFragmentActivity implements OnClickLis
 				.addSheetItem(getString(R.string.edit_user_save), SheetItemColor.BLACK, new OnSheetItemClickListener() {
 					@Override
 					public void onClick(int which) {
-						MobclickAgent.onEvent(FeizaoApp.mConctext, "saveSexModification");
+						MobclickAgent.onEvent(FeizaoApp.mContext, "saveSexModification");
 						isSexChange = true;
 						requestSave();
 					}

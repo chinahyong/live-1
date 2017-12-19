@@ -230,7 +230,7 @@ public class PersonTaskActivity extends BaseFragmentActivity implements OnClickL
 			onBackPressed();
 			break;
 		case R.id.task_reward_btn:
-			MobclickAgent.onEvent(FeizaoApp.mConctext, "clickGetDiandianButton");
+			MobclickAgent.onEvent(FeizaoApp.mContext, "clickGetDiandianButton");
 			BusinessUtils.getSign(mActivity, new RewardCallbackDataHandle(PersonTaskActivity.this));
 			break;
 		default:

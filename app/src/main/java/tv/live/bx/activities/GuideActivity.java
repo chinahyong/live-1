@@ -150,7 +150,7 @@ public class GuideActivity extends BaseFragmentActivity implements OnClickListen
 		switch (msg.what) {
 			case MsgTypes.WELCOME_ACTIVITY_WAIT_TIMEOUT:
 				// 如果未登录进入登录页面
-				if ("com.guojiang.yyboys".equals(FeizaoApp.mConctext.getPackageName())
+				if ("com.guojiang.yyboys".equals(FeizaoApp.mContext.getPackageName())
 						&& !AppConfig.getInstance().isLogged) {
 					ActivityJumpUtil.gotoActivityForResult(mActivity, LoginActivity.class, Constants.REQUEST_CODE_LOGIN,
 							null, null);
@@ -193,7 +193,7 @@ public class GuideActivity extends BaseFragmentActivity implements OnClickListen
 					int currentVersion = Integer.parseInt(AppConfig.getInstance().currentLevelConfigVersion);
 
 					if (levelVersion > currentVersion) {
-						BusinessUtils.getLevelConfigInfo(FeizaoApp.mConctext, new LevelInfoReceiverListener(AppConfig.getInstance().levelConfigVersion));
+						BusinessUtils.getLevelConfigInfo(FeizaoApp.mContext, new LevelInfoReceiverListener(AppConfig.getInstance().levelConfigVersion));
 					}
 				} catch (Exception e) {
 					e.printStackTrace();

@@ -3,25 +3,23 @@ package tv.live.bx.util;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.support.v4.app.Fragment;
-import android.text.TextUtils;
-
+import java.io.Serializable;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import tv.live.bx.activities.CalMainActivity;
 import tv.live.bx.activities.EditDataActivity;
 import tv.live.bx.activities.EditInfoActivity;
-import tv.live.bx.activities.GroupPostDetailActivity;
 import tv.live.bx.activities.ImageBrowserActivity;
 import tv.live.bx.activities.LiveTypeActivity;
 import tv.live.bx.activities.LoginActivity;
 import tv.live.bx.activities.PersonInfoActivity;
 import tv.live.bx.activities.PhoneBindActivity;
-import tv.live.bx.activities.PostDetailActivity;
 import tv.live.bx.activities.ReportActivity;
 import tv.live.bx.activities.ShareDialogActivity;
-import tv.live.bx.activities.UserDynamicActivity;
 import tv.live.bx.activities.UserFansActivity;
 import tv.live.bx.activities.UserFocusActivity;
 import tv.live.bx.activities.UserInviterActivity;
@@ -31,11 +29,6 @@ import tv.live.bx.live.activities.LiveBaseActivity;
 import tv.live.bx.live.activities.LiveCameraStreamActivity;
 import tv.live.bx.live.activities.LiveMediaPlayerActivity;
 import tv.live.bx.live.activities.LiveWebViewActivity;
-
-import java.io.Serializable;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 
 /**
@@ -109,37 +102,6 @@ public class ActivityJumpUtil {
 	/**
 	 * 转向Activity
 	 */
-	public static void toPostDetailActivity(Activity activity, Map<String, String> subjectInfo, String fReplyId,
-											int requestCode) {
-		Intent intent = new Intent(activity, PostDetailActivity.class);
-		if (!TextUtils.isEmpty(fReplyId)) {
-			intent.putExtra(PostDetailActivity.F_REPLAY_ID, fReplyId);
-		}
-		intent.putExtra("subjectInfo", (Serializable) subjectInfo);
-		activity.startActivityForResult(intent, requestCode);
-	}
-
-	/**
-	 * 转向Activity
-	 */
-	public static void toGroupPostDetailActivity(Context activity, Map<String, String> subjectInfo, String fReplyId,
-												 int requestCode) {
-		Intent intent = new Intent(activity, GroupPostDetailActivity.class);
-		if (!TextUtils.isEmpty(fReplyId)) {
-			intent.putExtra(GroupPostDetailActivity.F_REPLAY_ID, fReplyId);
-		}
-		intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-		intent.putExtra("subjectInfo", (Serializable) subjectInfo);
-		if (activity instanceof Activity)
-			((Activity) activity).startActivityForResult(intent, requestCode);
-		else {
-			activity.startActivity(intent);
-		}
-	}
-
-	/**
-	 * 转向Activity
-	 */
 	public static void toShareActivity(Activity activity, Map<String, String> shareInfo) {
 		Intent intent = new Intent(activity, ShareDialogActivity.class);
 		intent.putExtra(ShareDialogActivity.SHARE_INFO, (Serializable) shareInfo);
@@ -197,17 +159,6 @@ public class ActivityJumpUtil {
 		else {
 			activity.startActivity(intent);
 		}
-	}
-
-	/**
-	 * 跳转到自己的个人主页
-	 */
-	public static void toUserDynamicActivity(Activity activity, String uId, boolean isOwen,
-											 int requestCode) {
-		Intent intent = new Intent(activity, UserDynamicActivity.class);
-		intent.putExtra(UserDynamicActivity.USER_ID, (Serializable) uId);
-		intent.putExtra(UserDynamicActivity.IS_OWER, isOwen);
-		activity.startActivityForResult(intent, requestCode);
 	}
 
 	/**

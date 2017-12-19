@@ -26,9 +26,7 @@ import android.os.Bundle;
 import android.os.StrictMode;
 import android.support.multidex.MultiDex;
 import android.util.DisplayMetrics;
-
-
-import com.example.sdk.GT3GeetestUrl;
+import cn.jpush.android.api.JPushInterface;
 import com.lonzh.lib.network.LZCookieStore;
 import com.pili.pldroid.streaming.StreamingEnv;
 import com.squareup.leakcanary.LeakCanary;
@@ -50,24 +48,19 @@ import com.umeng.socialize.PlatformConfig;
 import com.umeng.socialize.UMShareAPI;
 import com.umeng.socialize.UMShareConfig;
 import com.umeng.socialize.utils.Log;
-import com.yanzhenjie.album.Album;
-import com.yanzhenjie.album.AlbumConfig;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.lang.ref.WeakReference;
 import java.util.HashMap;
-import java.util.Locale;
 import java.util.Map;
-
-import cn.efeizao.feizao.framework.net.NetConstants;
-import cn.jpush.android.api.JPushInterface;
+import tv.guojiang.baselib.BaseLibConfig;
+import tv.guojiang.baselib.ConfigBuilder;
+import tv.guojiang.baselib.image.factory.GlideFactory;
 import tv.live.bx.common.Consts;
 import tv.live.bx.config.AppConfig;
 import tv.live.bx.config.DomainConfig;
 import tv.live.bx.config.UserInfoConfig;
 import tv.live.bx.imageloader.ImageLoaderUtil;
-import tv.live.bx.imageloader.glide.GlideImageLoader;
 import tv.live.bx.library.common.CrashHandler;
 import tv.live.bx.library.util.EvtLog;
 import tv.live.bx.library.util.PackageUtil;
@@ -96,14 +89,14 @@ import tv.live.bx.util.ChannelUtil;
  * Created by zhangshaowen on 16/3/17.
  */
 @SuppressWarnings("unused")
-@DefaultLifeCycle(application = "com.efeizao.feizao.SampleApplication",
+@DefaultLifeCycle(application = "tv.live.bx.SampleApplication",
 		flags = ShareConstants.TINKER_ENABLE_ALL,
 		loadVerifyFlag = false)
 public class FeizaoApp extends DefaultApplicationLike {
 	private final static String TAG = FeizaoApp.class.getSimpleName();
 	private static Map<String, Object> mmDataCache = new HashMap<>();
 	private LZCookieStore moCookieStore;
-	public static Context mConctext;
+	public static Context mContext;
 	private static WeakReference<Activity> app_activity;
 	/**
 	 * 用于获取该主播是否正在进行直播
@@ -166,15 +159,8 @@ public class FeizaoApp extends DefaultApplicationLike {
 	public void onCreate() {
 		super.onCreate();
 
-		mConctext = getApplication();
-//		Stetho.initialize(
-//				Stetho.newInitializerBuilder(this)
-//						.enableDumpapp(
-//								Stetho.defaultDumperPluginsProvider(this))
-//						.enableWebKitInspector(
-//								Stetho.defaultInspectorModulesProvider(this))
-//						.build());
-		metrics = mConctext.getResources().getDisplayMetrics();
+		mContext = getApplication();
+		metrics = mContext.getResources().getDisplayMetrics();
 		EvtLog.d(TAG, "start metrics: " + metrics.density + "," + metrics.widthPixels);
 
 		if (BuildConfig.DEBUG) {
@@ -182,7 +168,6 @@ public class FeizaoApp extends DefaultApplicationLike {
 			MobclickAgent.setCatchUncaughtExceptions(false);
 			// 重定义异常捕获
 			loadCrashHandler();
-
 			// 在android 2.3上运行时报android.os.NetworkOnMainThreadException异常，在2.3中，访问网络不能在主程序中进行
 			if (android.os.Build.VERSION.SDK_INT > 9) {
 				// 针对线程的相关策略
@@ -192,30 +177,21 @@ public class FeizaoApp extends DefaultApplicationLike {
 //						.detectNetwork()   // or .detectAll() for all detectable problems
 //						.penaltyLog()
 						.build());
-
-				// 针对VM的相关策略
-//				StrictMode.setVmPolicy(new StrictMode.VmPolicy.Builder()
-//						.detectLeakedSqlLiteObjects()
-//						.detectLeakedClosableObjects()
-//						.penaltyLog()
-//						.penaltyDeath()
-//						.build());
 			}
 		}
 		initReadKey();
 		initConfigs();
 		MobclickAgent.openActivityDurationTrack(false);
 		// 代码设置渠道号
-		AnalyticsConfig.setChannel(ChannelUtil.getChannel(mConctext));
+		AnalyticsConfig.setChannel(ChannelUtil.getChannel(mContext));
 
-		moCookieStore = new LZCookieStore(mConctext);
-		initImageLoader();
+		moCookieStore = new LZCookieStore(mContext);
 		/** 极光推送初始化 */
-		if (PackageUtil.isDebugMode(mConctext)) {
+		if (PackageUtil.isDebugMode(mContext)) {
 			JPushInterface.setDebugMode(BuildConfig.DEBUG);
 		}
-		JPushInterface.init(mConctext);
-		JPushInterface.setLatestNotificationNumber(mConctext, 3);
+		JPushInterface.init(mContext);
+		JPushInterface.setLatestNotificationNumber(mContext, 3);
 
 		// 4.0上运行时报android.os.NetworkOnMainThreadException异常，在4.0中，访问网络不能在主程序中进行
 		// StrictMode.setThreadPolicy(new
@@ -228,30 +204,21 @@ public class FeizaoApp extends DefaultApplicationLike {
 		// StrictMode.setThreadPolicy(policy);
 		// }
 		// 初始化七牛推流环境
-		StreamingEnv.init(mConctext.getApplicationContext());
+		StreamingEnv.init(mContext.getApplicationContext());
 		// 初始化umeng
 		initUmengSocial();
 		//检测内存泄露
 		mRefWatcher = LeakCanary.install(getApplication());
 		//打印设备信息
-		EvtLog.d(TAG, PackageUtil.getDeviceInfo(mConctext));
-		//初始化相册选图工具
-		initAlbum();
+		EvtLog.d(TAG, PackageUtil.getDeviceInfo(mContext));
 		// 获取栈顶activity
 		initGlobeActivity();
-		// 初始化极验验证
-		initGT3Geetest();
+		initBaseLibrary();
 	}
 
-	/**
-	 * 初始化相册选图工具
-	 */
-	private void initAlbum() {
-		Album.initialize(new AlbumConfig.Build()
-				.setImageLoader(new GlideImageLoader())
-				.setLocale(Locale.getDefault())
-				.build()
-		);
+	private void initBaseLibrary() {
+		BaseLibConfig.init(new ConfigBuilder()
+		.imageFactory(new GlideFactory()));
 	}
 
 	/**
@@ -266,13 +233,13 @@ public class FeizaoApp extends DefaultApplicationLike {
 	@Override
 	public void onLowMemory() {
 		super.onLowMemory();
-		ImageLoaderUtil.with().onLowMemory(mConctext);
+		ImageLoaderUtil.getInstance().clearMemery(mContext);
 	}
 
 	@Override
 	public void onTrimMemory(int level) {
 		super.onTrimMemory(level);
-		ImageLoaderUtil.with().onTrimMemory(mConctext, level);
+		ImageLoaderUtil.getInstance().clearMemery(mContext);
 	}
 
 	@Override
@@ -287,7 +254,7 @@ public class FeizaoApp extends DefaultApplicationLike {
 
 	private void loadCrashHandler() {
 		CrashHandler crashHandler = CrashHandler.getInstance();
-		crashHandler.init(mConctext);
+		crashHandler.init(mContext);
 	}
 
 	public LZCookieStore getCookieStore() {
@@ -297,7 +264,7 @@ public class FeizaoApp extends DefaultApplicationLike {
 
 	private void initReadKey() {
 		try {
-			InputStream is = mConctext.getResources().openRawResource(R.raw.public_key);
+			InputStream is = mContext.getResources().openRawResource(R.raw.public_key);
 			int size = is.available();
 
 			// Read the entire asset into a local byte buffer.
@@ -338,35 +305,6 @@ public class FeizaoApp extends DefaultApplicationLike {
 	}
 
 	/**
-	 * 初始化缓存类
-	 */
-	private void initImageLoader() {
-//		if (image_memory_cache_maxsize == 0) {
-//			image_memory_cache_maxsize = (int) (Runtime.getRuntime().maxMemory() / 8);
-//			default_imageview_maxwidth = (int) mConctext.getResources().getDimension(R.dimen.list_item_imageview_width);
-//			default_imageview_maxheight = (int) mConctext.getResources().getDimension(R.dimen.list_item_imageview_heigth);
-//			EvtLog.i(TAG, String.format(
-//					"image_memory_cache_maxsize,default_imageview_maxwidth,default_imageview_maxheight：%s,%s,%s",
-//					image_memory_cache_maxsize, default_imageview_maxwidth, default_imageview_maxheight));
-//		}
-//		DisplayImageOptions defaultOptions = new DisplayImageOptions.Builder().bitmapConfig(Bitmap.Config.RGB_565)
-//				.showImageOnLoading(R.drawable.icon_loading).showImageOnFail(R.drawable.icon_loading)
-//				.cacheInMemory(true).cacheOnDisc(true).considerExifParams(true).build();
-//
-//		ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(mConctext.getApplicationContext())
-//				.threadPoolSize(CacheConstants.THREAD_POOL_SIZE)
-//				// .memoryCacheExtraOptions(default_imageview_maxwidth,
-//				// default_imageview_maxheight)
-//				.defaultDisplayImageOptions(defaultOptions).denyCacheImageMultipleSizesInMemory()
-//				.discCacheSize(50 * 1024 * 1024)
-//				// .discCacheFileCount(CacheConstants.IMG_CACHE_LIMIT)
-//				// 缓存一百张图片
-//				.memoryCache(new LruMemoryCache(image_memory_cache_maxsize)).writeDebugLogs().build();
-//		ImageLoader.getInstance().init(config);
-		ImageLoaderUtil.initialize(new GlideImageLoader());
-	}
-
-	/**
 	 * 初始化umeng分享
 	 */
 	private void initUmengSocial() {
@@ -374,21 +312,13 @@ public class FeizaoApp extends DefaultApplicationLike {
 		Log.LOG = false;    //关闭log
 		UMShareConfig config = new UMShareConfig();
 		config.isNeedAuthOnGetUserInfo(true);
-		UMShareAPI.get(mConctext).setShareConfig(config);
+		UMShareAPI.get(mContext).setShareConfig(config);
 		// 微信
 		PlatformConfig.setWeixin(Consts.WEIXIN_APPID, Consts.WEIXIN_APPSECRET);
 		// SINA
 		PlatformConfig.setSinaWeibo(Consts.SINA_APPID, Consts.SINA_APPSECRET, "http://sns.whalecloud.com/sina2/callback");
 		// QQ、QZONE
 		PlatformConfig.setQQZone(Consts.QQ_APPID, Consts.QQ_APPKEY);
-	}
-
-	/**
-	 * 初始化极验验证
-	 */
-	private void initGT3Geetest() {
-		new GT3GeetestUrl().setCaptchaURL(NetConstants.getFullRequestUrl(NetConstants.GET_VALIDATE_CODE_CONFIG));
-		new GT3GeetestUrl().setValidateURL(NetConstants.getFullRequestUrl(NetConstants.VALIDATE_CODE));
 	}
 
 	public static WeakReference<Activity> getTopActivity() {

@@ -214,8 +214,8 @@ public class LiveHotAdapter extends RecyclerView.Adapter {
 				.setOnItemClickListener(new com.bigkoo.convenientbanner.listener.OnItemClickListener() {
 					@Override
 					public void onItemClick(int position) {
-						MobclickAgent.onEvent(FeizaoApp.mConctext, "clickbannerInIndex");
-						OperationHelper.onEvent(FeizaoApp.mConctext, "clickbannerInIndex", null);
+						MobclickAgent.onEvent(FeizaoApp.mContext, "clickbannerInIndex");
+						OperationHelper.onEvent(FeizaoApp.mContext, "clickbannerInIndex", null);
 
 						listener.onInnerClick(CLICK_BANNER, position);
 					}
@@ -300,7 +300,7 @@ public class LiveHotAdapter extends RecyclerView.Adapter {
 //		holder.hotPosition = position;
 		AnchorBean bean = mHotList.get(holder.hotPosition);
 		EvtLog.e("LiveHot", "position:" + holder.hotPosition + "bean:" + bean.nickname);
-		ImageLoaderUtil.with().loadImage(ctx, holder.moIvPhoto, bean.headPic);
+		ImageLoaderUtil.getInstance().loadImage(holder.moIvPhoto, bean.headPic);
 		holder.mTvOnline.setText(String.format(ctx.getString(R.string.live_online_num),
 				String.valueOf(bean.onlineNum)));
 		if (bean.isPlaying) {

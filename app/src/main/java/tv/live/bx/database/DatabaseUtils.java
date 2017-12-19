@@ -33,7 +33,7 @@ public class DatabaseUtils {
 	 */
 	public static List<Map<String, Object>> getListAnchorInfos() {
 
-		List<AnchorInfo> mAnchorInfos = DatabaseManager.getAllAnchorInfos(FeizaoApp.mConctext);
+		List<AnchorInfo> mAnchorInfos = DatabaseManager.getAllAnchorInfos(FeizaoApp.mContext);
 		EvtLog.d(TAG, "getListAnchorInfos size:" + mAnchorInfos.size());
 
 		List<Map<String, Object>> mData = new ArrayList<Map<String, Object>>();
@@ -90,7 +90,7 @@ public class DatabaseUtils {
 			info.setmAnchorLevel(lmPlayer.get("mod_level"));
 			inchorInfos.add(info);
 		}
-		DatabaseManager.saveOrupdateListAnchorinfoToDatabase(FeizaoApp.mConctext, inchorInfos);
+		DatabaseManager.saveOrupdateListAnchorinfoToDatabase(FeizaoApp.mContext, inchorInfos);
 	}
 
 	/**
@@ -98,7 +98,7 @@ public class DatabaseUtils {
 	 */
 	public static List<Map<String, String>> getListBannerInfos() {
 
-		List<BannerInfo> mBannerInfos = DatabaseManager.getAllBannerInfos(FeizaoApp.mConctext);
+		List<BannerInfo> mBannerInfos = DatabaseManager.getAllBannerInfos(FeizaoApp.mContext);
 		EvtLog.d(TAG, "getListBannerInfos size:" + mBannerInfos.size());
 
 		List<Map<String, String>> mData = new ArrayList<Map<String, String>>();
@@ -143,7 +143,7 @@ public class DatabaseUtils {
 			mBannerInfos.add(bannerInfo);
 		}
 
-		DatabaseManager.saveOrupdateListBannerinfoToDatabase(FeizaoApp.mConctext, mBannerInfos);
+		DatabaseManager.saveOrupdateListBannerinfoToDatabase(FeizaoApp.mContext, mBannerInfos);
 	}
 
 	/**
@@ -151,7 +151,7 @@ public class DatabaseUtils {
 	 */
 	public static List<Map<String, Object>> getListSubjectInfos(String forumId, String isHot) {
 
-		List<SubjectInfo> subjectInfos = DatabaseManager.getForumsSubjectInfos(FeizaoApp.mConctext,
+		List<SubjectInfo> subjectInfos = DatabaseManager.getForumsSubjectInfos(FeizaoApp.mContext,
 				SubjectInfo.NO_USRID, forumId, isHot);
 		EvtLog.d(TAG, "getListSubjectInfos size:" + subjectInfos.size());
 
@@ -216,7 +216,7 @@ public class DatabaseUtils {
 
 			subjectInfos.add(info);
 		}
-		DatabaseManager.saveOrupdateListSujectInfoToDatabase(FeizaoApp.mConctext, SubjectInfo.NO_USRID,
+		DatabaseManager.saveOrupdateListSujectInfoToDatabase(FeizaoApp.mContext, SubjectInfo.NO_USRID,
 				SubjectInfo.NO_COLLECTED, SubjectInfo.NO_PUBLISHED, forumId, isHot, subjectInfos);
 
 	}
@@ -227,7 +227,7 @@ public class DatabaseUtils {
 	 * @param uId 用户Id
 	 */
 	public static List<Map<String, Object>> getCollectListSubjectInfos(String uId, String isCollect, String isPublish) {
-		List<SubjectInfo> subjectInfos = DatabaseManager.getAllSubjectInfos(FeizaoApp.mConctext, uId, isCollect,
+		List<SubjectInfo> subjectInfos = DatabaseManager.getAllSubjectInfos(FeizaoApp.mContext, uId, isCollect,
 				isPublish);
 		EvtLog.d(TAG, "getListSubjectInfos size:" + subjectInfos.size());
 
@@ -286,7 +286,7 @@ public class DatabaseUtils {
 			info.setIsPublish(isPublish);
 			subjectInfos.add(info);
 		}
-		DatabaseManager.saveOrupdateListSujectInfoToDatabase(FeizaoApp.mConctext, uId, isCollect, isPublish,
+		DatabaseManager.saveOrupdateListSujectInfoToDatabase(FeizaoApp.mContext, uId, isCollect, isPublish,
 				subjectInfos);
 
 	}
@@ -296,7 +296,7 @@ public class DatabaseUtils {
 	 */
 	public static List<Map<String, String>> getListPostMoudleInfos() {
 
-		List<PostMoudleInfo> mPostMoudleInfos = DatabaseManager.getAllPostMoudleInfos(FeizaoApp.mConctext);
+		List<PostMoudleInfo> mPostMoudleInfos = DatabaseManager.getAllPostMoudleInfos(FeizaoApp.mContext);
 		EvtLog.d(TAG, "getListPostMoudleInfos size:" + mPostMoudleInfos.size());
 
 		List<Map<String, String>> mData = new ArrayList<Map<String, String>>();
@@ -337,7 +337,7 @@ public class DatabaseUtils {
 			mPostMoudleInfos.add(postMoudleInfo);
 		}
 
-		DatabaseManager.saveOrupdateListPostMooudleInfoToDatabase(FeizaoApp.mConctext, mPostMoudleInfos);
+		DatabaseManager.saveOrupdateListPostMooudleInfoToDatabase(FeizaoApp.mContext, mPostMoudleInfos);
 	}
 
 

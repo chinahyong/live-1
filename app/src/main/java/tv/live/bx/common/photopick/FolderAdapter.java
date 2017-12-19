@@ -75,7 +75,7 @@ public class FolderAdapter extends BaseAdapter {
 		holder.foldName.setText(data.getmName());
 		holder.photoCount.setText(String.format("%d张", count));
 
-		ImageLoaderUtil.with().loadImage(parent.getContext(), holder.foldIcon, ImageInfo.pathAddPreFix(uri), 0, R.drawable.image_not_exist);
+		ImageLoaderUtil.getInstance().loadImageAndDefault( holder.foldIcon, ImageInfo.pathAddPreFix(uri), 0, R.drawable.image_not_exist);
 
 		if (data.getmName().equals(mSelect)) {
 			holder.check.setVisibility(View.VISIBLE);

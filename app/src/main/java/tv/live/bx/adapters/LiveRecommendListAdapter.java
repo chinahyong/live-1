@@ -12,6 +12,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
+import jp.wasabeef.glide.transformations.RoundedCornersTransformation.CornerType;
 import tv.live.bx.FeizaoApp;
 import tv.live.bx.R;
 import tv.live.bx.common.Constants;
@@ -25,92 +26,91 @@ import tv.live.bx.model.AnchorBean;
  */
 
 public class LiveRecommendListAdapter extends BaseAdapter {
-	public final static int UNIFORM_SPACE = 7;
 
-	private int mImageHeight;
-	private Context moContext;
-	private List<AnchorBean> anchors = new ArrayList<>();
+    public final static int UNIFORM_SPACE = 7;
 
-	public LiveRecommendListAdapter(Context ctx) {
-		moContext = ctx;
-		mImageHeight = (FeizaoApp.metrics.widthPixels - Utils.dpToPx(UNIFORM_SPACE) * 3) / 2;
-	}
+    private int mImageHeight;
+    private Context moContext;
+    private List<AnchorBean> anchors = new ArrayList<>();
 
-	/**
-	 * 清除数据
-	 */
-	public void clear() {
-		anchors.clear();
-		this.notifyDataSetChanged();
-	}
+    public LiveRecommendListAdapter(Context ctx) {
+        moContext = ctx;
+        mImageHeight = (FeizaoApp.metrics.widthPixels - Utils.dpToPx(UNIFORM_SPACE) * 3) / 2;
+    }
 
-	/**
-	 * 添加额外数据
-	 *
-	 * @param adds
-	 */
-	public void addItems(List<AnchorBean> adds) {
-		anchors.addAll(adds);
-		this.notifyDataSetChanged();
-	}
+    /**
+     * 清除数据
+     */
+    public void clear() {
+        anchors.clear();
+        this.notifyDataSetChanged();
+    }
 
-	@Override
-	public int getCount() {
-		return anchors.size();
-	}
+    /**
+     * 添加额外数据
+     */
+    public void addItems(List<AnchorBean> adds) {
+        anchors.addAll(adds);
+        this.notifyDataSetChanged();
+    }
 
-	@Override
-	public Object getItem(int position) {
-		return anchors.get(position);
-	}
+    @Override
+    public int getCount() {
+        return anchors.size();
+    }
 
-	@Override
-	public long getItemId(int position) {
-		return position;
-	}
+    @Override
+    public Object getItem(int position) {
+        return anchors.get(position);
+    }
 
-	@Override
-	public View getView(int position, View convertView, ViewGroup parent) {
-		final Holder loHolder;
-		if (convertView == null) {
-			LayoutInflater loInflater = LayoutInflater.from(moContext);
-			convertView = loInflater.inflate(R.layout.item_live_recommend, null);
+    @Override
+    public long getItemId(int position) {
+        return position;
+    }
 
+    @Override
+    public View getView(int position, View convertView, ViewGroup parent) {
+        final Holder loHolder;
+        if (convertView == null) {
+            LayoutInflater loInflater = LayoutInflater.from(moContext);
+            convertView = loInflater.inflate(R.layout.item_live_recommend, null);
 
-			loHolder = new Holder();
-			loHolder.moIvPhoto = (ImageView) convertView.findViewById(R.id.item_iv_photo);
-			loHolder.mOnlineNum = (TextView) convertView.findViewById(R.id.item_tv_online_num);
-			loHolder.mAnnouncement = (TextView) convertView.findViewById(R.id.item_tv_announcement);
-			loHolder.mLocation = (TextView) convertView.findViewById(R.id.item_tv_location);
+            loHolder = new Holder();
+            loHolder.moIvPhoto = (ImageView) convertView.findViewById(R.id.item_iv_photo);
+            loHolder.mOnlineNum = (TextView) convertView.findViewById(R.id.item_tv_online_num);
+            loHolder.mAnnouncement = (TextView) convertView.findViewById(R.id.item_tv_announcement);
+            loHolder.mLocation = (TextView) convertView.findViewById(R.id.item_tv_location);
 
-			RelativeLayout.LayoutParams lp2 = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, mImageHeight);
-			loHolder.moIvPhoto.setLayoutParams(lp2);
+            RelativeLayout.LayoutParams lp2 = new RelativeLayout.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT, mImageHeight);
+            loHolder.moIvPhoto.setLayoutParams(lp2);
 
+            convertView.setTag(loHolder);
+        } else {
+            loHolder = (Holder) convertView.getTag();
+        }
 
-			convertView.setTag(loHolder);
-		} else {
-			loHolder = (Holder) convertView.getTag();
-		}
+        if (position % 2 == 0) {
+            convertView.setPadding(Utils.dpToPx(LiveRecommendListAdapter.UNIFORM_SPACE), 0, 0, 0);
+        } else {
+            convertView.setPadding(0, 0, Utils.dpToPx(LiveRecommendListAdapter.UNIFORM_SPACE), 0);
+        }
 
+        AnchorBean anchor = anchors.get(position);
 
-		if (position % 2 == 0)
-			convertView.setPadding(Utils.dpToPx(LiveRecommendListAdapter.UNIFORM_SPACE), 0, 0, 0);
-		else
-			convertView.setPadding(0, 0, Utils.dpToPx(LiveRecommendListAdapter.UNIFORM_SPACE), 0);
+        ImageLoaderUtil.getInstance().loadImageCorner(moContext, loHolder.moIvPhoto, anchor.headPic,
+            Constants.COMMON_DISPLAY_IMAGE_CORNER_2, CornerType.ALL);
+        loHolder.mAnnouncement.setText(anchor.announcement);
+        loHolder.mOnlineNum.setText(String.valueOf(anchor.onlineNum));
+        loHolder.mLocation.setText(anchor.city);
 
+        return convertView;
+    }
 
-		AnchorBean anchor = anchors.get(position);
+    private class Holder {
 
-		ImageLoaderUtil.with().loadImageTransformRoundedCorners(moContext, loHolder.moIvPhoto, anchor.headPic, Constants.COMMON_DISPLAY_IMAGE_CORNER_2);
-		loHolder.mAnnouncement.setText(anchor.announcement);
-		loHolder.mOnlineNum.setText(String.valueOf(anchor.onlineNum));
-		loHolder.mLocation.setText(anchor.city);
-
-		return convertView;
-	}
-
-	private class Holder {
-		ImageView moIvPhoto;
-		TextView mAnnouncement, mLocation, mOnlineNum;
-	}
+        ImageView moIvPhoto;
+        TextView mAnnouncement, mLocation, mOnlineNum;
+    }
 }

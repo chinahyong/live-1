@@ -29,7 +29,7 @@ public class GJLoadingDrawable extends Drawable {
 			resID = R.drawable.icon_loading;
 		else
 			resID = R.drawable.icon_loading_mini;
-		NinePatchDrawable drawable = (NinePatchDrawable) FeizaoApp.mConctext.getResources().getDrawable(resID);
+		NinePatchDrawable drawable = (NinePatchDrawable) FeizaoApp.mContext.getResources().getDrawable(resID);
 		drawable.setBounds(getBounds());
 		drawable.draw(canvas);
 	}

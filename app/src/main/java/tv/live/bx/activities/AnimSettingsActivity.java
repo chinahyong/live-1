@@ -109,14 +109,14 @@ public class AnimSettingsActivity extends BaseFragmentActivity implements View.O
 				if (mIvSuperior.isShown()) {
 					return;
 				}
-				MobclickAgent.onEvent(FeizaoApp.mConctext, "chooseAdvancedSpecialEffectOfEnterBroadcast");
+				MobclickAgent.onEvent(FeizaoApp.mContext, "chooseAdvancedSpecialEffectOfEnterBroadcast");
 				break;
 			case R.id.anim_settings_rl_none:
 				// 如果当前选中未变化，则无需执行下面操作
 				if (mIvNone.isShown()) {
 					return;
 				}
-				MobclickAgent.onEvent(FeizaoApp.mConctext, "chooseAnonymousApproach");
+				MobclickAgent.onEvent(FeizaoApp.mContext, "chooseAnonymousApproach");
 				break;
 		}
 		showProgress();

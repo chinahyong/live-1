@@ -178,7 +178,7 @@ public class Login2Activity extends BaseFragmentActivity {
 	private class OnGetBackPwd implements View.OnClickListener {
 		@Override
 		public void onClick(View arg0) {
-			MobclickAgent.onEvent(FeizaoApp.mConctext, "forgetPassword");
+			MobclickAgent.onEvent(FeizaoApp.mContext, "forgetPassword");
 			gotoActivity(GetBackPwdActivity.class, false, null, null);
 		}
 	}
@@ -186,7 +186,7 @@ public class Login2Activity extends BaseFragmentActivity {
 	private class OnLogin implements View.OnClickListener {
 		@Override
 		public void onClick(View v) {
-			MobclickAgent.onEvent(FeizaoApp.mConctext, "login");
+			MobclickAgent.onEvent(FeizaoApp.mContext, "login");
 			// 1 获取用户输入
 			String lsUsername = moEtAccount.getText().toString();
 			String lsPassword = moEtPwd.getText().toString();
@@ -225,7 +225,7 @@ public class Login2Activity extends BaseFragmentActivity {
 	private class OnRegister implements View.OnClickListener {
 		@Override
 		public void onClick(View v) {
-			MobclickAgent.onEvent(FeizaoApp.mConctext, "register");
+			MobclickAgent.onEvent(FeizaoApp.mContext, "register");
 			ActivityJumpUtil.gotoActivityForResult(Login2Activity.this, Register1Activity.class, REQUEST_REGISTER, null,
 					null);
 		}
@@ -252,7 +252,8 @@ public class Login2Activity extends BaseFragmentActivity {
 				UserInfoConfig.getInstance().updateUserId(lsUid);
 				JPushInterface.setAliasAndTags(Login2Activity.this, lsUid, null, new TagAliasCallback() {
 					@Override
-					public void gotResult(int arg0, String arg1, Set<String> arg2) {
+					public void gotResult(int i, String s, Set set) {
+
 					}
 				});
 				BusinessUtils.getMyUserInfo(Login2Activity.this, new MyUserInfoCallbackDataHandle(mHandler));

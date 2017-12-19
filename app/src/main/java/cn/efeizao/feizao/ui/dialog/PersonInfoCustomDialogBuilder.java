@@ -133,7 +133,7 @@ public class PersonInfoCustomDialogBuilder extends CustomDialogBuilder {
 				if (Utils.strBool((String) v.getTag())) {
 					BusinessUtils.removeFollow(mContext, new RemoveFollowCallbackData(PersonInfoCustomDialogBuilder.this), mUid);
 				} else {
-					OperationHelper.onEvent(FeizaoApp.mConctext, "followBroadcasterInPersonalCard", null);
+					OperationHelper.onEvent(FeizaoApp.mContext, "followBroadcasterInPersonalCard", null);
 					BusinessUtils.follow(mContext, new FollowCallbackData(PersonInfoCustomDialogBuilder.this), mUid);
 				}
 			}
@@ -219,10 +219,10 @@ public class PersonInfoCustomDialogBuilder extends CustomDialogBuilder {
 	}
 
 	private void updateData(Map<String, String> personInfo) {
-		ImageLoaderUtil.with().loadImageTransformRoundCircle(FeizaoApp.mConctext, mUserHeadPhoto, personInfo.get("headPic"));
+		ImageLoaderUtil.getInstance().loadHeadPic(FeizaoApp.mContext, mUserHeadPhoto, personInfo.get("headPic"));
 		// 更新主播头像
 		if (mAnchorHeadPhoto != null) {
-			ImageLoaderUtil.with().loadImageTransformRoundCircle(FeizaoApp.mConctext, mAnchorHeadPhoto, personInfo.get("headPic"));
+			ImageLoaderUtil.getInstance().loadHeadPic(FeizaoApp.mContext, mAnchorHeadPhoto, personInfo.get("headPic"));
 		}
 		// 如果不是自己，显示的是关注按钮
 		if (Utils.getBooleanFlag(personInfo.get("isAttention"))) {
@@ -321,7 +321,7 @@ public class PersonInfoCustomDialogBuilder extends CustomDialogBuilder {
 					mUserManage.setEnabled(false);
 					break;
 				case MsgTypes.FOLLOW_SUCCESS:
-					OperationHelper.onEvent(FeizaoApp.mConctext, "followBroadcasterInPersonalCardSuccessful", null);
+					OperationHelper.onEvent(FeizaoApp.mContext, "followBroadcasterInPersonalCardSuccessful", null);
 					mUserFocusBtn.setTag(Constants.COMMON_TRUE);
 					mUserFocusBtn.setBackgroundResource(R.drawable.btn_focused_selector);
 
@@ -338,7 +338,7 @@ public class PersonInfoCustomDialogBuilder extends CustomDialogBuilder {
 					UiHelper.showShortToast(mContext, (String) msg.obj);
 					break;
 				case MsgTypes.REMOVE_FOLLOW_SUCCESS:
-					OperationHelper.onEvent(FeizaoApp.mConctext, "clickCancelFollowBroadcasterInPersonalCard", null);
+					OperationHelper.onEvent(FeizaoApp.mContext, "clickCancelFollowBroadcasterInPersonalCard", null);
 					mUserFocusBtn.setTag("false");
 					mUserFocusBtn.setBackgroundResource(R.drawable.btn_focus_selector);
 					int fansNum2 = Integer.parseInt(mHeadFansNum.getText().toString()) - 1;
@@ -387,7 +387,7 @@ public class PersonInfoCustomDialogBuilder extends CustomDialogBuilder {
 					PersonInfoCustomDialogBuilder meFragment = mFragment.get();
 					// 数据库存储用户个人信息
 					if (result != null) {
-						DatabaseUtils.saveOrupdatePersonInfoToDatabase(FeizaoApp.mConctext, JacksonUtil.readValue(String.valueOf(result), PersonInfo.class));
+						DatabaseUtils.saveOrupdatePersonInfoToDatabase(FeizaoApp.mContext, JacksonUtil.readValue(String.valueOf(result), PersonInfo.class));
 					}
 					// 如果fragment未回收，发送消息
 					if (meFragment != null)

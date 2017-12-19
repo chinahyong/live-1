@@ -65,7 +65,8 @@ public class PackageUtil {
 	public static int getVersionCode() {
 		int verCode = 0;
 		try {
-			verCode = FeizaoApp.mConctext.getPackageManager().getPackageInfo(FeizaoApp.mConctext.getPackageName(), 0).versionCode;
+			verCode = FeizaoApp.mContext
+                .getPackageManager().getPackageInfo(FeizaoApp.mContext.getPackageName(), 0).versionCode;
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -82,7 +83,7 @@ public class PackageUtil {
 	public static String getVersionName() {
 		String versionName = "1.0";
 		try {
-			versionName = FeizaoApp.mConctext.getPackageManager().getPackageInfo(FeizaoApp.mConctext.getPackageName(),
+			versionName = FeizaoApp.mContext.getPackageManager().getPackageInfo(FeizaoApp.mContext.getPackageName(),
 					0).versionName;
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -96,7 +97,7 @@ public class PackageUtil {
 	 * @return 返回MAC地址
 	 */
 	public static String getLocalMacAddress() {
-		WifiManager wifi = (WifiManager) FeizaoApp.mConctext.getSystemService(Context.WIFI_SERVICE);
+		WifiManager wifi = (WifiManager) FeizaoApp.mContext.getSystemService(Context.WIFI_SERVICE);
 		WifiInfo info = wifi.getConnectionInfo();
 
 		return info.getMacAddress();
@@ -109,7 +110,7 @@ public class PackageUtil {
 	 * @return 返回 string.xml 文件定义的字符串
 	 */
 	public static String getString(int resourceId) {
-		Resources res = FeizaoApp.mConctext.getResources();
+		Resources res = FeizaoApp.mContext.getResources();
 		return res.getString(resourceId);
 	}
 
@@ -120,7 +121,7 @@ public class PackageUtil {
 	 * @return 返回 color.xml 文件定义的内容
 	 */
 	public static int getColor(int colorId) {
-		Resources res = FeizaoApp.mConctext.getResources();
+		Resources res = FeizaoApp.mContext.getResources();
 		return res.getColor(colorId);
 	}
 
@@ -129,7 +130,7 @@ public class PackageUtil {
 	 */
 	public static String getTerminalSign() {
 		String tvDevice = null;
-		TelephonyManager tm = (TelephonyManager) FeizaoApp.mConctext.getSystemService(Context.TELEPHONY_SERVICE);
+		TelephonyManager tm = (TelephonyManager) FeizaoApp.mContext.getSystemService(Context.TELEPHONY_SERVICE);
 		tvDevice = tm.getDeviceId();
 		if (tvDevice == null) {
 			tvDevice = getLocalMacAddress();
@@ -169,8 +170,8 @@ public class PackageUtil {
 	public static String getConfigObject(String key) {
 		String val = "";
 		try {
-			ApplicationInfo appInfo = FeizaoApp.mConctext.getPackageManager().getApplicationInfo(
-					FeizaoApp.mConctext.getPackageName(), PackageManager.GET_META_DATA);
+			ApplicationInfo appInfo = FeizaoApp.mContext.getPackageManager().getApplicationInfo(
+					FeizaoApp.mContext.getPackageName(), PackageManager.GET_META_DATA);
 			Object obj = appInfo.metaData.get(key);
 			if (obj == null) {
 				EvtLog.e(TAG, "please set config value for " + key + " in manifest.xml first");
@@ -192,8 +193,8 @@ public class PackageUtil {
 	public static String getConfigString(String key) {
 		String val = "";
 		try {
-			ApplicationInfo appInfo = FeizaoApp.mConctext.getPackageManager().getApplicationInfo(
-					FeizaoApp.mConctext.getPackageName(), PackageManager.GET_META_DATA);
+			ApplicationInfo appInfo = FeizaoApp.mContext.getPackageManager().getApplicationInfo(
+					FeizaoApp.mContext.getPackageName(), PackageManager.GET_META_DATA);
 			val = appInfo.metaData.getString(key);
 			if (val == null) {
 				EvtLog.e(TAG, "please set config value for " + key + " in manifest.xml first");
@@ -213,8 +214,8 @@ public class PackageUtil {
 	public static int getConfigInt(String key) {
 		int val = 0;
 		try {
-			ApplicationInfo appInfo = FeizaoApp.mConctext.getPackageManager().getApplicationInfo(
-					FeizaoApp.mConctext.getPackageName(), PackageManager.GET_META_DATA);
+			ApplicationInfo appInfo = FeizaoApp.mContext.getPackageManager().getApplicationInfo(
+					FeizaoApp.mContext.getPackageName(), PackageManager.GET_META_DATA);
 			val = appInfo.metaData.getInt(key);
 		} catch (Exception e) {
 			EvtLog.e(TAG, e);
@@ -231,8 +232,8 @@ public class PackageUtil {
 	public static boolean getConfigBoolean(String key) {
 		boolean val = false;
 		try {
-			ApplicationInfo appInfo = FeizaoApp.mConctext.getPackageManager().getApplicationInfo(
-					FeizaoApp.mConctext.getPackageName(), PackageManager.GET_META_DATA);
+			ApplicationInfo appInfo = FeizaoApp.mContext.getPackageManager().getApplicationInfo(
+					FeizaoApp.mContext.getPackageName(), PackageManager.GET_META_DATA);
 			val = appInfo.metaData.getBoolean(key);
 		} catch (Exception e) {
 			EvtLog.e(TAG, e);

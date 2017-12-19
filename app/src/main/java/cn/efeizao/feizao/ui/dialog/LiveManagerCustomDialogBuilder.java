@@ -112,7 +112,7 @@ public class LiveManagerCustomDialogBuilder extends CustomDialogBuilder {
 		removeManagerListener = new RoomManagerAdapter.RemoveManagerListener() {
 			@Override
 			public void onRemoveManager(int position, String uid) {
-				MobclickAgent.onEvent(FeizaoApp.mConctext, "cancelManagerByBroadcaster");
+				MobclickAgent.onEvent(FeizaoApp.mContext, "cancelManagerByBroadcaster");
 				BusinessUtils.removeRoomManager(mContext, new RemoveManagerCallbackData(LiveManagerCustomDialogBuilder.this, uid), uid);
 			}
 		};
