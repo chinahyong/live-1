@@ -3,22 +3,10 @@ package tv.live.bx.common;
 import android.content.Context;
 import android.os.Message;
 import android.text.TextUtils;
-
-import tv.live.bx.FeizaoApp;
-import tv.live.bx.util.ChannelUtil;
-import tv.live.bx.library.util.EvtLog;
-import tv.live.bx.library.util.PackageUtil;
+import cn.efeizao.feizao.framework.net.NetConstants;
 import com.lonzh.lib.LZActivity;
 import com.lonzh.lib.network.HttpSession;
 import com.lonzh.lib.network.JSONParser;
-
-import org.apache.http.HttpResponse;
-import org.apache.http.NameValuePair;
-import org.apache.http.message.BasicNameValuePair;
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.security.InvalidKeyException;
@@ -30,10 +18,19 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
-
 import javax.crypto.BadPaddingException;
 import javax.crypto.IllegalBlockSizeException;
 import javax.crypto.NoSuchPaddingException;
+import org.apache.http.HttpResponse;
+import org.apache.http.NameValuePair;
+import org.apache.http.message.BasicNameValuePair;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+import tv.live.bx.FeizaoApp;
+import tv.live.bx.library.util.EvtLog;
+import tv.live.bx.library.util.PackageUtil;
+import tv.live.bx.util.ChannelUtil;
 
 /**
  * 此类以后不再使用
@@ -797,13 +794,13 @@ public class Business {
 					// 2 会话链接
 					HttpResponse loResponse;
 					if (piHttpMethod == HTTP_METHOD_GET) {
-						String lsAbsUrl = Consts.BASE_URL_SERVER + "/" + psUrl;
+						String lsAbsUrl = NetConstants.BASE_URL_SERVER + "/" + psUrl;
 						if (pmParams != null)
 							lsAbsUrl += "?" + buildGetParams(pmParams);
 						loResponse = loHttp.get(lsAbsUrl);
 						EvtLog.d("", lsAbsUrl);
 					} else if (piHttpMethod == HTTP_METHOD_POST) {
-						loResponse = loHttp.post(Consts.BASE_URL_SERVER + "/" + psUrl, pmParams == null ? null
+						loResponse = loHttp.post(NetConstants.BASE_URL_SERVER + "/" + psUrl, pmParams == null ? null
 								: buildPostParams(pmParams));
 					} else
 						return;

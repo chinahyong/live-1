@@ -6,14 +6,7 @@ import android.content.SharedPreferences.Editor;
 import android.util.Log;
 import android.webkit.CookieManager;
 import android.webkit.CookieSyncManager;
-
-import tv.live.bx.common.Consts;
-import tv.live.bx.library.util.EvtLog;
-
-import org.apache.http.client.CookieStore;
-import org.apache.http.cookie.Cookie;
-import org.apache.http.impl.cookie.BasicClientCookie;
-
+import cn.efeizao.feizao.framework.net.NetConstants;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -26,6 +19,10 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
+import org.apache.http.client.CookieStore;
+import org.apache.http.cookie.Cookie;
+import org.apache.http.impl.cookie.BasicClientCookie;
+import tv.live.bx.library.util.EvtLog;
 
 public class LZCookieStore implements CookieStore {
 	private static final String COOKIE_SP_NAME = "cookie";
@@ -39,7 +36,7 @@ public class LZCookieStore implements CookieStore {
 	public void addCookie(Cookie poCookie) {
 		if (poCookie instanceof BasicClientCookie) {
 			EvtLog.e(COOKIE_SP_NAME, "addCookie:xxxxx" + poCookie.toString());
-			((BasicClientCookie) poCookie).setDomain(Consts.BASE_DOMAIN);
+			((BasicClientCookie) poCookie).setDomain(NetConstants.BASE_DOMAIN);
 		}
 		EvtLog.e(COOKIE_SP_NAME, "addCookie:" + poCookie.toString());
 		String lsName = poCookie.getName();
@@ -286,11 +283,11 @@ public class LZCookieStore implements CookieStore {
 		if (loSessionCookie != null) {
 			String lsSession = loSessionCookie.getName() + "="
 					+ loSessionCookie.getValue();
-			cookieManager.setCookie(Consts.BASE_M_URL_SERVER, lsSession);
+			cookieManager.setCookie(NetConstants.BASE_M_URL_SERVER, lsSession);
 		}
 		if (loUidCookie != null) {
 			String lsUid = loUidCookie.getName() + "=" + loUidCookie.getValue();
-			cookieManager.setCookie(Consts.BASE_M_URL_SERVER, lsUid);
+			cookieManager.setCookie(NetConstants.BASE_M_URL_SERVER, lsUid);
 		}
 		CookieSyncManager.getInstance().sync();
 	}

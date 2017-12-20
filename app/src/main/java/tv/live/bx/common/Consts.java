@@ -9,22 +9,6 @@ import tv.live.bx.FeizaoApp;
 import tv.live.bx.R;
 
 public class Consts {
-	// 服务器地址
-	// public static final String BASE_URL_SERVER =
-	// "http://124.115.26.202:14539";
-	public static String BASE_HTTP_DOMAIN = "app.gjlive.cn";
-	public static String BASE_HTTP_DOMAIN_BAK = "[\"app.gj2018.cn\",\"app.gj2017.cn\"]";
-	public static String BASE_DOMAIN = "app.guojiang.tv";
-	public static String BASE_STAT_DOMAIN = "stat.guojiang.tv";
-	public static String BASE_M_DOMAIN = "m.guojiang.tv";
-
-	public static String BASE_URL_SERVER = "http://" + BASE_DOMAIN;
-	// 用户操作统计
-	public static String BASE_STAT_URL_SERVER = "http://" + BASE_STAT_DOMAIN + "/";
-	// Web页面
-	public static String BASE_M_URL_SERVER = "http://" + BASE_M_DOMAIN;
-
-
 	// public static final String RTMP_URL_SERVER = "rtmp://120.24.218.59";
 	public static final String DOWNLOAD_URL_SERVER = "http://www.guojiang.tv/help/app";
 
@@ -181,12 +165,4 @@ public class Consts {
 	 * 报错log日志接收的邮箱用户名
 	 */
 	public static final String LOG_RECIVEMAIL_NAME = "yanxiaoyang@lonzh.com";
-
-	public static void updateBaseDomain() {
-		BASE_URL_SERVER = "http://" + BASE_DOMAIN;
-		// 用户操作统计
-		BASE_STAT_URL_SERVER = "http://" + BASE_STAT_DOMAIN + "/";
-		// Web页面
-		BASE_M_URL_SERVER = "http://" + BASE_M_DOMAIN;
-	}
 }

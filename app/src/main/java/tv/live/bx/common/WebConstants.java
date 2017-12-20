@@ -1,5 +1,7 @@
 package tv.live.bx.common;
 
+import cn.efeizao.feizao.framework.net.NetConstants;
+
 /**
  * Created by Administrator on 2017/1/5.
  */
@@ -127,7 +129,7 @@ public class WebConstants {
 	 * 操作统计，自研
 	 * 正式环境：http://stat.guojiang.tv/
 	 */
-	public static String REPORT_USER_ACTION = Consts.BASE_STAT_URL_SERVER;
+	public static String REPORT_USER_ACTION = NetConstants.BASE_STAT_URL_SERVER;
 
 	/**
 	 * 我的红包地址
@@ -154,7 +156,7 @@ public class WebConstants {
 	 * @return
 	 */
 	public static String getFullWebMDomain(String url) {
-		return Consts.BASE_M_URL_SERVER + url;
+		return NetConstants.BASE_M_URL_SERVER + url;
 	}
 
 }

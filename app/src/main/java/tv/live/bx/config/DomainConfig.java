@@ -3,14 +3,12 @@ package tv.live.bx.config;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.text.TextUtils;
-
-import tv.live.bx.FeizaoApp;
-import tv.live.bx.common.Constants;
-import tv.live.bx.common.Consts;
-import tv.live.bx.library.util.StringUtil;
-
+import cn.efeizao.feizao.framework.net.NetConstants;
 import org.json.JSONException;
 import org.json.JSONObject;
+import tv.live.bx.FeizaoApp;
+import tv.live.bx.common.Constants;
+import tv.live.bx.library.util.StringUtil;
 
 /**
  * Created by BYC on 2017/6/13.
@@ -50,17 +48,17 @@ public class DomainConfig {
 		DomainConfig config = new DomainConfig();
 		SharedPreferences sp = FeizaoApp.mContext
             .getSharedPreferences(Constants.COMMON_SF_HTTP_DOMAIN_NAME, Context.MODE_PRIVATE);
-		config.base_domain = sp.getString(Constants.COMMON_SF_BASE_DOMAIN, Consts.BASE_DOMAIN);
-		config.base_stat_domain = sp.getString(Constants.COMMON_SF_BASE_STAT_DOMAIN, Consts.BASE_STAT_DOMAIN);
-		config.base_m_domain = sp.getString(Constants.COMMON_SF_BASE_M_DOMAIN, Consts.BASE_M_DOMAIN);
-		config.base_http_domain = sp.getString(Constants.COMMON_SF_BASE_HTTP_DOMAIN, Consts.BASE_HTTP_DOMAIN);
-		config.http_domain_lists = sp.getString(Constants.COMMON_SF_BASE_DOMAIN_LIST, Consts.BASE_HTTP_DOMAIN_BAK);
+		config.base_domain = sp.getString(Constants.COMMON_SF_BASE_DOMAIN, NetConstants.BASE_DOMAIN);
+		config.base_stat_domain = sp.getString(Constants.COMMON_SF_BASE_STAT_DOMAIN, NetConstants.BASE_STAT_DOMAIN);
+		config.base_m_domain = sp.getString(Constants.COMMON_SF_BASE_M_DOMAIN, NetConstants.BASE_M_DOMAIN);
+		config.base_http_domain = sp.getString(Constants.COMMON_SF_BASE_HTTP_DOMAIN, NetConstants.BASE_HTTP_DOMAIN);
+		config.http_domain_lists = sp.getString(Constants.COMMON_SF_BASE_DOMAIN_LIST, NetConstants.BASE_HTTP_DOMAIN_BAK);
 
-		Consts.BASE_DOMAIN = config.base_domain;
-		Consts.BASE_STAT_DOMAIN = config.base_stat_domain;
-		Consts.BASE_M_DOMAIN = config.base_m_domain;
-		Consts.BASE_HTTP_DOMAIN = config.base_http_domain;
-		Consts.updateBaseDomain();
+		NetConstants.BASE_DOMAIN = config.base_domain;
+		NetConstants.BASE_STAT_DOMAIN = config.base_stat_domain;
+		NetConstants.BASE_M_DOMAIN = config.base_m_domain;
+		NetConstants.BASE_HTTP_DOMAIN = config.base_http_domain;
+		NetConstants.updateBaseDomain();
 		return config;
 	}
 
@@ -69,7 +67,7 @@ public class DomainConfig {
 	 */
 	public void updateSafeHttpDomain(String httpDomain) {
 		if (!TextUtils.isEmpty(httpDomain) && !base_http_domain.equals(httpDomain)) {
-			Consts.BASE_HTTP_DOMAIN = base_http_domain = httpDomain;
+			NetConstants.BASE_HTTP_DOMAIN = base_http_domain = httpDomain;
 			SharedPreferences.Editor editor = FeizaoApp.mContext
                 .getSharedPreferences(Constants.COMMON_SF_HTTP_DOMAIN_NAME, Context.MODE_PRIVATE).edit();
 			editor.putString(Constants.COMMON_SF_BASE_HTTP_DOMAIN, httpDomain);
@@ -82,8 +80,8 @@ public class DomainConfig {
 	 */
 	public void updateSafeStatDomain(String statDomain) {
 		if(!TextUtils.isEmpty(statDomain) && !base_stat_domain.equals(statDomain)){
-			Consts.BASE_STAT_DOMAIN = base_stat_domain = statDomain;
-			Consts.updateBaseDomain();
+			NetConstants.BASE_STAT_DOMAIN = base_stat_domain = statDomain;
+			NetConstants.updateBaseDomain();
 			SharedPreferences.Editor editor = FeizaoApp.mContext
                 .getSharedPreferences(Constants.COMMON_SF_HTTP_DOMAIN_NAME, Context.MODE_PRIVATE).edit();
 			editor.putString(Constants.COMMON_SF_BASE_STAT_DOMAIN, statDomain);
@@ -97,8 +95,8 @@ public class DomainConfig {
 	public void updateSafeWebDomain(String mDomain) {
 		if(!TextUtils.isEmpty(mDomain) && !base_m_domain.equals(mDomain)){
 			base_m_domain = mDomain;
-			Consts.BASE_M_DOMAIN = DomainConfig.getInstance().base_m_domain;
-			Consts.updateBaseDomain();
+			NetConstants.BASE_M_DOMAIN = DomainConfig.getInstance().base_m_domain;
+			NetConstants.updateBaseDomain();
 			SharedPreferences.Editor editor = FeizaoApp.mContext
                 .getSharedPreferences(Constants.COMMON_SF_HTTP_DOMAIN_NAME, Context.MODE_PRIVATE).edit();
 			editor.putString(Constants.COMMON_SF_BASE_M_DOMAIN, mDomain);
@@ -122,8 +120,8 @@ public class DomainConfig {
                 .getSharedPreferences(Constants.COMMON_SF_HTTP_DOMAIN_NAME, Context.MODE_PRIVATE).edit();
 			if (!TextUtils.isEmpty(base_domain_tmp)) {
 				if(!base_domain.equals(base_domain_tmp)){
-					Consts.BASE_DOMAIN = base_domain = base_domain_tmp;
-					Consts.updateBaseDomain();
+					NetConstants.BASE_DOMAIN = base_domain = base_domain_tmp;
+					NetConstants.updateBaseDomain();
 				}
 				editor.putString(Constants.COMMON_SF_BASE_DOMAIN, base_domain);
 			}

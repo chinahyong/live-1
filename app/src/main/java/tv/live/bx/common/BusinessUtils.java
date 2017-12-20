@@ -1971,7 +1971,7 @@ public class BusinessUtils {
 	 */
 	public static void getHttpDomain(Context poContext, CallbackDataHandle
 			callDataHandle) {
-		String url = "http://" + Consts.BASE_HTTP_DOMAIN + "/app/getAddr";
+		String url = "http://" + NetConstants.BASE_HTTP_DOMAIN + "/app/getAddr";
 		AEntity aEntity = new BaseEntityImpl(new IReceiverImpl(callDataHandle), url);
 		sendCookieHttps(poContext, aEntity);
 	}

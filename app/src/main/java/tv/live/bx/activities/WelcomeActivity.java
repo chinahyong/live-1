@@ -133,7 +133,7 @@ public class WelcomeActivity extends FragmentActivity {
 			String httpDomainLists = DomainConfig.getInstance().http_domain_lists;
 
 			ArrayList<String> arrayList = new ArrayList<>();
-			arrayList.add(Consts.BASE_HTTP_DOMAIN);
+			arrayList.add(NetConstants.BASE_HTTP_DOMAIN);
 
 			if (!TextUtils.isEmpty(httpDomainLists)) {
 				JSONArray temp = new JSONArray(httpDomainLists);
