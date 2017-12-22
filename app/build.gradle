@@ -49,10 +49,6 @@ android {
         ]
         resValue('string', 'wx_id', properties.getProperty("WX_ID." + packageId))
         resValue('string', 'wx_secret', properties.getProperty("WX_SECRET." + packageId))
-        resValue('string', 'qq_id', properties.getProperty("QQ_ID." + packageId))
-        resValue('string', 'qq_key', properties.getProperty("QQ_KEY." + packageId))
-        resValue('string', 'sina_id', properties.getProperty("SINA_ID." + packageId))
-        resValue('string', 'sina_secret', properties.getProperty("SINA_SECRET." + packageId))
     }
 //    dexOptions {
 //        javaMaxHeapSize "4g"
@@ -71,7 +67,7 @@ android {
         debug {
             buildConfigField "boolean", "error_log_enable", "true"
             buildConfigField "boolean", "debug_log_enable", "true"
-            applicationIdSuffix '.debug'
+//            applicationIdSuffix '.debug'
             // 是否进行混淆
             minifyEnabled false
             zipAlignEnabled false

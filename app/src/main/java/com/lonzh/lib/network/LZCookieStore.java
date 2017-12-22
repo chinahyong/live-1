@@ -6,7 +6,7 @@ import android.content.SharedPreferences.Editor;
 import android.util.Log;
 import android.webkit.CookieManager;
 import android.webkit.CookieSyncManager;
-import cn.efeizao.feizao.framework.net.NetConstants;
+import tv.live.bx.common.pojo.NetConstants;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;

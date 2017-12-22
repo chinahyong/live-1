@@ -25,7 +25,7 @@ import java.util.Map.Entry;
 
 import cn.efeizao.feizao.framework.net.ACommunication;
 import cn.efeizao.feizao.framework.net.AEntity;
-import cn.efeizao.feizao.framework.net.NetConstants;
+import tv.live.bx.common.pojo.NetConstants;
 import cn.efeizao.feizao.framework.net.NetLogs;
 
 /**

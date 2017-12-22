@@ -3,7 +3,7 @@ package tv.live.bx.config;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.text.TextUtils;
-import cn.efeizao.feizao.framework.net.NetConstants;
+import tv.live.bx.common.pojo.NetConstants;
 import org.json.JSONException;
 import org.json.JSONObject;
 import tv.live.bx.FeizaoApp;

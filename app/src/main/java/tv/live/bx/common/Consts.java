@@ -1,11 +1,8 @@
 package tv.live.bx.common;
 
 import android.util.SparseArray;
-
 import java.util.HashMap;
 import java.util.Map;
-
-import tv.live.bx.FeizaoApp;
 import tv.live.bx.R;
 
 public class Consts {
@@ -18,23 +15,9 @@ public class Consts {
 	// 欢迎页停留时间(ms)
 	public static final int DURATION_WELCOME_ACTIVITY = 2000;
 
-	// LIST相关
-	public static final int LIST_MAX_ITEM_NUM = 20;
-
-	// 测试App_id 222222
-	// 果酱直播App_id 101144047
-	// key fa596527ec39835a2b1be1bb8318e92e
-
 	// Banner跳转类型
 	public static final int BANNER_URL_TYPE_PAGE = 1; // 跳转到html页面
 	public static final int BANNER_URL_TYPE_PLAYER = 2; // 跳转到主播页
-	// public static final int BANNER_URL_TYPE_LOGIN = 3; // 跳转到注册页
-	public static final int BANNER_URL_TYPE_GROUP = 3; // 跳转到饭圈
-	public static final int BANNER_URL_TYPE_POST_DETAIL = 4; // 跳转到帖子
-	// 关注
-
-	public static final int FOLLOW_ON = 1;
-	public static final int FOLLOW_OFF = 0;
 
 	// 性别
 	public static final int GENDER_UNKNOWN = 0;
@@ -141,17 +124,6 @@ public class Consts {
 	}
 
 	public static final int PUSH_TYPE_AUTHOR_BEGIN_PLAYING = 0;// 我的关注
-	// 微信的appid:
-	public static final String WEIXIN_APPID = FeizaoApp.mContext.getString(R.string.wx_id);
-	public static final String WEIXIN_APPSECRET = FeizaoApp.mContext.getString(R.string.wx_secret);
-
-	// qq空间的appid
-	public static final String QQ_APPID = FeizaoApp.mContext.getString(R.string.qq_id);
-	public static final String QQ_APPKEY = FeizaoApp.mContext.getString(R.string.qq_key);
-
-	// 新浪微博
-	public static final String SINA_APPID = FeizaoApp.mContext.getString(R.string.sina_id);
-	public static final String SINA_APPSECRET = FeizaoApp.mContext.getString(R.string.sina_secret);
 
 	/**
 	 * 报错log日志发送邮箱用户名

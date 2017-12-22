@@ -17,7 +17,7 @@ import android.text.TextUtils;
 import cn.efeizao.feizao.framework.lang.IOUtils;
 import cn.efeizao.feizao.framework.net.ACommunication;
 import cn.efeizao.feizao.framework.net.AEntity;
-import cn.efeizao.feizao.framework.net.NetConstants;
+import tv.live.bx.common.pojo.NetConstants;
 import cn.efeizao.feizao.framework.net.NetLogs;
 import cn.efeizao.feizao.framework.net.proxy.NetProxyInfo;
 import cn.efeizao.feizao.framework.net.proxy.NetProxyInfoProxy;

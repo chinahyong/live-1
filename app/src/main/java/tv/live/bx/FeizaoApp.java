@@ -56,7 +56,7 @@ import java.util.Map;
 import tv.guojiang.baselib.BaseLibConfig;
 import tv.guojiang.baselib.ConfigBuilder;
 import tv.guojiang.baselib.image.factory.GlideFactory;
-import tv.live.bx.common.Consts;
+import tv.live.bx.common.pojo.LibConstants;
 import tv.live.bx.config.AppConfig;
 import tv.live.bx.config.DomainConfig;
 import tv.live.bx.config.UserInfoConfig;
@@ -314,11 +314,7 @@ public class FeizaoApp extends DefaultApplicationLike {
 		config.isNeedAuthOnGetUserInfo(true);
 		UMShareAPI.get(mContext).setShareConfig(config);
 		// 微信
-		PlatformConfig.setWeixin(Consts.WEIXIN_APPID, Consts.WEIXIN_APPSECRET);
-		// SINA
-		PlatformConfig.setSinaWeibo(Consts.SINA_APPID, Consts.SINA_APPSECRET, "http://sns.whalecloud.com/sina2/callback");
-		// QQ、QZONE
-		PlatformConfig.setQQZone(Consts.QQ_APPID, Consts.QQ_APPKEY);
+		PlatformConfig.setWeixin(LibConstants.WEIXIN_APPID, LibConstants.WEIXIN_APPSECRET);
 	}
 
 	public static WeakReference<Activity> getTopActivity() {

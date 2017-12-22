@@ -16,7 +16,7 @@ import org.json.JSONObject;
 
 import java.util.Map;
 
-import cn.efeizao.feizao.framework.net.NetConstants;
+import tv.live.bx.common.pojo.NetConstants;
 import de.tavendo.autobahn.WebSocketConnectionHandler;
 
 /**

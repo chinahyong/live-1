@@ -5,7 +5,7 @@
 package tv.live.bx.websocket.live;
 
 import android.text.TextUtils;
-import cn.efeizao.feizao.framework.net.NetConstants;
+import tv.live.bx.common.pojo.NetConstants;
 import com.lonzh.lib.network.JSONParser;
 import de.tavendo.autobahn.WebSocketConnectionHandler;
 import java.lang.ref.WeakReference;

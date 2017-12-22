@@ -1,4 +1,4 @@
-package cn.efeizao.feizao.framework.net;
+package tv.live.bx.common.pojo;
 
 /**
  * Title: XXXX (类或者接口名称) Description: XXXX (简单对此类或接口的名字进行描述) Copyright:
@@ -6,6 +6,11 @@ package cn.efeizao.feizao.framework.net;
  * @version 1.0
  */
 public class NetConstants {
+
+    // 服务器返回格式参数
+    public static final String SERVER_RESULT_CODE = "errno";
+    public static final String SERVER_RESULT_MSG = "msg";
+    public static final String SERVER_RESULT_DATA = "data";
 
     public static String BASE_HTTP_DOMAIN = "app.gjlive.cn";
     public static String BASE_HTTP_DOMAIN_BAK = "[\"app.gj2018.cn\",\"app.gj2017.cn\"]";
@@ -18,50 +23,25 @@ public class NetConstants {
     public static String BASE_STAT_URL_SERVER = "http://" + BASE_STAT_DOMAIN + "/";
     // Web页面
     public static String BASE_M_URL_SERVER = "http://" + BASE_M_DOMAIN;
-    /**
-     * 等待发送
-     */
+
+    // 等待发送
     public static final String SENT_STATUS_WAIT = "WAIT";
-    /**
-     * 发送成功
-     */
-    public static final String SENT_STATUS_SUCCESS = "0";
-
-    /**
-     * 服务器出错
-     */
+    // 服务器出错
     public static final String SENT_STATUS_ERROR_SERVER = "ERROR_SERVER";
-
-    /**
-     * 网络出错
-     */
+    // 网络出错
     public static final String SENT_STATUS_ERROR_NET = "ERROR_NET";
-
-    /**
-     * 超时
-     */
+    // 超时
     public static final String SENT_STATUS_TIMEOUT = "TIMEOUT";
-
-    /**
-     * DNS 解析失败
-     */
+    // DNS 解析失败
     public static final String SENT_STATUS_DNS_ERROR = "DNS_ERROR_SERVER";
 
-    /**
-     * 需要登录
-     */
+    // 请求失败，需要登录
     public static final String SENT_STATUS_NEED_LOGIN = "-100";
-    /**
-     * 请求过于频繁
-     */
+    // 请求过于频繁
     public static final String SENT_STATUS_NEED_VALIDATE = "-300";
+    // 请求成功
+    public static final String SENT_STATUS_SUCCESS = "0";
 
-    /**
-     * 服务器返回结果吗参数名称
-     */
-    public static final String SERVER_RESULT_CODE = "errno";
-    public static final String SERVER_RESULT_MSG = "msg";
-    public static final String SERVER_RESULT_DATA = "data";
     /**
      * 用户登录
      */
@@ -173,70 +153,6 @@ public class NetConstants {
     public static String GET_RANK_URL = "/user/rankList";
 
     /**
-     * 获取帖子信息接口URL
-     */
-    public static String GET_SUBJECT_LIST_URL = "/BBS/getPost";
-
-    /**
-     * 获取热门帖子信息接口URL
-     */
-    public static String GET_HOT_SUBJECT_LIST_URL = "/BBS/getHotPost";
-
-    /**
-     * 点赞
-     */
-    public static String GET_SUPPORT_URL = "/BBS/postSupport";
-
-    /**
-     * 获取回复列表信息
-     */
-    public static String GET_REPLY_LIST_URL = "/BBS/getPostReply";
-
-    /**
-     * 回复楼层信息
-     */
-    public static String REPLY_LOUCENG_URL = "/BBS/postLZLReply";
-
-    /**
-     * 帖子信息
-     */
-    public static String REPLY_POST_URL = "/BBS/postReply";
-
-    /**
-     * 收藏帖子信息
-     */
-    public static String COLLECT_POST_URL = "/BBS/postBookmark";
-    /**
-     * 收藏帖子信息
-     */
-    public static String REMOVE_COLLECT_POST_URL = "/BBS/postUnbookmark";
-
-    /**
-     * 我的收藏 帖子列表
-     */
-    public static String ME_COLLECT_POST_URL = "/groupPost/getMyPostBookmarks";
-
-    /**
-     * 用户发布的 帖子列表
-     */
-    public static String GET_PERSON_POST_URL = "/groupPost/getUserPosts";
-
-    /**
-     * 我的发布 帖子列表
-     */
-    public static String ME_PUBLISH_POST_URL = "/BBS/getMyPost";
-
-    /**
-     * 我的回复 帖子列表
-     */
-    public static String ME_REPLY_POST_URL = "/groupPost/getMyReplys";
-
-    /**
-     * 获取帖子详情信息
-     */
-    public static String GET_POST_DETAIL_URL = "/BBS/getPostDetail";
-
-    /**
      * 获取用户关注列表信息
      */
     public static String GET_LOVE_LIST_URL = "/user/getUserAttentions";
@@ -246,39 +162,10 @@ public class NetConstants {
      */
     public static String GET_FANS_LIST_URL = "/user/getUserFans";
 
-    /**
-     * 我的消息 帖子列表
-     */
-    public static String ME_MESSAGE_POST_URL = "/BBS/getMyMessage";
-
-    /**
-     * 删除我回复的楼层信息
-     */
-    public static String DELETE_REPLY_URL = "/BBS/deletePostReply";
-
-    /**
-     * 删除楼中楼里的回复信息
-     */
-    public static String DELETE_LZL_REPLY_URL = "/BBS/deletePostLzlReply";
-
-    /**
-     * 帖子模块列表
-     */
-    public static String GET_POST_MOUDLE_URL = "/BBS/getAllForum";
-
-    /**
-     * 发布帖子
-     */
-    public static String PUBLIC_POST_URL = "/BBS/addPost";
-
-    /**
-     * 获取推流的信息
-     */
+    // 获取推流的信息
     public static String GET_LIVE_STREAM_URL = "/room/requestLiveAddress";
 
-    /**
-     * 获取微信预支付订单
-     */
+    // 获取微信预支付订单
     public static String GET_PRE_PAY_DATA = "/recharge/wxpay";
 
     /**
@@ -345,87 +232,6 @@ public class NetConstants {
      * 设置系统消息已读
      */
     public static String SET_SYSTEM_MSG_READ = "/message/getUnreadMessageNumInfo";
-    /**
-     * 获取饭圈推荐列表
-     */
-    public static String GET_RECOMMENT_GROUP = "/group/getRecommendGroups";
-    /**
-     * 获取我的圈子/我加入的圈子列表
-     */
-    public static String GET_ME_GROUP = "/group/getMyGroups";
-    /**
-     * 获取圈子列表
-     */
-    public static String GET_GROUP_LIST_URL = "/group/getGroups";
-    /**
-     * 查询饭圈列表
-     */
-    public static String SEARCH_GROUP_LIST_URL = "/group/searchGroups";
-    /**
-     * 加入饭圈
-     */
-    public static String ADD_GROUP_URL = "/group/join";
-    /**
-     * 饭圈详情
-     */
-    public static String GET_GROUP_DETAIL_URL = "/group/getGroupDetail";
-    /**
-     * 获取饭圈管理员
-     */
-    public static String GET_GROUP_ADMIN_URL = "/group/getAdmins";
-    /**
-     * 获取饭圈帖子列表
-     */
-    public static String GET_GROUP_POST_LIST_URL = "/groupPost/getPosts";
-
-    /**
-     * 搜索成员列表
-     */
-    public static String SEARCH_MENBER_LIST_URL = "/group/searchMembers";
-    /**
-     * 获取成员列表
-     */
-    public static String GET_GROUP_MENBER_LIST_URL = "/group/getMembers";
-
-    /**
-     * 设置为管理员
-     */
-    public static String FAN_ADD_ADMIN_URL = "/group/addAdmin";
-    /**
-     * 取消管理员权限
-     */
-    public static String FAN_REMOVE_ADMIN_URL = "/group/removeAdmin";
-
-    /**
-     * 退出饭圈
-     */
-    public static String QUIT_FAN_URL = "/group/exit";
-
-    /**
-     * 帖子加精
-     */
-    public static String ADD_RECOMMEND_URL = "/groupPost/postNice";
-    /**
-     * 帖子取消加精
-     */
-    public static String CANCEL_RECOMMEND_URL = "/groupPost/removePostNice";
-
-    /**
-     * 帖子置顶
-     */
-    public static String SET_POST_TOP_URL = "/groupPost/postTop";
-    /**
-     * 取消帖子置顶
-     */
-    public static String CANCEL_POST_TOP_URL = "/groupPost/removePostTop";
-    /**
-     * 创建饭圈信息
-     */
-    public static String CREATE_GROUP_INFO_URL = "/group/create";
-    /**
-     * 更新饭圈信息
-     */
-    public static String UPDATE_GROUP_INFO_URL = "/group/edit";
 
     /**
      * 获取邀请人信息
@@ -436,59 +242,6 @@ public class NetConstants {
      */
     public static String SUBMIT_INVATE_URL = "/User/addReferrer";
 
-    /***************************** 饭圈帖子接口 start ************************************/
-    /**
-     * 获取帖子详情信息
-     */
-    public static String GET_GROUP_POST_DETAIL_URL = "/groupPost/getPostDetail";
-    /**
-     * 帖子信息
-     */
-    public static String GROUP_REPLY_POST_URL = "/groupPost/postReply";
-    /**
-     * 回复楼层信息
-     */
-    public static String GROUP_REPLY_LOUCENG_URL = "/groupPost/postLzlReply";
-
-    /**
-     * 收藏帖子信息
-     */
-    public static String GROUP_COLLECT_POST_URL = "/groupPost/postBookmark";
-
-    public static String REMOVE_GROUP_COLLECT_POST_URL = "/groupPost/postUnbookmark";
-
-    /**
-     * 获取回复列表信息
-     */
-    public static String GET_GROUP_REPLY_LIST_URL = "/groupPost/getPostReplys";
-
-    /**
-     * 点赞
-     */
-    public static String GET_GROUP_SUPPORT_URL = "/groupPost/postSupport";
-    /**
-     * 删除我回复的楼层信息
-     */
-    public static String DELETE_GROUP_REPLY_URL = "/groupPost/removePostFloorReply";
-    /**
-     * 删除我发表的帖子
-     */
-    public static String DELETE_GROUP_POST_URL = "/groupPost/removePost";
-
-    /**
-     * 发布帖子
-     */
-    public static String PUBLIC_GROUP_POST_URL = "/groupPost/post";
-    /**
-     * 获取社区饭圈帖子‘好玩’接口URL
-     */
-    public static String GET_GOURP_SUBJECT_LIST_URL = "/BBS/getGroupPostOut";
-
-    /**
-     * 获取用户是否还有创建饭圈能力接口URL
-     */
-    public static String GET_CREATE_NUM_URL = "/BBS/getMyCreateNumLeft";
-
     /************************************************ 2.0版本新接口 **************************/
     /**
      * 获取我的关注列表信息
@@ -498,10 +251,6 @@ public class NetConstants {
      * 获取直播预告信息
      */
     public static String GET_PUBLISH_ROOM_URL = "/room/getWillPublishRooms";
-    /**
-     * 获取精选帖子
-     */
-    public static String GET_HOT_GROUP_POST_LIST_URL = "/groupPost/getNiceposts";
     /**
      * 获取个人用户信息
      */
@@ -524,10 +273,6 @@ public class NetConstants {
      * 用户取消禁言
      */
     public static String CANCEL_USER_BAN_URL = "/Group/userBanRemove";
-    /**
-     * 获取饭圈管理日志
-     */
-    public static String GET_GROUP_MANAGE_LOG_URL = "/Group/getGroupAdminLogs";
     /**
      * 绑定微信
      */
@@ -631,11 +376,6 @@ public class NetConstants {
      * 绑定手机号码
      */
     public static String PHONE_BIND_URL = "/user/mobileBind";
-
-    //	/**
-    //	 * 注册获取手机验证码
-    //	 */
-    //	public static String GET_PHONE_CODE_URL = "/user/getMobileRegisterVCode2";
 
     /**
      * http://app.guojiang.tv/user/getMobileBindVCode

@@ -8,7 +8,7 @@ import org.json.JSONObject;
 
 import cn.efeizao.feizao.framework.net.AEntity;
 import cn.efeizao.feizao.framework.net.IReceiverListener;
-import cn.efeizao.feizao.framework.net.NetConstants;
+import tv.live.bx.common.pojo.NetConstants;
 
 public class RongCloudIReceiverImpl implements IReceiverListener {
 	private static final String TAG = "RongCloudIReceiverImpl";

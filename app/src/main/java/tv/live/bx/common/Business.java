@@ -3,7 +3,7 @@ package tv.live.bx.common;
 import android.content.Context;
 import android.os.Message;
 import android.text.TextUtils;
-import cn.efeizao.feizao.framework.net.NetConstants;
+import tv.live.bx.common.pojo.NetConstants;
 import com.lonzh.lib.LZActivity;
 import com.lonzh.lib.network.HttpSession;
 import com.lonzh.lib.network.JSONParser;

@@ -2,7 +2,7 @@ package cn.efeizao.feizao.framework.net.impl;
 
 import cn.efeizao.feizao.framework.net.AEntity;
 import cn.efeizao.feizao.framework.net.IReceiverListener;
-import cn.efeizao.feizao.framework.net.NetConstants;
+import tv.live.bx.common.pojo.NetConstants;
 import org.json.JSONException;
 import org.json.JSONObject;
 import tv.live.bx.FeizaoApp;

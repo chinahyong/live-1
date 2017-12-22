@@ -1,9 +1,9 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:tools="http://schemas.android.com/tools"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@color/a_bg_color_ffffff"
-                tools:context="tv.live.bx.activities.LoginActivity">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/a_bg_color_ffffff"
+    tools:context="tv.live.bx.activities.LoginActivity">
     <ImageView
         android:id="@+id/iv_login_bg"
         android:layout_width="match_parent"
@@ -49,12 +49,13 @@
             android:text="@string/login_msg"
             android:textColor="@color/a_text_color_959595"
             android:textSize="@dimen/a_text_size_48"/>
-        <ImageView android:layout_width="wrap_content"
-                   android:layout_height="wrap_content"
-                   android:layout_centerVertical="true"
-                   android:layout_marginLeft="8dp"
-                   android:layout_toRightOf="@id/login_type_des"
-                   android:src="@drawable/ic_line_right"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="8dp"
+            android:layout_toRightOf="@id/login_type_des"
+            android:src="@drawable/ic_line_right"/>
     </RelativeLayout>
 
     <LinearLayout
@@ -74,6 +75,7 @@
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:contentDescription="@string/app_name"
+            android:visibility="gone"
             android:src="@drawable/btn_qq_login_selector"/>
 
         <ImageView
@@ -88,6 +90,7 @@
             android:id="@+id/login_ll_by_weibo"
             android:layout_width="45dp"
             android:layout_height="45dp"
+            android:visibility="gone"
             android:layout_marginLeft="24dip"
             android:contentDescription="@string/app_name"
             android:src="@drawable/btn_weibo_login_selector"/>

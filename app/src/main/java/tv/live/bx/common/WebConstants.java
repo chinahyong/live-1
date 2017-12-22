@@ -1,6 +1,6 @@
 package tv.live.bx.common;
 
-import cn.efeizao.feizao.framework.net.NetConstants;
+import tv.live.bx.common.pojo.NetConstants;
 
 /**
  * Created by Administrator on 2017/1/5.

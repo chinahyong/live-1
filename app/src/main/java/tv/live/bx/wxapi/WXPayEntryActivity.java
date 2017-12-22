@@ -23,6 +23,7 @@ import java.util.Map;
 import tv.live.bx.activities.WebViewActivity;
 import tv.live.bx.common.Consts;
 import tv.live.bx.common.WebConstants;
+import tv.live.bx.common.pojo.LibConstants;
 import tv.live.bx.library.util.EvtLog;
 
 public class WXPayEntryActivity extends Activity implements IWXAPIEventHandler {
@@ -34,7 +35,7 @@ public class WXPayEntryActivity extends Activity implements IWXAPIEventHandler {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		api = WXAPIFactory.createWXAPI(this, Consts.WEIXIN_APPID);
+		api = WXAPIFactory.createWXAPI(this, LibConstants.WEIXIN_APPID);
 		api.handleIntent(getIntent(), this);
 	}
 

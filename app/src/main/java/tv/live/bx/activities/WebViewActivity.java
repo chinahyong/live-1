@@ -46,6 +46,7 @@ import tv.live.bx.common.MsgTypes;
 import tv.live.bx.common.OperationHelper;
 import tv.live.bx.common.Utils;
 import tv.live.bx.common.WebConstants;
+import tv.live.bx.common.pojo.LibConstants;
 import tv.live.bx.config.UserInfoConfig;
 import tv.live.bx.library.util.EvtLog;
 import tv.live.bx.library.util.FileUtil;
@@ -134,7 +135,7 @@ public class WebViewActivity extends BaseFragmentActivity implements IWebDataInt
 
 		// 将该app注册到微信
 		mWxPayReq = new PayReq();
-		msgApi.registerApp(Consts.WEIXIN_APPID);
+		msgApi.registerApp(LibConstants.WEIXIN_APPID);
 	}
 
 	@Override
@@ -436,7 +437,7 @@ public class WebViewActivity extends BaseFragmentActivity implements IWebDataInt
 	}
 
 	private void sendPayReq() {
-		msgApi.registerApp(Consts.WEIXIN_APPID);
+		msgApi.registerApp(LibConstants.WEIXIN_APPID);
 		msgApi.sendReq(mWxPayReq);
 	}
 

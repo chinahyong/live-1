@@ -10,25 +10,19 @@ import android.support.v4.app.FragmentActivity;
 import android.text.TextUtils;
 import android.widget.ImageView;
 import android.widget.Toast;
-
+import cn.efeizao.feizao.framework.net.impl.CallbackDataHandle;
+import cn.jpush.android.api.JPushInterface;
+import cn.tongdun.android.shell.FMAgent;
+import cn.tongdun.android.shell.exception.FMException;
 import com.lonzh.lib.network.HttpSession;
 import com.lonzh.lib.network.JSONParser;
 import com.lonzh.lib.network.LZCookieStore;
 import com.tinker.android.patchserver.TinkerServerManager;
 import com.umeng.analytics.MobclickAgent;
-
-import org.json.JSONArray;
-import org.json.JSONObject;
-
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.Map;
-
-import cn.efeizao.feizao.framework.net.NetConstants;
-import cn.efeizao.feizao.framework.net.impl.CallbackDataHandle;
-import cn.jpush.android.api.JPushInterface;
-import cn.tongdun.android.shell.FMAgent;
-import cn.tongdun.android.shell.exception.FMException;
+import org.json.JSONObject;
 import tv.live.bx.FeizaoApp;
 import tv.live.bx.R;
 import tv.live.bx.callback.LevelInfoReceiverListener;
@@ -39,6 +33,7 @@ import tv.live.bx.common.JacksonUtil;
 import tv.live.bx.common.MsgTypes;
 import tv.live.bx.common.OperationHelper;
 import tv.live.bx.common.Utils;
+import tv.live.bx.common.pojo.NetConstants;
 import tv.live.bx.config.AppConfig;
 import tv.live.bx.config.DomainConfig;
 import tv.live.bx.config.UserInfoConfig;
@@ -130,18 +125,18 @@ public class WelcomeActivity extends FragmentActivity {
 
 	protected void initData() {
 		try {
-			String httpDomainLists = DomainConfig.getInstance().http_domain_lists;
-
-			ArrayList<String> arrayList = new ArrayList<>();
-			arrayList.add(NetConstants.BASE_HTTP_DOMAIN);
-
-			if (!TextUtils.isEmpty(httpDomainLists)) {
-				JSONArray temp = new JSONArray(httpDomainLists);
-				for (int i = 0; i < temp.length(); i++) {
-					arrayList.add(temp.getString(i));
-				}
-			}
-			requestHttpDomain(arrayList, 0);
+//			String httpDomainLists = DomainConfig.getInstance().http_domain_lists;
+//
+//			ArrayList<String> arrayList = new ArrayList<>();
+//			arrayList.add(NetConstants.BASE_HTTP_DOMAIN);
+//
+//			if (!TextUtils.isEmpty(httpDomainLists)) {
+//				JSONArray temp = new JSONArray(httpDomainLists);
+//				for (int i = 0; i < temp.length(); i++) {
+//					arrayList.add(temp.getString(i));
+//				}
+//			}
+//			requestHttpDomain(arrayList, 0);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -296,7 +291,7 @@ public class WelcomeActivity extends FragmentActivity {
 
 						} else {
 							if (errorCode == NetConstants.SENT_STATUS_DNS_ERROR) {
-								requestHttpDomain(array, position + 1);
+//								requestHttpDomain(array, position + 1);
 							}
 						}
 					} catch (Exception e) {
