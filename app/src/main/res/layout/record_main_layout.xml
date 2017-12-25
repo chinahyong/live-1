@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<tv.live.bx.ui.SwipeBackLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.bixin.bixin.ui.SwipeBackLayout xmlns:android="http://schemas.android.com/apk/res/android"
                                xmlns:app="http://schemas.android.com/apk/res-auto"
                                android:id="@+id/swipebacklayout"
                                android:layout_width="match_parent"
                                android:layout_height="match_parent"
                                android:background="@color/trans">
-    <tv.live.bx.live.ui.CameraPreviewRelativeView
+    <com.bixin.bixin.live.ui.CameraPreviewRelativeView
         android:id="@+id/play_main_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -348,7 +348,7 @@
                 android:src="@drawable/icon_shouhu"
                 android:visibility="visible"/>
 
-            <tv.live.bx.ui.HorizontalListView
+            <com.bixin.bixin.ui.HorizontalListView
                 android:id="@+id/guard_listview"
                 android:layout_width="520dip"
                 android:layout_height="36dip"
@@ -358,7 +358,7 @@
                 android:fadingEdge="none"
                 android:gravity="right"
                 android:listSelector="#00000000">
-            </tv.live.bx.ui.HorizontalListView>
+            </com.bixin.bixin.ui.HorizontalListView>
         </RelativeLayout>
 
         <LinearLayout
@@ -422,27 +422,6 @@
                     android:textSize="@dimen/a_text_size_36"
                     android:visibility="gone"/>
             </RelativeLayout>
-            <LinearLayout
-                android:id="@+id/live_new_user_welfare_layout"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="10dip"
-                android:layout_marginTop="13.33dp"
-                android:background="@drawable/bg_new_user_welfare"
-                android:gravity="center_horizontal"
-                android:orientation="vertical"
-                android:visibility="gone">
-                <TextView
-                    android:id="@+id/live_new_user_welfare_tv"
-                    android:layout_width="wrap_content"
-                    android:layout_height="30dip"
-                    android:layout_marginTop="35dip"
-                    android:gravity="center"
-                    android:text="@string/live_new_user_welfare"
-                    android:textColor="@color/a_text_color_fffefe"
-                    android:textSize="@dimen/a_text_size_33"
-                    android:visibility="visible"/>
-            </LinearLayout>
         </LinearLayout>
 
 
@@ -557,7 +536,7 @@
                 android:scaleType="centerInside"
                 android:src="@drawable/bg_user_default"/>
 
-            <tv.live.bx.ui.StrokeTextView
+            <com.bixin.bixin.ui.StrokeTextView
                 android:id="@+id/item_gif_user_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -572,7 +551,7 @@
                 android:textStyle="bold"
                 app:strokeTextColor="@color/a_text_color_000000"/>
 
-            <tv.live.bx.ui.StrokeTextView
+            <com.bixin.bixin.ui.StrokeTextView
                 android:id="@+id/item_gif_gift_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -628,7 +607,7 @@
                     android:layout_marginTop="80dip"
                     android:src="@drawable/user_anchor_1"/>
 
-                <tv.live.bx.ui.TypeTextView
+                <com.bixin.bixin.ui.TypeTextView
                     android:id="@+id/anchor_level_up_tip1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -641,7 +620,7 @@
                     android:textColor="@color/a_text_color_ffffff"
                     android:textStyle="bold"/>
 
-                <tv.live.bx.ui.TypeTextView
+                <com.bixin.bixin.ui.TypeTextView
                     android:id="@+id/anchor_level_up_tip2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -654,7 +633,7 @@
                     android:textColor="@color/a_text_color_fff000"
                     android:textStyle="bold"/>
 
-                <tv.live.bx.ui.TypeTextView
+                <com.bixin.bixin.ui.TypeTextView
                     android:id="@+id/anchor_level_up_tip3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -759,7 +738,7 @@
 
             <!-- android:layout_marginBottom="42.66dp"
                 android:layout_marginRight="10dp" -->
-            <tv.live.bx.ui.RippleBackground
+            <com.bixin.bixin.ui.RippleBackground
                 android:id="@+id/live_gift_rl_bonus_times_count_time"
                 android:layout_width="160dp"
                 android:layout_height="200dp"
@@ -828,7 +807,7 @@
                         android:textColor="@android:color/white"
                         android:textSize="@dimen/a_text_size_45"/>
                 </LinearLayout>
-            </tv.live.bx.ui.RippleBackground>
+            </com.bixin.bixin.ui.RippleBackground>
         </RelativeLayout>
 
         <RelativeLayout
@@ -848,5 +827,5 @@
             </FrameLayout>
         </RelativeLayout>
 
-    </tv.live.bx.live.ui.CameraPreviewRelativeView>
-</tv.live.bx.ui.SwipeBackLayout>
+    </com.bixin.bixin.live.ui.CameraPreviewRelativeView>
+</com.bixin.bixin.ui.SwipeBackLayout>

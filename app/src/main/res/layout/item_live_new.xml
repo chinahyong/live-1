@@ -42,13 +42,6 @@
               android:layout_marginLeft="3dp"
               android:background="@drawable/a_bg_live_new_point"/>
 
-        <TextView
-            android:id="@+id/item_tv_location"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="3dp"
-            android:textColor="@color/a_bg_color_989898"
-            android:textSize="@dimen/a_text_size_30"/>
     </LinearLayout>
 
 </RelativeLayout>

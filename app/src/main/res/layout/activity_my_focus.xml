@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@color/a_bg_backgroup_color"
     android:orientation="vertical"
-    tools:context="tv.live.bx.activities.MyFocusActivity" >
+    tools:context="com.bixin.bixin.activities.MyFocusActivity" >
 
     <include layout="@layout/a_common_top_bar" />
 
@@ -17,7 +17,7 @@
             layout="@layout/a_common_loadingprogress_layout"
             android:visibility="gone" />
 
-        <tv.live.bx.ui.PullRefreshListView
+        <com.bixin.bixin.ui.PullRefreshListView
             android:id="@+id/author_listview"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -29,7 +29,7 @@
             android:footerDividersEnabled="false"
             android:headerDividersEnabled="false"
             android:listSelector="#00000000" >
-        </tv.live.bx.ui.PullRefreshListView>
+        </com.bixin.bixin.ui.PullRefreshListView>
     </FrameLayout>
 
 </LinearLayout>

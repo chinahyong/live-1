@@ -11,7 +11,7 @@ import android.widget.TextView;
 import org.json.JSONArray;
 
 import tv.live.bx.R;
-import tv.live.bx.ui.StrokeTextView;
+import com.bixin.bixin.ui.StrokeTextView;
 
 /**
  * Title: RewardDialgBuilder.java</br> Description: 自定义对话框</br> Copyright:

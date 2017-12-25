@@ -17,12 +17,12 @@ import pl.droidsonroids.gif.AnimationListener;
 import pl.droidsonroids.gif.GifDrawable;
 import pl.droidsonroids.gif.GifImageView;
 import tv.live.bx.R;
-import tv.live.bx.library.file.load.AsyLoadTask;
-import tv.live.bx.library.file.load.DiskCache;
-import tv.live.bx.library.file.load.FileCache;
-import tv.live.bx.library.file.load.LoadTask;
-import tv.live.bx.library.file.load.LoadingListener;
-import tv.live.bx.library.util.EvtLog;
+import com.bixin.bixin.library.file.load.AsyLoadTask;
+import com.bixin.bixin.library.file.load.DiskCache;
+import com.bixin.bixin.library.file.load.FileCache;
+import com.bixin.bixin.library.file.load.LoadTask;
+import com.bixin.bixin.library.file.load.LoadingListener;
+import com.bixin.bixin.library.util.EvtLog;
 
 /**
  * @author Live

@@ -4,11 +4,11 @@
     android:layout_height="match_parent"
     android:background="@color/a_bg_color_f0f0f0"
     android:orientation="vertical"
-    tools:context="tv.live.bx.activities.WebViewActivity" >
+    tools:context="com.bixin.bixin.activities.WebViewActivity" >
 
     <include layout="@layout/a_common_top_bar" />
 
-    <tv.live.bx.ui.MyWebView
+    <com.bixin.bixin.ui.MyWebView
         android:id="@+id/web_view_wv"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

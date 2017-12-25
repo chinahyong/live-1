@@ -27,7 +27,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import tv.live.bx.R;
-import tv.live.bx.common.Utils;
+import com.bixin.bixin.common.Utils;
 
 /**
  * 页面翻转控件，极方便的广告栏

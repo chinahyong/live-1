@@ -25,19 +25,19 @@ import java.lang.ref.WeakReference;
 import java.util.Map;
 
 import cn.efeizao.feizao.framework.net.impl.CallbackDataHandle;
-import tv.live.bx.FeizaoApp;
+import com.bixin.bixin.App;
 import tv.live.bx.R;
-import tv.live.bx.common.BusinessUtils;
-import tv.live.bx.common.Constants;
-import tv.live.bx.common.JacksonUtil;
-import tv.live.bx.common.MsgTypes;
-import tv.live.bx.common.OperationHelper;
-import tv.live.bx.common.Utils;
-import tv.live.bx.database.DatabaseUtils;
-import tv.live.bx.database.model.PersonInfo;
-import tv.live.bx.imageloader.ImageLoaderUtil;
-import tv.live.bx.library.util.EvtLog;
-import tv.live.bx.util.UiHelper;
+import com.bixin.bixin.common.BusinessUtils;
+import com.bixin.bixin.common.Constants;
+import com.bixin.bixin.common.JacksonUtil;
+import com.bixin.bixin.common.MsgTypes;
+import com.bixin.bixin.common.OperationHelper;
+import com.bixin.bixin.common.Utils;
+import com.bixin.bixin.database.DatabaseUtils;
+import com.bixin.bixin.database.model.PersonInfo;
+import com.bixin.bixin.imageloader.ImageLoaderUtil;
+import com.bixin.bixin.library.util.EvtLog;
+import com.bixin.bixin.util.UiHelper;
 
 /**
  * Title: CustomDialogBuilder.java</br> Description: 自定义对话框</br> Copyright:
@@ -133,7 +133,7 @@ public class PersonInfoCustomDialogBuilder extends CustomDialogBuilder {
 				if (Utils.strBool((String) v.getTag())) {
 					BusinessUtils.removeFollow(mContext, new RemoveFollowCallbackData(PersonInfoCustomDialogBuilder.this), mUid);
 				} else {
-					OperationHelper.onEvent(FeizaoApp.mContext, "followBroadcasterInPersonalCard", null);
+					OperationHelper.onEvent(App.mContext, "followBroadcasterInPersonalCard", null);
 					BusinessUtils.follow(mContext, new FollowCallbackData(PersonInfoCustomDialogBuilder.this), mUid);
 				}
 			}
@@ -219,10 +219,10 @@ public class PersonInfoCustomDialogBuilder extends CustomDialogBuilder {
 	}
 
 	private void updateData(Map<String, String> personInfo) {
-		ImageLoaderUtil.getInstance().loadHeadPic(FeizaoApp.mContext, mUserHeadPhoto, personInfo.get("headPic"));
+		ImageLoaderUtil.getInstance().loadHeadPic(App.mContext, mUserHeadPhoto, personInfo.get("headPic"));
 		// 更新主播头像
 		if (mAnchorHeadPhoto != null) {
-			ImageLoaderUtil.getInstance().loadHeadPic(FeizaoApp.mContext, mAnchorHeadPhoto, personInfo.get("headPic"));
+			ImageLoaderUtil.getInstance().loadHeadPic(App.mContext, mAnchorHeadPhoto, personInfo.get("headPic"));
 		}
 		// 如果不是自己，显示的是关注按钮
 		if (Utils.getBooleanFlag(personInfo.get("isAttention"))) {
@@ -321,7 +321,7 @@ public class PersonInfoCustomDialogBuilder extends CustomDialogBuilder {
 					mUserManage.setEnabled(false);
 					break;
 				case MsgTypes.FOLLOW_SUCCESS:
-					OperationHelper.onEvent(FeizaoApp.mContext, "followBroadcasterInPersonalCardSuccessful", null);
+					OperationHelper.onEvent(App.mContext, "followBroadcasterInPersonalCardSuccessful", null);
 					mUserFocusBtn.setTag(Constants.COMMON_TRUE);
 					mUserFocusBtn.setBackgroundResource(R.drawable.btn_focused_selector);
 
@@ -338,7 +338,7 @@ public class PersonInfoCustomDialogBuilder extends CustomDialogBuilder {
 					UiHelper.showShortToast(mContext, (String) msg.obj);
 					break;
 				case MsgTypes.REMOVE_FOLLOW_SUCCESS:
-					OperationHelper.onEvent(FeizaoApp.mContext, "clickCancelFollowBroadcasterInPersonalCard", null);
+					OperationHelper.onEvent(App.mContext, "clickCancelFollowBroadcasterInPersonalCard", null);
 					mUserFocusBtn.setTag("false");
 					mUserFocusBtn.setBackgroundResource(R.drawable.btn_focus_selector);
 					int fansNum2 = Integer.parseInt(mHeadFansNum.getText().toString()) - 1;
@@ -387,7 +387,8 @@ public class PersonInfoCustomDialogBuilder extends CustomDialogBuilder {
 					PersonInfoCustomDialogBuilder meFragment = mFragment.get();
 					// 数据库存储用户个人信息
 					if (result != null) {
-						DatabaseUtils.saveOrupdatePersonInfoToDatabase(FeizaoApp.mContext, JacksonUtil.readValue(String.valueOf(result), PersonInfo.class));
+						DatabaseUtils.saveOrupdatePersonInfoToDatabase(
+                            App.mContext, JacksonUtil.readValue(String.valueOf(result), PersonInfo.class));
 					}
 					// 如果fragment未回收，发送消息
 					if (meFragment != null)

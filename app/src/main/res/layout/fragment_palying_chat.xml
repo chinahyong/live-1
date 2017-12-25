@@ -7,7 +7,7 @@
               android:clickable="true"
               android:orientation="vertical">
 
-    <tv.live.bx.ui.ChatListView
+    <com.bixin.bixin.ui.ChatListView
         android:id="@+id/playing_chat_lv_chat"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -19,6 +19,6 @@
         android:focusableInTouchMode="true"
         android:listSelector="@color/trans"
         android:scrollbars="none">
-    </tv.live.bx.ui.ChatListView>
+    </com.bixin.bixin.ui.ChatListView>
 
 </LinearLayout>

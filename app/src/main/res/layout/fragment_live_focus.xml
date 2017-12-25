@@ -38,7 +38,7 @@
             android:layout_centerInParent="true"
             android:visibility="gone"/>
 
-        <tv.live.bx.ui.PullRefreshListView
+        <com.bixin.bixin.ui.PullRefreshListView
             android:id="@+id/author_listview"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -49,7 +49,7 @@
             android:footerDividersEnabled="false"
             android:headerDividersEnabled="false"
             android:listSelector="#00000000">
-        </tv.live.bx.ui.PullRefreshListView>
+        </com.bixin.bixin.ui.PullRefreshListView>
     </RelativeLayout>
 
 </RelativeLayout>

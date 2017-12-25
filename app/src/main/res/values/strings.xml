@@ -91,9 +91,9 @@
     <string name="anchor_search_text_empty">请输入搜索关键字</string>
     <string name="anchor_search_empty">没有找到相关的主播哦</string>
     <string name="anchor_search_fail">加载数据失败.</string>
-    <string name="anchor_tab_hot">热门</string>
+    <string name="anchor_tab_hot">推荐</string>
     <string name="anchor_tab_new">新人</string>
-    <string name="anchor_tab_near">附近</string>
+    <string name="anchor_tab_near">身边</string>
     <string name="anchor_tab_recommend">推荐</string>
     <string name="anchor_btn_live_new">去看其他精彩直播</string>
     <string name="anchor_live_new_empty_msg">还没有最新开播的主播哦（▼へ▼メ）</string>

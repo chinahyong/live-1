@@ -4,7 +4,7 @@ import java.lang.ref.WeakReference;
 
 import android.view.Surface;
 
-import tv.live.bx.library.util.EvtLog;
+import com.bixin.bixin.library.util.EvtLog;
 
 /**
  * -1:未登陆用户 1:普通用户 2:主播 3:管理员 4:僵尸用户 5:房间主

@@ -29,7 +29,7 @@
             android:layout_toRightOf="@id/item_user_guard_entry_text"
             android:src="@drawable/userlevel_0"
             android:visibility="visible"/>
-        <tv.live.bx.ui.TypeTextView
+        <com.bixin.bixin.ui.TypeTextView
             android:id="@+id/item_user_entry_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

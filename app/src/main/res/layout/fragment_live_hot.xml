@@ -10,16 +10,16 @@
         android:layout_centerInParent="true"
         android:visibility="gone"/>
 
-    <tv.live.bx.ui.widget.CustomRefreshLayout
+    <com.bixin.bixin.ui.widget.CustomRefreshLayout
         android:id="@+id/refresh_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <tv.live.bx.ui.EmptyRecyclerView
+        <com.bixin.bixin.ui.EmptyRecyclerView
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scrollbarStyle="outsideOverlay"/>
-    </tv.live.bx.ui.widget.CustomRefreshLayout>
+    </com.bixin.bixin.ui.widget.CustomRefreshLayout>
 
     <LinearLayout
         android:id="@+id/new_message_tip_layout"

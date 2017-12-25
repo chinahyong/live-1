@@ -47,7 +47,7 @@
             android:textSize="@dimen/a_text_size_34"/>
     </RelativeLayout>
 
-    <tv.live.bx.ui.FavorLayout
+    <com.bixin.bixin.ui.FavorLayout
         android:id="@+id/favorLayout"
         android:layout_width="100dp"
         android:layout_height="400dp"

@@ -1,10 +1,10 @@
 package cn.efeizao.feizao.framework.net;
 
-import tv.live.bx.FeizaoApp;
-import tv.live.bx.util.ChannelUtil;
-import tv.live.bx.common.Constants;
-import tv.live.bx.library.util.PackageUtil;
-import tv.live.bx.library.util.TelephoneUtil;
+import com.bixin.bixin.App;
+import com.bixin.bixin.util.ChannelUtil;
+import com.bixin.bixin.common.Constants;
+import com.bixin.bixin.library.util.PackageUtil;
+import com.bixin.bixin.library.util.TelephoneUtil;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
@@ -56,7 +56,7 @@ public class BaseEntityImpl extends BaseEntity {
 			sb.append("version=").append(appVersion)
 					.append("&platform=").append(platform)
 					.append("&packageId=").append(Constants.PACKAGE_ID)
-					.append("&channel=").append(ChannelUtil.getChannel(FeizaoApp.mContext))
+					.append("&channel=").append(ChannelUtil.getChannel(App.mContext))
 					.append("&deviceName=").append(URLEncoder.encode(TelephoneUtil.getDeviceName(), "UTF-8"))
 					.append("&androidVersion=").append(TelephoneUtil.getAndridVersion());
 

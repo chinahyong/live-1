@@ -3,7 +3,7 @@
  */
 package cn.efeizao.feizao.framework.net;
 
-import tv.live.bx.library.util.EvtLog;
+import com.bixin.bixin.library.util.EvtLog;
 
 /**
  */

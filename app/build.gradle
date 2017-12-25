@@ -56,10 +56,10 @@ android {
     // 签名
     signingConfigs {
         config {
-            keyAlias 'live'
-            keyPassword 'live123'
-            storeFile file("${rootDir}/app/keystore/live.keystore")
-            storePassword 'live123'
+            keyAlias 'feizao'
+            keyPassword 'feizao'
+            storeFile file("${rootDir}/app/keystore/feizao")
+            storePassword 'feizao'
             v2SigningEnabled false
         }
     }

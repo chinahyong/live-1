@@ -2,7 +2,7 @@ package com.lonzh.lib.network;
 
 import android.content.Context;
 
-import tv.live.bx.library.util.EvtLog;
+import com.bixin.bixin.library.util.EvtLog;
 
 import org.apache.http.Header;
 import org.apache.http.HttpEntity;

@@ -180,155 +180,16 @@
                 </LinearLayout>
             </RelativeLayout>
 
-            <RelativeLayout
-                android:id="@+id/me_setting_account_layout"
-                android:layout_width="match_parent"
-                android:layout_height="43.33dp"
-                android:background="@drawable/a_bg_fffef4_d8d8d0_selector"
-                android:paddingLeft="15dip"
-                android:paddingRight="15dip">
-
-                <ImageView
-                    android:id="@+id/me_setting_account_icon"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:src="@drawable/icon_phone"
-                    android:visibility="visible"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="12dip"
-                    android:layout_toRightOf="@id/me_setting_account_icon"
-                    android:text="@string/me_setting_account_text"
-                    android:textColor="@color/a_text_color_e98516"
-                    android:textSize="@dimen/a_text_size_42"/>
-
-                <ImageView
-                    android:id="@+id/settings_rl_account_arrow"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:src="@drawable/icon_me_arrow"
-                    android:visibility="visible"/>
-            </RelativeLayout>
-
-            <View android:id="@+id/me_setting_account_divider"
-                  style="@style/divider_horizontal"/>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="44dp"
-                android:background="@color/white"
-                android:orientation="horizontal">
-
-                <LinearLayout
-                    android:id="@+id/item_guard_layout"
-                    android:layout_width="0dip"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:background="@drawable/a_bg_ffffff_f0f0f0_selector"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/item_guard_num"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="3.33dip"
-                        android:gravity="center_vertical"
-                        android:textColor="@color/a_text_333333_da500e_selector"
-                        android:textSize="@dimen/a_text_size_45"
-                        android:textStyle="bold"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_vertical"
-                        android:text="@string/gift_guard_2_text"
-                        android:textColor="@color/a_text_333333_da500e_selector"
-                        android:textSize="@dimen/a_text_size_30"/>
-                </LinearLayout>
-
-                <View
-                    android:id="@+id/item_guard_line"
-                    android:layout_width="1dp"
-                    android:layout_height="28dp"
-                    android:layout_gravity="center_vertical"
-                    android:background="@color/divider_horizontal"/>
-
-                <LinearLayout
-                    android:id="@+id/item_fans_layout"
-                    android:layout_width="0dip"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:background="@drawable/a_bg_ffffff_f0f0f0_selector"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/item_fans_num"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="3.33dip"
-                        android:gravity="center_vertical"
-                        android:textColor="@color/a_text_333333_da500e_selector"
-                        android:textSize="@dimen/a_text_size_45"
-                        android:textStyle="bold"/>
-
-                    <TextView
-                        android:id="@+id/item_fans"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_vertical"
-                        android:text="@string/person_fans"
-                        android:textColor="@color/a_text_333333_da500e_selector"
-                        android:textSize="@dimen/a_text_size_30"/>
-                </LinearLayout>
-
-                <View
-                    android:layout_width="1dp"
-                    android:layout_height="28dp"
-                    android:layout_gravity="center_vertical"
-                    android:background="@color/divider_horizontal"/>
-
-                <LinearLayout
-                    android:id="@+id/item_focus_layout"
-                    android:layout_width="0dip"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:background="@drawable/a_bg_ffffff_f0f0f0_selector"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/item_focus_num"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="3.33dip"
-                        android:gravity="center_vertical"
-                        android:textColor="@color/a_text_333333_da500e_selector"
-                        android:textSize="@dimen/a_text_size_45"
-                        android:textStyle="bold"/>
-
-                    <TextView
-                        android:id="@+id/item_focus"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_vertical"
-                        android:text="@string/person_focus"
-                        android:textColor="@color/a_text_333333_da500e_selector"
-                        android:textSize="@dimen/a_text_size_30"/>
-                </LinearLayout>
-            </LinearLayout>
+            <View
+                android:id="@+id/me_setting_account_divider"
+                style="@style/divider_horizontal"/>
 
             <View
                 style="@style/divider_horizontal_e6e6e6"/>
 
-            <View style="@style/divider_horizontal_e6e6e6"
-                  android:layout_marginTop="20dp"/>
+            <View
+                style="@style/divider_horizontal_e6e6e6"
+                android:layout_marginTop="20dp"/>
 
             <RelativeLayout
                 android:id="@+id/my_info_store"
@@ -377,9 +238,10 @@
                     android:textSize="@dimen/a_text_size_42"/>
             </RelativeLayout>
 
-            <View style="@style/divider_horizontal_e6e6e6"
-                  android:layout_marginLeft="16dp"
-                  android:visibility="gone"/>
+            <View
+                style="@style/divider_horizontal_e6e6e6"
+                android:layout_marginLeft="16dp"
+                android:visibility="gone"/>
 
             <RelativeLayout
                 android:id="@+id/my_info_backpack"
@@ -387,7 +249,8 @@
                 android:layout_height="43.33dp"
                 android:background="@drawable/a_main_item_selector"
                 android:paddingLeft="16dp"
-                android:paddingRight="16dp">
+                android:paddingRight="16dp"
+                android:visibility="gone">
 
                 <ImageView
                     android:id="@+id/iv_backpack"
@@ -415,8 +278,10 @@
                     android:src="@drawable/bg_item_arrow"/>
             </RelativeLayout>
 
-            <View style="@style/divider_horizontal_e6e6e6"
-                  android:layout_marginLeft="16dp"/>
+            <View
+                style="@style/divider_horizontal_e6e6e6"
+                android:layout_marginLeft="16dp"
+                android:visibility="gone"/>
 
             <RelativeLayout
                 android:id="@+id/my_info_balance"
@@ -462,8 +327,9 @@
                     android:textColor="@color/a_text_color_da500e"
                     android:textSize="@dimen/a_text_size_42"/>
             </RelativeLayout>
-            <View android:id="@+id/me_income_line"
-                  style="@style/divider_horizontal_e6e6e6_leftmaring_16"/>
+            <View
+                android:id="@+id/me_income_line"
+                style="@style/divider_horizontal_e6e6e6_leftmaring_16"/>
 
 
             <RelativeLayout
@@ -513,8 +379,6 @@
                     android:textSize="@dimen/a_text_size_42"/>
             </RelativeLayout>
 
-            <View android:id="@+id/me_income_line"
-                  style="@style/divider_horizontal_e6e6e6_leftmaring_16"/>
             <RelativeLayout
                 android:id="@+id/my_info_redpackage_layout"
                 android:layout_width="match_parent"
@@ -552,9 +416,10 @@
                     android:src="@drawable/bg_item_arrow"/>
             </RelativeLayout>
 
-            <View android:id="@+id/me_redpackage_line"
-                  style="@style/divider_horizontal_e6e6e6_leftmaring_16"
-                  android:visibility="gone"/>
+            <View
+                android:id="@+id/me_redpackage_line"
+                style="@style/divider_horizontal_e6e6e6_leftmaring_16"
+                android:visibility="gone"/>
 
             <RelativeLayout
                 android:id="@+id/my_info_level"
@@ -562,7 +427,8 @@
                 android:layout_height="43.33dp"
                 android:background="@drawable/a_main_item_selector"
                 android:paddingLeft="16dp"
-                android:paddingRight="16dp">
+                android:paddingRight="16dp"
+                android:visibility="gone">
 
                 <ImageView
                     android:id="@+id/level_iv"
@@ -603,10 +469,13 @@
 
             </RelativeLayout>
 
-            <View style="@style/divider_horizontal_e6e6e6_leftmaring_16"/>
+            <View
+                style="@style/divider_horizontal_e6e6e6_leftmaring_16"
+                android:visibility="gone"/>
 
             <RelativeLayout
                 android:id="@+id/my_info_anchor_level"
+                android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="43.33dp"
                 android:background="@drawable/a_main_item_selector"
@@ -651,16 +520,20 @@
                     android:textSize="@dimen/a_text_size_42"/>
             </RelativeLayout>
             <View
-                style="@style/divider_horizontal_e6e6e6"/>
+                style="@style/divider_horizontal_e6e6e6"
+                android:visibility="gone"/>
 
-            <View style="@style/divider_horizontal_e6e6e6"
-                  android:layout_marginTop="20dip"/>
+            <View
+                style="@style/divider_horizontal_e6e6e6"
+                android:layout_marginTop="20dip"
+                android:visibility="gone"/>
             <RelativeLayout
                 android:id="@+id/my_info_ll_advice"
                 android:layout_width="match_parent"
                 android:layout_height="43.33dp"
                 android:background="@drawable/a_main_item_selector"
                 android:paddingLeft="16dp"
+                android:visibility="gone"
                 android:paddingRight="16dp">
 
                 <ImageView

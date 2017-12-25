@@ -25,7 +25,7 @@ import android.view.View;
 import com.handmark.pulltorefresh.library.internal.EmptyViewMethodAccessor;
 
 import tv.live.bx.R;
-import tv.live.bx.ui.HeaderGridView;
+import com.bixin.bixin.ui.HeaderGridView;
 
 public class PullToRefreshHeaderGridView extends PullToRefreshAdapterViewBase<HeaderGridView> {
 

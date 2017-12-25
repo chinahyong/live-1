@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<tv.live.bx.ui.RoundAngleRelativeLayout
+<com.bixin.bixin.ui.RoundAngleRelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/live_connect_living_layout_parent"
@@ -173,4 +173,4 @@
         android:padding="3dip"
         android:src="@drawable/icon_btn_live_connect_close"
         android:visibility="visible"/>
-</tv.live.bx.ui.RoundAngleRelativeLayout>
+</com.bixin.bixin.ui.RoundAngleRelativeLayout>

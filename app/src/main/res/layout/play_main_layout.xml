@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<tv.live.bx.live.ui.CameraPreviewRelativeView
+<com.bixin.bixin.live.ui.CameraPreviewRelativeView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/play_main_layout"
@@ -160,7 +160,7 @@
                 android:src="@drawable/icon_shouhu"
                 android:visibility="visible"/>
 
-            <tv.live.bx.ui.HorizontalListView
+            <com.bixin.bixin.ui.HorizontalListView
                 android:id="@+id/guard_listview"
                 android:layout_width="match_parent"
                 android:layout_height="37dip"
@@ -170,7 +170,7 @@
                 android:fadingEdge="none"
                 android:gravity="right"
                 android:listSelector="#00000000">
-            </tv.live.bx.ui.HorizontalListView>
+            </com.bixin.bixin.ui.HorizontalListView>
 
         </RelativeLayout>
     </RelativeLayout>
@@ -237,261 +237,6 @@
             android:paddingRight="5.33dp"
             android:src="@drawable/ic_icon_p_arrow"/>
     </RelativeLayout>
-
-    <LinearLayout
-        android:id="@+id/playing_activity_left_layout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/playing_ranking_layout_show"
-        android:orientation="vertical">
-
-        <RelativeLayout
-            android:id="@+id/playing_hot_rank_layout"
-            android:layout_width="wrap_content"
-            android:layout_height="25.66dp"
-            android:layout_marginBottom="12.66dp"
-            android:background="@drawable/bg_live_hot_rank"
-            android:visibility="gone">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:layout_marginLeft="10dp"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="10dp"
-                    android:src="@drawable/icon_live_hot_rank"/>
-
-                <TextView
-                    android:id="@+id/hot_rank_now_rank"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingLeft="8.66dp"
-                    android:text="5"
-                    android:textColor="@color/a_text_color_ffffff"
-                    android:textSize="@dimen/a_text_size_36"/>
-
-                <ImageView
-                    android:id="@+id/hot_rank_arrow"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:paddingLeft="7.33dp"
-                    android:paddingRight="5.33dp"
-                    android:src="@drawable/iocn_drop"/>
-
-            </LinearLayout>
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/playing_activity_week_layout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:visibility="gone">
-
-            <TextView
-                android:id="@+id/playing_activity_week_text2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/playing_activity_week_logo"
-                android:layout_centerHorizontal="true"
-                android:layout_marginRight="30dip"
-                android:background="@drawable/shape_nav_point_blue"
-                android:gravity="center"
-                android:minWidth="60dip"
-                android:paddingLeft="12dip"
-                android:paddingRight="12dip"
-                android:textSize="@dimen/a_text_size_30"/>
-
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/playing_activity_week_logo"
-                android:layout_centerHorizontal="true">
-                <ProgressBar
-                    android:id="@+id/playing_activity_week_progress"
-                    style="@style/ProgressBar_Common_Horizontal"
-                    android:layout_width="60dp"
-                    android:layout_height="12dip"
-                    android:layout_centerInParent="true"
-                    android:max="100"
-                    android:progress="100"
-                    android:visibility="gone"/>
-
-                <TextView
-                    android:id="@+id/playing_activity_week_text"
-                    android:layout_width="60dp"
-                    android:layout_height="15.33dp"
-                    android:layout_alignLeft="@id/playing_activity_week_progress"
-                    android:layout_alignRight="@id/playing_activity_week_progress"
-                    android:layout_centerInParent="true"
-                    android:background="@color/trans"
-                    android:gravity="center"
-                    android:textSize="@dimen/a_text_size_30"
-                    android:visibility="gone"/>
-            </RelativeLayout>
-
-            <ImageView
-                android:id="@+id/playing_activity_week_logo"
-                android:layout_width="47.33dp"
-                android:layout_height="47.33dp"
-                android:layout_centerHorizontal="true"
-                android:layout_marginBottom="3dp"
-                android:scaleType="fitCenter"/>
-        </RelativeLayout>
-    </LinearLayout>
-
-    <ImageView
-        android:id="@+id/private_user_logo"
-        android:layout_width="34dp"
-        android:layout_height="34dp"
-        android:layout_alignParentRight="true"
-        android:layout_below="@id/live_top_layout"
-        android:layout_marginRight="10dip"
-        android:layout_marginTop="3dip"
-        android:contentDescription="@string/app_name"
-        android:scaleType="centerCrop"
-        android:src="@drawable/bg_user_default"
-        android:visibility="gone"/>
-
-    <LinearLayout
-        android:id="@+id/playing_activity_linearlayout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_marginTop="130.66dp"
-        android:gravity="right"
-        android:orientation="vertical">
-
-        <RelativeLayout
-            android:id="@+id/playing_activity_layout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="10dp">
-
-            <ImageView
-                android:id="@+id/playing_activity_logo"
-                android:layout_width="47.33dp"
-                android:layout_height="47.33dp"
-                android:layout_centerHorizontal="true"
-                android:layout_marginBottom="4dp"
-                android:scaleType="centerCrop"/>
-
-            <TextView
-                android:id="@+id/playing_activity_text2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/playing_activity_logo"
-                android:background="@drawable/shape_nav_point_blue"
-                android:minWidth="60dip"
-                android:paddingLeft="12dip"
-                android:paddingRight="12dip"
-                android:textSize="@dimen/a_text_size_36"
-                android:visibility="gone"/>
-
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/playing_activity_logo">
-                <ProgressBar
-                    android:id="@+id/playing_activity_progress"
-                    style="@style/ProgressBar_Common_Horizontal"
-                    android:layout_width="60dip"
-                    android:layout_height="12dip"
-                    android:layout_centerInParent="true"
-                    android:max="100"
-                    android:progress="100"
-                    android:visibility="gone"/>
-
-                <TextView
-                    android:id="@+id/playing_activity_text"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignBaseline="@id/playing_activity_progress"
-                    android:layout_alignLeft="@id/playing_activity_progress"
-                    android:layout_alignRight="@id/playing_activity_progress"
-                    android:layout_centerInParent="true"
-                    android:background="@color/trans"
-                    android:gravity="center"
-                    android:textSize="@dimen/a_text_size_30"
-                    android:visibility="gone"/>
-            </RelativeLayout>
-        </RelativeLayout>
-
-        <LinearLayout
-            android:id="@+id/live_new_user_welfare_layout"
-            android:layout_width="60dp"
-            android:layout_height="66dp"
-            android:layout_marginRight="10dip"
-            android:layout_marginTop="18dp"
-            android:gravity="center_horizontal"
-            android:orientation="vertical">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:scaleType="centerCrop"
-                android:src="@drawable/bg_new_user_welfare"/>
-
-            <TextView
-                android:id="@+id/live_new_user_welfare_tv"
-                android:layout_width="53.33dp"
-                android:layout_height="12dp"
-                android:layout_marginTop="6dp"
-                android:background="@drawable/a_bg_shape_new_user_welfare"
-                android:gravity="center"
-                android:paddingLeft="3.33dp"
-                android:paddingRight="3.33dp"
-                android:text="@string/live_new_user_welfare"
-                android:textColor="@color/white"
-                android:textSize="@dimen/a_text_size_30"
-                android:visibility="visible"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/live_red_packet_layout"
-            android:layout_width="60dp"
-            android:layout_height="66dp"
-            android:layout_marginRight="10dip"
-            android:layout_marginTop="13.33dp"
-            android:gravity="center_horizontal"
-            android:orientation="vertical"
-            android:visibility="gone">
-
-            <com.airbnb.lottie.LottieAnimationView
-                android:id="@+id/live_red_packet_iv"
-                android:layout_width="60dp"
-                android:layout_height="47.33dp"
-                app:lottie_autoPlay="false"
-                app:lottie_fileName="lottie_red_packet.json"
-                app:lottie_imageAssetsFolder="images"
-                app:lottie_loop="true"/>
-
-            <TextView
-                android:id="@+id/live_red_packet_tv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="6dip"
-                android:background="@drawable/a_bg_red_packet_selector"
-                android:gravity="center"
-                android:paddingBottom="0.66dp"
-                android:paddingLeft="3.33dp"
-                android:paddingRight="3.33dp"
-                android:text="@string/live_red_packet_click_get"
-                android:textColor="@color/white"
-                android:textSize="@dimen/a_text_size_30"
-                android:visibility="visible"/>
-        </LinearLayout>
-    </LinearLayout>
-
 
     <!-- 主播不在线提示信息 -->
     <TextView
@@ -617,7 +362,7 @@
             android:scaleType="centerInside"
             android:src="@drawable/bg_user_default"/>
 
-        <tv.live.bx.ui.StrokeTextView
+        <com.bixin.bixin.ui.StrokeTextView
             android:id="@+id/item_gif_user_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -632,7 +377,7 @@
             android:textStyle="bold"
             app:strokeTextColor="@color/a_text_color_000000"/>
 
-        <tv.live.bx.ui.StrokeTextView
+        <com.bixin.bixin.ui.StrokeTextView
             android:id="@+id/item_gif_gift_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -688,7 +433,7 @@
                 android:layout_marginTop="80dip"
                 android:src="@drawable/user_anchor_1"/>
 
-            <tv.live.bx.ui.TypeTextView
+            <com.bixin.bixin.ui.TypeTextView
                 android:id="@+id/anchor_level_up_tip1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -701,7 +446,7 @@
                 android:textColor="@color/a_text_color_ffffff"
                 android:textStyle="bold"/>
 
-            <tv.live.bx.ui.TypeTextView
+            <com.bixin.bixin.ui.TypeTextView
                 android:id="@+id/anchor_level_up_tip2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -714,7 +459,7 @@
                 android:textColor="@color/a_text_color_fff000"
                 android:textStyle="bold"/>
 
-            <tv.live.bx.ui.TypeTextView
+            <com.bixin.bixin.ui.TypeTextView
                 android:id="@+id/anchor_level_up_tip3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -825,7 +570,7 @@
 
         <!-- android:layout_marginBottom="42.66dp"
             android:layout_marginRight="10dp" -->
-        <tv.live.bx.ui.RippleBackground
+        <com.bixin.bixin.ui.RippleBackground
             android:id="@+id/live_gift_rl_bonus_times_count_time"
             android:layout_width="160dp"
             android:layout_height="200dp"
@@ -871,7 +616,7 @@
                     android:textColor="@android:color/white"
                     android:textSize="@dimen/a_text_size_45"/>
             </LinearLayout>
-        </tv.live.bx.ui.RippleBackground>
+        </com.bixin.bixin.ui.RippleBackground>
     </RelativeLayout>
 
     <RelativeLayout
@@ -890,4 +635,4 @@
             android:layout_alignParentBottom="true">
         </FrameLayout>
     </RelativeLayout>
-</tv.live.bx.live.ui.CameraPreviewRelativeView>
+</com.bixin.bixin.live.ui.CameraPreviewRelativeView>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<tv.live.bx.ui.ChatListView
+<com.bixin.bixin.ui.ChatListView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/record_window_chat_chatListView"
     android:layout_width="336dp"
@@ -15,4 +15,4 @@
     android:listSelector="@color/trans"
     android:padding="10dp"
     android:scrollbars="none">
-</tv.live.bx.ui.ChatListView>
+</com.bixin.bixin.ui.ChatListView>

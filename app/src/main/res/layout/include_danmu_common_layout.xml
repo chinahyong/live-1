@@ -5,12 +5,12 @@
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
-    <tv.live.bx.danmu.DanmuBase.DanmakuChannel
+    <com.bixin.bixin.danmu.DanmuBase.DanmakuChannel
         android:id="@+id/danA"
         android:layout_width="match_parent"
         android:layout_height="51dp"/>
 
-    <tv.live.bx.danmu.DanmuBase.DanmakuChannel
+    <com.bixin.bixin.danmu.DanmuBase.DanmakuChannel
         android:id="@+id/danB"
         android:layout_width="match_parent"
         android:layout_height="51dp"/>

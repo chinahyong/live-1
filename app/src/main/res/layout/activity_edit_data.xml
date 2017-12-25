@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:background="@color/a_bg_color_f0f0f0"
-              android:orientation="vertical">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/a_bg_color_f0f0f0"
+    android:orientation="vertical">
 
     <include layout="@layout/a_common_top_bar"/>
 
@@ -11,6 +11,7 @@
         android:id="@+id/edit_data_ll_photo"
         android:layout_width="match_parent"
         android:layout_height="66.67dp"
+        android:visibility="gone"
         android:layout_marginTop="10dip"
         android:background="@drawable/a_main_item_selector"
         android:descendantFocusability="beforeDescendants"

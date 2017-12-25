@@ -7,7 +7,7 @@
 
     <include layout="@layout/a_common_top_bar" />
 
-    <tv.live.bx.ui.MyWebView
+    <com.bixin.bixin.ui.MyWebView
         android:id="@+id/recharge_web_view"
         android:layout_width="fill_parent"
         android:layout_height="0dip"

@@ -4,7 +4,7 @@
               android:layout_height="match_parent"
               android:background="@android:color/white"
               android:orientation="vertical"
-              tools:context="tv.live.bx.activities.Register2Activity">
+              tools:context="com.bixin.bixin.activities.Register2Activity">
 
     <RelativeLayout
         android:layout_width="fill_parent"

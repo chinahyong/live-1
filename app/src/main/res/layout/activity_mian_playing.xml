@@ -49,7 +49,7 @@
     </RelativeLayout>
     <!-- 热度的布局跟直播里面按钮位置有关 -->
 
-    <tv.live.bx.ui.FavorLayout
+    <com.bixin.bixin.ui.FavorLayout
         android:id="@+id/favorLayout"
         android:layout_width="100dp"
         android:layout_height="400dp"

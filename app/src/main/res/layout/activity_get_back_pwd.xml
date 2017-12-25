@@ -4,7 +4,7 @@
               android:layout_height="match_parent"
               android:background="@android:color/white"
               android:orientation="vertical"
-              tools:context="tv.live.bx.activities.GetBackPwdActivity">
+              tools:context="com.bixin.bixin.activities.GetBackPwdActivity">
 
     <RelativeLayout
         android:id="@+id/getpwd_top_bar"

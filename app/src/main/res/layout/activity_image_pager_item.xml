@@ -6,7 +6,7 @@
     android:layout_height="fill_parent"
     android:gravity="center" >
 
-    <tv.live.bx.ui.photoview.PhotoView
+    <com.bixin.bixin.ui.photoview.PhotoView
         android:id="@+id/imageLoad"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

@@ -9,7 +9,7 @@
         layout="@layout/a_common_loadingprogress_layout"
         android:visibility="gone"/>
 
-    <tv.live.bx.ui.PullRefreshListView
+    <com.bixin.bixin.ui.PullRefreshListView
         android:id="@+id/playing_rank_listview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -20,5 +20,5 @@
         android:footerDividersEnabled="false"
         android:headerDividersEnabled="false"
         android:listSelector="#00000000">
-    </tv.live.bx.ui.PullRefreshListView>
+    </com.bixin.bixin.ui.PullRefreshListView>
 </FrameLayout>

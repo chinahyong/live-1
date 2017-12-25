@@ -6,7 +6,7 @@ import android.content.SharedPreferences.Editor;
 import android.util.Log;
 import android.webkit.CookieManager;
 import android.webkit.CookieSyncManager;
-import tv.live.bx.common.pojo.NetConstants;
+import com.bixin.bixin.common.pojo.NetConstants;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -22,7 +22,7 @@ import java.util.Map;
 import org.apache.http.client.CookieStore;
 import org.apache.http.cookie.Cookie;
 import org.apache.http.impl.cookie.BasicClientCookie;
-import tv.live.bx.library.util.EvtLog;
+import com.bixin.bixin.library.util.EvtLog;
 
 public class LZCookieStore implements CookieStore {
 	private static final String COOKIE_SP_NAME = "cookie";

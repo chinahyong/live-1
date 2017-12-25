@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:background="@color/a_bg_color_f0f0f0"
     android:orientation="vertical"
-    tools:context="tv.live.bx.activities.PersonTaskActivity" >
+    tools:context="com.bixin.bixin.activities.PersonTaskActivity" >
 
     <include layout="@layout/a_common_top_bar" />
 
@@ -123,7 +123,7 @@
                         android:textColor="@color/a_text_color_333333"
                         android:textSize="@dimen/a_text_size_40" />
 
-                    <tv.live.bx.ui.WrapListView
+                    <com.bixin.bixin.ui.WrapListView
                         android:id="@+id/listview"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -135,7 +135,7 @@
                         android:footerDividersEnabled="false"
                         android:headerDividersEnabled="false"
                         android:listSelector="#00000000" >
-                    </tv.live.bx.ui.WrapListView>
+                    </com.bixin.bixin.ui.WrapListView>
                 </RelativeLayout>
 
                 <TextView

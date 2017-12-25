@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:background="@color/a_bg_backgroup_color"
     android:orientation="vertical"
-    tools:context="tv.live.bx.activities.AnchorActivity" >
+    tools:context="com.bixin.bixin.activities.AnchorActivity" >
 
     <include layout="@layout/a_common_top_bar" />
 

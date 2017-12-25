@@ -21,7 +21,7 @@
             android:textSize="@dimen/a_text_size_40"
             android:textStyle="bold" />
 
-        <tv.live.bx.ui.HorizontalListView
+        <com.bixin.bixin.ui.HorizontalListView
             android:id="@+id/tariler_listview"
             android:layout_width="match_parent"
             android:layout_height="95dip"
@@ -33,7 +33,7 @@
             android:dividerHeight="12dip"
             android:fadingEdge="none"
             android:listSelector="#00000000" >
-        </tv.live.bx.ui.HorizontalListView>
+        </com.bixin.bixin.ui.HorizontalListView>
 
         <View
             style="@style/divider_horizontal"

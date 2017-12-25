@@ -3,7 +3,7 @@ package cn.efeizao.feizao.framework.net;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import tv.live.bx.common.pojo.NetConstants;
+import com.bixin.bixin.common.pojo.NetConstants;
 
 /**
  * Title: 消息实体类 (类或者接口名称)

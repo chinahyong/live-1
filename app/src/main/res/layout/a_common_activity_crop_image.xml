@@ -5,7 +5,7 @@
     android:background="#000000"
     android:orientation="vertical" >
 
-    <tv.live.bx.ui.cropimage.CropImageView
+    <com.bixin.bixin.ui.cropimage.CropImageView
         android:id="@+id/cropImageView"
         android:layout_width="match_parent"
         android:layout_height="0dip"

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@color/a_bg_color_33000000">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/a_bg_color_33000000">
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -11,7 +11,8 @@
         android:layout_alignParentTop="true"
         android:layout_marginLeft="14.66dip"
         android:layout_marginTop="18.66dp"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:visibility="gone">
 
         <ToggleButton
             android:id="@+id/playing_btn_location_change"
@@ -111,6 +112,7 @@
             style="@style/divider_horizontal"
             android:layout_below="@id/live_topic_title"
             android:layout_marginLeft="8.66dp"
+            android:visibility="gone"
             android:layout_marginRight="8.66dp"/>
 
         <LinearLayout
@@ -120,7 +122,8 @@
             android:layout_alignParentBottom="true"
             android:layout_marginLeft="16.66dp"
             android:gravity="center_vertical"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:visibility="gone">
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -157,6 +160,7 @@
         android:layout_marginLeft="14dp"
         android:layout_marginRight="14dp"
         android:layout_marginTop="11.33dp"
+        android:visibility="gone"
         android:background="@drawable/shape_bg_title_circle">
 
         <RadioGroup
@@ -329,6 +333,7 @@
         android:layout_below="@id/live_clarity_text"
         android:layout_marginTop="28dip"
         android:gravity="center"
+        android:visibility="gone"
         android:orientation="horizontal">
 
         <RadioButton

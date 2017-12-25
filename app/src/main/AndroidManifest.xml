@@ -64,7 +64,7 @@
 
     <!-- 推送结束 android:persistent="true"持久化为 true；防止你的app挂后台被回收。 -->
     <application
-        android:name="tv.live.bx.SampleApplication"
+        android:name="com.bixin.bixin.SampleApplication"
         android:allowBackup="true"
         android:alwaysRetainTaskState="true"
         android:hardwareAccelerated="true"
@@ -110,7 +110,7 @@
         <!-- Required  . Enable it you can get statistics data with channel -->
 
         <activity
-            android:name="tv.live.bx.activities.WelcomeActivity"
+            android:name="com.bixin.bixin.activities.WelcomeActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppFullTheme">
             <intent-filter>
@@ -130,19 +130,19 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="tv.live.bx.activities.CalMainActivity"
+            android:name="com.bixin.bixin.activities.CalMainActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
             android:theme="@style/StyledIndicators">
         </activity>
         <activity
-            android:name="tv.live.bx.activities.WebViewActivity"
+            android:name="com.bixin.bixin.activities.WebViewActivity"
             android:hardwareAccelerated="false"
             android:screenOrientation="portrait">
 
         </activity>
         <activity
-            android:name="tv.live.bx.live.activities.LiveMediaPlayerActivity"
+            android:name="com.bixin.bixin.live.activities.LiveMediaPlayerActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
@@ -150,88 +150,88 @@
             android:windowSoftInputMode="stateHidden|adjustResize">
         </activity>
         <activity
-            android:name="tv.live.bx.activities.LoginActivity"
+            android:name="com.bixin.bixin.activities.LoginActivity"
             android:screenOrientation="portrait">
         </activity>
         <activity
-            android:name="tv.live.bx.activities.Login2Activity"
+            android:name="com.bixin.bixin.activities.Login2Activity"
             android:screenOrientation="portrait">
         </activity>
         <activity
-            android:name="tv.live.bx.activities.Register1Activity"
+            android:name="com.bixin.bixin.activities.Register1Activity"
             android:screenOrientation="portrait">
         </activity>
         <activity
-            android:name="tv.live.bx.activities.Register2Activity"
+            android:name="com.bixin.bixin.activities.Register2Activity"
             android:screenOrientation="portrait">
         </activity>
         <activity
-            android:name="tv.live.bx.activities.SettingsActivity"
+            android:name="com.bixin.bixin.activities.SettingsActivity"
             android:screenOrientation="portrait">
         </activity>
         <activity
-            android:name="tv.live.bx.activities.AboutActivity"
+            android:name="com.bixin.bixin.activities.AboutActivity"
             android:screenOrientation="portrait">
         </activity>
         <activity
-            android:name="tv.live.bx.activities.PingActivity"
+            android:name="com.bixin.bixin.activities.PingActivity"
             android:screenOrientation="portrait">
         </activity>
         <activity
-            android:name="tv.live.bx.activities.MsgSettingsActivity"
+            android:name="com.bixin.bixin.activities.MsgSettingsActivity"
             android:screenOrientation="portrait">
         </activity>
         <activity
-            android:name="tv.live.bx.activities.AnimSettingsActivity"
+            android:name="com.bixin.bixin.activities.AnimSettingsActivity"
             android:screenOrientation="portrait">
         </activity>
         <activity
-            android:name="tv.live.bx.activities.AdviceActivity"
+            android:name="com.bixin.bixin.activities.AdviceActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden|adjustPan">
         </activity>
         <activity
-            android:name="tv.live.bx.activities.GetBackPwdActivity"
+            android:name="com.bixin.bixin.activities.GetBackPwdActivity"
             android:screenOrientation="portrait">
         </activity>
         <activity
-            android:name="tv.live.bx.activities.EditDataActivity"
+            android:name="com.bixin.bixin.activities.EditDataActivity"
             android:screenOrientation="portrait">
         </activity>
         <activity
-            android:name="tv.live.bx.activities.MyFocusActivity"
+            android:name="com.bixin.bixin.activities.MyFocusActivity"
             android:screenOrientation="portrait">
         </activity>
         <activity
-            android:name="tv.live.bx.activities.ChoiceAgeActivity"
+            android:name="com.bixin.bixin.activities.ChoiceAgeActivity"
             android:screenOrientation="portrait">
         </activity>
         <activity
-            android:name="tv.live.bx.activities.CheckUpdateActivity"
+            android:name="com.bixin.bixin.activities.CheckUpdateActivity"
             android:screenOrientation="portrait">
         </activity>
         <activity
-            android:name="tv.live.bx.activities.UserFansActivity"
+            android:name="com.bixin.bixin.activities.UserFansActivity"
             android:screenOrientation="portrait">
         </activity>
         <activity
-            android:name="tv.live.bx.activities.ChoiceHeightActivity"
+            android:name="com.bixin.bixin.activities.ChoiceHeightActivity"
             android:screenOrientation="portrait">
         </activity>
         <activity
-            android:name="tv.live.bx.activities.ChoiceIntroductionActivity"
+            android:name="com.bixin.bixin.activities.ChoiceIntroductionActivity"
             android:screenOrientation="portrait">
         </activity>
         <activity
-            android:name="tv.live.bx.activities.ChoiceWeightActivity"
+            android:name="com.bixin.bixin.activities.ChoiceWeightActivity"
             android:screenOrientation="portrait">
         </activity>
         <activity
-            android:name="tv.live.bx.activities.ChoiceNameActivity"
+            android:name="com.bixin.bixin.activities.ChoiceNameActivity"
             android:screenOrientation="portrait">
         </activity>
         <activity
-            android:name="tv.live.bx.activities.RecommendActivity"
+            android:name="com.bixin.bixin.activities.RecommendActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppFullTheme"/>
         <!-- 友盟使用 -->
@@ -259,7 +259,7 @@
 
         <!-- 微信回调activity -->
         <activity
-            android:name="tv.live.bx.wxapi.WXEntryActivity"
+            android:name="com.bixin.bixin.wxapi.WXEntryActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:exported="true"
             android:screenOrientation="portrait"
@@ -267,7 +267,7 @@
 
         <!-- 微博回调activity -->
         <activity
-            android:name="tv.live.bx.WBShareActivity"
+            android:name="tv.live.bx.com.binxin.binxin.WBShareActivity"
             android:configChanges="keyboardHidden|orientation"
             android:screenOrientation="portrait">
             <intent-filter>
@@ -306,7 +306,7 @@
         <uses-library android:name="android.test.runner"/>
         <!-- 极光 -->
         <receiver
-            android:name="tv.live.bx.receiver.JPushReceiver"
+            android:name="com.bixin.bixin.receiver.JPushReceiver"
             android:enabled="true"
             android:exported="false">
             <intent-filter>
@@ -326,42 +326,42 @@
 
         <!-- eric -->
         <activity
-            android:name="tv.live.bx.activities.AppUpdateActivity"
+            android:name="com.bixin.bixin.activities.AppUpdateActivity"
             android:screenOrientation="portrait"
             android:theme="@style/activity_dialog">
         </activity>
         <activity
-            android:name="tv.live.bx.ui.cropimage.CropImageActivity"
+            android:name="com.bixin.bixin.ui.cropimage.CropImageActivity"
             android:screenOrientation="portrait">
         </activity>
         <activity
-            android:name="tv.live.bx.activities.ReportActivity"
+            android:name="com.bixin.bixin.activities.ReportActivity"
             android:screenOrientation="portrait">
         </activity>
         <activity
-            android:name="tv.live.bx.activities.ImageBrowserActivity"
+            android:name="com.bixin.bixin.activities.ImageBrowserActivity"
             android:screenOrientation="portrait"
             android:theme="@style/ActivityBaseTheme">
         </activity>
         <!-- CameraSDK相册选取 -->
         <activity
-            android:name="tv.live.bx.common.photopick.PhotoPickDetailActivity"
+            android:name="com.bixin.bixin.common.photopick.PhotoPickDetailActivity"
             android:process=":pickimage"
             android:screenOrientation="portrait"
             android:theme="@style/TranslateTheme"/>
         <activity
-            android:name="tv.live.bx.common.photopick.PhotoPickActivity"
+            android:name="com.bixin.bixin.common.photopick.PhotoPickActivity"
             android:process=":pickimage"
             android:screenOrientation="portrait"
             android:theme="@style/TranslateTheme"/>
         <activity
-            android:name="tv.live.bx.activities.ShareDialogActivity"
+            android:name="com.bixin.bixin.activities.ShareDialogActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:screenOrientation="behind"
             android:theme="@style/activity_dialog">
         </activity>
         <activity
-            android:name="tv.live.bx.live.activities.LiveCameraStreamActivity"
+            android:name="com.bixin.bixin.live.activities.LiveCameraStreamActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
@@ -374,7 +374,7 @@
         <!-- android:process=":screenRecord" -->
 
         <activity
-            android:name="tv.live.bx.activities.PreviewLivePlayActivity"
+            android:name="com.bixin.bixin.activities.PreviewLivePlayActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
@@ -382,83 +382,83 @@
             android:windowSoftInputMode="stateHidden|adjustResize">
         </activity>
         <activity
-            android:name="tv.live.bx.activities.LiveTagActivity"
+            android:name="com.bixin.bixin.activities.LiveTagActivity"
             android:screenOrientation="portrait"/>
         <activity
-            android:name="tv.live.bx.activities.LiveReadyWebActivity"
+            android:name="com.bixin.bixin.activities.LiveReadyWebActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTranslateTheme">
         </activity>
         <activity
-            android:name="tv.live.bx.activities.HotTopicActivity"
+            android:name="com.bixin.bixin.activities.HotTopicActivity"
             android:screenOrientation="portrait">
         </activity>
         <activity
-            android:name="tv.live.bx.activities.PersonTaskActivity"
+            android:name="com.bixin.bixin.activities.PersonTaskActivity"
             android:screenOrientation="portrait">
         </activity>
         <activity
-            android:name="tv.live.bx.activities.MeAnchorActivity"
+            android:name="com.bixin.bixin.activities.MeAnchorActivity"
             android:screenOrientation="portrait">
         </activity>
         <activity
-            android:name="tv.live.bx.activities.AnchorSearchActivity"
+            android:name="com.bixin.bixin.activities.AnchorSearchActivity"
             android:configChanges="orientation|keyboardHidden|locale"
             android:screenOrientation="portrait"
             android:theme="@style/ActivityBaseTheme"
             android:windowSoftInputMode="stateVisible|adjustPan">
         </activity>
         <activity
-            android:name="tv.live.bx.activities.GuideActivity"
+            android:name="com.bixin.bixin.activities.GuideActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppBaseTheme">
         </activity>
         <activity
-            android:name="tv.live.bx.activities.EditInfoActivity"
+            android:name="com.bixin.bixin.activities.EditInfoActivity"
             android:screenOrientation="portrait">
         </activity>
         <activity
-            android:name="tv.live.bx.activities.UserInviterActivity"
+            android:name="com.bixin.bixin.activities.UserInviterActivity"
             android:screenOrientation="portrait">
         </activity>
         <!-- 2.0版本的相关组件 -->
         <activity
-            android:name="tv.live.bx.activities.LiveTypeActivity"
+            android:name="com.bixin.bixin.activities.LiveTypeActivity"
             android:screenOrientation="portrait">
         </activity>
         <activity
-            android:name="tv.live.bx.activities.RankActivity"
+            android:name="com.bixin.bixin.activities.RankActivity"
             android:screenOrientation="portrait">
         </activity>
         <activity
-            android:name="tv.live.bx.activities.MeFocusActivity"
+            android:name="com.bixin.bixin.activities.MeFocusActivity"
             android:screenOrientation="portrait">
         </activity>
         <activity
-            android:name="tv.live.bx.activities.MeTaskActivity"
+            android:name="com.bixin.bixin.activities.MeTaskActivity"
             android:screenOrientation="portrait">
         </activity>
         <activity
-            android:name="tv.live.bx.activities.PersonInfoActivity"
+            android:name="com.bixin.bixin.activities.PersonInfoActivity"
             android:screenOrientation="portrait">
         </activity>
         <activity
-            android:name="tv.live.bx.activities.UserFocusActivity"
+            android:name="com.bixin.bixin.activities.UserFocusActivity"
             android:screenOrientation="portrait">
         </activity>
 
         <!-- Live 主播报名 -->
         <activity
-            android:name="tv.live.bx.activities.AnchorActivity"
+            android:name="com.bixin.bixin.activities.AnchorActivity"
             android:screenOrientation="portrait">
         </activity>
         <activity
-            android:name="tv.live.bx.activities.AnchorCameraActivity"
+            android:name="com.bixin.bixin.activities.AnchorCameraActivity"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
         </activity>
         <activity
-            android:name="tv.live.bx.live.activities.LiveRankActivity"
+            android:name="com.bixin.bixin.live.activities.LiveRankActivity"
             android:label="@string/title_activity_playing_rank"
             android:screenOrientation="portrait"
             android:theme="@style/StyledIndicators"/>
@@ -466,21 +466,21 @@
         <!-- 2.0版本相关组件结束 -->
 
         <activity
-            android:name="tv.live.bx.live.activities.LiveWebViewActivity"
+            android:name="com.bixin.bixin.live.activities.LiveWebViewActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
             android:theme="@style/ActivityDialogTranslucent">
         </activity>
         <activity
-            android:name="tv.live.bx.activities.PhoneBindActivity"
+            android:name="com.bixin.bixin.activities.PhoneBindActivity"
             android:screenOrientation="portrait">
         </activity>
         <activity
-            android:name="tv.live.bx.activities.AccountSaleActivity"
+            android:name="com.bixin.bixin.activities.AccountSaleActivity"
             android:screenOrientation="portrait">
         </activity>
         <activity
-            android:name="tv.live.bx.activities.EditAlbumActivity"
+            android:name="com.bixin.bixin.activities.EditAlbumActivity"
             android:screenOrientation="portrait"/>
 
         <!-- 图片选择器 -->
@@ -493,12 +493,12 @@
 
         <!-- 微信支付 -->
         <activity
-            android:name="tv.live.bx.wxapi.WXPayEntryActivity"
+            android:name="com.bixin.bixin.wxapi.WXPayEntryActivity"
             android:exported="true"
             android:launchMode="singleTop"
             android:theme="@android:style/Theme.Translucent"/>
 
-        <receiver android:name="tv.live.bx.AppRegister">
+        <receiver android:name="tv.live.bx.com.binxin.binxin.AppRegister">
             <intent-filter>
                 <action android:name="com.tencent.mm.plugin.openapi.Intent.ACTION_REFRESH_WXAPP"/>
             </intent-filter>
@@ -514,12 +514,12 @@
             android:exported="false"/>
 
         <activity
-            android:name="tv.live.bx.activities.MountPreviewActivity"
+            android:name="com.bixin.bixin.activities.MountPreviewActivity"
             android:screenOrientation="portrait">
         </activity>
 
         <activity
-            android:name="tv.live.bx.activities.GiftEffectPreviewActivity"
+            android:name="com.bixin.bixin.activities.GiftEffectPreviewActivity"
             android:screenOrientation="portrait">
         </activity>
     </application>

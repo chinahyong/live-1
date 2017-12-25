@@ -14,8 +14,8 @@ import android.widget.TextView;
 import java.math.BigDecimal;
 
 import tv.live.bx.R;
-import tv.live.bx.common.Utils;
-import tv.live.bx.config.UserInfoConfig;
+import com.bixin.bixin.common.Utils;
+import com.bixin.bixin.config.UserInfoConfig;
 
 /**
  * Title: CustomDialogBuilder.java</br> Description: 自定义对话框</br> Copyright:

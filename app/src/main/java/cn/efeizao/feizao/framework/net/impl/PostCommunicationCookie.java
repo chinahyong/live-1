@@ -7,7 +7,7 @@ package cn.efeizao.feizao.framework.net.impl;
 import android.content.Context;
 import android.text.TextUtils;
 
-import tv.live.bx.common.Utils;
+import com.bixin.bixin.common.Utils;
 import com.lonzh.lib.network.HttpSession;
 
 import org.apache.http.HttpResponse;
@@ -25,7 +25,7 @@ import java.util.Map.Entry;
 
 import cn.efeizao.feizao.framework.net.ACommunication;
 import cn.efeizao.feizao.framework.net.AEntity;
-import tv.live.bx.common.pojo.NetConstants;
+import com.bixin.bixin.common.pojo.NetConstants;
 import cn.efeizao.feizao.framework.net.NetLogs;
 
 /**

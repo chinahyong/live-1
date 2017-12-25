@@ -1,4 +1,4 @@
-<tv.live.bx.ui.SwipeBackLayout
+<com.bixin.bixin.ui.SwipeBackLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/swipebacklayout"
     android:layout_width="match_parent"
@@ -8,4 +8,4 @@
     <!-- 直播主页面 -->
     <include layout="@layout/play_main_layout"/>
 
-</tv.live.bx.ui.SwipeBackLayout>
+</com.bixin.bixin.ui.SwipeBackLayout>

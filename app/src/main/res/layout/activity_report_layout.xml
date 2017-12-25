@@ -147,7 +147,7 @@
         android:textColor="@color/a_text_color_999999"
         android:textSize="@dimen/a_text_size_36"/>
 
-    <tv.live.bx.ui.AutoHeightGridView
+    <com.bixin.bixin.ui.AutoHeightGridView
         android:id="@+id/gridView"
         android:layout_width="wrap_content"
         android:layout_height="@dimen/image_add_maopao_width"

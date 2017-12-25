@@ -1,14 +1,14 @@
 package cn.efeizao.feizao.framework.net.impl;
 
-import tv.live.bx.common.Constants;
-import tv.live.bx.library.util.EvtLog;
+import com.bixin.bixin.common.Constants;
+import com.bixin.bixin.library.util.EvtLog;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import cn.efeizao.feizao.framework.net.AEntity;
 import cn.efeizao.feizao.framework.net.IReceiverListener;
-import tv.live.bx.common.pojo.NetConstants;
+import com.bixin.bixin.common.pojo.NetConstants;
 
 public class RongCloudIReceiverImpl implements IReceiverListener {
 	private static final String TAG = "RongCloudIReceiverImpl";

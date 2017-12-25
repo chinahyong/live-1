@@ -3,13 +3,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/a_bg_color_ffffff"
-    tools:context="tv.live.bx.activities.LoginActivity">
+    tools:context="com.bixin.bixin.activities.LoginActivity">
     <ImageView
         android:id="@+id/iv_login_bg"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
-        android:src="@drawable/login_bg2"/>
+        android:src="@drawable/bg_welcome"/>
 
     <ImageView
         android:id="@+id/logo"

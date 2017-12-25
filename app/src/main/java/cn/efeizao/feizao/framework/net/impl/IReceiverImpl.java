@@ -2,14 +2,14 @@ package cn.efeizao.feizao.framework.net.impl;
 
 import cn.efeizao.feizao.framework.net.AEntity;
 import cn.efeizao.feizao.framework.net.IReceiverListener;
-import tv.live.bx.common.pojo.NetConstants;
+import com.bixin.bixin.common.pojo.NetConstants;
 import org.json.JSONException;
 import org.json.JSONObject;
-import tv.live.bx.FeizaoApp;
-import tv.live.bx.common.Constants;
-import tv.live.bx.config.AppConfig;
-import tv.live.bx.library.util.EvtLog;
-import tv.live.bx.util.ActivityJumpUtil;
+import com.bixin.bixin.App;
+import com.bixin.bixin.common.Constants;
+import com.bixin.bixin.config.AppConfig;
+import com.bixin.bixin.library.util.EvtLog;
+import com.bixin.bixin.util.ActivityJumpUtil;
 
 public class IReceiverImpl implements IReceiverListener {
 	private static final String TAG = "IReceiverImpl";
@@ -44,7 +44,7 @@ public class IReceiverImpl implements IReceiverListener {
 					if (NetConstants.SENT_STATUS_NEED_LOGIN.equals(resultCode)) {
 						// 设置未登录
 						AppConfig.getInstance().updateLoginStatus(false);
-						ActivityJumpUtil.toLoginActivity(FeizaoApp.mContext, true);
+						ActivityJumpUtil.toLoginActivity(App.mContext, true);
 					}
 					if (mCallbackDataHandle != null) {
 						mCallbackDataHandle.onCallback(false, resultCode, resultMsg, resultData);

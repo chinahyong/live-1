@@ -6,8 +6,8 @@ import android.widget.ImageView;
 import com.wxy.adbanner.entity.AdInfo;
 import jp.wasabeef.glide.transformations.RoundedCornersTransformation;
 import tv.live.bx.R;
-import tv.live.bx.common.Utils;
-import tv.live.bx.imageloader.ImageLoaderUtil;
+import com.bixin.bixin.common.Utils;
+import com.bixin.bixin.imageloader.ImageLoaderUtil;
 
 /**
  * Created by Sai on 15/8/4.

@@ -28,9 +28,9 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.pm.ApplicationInfo;
 
-import tv.live.bx.library.file.load.AsyLoadTask;
-import tv.live.bx.library.file.load.LoadTask;
-import tv.live.bx.library.file.load.LoadingListener;
+import com.bixin.bixin.library.file.load.AsyLoadTask;
+import com.bixin.bixin.library.file.load.LoadTask;
+import com.bixin.bixin.library.file.load.LoadingListener;
 import com.tencent.tinker.lib.tinker.Tinker;
 import com.tencent.tinker.lib.util.TinkerLog;
 import com.tinker.android.app.BuildInfo;

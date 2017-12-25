@@ -21,15 +21,15 @@ import java.util.List;
 import java.util.Map;
 
 import cn.efeizao.feizao.framework.net.impl.CallbackDataHandle;
-import tv.live.bx.FeizaoApp;
+import com.bixin.bixin.App;
 import tv.live.bx.R;
-import tv.live.bx.adapters.RoomManagerAdapter;
-import tv.live.bx.common.BusinessUtils;
-import tv.live.bx.library.util.EvtLog;
-import tv.live.bx.ui.ListFooterLoadView;
-import tv.live.bx.ui.LoadingProgress;
-import tv.live.bx.ui.PullRefreshListView;
-import tv.live.bx.util.UiHelper;
+import com.bixin.bixin.adapters.RoomManagerAdapter;
+import com.bixin.bixin.common.BusinessUtils;
+import com.bixin.bixin.library.util.EvtLog;
+import com.bixin.bixin.ui.ListFooterLoadView;
+import com.bixin.bixin.ui.LoadingProgress;
+import com.bixin.bixin.ui.PullRefreshListView;
+import com.bixin.bixin.util.UiHelper;
 
 /**
  * Title: CustomDialogBuilder.java</br> Description: 自定义对话框</br> Copyright:
@@ -112,7 +112,7 @@ public class LiveManagerCustomDialogBuilder extends CustomDialogBuilder {
 		removeManagerListener = new RoomManagerAdapter.RemoveManagerListener() {
 			@Override
 			public void onRemoveManager(int position, String uid) {
-				MobclickAgent.onEvent(FeizaoApp.mContext, "cancelManagerByBroadcaster");
+				MobclickAgent.onEvent(App.mContext, "cancelManagerByBroadcaster");
 				BusinessUtils.removeRoomManager(mContext, new RemoveManagerCallbackData(LiveManagerCustomDialogBuilder.this, uid), uid);
 			}
 		};

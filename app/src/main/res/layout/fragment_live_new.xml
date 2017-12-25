@@ -4,11 +4,11 @@
                 android:layout_height="match_parent"
                 android:background="@color/a_bg_backgroup_color"
                 android:orientation="vertical">
-    <tv.live.bx.ui.widget.CustomRefreshLayout
+    <com.bixin.bixin.ui.widget.CustomRefreshLayout
         android:id="@+id/refresh_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <tv.live.bx.ui.widget.HeaderFooterGridView
+        <com.bixin.bixin.ui.widget.HeaderFooterGridView
             android:id="@+id/gridView_new"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -21,7 +21,7 @@
             android:smoothScrollbar="true"
             android:stretchMode="spacingWidthUniform"
             android:verticalSpacing="14dp"/>
-    </tv.live.bx.ui.widget.CustomRefreshLayout>
+    </com.bixin.bixin.ui.widget.CustomRefreshLayout>
 
     <include
         layout="@layout/a_common_loadingprogress_jump_layout"
