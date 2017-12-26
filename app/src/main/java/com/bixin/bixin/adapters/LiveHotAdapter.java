@@ -24,6 +24,7 @@ import com.viewpagerindicator.CirclePageIndicator;
 import com.wxy.adbanner.entity.AdInfo;
 import java.util.ArrayList;
 import java.util.List;
+import jp.wasabeef.glide.transformations.RoundedCornersTransformation.CornerType;
 import tv.live.bx.R;
 
 /**
@@ -304,24 +305,14 @@ public class LiveHotAdapter extends RecyclerView.Adapter {
         //		holder.hotPosition = position;
         AnchorBean bean = mHotList.get(holder.hotPosition);
         EvtLog.e("LiveHot", "position:" + holder.hotPosition + "bean:" + bean.nickname);
-        ImageLoaderUtil.getInstance().loadImage(holder.moIvPhoto, bean.headPic);
+        ImageLoaderUtil.getInstance()
+            .loadImageCorner(App.mContext, holder.moIvPhoto, bean.headPic, 30, CornerType.TOP);
         holder.mTvOnline.setText(
             String.format(ctx.getString(R.string.live_online_num), String.valueOf(bean.onlineNum)));
-        //		if (bean.isPlaying) {
-        //			holder.moIvStatus.setVisibility(View.VISIBLE);
-        //			holder.mTvOnline.setVisibility(View.VISIBLE);
-        //		} else {
         holder.moIvStatus.setVisibility(View.GONE);
         holder.mTvOnline.setVisibility(View.GONE);
         holder.moTvNickname.setText(bean.nickname);
-		/*
-		 * 标题增加话题设置高亮
-		 * @version 2.5.0
-		 */
         holder.mTvTitle.setText(StringUtil.setHighLigntText(ctx, bean.announcement));
-        //		if (!TextUtils.isEmpty(bean.city)) {
-        //			holder.mTvLocation.setText(bean.city);
-        //		}
     }
 
     @Override

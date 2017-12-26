@@ -76,7 +76,7 @@ public class LiveFragment extends BaseFragment implements OnClickListener {
 		datas.add(map);
 
 		map = new HashMap<>();
-		map.put(LiveFragmentStatusAdapter.ID, LiveFragment.TAB_NEW);
+		map.put(LiveFragmentStatusAdapter.ID, LiveFragment.TAB_RECOMMEND);
 		map.put(LiveFragmentStatusAdapter.TITLE, getString(R.string.person_focus));
 		datas.add(map);
 

@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:animationCache="false">
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:animationCache="false">
 
     <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="360dp"
-        android:layout_below="@id/item_divider"
-        android:layout_marginTop="10dp">
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:layout_below="@id/item_divider">
 
         <ImageView
             android:id="@+id/item_lv_player_iv_photo"
@@ -26,12 +25,14 @@
             android:layout_alignParentTop="true"
             android:layout_marginLeft="10dip"
             android:layout_marginTop="10dip"
+            android:visibility="gone"
             android:src="@drawable/live_isliving"/>
 
         <LinearLayout
             android:id="@+id/item_lv_player_ll_online_num"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:visibility="gone"
             android:layout_alignParentLeft="true"
             android:layout_marginLeft="49dp"
             android:layout_marginTop="14dip"

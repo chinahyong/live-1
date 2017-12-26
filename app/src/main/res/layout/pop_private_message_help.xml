@@ -125,7 +125,7 @@
             <TextView
                 android:textColor="#666666"
                 android:textSize="17dp"
-                android:text="克拉"
+                android:text="比心"
                 android:id="@+id/private_message_paopao"
                 android:layout_marginLeft="4dp"
                 android:layout_toRightOf="@id/private_message_19999"

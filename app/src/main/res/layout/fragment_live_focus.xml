@@ -9,7 +9,8 @@
         android:layout_height="@dimen/layout_top_title_bg_height"
         android:layout_alignParentTop="true"
         android:background="@color/a_bg_top_bar_color"
-        android:gravity="center_vertical">
+        android:gravity="center_vertical"
+        android:visibility="gone">
 
         <TextView
             android:id="@+id/me_message_top_title"

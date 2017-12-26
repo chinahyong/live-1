@@ -4,32 +4,16 @@ import android.app.Dialog;
 import android.os.Bundle;
 import android.os.Message;
 import android.support.v7.widget.DividerItemDecoration;
-import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.GridLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
-import com.bixin.bixin.App;
-import com.lonzh.lib.network.JSONParser;
-import com.umeng.analytics.MobclickAgent;
-import com.wxy.adbanner.entity.AdInfo;
-
-import org.json.JSONArray;
-
-import java.io.Serializable;
-import java.lang.ref.WeakReference;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-
 import cn.efeizao.feizao.framework.net.impl.CallbackDataHandle;
 import cn.efeizao.feizao.ui.dialog.CustomDialogBuilder;
-import tv.live.bx.R;
+import com.bixin.bixin.App;
 import com.bixin.bixin.activities.MyFocusActivity;
 import com.bixin.bixin.activities.WebViewActivity;
 import com.bixin.bixin.adapters.LiveHotAdapter;
@@ -47,6 +31,18 @@ import com.bixin.bixin.ui.drawables.LiveHotDividerDrawable;
 import com.bixin.bixin.ui.widget.CustomRefreshLayout;
 import com.bixin.bixin.util.ActivityJumpUtil;
 import com.bixin.bixin.util.UiHelper;
+import com.lonzh.lib.network.JSONParser;
+import com.umeng.analytics.MobclickAgent;
+import com.wxy.adbanner.entity.AdInfo;
+import java.io.Serializable;
+import java.lang.ref.WeakReference;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import org.json.JSONArray;
+import tv.live.bx.R;
 
 /**
  * @author Live
@@ -68,7 +64,7 @@ public class LiveHotFragment extends BaseFragment implements OnClickListener {
 	 */
 	private CustomRefreshLayout refreshLayout;
 	private EmptyRecyclerView recyclerView;
-	private LinearLayoutManager layoutManager;
+	private GridLayoutManager layoutManager;
 	private DividerItemDecoration dividerItemDecoration;
 	//recycleView adapter
 	private LiveHotAdapter mHotAdapter;
@@ -158,7 +154,7 @@ public class LiveHotFragment extends BaseFragment implements OnClickListener {
 
 		//recycleView init
 		recyclerView = (EmptyRecyclerView) v.findViewById(R.id.recyclerView);
-		layoutManager = new LinearLayoutManager(getActivity());
+		layoutManager = new GridLayoutManager(getActivity(),2);
 		recyclerView.setLayoutManager(layoutManager);
 		dividerItemDecoration = new DividerItemDecoration(getActivity(), layoutManager.getOrientation());
 		dividerItemDecoration.setDrawable(new LiveHotDividerDrawable());

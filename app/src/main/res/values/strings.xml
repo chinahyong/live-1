@@ -142,9 +142,9 @@
     <string name="rank_popularity_day_explain">日榜为过去24小时获得鲜花数前10名的播主</string>
     <string name="rank_popularity_week_explain">周榜为过去1周获得鲜花数前10名的播主</string>
     <string name="rank_popularity_total_explain">人气榜为收到鲜花前10名的播主</string>
-    <string name="rank_wealth_day_explain">日榜为当天送出克拉数前10名的用户，每日0点清空重计</string>
-    <string name="rank_wealth_week_explain">周榜为本周送出克拉数前10名的用户，每周日0点清空重计</string>
-    <string name="rank_wealth_total_explain">总榜为送出克拉数前10名的用户</string>
+    <string name="rank_wealth_day_explain">日榜为当天送出比心数前10名的用户，每日0点清空重计</string>
+    <string name="rank_wealth_week_explain">周榜为本周送出比心数前10名的用户，每周日0点清空重计</string>
+    <string name="rank_wealth_total_explain">总榜为送出比心数前10名的用户</string>
     <string name="rank_totalP_num_label">比心数</string>
     <string name="rank_no_data">趁没人赶紧上榜吧n(*≧▽≦*)n</string>
     <string name="rank_net_err">网太渣啊，点击重新加载</string>
@@ -281,8 +281,8 @@
     <string name="tip_login_title">亲，需要登录哦，请登录!</string>
     <string name="me_focus_text">我的关注 %1$s</string>
     <string name="me_follow_text">我的粉丝 %1$s</string>
-    <string name="me_update_coin">还需要消耗%1$s克拉即可升级</string>
-    <string name="me_balance_text">克拉</string>
+    <string name="me_update_coin">还需要消耗%1$s比心即可升级</string>
+    <string name="me_balance_text">比心</string>
     <string name="me_diandian_text">点点</string>
     <string name="me_tast">做任务</string>
     <string name="me_tuijian">精品推荐</string>
@@ -482,7 +482,7 @@
     <string name="live_live_protocol_click">《开播协议》</string>
     <string name="live_guard_gift_send_text">成为ta的守护了才能\n赠送专属礼物哦~</string>
     <string name="live_gift_bonus">连击</string>
-    <string name="live_gift_bonus_toast">连续赠送该礼物最高可获得100倍克拉返利</string>
+    <string name="live_gift_bonus_toast">连续赠送该礼物最高可获得100倍比心返利</string>
     <string name="live_tag_head_1">直播内容</string>
     <string name="live_tag_head_2">(选择准确的内容，更容易上热门)</string>
     <string name="live_exist">确认结束直播吗？</string>
@@ -556,7 +556,7 @@
     <string name="live_new_anchor">新人主播</string>
     <string name="live_online_num">%1$s人在看</string>
     <string name="live_search_tip">点击查找《%1$s"》相关的主播</string>
-    <string name="live_input_danmu_tip">发送弹幕消息,10克拉/条</string>
+    <string name="live_input_danmu_tip">发送弹幕消息,10比心/条</string>
     <string name="live_record_error_title">开播提示</string>
     <string name="live_record_error">安卓5.0.0系统以下的手机不支持此功能哦，试试【普通直播】吧</string>
     <string name="live_record_cancel">录屏结束</string>
@@ -677,7 +677,7 @@
     <string name="invite_activity_regulation_title">活动规则：</string>
     <string name="invite_activity_regulation">
         1，您可以通过邀请按钮将您的比心ID发送给好友。好友可以直接点击邀请页面并用微信或者QQ登陆比心TV，也可以下载安装比心TV应用，在注册页面输入您的ID以回馈您的邀请。好友采用以上两种任意一种方法注册后您即可获得邀请礼包。\n
-        2，邀请礼包包含：1千点点，及在3个月内，邀请的好友充值金额的10%全部以克拉形式奖励给您。\n
+        2，邀请礼包包含：1千点点，及在3个月内，邀请的好友充值金额的10%全部以比心形式奖励给您。\n
         3，被邀请人成功被邀请后也会获得1千点点的奖励。\n
         4，所有的奖励均实时结算，由系统自动发放，并会以系统通知的形式告知您。\n
         5，可以无限邀请好友。
@@ -775,7 +775,7 @@
     <string name="status_palying">直播</string>
     <string name="login">登录</string>
     <string name="recharge">充值</string>
-    <string name="fz_recharge">克拉充值</string>
+    <string name="fz_recharge">比心充值</string>
     <string name="my_focus">我的关注</string>
     <string name="save_changes">保存修改</string>
     <string name="edite_data">编辑资料</string>
@@ -804,7 +804,7 @@
     <string name="invalid_mobile">手机号不正确</string>
     <string name="input_verify_code">请输入4位验证码</string>
     <string name="get_verify_code">获取验证码</string>
-    <string name="currency_amount">当前金额/克拉</string>
+    <string name="currency_amount">当前金额/比心</string>
     <string name="recharge_amount">充值金额</string>
     <string name="invalid_verify_code">验证码不正确</string>
     <string name="next_step">下一步</string>

@@ -9,44 +9,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 
-    <RelativeLayout
-        android:id="@+id/live_watermark_layout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_marginTop="60.66dp">
-
-        <TextView
-            android:id="@+id/playing_activity_tv_uid"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="8dp"
-            android:background="@drawable/bg_live_uid"
-            android:paddingLeft="5dp"
-            android:paddingRight="5dip"
-            android:shadowColor="@color/a_text_color_001826"
-            android:shadowDy="3"
-            android:shadowRadius="3"
-            android:text="比心号：2343453"
-            android:textColor="@color/a_text_color_99ffffff"
-            android:textSize="@dimen/a_text_size_34"/>
-
-        <TextView
-            android:id="@+id/playing_activity_tv_date"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_below="@id/playing_activity_tv_uid"
-            android:layout_marginRight="8dp"
-            android:shadowColor="@color/a_text_color_001826"
-            android:shadowDy="3"
-            android:shadowRadius="3"
-            android:text="2016.11.29"
-            android:textColor="@color/a_text_color_99ffffff"
-            android:textSize="@dimen/a_text_size_34"
-            android:visibility="gone"/>
-    </RelativeLayout>
     <!-- 热度的布局跟直播里面按钮位置有关 -->
 
     <com.bixin.bixin.ui.FavorLayout

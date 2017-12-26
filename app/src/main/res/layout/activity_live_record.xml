@@ -12,41 +12,6 @@
         android:background="@drawable/ic_bg_record_part"
         android:visibility="gone"/>
 
-    <RelativeLayout
-        android:id="@+id/live_watermark_layout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_marginTop="90.66dp">
-
-        <TextView
-            android:id="@+id/playing_activity_tv_uid"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="8dp"
-            android:shadowColor="@color/a_text_color_001826"
-            android:shadowDy="3"
-            android:shadowRadius="3"
-            android:text="ID：2343453"
-            android:textColor="@color/a_text_color_99ffffff"
-            android:textSize="@dimen/a_text_size_34"/>
-
-        <TextView
-            android:id="@+id/playing_activity_tv_date"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_below="@id/playing_activity_tv_uid"
-            android:layout_marginRight="8dp"
-            android:shadowColor="@color/a_text_color_001826"
-            android:shadowDy="3"
-            android:shadowRadius="3"
-            android:text="2016.11.29"
-            android:textColor="@color/a_text_color_99ffffff"
-            android:textSize="@dimen/a_text_size_34"/>
-    </RelativeLayout>
-
     <com.bixin.bixin.ui.FavorLayout
         android:id="@+id/favorLayout"
         android:layout_width="100dp"

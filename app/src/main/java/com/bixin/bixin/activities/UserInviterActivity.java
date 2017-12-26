@@ -92,7 +92,7 @@ public class UserInviterActivity extends BaseFragmentActivity implements OnClick
 			mUserInfoId = intent.getStringExtra(USER_ID);
 			mUserId.setText(getResources().getString(R.string.invite_me_id, mUserInfoId));
 		}
-		mTotalPaoPao.setText("克拉总计：");
+		mTotalPaoPao.setText("比心总计：");
 		SpannableString loFrom = new SpannableString("0");
 		loFrom.setSpan(new ForegroundColorSpan(Color.parseColor("#ff2a00")), 0, loFrom.length(),
 				Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
@@ -191,7 +191,7 @@ public class UserInviterActivity extends BaseFragmentActivity implements OnClick
 			mUserListAdater.addData((List<Map<String, Object>>) data.get("users"));
 			mInviteTotalNum.setText(getResources().getString(R.string.invite_me_invite_title, data.get("user_total")));
 
-			mTotalPaoPao.setText("克拉总计：");
+			mTotalPaoPao.setText("比心总计：");
 			SpannableString loFrom = new SpannableString((String) data.get("coin_total"));
 			loFrom.setSpan(new ForegroundColorSpan(Color.parseColor("#ff2a00")), 0, loFrom.length(),
 					Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);

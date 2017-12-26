@@ -2074,7 +2074,7 @@ public class LiveBaseActivity extends BaseFragmentActivity implements
 
         }
         giftViewPager.setAdapter(
-            new IconPageAdapter<GridView>(giftsViewData, R.drawable.bg_indicator_selector));
+            new IconPageAdapter<>(giftsViewData, R.drawable.bg_indicator_selector));
         indicator.setViewPager(giftViewPager);
         indicator.setOnPageChangeListener(new GiftViewPageChangeListener());
         indicator.setCurrentItem(0);

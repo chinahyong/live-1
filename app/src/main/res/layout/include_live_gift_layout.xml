@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <merge xmlns:android="http://schemas.android.com/apk/res/android"
-       xmlns:app="http://schemas.android.com/apk/res-auto">
-
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <!-- 赠送礼物 布局开始 -->
-
     <RelativeLayout
         android:id="@+id/SendGifts"
         android:layout_width="match_parent"
@@ -23,7 +21,8 @@
             <RelativeLayout
                 android:id="@+id/gift_title"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/a_button_gift_head_bg_108">
+                android:layout_height="@dimen/a_button_gift_head_bg_108"
+                android:visibility="gone">
 
                 <LinearLayout
                     android:id="@+id/gift_switch_layout"
@@ -33,7 +32,8 @@
                     android:layout_centerVertical="true"
                     android:gravity="center"
                     android:orientation="horizontal"
-                    android:padding="2dip">
+                    android:padding="2dip"
+                    android:visibility="gone">
 
                     <Button
                         android:id="@+id/gift_switch_general"
@@ -97,7 +97,8 @@
                     android:layout_height="2dp"
                     android:layout_alignParentBottom="true"
                     android:layout_below="@+id/gift_switch_layout"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:visibility="gone">
 
                     <View
                         android:id="@+id/gift_switch_general_view"
@@ -125,38 +126,6 @@
                         android:layout_weight="1"
                         android:background="@color/a_bg_color_4bbabc"
                         android:visibility="invisible"/>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/ll_user_balance"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginRight="10dp"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="6dp"
-                        android:text="充值:"
-                        android:textColor="@color/a_text_color_da500e"
-                        android:textSize="@dimen/a_text_size_42"/>
-
-                    <TextView
-                        android:id="@+id/user_balance"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="0.0"
-                        android:textColor="@color/a_text_color_ffffff"
-                        android:textSize="@dimen/a_text_size_42"/>
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
-                        android:src="@drawable/ic_icon_live_recharge_arrow_right"/>
                 </LinearLayout>
 
                 <Button
@@ -287,6 +256,32 @@
                 android:layout_below="@+id/ll_playing_gifts"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp">
+
+                <LinearLayout
+                    android:id="@+id/ll_user_balance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="6dp"
+                        android:text="充值:"
+                        android:textColor="@color/a_text_color_da500e"
+                        android:textSize="@dimen/a_text_size_42"/>
+
+                    <TextView
+                        android:id="@+id/user_balance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0.0"
+                        android:textColor="@color/a_text_color_ffffff"
+                        android:textSize="@dimen/a_text_size_42"/>
+                </LinearLayout>
 
                 <ImageView
                     android:id="@+id/live_gift_cur_iv"

@@ -27,6 +27,7 @@
                 android:button="@color/trans"
                 android:checked="false"
                 android:textOff=""
+                android:visibility="gone"
                 android:textOn=""/>
 
             <View

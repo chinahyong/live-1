@@ -35,7 +35,7 @@ public class GiftsGridAdapter extends BaseAdapter {
     public static final int GIFT_LANDSCAPE_PAGE_SIZE = 7;
     private Context mContext;
     private static String PRICE_0 = "免费";
-    private static String PRICE_UNIT = " 克拉";
+    private static String PRICE_UNIT = " 比心";
     private static String FREE_PRICE_UNIT = " 点点";
     private String unit = PRICE_UNIT;
     private static final int miTotalSecs = 60;

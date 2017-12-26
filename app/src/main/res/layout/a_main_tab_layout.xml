@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/layout_buttom_bg_height"
-                android:background="@color/a_bg_color_f9f9f9">
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/layout_buttom_bg_height"
+    android:background="@color/a_bg_color_f9f9f9">
 
     <RelativeLayout
         android:id="@+id/icon_layout"
@@ -25,7 +25,8 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="2dp"
             android:textColor="@color/a_text_4bbabc_999999_selector"
-            android:textSize="10sp"/>
+            android:textSize="10sp"
+            android:visibility="gone"/>
     </RelativeLayout>
 
     <TextView

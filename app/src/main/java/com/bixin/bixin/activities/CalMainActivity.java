@@ -378,9 +378,9 @@ public class CalMainActivity extends BaseFragmentActivity implements OnClickList
 		tabWidget.setLayout(R.layout.a_main_tab_layout);
 
 		// 添加四个Tab
-		tabWidget.addTab(R.drawable.btn_home_selector, R.string.a_main_home, TAB_LIVE);
-		tabWidget.addTab(R.drawable.trans_bg, null, TAB_ADD);
-		tabWidget.addTab(R.drawable.btn_user_selector, R.string.a_main_tab_me, TAB_ME);
+		tabWidget.addTab(R.drawable.btn_home_selector, TAB_LIVE);
+		tabWidget.addTab(R.drawable.trans_bg,  TAB_ADD);
+		tabWidget.addTab(R.drawable.btn_user_selector, TAB_ME);
 		//禁止 开播按钮 底部空白层 点击
 		tabWidget.getChildTabViewAt(TAB_ADD).setEnabled(false);
 

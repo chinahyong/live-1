@@ -49,6 +49,8 @@
         android:id="@+id/live_frame_content_viewpager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp"
         android:background="@color/a_bg_backgroup_color"/>
 
 </LinearLayout>

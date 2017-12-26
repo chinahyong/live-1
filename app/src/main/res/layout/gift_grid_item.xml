@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:id="@+id/gifts_bottom_info_ll_1"
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              android:background="@drawable/bg_grid_gift_selector"
-              android:gravity="center_horizontal"
-              android:orientation="vertical">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/gifts_bottom_info_ll_1"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_grid_gift_selector"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
 
     <RelativeLayout
         android:layout_width="wrap_content"
@@ -35,22 +36,21 @@
     </RelativeLayout>
 
     <TextView
+        android:id="@+id/gifts_bottom_info_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dip"
+        android:textColor="@color/a_text_color_dcdcdc"
+        android:textSize="@dimen/a_text_size_30"
+        tools:text="100"/>
+
+    <TextView
         android:id="@+id/gifts_bottom_info_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="6dip"
         android:textColor="@color/a_text_color_ffffff"
-        android:textSize="@dimen/a_text_size_33">
-    </TextView>
-
-    <TextView
-        android:id="@+id/gifts_bottom_info_price"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dip"
-        android:layout_marginTop="1dp"
-        android:textColor="@color/a_text_color_dcdcdc"
-        android:textSize="@dimen/a_text_size_30">
-    </TextView>
+        android:textSize="@dimen/a_text_size_33"
+        tools:text="礼物0"/>
 
 </LinearLayout>

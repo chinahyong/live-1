@@ -5,16 +5,14 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.view.ViewGroup;
-
+import com.bixin.bixin.fragments.LiveFocusFragment;
 import com.bixin.bixin.fragments.LiveFragment;
 import com.bixin.bixin.fragments.LiveHotFragment;
 import com.bixin.bixin.fragments.LiveNearFragment;
 import com.bixin.bixin.fragments.LiveNewFragment;
-import com.bixin.bixin.fragments.LiveRecommendFragment;
 import com.bixin.bixin.fragments.LiveTagFragment;
 import com.bixin.bixin.library.util.EvtLog;
 import com.bixin.bixin.listeners.GoHotClickListener;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -70,7 +68,7 @@ public class LiveFragmentStatusAdapter extends FragmentStatePagerAdapter {
 		} else if ((mDatas.get(position).get(ID).equals(LiveFragment.TAB_HOT))) {
 			fragment = new LiveHotFragment();
 		} else if (mDatas.get(position).get(ID).equals(LiveFragment.TAB_RECOMMEND)) {
-			fragment = new LiveRecommendFragment();
+			fragment = new LiveFocusFragment();
 		} else if ((mDatas.get(position).get(ID).equals(LiveFragment.TAB_NEAR))) {
 			fragment = new LiveNearFragment();
 		} else {
