@@ -98,7 +98,7 @@
 
 
     <!-- APP 头部背景颜色 -->
-    <color name="a_bg_top_bar_color">#4bbabc</color>
+    <color name="a_bg_top_bar_color">#f3f3f3</color>
     <color name="a_bg_backgroup_color">#f5f5f5</color>
 
 </resources>

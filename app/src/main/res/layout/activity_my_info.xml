@@ -291,21 +291,12 @@
                 android:paddingLeft="16dp"
                 android:paddingRight="16dp">
 
-                <ImageView
-                    android:id="@+id/info_iv"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_centerVertical="true"
-                    android:src="@drawable/icon_balance"/>
-
                 <TextView
                     android:id="@+id/my_info_tv_balance"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:layout_marginLeft="26dp"
-                    android:layout_toRightOf="@id/info_iv"
+                    android:layout_alignParentLeft="true"
                     android:textColor="@color/a_text_color_666666"
                     android:textSize="@dimen/a_text_size_48"/>
 
@@ -340,21 +331,12 @@
                 android:paddingLeft="16dp"
                 android:paddingRight="16dp">
 
-                <ImageView
-                    android:id="@+id/me_income_iv1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_centerVertical="true"
-                    android:src="@drawable/icon_income"/>
-
                 <TextView
                     android:id="@+id/me_income_tv_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:layout_marginLeft="26dp"
-                    android:layout_toRightOf="@id/me_income_iv1"
+                    android:layout_alignParentLeft="true"
                     android:text="@string/me_income_tip"
                     android:textColor="@color/a_text_color_666666"
                     android:textSize="@dimen/a_text_size_48"/>
@@ -574,20 +556,11 @@
                 android:paddingLeft="16dp"
                 android:paddingRight="16dp">
 
-                <ImageView
-                    android:id="@+id/info_iv6"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_centerVertical="true"
-                    android:src="@drawable/icon_shezhi"/>
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:layout_marginLeft="26dp"
-                    android:layout_toRightOf="@id/info_iv6"
+                    android:layout_alignParentLeft="true"
                     android:text="@string/settings"
                     android:textColor="@color/a_text_color_666666"
                     android:textSize="@dimen/a_text_size_48"/>

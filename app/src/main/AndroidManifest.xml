@@ -151,7 +151,8 @@
         </activity>
         <activity
             android:name="com.bixin.bixin.activities.LoginActivity"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:theme="@style/AppFullTranTheme">
         </activity>
         <activity
             android:name="com.bixin.bixin.activities.Login2Activity"

@@ -309,7 +309,7 @@ public class LiveHotAdapter extends RecyclerView.Adapter {
             .loadImageCorner(App.mContext, holder.moIvPhoto, bean.headPic, 30, CornerType.TOP);
         holder.mTvOnline.setText(
             String.format(ctx.getString(R.string.live_online_num), String.valueOf(bean.onlineNum)));
-        holder.moIvStatus.setVisibility(View.GONE);
+        holder.moIvStatus.setVisibility(bean.isPlaying ? View.VISIBLE : View.GONE);
         holder.mTvOnline.setVisibility(View.GONE);
         holder.moTvNickname.setText(bean.nickname);
         holder.mTvTitle.setText(StringUtil.setHighLigntText(ctx, bean.announcement));
