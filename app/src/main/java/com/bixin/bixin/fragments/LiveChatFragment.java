@@ -40,7 +40,7 @@ import com.bixin.bixin.ui.ChatTextViewClickableSpan;
 public class LiveChatFragment extends BaseFragment {
 	static final int COLOR_2CE150 = Color.parseColor("#2ce150");
 	static final int COLOR_FBB872 = Color.parseColor("#fbb872");
-	static final int COLOR_FFE891 = Color.parseColor("#ffe891");
+	static final int COLOR_FFE891 = Color.parseColor("#FFB6C1");
 	static final int COLOR_B092FE = Color.parseColor("#7afafc");
 	static final int COLOR_FFF100 = Color.parseColor("#fff100");
 	static final int COLOR_FF5454 = Color.parseColor("#ff5454");
@@ -283,7 +283,7 @@ public class LiveChatFragment extends BaseFragment {
 		if (Constants.USER_TYPE_OFFICIAL.equals(userType)) {
 			spannableStringBuilder.append(showClickableText(userName, userType, userId, COLOR_FFF100));
 		} else {
-			spannableStringBuilder.append(showClickableText(userName, userType, userId, COLOR_FBB872));
+			spannableStringBuilder.append(showClickableText(userName, userType, userId, COLOR_FFF100));
 		}
 	}
 

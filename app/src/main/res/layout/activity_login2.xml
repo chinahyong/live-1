@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/layout_top_title_bg_height"
         android:layout_marginBottom="60dp"
-        android:background="@color/a_text_color_4bbabc">
+        android:background="@color/a_bg_top_bar_color">
 
         <RelativeLayout
             android:id="@+id/register1_top_left"
