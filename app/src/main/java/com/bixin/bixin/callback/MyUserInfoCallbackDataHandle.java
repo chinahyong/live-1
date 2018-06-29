@@ -6,10 +6,9 @@ import android.os.Message;
 import com.bixin.bixin.common.JacksonUtil;
 import com.bixin.bixin.common.MsgTypes;
 import com.bixin.bixin.config.UserInfoConfig;
+import com.framework.net.impl.CallbackDataHandle;
 
 import java.lang.ref.WeakReference;
-
-import cn.efeizao.feizao.framework.net.impl.CallbackDataHandle;
 
 /**
  * Created by Administrator on 2017/4/1.

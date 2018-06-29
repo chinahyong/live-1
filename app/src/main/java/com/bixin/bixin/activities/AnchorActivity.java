@@ -27,7 +27,7 @@ import org.json.JSONObject;
 import java.io.File;
 import java.util.Map;
 
-import cn.efeizao.feizao.framework.net.impl.CallbackDataHandle;
+import com.framework.net.impl.CallbackDataHandle;
 import tv.live.bx.R;
 import com.bixin.bixin.activities.base.BaseFragmentActivity;
 import com.bixin.bixin.common.BusinessUtils;

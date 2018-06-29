@@ -16,7 +16,7 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
 import tv.live.bx.R;
-import com.bixin.bixin.activities.LoginActivity;
+import com.bixin.bixin.user.act.LoginActivity;
 import com.bixin.bixin.activities.base.BaseFragmentActivity;
 import com.bixin.bixin.common.Constants;
 import com.bixin.bixin.common.Utils;

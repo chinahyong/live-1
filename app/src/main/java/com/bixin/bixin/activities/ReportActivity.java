@@ -18,7 +18,7 @@ import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.GridView;
 import android.widget.ImageView;
-import cn.efeizao.feizao.framework.net.impl.CallbackDataHandle;
+import com.framework.net.impl.CallbackDataHandle;
 import com.umeng.analytics.MobclickAgent;
 import java.io.File;
 import java.io.Serializable;
@@ -271,7 +271,7 @@ public class ReportActivity extends BaseFragmentActivity implements OnClickListe
 	@Override
 	public void onClick(View v) {
 		switch (v.getId()) {
-			case R.id.top_left:
+			case R.id.ry_bar_left:
 				onBackPressed();
 				break;
 //			case R.id.top_right_text_bg:

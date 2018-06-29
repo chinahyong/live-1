@@ -13,6 +13,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.bixin.bixin.App;
+import com.bixin.bixin.user.act.LoginActivity;
 import com.lonzh.lib.network.JSONParser;
 import com.umeng.analytics.MobclickAgent;
 
@@ -23,7 +24,7 @@ import java.lang.ref.WeakReference;
 import java.util.Map;
 import java.util.Set;
 
-import cn.efeizao.feizao.framework.net.impl.CallbackDataHandle;
+import com.framework.net.impl.CallbackDataHandle;
 import cn.jpush.android.api.JPushInterface;
 import cn.jpush.android.api.TagAliasCallback;
 import tv.live.bx.R;
@@ -257,7 +258,7 @@ public class SettingsActivity extends BaseFragmentActivity implements OnClickLis
 				MobclickAgent.onEvent(App.mContext, "chooseModelOfEnterBroadcast");
 				ActivityJumpUtil.gotoActivity(mActivity, AnimSettingsActivity.class, false, null, null);
 				break;
-			case R.id.top_left:
+			case R.id.ry_bar_left:
 				onBackPressed();
 				break;
 			case R.id.settings_rl_msg_settings:

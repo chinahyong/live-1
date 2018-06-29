@@ -20,7 +20,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.PopupWindow.OnDismissListener;
 import android.widget.TextView;
-import cn.efeizao.feizao.framework.net.impl.CallbackDataHandle;
+import com.framework.net.impl.CallbackDataHandle;
 import com.bixin.bixin.App;
 import com.bixin.bixin.activities.base.BaseFragmentActivity;
 import com.bixin.bixin.common.BusinessUtils;
@@ -645,7 +645,7 @@ public class LiveCameraStreamActivity extends LiveBaseActivity implements ITXLiv
             isStartCameraPreview = true;
             //			int[] ver = TXLivePusher.getSDKVersion();
             //			if (ver != null && ver.length >= 4) {
-            //				EvtLog.e(TAG, String.format("rtmp sdk version:%d.%d.%d.%d ", ver[0], ver[1],
+            //				LogUtil.e(TAG, String.format("rtmp sdk version:%d.%d.%d.%d ", ver[0], ver[1],
             //						ver[2], ver[3]));
             //			}
         }

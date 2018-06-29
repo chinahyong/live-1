@@ -22,7 +22,7 @@ import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.List;
 
-import cn.efeizao.feizao.framework.net.impl.CallbackDataHandle;
+import com.framework.net.impl.CallbackDataHandle;
 import tv.live.bx.R;
 import com.bixin.bixin.activities.base.BaseFragmentActivity;
 import com.bixin.bixin.adapters.EditAlbumAdapter;
@@ -211,11 +211,11 @@ public class EditAlbumActivity extends BaseFragmentActivity implements ItemTouch
 	@Override
 	public void onClick(View view) {
 		switch (view.getId()) {
-			case R.id.top_left:
+			case R.id.ry_bar_left:
 				onBackPressed();
 				break;
 			// 点击右上角保存
-			case R.id.top_right_text_bg:
+			case R.id.ry_bar_right_text:
 				mTopRightTextLayout.setEnabled(false);
 				OperationHelper.onEvent(mActivity, "clickSaveButtonInPhotoAlbumPage", null);
 				/**

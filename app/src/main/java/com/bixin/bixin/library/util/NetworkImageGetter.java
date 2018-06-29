@@ -75,7 +75,7 @@ public class NetworkImageGetter implements ImageGetter {
 
                         @Override
                         public void onLoadingComplete(Drawable resource) {
-                            // EvtLog.e("NetworkImageGetter",
+                            // LogUtil.e("NetworkImageGetter",
                             // "mDrawable.getIntrinsicWidth():" + loadedImage.getWidth()
                             // + ",mDrawable.getIntrinsicHight():" +
                             // loadedImage.getHeight());

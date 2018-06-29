@@ -16,7 +16,7 @@ import org.json.JSONObject;
 
 import java.util.Map;
 
-import com.bixin.bixin.common.pojo.NetConstants;
+import com.bixin.bixin.common.bean.HttpNetConstants;
 import de.tavendo.autobahn.WebSocketConnectionHandler;
 
 /**
@@ -51,12 +51,12 @@ public class WebSocketFlowerHandler extends WebSocketConnectionHandler {
 			Object resultData = json.opt("data");
 			String errno = json.optString("errno");
 			String msg = json.optString("msg");
-			if (NetConstants.SENT_STATUS_NEED_LOGIN.equals(errno)) {
+			if (HttpNetConstants.SENT_STATUS_NEED_LOGIN.equals(errno)) {
 				// 设置未登录
 				AppConfig.getInstance().updateLoginStatus(false);
 			}
 
-			if (!NetConstants.SENT_STATUS_SUCCESS.equals(errno)) {
+			if (!HttpNetConstants.SENT_STATUS_SUCCESS.equals(errno)) {
 				if (callback != null) {
 					callback.onError(errno, msg, methodName);
 				}

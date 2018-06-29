@@ -89,7 +89,7 @@ public class MeAnchorActivity extends BaseFragmentActivity implements OnClickLis
 	@Override
 	public void onClick(View v) {
 		switch (v.getId()) {
-		case R.id.top_left:
+		case R.id.ry_bar_left:
 			onBackPressed();
 			break;
 		default:

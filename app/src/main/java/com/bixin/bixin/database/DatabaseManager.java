@@ -192,9 +192,9 @@ public class DatabaseManager {
 	// return null;
 	// }
 	// });
-	// EvtLog.d(TAG, "saveOrupdateListSujectInfoToDatabase success");
+	// LogUtil.d(TAG, "saveOrupdateListSujectInfoToDatabase success");
 	// } catch (Exception e) {
-	// EvtLog.e(TAG, e);
+	// LogUtil.e(TAG, e);
 	// } finally {
 	// }
 	// }

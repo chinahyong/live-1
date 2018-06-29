@@ -29,7 +29,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="10dp"
-            android:src="@drawable/logoing"/>
+            android:src="@drawable/ic_dialog_loading"/>
 
         <TextView
             android:id="@+id/loading_info"

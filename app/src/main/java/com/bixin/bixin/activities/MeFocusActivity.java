@@ -23,7 +23,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import cn.efeizao.feizao.framework.net.impl.CallbackDataHandle;
+import com.framework.net.impl.CallbackDataHandle;
 import tv.live.bx.R;
 import com.bixin.bixin.activities.base.BaseFragmentActivity;
 import com.bixin.bixin.adapters.FocusListAdapter;
@@ -102,7 +102,7 @@ public class MeFocusActivity extends BaseFragmentActivity implements OnClickList
 	@Override
 	public void onClick(View v) {
 		switch (v.getId()) {
-		case R.id.top_left:
+		case R.id.ry_bar_left:
 			onBackPressed();
 			break;
 		}

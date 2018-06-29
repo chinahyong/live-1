@@ -13,6 +13,7 @@ import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.bixin.bixin.user.act.LoginActivity;
 import com.lonzh.lib.LZActivity;
 
 import java.io.Serializable;

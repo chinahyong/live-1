@@ -100,7 +100,7 @@ public class AccountSaleActivity extends BaseFragmentActivity implements OnClick
 	@Override
 	public void onClick(View v) {
 		switch (v.getId()) {
-			case R.id.top_left:
+			case R.id.ry_bar_left:
 				onBackPressed();
 				break;
 			case R.id.account_sale_bind:

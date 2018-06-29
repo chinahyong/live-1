@@ -16,49 +16,15 @@
 
 package com.bixin.bixin;
 
-import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.Application;
 import android.content.Context;
-import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.StrictMode;
-import android.support.multidex.MultiDex;
 import android.util.DisplayMetrics;
-import cn.jpush.android.api.JPushInterface;
-import com.lonzh.lib.network.LZCookieStore;
-import com.pili.pldroid.streaming.StreamingEnv;
-import com.squareup.leakcanary.LeakCanary;
-import com.squareup.leakcanary.RefWatcher;
-import com.tencent.tinker.anno.DefaultLifeCycle;
-import com.tencent.tinker.lib.tinker.Tinker;
-import com.tencent.tinker.lib.tinker.TinkerInstaller;
-import com.tencent.tinker.loader.app.ApplicationLifeCycle;
-import com.tencent.tinker.loader.app.DefaultApplicationLike;
-import com.tencent.tinker.loader.shareutil.ShareConstants;
-import com.tinker.android.Log.MyLogImp;
-import com.tinker.android.patchserver.TinkerServerManager;
-import com.tinker.android.util.SampleApplicationContext;
-import com.tinker.android.util.TinkerManager;
-import com.umeng.analytics.AnalyticsConfig;
-import com.umeng.analytics.MobclickAgent;
-import com.umeng.socialize.Config;
-import com.umeng.socialize.PlatformConfig;
-import com.umeng.socialize.UMShareAPI;
-import com.umeng.socialize.UMShareConfig;
-import com.umeng.socialize.utils.Log;
-import java.io.IOException;
-import java.io.InputStream;
-import java.lang.ref.WeakReference;
-import java.util.HashMap;
-import java.util.Map;
-import tv.guojiang.baselib.BaseLibConfig;
-import tv.guojiang.baselib.ConfigBuilder;
-import tv.guojiang.baselib.image.factory.GlideFactory;
-import tv.live.bx.BuildConfig;
-import tv.live.bx.R;
-import com.bixin.bixin.common.pojo.LibConstants;
+
+import com.bixin.bixin.common.bean.HttpNetConstants;
+import com.bixin.bixin.common.bean.LibConstants;
 import com.bixin.bixin.config.AppConfig;
 import com.bixin.bixin.config.DomainConfig;
 import com.bixin.bixin.config.UserInfoConfig;
@@ -67,11 +33,41 @@ import com.bixin.bixin.library.common.CrashHandler;
 import com.bixin.bixin.library.util.EvtLog;
 import com.bixin.bixin.library.util.PackageUtil;
 import com.bixin.bixin.util.ChannelUtil;
+import com.franmontiel.persistentcookiejar.ClearableCookieJar;
+import com.franmontiel.persistentcookiejar.PersistentCookieJar;
+import com.franmontiel.persistentcookiejar.cache.SetCookieCache;
+import com.franmontiel.persistentcookiejar.persistence.SharedPrefsCookiePersistor;
+import com.lib.common.network.http.HttpConfig;
+import com.lib.common.network.http.interceptor.HeaderInterceptor;
+import com.lonzh.lib.network.LZCookieStore;
+import com.pili.pldroid.streaming.StreamingEnv;
+import com.squareup.leakcanary.LeakCanary;
+import com.squareup.leakcanary.RefWatcher;
+import com.umeng.analytics.AnalyticsConfig;
+import com.umeng.analytics.MobclickAgent;
+import com.umeng.socialize.Config;
+import com.umeng.socialize.PlatformConfig;
+import com.umeng.socialize.UMShareAPI;
+import com.umeng.socialize.UMShareConfig;
+import com.umeng.socialize.utils.Log;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.lang.ref.WeakReference;
+import java.util.HashMap;
+import java.util.Map;
+
+import cn.jpush.android.api.JPushInterface;
+import tv.guojiang.baselib.BaseLibConfig;
+import tv.guojiang.baselib.ConfigBuilder;
+import tv.guojiang.baselib.image.factory.GlideFactory;
+import tv.live.bx.BuildConfig;
+import tv.live.bx.R;
 
 
 /**
  * because you can not use any other class in your application, we need to
- * move your implement of Application to {@link ApplicationLifeCycle}
+ * move your implement of Application to {@link}
  * As Application, all its direct reference class should be in the main dex.
  * <p>
  * We use tinker-android-anno to make sure all your classes can be patched.
@@ -90,11 +86,7 @@ import com.bixin.bixin.util.ChannelUtil;
  * <p>
  * Created by zhangshaowen on 16/3/17.
  */
-@SuppressWarnings("unused")
-@DefaultLifeCycle(application = "com.bixin.bixin.SampleApplication",
-		flags = ShareConstants.TINKER_ENABLE_ALL,
-		loadVerifyFlag = false)
-public class App extends DefaultApplicationLike {
+public class App extends Application {
 	private final static String TAG = App.class.getSimpleName();
 	private static Map<String, Object> mmDataCache = new HashMap<>();
 	private LZCookieStore moCookieStore;
@@ -105,65 +97,16 @@ public class App extends DefaultApplicationLike {
 	 */
 	public static boolean isLiveRunning = false;
 	public static boolean isDebug = true;
-	/**
-	 * 图片的最大缓存大小
-	 */
-	private int image_memory_cache_maxsize = 0;
-	/**
-	 * 默认图片加載显示的宽高
-	 */
-	private int default_imageview_maxwidth = 0;
-	private int default_imageview_maxheight = 0;
 	public static DisplayMetrics metrics;
 
 	private static RefWatcher mRefWatcher;
-
-
-	public App(Application application, int tinkerFlags, boolean tinkerLoadVerifyFlag,
-					 long applicationStartElapsedTime, long applicationStartMillisTime, Intent tinkerResultIntent) {
-		super(application, tinkerFlags, tinkerLoadVerifyFlag, applicationStartElapsedTime, applicationStartMillisTime, tinkerResultIntent);
-	}
-
-	/**
-	 * install multiDex before install tinker
-	 * so we don't need to put the tinker lib classes in the main dex
-	 *
-	 * @param base
-	 */
-	@TargetApi(Build.VERSION_CODES.ICE_CREAM_SANDWICH)
-	@Override
-	public void onBaseContextAttached(Context base) {
-		super.onBaseContextAttached(base);
-		//you must install multiDex whatever tinker is installed!
-		MultiDex.install(base);
-
-		SampleApplicationContext.application = getApplication();
-		SampleApplicationContext.context = getApplication();
-		TinkerManager.setTinkerApplicationLike(this);
-
-		TinkerManager.initFastCrashProtect();
-		//should set before tinker is installed
-		TinkerManager.setUpgradeRetryEnable(true);
-
-		//optional set logIml, or you can use default debug log
-		TinkerInstaller.setLogIml(new MyLogImp());
-
-		//installTinker after load multiDex
-		//or you can put com.tencent.tinker.** to main dex
-		TinkerManager.installTinker(this);
-		Tinker tinker = Tinker.with(getApplication());
-
-		//初始化TinkerPatch 服务器 SDK
-		TinkerServerManager tinkerServerManager = TinkerServerManager.init(base, tinker);
-	}
 
 	@Override
 	public void onCreate() {
 		super.onCreate();
 
-		mContext = getApplication();
+		mContext = getApplicationContext();
 		metrics = mContext.getResources().getDisplayMetrics();
-		EvtLog.d(TAG, "start metrics: " + metrics.density + "," + metrics.widthPixels);
 
 		if (BuildConfig.DEBUG) {
 			// 屏蔽错误日志上传
@@ -181,36 +124,19 @@ public class App extends DefaultApplicationLike {
 						.build());
 			}
 		}
+		initHttpConfig();
 		initReadKey();
 		initConfigs();
 		MobclickAgent.openActivityDurationTrack(false);
-		// 代码设置渠道号
-		AnalyticsConfig.setChannel(ChannelUtil.getChannel(mContext));
 
 		moCookieStore = new LZCookieStore(mContext);
-		/** 极光推送初始化 */
-		if (PackageUtil.isDebugMode(mContext)) {
-			JPushInterface.setDebugMode(BuildConfig.DEBUG);
-		}
-		JPushInterface.init(mContext);
-		JPushInterface.setLatestNotificationNumber(mContext, 3);
-
-		// 4.0上运行时报android.os.NetworkOnMainThreadException异常，在4.0中，访问网络不能在主程序中进行
-		// StrictMode.setThreadPolicy(new
-		// StrictMode.ThreadPolicy.Builder().detectDiskReads().detectDiskWrites()
-		// .detectNetwork().penaltyLog().build());
-		// if (android.os.Build.VERSION.SDK_INT > 9) {
-		// StrictMode.ThreadPolicy policy = new
-		// StrictMode.ThreadPolicy.Builder().detectDiskReads().detectDiskWrites()
-		// .detectNetwork().build();
-		// StrictMode.setThreadPolicy(policy);
-		// }
 		// 初始化七牛推流环境
 		StreamingEnv.init(mContext.getApplicationContext());
+		initJpush();
 		// 初始化umeng
-		initUmengSocial();
+		initUmeng();
 		//检测内存泄露
-		mRefWatcher = LeakCanary.install(getApplication());
+		mRefWatcher = LeakCanary.install(this);
 		//打印设备信息
 		EvtLog.d(TAG, PackageUtil.getDeviceInfo(mContext));
 		// 获取栈顶activity
@@ -218,9 +144,31 @@ public class App extends DefaultApplicationLike {
 		initBaseLibrary();
 	}
 
+	private void initJpush() {
+		/** 极光推送初始化 */
+		if (PackageUtil.isDebugMode(mContext)) {
+			JPushInterface.setDebugMode(BuildConfig.DEBUG);
+		}
+		JPushInterface.init(mContext);
+		JPushInterface.setLatestNotificationNumber(mContext, 3);
+	}
+
+	private void initHttpConfig() {
+		Map<String, String> headers = new HashMap<>();
+		headers.put("User-Agent", "mobile");
+		HeaderInterceptor headerInterceptor = new HeaderInterceptor(headers);
+		ClearableCookieJar cookieJar =
+				new PersistentCookieJar(new SetCookieCache(), new SharedPrefsCookiePersistor(mContext));
+		new HttpConfig.Builder()
+				.baseUrl(HttpNetConstants.BASE_URL_SERVER)
+				.interceptors(headerInterceptor)
+				.cookie(cookieJar)
+				.build();
+	}
+
 	private void initBaseLibrary() {
 		BaseLibConfig.init(new ConfigBuilder()
-		.imageFactory(new GlideFactory()));
+				.imageFactory(new GlideFactory()));
 	}
 
 	/**
@@ -242,12 +190,6 @@ public class App extends DefaultApplicationLike {
 	public void onTrimMemory(int level) {
 		super.onTrimMemory(level);
 		ImageLoaderUtil.getInstance().clearMemery(mContext);
-	}
-
-	@Override
-	public void onTerminate() {
-
-		super.onTerminate();
 	}
 
 	public static RefWatcher getRefWatcher() {
@@ -309,7 +251,9 @@ public class App extends DefaultApplicationLike {
 	/**
 	 * 初始化umeng分享
 	 */
-	private void initUmengSocial() {
+	private void initUmeng() {
+		// 代码设置渠道号
+		AnalyticsConfig.setChannel(ChannelUtil.getChannel(mContext));
 		Config.isJumptoAppStore = true;  //没用第三方app时进行跳转下载
 		Log.LOG = true;    //关闭log
 		UMShareConfig config = new UMShareConfig();
@@ -328,7 +272,7 @@ public class App extends DefaultApplicationLike {
 	 * 通过注册activity的生命周期监听获取最新的栈顶activity
 	 */
 	private void initGlobeActivity() {
-		getApplication().registerActivityLifecycleCallbacks(new Application.ActivityLifecycleCallbacks() {
+		registerActivityLifecycleCallbacks(new Application.ActivityLifecycleCallbacks() {
 			@Override
 			public void onActivityCreated(Activity activity, Bundle savedInstanceState) {
 				app_activity = new WeakReference<>(activity);

@@ -20,13 +20,13 @@
             android:background="@color/a_bg_color_b3000000">
 
             <RelativeLayout
-                android:id="@+id/top_left"
+                android:id="@+id/ry_bar_left"
                 android:layout_width="@dimen/layout_top_title_bg_height"
                 android:layout_height="match_parent"
                 android:visibility="visible">
 
                 <ImageView
-                    android:id="@+id/top_left_image"
+                    android:id="@+id/iv_bar_left"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
@@ -35,14 +35,14 @@
             </RelativeLayout>
 
             <RelativeLayout
-                android:id="@+id/top_right_text_bg"
+                android:id="@+id/ry_bar_right_text"
                 android:layout_width="@dimen/layout_top_title_bg_height"
                 android:layout_height="match_parent"
                 android:layout_alignParentRight="true"
                 android:layout_marginRight="5dip">
 
                 <TextView
-                    android:id="@+id/top_right_text"
+                    android:id="@+id/tv_bar_right"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"

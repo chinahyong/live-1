@@ -70,7 +70,7 @@ public class Register2Activity extends LZActivity {
 
 	@Override
 	protected void initTitle() {
-		mTopTitleTv = (TextView) findViewById(R.id.top_title);
+		mTopTitleTv = (TextView) findViewById(R.id.tv_bar_title);
 		mBackLayout = (RelativeLayout) findViewById(R.id.register2_top_left);
 		initTitleData();
 	}

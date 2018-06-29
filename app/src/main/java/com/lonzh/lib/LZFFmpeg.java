@@ -69,7 +69,7 @@ public class LZFFmpeg {
 	// public static void initRoom(int piUid, int piType, int piSex, String
 	// psNickname, String psPhoto, String psVipStart,
 	// String psVipEnd) {
-	// EvtLog.d(TAG, "initRoom " + iCallback);
+	// LogUtil.d(TAG, "initRoom " + iCallback);
 	// if (iCallback != null)
 	// iCallback.initRoom(piUid, piType, psNickname, psPhoto, psVipStart,
 	// psVipEnd);
@@ -81,7 +81,7 @@ public class LZFFmpeg {
 	// public static void addUser(int piUid, int piType, int piSex, String
 	// psNickname, String psPhoto, String psVipStart,
 	// String psVipEnd) {
-	// EvtLog.d(TAG, "addUser " + piUid);
+	// LogUtil.d(TAG, "addUser " + piUid);
 	// if (iCallback != null)
 	// iCallback.addUser(piUid, piType, psNickname, psPhoto, psVipStart,
 	// psVipEnd);
@@ -91,7 +91,7 @@ public class LZFFmpeg {
 	// * 剔除观众（这些接口都是底层库回调）
 	// */
 	// public static void onLogout(int piUid, int piType) {
-	// EvtLog.d(TAG, "onLogout " + piUid);
+	// LogUtil.d(TAG, "onLogout " + piUid);
 	// if (iCallback != null)
 	// iCallback.delUser(piUid, piType);
 	// }
@@ -104,7 +104,7 @@ public class LZFFmpeg {
 	// public static void onChatMsg(int piErrCode, int piFrom, int piTo, String
 	// psFromNickname, String psToNickname,
 	// String psFromPhoto, String psToPhoto, String psMsg, int piPrivate) {
-	// EvtLog.d(TAG, "onChatMsg " + piErrCode);
+	// LogUtil.d(TAG, "onChatMsg " + piErrCode);
 	// if (iCallback != null)
 	// iCallback.onChatMsg(piErrCode, piFrom, piTo, psFromNickname,
 	// psToNickname, psFromPhoto, psMsg, piPrivate);
@@ -119,7 +119,7 @@ public class LZFFmpeg {
 	// String psFromNickname, String psToNickname, String psFromPhoto, String
 	// psToPhoto, String psGiftName,
 	// String psGiftImg) {
-	// EvtLog.d(TAG, "onGift " + piErrCode);
+	// LogUtil.d(TAG, "onGift " + piErrCode);
 	// if (iCallback != null) {
 	// iCallback.onGift(piErrCode, piGiftId, piGiftCount, piFrom, piTo,
 	// psFromNickname, psToNickname, psFromPhoto,
@@ -133,7 +133,7 @@ public class LZFFmpeg {
 	// * NetConnection.Connect.Closed
 	// */
 	// public static void connectStatus(String statusCode) {
-	// EvtLog.d(TAG, "connectStatus " + statusCode);
+	// LogUtil.d(TAG, "connectStatus " + statusCode);
 	// // if (iCallback != null) {
 	// // iCallback.connectStatus(statusCode);
 	// // }

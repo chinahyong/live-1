@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
 apply plugin: 'me.tatarka.retrolambda'
-apply from: 'tinker.gradle'
 
 def initVersionName() {
     return '1.0.0'
@@ -170,6 +171,7 @@ dependencies {
     compile depend.smartRefreshLayout
     // 图片选择器
     compile project(':album')
+    compile project(':common')
     //极验验证
     repositories { flatDir { dirs 'aars' } }
     compile(name: 'LiteAVSDK_Professional_3.5.2170', ext: 'aar')
@@ -180,4 +182,8 @@ dependencies {
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
     debugCompile 'com.squareup.leakcanary:leakcanary-android:1.5.1'
     releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.1'
+    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+}
+repositories {
+    mavenCentral()
 }

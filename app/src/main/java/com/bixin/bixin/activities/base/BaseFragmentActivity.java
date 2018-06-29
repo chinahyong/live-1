@@ -24,7 +24,10 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.readystatesoftware.systembartint.SystemBarTintManager;
+import com.bixin.bixin.common.PermissionUtil;
+import com.bixin.bixin.library.util.EvtLog;
+import com.bixin.bixin.util.UiHelper;
+import com.lib.common.utils.SystemBarTintUtil;
 import com.umeng.analytics.MobclickAgent;
 
 import java.io.Serializable;
@@ -32,9 +35,6 @@ import java.lang.ref.WeakReference;
 
 import cn.jpush.android.api.JPushInterface;
 import tv.live.bx.R;
-import com.bixin.bixin.common.PermissionUtil;
-import com.bixin.bixin.library.util.EvtLog;
-import com.bixin.bixin.util.UiHelper;
 
 /**
  * 基础Activity
@@ -101,7 +101,7 @@ public abstract class BaseFragmentActivity extends FragmentActivity {
 			if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
 				setTranslucentStatus(this, true);
 			}
-			SystemBarTintManager tintManager = new SystemBarTintManager(this);
+			SystemBarTintUtil tintManager = new SystemBarTintUtil(this);
 			tintManager.setStatusBarTintEnabled(true);
 			// 使用颜色资源
 			tintManager.setStatusBarTintColor(getStatusBarColor());
@@ -145,13 +145,13 @@ public abstract class BaseFragmentActivity extends FragmentActivity {
 	 * 初始化Activity 头部的信息，有些activity未使用标准头部布局a_common_top_bar.xml文件，不调用此方法
 	 */
 	protected void initTitle() {
-		mTopBackLayout = (RelativeLayout) findViewById(R.id.top_left);
-		mTopBackIv = (ImageView) findViewById(R.id.top_left_image);
-		mTopTitleTv = (TextView) findViewById(R.id.top_title);
-		mTopRightTextLayout = (RelativeLayout) findViewById(R.id.top_right_text_bg);
-		mTopRightText = (TextView) findViewById(R.id.top_right_text);
-		mTopRightImageLayout = (RelativeLayout) findViewById(R.id.top_right);
-		mTopRightImage = (ImageView) findViewById(R.id.top_right_image);
+		mTopBackLayout = (RelativeLayout) findViewById(R.id.ry_bar_left);
+		mTopBackIv = (ImageView) findViewById(R.id.iv_bar_left);
+		mTopTitleTv = (TextView) findViewById(R.id.tv_bar_title);
+		mTopRightTextLayout = (RelativeLayout) findViewById(R.id.ry_bar_right_text);
+		mTopRightText = (TextView) findViewById(R.id.tv_bar_right);
+		mTopRightImageLayout = (RelativeLayout) findViewById(R.id.ry_bar_right);
+		mTopRightImage = (ImageView) findViewById(R.id.iv_bar_right);
 		initTitleData();
 	}
 

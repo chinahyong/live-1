@@ -202,7 +202,7 @@ public class StringUtil {
 	public static String getProcessedMobile(String phoneNum) {
 		String processedDrawMobile = "";
 		if (!StringUtil.isNullOrEmpty(phoneNum)) {
-			// EvtLog.d(TAG, phoneNum);
+			// LogUtil.d(TAG, phoneNum);
 			Pattern p1 = Pattern.compile("^((\\+{0,1}(0)*86){0,1})1[0-9]{10}");
 			Matcher m1 = p1.matcher(phoneNum);
 			if (m1.matches()) {

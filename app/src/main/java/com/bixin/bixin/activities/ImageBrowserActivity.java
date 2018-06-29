@@ -143,10 +143,10 @@ public class ImageBrowserActivity extends BaseFragmentActivity implements OnPage
      */
     @Override
     protected void initTitleData() {
-        mTopBackLayout = (RelativeLayout) findViewById(R.id.top_left);
-        mTopBackIv = (ImageView) findViewById(R.id.top_left_image);
-        mTopRightTextLayout = (RelativeLayout) findViewById(R.id.top_right_text_bg);
-        mTopRightText = (TextView) findViewById(R.id.top_right_text);
+        mTopBackLayout = (RelativeLayout) findViewById(R.id.ry_bar_left);
+        mTopBackIv = (ImageView) findViewById(R.id.iv_bar_left);
+        mTopRightTextLayout = (RelativeLayout) findViewById(R.id.ry_bar_right_text);
+        mTopRightText = (TextView) findViewById(R.id.tv_bar_right);
 
         mTopBackLayout.setOnClickListener(this);
         mTopRightTextLayout.setOnClickListener(this);
@@ -172,7 +172,7 @@ public class ImageBrowserActivity extends BaseFragmentActivity implements OnPage
     public void onClick(View arg0) {
         // showCustomToast("图片已保存到本地");
         switch (arg0.getId()) {
-            case R.id.top_left:
+            case R.id.ry_bar_left:
                 onBackPressed();
                 break;
             // 删除操作

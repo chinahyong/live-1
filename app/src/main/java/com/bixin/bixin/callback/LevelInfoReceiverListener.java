@@ -7,7 +7,7 @@ package com.bixin.bixin.callback;
 import com.bixin.bixin.config.AppConfig;
 import com.bixin.bixin.library.util.EvtLog;
 
-import cn.efeizao.feizao.framework.net.impl.CallbackDataHandle;
+import com.framework.net.impl.CallbackDataHandle;
 
 /**
  * 等级配置更新回调 ，下载等级图标 <br/>

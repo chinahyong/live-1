@@ -311,7 +311,7 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
 	// */
 	// private void upgradeToVersion10(SQLiteDatabase db,
 	// ConnectionSource connectionSource) {
-	// EvtLog.i(TAG, "Upgrading to version 10.");
+	// LogUtil.i(TAG, "Upgrading to version 10.");
 	//
 	// // 增加ImChat表
 	// ChatDBHelper.toVersion10(db, connectionSource);
@@ -387,7 +387,7 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
 	// */
 	// private void upgradeToVersion14(SQLiteDatabase db,
 	// ConnectionSource connectionSource) {
-	// EvtLog.i(TAG, "Upgrading to version 14.");
+	// LogUtil.i(TAG, "Upgrading to version 14.");
 	//
 	// // 增加CStatistics表，消息个数统计表
 	// StatisticsDBHelper.toVersion14(db, connectionSource);

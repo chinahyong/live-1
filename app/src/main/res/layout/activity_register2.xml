@@ -28,7 +28,7 @@
         </RelativeLayout>
 
         <TextView
-            android:id="@+id/top_title"
+            android:id="@+id/tv_bar_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"

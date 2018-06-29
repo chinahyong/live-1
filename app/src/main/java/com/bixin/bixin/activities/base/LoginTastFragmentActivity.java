@@ -8,7 +8,7 @@ import android.os.Bundle;
 import android.os.Message;
 import android.text.TextUtils;
 
-import com.bixin.bixin.activities.LoginActivity;
+import com.bixin.bixin.user.act.LoginActivity;
 import com.bixin.bixin.util.ActivityJumpUtil;
 import com.bixin.bixin.util.UiHelper;
 import com.bixin.bixin.common.BusinessUtils;
@@ -26,8 +26,8 @@ import org.json.JSONObject;
 import java.util.Date;
 import java.util.Map;
 
-import cn.efeizao.feizao.framework.net.impl.CallbackDataHandle;
-import cn.efeizao.feizao.ui.dialog.RewardDialgBuilder;
+import com.framework.net.impl.CallbackDataHandle;
+import com.dialog.RewardDialgBuilder;
 
 /**
  * 需要“登录任务”提醒基础类

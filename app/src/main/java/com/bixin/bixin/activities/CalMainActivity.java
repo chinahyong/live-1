@@ -27,20 +27,6 @@ import com.amap.api.location.AMapLocationClient;
 import com.amap.api.location.AMapLocationClientOption;
 import com.amap.api.location.AMapLocationListener;
 import com.bixin.bixin.App;
-import com.lonzh.lib.network.JSONParser;
-import com.umeng.analytics.MobclickAgent;
-
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.io.Serializable;
-import java.lang.ref.WeakReference;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import cn.efeizao.feizao.framework.net.impl.CallbackDataHandle;
-import tv.live.bx.R;
 import com.bixin.bixin.activities.base.BaseFragmentActivity;
 import com.bixin.bixin.callback.LevelInfoReceiverListener;
 import com.bixin.bixin.callback.MyUserInfoCallbackDataHandle;
@@ -65,8 +51,23 @@ import com.bixin.bixin.receiver.UserOffLineReceiver;
 import com.bixin.bixin.ui.SingleTabWidget;
 import com.bixin.bixin.ui.SingleTabWidget.OnTabChangedListener;
 import com.bixin.bixin.ui.addpopup.AddMoreWindow;
+import com.bixin.bixin.user.act.LoginActivity;
 import com.bixin.bixin.util.ActivityJumpUtil;
 import com.bixin.bixin.util.UiHelper;
+import com.framework.net.impl.CallbackDataHandle;
+import com.lonzh.lib.network.JSONParser;
+import com.umeng.analytics.MobclickAgent;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.Serializable;
+import java.lang.ref.WeakReference;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import tv.live.bx.R;
 
 /**
  * Title: CalMainActivity.java Description: 果酱主界面 Copyright: Copyright (c) 2008

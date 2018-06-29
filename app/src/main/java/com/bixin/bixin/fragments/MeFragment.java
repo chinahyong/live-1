@@ -21,7 +21,7 @@ import android.view.View.OnClickListener;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import cn.efeizao.feizao.framework.net.impl.CallbackDataHandle;
+import com.framework.net.impl.CallbackDataHandle;
 import com.bixin.bixin.App;
 import com.bixin.bixin.activities.AdviceActivity;
 import com.bixin.bixin.activities.SettingsActivity;

@@ -40,11 +40,11 @@ public class EditInfoActivity extends BaseFragmentActivity {
 		moEdtIntroduction = (EditText) findViewById(R.id.choice_introduction_edt_introduction);
 		mTextTipTv = (TextView) findViewById(R.id.edit_tip);
 
-		mTopBackLayout = (RelativeLayout) findViewById(R.id.top_left);
-		mTopTitleTv = (TextView) findViewById(R.id.top_title);
+		mTopBackLayout = (RelativeLayout) findViewById(R.id.ry_bar_left);
+		mTopTitleTv = (TextView) findViewById(R.id.tv_bar_title);
 		
-		mTopRightTextLayout = (RelativeLayout) findViewById(R.id.top_right_text_bg);
-		mTopRightText = (TextView) findViewById(R.id.top_right_text);
+		mTopRightTextLayout = (RelativeLayout) findViewById(R.id.ry_bar_right_text);
+		mTopRightText = (TextView) findViewById(R.id.tv_bar_right);
 	}
 
 	@Override

@@ -47,7 +47,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import cn.efeizao.feizao.framework.net.impl.CallbackDataHandle;
+import com.framework.net.impl.CallbackDataHandle;
 import tv.live.bx.R;
 import com.bixin.bixin.activities.base.BaseFragmentActivity;
 import com.bixin.bixin.adapters.IconPageAdapter;
@@ -252,7 +252,7 @@ public class PersonInfoActivity extends BaseFragmentActivity implements OnClickL
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.top_left:
+            case R.id.ry_bar_left:
                 onBackPressed();
                 break;
             case R.id.item_fans_layout:
@@ -296,7 +296,7 @@ public class PersonInfoActivity extends BaseFragmentActivity implements OnClickL
                         mPersonUid);
                 }
                 break;
-            case R.id.top_right:
+            case R.id.ry_bar_right:
                 ActivityJumpUtil.toReportActivity(mActivity, Constants.COMMON_REPORT_TYPE_ROOM,
                     mPersonInfo.get("rid"), 0);
                 break;
@@ -389,9 +389,9 @@ public class PersonInfoActivity extends BaseFragmentActivity implements OnClickL
         mHeadLayout2 = inflater.inflate(R.layout.item_person_center_layout, null);
 
         //moTopBar = (RelativeLayout) findViewById(R.id.my_info_top_bar);
-        mTvBarTitle = (TextView) findViewById(R.id.top_title);
-        moTopBarLeft = (RelativeLayout) findViewById(R.id.top_left);
-        moTopBarRight = (RelativeLayout) findViewById(R.id.top_right);
+        mTvBarTitle = (TextView) findViewById(R.id.tv_bar_title);
+        moTopBarLeft = (RelativeLayout) findViewById(R.id.ry_bar_left);
+        moTopBarRight = (RelativeLayout) findViewById(R.id.ry_bar_right);
         /** 设置背景 */
         mTopBackgroup = (ImageView) findViewById(R.id.top_backgroud);
         mTopBackgroup.setVisibility(View.GONE);

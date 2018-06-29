@@ -12,12 +12,13 @@ import android.view.WindowManager;
 import android.widget.ImageView;
 
 import com.bixin.bixin.App;
+import com.bixin.bixin.user.act.LoginActivity;
 import com.viewpagerindicator.IconPageIndicator;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import cn.efeizao.feizao.framework.net.impl.CallbackDataHandle;
+import com.framework.net.impl.CallbackDataHandle;
 import tv.live.bx.R;
 import com.bixin.bixin.activities.base.BaseFragmentActivity;
 import com.bixin.bixin.adapters.IconPageAdapter;

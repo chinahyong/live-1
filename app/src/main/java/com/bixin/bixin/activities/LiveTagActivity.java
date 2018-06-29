@@ -132,7 +132,7 @@ public class LiveTagActivity extends BaseFragmentActivity implements View.OnClic
 	@Override
 	public void onClick(View v) {
 		switch (v.getId()) {
-			case R.id.top_right_text_bg:
+			case R.id.ry_bar_right_text:
 				if (mAdapter.getData() != null && mAdapter.getData().size() > 0) {
 					// 获取GridView当前选中的item下标
 					int position = mAdapter.getSelectIndex();

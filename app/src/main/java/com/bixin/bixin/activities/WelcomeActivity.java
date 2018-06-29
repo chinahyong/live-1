@@ -10,21 +10,8 @@ import android.support.v4.app.FragmentActivity;
 import android.text.TextUtils;
 import android.widget.ImageView;
 import android.widget.Toast;
-import cn.efeizao.feizao.framework.net.impl.CallbackDataHandle;
-import cn.jpush.android.api.JPushInterface;
-import cn.tongdun.android.shell.FMAgent;
-import cn.tongdun.android.shell.exception.FMException;
+
 import com.bixin.bixin.App;
-import com.lonzh.lib.network.HttpSession;
-import com.lonzh.lib.network.JSONParser;
-import com.lonzh.lib.network.LZCookieStore;
-import com.tinker.android.patchserver.TinkerServerManager;
-import com.umeng.analytics.MobclickAgent;
-import java.lang.ref.WeakReference;
-import java.util.ArrayList;
-import java.util.Map;
-import org.json.JSONObject;
-import tv.live.bx.R;
 import com.bixin.bixin.callback.LevelInfoReceiverListener;
 import com.bixin.bixin.common.BusinessUtils;
 import com.bixin.bixin.common.Constants;
@@ -33,7 +20,7 @@ import com.bixin.bixin.common.JacksonUtil;
 import com.bixin.bixin.common.MsgTypes;
 import com.bixin.bixin.common.OperationHelper;
 import com.bixin.bixin.common.Utils;
-import com.bixin.bixin.common.pojo.NetConstants;
+import com.bixin.bixin.common.bean.HttpNetConstants;
 import com.bixin.bixin.config.AppConfig;
 import com.bixin.bixin.config.DomainConfig;
 import com.bixin.bixin.config.UserInfoConfig;
@@ -42,6 +29,22 @@ import com.bixin.bixin.library.util.EvtLog;
 import com.bixin.bixin.library.util.PackageUtil;
 import com.bixin.bixin.library.util.TelephoneUtil;
 import com.bixin.bixin.util.ActivityJumpUtil;
+import com.framework.net.impl.CallbackDataHandle;
+import com.lonzh.lib.network.HttpSession;
+import com.lonzh.lib.network.JSONParser;
+import com.lonzh.lib.network.LZCookieStore;
+import com.umeng.analytics.MobclickAgent;
+
+import org.json.JSONObject;
+
+import java.lang.ref.WeakReference;
+import java.util.ArrayList;
+import java.util.Map;
+
+import cn.jpush.android.api.JPushInterface;
+import cn.tongdun.android.shell.FMAgent;
+import cn.tongdun.android.shell.exception.FMException;
+import tv.live.bx.R;
 
 public class WelcomeActivity extends FragmentActivity {
 
@@ -128,7 +131,7 @@ public class WelcomeActivity extends FragmentActivity {
 //			String httpDomainLists = DomainConfig.getInstance().http_domain_lists;
 //
 //			ArrayList<String> arrayList = new ArrayList<>();
-//			arrayList.add(NetConstants.BASE_HTTP_DOMAIN);
+//			arrayList.add(HttpNetConstants.BASE_HTTP_DOMAIN);
 //
 //			if (!TextUtils.isEmpty(httpDomainLists)) {
 //				JSONArray temp = new JSONArray(httpDomainLists);
@@ -290,7 +293,7 @@ public class WelcomeActivity extends FragmentActivity {
 							DomainConfig.getInstance().updateSafeHttpDomain(current_http_domain);
 
 						} else {
-							if (errorCode == NetConstants.SENT_STATUS_DNS_ERROR) {
+							if (errorCode == HttpNetConstants.SENT_STATUS_DNS_ERROR) {
 //								requestHttpDomain(array, position + 1);
 							}
 						}
@@ -383,8 +386,6 @@ public class WelcomeActivity extends FragmentActivity {
 					//webview 页面域名
 					DomainConfig.getInstance().updateSafeWebDomain(AppConfig.getInstance().urlDomain);
 
-					JSONObject patchObject = ((JSONObject) result).getJSONObject("androidPatch");
-					TinkerServerManager.get().update(patchObject);
 
 				} catch (Exception e) {
 					e.printStackTrace();

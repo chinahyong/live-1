@@ -28,7 +28,7 @@ import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.ToggleButton;
-import cn.efeizao.feizao.framework.net.impl.CallbackDataHandle;
+import com.framework.net.impl.CallbackDataHandle;
 import com.amap.api.location.AMapLocationClient;
 import com.bixin.bixin.App;
 import com.bixin.bixin.activities.base.BaseFragmentActivity;

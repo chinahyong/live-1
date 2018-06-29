@@ -21,8 +21,8 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.lib.common.utils.SystemBarTintUtil;
 import com.lonzh.lib.exceptions.MsgTypeExists;
-import com.readystatesoftware.systembartint.SystemBarTintManager;
 import com.umeng.analytics.MobclickAgent;
 
 import java.io.Serializable;
@@ -89,7 +89,7 @@ public abstract class LZActivity extends Activity {
 			if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
 				setTranslucentStatus(this, true);
 			}
-			SystemBarTintManager tintManager = new SystemBarTintManager(this);
+			SystemBarTintUtil tintManager = new SystemBarTintUtil(this);
 			tintManager.setStatusBarTintEnabled(true);
 			// 使用颜色资源
 			tintManager.setStatusBarTintColor(getStatusBarColor());
@@ -133,13 +133,13 @@ public abstract class LZActivity extends Activity {
 	 * 初始化Activity 头部的信息，有些activity未使用标准头部布局a_common_top_bar.xml文件，不调用此方法
 	 */
 	protected void initTitle() {
-		mTopBackLayout = (RelativeLayout) findViewById(R.id.top_left);
-		mTopBackIv = (ImageView) findViewById(R.id.top_left_image);
-		mTopTitleTv = (TextView) findViewById(R.id.top_title);
-		mTopRightTextLayout = (RelativeLayout) findViewById(R.id.top_right_text_bg);
-		mTopRightText = (TextView) findViewById(R.id.top_right_text);
-		mTopRightImageLayout = (RelativeLayout) findViewById(R.id.top_right);
-		mTopRightImage = (ImageView) findViewById(R.id.top_right_image);
+		mTopBackLayout = (RelativeLayout) findViewById(R.id.ry_bar_left);
+		mTopBackIv = (ImageView) findViewById(R.id.iv_bar_left);
+		mTopTitleTv = (TextView) findViewById(R.id.tv_bar_title);
+		mTopRightTextLayout = (RelativeLayout) findViewById(R.id.ry_bar_right_text);
+		mTopRightText = (TextView) findViewById(R.id.tv_bar_right);
+		mTopRightImageLayout = (RelativeLayout) findViewById(R.id.ry_bar_right);
+		mTopRightImage = (ImageView) findViewById(R.id.iv_bar_right);
 		initTitleData();
 	}
 
@@ -365,7 +365,6 @@ public abstract class LZActivity extends Activity {
 	 * 显示Toast
 	 *
 	 * @param psText
-	 * @param piLength
 	 */
 	public void showToast(String psText, int piDuration) {
 		if (moToastInstance == null)
@@ -385,21 +384,6 @@ public abstract class LZActivity extends Activity {
 	 */
 	public void showToast(int piStrRes, int piDuration) {
 		showToast(getResources().getString(piStrRes), piDuration);
-	}
-
-	/**
-	 * 隐藏Toast
-	 *
-	 * @param psText
-	 * @param piDuration
-	 */
-	public void hideToast(int piDuration) {
-		if (moToastInstance != null)
-			moToastInstance.cancel();
-	}
-
-	protected void setTopBackIv(int resourceId) {
-		mTopBackIv.setBackgroundResource(resourceId);
 	}
 
 	/**
@@ -423,7 +407,6 @@ public abstract class LZActivity extends Activity {
 	 * 转向Activity并且获取返回结果
 	 *
 	 * @param poTo
-	 * @param pbFinish
 	 * @param piRequestCode
 	 * @param psExtraName
 	 * @param poExtra
@@ -439,7 +422,6 @@ public abstract class LZActivity extends Activity {
 	/**
 	 * 发送短信按钮发送后处理流程
 	 *
-	 * @param poContext
 	 * @param poBtn
 	 * @param piDuration
 	 */

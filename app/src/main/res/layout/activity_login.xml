@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/a_bg_color_ffffff"
-    tools:context="com.bixin.bixin.activities.LoginActivity">
+    tools:context="com.bixin.bixin.user.act.LoginActivity">
     <ImageView
         android:id="@+id/iv_login_bg"
         android:layout_width="match_parent"
@@ -11,10 +11,6 @@
         android:scaleType="centerCrop"
         android:visibility="gone"
         android:src="@drawable/bg_welcome"/>
-    <SurfaceView
-        android:id="@+id/sv_login_bg"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
 
     <ImageView
         android:id="@+id/logo"

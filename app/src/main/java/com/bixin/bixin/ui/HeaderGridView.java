@@ -234,7 +234,7 @@ public class HeaderGridView extends GridView {
 		final int action = ev.getAction();
 		final float y = ev.getY();
 		final float x = ev.getX();
-		// EvtLog.d(TAG, "dispatch touch event action = "+action + " x = " + x +
+		// LogUtil.d(TAG, "dispatch touch event action = "+action + " x = " + x +
 		// " y = "+y);
 		switch (action) {
 		case MotionEvent.ACTION_DOWN:
@@ -270,7 +270,7 @@ public class HeaderGridView extends GridView {
 			break;
 		}
 
-		// EvtLog.d(TAG, "dispatch touch event action = "+action + " x = " + x +
+		// LogUtil.d(TAG, "dispatch touch event action = "+action + " x = " + x +
 		// " y = "+y);
 		return super.dispatchTouchEvent(ev);
 	}

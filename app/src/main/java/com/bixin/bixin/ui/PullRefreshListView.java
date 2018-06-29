@@ -91,7 +91,7 @@ public class PullRefreshListView extends ListView {
 		mTopHeader = new LinearLayout(getContext()) {
 			@Override
 			protected void onLayout(boolean changed, int l, int t, int r, int b) {
-//				EvtLog.d(TAG, "top = "+t);
+//				LogUtil.d(TAG, "top = "+t);
 				super.onLayout(changed, l, t, r, b);
 			}
 		};
@@ -207,7 +207,7 @@ public class PullRefreshListView extends ListView {
 
 	@Override
 	protected void onLayout(boolean changed, int l, int t, int r, int b) {
-//		EvtLog.d(TAG, "onLayout");
+//		LogUtil.d(TAG, "onLayout");
 		super.onLayout(changed, l, t, r, b);
 		mHintViewHeight = mPullnReleaseHintView == null ? 0 : mPullnReleaseHintView.getHeight();
 		updateScrollbarScaleFactor();
@@ -252,7 +252,7 @@ public class PullRefreshListView extends ListView {
 		final int action = ev.getAction();
 		final float y = ev.getY();
 		final float x = ev.getX();
-//		EvtLog.d(TAG, "dispatch touch event action = "+action + " x = " + x + " y = "+y);
+//		LogUtil.d(TAG, "dispatch touch event action = "+action + " x = " + x + " y = "+y);
 		switch (action) {
 			case MotionEvent.ACTION_DOWN:
 				mDownX = x;
@@ -289,13 +289,13 @@ public class PullRefreshListView extends ListView {
 				break;
 		}
 
-//		EvtLog.d(TAG, "dispatch touch event action = "+action + " x = " + x + " y = "+y);
+//		LogUtil.d(TAG, "dispatch touch event action = "+action + " x = " + x + " y = "+y);
 		return super.dispatchTouchEvent(ev);
 	}
 
 	@Override
 	public boolean onTouchEvent(MotionEvent ev) {
-//		EvtLog.d(TAG, "onTouch "+ ev.getAction());
+//		LogUtil.d(TAG, "onTouch "+ ev.getAction());
 		final int action = ev.getAction();
 		final float y = ev.getY();
 		final float deltaY = mLastY == -1 ? 0 : y - mLastY;
@@ -311,7 +311,7 @@ public class PullRefreshListView extends ListView {
 				switch (mStatus) {
 					case NORMAL:
 						if (getFirstVisiblePosition() == 0 && mTopHeader.getTop() >= 0) {
-//					EvtLog.d(TAG, "delta y == "+deltaY);
+//					LogUtil.d(TAG, "delta y == "+deltaY);
 							if (deltaY > mTouchSlop) {
 								mStatus = Status.PULLING_DOWN;
 								if (mCallbacks != null) {
@@ -323,7 +323,7 @@ public class PullRefreshListView extends ListView {
 									((PullnReleaseHintView) view).showPullHintView();
 								}
 								MotionEvent event = MotionEvent.obtain(ev);
-//						EvtLog.d(TAG, "set cancle to self");
+//						LogUtil.d(TAG, "set cancle to self");
 								event.setAction(MotionEvent.ACTION_CANCEL);
 								super.onTouchEvent(event);
 								event.recycle();
@@ -331,7 +331,7 @@ public class PullRefreshListView extends ListView {
 								return true;
 							} else if (deltaY > 0) {
 								mLastY = oldLastY;
-//						EvtLog.d(TAG, "restore y to "+mLastY);
+//						LogUtil.d(TAG, "restore y to "+mLastY);
 								return true;
 							}
 						}
@@ -343,7 +343,7 @@ public class PullRefreshListView extends ListView {
 									mCallbacks.onStartPullUp();
 								}
 								MotionEvent event = MotionEvent.obtain(ev);
-//						EvtLog.d(TAG, "set cancle to self");
+//						LogUtil.d(TAG, "set cancle to self");
 								event.setAction(MotionEvent.ACTION_CANCEL);
 								super.onTouchEvent(event);
 								event.recycle();
@@ -405,7 +405,7 @@ public class PullRefreshListView extends ListView {
 				break;
 			case MotionEvent.ACTION_UP:
 			case MotionEvent.ACTION_CANCEL:
-//			EvtLog.d(TAG, "按键抬起");
+//			LogUtil.d(TAG, "按键抬起");
 				mLastY = -1;
 				if (mStatus == Status.PULLING_DOWN) {
 
@@ -415,10 +415,10 @@ public class PullRefreshListView extends ListView {
 						mCallbacks.onPullRelease(MAX_PULL_DOWN_HEIGHT + lp.topMargin);
 					}
 
-//				EvtLog.d(TAG, "here 1");
+//				LogUtil.d(TAG, "here 1");
 					int curHeight = getHintHeaderHeight();
 					if (curHeight == 0) {
-//					EvtLog.d(TAG, "here 1 1");
+//					LogUtil.d(TAG, "here 1 1");
 						mStatus = Status.NORMAL;
 						return true;
 					} else if (mPullnReleaseHintView == null || curHeight <= mHintViewHeight
@@ -458,7 +458,7 @@ public class PullRefreshListView extends ListView {
 //					}
 
 					} else {
-//					EvtLog.d(TAG, "here 1 3");
+//					LogUtil.d(TAG, "here 1 3");
 						ShirinkAnimation animation = new ShirinkAnimation(mStretchBody, curHeight, mHintViewHeight);
 						animation.setAnimationListener(new AnimationListener() {
 
@@ -489,7 +489,7 @@ public class PullRefreshListView extends ListView {
 					}
 					return true;
 				} else if (mStatus == Status.PULLING_UP) {
-//				EvtLog.d(TAG, "here 2");
+//				LogUtil.d(TAG, "here 2");
 					int curScrollY = getScrollY();
 
 					if (mCallbacks != null) {
@@ -598,7 +598,7 @@ public class PullRefreshListView extends ListView {
 		protected void applyTransformation(float interpolatedTime, Transformation t) {
 			super.applyTransformation(interpolatedTime, t);
 			EvtLog.e("pullDownRefresh", "5555" + mStretchBody.isShown() + "  " + mStretchBody.getHeight());
-//			EvtLog.d(TAG, "收缩动画  interpolatedTime = " + interpolatedTime);
+//			LogUtil.d(TAG, "收缩动画  interpolatedTime = " + interpolatedTime);
 			LinearLayout.LayoutParams lp = (LinearLayout.LayoutParams) mShirinkView.getLayoutParams();
 			if (getFirstVisiblePosition() <= 1) {
 				int height = (int) (mStartHeight + interpolatedTime * (mEndHeigth - mStartHeight));

@@ -3,7 +3,8 @@ package com.bixin.bixin.common;
 import android.content.Context;
 import android.os.Message;
 import android.text.TextUtils;
-import com.bixin.bixin.common.pojo.NetConstants;
+
+import com.bixin.bixin.common.bean.HttpNetConstants;
 import com.lonzh.lib.LZActivity;
 import com.lonzh.lib.network.HttpSession;
 import com.lonzh.lib.network.JSONParser;
@@ -794,13 +795,13 @@ public class Business {
 					// 2 会话链接
 					HttpResponse loResponse;
 					if (piHttpMethod == HTTP_METHOD_GET) {
-						String lsAbsUrl = NetConstants.BASE_URL_SERVER + "/" + psUrl;
+						String lsAbsUrl = HttpNetConstants.BASE_URL_SERVER + "/" + psUrl;
 						if (pmParams != null)
 							lsAbsUrl += "?" + buildGetParams(pmParams);
 						loResponse = loHttp.get(lsAbsUrl);
 						EvtLog.d("", lsAbsUrl);
 					} else if (piHttpMethod == HTTP_METHOD_POST) {
-						loResponse = loHttp.post(NetConstants.BASE_URL_SERVER + "/" + psUrl, pmParams == null ? null
+						loResponse = loHttp.post(HttpNetConstants.BASE_URL_SERVER + "/" + psUrl, pmParams == null ? null
 								: buildPostParams(pmParams));
 					} else
 						return;

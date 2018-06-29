@@ -18,10 +18,10 @@ import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import cn.efeizao.feizao.fmk.appupdate.ActivityCallBack;
-import cn.efeizao.feizao.fmk.appupdate.DefaultUpdateObserver;
-import cn.efeizao.feizao.ui.dialog.QustomDialogBuilder;
-import cn.efeizao.feizao.update.AppUpdateManager;
+import com.appupdate.ActivityCallBack;
+import com.appupdate.DefaultUpdateObserver;
+import com.dialog.QustomDialogBuilder;
+import com.update.AppUpdateManager;
 import tv.live.bx.R;
 import com.bixin.bixin.common.Constants;
 import com.bixin.bixin.library.util.EvtLog;

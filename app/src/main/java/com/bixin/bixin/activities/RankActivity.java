@@ -15,7 +15,7 @@ import org.json.JSONObject;
 
 import java.lang.ref.WeakReference;
 
-import cn.efeizao.feizao.framework.net.impl.CallbackDataHandle;
+import com.framework.net.impl.CallbackDataHandle;
 import tv.live.bx.R;
 import com.bixin.bixin.activities.base.BaseFragmentActivity;
 import com.bixin.bixin.common.BusinessUtils;
@@ -99,7 +99,7 @@ public class RankActivity extends BaseFragmentActivity implements OnClickListene
 
 	@Override
 	protected void setEventsListeners() {
-		findViewById(R.id.top_left).setOnClickListener(this);
+		findViewById(R.id.ry_bar_left).setOnClickListener(this);
 
 		starBtn.setOnClickListener(this);
 		popularityBtn.setOnClickListener(this);
@@ -119,7 +119,7 @@ public class RankActivity extends BaseFragmentActivity implements OnClickListene
 	@Override
 	public void onClick(View v) {
 		switch (v.getId()) {
-			case R.id.top_left:
+			case R.id.ry_bar_left:
 				onBackPressed();
 				break;
 			case R.id.start_btn:

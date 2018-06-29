@@ -12,7 +12,7 @@
                     android:background="@color/a_bg_top_bar_color">
 
         <ImageView
-            android:id="@+id/top_left"
+            android:id="@+id/ry_bar_left"
             android:layout_width="@dimen/layout_top_title_bg_height"
             android:layout_height="match_parent"
             android:contentDescription="@string/app_name"

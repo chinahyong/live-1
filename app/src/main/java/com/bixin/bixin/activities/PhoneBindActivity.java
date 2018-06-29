@@ -19,7 +19,7 @@ import org.json.JSONObject;
 import java.lang.ref.WeakReference;
 import java.util.Map;
 
-import cn.efeizao.feizao.framework.net.impl.CallbackDataHandle;
+import com.framework.net.impl.CallbackDataHandle;
 import tv.live.bx.R;
 import com.bixin.bixin.activities.base.BaseFragmentActivity;
 import com.bixin.bixin.common.BusinessUtils;
@@ -138,7 +138,7 @@ public class PhoneBindActivity extends BaseFragmentActivity implements OnClickLi
 	@Override
 	public void onClick(View v) {
 		switch (v.getId()) {
-			case R.id.top_right_text_bg:
+			case R.id.ry_bar_right_text:
 				finish();
 				break;
 		}

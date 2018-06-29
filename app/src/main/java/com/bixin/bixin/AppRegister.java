@@ -7,7 +7,7 @@ import android.content.Intent;
 import com.tencent.mm.opensdk.openapi.IWXAPI;
 import com.tencent.mm.opensdk.openapi.WXAPIFactory;
 
-import com.bixin.bixin.common.pojo.LibConstants;
+import com.bixin.bixin.common.bean.LibConstants;
 
 public class AppRegister extends BroadcastReceiver {
 

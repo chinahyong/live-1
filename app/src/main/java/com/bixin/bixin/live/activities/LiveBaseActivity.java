@@ -73,10 +73,10 @@ import android.widget.RelativeLayout.LayoutParams;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
-import cn.efeizao.feizao.framework.net.impl.CallbackDataHandle;
-import cn.efeizao.feizao.ui.dialog.PersonInfoCustomDialogBuilder;
+import com.framework.net.impl.CallbackDataHandle;
+import com.dialog.PersonInfoCustomDialogBuilder;
 import com.bixin.bixin.App;
-import com.bixin.bixin.activities.LoginActivity;
+import com.bixin.bixin.user.act.LoginActivity;
 import com.bixin.bixin.activities.ShareDialogActivity;
 import com.bixin.bixin.activities.WebViewActivity;
 import com.bixin.bixin.activities.base.BaseFragmentActivity;
@@ -3475,7 +3475,7 @@ public class LiveBaseActivity extends BaseFragmentActivity implements
 
         @Override
         public boolean onTouch(View v, MotionEvent event) {
-            // EvtLog.d(TAG, "OnViewPage onTouch");
+            // LogUtil.d(TAG, "OnViewPage onTouch");
             if (event.getAction() == MotionEvent.ACTION_UP) {
                 hideSoftInput();
                 showMenu();

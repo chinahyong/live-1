@@ -20,7 +20,7 @@ import java.lang.ref.WeakReference;
 import java.util.List;
 import java.util.Map;
 
-import cn.efeizao.feizao.framework.net.impl.CallbackDataHandle;
+import com.framework.net.impl.CallbackDataHandle;
 import tv.live.bx.R;
 import com.bixin.bixin.activities.base.BaseFragmentActivity;
 import com.bixin.bixin.adapters.MyFocusAdapter;
@@ -185,7 +185,7 @@ public class MyFocusActivity extends BaseFragmentActivity implements OnItemClick
 
 			@Override
 			public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
-				// EvtLog.e(TAG,
+				// LogUtil.e(TAG,
 				// "firstVisibleItem,visibleItemCount,totalItemCount:" +
 				// firstVisibleItem + ","
 				// + visibleItemCount + "," + totalItemCount);

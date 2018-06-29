@@ -13,7 +13,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import cn.efeizao.feizao.ui.dialog.CustomDialogBuilder;
+import com.dialog.CustomDialogBuilder;
 import tv.live.bx.R;
 import com.bixin.bixin.imageloader.ImageLoaderUtil;
 import com.bixin.bixin.listeners.ViewOnClickListener;

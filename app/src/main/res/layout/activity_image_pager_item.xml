@@ -19,6 +19,6 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:contentDescription="@string/app_name"
-        android:src="@drawable/logoing" />
+        android:src="@drawable/ic_dialog_loading" />
 
 </RelativeLayout>

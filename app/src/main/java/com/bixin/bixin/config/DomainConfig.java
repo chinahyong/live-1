@@ -3,7 +3,9 @@ package com.bixin.bixin.config;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.text.TextUtils;
-import com.bixin.bixin.common.pojo.NetConstants;
+
+import com.bixin.bixin.common.bean.HttpNetConstants;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 import com.bixin.bixin.App;
@@ -48,17 +50,17 @@ public class DomainConfig {
 		DomainConfig config = new DomainConfig();
 		SharedPreferences sp = App.mContext
             .getSharedPreferences(Constants.COMMON_SF_HTTP_DOMAIN_NAME, Context.MODE_PRIVATE);
-		config.base_domain = sp.getString(Constants.COMMON_SF_BASE_DOMAIN, NetConstants.BASE_DOMAIN);
-		config.base_stat_domain = sp.getString(Constants.COMMON_SF_BASE_STAT_DOMAIN, NetConstants.BASE_STAT_DOMAIN);
-		config.base_m_domain = sp.getString(Constants.COMMON_SF_BASE_M_DOMAIN, NetConstants.BASE_M_DOMAIN);
-		config.base_http_domain = sp.getString(Constants.COMMON_SF_BASE_HTTP_DOMAIN, NetConstants.BASE_HTTP_DOMAIN);
-		config.http_domain_lists = sp.getString(Constants.COMMON_SF_BASE_DOMAIN_LIST, NetConstants.BASE_HTTP_DOMAIN_BAK);
+		config.base_domain = sp.getString(Constants.COMMON_SF_BASE_DOMAIN, HttpNetConstants.BASE_DOMAIN);
+		config.base_stat_domain = sp.getString(Constants.COMMON_SF_BASE_STAT_DOMAIN, HttpNetConstants.BASE_STAT_DOMAIN);
+		config.base_m_domain = sp.getString(Constants.COMMON_SF_BASE_M_DOMAIN, HttpNetConstants.BASE_M_DOMAIN);
+		config.base_http_domain = sp.getString(Constants.COMMON_SF_BASE_HTTP_DOMAIN, HttpNetConstants.BASE_HTTP_DOMAIN);
+		config.http_domain_lists = sp.getString(Constants.COMMON_SF_BASE_DOMAIN_LIST, HttpNetConstants.BASE_HTTP_DOMAIN_BAK);
 
-		NetConstants.BASE_DOMAIN = config.base_domain;
-		NetConstants.BASE_STAT_DOMAIN = config.base_stat_domain;
-		NetConstants.BASE_M_DOMAIN = config.base_m_domain;
-		NetConstants.BASE_HTTP_DOMAIN = config.base_http_domain;
-		NetConstants.updateBaseDomain();
+		HttpNetConstants.BASE_DOMAIN = config.base_domain;
+		HttpNetConstants.BASE_STAT_DOMAIN = config.base_stat_domain;
+		HttpNetConstants.BASE_M_DOMAIN = config.base_m_domain;
+		HttpNetConstants.BASE_HTTP_DOMAIN = config.base_http_domain;
+		HttpNetConstants.updateBaseDomain();
 		return config;
 	}
 
@@ -67,7 +69,7 @@ public class DomainConfig {
 	 */
 	public void updateSafeHttpDomain(String httpDomain) {
 		if (!TextUtils.isEmpty(httpDomain) && !base_http_domain.equals(httpDomain)) {
-			NetConstants.BASE_HTTP_DOMAIN = base_http_domain = httpDomain;
+			HttpNetConstants.BASE_HTTP_DOMAIN = base_http_domain = httpDomain;
 			SharedPreferences.Editor editor = App.mContext
                 .getSharedPreferences(Constants.COMMON_SF_HTTP_DOMAIN_NAME, Context.MODE_PRIVATE).edit();
 			editor.putString(Constants.COMMON_SF_BASE_HTTP_DOMAIN, httpDomain);
@@ -80,8 +82,8 @@ public class DomainConfig {
 	 */
 	public void updateSafeStatDomain(String statDomain) {
 		if(!TextUtils.isEmpty(statDomain) && !base_stat_domain.equals(statDomain)){
-			NetConstants.BASE_STAT_DOMAIN = base_stat_domain = statDomain;
-			NetConstants.updateBaseDomain();
+			HttpNetConstants.BASE_STAT_DOMAIN = base_stat_domain = statDomain;
+			HttpNetConstants.updateBaseDomain();
 			SharedPreferences.Editor editor = App.mContext
                 .getSharedPreferences(Constants.COMMON_SF_HTTP_DOMAIN_NAME, Context.MODE_PRIVATE).edit();
 			editor.putString(Constants.COMMON_SF_BASE_STAT_DOMAIN, statDomain);
@@ -95,8 +97,8 @@ public class DomainConfig {
 	public void updateSafeWebDomain(String mDomain) {
 		if(!TextUtils.isEmpty(mDomain) && !base_m_domain.equals(mDomain)){
 			base_m_domain = mDomain;
-			NetConstants.BASE_M_DOMAIN = DomainConfig.getInstance().base_m_domain;
-			NetConstants.updateBaseDomain();
+			HttpNetConstants.BASE_M_DOMAIN = DomainConfig.getInstance().base_m_domain;
+			HttpNetConstants.updateBaseDomain();
 			SharedPreferences.Editor editor = App.mContext
                 .getSharedPreferences(Constants.COMMON_SF_HTTP_DOMAIN_NAME, Context.MODE_PRIVATE).edit();
 			editor.putString(Constants.COMMON_SF_BASE_M_DOMAIN, mDomain);
@@ -120,8 +122,8 @@ public class DomainConfig {
                 .getSharedPreferences(Constants.COMMON_SF_HTTP_DOMAIN_NAME, Context.MODE_PRIVATE).edit();
 			if (!TextUtils.isEmpty(base_domain_tmp)) {
 				if(!base_domain.equals(base_domain_tmp)){
-					NetConstants.BASE_DOMAIN = base_domain = base_domain_tmp;
-					NetConstants.updateBaseDomain();
+					HttpNetConstants.BASE_DOMAIN = base_domain = base_domain_tmp;
+					HttpNetConstants.updateBaseDomain();
 				}
 				editor.putString(Constants.COMMON_SF_BASE_DOMAIN, base_domain);
 			}

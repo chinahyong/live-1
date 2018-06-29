@@ -15,7 +15,7 @@ import com.bixin.bixin.activities.EditDataActivity;
 import com.bixin.bixin.activities.EditInfoActivity;
 import com.bixin.bixin.activities.ImageBrowserActivity;
 import com.bixin.bixin.activities.LiveTypeActivity;
-import com.bixin.bixin.activities.LoginActivity;
+import com.bixin.bixin.user.act.LoginActivity;
 import com.bixin.bixin.activities.PersonInfoActivity;
 import com.bixin.bixin.activities.PhoneBindActivity;
 import com.bixin.bixin.activities.ReportActivity;

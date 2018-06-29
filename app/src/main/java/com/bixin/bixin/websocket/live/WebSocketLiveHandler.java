@@ -5,7 +5,8 @@
 package com.bixin.bixin.websocket.live;
 
 import android.text.TextUtils;
-import com.bixin.bixin.common.pojo.NetConstants;
+
+import com.bixin.bixin.common.bean.HttpNetConstants;
 import com.lonzh.lib.network.JSONParser;
 import de.tavendo.autobahn.WebSocketConnectionHandler;
 import java.lang.ref.WeakReference;
@@ -50,14 +51,14 @@ public class WebSocketLiveHandler extends WebSocketConnectionHandler {
 			String errno = json.optString("errno");
 			String msg = json.optString("msg");
 
-			if (NetConstants.SENT_STATUS_NEED_LOGIN.equals(errno)) {
+			if (HttpNetConstants.SENT_STATUS_NEED_LOGIN.equals(errno)) {
 				// 设置未登录
 				AppConfig.getInstance().updateLoginStatus(false);
 			}
 
 			WebSocketLiveCallBack callback = webSocketLiveCallBackWeakReference.get();
 			// 如果onConnectStatus回调，errno肯定不会为0，所以会进入onError方法
-			if (!NetConstants.SENT_STATUS_SUCCESS.equals(errno)) {
+			if (!HttpNetConstants.SENT_STATUS_SUCCESS.equals(errno)) {
 				if (callback != null) {
 					callback.onError(errno, msg, methodName);
 				}

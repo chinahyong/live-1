@@ -87,7 +87,7 @@ import org.json.JSONObject;
 import tv.guojiang.baselib.image.listener.ImageLoadingListener;
 import tv.guojiang.baselib.image.model.ImageSize;
 import tv.live.bx.R;
-import com.bixin.bixin.activities.LoginActivity;
+import com.bixin.bixin.user.act.LoginActivity;
 import com.bixin.bixin.activities.Register1Activity;
 import com.bixin.bixin.config.AppConfig;
 import com.bixin.bixin.imageloader.ImageLoaderUtil;

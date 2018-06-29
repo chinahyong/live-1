@@ -6,7 +6,9 @@ import android.content.SharedPreferences.Editor;
 import android.util.Log;
 import android.webkit.CookieManager;
 import android.webkit.CookieSyncManager;
-import com.bixin.bixin.common.pojo.NetConstants;
+
+import com.bixin.bixin.common.bean.HttpNetConstants;
+
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -36,7 +38,7 @@ public class LZCookieStore implements CookieStore {
 	public void addCookie(Cookie poCookie) {
 		if (poCookie instanceof BasicClientCookie) {
 			EvtLog.e(COOKIE_SP_NAME, "addCookie:xxxxx" + poCookie.toString());
-			((BasicClientCookie) poCookie).setDomain(NetConstants.BASE_DOMAIN);
+			((BasicClientCookie) poCookie).setDomain(HttpNetConstants.BASE_DOMAIN);
 		}
 		EvtLog.e(COOKIE_SP_NAME, "addCookie:" + poCookie.toString());
 		String lsName = poCookie.getName();
@@ -283,11 +285,11 @@ public class LZCookieStore implements CookieStore {
 		if (loSessionCookie != null) {
 			String lsSession = loSessionCookie.getName() + "="
 					+ loSessionCookie.getValue();
-			cookieManager.setCookie(NetConstants.BASE_M_URL_SERVER, lsSession);
+			cookieManager.setCookie(HttpNetConstants.BASE_M_URL_SERVER, lsSession);
 		}
 		if (loUidCookie != null) {
 			String lsUid = loUidCookie.getName() + "=" + loUidCookie.getValue();
-			cookieManager.setCookie(NetConstants.BASE_M_URL_SERVER, lsUid);
+			cookieManager.setCookie(HttpNetConstants.BASE_M_URL_SERVER, lsUid);
 		}
 		CookieSyncManager.getInstance().sync();
 	}
