@@ -129,7 +129,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.bixin.bixin.activities.CalMainActivity"
+            android:name="com.bixin.bixin.activities.MainActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
             android:theme="@style/StyledIndicators">
@@ -154,7 +154,7 @@
             android:theme="@style/AppFullTranTheme">
         </activity>
         <activity
-            android:name="com.bixin.bixin.user.act.Login2Activity"
+            android:name="com.bixin.bixin.user.act.LoginPhoneActivity"
             android:screenOrientation="portrait">
         </activity>
         <activity
@@ -170,7 +170,7 @@
             android:screenOrientation="portrait">
         </activity>
         <activity
-            android:name="com.bixin.bixin.activities.AboutActivity"
+            android:name="com.bixin.bixin.home.act.AboutActivity"
             android:screenOrientation="portrait">
         </activity>
         <activity
@@ -186,24 +186,20 @@
             android:screenOrientation="portrait">
         </activity>
         <activity
-            android:name="com.bixin.bixin.activities.AdviceActivity"
+            android:name="com.bixin.bixin.home.act.AdviceActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden|adjustPan">
         </activity>
         <activity
-            android:name="com.bixin.bixin.activities.GetBackPwdActivity"
+            android:name="com.bixin.bixin.activities.NotifyPasswordActivity"
             android:screenOrientation="portrait">
         </activity>
         <activity
-            android:name="com.bixin.bixin.activities.EditDataActivity"
+            android:name="com.bixin.bixin.user.act.EditUserActivity"
             android:screenOrientation="portrait">
         </activity>
         <activity
             android:name="com.bixin.bixin.activities.MyFocusActivity"
-            android:screenOrientation="portrait">
-        </activity>
-        <activity
-            android:name="com.bixin.bixin.activities.ChoiceAgeActivity"
             android:screenOrientation="portrait">
         </activity>
         <activity
@@ -215,19 +211,11 @@
             android:screenOrientation="portrait">
         </activity>
         <activity
-            android:name="com.bixin.bixin.activities.ChoiceHeightActivity"
+            android:name="com.bixin.bixin.user.act.EditSignatureActivity"
             android:screenOrientation="portrait">
         </activity>
         <activity
-            android:name="com.bixin.bixin.activities.ChoiceIntroductionActivity"
-            android:screenOrientation="portrait">
-        </activity>
-        <activity
-            android:name="com.bixin.bixin.activities.ChoiceWeightActivity"
-            android:screenOrientation="portrait">
-        </activity>
-        <activity
-            android:name="com.bixin.bixin.activities.ChoiceNameActivity"
+            android:name="com.bixin.bixin.user.act.EditNameActivity"
             android:screenOrientation="portrait">
         </activity>
         <activity
@@ -414,7 +402,7 @@
             android:theme="@style/AppBaseTheme">
         </activity>
         <activity
-            android:name="com.bixin.bixin.activities.EditInfoActivity"
+            android:name="com.bixin.bixin.user.act.EditSignatureActivity"
             android:screenOrientation="portrait">
         </activity>
         <activity
@@ -480,7 +468,7 @@
             android:screenOrientation="portrait">
         </activity>
         <activity
-            android:name="com.bixin.bixin.activities.EditAlbumActivity"
+            android:name="com.bixin.bixin.user.act.EditAlbumActivity"
             android:screenOrientation="portrait"/>
 
         <!-- 图片选择器 -->

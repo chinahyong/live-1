@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.bixin.bixin.common.bean.HttpNetConstants;
+import com.bixin.bixin.common.model.HttpConstants;
 
 /**
  * Title: 消息实体类 (类或者接口名称)
@@ -23,7 +23,7 @@ public abstract class AEntity {
 	/**
 	 * 发送状态
 	 */
-	public String sentStatus = HttpNetConstants.SENT_STATUS_WAIT;
+	public String sentStatus = HttpConstants.SENT_STATUS_WAIT;
 
 	/**
 	 * HTTP返回的头信码

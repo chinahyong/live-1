@@ -5,7 +5,7 @@ import android.os.Message;
 
 import com.bixin.bixin.common.JacksonUtil;
 import com.bixin.bixin.common.MsgTypes;
-import com.bixin.bixin.config.UserInfoConfig;
+import com.bixin.bixin.common.config.UserInfoConfig;
 import com.framework.net.impl.CallbackDataHandle;
 
 import java.lang.ref.WeakReference;

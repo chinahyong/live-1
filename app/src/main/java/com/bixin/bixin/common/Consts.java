@@ -123,8 +123,6 @@ public class Consts {
 		EMOTION_TEXT_MAP.put(R.drawable.ic_rose_1, "{花}");
 	}
 
-	public static final int PUSH_TYPE_AUTHOR_BEGIN_PLAYING = 0;// 我的关注
-
 	/**
 	 * 报错log日志发送邮箱用户名
 	 */

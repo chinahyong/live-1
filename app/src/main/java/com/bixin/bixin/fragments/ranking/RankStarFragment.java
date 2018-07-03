@@ -21,7 +21,7 @@ import com.bixin.bixin.App;
 import tv.live.bx.R;
 import com.bixin.bixin.activities.RankActivity;
 import com.bixin.bixin.adapters.RankListAdapter;
-import com.bixin.bixin.common.OperationHelper;
+import com.bixin.bixin.common.helper.operation.OperationHelper;
 import com.bixin.bixin.common.Utils;
 import com.bixin.bixin.fragments.BaseFragment;
 import com.bixin.bixin.model.RankBean;

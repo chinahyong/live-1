@@ -6,7 +6,7 @@ package com.bixin.bixin.websocket.live;
 
 import android.text.TextUtils;
 
-import com.bixin.bixin.common.bean.HttpNetConstants;
+import com.bixin.bixin.common.model.HttpConstants;
 import com.lonzh.lib.network.JSONParser;
 import de.tavendo.autobahn.WebSocketConnectionHandler;
 import java.lang.ref.WeakReference;
@@ -15,7 +15,7 @@ import java.util.Map;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import com.bixin.bixin.common.Constants;
-import com.bixin.bixin.config.AppConfig;
+import com.bixin.bixin.common.config.AppConfig;
 import com.bixin.bixin.library.util.EvtLog;
 
 /**
@@ -51,14 +51,14 @@ public class WebSocketLiveHandler extends WebSocketConnectionHandler {
 			String errno = json.optString("errno");
 			String msg = json.optString("msg");
 
-			if (HttpNetConstants.SENT_STATUS_NEED_LOGIN.equals(errno)) {
+			if (HttpConstants.SENT_STATUS_NEED_LOGIN.equals(errno)) {
 				// 设置未登录
 				AppConfig.getInstance().updateLoginStatus(false);
 			}
 
 			WebSocketLiveCallBack callback = webSocketLiveCallBackWeakReference.get();
 			// 如果onConnectStatus回调，errno肯定不会为0，所以会进入onError方法
-			if (!HttpNetConstants.SENT_STATUS_SUCCESS.equals(errno)) {
+			if (!HttpConstants.SENT_STATUS_SUCCESS.equals(errno)) {
 				if (callback != null) {
 					callback.onError(errno, msg, methodName);
 				}

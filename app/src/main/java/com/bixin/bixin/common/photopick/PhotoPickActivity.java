@@ -24,14 +24,15 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bixin.bixin.base.act.BaseFragmentActivity;
+
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 
 import tv.live.bx.R;
-import com.bixin.bixin.activities.base.BaseActionBarActivity;
 
 
-public class PhotoPickActivity extends BaseActionBarActivity implements LoaderManager.LoaderCallbacks<Cursor> {
+public class PhotoPickActivity extends BaseFragmentActivity implements LoaderManager.LoaderCallbacks<Cursor> {
 
     public static final String EXTRA_MAX = "EXTRA_MAX";
     public static final String EXTRA_PICKED = "EXTRA_PICKED"; // mPickData
@@ -126,7 +127,6 @@ public class PhotoPickActivity extends BaseActionBarActivity implements LoaderMa
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_photo_pick);
 
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle("图片");
@@ -154,6 +154,16 @@ public class PhotoPickActivity extends BaseActionBarActivity implements LoaderMa
 
         initListView1();
         initListView2();
+    }
+
+    @Override
+    protected int getLayoutRes() {
+        return R.layout.activity_photo_pick;
+    }
+
+    @Override
+    protected void initData(Bundle savedInstanceState) {
+
     }
 
     public int getmMaxPick() {

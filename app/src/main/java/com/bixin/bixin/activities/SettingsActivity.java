@@ -13,6 +13,8 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.bixin.bixin.App;
+import com.bixin.bixin.home.act.AboutActivity;
+import com.bixin.bixin.home.act.AdviceActivity;
 import com.bixin.bixin.user.act.LoginActivity;
 import com.lonzh.lib.network.JSONParser;
 import com.umeng.analytics.MobclickAgent;
@@ -28,13 +30,13 @@ import com.framework.net.impl.CallbackDataHandle;
 import cn.jpush.android.api.JPushInterface;
 import cn.jpush.android.api.TagAliasCallback;
 import tv.live.bx.R;
-import com.bixin.bixin.activities.base.BaseFragmentActivity;
+import com.bixin.bixin.base.act.BaseFragmentActivity;
 import com.bixin.bixin.common.BusinessUtils;
 import com.bixin.bixin.common.Constants;
 import com.bixin.bixin.common.MsgTypes;
 import com.bixin.bixin.common.Utils;
-import com.bixin.bixin.config.AppConfig;
-import com.bixin.bixin.config.UserInfoConfig;
+import com.bixin.bixin.common.config.AppConfig;
+import com.bixin.bixin.common.config.UserInfoConfig;
 import com.bixin.bixin.library.util.EvtLog;
 import com.bixin.bixin.receiver.LoginStatusChangeReceiver;
 import com.bixin.bixin.util.ActivityJumpUtil;
@@ -244,7 +246,7 @@ public class SettingsActivity extends BaseFragmentActivity implements OnClickLis
 	 * 关闭当前Activity，并打开CalMainActivity
 	 */
 	private void closeActivityAndCalMainActivity() {
-		Intent intent = new Intent(this, CalMainActivity.class);
+		Intent intent = new Intent(this, MainActivity.class);
 		intent.putExtra(AppUpdateActivity.EXA_RESULT_IS_FINISH, true);
 		startActivity(intent);
 		this.finish();
@@ -271,7 +273,7 @@ public class SettingsActivity extends BaseFragmentActivity implements OnClickLis
 				ActivityJumpUtil.gotoActivity(mActivity, AboutActivity.class, false, null, null);
 				break;
 			case R.id.settings_rl_get_back_pwd:
-				ActivityJumpUtil.gotoActivity(mActivity, GetBackPwdActivity.class, false, null, null);
+				ActivityJumpUtil.gotoActivity(mActivity, NotifyPasswordActivity.class, false, null, null);
 				break;
 			case R.id.settings_rl_check_update:
 				MobclickAgent.onEvent(App.mContext, "updateVersions");

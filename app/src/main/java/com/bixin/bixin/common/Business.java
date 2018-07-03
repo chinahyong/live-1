@@ -4,10 +4,22 @@ import android.content.Context;
 import android.os.Message;
 import android.text.TextUtils;
 
-import com.bixin.bixin.common.bean.HttpNetConstants;
+import com.bixin.bixin.App;
+import com.bixin.bixin.common.model.HttpConstants;
+import com.bixin.bixin.library.util.EvtLog;
+import com.bixin.bixin.library.util.PackageUtil;
+import com.bixin.bixin.util.ChannelUtil;
 import com.lonzh.lib.LZActivity;
 import com.lonzh.lib.network.HttpSession;
 import com.lonzh.lib.network.JSONParser;
+
+import org.apache.http.HttpResponse;
+import org.apache.http.NameValuePair;
+import org.apache.http.message.BasicNameValuePair;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.security.InvalidKeyException;
@@ -19,19 +31,10 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+
 import javax.crypto.BadPaddingException;
 import javax.crypto.IllegalBlockSizeException;
 import javax.crypto.NoSuchPaddingException;
-import org.apache.http.HttpResponse;
-import org.apache.http.NameValuePair;
-import org.apache.http.message.BasicNameValuePair;
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-import com.bixin.bixin.App;
-import com.bixin.bixin.library.util.EvtLog;
-import com.bixin.bixin.library.util.PackageUtil;
-import com.bixin.bixin.util.ChannelUtil;
 
 /**
  * 此类以后不再使用
@@ -53,89 +56,6 @@ public class Business {
 	public static final int HTTP_METHOD_GET = 0, HTTP_METHOD_POST = 1;
 	public static final int RESPONSE_TYPE_NULL = 0, RESPONSE_TYPE_SINGLE = 1, RESPONSE_TYPE_MULTI = 2,
 			RESPONSE_TYPE_MULTI_IN_SINGLE = 3, RESPONSE_TYPE_MULTI_IN_MULTI = 4, RESPONSE_TYPE_SINGLE_IN_MULTI = 5;
-
-	/**
-	 * 获取公钥
-	 *
-	 * @param poContext
-	 */
-	public static void getPubKey(Context poContext) {
-		String lsUrl = "user/getPublicKey";
-		Map<String, String> lmParams = new HashMap<String, String>();
-		initHttpPamas(lmParams);
-		newBusiness(poContext, lsUrl, HTTP_METHOD_GET, lmParams, RESPONSE_TYPE_SINGLE, null,
-				MsgTypes.GET_PUB_KEY_SUCCESS, MsgTypes.GET_PUB_KEY_FAILED, null);
-	}
-
-	/**
-	 * 用户登录
-	 *
-	 * @param psUsername
-	 * @param psPassword
-	 * @throws BadPaddingException
-	 * @throws IllegalBlockSizeException
-	 * @throws NoSuchPaddingException
-	 * @throws InvalidKeySpecException
-	 * @throws NoSuchAlgorithmException
-	 * @throws InvalidKeyException
-	 */
-	public static void login(Context poContext, String psUsername, String psPassword) throws InvalidKeyException,
-			NoSuchAlgorithmException, InvalidKeySpecException, NoSuchPaddingException, IllegalBlockSizeException,
-			BadPaddingException {
-		Map<String, String> lmParams = new HashMap<String, String>();
-		lmParams.put("username", psUsername);
-		lmParams.put("remember", "true");
-		lmParams.put("password", Utils.rsaEncrypt(
-				(String) App.getCacheData("public_key"), psPassword));
-		String lsUrl = "user/login";
-		ErrCodeParser loErrCodeParser = new ErrCodeParser() {
-			@Override
-			public String getErrMsg(int piErrCode) {
-				String lsMsg;
-				switch (piErrCode) {
-					case 200:
-						lsMsg = "参数错误";
-						break;
-					case 201:
-						lsMsg = "用户名密码错误";
-						break;
-					case 202:
-						lsMsg = "解密失败";
-						break;
-					default:
-						lsMsg = "错误码：" + piErrCode;
-						break;
-				}
-				return lsMsg;
-			}
-		};
-		initHttpPamas(lmParams);
-		newBusiness(poContext, lsUrl, HTTP_METHOD_POST, lmParams, RESPONSE_TYPE_NULL, null, MsgTypes.LOGIN_SUCCESS,
-				MsgTypes.LOGIN_FAILED, loErrCodeParser);
-	}
-
-	/**
-	 * 获取首页轮播图片
-	 */
-	public static void getMainBanners(Context poContext) {
-		String lsUrl = "index/focusActivity";
-		Map<String, String> lmParams = new HashMap<String, String>();
-		initHttpPamas(lmParams);
-		newBusiness(poContext, lsUrl, HTTP_METHOD_GET, lmParams, RESPONSE_TYPE_MULTI, null,
-				MsgTypes.GET_MAIN_BANNERS_SUCCESS, MsgTypes.GET_MAIN_BANNERS_FAILED, null);
-	}
-
-	/**
-	 * 获取首页推荐列表
-	 */
-	public static void getRecommendRooms(Context poContext) {
-		String lsUrl = "index/recommendedRooms";
-		Map<String, String> lmParams = new HashMap<String, String>();
-		initHttpPamas(lmParams);
-		newBusiness(poContext, lsUrl, HTTP_METHOD_GET, lmParams, RESPONSE_TYPE_SINGLE_IN_MULTI,
-				new String[]{"moderator"}, MsgTypes.GET_RECOMMEND_ROOMS_SUCCESS,
-				MsgTypes.GET_RECOMMEND_ROOMS_FAILED, null);
-	}
 
 	/**
 	 * 用户注册发送验证码
@@ -306,276 +226,6 @@ public class Business {
 	}
 
 	/**
-	 * 关注
-	 *
-	 * @param poContext
-	 */
-	public static void follow(Context poContext, String psRid) {
-		Map<String, String> lmParams = new HashMap<String, String>();
-		lmParams.put("rid", psRid);
-		String lsUrl = "room/love";
-		ErrCodeParser loErrCodeParser = new ErrCodeParser() {
-			@Override
-			public String getErrMsg(int piErrCode) {
-				String lsMsg;
-				switch (piErrCode) {
-					case -100:
-						lsMsg = "未登录";
-						break;
-					case -200:
-						lsMsg = "操作过于频繁";
-						break;
-					case 100:
-						lsMsg = "房间不存在";
-						break;
-					case 101:
-						lsMsg = "系统错误";
-						break;
-					default:
-						lsMsg = "错误码：" + piErrCode;
-						break;
-				}
-				return lsMsg;
-			}
-		};
-		initHttpPamas(lmParams);
-		newBusiness(poContext, lsUrl, HTTP_METHOD_GET, lmParams, RESPONSE_TYPE_SINGLE, null, MsgTypes.FOLLOW_SUCCESS,
-				MsgTypes.FOLLOW_FAILED, loErrCodeParser);
-	}
-
-	/**
-	 * 获取房间信息
-	 *
-	 * @param poContext
-	 * @param psRid
-	 */
-	public static void getRoomInfo(Context poContext, String psRid) {
-		Map<String, String> lmParams = new HashMap<String, String>();
-		lmParams.put("rid", psRid);
-		String lsUrl = "room/getInfo";
-		ErrCodeParser loErrCodeParser = new ErrCodeParser() {
-			@Override
-			public String getErrMsg(int piErrCode) {
-				String lsMsg;
-				switch (piErrCode) {
-					case 200:
-						lsMsg = "房间不存在";
-						break;
-					default:
-						lsMsg = "错误码：" + piErrCode;
-						break;
-				}
-				return lsMsg;
-			}
-		};
-		initHttpPamas(lmParams);
-		newBusiness(poContext, lsUrl, HTTP_METHOD_GET, lmParams, RESPONSE_TYPE_MULTI_IN_SINGLE, new String[]{"gifts",
-				"consumeRankList"}, MsgTypes.GET_ROOM_INFO_SUCCESS, MsgTypes.GET_ROOM_INFO_FAILED, loErrCodeParser);
-	}
-
-	/**
-	 * QQ账号登录
-	 *
-	 * @param poContext
-	 * @param psAccessToken
-	 * @param psOpenId
-	 * @param psExpiredIn
-	 */
-	public static void loginByQQ(Context poContext, String psAccessToken, String psOpenId, String psExpiredIn) {
-		Map<String, String> lmParams = new HashMap<String, String>();
-		lmParams.put("accessToken", psAccessToken);
-		lmParams.put("openId", psOpenId);
-		lmParams.put("expiredIn", psExpiredIn);
-		String lsUrl = "user/QQLogin";
-		ErrCodeParser loErrCodeParser = new ErrCodeParser() {
-			@Override
-			public String getErrMsg(int piErrCode) {
-				String lsMsg;
-				switch (piErrCode) {
-					case 300:
-						lsMsg = "注册失败";
-						break;
-					case 301:
-						lsMsg = "系统异常";
-						break;
-					default:
-						lsMsg = "错误码：" + piErrCode;
-						break;
-				}
-				return lsMsg;
-			}
-		};
-		initHttpPamas(lmParams);
-		newBusiness(poContext, lsUrl, HTTP_METHOD_POST, lmParams, RESPONSE_TYPE_NULL, null,
-				MsgTypes.LOGIN_BY_QQ_SUCCESS, MsgTypes.LOGIN_BY_QQ_FAILED, loErrCodeParser);
-	}
-
-	/**
-	 * 微博登录
-	 *
-	 * @param poContext
-	 * @param psAccessToken
-	 * @param psOpenId
-	 * @param psExpiredIn
-	 */
-	public static void loginByWeibo(Context poContext, String psAccessToken, String uid, String psExpiredIn) {
-		Map<String, String> lmParams = new HashMap<String, String>();
-		lmParams.put("accessToken", psAccessToken);
-		lmParams.put("uid", uid);
-		lmParams.put("expiredIn", psExpiredIn);
-		String lsUrl = "User/weiboLogin";
-		ErrCodeParser loErrCodeParser = new ErrCodeParser() {
-			@Override
-			public String getErrMsg(int piErrCode) {
-				String lsMsg;
-				switch (piErrCode) {
-					case 300:
-						lsMsg = "注册失败";
-						break;
-					case 301:
-						lsMsg = "系统异常";
-						break;
-					default:
-						lsMsg = "错误码：" + piErrCode;
-						break;
-				}
-				return lsMsg;
-			}
-		};
-		initHttpPamas(lmParams);
-		newBusiness(poContext, lsUrl, HTTP_METHOD_POST, lmParams, RESPONSE_TYPE_NULL, null,
-				MsgTypes.LOGIN_BY_QQ_SUCCESS, MsgTypes.LOGIN_BY_QQ_FAILED, loErrCodeParser);
-	}
-
-	/**
-	 * 微信登录
-	 *
-	 * @param poContext
-	 * @param psAccessToken
-	 * @param psOpenId
-	 * @param psExpiredIn
-	 */
-	public static void loginByWeixin(Context poContext, String psAccessToken, String psOpenId, String refreshToken,
-									 String unionid, String psExpiredIn) {
-		Map<String, String> lmParams = new HashMap<String, String>();
-		lmParams.put("accessToken", psAccessToken);
-		lmParams.put("refreshToken", refreshToken);
-		lmParams.put("openId", psOpenId);
-		lmParams.put("unionid", unionid);
-		lmParams.put("expiredIn", psExpiredIn);
-		String lsUrl = "user/WxLogin";
-		ErrCodeParser loErrCodeParser = new ErrCodeParser() {
-			@Override
-			public String getErrMsg(int piErrCode) {
-				String lsMsg;
-				switch (piErrCode) {
-					case 300:
-						lsMsg = "注册失败";
-						break;
-					case 301:
-						lsMsg = "系统异常";
-						break;
-					default:
-						lsMsg = "错误码：" + piErrCode;
-						break;
-				}
-				return lsMsg;
-			}
-		};
-		initHttpPamas(lmParams);
-		newBusiness(poContext, lsUrl, HTTP_METHOD_POST, lmParams, RESPONSE_TYPE_NULL, null,
-				MsgTypes.LOGIN_BY_QQ_SUCCESS, MsgTypes.LOGIN_BY_QQ_FAILED, loErrCodeParser);
-	}
-
-	/**
-	 * 退出登录
-	 *
-	 * @param poContext
-	 */
-	public static void logout(Context poContext) {
-		String lsUrl = "user/logout";
-		Map<String, String> lmParams = new HashMap<String, String>();
-		initHttpPamas(lmParams);
-		newBusiness(poContext, lsUrl, HTTP_METHOD_GET, lmParams, RESPONSE_TYPE_NULL, null, MsgTypes.LOGOUT_SUCCESS,
-				MsgTypes.LOGOUT_FAILED, null);
-	}
-
-	/**
-	 * 修改用户信息
-	 *
-	 * @param poContext
-	 * @param psNickname
-	 * @param piSex
-	 * @param psBirthday
-	 * @param psCityId
-	 * @param psAreaId
-	 * @param psDesc
-	 */
-	public static void modifyUserInfo(Context poContext, String psNickname, int piSex, String psDesc, String psBirthday) {
-		Map<String, String> lmParams = new HashMap<String, String>();
-		lmParams.put("nickname", psNickname);
-		lmParams.put("sex", String.valueOf(piSex));
-
-		if (psBirthday != null)
-			lmParams.put("birthday", psBirthday);
-		lmParams.put("desc", psDesc);
-
-		String lsUrl = "user/updateInfo";
-		ErrCodeParser loErrCodeParser = new ErrCodeParser() {
-			@Override
-			public String getErrMsg(int piErrCode) {
-				String lsMsg;
-				switch (piErrCode) {
-					case 800:
-						lsMsg = "更新失败";
-						break;
-					case 801:
-						lsMsg = "用户不存在";
-						break;
-					default:
-						lsMsg = "错误码：" + piErrCode;
-						break;
-				}
-				return lsMsg;
-			}
-		};
-		initHttpPamas(lmParams);
-		newBusiness(poContext, lsUrl, HTTP_METHOD_POST, lmParams, RESPONSE_TYPE_NULL, null,
-				MsgTypes.MODIFY_USER_INFO_SUCCESS, MsgTypes.MODIFY_USER_INFO_FAILED, loErrCodeParser);
-	}
-
-	/**
-	 * 获取用户信息
-	 *
-	 * @param poContext
-	 */
-	public static void getUserInfo(Context poContext, String psUid) {
-		// Map<String, String> lmParams = new HashMap<String, String>();
-		// if (psUid != null)
-		// lmParams.put("uid", psUid);
-		String lsUrl = "user/getMyInfo";
-		ErrCodeParser loErrCodeParser = new ErrCodeParser() {
-			@Override
-			public String getErrMsg(int piErrCode) {
-				String lsMsg;
-				switch (piErrCode) {
-					case 700:
-						lsMsg = "用户不存在";
-						break;
-					default:
-						lsMsg = "错误码：" + piErrCode;
-						break;
-				}
-				return lsMsg;
-			}
-		};
-		Map<String, String> lmParams = new HashMap<String, String>();
-		initHttpPamas(lmParams);
-		newBusiness(poContext, lsUrl, HTTP_METHOD_GET, lmParams, RESPONSE_TYPE_SINGLE, null,
-				MsgTypes.GET_MY_USER_INFO_SUCCESS, MsgTypes.GET_MY_USER_INFO_FAILED, loErrCodeParser);
-	}
-
-	/**
 	 * 反馈意见
 	 *
 	 * @param poContext
@@ -612,63 +262,6 @@ public class Business {
 		initHttpPamas(lmParams);
 		newBusiness(poContext, lsUrl, HTTP_METHOD_POST, lmParams, RESPONSE_TYPE_NULL, null, MsgTypes.FEEDBACK_SUCCESS,
 				MsgTypes.FEEDBACK_FAILED, loErrCodeParser);
-	}
-
-	/**
-	 * 获取最新版本信息
-	 *
-	 * @param poContext
-	 */
-	public static void getLastVersion(Context poContext) {
-		String lsUrl = "app/getLastestVersion/platform/android";
-		ErrCodeParser loErrCodeParser = new ErrCodeParser() {
-			@Override
-			public String getErrMsg(int piErrCode) {
-				return "错误码：" + piErrCode;
-			}
-		};
-		Map<String, String> lmParams = new HashMap<String, String>();
-		initHttpPamas(lmParams);
-		newBusiness(poContext, lsUrl, HTTP_METHOD_GET, lmParams, RESPONSE_TYPE_SINGLE, null,
-				MsgTypes.GET_LAST_VERSION_SUCCESS, MsgTypes.GET_LAST_VERSION_FAILED, loErrCodeParser);
-	}
-
-	/**
-	 * 举报
-	 *
-	 * @param poContext
-	 * @param psRid
-	 * @param piType    举报类型1 : 色情 2 ：垃圾 3 ：人身 4 ：敏感 5 ： 虚假 6 ：其他
-	 */
-	public static void reportIllegal(Context poContext, String psRid, int piType) {
-		Map<String, String> lmParams = new HashMap<String, String>();
-		lmParams.put("rid", psRid);
-		lmParams.put("type", String.valueOf(piType));
-		String lsUrl = "room/userReport";
-		ErrCodeParser loErrCodeParser = new ErrCodeParser() {
-			@Override
-			public String getErrMsg(int piErrCode) {
-				String lsMsg;
-				switch (piErrCode) {
-					case -100:
-						lsMsg = "请登录";
-						break;
-					case 300:
-						lsMsg = "操作过于频繁";
-						break;
-					case 301:
-						lsMsg = "提交失败";
-						break;
-					default:
-						lsMsg = "错误码：" + piErrCode;
-						break;
-				}
-				return lsMsg;
-			}
-		};
-		initHttpPamas(lmParams);
-		newBusiness(poContext, lsUrl, HTTP_METHOD_GET, lmParams, RESPONSE_TYPE_NULL, null,
-				MsgTypes.REPORT_ILLEGAL_SUCCESS, MsgTypes.REPORT_ILLEGAL_FAILED, loErrCodeParser);
 	}
 
 	/**
@@ -722,37 +315,6 @@ public class Business {
 				MsgTypes.GETBACK_LOGIN_PWD_SUCCESS, MsgTypes.GETBACK_LOGIN_PWD_FAILED, loErrCodeParser);
 	}
 
-	/**
-	 * 获取关注列表
-	 *
-	 * @param poContext
-	 */
-	public static void getLoveList(Context poContext) {
-		String lsUrl = "user/loveList";
-		Map<String, String> lmParams = new HashMap<String, String>();
-		initHttpPamas(lmParams);
-		newBusiness(poContext, lsUrl, HTTP_METHOD_POST, lmParams, RESPONSE_TYPE_MULTI, null,
-				MsgTypes.GET_LOVE_LIST_SUCCESS, MsgTypes.GET_LOVE_LIST_FAILED, null);
-	}
-
-	/**
-	 * 获取粉丝列表
-	 *
-	 * @param poContext
-	 * @param piPageNum
-	 * @param piLimit
-	 */
-	public static void getFollowList(Context poContext, int piPageNum, int piLimit) {
-		Map<String, String> lmParams = new HashMap<String, String>();
-		lmParams.put("page", String.valueOf(piPageNum));
-		lmParams.put("limit", String.valueOf(piLimit));
-		initHttpPamas(lmParams);
-
-		String lsUrl = "user/followList";
-		newBusiness(poContext, lsUrl, HTTP_METHOD_GET, lmParams, RESPONSE_TYPE_MULTI, null,
-				MsgTypes.GET_FOLLOWED_LIST_SUCCESS, MsgTypes.GET_FOLLOWED_LIST_FAILED, null);
-	}
-
 	private static void initHttpPamas(Map<String, String> httpPamas) {
 		httpPamas.put("version", appVersion);
 		httpPamas.put("platform", platform);
@@ -795,13 +357,13 @@ public class Business {
 					// 2 会话链接
 					HttpResponse loResponse;
 					if (piHttpMethod == HTTP_METHOD_GET) {
-						String lsAbsUrl = HttpNetConstants.BASE_URL_SERVER + "/" + psUrl;
+						String lsAbsUrl = HttpConstants.BASE_URL_SERVER + "/" + psUrl;
 						if (pmParams != null)
 							lsAbsUrl += "?" + buildGetParams(pmParams);
 						loResponse = loHttp.get(lsAbsUrl);
 						EvtLog.d("", lsAbsUrl);
 					} else if (piHttpMethod == HTTP_METHOD_POST) {
-						loResponse = loHttp.post(HttpNetConstants.BASE_URL_SERVER + "/" + psUrl, pmParams == null ? null
+						loResponse = loHttp.post(HttpConstants.BASE_URL_SERVER + "/" + psUrl, pmParams == null ? null
 								: buildPostParams(pmParams));
 					} else
 						return;

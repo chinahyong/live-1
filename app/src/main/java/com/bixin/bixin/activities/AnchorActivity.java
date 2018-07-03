@@ -29,7 +29,7 @@ import java.util.Map;
 
 import com.framework.net.impl.CallbackDataHandle;
 import tv.live.bx.R;
-import com.bixin.bixin.activities.base.BaseFragmentActivity;
+import com.bixin.bixin.base.act.BaseFragmentActivity;
 import com.bixin.bixin.common.BusinessUtils;
 import com.bixin.bixin.common.Constants;
 import com.bixin.bixin.common.MsgTypes;

@@ -18,13 +18,13 @@ import com.bixin.bixin.common.Constants;
 import com.bixin.bixin.common.Consts;
 import com.bixin.bixin.common.JacksonUtil;
 import com.bixin.bixin.common.MsgTypes;
-import com.bixin.bixin.common.OperationHelper;
+import com.bixin.bixin.common.helper.operation.OperationHelper;
 import com.bixin.bixin.common.Utils;
-import com.bixin.bixin.common.bean.HttpNetConstants;
-import com.bixin.bixin.config.AppConfig;
-import com.bixin.bixin.config.DomainConfig;
-import com.bixin.bixin.config.UserInfoConfig;
-import com.bixin.bixin.imageloader.ImageLoaderUtil;
+import com.bixin.bixin.common.model.HttpConstants;
+import com.bixin.bixin.common.config.AppConfig;
+import com.bixin.bixin.common.config.DomainConfig;
+import com.bixin.bixin.common.config.UserInfoConfig;
+import com.bixin.bixin.common.imageloader.ImageLoaderUtil;
 import com.bixin.bixin.library.util.EvtLog;
 import com.bixin.bixin.library.util.PackageUtil;
 import com.bixin.bixin.library.util.TelephoneUtil;
@@ -131,7 +131,7 @@ public class WelcomeActivity extends FragmentActivity {
 //			String httpDomainLists = DomainConfig.getInstance().http_domain_lists;
 //
 //			ArrayList<String> arrayList = new ArrayList<>();
-//			arrayList.add(HttpNetConstants.BASE_HTTP_DOMAIN);
+//			arrayList.add(HttpConstants.BASE_HTTP_DOMAIN);
 //
 //			if (!TextUtils.isEmpty(httpDomainLists)) {
 //				JSONArray temp = new JSONArray(httpDomainLists);
@@ -293,7 +293,7 @@ public class WelcomeActivity extends FragmentActivity {
 							DomainConfig.getInstance().updateSafeHttpDomain(current_http_domain);
 
 						} else {
-							if (errorCode == HttpNetConstants.SENT_STATUS_DNS_ERROR) {
+							if (errorCode == HttpConstants.SENT_STATUS_DNS_ERROR) {
 //								requestHttpDomain(array, position + 1);
 							}
 						}

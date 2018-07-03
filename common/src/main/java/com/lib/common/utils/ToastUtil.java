@@ -2,6 +2,7 @@ package com.lib.common.utils;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.annotation.UiThread;
 import android.text.TextUtils;
 import android.widget.Toast;
@@ -18,7 +19,7 @@ public class ToastUtil {
 	 * 顯示Toast.short
 	 */
 	@UiThread
-	public static void showToast(@NonNull Context context, int toastId) {
+	public static void showToast(@NonNull Context context,@Nullable int toastId) {
 		if (null == toast) {
 			toast = Toast.makeText(context, toastId, Toast.LENGTH_SHORT);
 		} else {
@@ -31,7 +32,7 @@ public class ToastUtil {
 	 * Toast.short
 	 */
 	@UiThread
-	public static void showToast(@NonNull Context context, String msg) {
+	public static void showToast(@NonNull Context context,@Nullable String msg) {
 		if (TextUtils.isEmpty(msg)) {
 			return;
 		}
@@ -47,7 +48,7 @@ public class ToastUtil {
 	 * Toast 指定時間
 	 */
 	@UiThread
-	public static void showToast(@NonNull Context context, String msg, int duration) {
+	public static void showToast(@NonNull Context context,@Nullable String msg, int duration) {
 		if (TextUtils.isEmpty(msg)) {
 			return;
 		}
@@ -63,7 +64,7 @@ public class ToastUtil {
 	 * Toast 指定時間
 	 */
 	@UiThread
-	public static void showToast(@NonNull Context context, int toastid, int duration) {
+	public static void showToast(@NonNull Context context,@Nullable int toastid, int duration) {
 		if (null == toast) {
 			toast = Toast.makeText(context, toastid, duration > 0 ? duration : Toast.LENGTH_SHORT);
 		} else {
@@ -76,7 +77,7 @@ public class ToastUtil {
 	 * 展示Toast.Long
 	 */
 	@UiThread
-	public static void showLong(@NonNull Context context, String msg) {
+	public static void showLong(@NonNull Context context,@Nullable String msg) {
 		if (TextUtils.isEmpty(msg)) {
 			return;
 		}
@@ -92,7 +93,7 @@ public class ToastUtil {
 	 * 展示Toast.Long
 	 */
 	@UiThread
-	public static void showLong(@NonNull Context context, int toastid) {
+	public static void showLong(@NonNull Context context,@Nullable int toastid) {
 		if (null == toast) {
 			toast = Toast.makeText(context, toastid, Toast.LENGTH_LONG);
 		} else {
@@ -104,7 +105,7 @@ public class ToastUtil {
 	/**
 	 * toast不为空，设置内容时间
 	 */
-	private static void show(int toastId, int duration) {
+	private static void show(@Nullable int toastId, int duration) {
 		toast.setText(toastId);
 		toast.setDuration(duration);
 	}
@@ -112,7 +113,7 @@ public class ToastUtil {
 	/**
 	 * toast不為空，更改內容，時間
 	 */
-	private static void show(String msg, int duration) {
+	private static void show(@Nullable String msg, int duration) {
 		if (TextUtils.isEmpty(msg)) {
 			return;
 		}

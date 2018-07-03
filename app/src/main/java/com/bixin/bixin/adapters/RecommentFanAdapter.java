@@ -17,7 +17,7 @@ import jp.wasabeef.glide.transformations.RoundedCornersTransformation.CornerType
 import tv.live.bx.R;
 import com.bixin.bixin.adapters.FanExpandableAdapter.OnItemClickListener;
 import com.bixin.bixin.common.Constants;
-import com.bixin.bixin.imageloader.ImageLoaderUtil;
+import com.bixin.bixin.common.imageloader.ImageLoaderUtil;
 
 /**
  * 推荐饭圈

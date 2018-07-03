@@ -441,7 +441,7 @@ public class PackageUtil {
 	}
 
 	/**
-	 * isGuojiangPackage:(是否为果酱的应用). <br/>
+	 * isGuojiangPackage:(是否为咕叽的应用). <br/>
 	 *
 	 * @return true 是；false 否
 	 */

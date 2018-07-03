@@ -21,8 +21,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 import com.bixin.bixin.activities.WebViewActivity;
-import com.bixin.bixin.common.WebConstants;
-import com.bixin.bixin.common.bean.LibConstants;
+import com.bixin.bixin.common.model.WebConstants;
+import com.bixin.bixin.common.model.LibConstants;
 import com.bixin.bixin.library.util.EvtLog;
 
 public class WXPayEntryActivity extends Activity implements IWXAPIEventHandler {

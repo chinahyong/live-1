@@ -20,7 +20,7 @@ import java.util.List;
 
 import com.framework.net.impl.CallbackDataHandle;
 import tv.live.bx.R;
-import com.bixin.bixin.activities.base.BaseFragmentActivity;
+import com.bixin.bixin.base.act.BaseFragmentActivity;
 import com.bixin.bixin.adapters.IconPageAdapter;
 import com.bixin.bixin.callback.LevelInfoReceiverListener;
 import com.bixin.bixin.common.BusinessUtils;
@@ -28,7 +28,7 @@ import com.bixin.bixin.common.Constants;
 import com.bixin.bixin.common.JacksonUtil;
 import com.bixin.bixin.common.MsgTypes;
 import com.bixin.bixin.common.Utils;
-import com.bixin.bixin.config.AppConfig;
+import com.bixin.bixin.common.config.AppConfig;
 import com.bixin.bixin.library.util.EvtLog;
 import com.bixin.bixin.library.util.TelephoneUtil;
 import com.bixin.bixin.util.ActivityJumpUtil;

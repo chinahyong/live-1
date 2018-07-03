@@ -1,7 +1,5 @@
 package com.bixin.bixin.activities;
 
-import static com.bixin.bixin.activities.EditAlbumActivity.File_Dir;
-
 import android.Manifest;
 import android.content.Intent;
 import android.net.Uri;
@@ -18,31 +16,36 @@ import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.GridView;
 import android.widget.ImageView;
-import com.framework.net.impl.CallbackDataHandle;
-import com.umeng.analytics.MobclickAgent;
-import java.io.File;
-import java.io.Serializable;
-import java.lang.ref.WeakReference;
-import java.util.ArrayList;
+
 import com.bixin.bixin.App;
-import tv.live.bx.R;
-import com.bixin.bixin.activities.base.BaseFragmentActivity;
+import com.bixin.bixin.base.act.BaseFragmentActivity;
 import com.bixin.bixin.common.BusinessUtils;
 import com.bixin.bixin.common.Constants;
 import com.bixin.bixin.common.MsgTypes;
 import com.bixin.bixin.common.PermissionUtil;
-import com.bixin.bixin.common.PhotoOperate;
-import com.bixin.bixin.common.PhotoSelectImpl;
 import com.bixin.bixin.common.Utils;
+import com.bixin.bixin.common.config.AppConfig;
+import com.bixin.bixin.common.helper.photo.PhotoOperate;
+import com.bixin.bixin.common.helper.photo.PhotoSelectImpl;
+import com.bixin.bixin.common.imageloader.ImageLoaderUtil;
 import com.bixin.bixin.common.photopick.ImageInfo;
-import com.bixin.bixin.config.AppConfig;
-import com.bixin.bixin.imageloader.ImageLoaderUtil;
 import com.bixin.bixin.library.util.BitmapUtility;
 import com.bixin.bixin.library.util.BitmapUtils;
 import com.bixin.bixin.library.util.EvtLog;
 import com.bixin.bixin.library.util.FileUtil;
 import com.bixin.bixin.ui.ActionSheetDialog;
 import com.bixin.bixin.util.UiHelper;
+import com.framework.net.impl.CallbackDataHandle;
+import com.umeng.analytics.MobclickAgent;
+
+import java.io.File;
+import java.io.Serializable;
+import java.lang.ref.WeakReference;
+import java.util.ArrayList;
+
+import tv.live.bx.R;
+
+import static com.bixin.bixin.user.act.EditAlbumActivity.File_Dir;
 
 
 public class ReportActivity extends BaseFragmentActivity implements OnClickListener {

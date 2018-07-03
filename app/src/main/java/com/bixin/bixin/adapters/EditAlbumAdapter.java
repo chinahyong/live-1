@@ -18,7 +18,7 @@ import jp.wasabeef.glide.transformations.RoundedCornersTransformation.CornerType
 import tv.live.bx.R;
 import com.bixin.bixin.common.Constants;
 import com.bixin.bixin.common.Utils;
-import com.bixin.bixin.imageloader.ImageLoaderUtil;
+import com.bixin.bixin.common.imageloader.ImageLoaderUtil;
 import com.bixin.bixin.library.util.EvtLog;
 import com.bixin.bixin.listeners.ItemTouchCallbackListener;
 import com.bixin.bixin.model.AlbumBean;

@@ -15,7 +15,7 @@ import java.util.Map;
 
 import android.text.TextUtils;
 
-import com.bixin.bixin.common.bean.HttpNetConstants;
+import com.bixin.bixin.common.model.HttpConstants;
 import com.framework.lang.IOUtils;
 import com.framework.net.ACommunication;
 import com.framework.net.AEntity;
@@ -90,7 +90,7 @@ public class PostCommunication extends ACommunication {
 			int responseCode = httpconn.getResponseCode();
 			entity.http_ResponseCode = responseCode;
 			if (responseCode != 200) {
-				entity.sentStatus = HttpNetConstants.SENT_STATUS_ERROR_SERVER;
+				entity.sentStatus = HttpConstants.SENT_STATUS_ERROR_SERVER;
 			} else {
 				entity.receiveHeaders = httpconn.getHeaderFields();
 				inPs = httpconn.getInputStream();
@@ -117,7 +117,7 @@ public class PostCommunication extends ACommunication {
 				}
 				entity.receiveData = new String(bytes, "UTF-8");
 				entity.decodeReceiveData();
-				entity.sentStatus = HttpNetConstants.SENT_STATUS_SUCCESS;
+				entity.sentStatus = HttpConstants.SENT_STATUS_SUCCESS;
 			}
 			NetLogs.d_netstep(entity, "PostCommunication", "respcode:"
 					+ responseCode, "Get->Finish");
@@ -151,11 +151,11 @@ public class PostCommunication extends ACommunication {
 		ex.printStackTrace();
 		String msg = ex.getMessage();
 		if (msg != null && msg.indexOf("Connection timed out") > -1) {
-			entity.sentStatus = HttpNetConstants.SENT_STATUS_TIMEOUT;
+			entity.sentStatus = HttpConstants.SENT_STATUS_TIMEOUT;
 		} else if (msg != null && msg.indexOf("Connection refused") > -1) {
-			entity.sentStatus = HttpNetConstants.SENT_STATUS_ERROR_SERVER;
+			entity.sentStatus = HttpConstants.SENT_STATUS_ERROR_SERVER;
 		} else {
-			entity.sentStatus = HttpNetConstants.SENT_STATUS_ERROR_NET;
+			entity.sentStatus = HttpConstants.SENT_STATUS_ERROR_NET;
 		}
 	}
 

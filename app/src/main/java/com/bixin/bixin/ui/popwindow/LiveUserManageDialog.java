@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 import tv.live.bx.R;
 import com.bixin.bixin.common.Constants;
-import com.bixin.bixin.config.AppConfig;
+import com.bixin.bixin.common.config.AppConfig;
 
 /**
  * Created by BYC on 2017/8/15.

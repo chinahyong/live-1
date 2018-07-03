@@ -10,11 +10,28 @@ import android.widget.TextView;
 
 import com.bigkoo.convenientbanner.ConvenientBanner;
 import com.bigkoo.convenientbanner.holder.CBViewHolderCreator;
-import com.bigkoo.convenientbanner.holder.NetworkImageHolderView;
+import com.bigkoo.convenientbanner.holder.Holder;
 import com.bixin.bixin.App;
+import com.bixin.bixin.activities.WebViewActivity;
+import com.bixin.bixin.adapters.LiveRecommendListAdapter;
+import com.bixin.bixin.common.BusinessUtils;
+import com.bixin.bixin.common.Consts;
+import com.bixin.bixin.common.MsgTypes;
+import com.bixin.bixin.common.helper.operation.OperationHelper;
+import com.bixin.bixin.common.Utils;
+import com.bixin.bixin.database.DatabaseUtils;
+import com.bixin.bixin.common.imageloader.NetworkImageHolderView;
+import com.bixin.bixin.library.util.EvtLog;
+import com.bixin.bixin.model.AnchorBean;
+import com.bixin.bixin.ui.LoadingProgress;
+import com.bixin.bixin.ui.widget.CustomRefreshLayout;
+import com.bixin.bixin.ui.widget.HeaderFooterGridView;
+import com.bixin.bixin.util.ActivityJumpUtil;
+import com.bixin.bixin.util.UiHelper;
+import com.framework.net.impl.CallbackDataHandle;
 import com.lonzh.lib.network.JSONParser;
 import com.umeng.analytics.MobclickAgent;
-import com.wxy.adbanner.entity.AdInfo;
+import com.bixin.bixin.home.model.AdInfo;
 
 import org.json.JSONArray;
 
@@ -26,23 +43,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
-import com.framework.net.impl.CallbackDataHandle;
 import tv.live.bx.R;
-import com.bixin.bixin.activities.WebViewActivity;
-import com.bixin.bixin.adapters.LiveRecommendListAdapter;
-import com.bixin.bixin.common.BusinessUtils;
-import com.bixin.bixin.common.Consts;
-import com.bixin.bixin.common.MsgTypes;
-import com.bixin.bixin.common.OperationHelper;
-import com.bixin.bixin.common.Utils;
-import com.bixin.bixin.database.DatabaseUtils;
-import com.bixin.bixin.library.util.EvtLog;
-import com.bixin.bixin.model.AnchorBean;
-import com.bixin.bixin.ui.LoadingProgress;
-import com.bixin.bixin.ui.widget.CustomRefreshLayout;
-import com.bixin.bixin.ui.widget.HeaderFooterGridView;
-import com.bixin.bixin.util.ActivityJumpUtil;
-import com.bixin.bixin.util.UiHelper;
 
 
 /**
@@ -237,9 +238,16 @@ public class LiveRecommendFragment extends BaseFragment implements View.OnClickL
 		//适配banner图片资源以及item点击事件
 		mBanner.setPages(new CBViewHolderCreator() {
 			@Override
-			public Object createHolder() {
-				return new NetworkImageHolderView();
+			public Holder createHolder(View view) {
+				NetworkImageHolderView holderView = new NetworkImageHolderView(view);
+				return holderView;
 			}
+
+			@Override
+			public int getLayoutId() {
+				return R.layout.banner_image_layout;
+			}
+
 		}, mAdInfoList)
 				.setOnItemClickListener(new com.bigkoo.convenientbanner.listener.OnItemClickListener() {
 					@Override
@@ -297,7 +305,7 @@ public class LiveRecommendFragment extends BaseFragment implements View.OnClickL
 	public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 		OperationHelper.onEvent(App.mContext, "clickBbroadcasterSImgInRecommendTab", null);
 		int pos = position - mGridView.getHeaderViewCount() * mGridView.getNumColumns();
-		if(pos >= mRecommendAdapter.getCount())
+		if (pos >= mRecommendAdapter.getCount())
 			return;
 		AnchorBean bean = (AnchorBean) mRecommendAdapter.getItem(pos);
 		Map<String, Object> lmItem = new HashMap<>();
@@ -329,8 +337,8 @@ public class LiveRecommendFragment extends BaseFragment implements View.OnClickL
 				if (page == 0) {
 					// 收起正在刷新HeaderView
 					refreshLayout.onRefreshComplete();
-				}else {
-				   refreshLayout.onLoadingComplete(false, false);
+				} else {
+					refreshLayout.onLoadingComplete(false, false);
 				}
 
 				if (mRecommendAdapter.isEmpty()) {

@@ -12,9 +12,9 @@ import com.handmark.pulltorefresh.library.PullToRefreshHeaderGridView;
 import java.io.Serializable;
 
 import tv.live.bx.R;
-import com.bixin.bixin.activities.base.BaseFragmentActivity;
+import com.bixin.bixin.base.act.BaseFragmentActivity;
 import com.bixin.bixin.adapters.LiveTagListAdapter;
-import com.bixin.bixin.config.AppConfig;
+import com.bixin.bixin.common.config.AppConfig;
 import com.bixin.bixin.ui.ListFooterLoadView;
 import com.bixin.bixin.ui.LoadingProgress;
 

@@ -10,9 +10,9 @@ import java.io.Serializable;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import com.bixin.bixin.activities.CalMainActivity;
-import com.bixin.bixin.activities.EditDataActivity;
-import com.bixin.bixin.activities.EditInfoActivity;
+import com.bixin.bixin.activities.MainActivity;
+import com.bixin.bixin.user.act.EditUserActivity;
+import com.bixin.bixin.user.act.EditSignatureActivity;
 import com.bixin.bixin.activities.ImageBrowserActivity;
 import com.bixin.bixin.activities.LiveTypeActivity;
 import com.bixin.bixin.user.act.LoginActivity;
@@ -42,7 +42,7 @@ public class ActivityJumpUtil {
 	 * 转向Activity
 	 */
 	public static void welcomeToMainActivity(Activity activity) {
-		Intent intent = new Intent(activity, CalMainActivity.class);
+		Intent intent = new Intent(activity, MainActivity.class);
 		activity.startActivity(intent);
 		activity.finish();
 	}
@@ -124,12 +124,12 @@ public class ActivityJumpUtil {
 
 	public static void toEditInfoActivity(Activity activity, int piRequestCode, String content, String tipInfo,
 										  String title, int min, int max) {
-		Intent intent = new Intent(activity, EditInfoActivity.class);
-		intent.putExtra(EditInfoActivity.TEXT_TIP, tipInfo);
-		intent.putExtra(EditInfoActivity.EDIT_CONTENT, content);
-		intent.putExtra(EditInfoActivity.TITLE, title);
-		intent.putExtra(EditInfoActivity.MIN_NUM_INFO, min);
-		intent.putExtra(EditInfoActivity.MAX_NUM_INFO, max);
+		Intent intent = new Intent(activity, EditSignatureActivity.class);
+		intent.putExtra(EditSignatureActivity.TEXT_TIP, tipInfo);
+		intent.putExtra(EditSignatureActivity.EDIT_CONTENT, content);
+		intent.putExtra(EditSignatureActivity.TITLE, title);
+		intent.putExtra(EditSignatureActivity.MIN_NUM_INFO, min);
+		intent.putExtra(EditSignatureActivity.MAX_NUM_INFO, max);
 		activity.startActivityForResult(intent, piRequestCode);
 	}
 
@@ -186,8 +186,8 @@ public class ActivityJumpUtil {
 	 */
 	public static void toEditDataActivity(Activity activity, boolean isEditable,
 										  int requestCode) {
-		Intent intent = new Intent(activity, EditDataActivity.class);
-		intent.putExtra(EditDataActivity.IS_EDITABLE, isEditable);
+		Intent intent = new Intent(activity, EditUserActivity.class);
+		intent.putExtra(EditUserActivity.IS_EDITABLE, isEditable);
 		activity.startActivityForResult(intent, requestCode);
 	}
 
@@ -283,7 +283,7 @@ public class ActivityJumpUtil {
 
 
 	public static void toCalMainActivity(Activity context) {
-		Intent intent = new Intent(context, CalMainActivity.class);
+		Intent intent = new Intent(context, MainActivity.class);
 		intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 		context.startActivity(intent);
 	}

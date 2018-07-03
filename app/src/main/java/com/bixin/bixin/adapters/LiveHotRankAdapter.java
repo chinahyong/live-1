@@ -12,8 +12,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import tv.live.bx.R;
-import com.bixin.bixin.config.UserInfoConfig;
-import com.bixin.bixin.imageloader.ImageLoaderUtil;
+import com.bixin.bixin.common.config.UserInfoConfig;
+import com.bixin.bixin.common.imageloader.ImageLoaderUtil;
 import com.bixin.bixin.model.AnchorBean;
 
 /**

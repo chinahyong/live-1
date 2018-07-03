@@ -21,7 +21,7 @@ import java.util.Map;
 
 import tv.live.bx.R;
 import com.bixin.bixin.common.Utils;
-import com.bixin.bixin.imageloader.ImageLoaderUtil;
+import com.bixin.bixin.common.imageloader.ImageLoaderUtil;
 
 /**
  * 礼物GridView的适配器

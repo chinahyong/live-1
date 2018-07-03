@@ -17,7 +17,7 @@ import java.io.File;
 import java.io.IOException;
 
 import tv.live.bx.R;
-import com.bixin.bixin.activities.base.BaseFragmentActivity;
+import com.bixin.bixin.base.act.BaseFragmentActivity;
 import com.bixin.bixin.library.util.BitmapUtility;
 import com.bixin.bixin.library.util.BitmapUtils;
 import com.bixin.bixin.library.util.EvtLog;

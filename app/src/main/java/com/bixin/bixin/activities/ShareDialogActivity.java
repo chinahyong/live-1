@@ -6,6 +6,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 
+import com.bixin.bixin.base.act.BaseFragmentActivity;
+import com.bixin.bixin.common.BusinessUtils;
+import com.bixin.bixin.common.Consts;
+import com.bixin.bixin.common.Utils;
+import com.bixin.bixin.library.util.EvtLog;
+import com.bixin.bixin.ui.ShareDialog;
 import com.umeng.analytics.MobclickAgent;
 import com.umeng.analytics.social.UMPlatformData;
 import com.umeng.analytics.social.UMPlatformData.UMedia;
@@ -20,12 +26,6 @@ import com.umeng.socialize.media.UMWeb;
 import java.util.Map;
 
 import tv.live.bx.R;
-import com.bixin.bixin.activities.base.BaseFragmentActivity;
-import com.bixin.bixin.common.BusinessUtils;
-import com.bixin.bixin.common.Consts;
-import com.bixin.bixin.common.Utils;
-import com.bixin.bixin.library.util.EvtLog;
-import com.bixin.bixin.ui.ShareDialog;
 
 /**
  * @version 1.0
@@ -36,8 +36,8 @@ public class ShareDialogActivity extends BaseFragmentActivity {
 	 * 分享对话框
 	 */
 	private ShareDialog shareDialog;
-	protected String shareContent; // "果酱||鲜肉大叔妖男Young，基腐宅萌有果酱,快来看****的直播，美CRY！！  ";
-	protected String shareTitle; // "果酱直播";
+	protected String shareContent; // "咕叽||鲜肉大叔妖男Young，基腐宅萌有咕叽,快来看****的直播，美CRY！！  ";
+	protected String shareTitle; // "咕叽直播";
 	protected String shareUrImg; // "http://www.guojiang.tv/img/roomlogo/poyin.jpg";
 	protected String shareUrl; // "http://www.guojiang.tv";
 	public static final int SHARE_REQUEST_CODE = 0x1010;
@@ -178,7 +178,7 @@ public class ShareDialogActivity extends BaseFragmentActivity {
 		// 初始化数据
 		shareContent = "土豪都在围观的美女直播，你还不来！";
 		shareUrl = Consts.DOWNLOAD_URL_SERVER;
-		shareTitle = Consts.SHARE_TITLE; // "果酱";
+		shareTitle = Consts.SHARE_TITLE; // "咕叽";
 		shareUrImg = Consts.SHARE_URI_IMG;
 
 		if (shareInfo != null) {

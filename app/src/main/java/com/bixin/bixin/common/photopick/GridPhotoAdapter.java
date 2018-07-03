@@ -12,7 +12,7 @@ import android.widget.ImageView;
 import com.bixin.bixin.App;
 import tv.live.bx.R;
 import com.bixin.bixin.common.photopick.PhotoPickActivity.GridViewCheckTag;
-import com.bixin.bixin.imageloader.ImageLoaderUtil;
+import com.bixin.bixin.common.imageloader.ImageLoaderUtil;
 
 /**
  * Created by chenchao on 15/5/6.

@@ -4,7 +4,7 @@ package com.bixin.bixin.callback;
  * Created by Administrator on 2017/5/27.
  */
 
-import com.bixin.bixin.config.AppConfig;
+import com.bixin.bixin.common.config.AppConfig;
 import com.bixin.bixin.library.util.EvtLog;
 
 import com.framework.net.impl.CallbackDataHandle;

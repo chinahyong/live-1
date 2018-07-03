@@ -27,7 +27,7 @@ import com.bixin.bixin.activities.ShareDialogActivity;
 import com.bixin.bixin.activities.WebViewActivity;
 import com.bixin.bixin.common.BusinessUtils;
 import com.bixin.bixin.common.Constants;
-import com.bixin.bixin.config.AppConfig;
+import com.bixin.bixin.common.config.AppConfig;
 import com.bixin.bixin.library.util.EvtLog;
 import com.bixin.bixin.library.util.PackageUtil;
 import com.bixin.bixin.live.activities.LiveMediaPlayerActivity;

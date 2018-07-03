@@ -33,13 +33,13 @@ import java.util.Map;
 import com.framework.net.impl.CallbackDataHandle;
 import com.bixin.bixin.App;
 import tv.live.bx.R;
-import com.bixin.bixin.activities.base.BaseFragmentActivity;
+import com.bixin.bixin.base.act.BaseFragmentActivity;
 import com.bixin.bixin.adapters.UserInviterListAdater;
 import com.bixin.bixin.common.BusinessUtils;
 import com.bixin.bixin.common.Constants;
 import com.bixin.bixin.common.Consts;
 import com.bixin.bixin.common.Utils;
-import com.bixin.bixin.common.WebConstants;
+import com.bixin.bixin.common.model.WebConstants;
 import com.bixin.bixin.library.util.EvtLog;
 import com.bixin.bixin.util.ActivityJumpUtil;
 import com.bixin.bixin.util.UiHelper;
@@ -71,8 +71,8 @@ public class UserInviterActivity extends BaseFragmentActivity implements OnClick
 	private SwipeRefreshLayout swipeRefreshLayout;
 	private AlertDialog mProgress;
 
-	protected String shareContent; // "果酱||鲜肉大叔妖男Young，基腐宅萌有果酱,快来看****的直播，美CRY！！  ";
-	protected String shareTitle; // "果酱直播";
+	protected String shareContent; // "咕叽||鲜肉大叔妖男Young，基腐宅萌有咕叽,快来看****的直播，美CRY！！  ";
+	protected String shareTitle; // "咕叽直播";
 	protected String shareUrl; // "http://www.guojiang.tv";
 
 	private String mUserInfoId;
@@ -274,7 +274,7 @@ public class UserInviterActivity extends BaseFragmentActivity implements OnClick
 	private void initShareInfo() {
 		shareContent = String.format(WebConstants.SHARE_INVATE_CONTENT, mUserInfoId);
 		shareUrl = String.format(WebConstants.getFullWebMDomain(WebConstants.SHARE_INVATE_URL), mUserInfoId);
-		shareTitle = Consts.SHARE_TITLE; // "果酱";
+		shareTitle = Consts.SHARE_TITLE; // "咕叽";
 	}
 
 	/**

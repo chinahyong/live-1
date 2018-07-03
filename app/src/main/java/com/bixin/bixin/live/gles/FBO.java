@@ -5,7 +5,7 @@ import android.opengl.GLES20;
 import android.opengl.GLSurfaceView;
 import android.util.Log;
 
-import com.bixin.bixin.config.UserInfoConfig;
+import com.bixin.bixin.common.config.UserInfoConfig;
 import com.bixin.bixin.live.filter.CameraFilterBeauty;
 
 /**

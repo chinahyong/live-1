@@ -22,12 +22,12 @@ import java.util.Map;
 
 import com.framework.net.impl.CallbackDataHandle;
 import tv.live.bx.R;
-import com.bixin.bixin.activities.base.BaseFragmentActivity;
+import com.bixin.bixin.base.act.BaseFragmentActivity;
 import com.bixin.bixin.adapters.RecommendListAdapter;
 import com.bixin.bixin.common.BusinessUtils;
 import com.bixin.bixin.common.Constants;
 import com.bixin.bixin.common.MsgTypes;
-import com.bixin.bixin.common.OperationHelper;
+import com.bixin.bixin.common.helper.operation.OperationHelper;
 import com.bixin.bixin.common.Utils;
 import com.bixin.bixin.library.util.EvtLog;
 import com.bixin.bixin.ui.LoadingProgress;

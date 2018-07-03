@@ -7,7 +7,8 @@ package com.bixin.bixin.websocket.live;
 import android.text.TextUtils;
 
 import com.bixin.bixin.common.Constants;
-import com.bixin.bixin.config.AppConfig;
+import com.bixin.bixin.common.model.HttpConstants;
+import com.bixin.bixin.common.config.AppConfig;
 import com.bixin.bixin.library.util.EvtLog;
 import com.lonzh.lib.network.JSONParser;
 
@@ -16,7 +17,6 @@ import org.json.JSONObject;
 
 import java.util.Map;
 
-import com.bixin.bixin.common.bean.HttpNetConstants;
 import de.tavendo.autobahn.WebSocketConnectionHandler;
 
 /**
@@ -51,12 +51,12 @@ public class WebSocketFlowerHandler extends WebSocketConnectionHandler {
 			Object resultData = json.opt("data");
 			String errno = json.optString("errno");
 			String msg = json.optString("msg");
-			if (HttpNetConstants.SENT_STATUS_NEED_LOGIN.equals(errno)) {
+			if (HttpConstants.SENT_STATUS_NEED_LOGIN.equals(errno)) {
 				// 设置未登录
 				AppConfig.getInstance().updateLoginStatus(false);
 			}
 
-			if (!HttpNetConstants.SENT_STATUS_SUCCESS.equals(errno)) {
+			if (!HttpConstants.SENT_STATUS_SUCCESS.equals(errno)) {
 				if (callback != null) {
 					callback.onError(errno, msg, methodName);
 				}

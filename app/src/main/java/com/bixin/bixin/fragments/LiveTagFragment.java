@@ -32,7 +32,7 @@ import com.bixin.bixin.adapters.LiveFragmentStatusAdapter;
 import com.bixin.bixin.adapters.LiveTagAdapter;
 import com.bixin.bixin.common.BusinessUtils;
 import com.bixin.bixin.common.MsgTypes;
-import com.bixin.bixin.common.OperationHelper;
+import com.bixin.bixin.common.helper.operation.OperationHelper;
 import com.bixin.bixin.database.DatabaseUtils;
 import com.bixin.bixin.library.util.EvtLog;
 import com.bixin.bixin.listeners.GoHotClickListener;

@@ -3,7 +3,8 @@ package com.bixin.bixin.common;
 import android.content.Context;
 import android.text.TextUtils;
 
-import com.bixin.bixin.common.bean.HttpNetConstants;
+import com.bixin.bixin.common.model.HttpConstants;
+import com.bixin.bixin.common.model.WebConstants;
 import com.bixin.bixin.user.bean.HttpUserConstants;
 import com.framework.net.AEntity;
 import com.framework.net.BaseEntityImpl;
@@ -61,7 +62,7 @@ public class BusinessUtils {
         lmParams.put("password",
             Utils.rsaEncrypt((String) App.getCacheData("public_key"), psPassword));
         AEntity aEntity = new BaseEntityImpl(new IReceiverImpl(callDataHandle),
-            HttpNetConstants.getFullRequestUrl(HttpUserConstants.LOGIN_URL));
+            HttpConstants.getFullRequestUrl(HttpUserConstants.LOGIN_URL));
         aEntity.postDatas.putAll(lmParams);
         sendCookieHttps(poContext, aEntity);
     }
@@ -76,7 +77,7 @@ public class BusinessUtils {
         lmParams.put("openId", psOpenId);
         lmParams.put("expiredIn", psExpiredIn);
         AEntity aEntity = new BaseEntityImpl(new IReceiverImpl(callDataHandle),
-            HttpNetConstants.getFullRequestUrl(HttpNetConstants.LOGIN_BY_QQ));
+            HttpConstants.getFullRequestUrl(HttpConstants.LOGIN_BY_QQ));
         aEntity.postDatas.putAll(lmParams);
         sendCookieHttps(poContext, aEntity);
     }
@@ -91,7 +92,7 @@ public class BusinessUtils {
         lmParams.put("uid", uid);
         lmParams.put("expiredIn", psExpiredIn);
         AEntity aEntity = new BaseEntityImpl(new IReceiverImpl(callDataHandle),
-            HttpNetConstants.getFullRequestUrl(HttpNetConstants.LOGIN_BY_SINA));
+            HttpConstants.getFullRequestUrl(HttpConstants.LOGIN_BY_SINA));
         aEntity.postDatas.putAll(lmParams);
         sendCookieHttps(poContext, aEntity);
     }
@@ -112,7 +113,7 @@ public class BusinessUtils {
         lmParams.put("unionid", unionid);
         lmParams.put("expiredIn", psExpiredIn);
         AEntity aEntity = new BaseEntityImpl(new IReceiverImpl(callDataHandle),
-            HttpNetConstants.getFullRequestUrl(HttpNetConstants.LOGIN_BY_WECHAT));
+            HttpConstants.getFullRequestUrl(HttpConstants.LOGIN_BY_WECHAT));
         aEntity.postDatas.putAll(lmParams);
         sendCookieHttps(poContext, aEntity);
     }
@@ -122,7 +123,7 @@ public class BusinessUtils {
      */
     public static void getMyUserInfo(Context poContext, CallbackDataHandle callDataHandle) {
         AEntity aEntity = new BaseEntityImpl(new IReceiverImpl(callDataHandle),
-            HttpNetConstants.getFullRequestUrl(HttpNetConstants.GET_USER_INFO_URL));
+            HttpConstants.getFullRequestUrl(HttpConstants.GET_USER_INFO_URL));
         sendCookieHttps(poContext, aEntity);
     }
 
@@ -131,7 +132,7 @@ public class BusinessUtils {
      */
     public static void getPubKey(Context poContext, CallbackDataHandle callDataHandle) {
         AEntity aEntity = new BaseEntityImpl(new IReceiverImpl(callDataHandle),
-            HttpNetConstants.getFullRequestUrl(HttpNetConstants.GET_PUBKEY_URL));
+            HttpConstants.getFullRequestUrl(HttpConstants.GET_PUBKEY_URL));
         sendCookieHttps(poContext, aEntity);
     }
 
@@ -140,7 +141,7 @@ public class BusinessUtils {
      */
     public static void getMainBanners(Context poContext, CallbackDataHandle callDataHandle) {
         AEntity aEntity = new BaseEntityImpl(new IReceiverImpl(callDataHandle),
-            HttpNetConstants.getFullRequestUrl(HttpNetConstants.BANNER_URL));
+            HttpConstants.getFullRequestUrl(HttpConstants.BANNER_URL));
         sendCookieHttps(poContext, aEntity);
     }
 
@@ -149,7 +150,7 @@ public class BusinessUtils {
      */
     public static void getAuthorListData(Context poContext, int page, String type, int status,
         int limit, CallbackDataHandle callDataHandle) {
-        String URL = HttpNetConstants.getFullRequestUrl(HttpNetConstants.AUTHOR_LIST_URL) + "?page=" + page
+        String URL = HttpConstants.getFullRequestUrl(HttpConstants.AUTHOR_LIST_URL) + "?page=" + page
             + "&status=" + status;
         if (!TextUtils.isEmpty(type)) {
             URL = URL + "&type=" + type;
@@ -167,7 +168,7 @@ public class BusinessUtils {
     public static void getAuthorListDataByTag(Context poContext, int page, String tagId, int limit,
         CallbackDataHandle callDataHandle) {
         String URL =
-            HttpNetConstants.getFullRequestUrl(HttpNetConstants.AUTHOR_LIST_BY_TAG_URL) + "?page=" + page
+            HttpConstants.getFullRequestUrl(HttpConstants.AUTHOR_LIST_BY_TAG_URL) + "?page=" + page
                 + "&tagId=" + tagId;
         if (limit > 0) {
             URL = URL + "&limit=" + limit;
@@ -182,7 +183,7 @@ public class BusinessUtils {
     public static void getMoblieAuthorListData(Context poContext, int page, String type,
         CallbackDataHandle callDataHandle) {
         String URL =
-            HttpNetConstants.getFullRequestUrl(HttpNetConstants.AUTHOR_MOBILE_LIST_URL) + "?page=" + page;
+            HttpConstants.getFullRequestUrl(HttpConstants.AUTHOR_MOBILE_LIST_URL) + "?page=" + page;
         AEntity aEntity = new BaseEntityImpl(new IReceiverImpl(callDataHandle), URL);
         sendCookieHttps(poContext, aEntity);
     }
@@ -193,7 +194,7 @@ public class BusinessUtils {
     public static void getNearAuthorListData(Context poContext, int page, String location,
         CallbackDataHandle callDataHandle) {
         String URL =
-            HttpNetConstants.getFullRequestUrl(HttpNetConstants.GET_NEAR_AUTHOR_LIST_URL) + "?page=" + page
+            HttpConstants.getFullRequestUrl(HttpConstants.GET_NEAR_AUTHOR_LIST_URL) + "?page=" + page
                 + "&location=" + location;
         AEntity aEntity = new BaseEntityImpl(new IReceiverImpl(callDataHandle), URL);
         sendCookieHttps(poContext, aEntity);
@@ -204,7 +205,7 @@ public class BusinessUtils {
      */
     public static void getLastVersion(Context poContext, CallbackDataHandle callDataHandle) {
         AEntity aEntity = new BaseEntityImpl(new IReceiverImpl(callDataHandle),
-            HttpNetConstants.getFullRequestUrl(HttpNetConstants.GET_NEW_VERSION_URL));
+            HttpConstants.getFullRequestUrl(HttpConstants.GET_NEW_VERSION_URL));
         sendCookieHttps(poContext, aEntity);
     }
 
@@ -213,7 +214,7 @@ public class BusinessUtils {
      */
     public static void logout(Context poContext, CallbackDataHandle callDataHandle) {
         AEntity aEntity = new BaseEntityImpl(new IReceiverImpl(callDataHandle),
-            HttpNetConstants.getFullRequestUrl(HttpNetConstants.LOGOUT_USER_URL));
+            HttpConstants.getFullRequestUrl(HttpConstants.LOGOUT_USER_URL));
         sendCookieHttps(poContext, aEntity);
     }
 
@@ -234,7 +235,7 @@ public class BusinessUtils {
         }
 
         AEntity aEntity = new BaseEntityImpl(new IReceiverImpl(callDataHandle),
-            HttpNetConstants.getFullRequestUrl(HttpNetConstants.UPDATE_USER_INFO_URL));
+            HttpConstants.getFullRequestUrl(HttpConstants.UPDATE_USER_INFO_URL));
         aEntity.postDatas.putAll(lmParams);
         sendCookieHttps(poContext, aEntity);
 
@@ -246,7 +247,7 @@ public class BusinessUtils {
     public static void getRoomInfo(Context poContext, CallbackDataHandle callDataHandle,
         String psRid) {
         String URL =
-            HttpNetConstants.getFullRequestUrl(HttpNetConstants.GET_ROOM_INFO_URL) + "?rid=" + psRid;
+            HttpConstants.getFullRequestUrl(HttpConstants.GET_ROOM_INFO_URL) + "?rid=" + psRid;
         AEntity aEntity = new BaseEntityImpl(new IReceiverImpl(callDataHandle), URL);
         sendCookieHttps(poContext, aEntity);
 
@@ -258,7 +259,7 @@ public class BusinessUtils {
     public static void follow(Context poContext, CallbackDataHandle callDataHandle, String uid) {
 
         String URL =
-            HttpNetConstants.getFullRequestUrl(HttpNetConstants.GET_FOLLOW_URL) + "?attentionUid=" + uid;
+            HttpConstants.getFullRequestUrl(HttpConstants.GET_FOLLOW_URL) + "?attentionUid=" + uid;
         AEntity aEntity = new BaseEntityImpl(new IReceiverImpl(callDataHandle), URL);
         sendCookieHttps(poContext, aEntity);
     }
@@ -269,7 +270,7 @@ public class BusinessUtils {
     public static void followUids(Context poContext, CallbackDataHandle callDataHandle,
         List<String> uids) {
         String uidStr = uids.toArray().toString();
-        String URL = HttpNetConstants.getFullRequestUrl(HttpNetConstants.GET_FOLLOW_URL) + "?attentionUids="
+        String URL = HttpConstants.getFullRequestUrl(HttpConstants.GET_FOLLOW_URL) + "?attentionUids="
             + uidStr;
         AEntity aEntity = new BaseEntityImpl(new IReceiverImpl(callDataHandle), URL);
         sendCookieHttps(poContext, aEntity);
@@ -281,7 +282,7 @@ public class BusinessUtils {
     public static void removeFollow(Context poContext, CallbackDataHandle callDataHandle,
         String uid) {
 
-        String URL = HttpNetConstants.getFullRequestUrl(HttpNetConstants.GET_REMOVE_FOLLOW_URL)
+        String URL = HttpConstants.getFullRequestUrl(HttpConstants.GET_REMOVE_FOLLOW_URL)
             + "?removeAttentionUid=" + uid;
         AEntity aEntity = new BaseEntityImpl(new IReceiverImpl(callDataHandle), URL);
         sendCookieHttps(poContext, aEntity);
@@ -303,7 +304,7 @@ public class BusinessUtils {
             lmParams.put("pic", imgPath);
         }
         AEntity aEntity = new BaseEntityImpl(new IReceiverImpl(callDataHandle),
-            HttpNetConstants.getFullRequestUrl(HttpNetConstants.REPORT_INFO_URL));
+            HttpConstants.getFullRequestUrl(HttpConstants.REPORT_INFO_URL));
         aEntity.postDatas.putAll(lmParams);
         sendCookieHttps(poContext, aEntity);
     }
@@ -313,7 +314,7 @@ public class BusinessUtils {
      */
     public static void getRoomRankInfo(Context poContext, CallbackDataHandle callDataHandle,
         String psRid) {
-        String URL = HttpNetConstants.getFullRequestUrl(HttpNetConstants.ROOM_RANK_URL) + "?rid=" + psRid;
+        String URL = HttpConstants.getFullRequestUrl(HttpConstants.ROOM_RANK_URL) + "?rid=" + psRid;
         AEntity aEntity = new BaseEntityImpl(new IReceiverImpl(callDataHandle), URL);
         sendCookieHttps(poContext, aEntity);
     }
@@ -323,7 +324,7 @@ public class BusinessUtils {
      */
     public static void getRankInfo(Context poContext, CallbackDataHandle callDataHandle) {
         AEntity aEntity = new BaseEntityImpl(new IReceiverImpl(callDataHandle),
-            HttpNetConstants.getFullRequestUrl(HttpNetConstants.GET_RANK_URL));
+            HttpConstants.getFullRequestUrl(HttpConstants.GET_RANK_URL));
         sendCookieHttps(poContext, aEntity);
     }
 
@@ -333,7 +334,7 @@ public class BusinessUtils {
     public static void getLoveListData(Context poContext, CallbackDataHandle callDataHandle,
         int page, String uid) {
         String URL =
-            HttpNetConstants.getFullRequestUrl(HttpNetConstants.GET_LOVE_LIST_URL) + "?page=" + page
+            HttpConstants.getFullRequestUrl(HttpConstants.GET_LOVE_LIST_URL) + "?page=" + page
                 + "&uid=" + uid;
         AEntity aEntity = new BaseEntityImpl(new IReceiverImpl(callDataHandle), URL);
         sendCookieHttps(poContext, aEntity);
@@ -345,7 +346,7 @@ public class BusinessUtils {
     public static void getFansListData(Context poContext, CallbackDataHandle callDataHandle,
         int page, String uid) {
         String URL =
-            HttpNetConstants.getFullRequestUrl(HttpNetConstants.GET_FANS_LIST_URL) + "?page=" + page
+            HttpConstants.getFullRequestUrl(HttpConstants.GET_FANS_LIST_URL) + "?page=" + page
                 + "&uid=" + uid;
         AEntity aEntity = new BaseEntityImpl(new IReceiverImpl(callDataHandle), URL);
         sendCookieHttps(poContext, aEntity);
@@ -357,7 +358,7 @@ public class BusinessUtils {
     public static void getLiveStreamInfo(Context poContext, CallbackDataHandle callDataHandle,
         String rid, int videoWidth, int videoHeight) {
         String URL =
-            HttpNetConstants.getFullRequestUrl(HttpNetConstants.GET_LIVE_STREAM_URL) + "?rid=" + rid
+            HttpConstants.getFullRequestUrl(HttpConstants.GET_LIVE_STREAM_URL) + "?rid=" + rid
                 + "&screenWidth=" + videoWidth + "&screenHeight=" + videoHeight;
         AEntity aEntity = new BaseEntityImpl(new IReceiverImpl(callDataHandle), URL);
         sendCookieHttps(poContext, aEntity);
@@ -369,7 +370,7 @@ public class BusinessUtils {
     public static void getPrePayData(Context poContext, CallbackDataHandle callDataHandle,
         String number) {
         String URL =
-            HttpNetConstants.getFullRequestUrl(HttpNetConstants.GET_PRE_PAY_DATA) + "?onumber=" + number;
+            HttpConstants.getFullRequestUrl(HttpConstants.GET_PRE_PAY_DATA) + "?onumber=" + number;
         AEntity aEntity = new BaseEntityImpl(new IReceiverImpl(callDataHandle), URL);
         sendCookieHttps(poContext, aEntity);
     }
@@ -380,7 +381,7 @@ public class BusinessUtils {
     public static void getPreQQPayData(Context context, CallbackDataHandle callbackDataHandle,
         String onumber) {
         String URL =
-            HttpNetConstants.getFullRequestUrl(HttpNetConstants.GET_PRE_QQPAY_DATA) + "?onumber=" + onumber;
+            HttpConstants.getFullRequestUrl(HttpConstants.GET_PRE_QQPAY_DATA) + "?onumber=" + onumber;
         AEntity aEntity = new BaseEntityImpl(new IReceiverImpl(callbackDataHandle), URL);
         sendCookieHttps(context, aEntity);
     }
@@ -391,7 +392,7 @@ public class BusinessUtils {
     public static void getAliPayData(Context poContext, CallbackDataHandle callDataHandle,
         String number) {
         String URL =
-            HttpNetConstants.getFullRequestUrl(HttpNetConstants.GET_ALI_PAY_DATA) + "/payId/" + number
+            HttpConstants.getFullRequestUrl(HttpConstants.GET_ALI_PAY_DATA) + "/payId/" + number
                 + "/platform/android";
         AEntity aEntity = new BaseEntityImpl(new IReceiverImpl(callDataHandle), URL);
         sendCookieHttps(poContext, aEntity);
@@ -401,7 +402,7 @@ public class BusinessUtils {
      * 获取签到状态信息
      */
     public static void getSignStatus(Context poContext, CallbackDataHandle callDataHandle) {
-        String URL = HttpNetConstants.getFullRequestUrl(HttpNetConstants.GET_SIGN_STATUS_DATA);
+        String URL = HttpConstants.getFullRequestUrl(HttpConstants.GET_SIGN_STATUS_DATA);
         AEntity aEntity = new BaseEntityImpl(new IReceiverImpl(callDataHandle), URL);
         sendCookieHttps(poContext, aEntity);
     }
@@ -410,7 +411,7 @@ public class BusinessUtils {
      * 签到
      */
     public static void getSign(Context poContext, CallbackDataHandle callDataHandle) {
-        String URL = HttpNetConstants.getFullRequestUrl(HttpNetConstants.GET_SIGN_URL);
+        String URL = HttpConstants.getFullRequestUrl(HttpConstants.GET_SIGN_URL);
         AEntity aEntity = new BaseEntityImpl(new IReceiverImpl(callDataHandle), URL);
         sendCookieHttps(poContext, aEntity);
     }
@@ -419,7 +420,7 @@ public class BusinessUtils {
      * 获取签到状态信息
      */
     public static void getTaskListInfo(Context poContext, CallbackDataHandle callDataHandle) {
-        String URL = HttpNetConstants.getFullRequestUrl(HttpNetConstants.GET_TAST_LIST_URL);
+        String URL = HttpConstants.getFullRequestUrl(HttpConstants.GET_TAST_LIST_URL);
         AEntity aEntity = new BaseEntityImpl(new IReceiverImpl(callDataHandle), URL);
         sendCookieHttps(poContext, aEntity);
     }
@@ -428,7 +429,7 @@ public class BusinessUtils {
      * 获取签到状态信息
      */
     public static void shareReport(Context poContext, CallbackDataHandle callDataHandle) {
-        String URL = HttpNetConstants.getFullRequestUrl(HttpNetConstants.SHARE_REPORT_URL);
+        String URL = HttpConstants.getFullRequestUrl(HttpConstants.SHARE_REPORT_URL);
         AEntity aEntity = new BaseEntityImpl(new IReceiverImpl(callDataHandle), URL);
         sendCookieHttps(poContext, aEntity);
     }
@@ -437,7 +438,7 @@ public class BusinessUtils {
      * 获取配置信息
      */
     public static void getConfigInfo(Context poContext, CallbackDataHandle callDataHandle) {
-        String URL = HttpNetConstants.getFullRequestUrl(HttpNetConstants.GET_CONFIG_URL);
+        String URL = HttpConstants.getFullRequestUrl(HttpConstants.GET_CONFIG_URL);
         AEntity aEntity = new BaseEntityImpl(new IReceiverImpl(callDataHandle), URL);
         sendCookieHttps(poContext, aEntity);
     }
@@ -446,7 +447,7 @@ public class BusinessUtils {
      * 获取等级配置信息
      */
     public static void getLevelConfigInfo(Context poContext, CallbackDataHandle callDataHandle) {
-        String URL = HttpNetConstants.getFullRequestUrl(HttpNetConstants.GET_LEVEL_CONFIG_URL);
+        String URL = HttpConstants.getFullRequestUrl(HttpConstants.GET_LEVEL_CONFIG_URL);
         AEntity aEntity = new BaseEntityImpl(new IReceiverImpl(callDataHandle), URL);
         sendCookieHttps(poContext, aEntity);
     }
@@ -455,7 +456,7 @@ public class BusinessUtils {
      * 获取勋章配置信息
      */
     public static void getModelConfigInfo(Context poContext, CallbackDataHandle callDataHandle) {
-        String URL = HttpNetConstants.getFullRequestUrl(HttpNetConstants.GET_MODEL_CONFIG_URL);
+        String URL = HttpConstants.getFullRequestUrl(HttpConstants.GET_MODEL_CONFIG_URL);
         AEntity aEntity = new BaseEntityImpl(new IReceiverImpl(callDataHandle), URL);
         sendCookieHttps(poContext, aEntity);
     }
@@ -465,7 +466,7 @@ public class BusinessUtils {
      */
     public static void getProductRecommentList(Context poContext,
         CallbackDataHandle callDataHandle) {
-        String URL = HttpNetConstants.getFullRequestUrl(HttpNetConstants.GET_PRODUCT_RECOMMENT_URL);
+        String URL = HttpConstants.getFullRequestUrl(HttpConstants.GET_PRODUCT_RECOMMENT_URL);
         AEntity aEntity = new BaseEntityImpl(new IReceiverImpl(callDataHandle), URL);
         sendCookieHttps(poContext, aEntity);
     }
@@ -476,7 +477,7 @@ public class BusinessUtils {
     public static void getSearchAnchorList(Context poContext, CallbackDataHandle callDataHandle,
         int page, String searchText) {
         String URL =
-            HttpNetConstants.getFullRequestUrl(HttpNetConstants.SEARCH_ANCHOR_LIST_URL) + "?keyword="
+            HttpConstants.getFullRequestUrl(HttpConstants.SEARCH_ANCHOR_LIST_URL) + "?keyword="
                 + searchText + "&page=" + page;
         AEntity aEntity = new BaseEntityImpl(new IReceiverImpl(callDataHandle), URL);
         sendCookieHttps(poContext, aEntity);
@@ -488,7 +489,7 @@ public class BusinessUtils {
     public static void getSystemMsgList(Context poContext, CallbackDataHandle callDataHandle,
         String type, int page) {
         String URL =
-            HttpNetConstants.getFullRequestUrl(HttpNetConstants.GET_SYSTEM_MSG_LSIT_URL) + "?page=" + page
+            HttpConstants.getFullRequestUrl(HttpConstants.GET_SYSTEM_MSG_LSIT_URL) + "?page=" + page
                 + "&type=" + type;
         AEntity aEntity = new BaseEntityImpl(new IReceiverImpl(callDataHandle), URL);
         sendCookieHttps(poContext, aEntity);
@@ -499,8 +500,8 @@ public class BusinessUtils {
      */
     public static void getConversationSystemMsgList(Context poContext,
         CallbackDataHandle callDataHandle) {
-        String URL = HttpNetConstants
-            .getFullRequestUrl(HttpNetConstants.GET_CONVERSATION_SYSTEM_MSG_LSIT_URL);
+        String URL = HttpConstants
+            .getFullRequestUrl(HttpConstants.GET_CONVERSATION_SYSTEM_MSG_LSIT_URL);
         AEntity aEntity = new BaseEntityImpl(new IReceiverImpl(callDataHandle), URL);
         sendCookieHttps(poContext, aEntity);
     }
@@ -523,7 +524,7 @@ public class BusinessUtils {
         if (!TextUtils.isEmpty(pic)) {
             lmParams.put("pic", pic);
         }
-        String URL = HttpNetConstants.getFullRequestUrl(HttpNetConstants.SEND_PRIVATE_MSG);
+        String URL = HttpConstants.getFullRequestUrl(HttpConstants.SEND_PRIVATE_MSG);
         AEntity aEntity = new BaseEntityImpl(new IReceiverImpl(callDataHandle), URL);
         aEntity.postDatas.putAll(lmParams);
         sendCookieHttps(poContext, aEntity);
@@ -535,7 +536,7 @@ public class BusinessUtils {
     public static void getFansCareList(Context poContext, int page, String filter,
         CallbackDataHandle callDataHandle) {
         String URL =
-            HttpNetConstants.getFullRequestUrl(HttpNetConstants.GET_FANS_CARE_INFO) + "?page=" + page
+            HttpConstants.getFullRequestUrl(HttpConstants.GET_FANS_CARE_INFO) + "?page=" + page
                 + "&status=" + 0 + "&filter=" + filter;
         AEntity aEntity = new BaseEntityImpl(new IReceiverImpl(callDataHandle), URL);
         sendCookieHttps(poContext, aEntity);
@@ -547,7 +548,7 @@ public class BusinessUtils {
     public static void getSelectRecieverList(Context poContext, int page, String filter,
         CallbackDataHandle callDataHandle) {
         String URL =
-            HttpNetConstants.getFullRequestUrl(HttpNetConstants.GET_FANS_CARE_INFO) + "?page=" + page
+            HttpConstants.getFullRequestUrl(HttpConstants.GET_FANS_CARE_INFO) + "?page=" + page
                 + "&status=" + 1 + "&filter=" + filter;
         AEntity aEntity = new BaseEntityImpl(new IReceiverImpl(callDataHandle), URL);
         sendCookieHttps(poContext, aEntity);
@@ -559,7 +560,7 @@ public class BusinessUtils {
      */
     public static void setSystemMsgListtoUnRead(Context poContext,
         CallbackDataHandle callDataHandle) {
-        String URL = HttpNetConstants.getFullRequestUrl(HttpNetConstants.SET_SYSTEM_MSG_READ);
+        String URL = HttpConstants.getFullRequestUrl(HttpConstants.SET_SYSTEM_MSG_READ);
         AEntity aEntity = new BaseEntityImpl(new IReceiverImpl(callDataHandle), URL);
         sendCookieHttps(poContext, aEntity);
     }
@@ -568,7 +569,7 @@ public class BusinessUtils {
      * 获取邀请人信息
      */
     public static void getInviteInfo(Context poContext, CallbackDataHandle callDataHandle) {
-        String URL = HttpNetConstants.getFullRequestUrl(HttpNetConstants.GET_INVATE_INFO_URL);
+        String URL = HttpConstants.getFullRequestUrl(HttpConstants.GET_INVATE_INFO_URL);
         AEntity aEntity = new BaseEntityImpl(new IReceiverImpl(callDataHandle), URL);
         sendCookieHttps(poContext, aEntity);
     }
@@ -578,7 +579,7 @@ public class BusinessUtils {
      */
     public static void submitInvite(Context poContext, String referrer,
         CallbackDataHandle callDataHandle) {
-        String URL = HttpNetConstants.getFullRequestUrl(HttpNetConstants.SUBMIT_INVATE_URL) + "?referrer="
+        String URL = HttpConstants.getFullRequestUrl(HttpConstants.SUBMIT_INVATE_URL) + "?referrer="
             + referrer;
         AEntity aEntity = new BaseEntityImpl(new IReceiverImpl(callDataHandle), URL);
         sendCookieHttps(poContext, aEntity);
@@ -590,7 +591,7 @@ public class BusinessUtils {
     public static void getFocusAnchor(Context poContext, CallbackDataHandle callDataHandle,
         int page) {
         String URL =
-            HttpNetConstants.getFullRequestUrl(HttpNetConstants.GET_ME_FOCUS_ANCHOR_URL) + "?page=" + page;
+            HttpConstants.getFullRequestUrl(HttpConstants.GET_ME_FOCUS_ANCHOR_URL) + "?page=" + page;
         AEntity aEntity = new BaseEntityImpl(new IReceiverImpl(callDataHandle), URL);
         sendCookieHttps(poContext, aEntity);
     }
@@ -601,7 +602,7 @@ public class BusinessUtils {
     public static void getPersonInfoData(Context poContext, String uid,
         CallbackDataHandle callDataHandle) {
         String URL =
-            HttpNetConstants.getFullRequestUrl(HttpNetConstants.GET_PERSON_INFO_URL) + "?uid=" + uid;
+            HttpConstants.getFullRequestUrl(HttpConstants.GET_PERSON_INFO_URL) + "?uid=" + uid;
         AEntity aEntity = new BaseEntityImpl(new IReceiverImpl(callDataHandle), URL);
         sendCookieHttps(poContext, aEntity);
     }
@@ -611,7 +612,7 @@ public class BusinessUtils {
      */
     public static void getAnchorStatus(Context poContext, CallbackDataHandle callDataHandle) {
         AEntity aEntity = new BaseEntityImpl(new IReceiverImpl(callDataHandle),
-            HttpNetConstants.getFullRequestUrl(HttpNetConstants.ANCHOR_STATUS));
+            HttpConstants.getFullRequestUrl(HttpConstants.ANCHOR_STATUS));
         sendCookieHttps(poContext, aEntity);
     }
 
@@ -637,7 +638,7 @@ public class BusinessUtils {
         }
         params.put("note", note);
         AEntity aEntity = new BaseEntityImpl(new IReceiverImpl(callDataHandle),
-            HttpNetConstants.getFullRequestUrl(HttpNetConstants.SUBMIT_ANCHOR_INFO));
+            HttpConstants.getFullRequestUrl(HttpConstants.SUBMIT_ANCHOR_INFO));
         aEntity.postDatas.putAll(params);
         sendCookieHttps(poContext, aEntity);
     }
@@ -655,7 +656,7 @@ public class BusinessUtils {
         lmParams.put("unionid", unionid);
         lmParams.put("expiredIn", psExpiredIn);
         AEntity aEntity = new BaseEntityImpl(new IReceiverImpl(callDataHandle),
-            HttpNetConstants.getFullRequestUrl(HttpNetConstants.GET_BIND_WEIXIN_URL));
+            HttpConstants.getFullRequestUrl(HttpConstants.GET_BIND_WEIXIN_URL));
         aEntity.postDatas.putAll(lmParams);
         sendCookieHttps(poContext, aEntity);
     }
@@ -669,7 +670,7 @@ public class BusinessUtils {
         lmParams.put("rid", rid);
         lmParams.put("logo", imageFile);
         AEntity aEntity = new BaseEntityImpl(new IReceiverImpl(callDataHandle),
-            HttpNetConstants.getFullRequestUrl(HttpNetConstants.EDIT_ROOM_LOGO_URL));
+            HttpConstants.getFullRequestUrl(HttpConstants.EDIT_ROOM_LOGO_URL));
         aEntity.postDatas.putAll(lmParams);
         sendCookieHttps(poContext, aEntity);
 
@@ -691,7 +692,7 @@ public class BusinessUtils {
             lmParams.put("tagIds", tagIds);
         }
         AEntity aEntity = new BaseEntityImpl(new IReceiverImpl(callDataHandle),
-            HttpNetConstants.getFullRequestUrl(HttpNetConstants.SUBMIT_LIVE_TITLE));
+            HttpConstants.getFullRequestUrl(HttpConstants.SUBMIT_LIVE_TITLE));
         aEntity.postDatas.putAll(lmParams);
         sendCookieHttps(poContext, aEntity);
     }
@@ -704,7 +705,7 @@ public class BusinessUtils {
     public static void getLivePRank(Context poContext, CallbackDataHandle callDataHandle,
         String rid, String rankType, int page) {
         String URL =
-            HttpNetConstants.getFullRequestUrl(HttpNetConstants.GET_LIVE_P_RANK) + "?rid=" + rid + "&type="
+            HttpConstants.getFullRequestUrl(HttpConstants.GET_LIVE_P_RANK) + "?rid=" + rid + "&type="
                 + rankType + "&page=" + page;
         AEntity aEntity = new BaseEntityImpl(new IReceiverImpl(callDataHandle), URL);
         sendCookieHttps(poContext, aEntity);
@@ -714,7 +715,7 @@ public class BusinessUtils {
      * 2.4新增接口
      ************************************/
     public static void getLiveStatus(Context poContext, CallbackDataHandle callDataHandle) {
-        String URL = HttpNetConstants.getFullRequestUrl(HttpNetConstants.GET_LIVE_STATUS);
+        String URL = HttpConstants.getFullRequestUrl(HttpConstants.GET_LIVE_STATUS);
         AEntity aEntity = new BaseEntityImpl(new IReceiverImpl(callDataHandle), URL);
         sendCookieHttps(poContext, aEntity);
     }
@@ -730,7 +731,7 @@ public class BusinessUtils {
         }
 
         AEntity aEntity = new BaseEntityImpl(new IReceiverImpl(callDataHandle),
-            HttpNetConstants.getFullRequestUrl(HttpNetConstants.UPLOAD_USER_BG_IMG));
+            HttpConstants.getFullRequestUrl(HttpConstants.UPLOAD_USER_BG_IMG));
         aEntity.postDatas.putAll(lmParams);
         sendCookieHttps(poContext, aEntity);
 
@@ -742,7 +743,7 @@ public class BusinessUtils {
     public static void getTopics(Context poContext, CallbackDataHandle callDataHandle, int page,
         int limit) {
         String URL =
-            HttpNetConstants.getFullRequestUrl(HttpNetConstants.GET_TOPICS) + "/limit/" + limit + "/page/"
+            HttpConstants.getFullRequestUrl(HttpConstants.GET_TOPICS) + "/limit/" + limit + "/page/"
                 + page;
         AEntity aEntity = new BaseEntityImpl(new IReceiverImpl(callDataHandle), URL);
         sendCookieHttps(poContext, aEntity);
@@ -754,7 +755,7 @@ public class BusinessUtils {
      * 获取话题列表
      */
     public static void agreeProtocal(Context poContext, CallbackDataHandle callDataHandle) {
-        String URL = HttpNetConstants.getFullRequestUrl(HttpNetConstants.AGREE_PROTOCAL);
+        String URL = HttpConstants.getFullRequestUrl(HttpConstants.AGREE_PROTOCAL);
         AEntity aEntity = new BaseEntityImpl(new IReceiverImpl(callDataHandle), URL);
         sendCookieHttps(poContext, aEntity);
 
@@ -764,7 +765,7 @@ public class BusinessUtils {
      * 获取用户黑名单列表数据
      */
     public static void getBlackList(Context poContext, CallbackDataHandle callDataHandle) {
-        String URL = HttpNetConstants.getFullRequestUrl(HttpNetConstants.GET_BLACKLIST_URL);
+        String URL = HttpConstants.getFullRequestUrl(HttpConstants.GET_BLACKLIST_URL);
         AEntity aEntity = new BaseEntityImpl(new IReceiverImpl(callDataHandle), URL);
         sendCookieHttps(poContext, aEntity);
     }
@@ -778,7 +779,7 @@ public class BusinessUtils {
         String uidStr = StringUtil.strListToString(userIds);
         Map<String, String> lmParams = new HashMap<>();
         lmParams.put("fromUids", uidStr);
-        String URL = HttpNetConstants.getFullRequestUrl(HttpNetConstants.GET_MESSAGE_USER_INFO_URL);
+        String URL = HttpConstants.getFullRequestUrl(HttpConstants.GET_MESSAGE_USER_INFO_URL);
         AEntity aEntity = new BaseEntityImpl(new IReceiverImpl(callDataHandle), URL);
         aEntity.postDatas.putAll(lmParams);
         sendCookieHttps(poContext, aEntity);
@@ -800,7 +801,7 @@ public class BusinessUtils {
             lmParams.put("deviceId", deviceId);
             lmParams.put("mac", macAddress);
             lmParams.put("imei", imei);
-            String URL = HttpNetConstants.getFullRequestUrl(HttpNetConstants.REPORT_DEVICE_ID_URL);
+            String URL = HttpConstants.getFullRequestUrl(HttpConstants.REPORT_DEVICE_ID_URL);
             AEntity aEntity = new BaseEntityImpl(new IReceiverImpl(null), URL);
             aEntity.postDatas.putAll(lmParams);
             sendCookieHttps(poContext, aEntity);
@@ -824,7 +825,7 @@ public class BusinessUtils {
      */
     public static void appInit(Context poContext, CallbackDataHandle callbackDataHandle) {
         AEntity aEntity = new BaseEntityImpl(new IReceiverImpl(callbackDataHandle),
-            HttpNetConstants.getFullRequestUrl(HttpNetConstants.APP_INIT));
+            HttpConstants.getFullRequestUrl(HttpConstants.APP_INIT));
         sendCookieHttps(poContext, aEntity);
     }
 
@@ -840,7 +841,7 @@ public class BusinessUtils {
             lmParams.put("tdDeviceInfo", reportBlackBox);
             lmParams.put("verify", md5);
             AEntity aEntity = new BaseEntityImpl(new IReceiverImpl(null),
-                HttpNetConstants.getFullRequestUrl(HttpNetConstants.REPORT_BLACK_BOX_URL));
+                HttpConstants.getFullRequestUrl(HttpConstants.REPORT_BLACK_BOX_URL));
             aEntity.postDatas.putAll(lmParams);
             sendCookieHttps(poContext, aEntity);
         } catch (NoSuchAlgorithmException e) {
@@ -867,14 +868,14 @@ public class BusinessUtils {
      */
     public static void getBlackList(Context context, CallbackDataHandle callDataHandle, int page) {
         String URL =
-            HttpNetConstants.getFullRequestUrl(HttpNetConstants.GET_BLACKLIST_URL) + "/page/" + page;
+            HttpConstants.getFullRequestUrl(HttpConstants.GET_BLACKLIST_URL) + "/page/" + page;
         AEntity aEntity = new BaseEntityImpl(new IReceiverImpl(callDataHandle), URL);
         sendCookieHttps(context, aEntity);
     }
 
     public static void reportRegisterId(Context context, CallbackDataHandle callDataHandle,
         String registerId) {
-        String URL = HttpNetConstants.getFullRequestUrl(HttpNetConstants.JPUSH_REGISTER_ID);
+        String URL = HttpConstants.getFullRequestUrl(HttpConstants.JPUSH_REGISTER_ID);
         Map<String, String> lmParams = new HashMap<>();
         lmParams.put("registerationId", registerId);
         AEntity aEntity = new BaseEntityImpl(new IReceiverImpl(callDataHandle), URL);
@@ -888,7 +889,7 @@ public class BusinessUtils {
     public static void getManagerList(Context context, CallbackDataHandle callDataHandle,
         String uid) {
         String URL =
-            HttpNetConstants.getFullRequestUrl(HttpNetConstants.GET_ROOM_MANAGER_LIST) + "?mid=" + uid;
+            HttpConstants.getFullRequestUrl(HttpConstants.GET_ROOM_MANAGER_LIST) + "?mid=" + uid;
         AEntity aEntity = new BaseEntityImpl(new IReceiverImpl(callDataHandle), URL);
         sendCookieHttps(context, aEntity);
     }
@@ -899,7 +900,7 @@ public class BusinessUtils {
     public static void removeRoomManager(Context context, CallbackDataHandle callDataHandle,
         String adimId) {
         String URL =
-            HttpNetConstants.getFullRequestUrl(HttpNetConstants.REMOVE_ROOM_MANAGER) + "?unsetAdminUid="
+            HttpConstants.getFullRequestUrl(HttpConstants.REMOVE_ROOM_MANAGER) + "?unsetAdminUid="
                 + adimId;
         AEntity aEntity = new BaseEntityImpl(new IReceiverImpl(callDataHandle), URL);
         sendCookieHttps(context, aEntity);
@@ -910,7 +911,7 @@ public class BusinessUtils {
      */
     public static void setRoomManager(Context context, CallbackDataHandle callDataHandle,
         String adimId) {
-        String URL = HttpNetConstants.getFullRequestUrl(HttpNetConstants.SET_ROOM_MANAGER) + "?setAdminUid="
+        String URL = HttpConstants.getFullRequestUrl(HttpConstants.SET_ROOM_MANAGER) + "?setAdminUid="
             + adimId;
         AEntity aEntity = new BaseEntityImpl(new IReceiverImpl(callDataHandle), URL);
         sendCookieHttps(context, aEntity);
@@ -922,7 +923,7 @@ public class BusinessUtils {
     public static void getRecommendAttentions(Context poContext,
         CallbackDataHandle callDataHandle) {
         AEntity aEntity = new BaseEntityImpl(new IReceiverImpl(callDataHandle),
-            HttpNetConstants.getFullRequestUrl(HttpNetConstants.RECOMMEND_ATTENTIONS));
+            HttpConstants.getFullRequestUrl(HttpConstants.RECOMMEND_ATTENTIONS));
         sendCookieHttps(poContext, aEntity);
     }
 
@@ -934,7 +935,7 @@ public class BusinessUtils {
         String uidStr = StringUtil.strListToString(uids);
         Map<String, String> lmParams = new HashMap<String, String>();
         lmParams.put("attentionUids", uidStr);
-        String URL = HttpNetConstants.getFullRequestUrl(HttpNetConstants.COMMIT_RECOMMEND_ATTENTIONS);
+        String URL = HttpConstants.getFullRequestUrl(HttpConstants.COMMIT_RECOMMEND_ATTENTIONS);
         AEntity aEntity = new BaseEntityImpl(new IReceiverImpl(callDataHandle), URL);
         aEntity.postDatas.putAll(lmParams);
         sendCookieHttps(poContext, aEntity);
@@ -944,7 +945,7 @@ public class BusinessUtils {
      * 获取物品信息
      */
     public static void getUserPackageInfo(Context poContext, CallbackDataHandle callDataHandle) {
-        String URL = HttpNetConstants.getFullRequestUrl(HttpNetConstants.GET_USER_PACKAGE_URL);
+        String URL = HttpConstants.getFullRequestUrl(HttpConstants.GET_USER_PACKAGE_URL);
         AEntity aEntity = new BaseEntityImpl(new IReceiverImpl(callDataHandle), URL);
         sendCookieHttps(poContext, aEntity);
 
@@ -954,7 +955,7 @@ public class BusinessUtils {
      * 获取推荐关注列表
      */
     public static void comeInAnimSet(Context poContext, CallbackDataHandle callDataHandle) {
-        String URL = HttpNetConstants.getFullRequestUrl(HttpNetConstants.COME_IN_ANIM_SWITCH);
+        String URL = HttpConstants.getFullRequestUrl(HttpConstants.COME_IN_ANIM_SWITCH);
         AEntity aEntity = new BaseEntityImpl(new IReceiverImpl(callDataHandle), URL);
         sendCookieHttps(poContext, aEntity);
     }
@@ -964,7 +965,7 @@ public class BusinessUtils {
      */
     public static void getPhoneBindCode(Context poContext, String mobile,
         CallbackDataHandle callDataHandle) {
-        String URL = HttpNetConstants.getFullRequestUrl(HttpNetConstants.GET_PHONE_BIND_CODE_URL);
+        String URL = HttpConstants.getFullRequestUrl(HttpConstants.GET_PHONE_BIND_CODE_URL);
         try {
             //手机加密
             AEntity aEntity = new BaseEntityImpl(new IReceiverImpl(callDataHandle), URL);
@@ -982,7 +983,7 @@ public class BusinessUtils {
      */
     public static void phoneBind(Context poContext, String vcode, String password,
         CallbackDataHandle callDataHandle) {
-        String URL = HttpNetConstants.getFullRequestUrl(HttpNetConstants.PHONE_BIND_URL);
+        String URL = HttpConstants.getFullRequestUrl(HttpConstants.PHONE_BIND_URL);
         try {
             AEntity aEntity = new BaseEntityImpl(new IReceiverImpl(callDataHandle), URL);
             aEntity.postDatas.put("vcode", vcode);
@@ -999,7 +1000,7 @@ public class BusinessUtils {
      */
     public static void getModeratorGuardInfo(Context poContext, String mid,
         CallbackDataHandle callDataHandle) {
-        String URL = HttpNetConstants.getFullRequestUrl(HttpNetConstants.GET_MODERATOR_GUARD_URL);
+        String URL = HttpConstants.getFullRequestUrl(HttpConstants.GET_MODERATOR_GUARD_URL);
         AEntity aEntity = new BaseEntityImpl(new IReceiverImpl(callDataHandle), URL);
         aEntity.postDatas.put("mid", mid);
 
@@ -1013,7 +1014,7 @@ public class BusinessUtils {
     public static void getHotRankInfo(Context poContext, String mid,
         CallbackDataHandle callDataHandle) {
         String URL =
-            HttpNetConstants.getFullRequestUrl(HttpNetConstants.GET_HOT_RANK_INFO_URL) + "?mid=" + mid;
+            HttpConstants.getFullRequestUrl(HttpConstants.GET_HOT_RANK_INFO_URL) + "?mid=" + mid;
         AEntity aEntity = new BaseEntityImpl(new IReceiverImpl(callDataHandle), URL);
         sendCookieHttps(poContext, aEntity);
 
@@ -1025,7 +1026,7 @@ public class BusinessUtils {
 
     public static void getOffcialRecommendInfo(Context poContext,
         CallbackDataHandle callDataHandle) {
-        String URL = HttpNetConstants.getFullRequestUrl(HttpNetConstants.GET_OFFICIAL_RECOMMEND_URL);
+        String URL = HttpConstants.getFullRequestUrl(HttpConstants.GET_OFFICIAL_RECOMMEND_URL);
         AEntity aEntity = new BaseEntityImpl(new IReceiverImpl(callDataHandle), URL);
         sendCookieHttps(poContext, aEntity);
 
@@ -1037,7 +1038,7 @@ public class BusinessUtils {
 
     public static void sendPrivateMessageMulti(Context poContext, String uid, String type,
         String content, String pic, CallbackDataHandle callDataHandle) {
-        String URL = HttpNetConstants.getFullRequestUrl(HttpNetConstants.SEND_PRIVATE_MESSAGE_INFO);
+        String URL = HttpConstants.getFullRequestUrl(HttpConstants.SEND_PRIVATE_MESSAGE_INFO);
         AEntity aEntity = new BaseEntityImpl(new IReceiverImpl(callDataHandle), URL);
         Map<String, String> lmParams = new HashMap<>();
         lmParams.put("type", type);
@@ -1058,7 +1059,7 @@ public class BusinessUtils {
      */
     public static void aliUserAuth(Context poContext, String authCode,
         CallbackDataHandle callDataHandle) {
-        String URL = HttpNetConstants.getFullRequestUrl(HttpNetConstants.SET_ALIPLAY_AUTH_CODE_URL);
+        String URL = HttpConstants.getFullRequestUrl(HttpConstants.SET_ALIPLAY_AUTH_CODE_URL);
         AEntity aEntity = new BaseEntityImpl(new IReceiverImpl(callDataHandle), URL);
         aEntity.postDatas.put("code", authCode);
         sendCookieHttps(poContext, aEntity);
@@ -1069,7 +1070,7 @@ public class BusinessUtils {
      */
     public static void getAliPayLoginData(Context poContext, CallbackDataHandle callDataHandle) {
         AEntity aEntity = new BaseEntityImpl(new IReceiverImpl(callDataHandle),
-            HttpNetConstants.getFullRequestUrl(HttpNetConstants.GET_ALIPLAY_LOGIN_URL));
+            HttpConstants.getFullRequestUrl(HttpConstants.GET_ALIPLAY_LOGIN_URL));
         sendCookieHttps(poContext, aEntity);
     }
 
@@ -1078,7 +1079,7 @@ public class BusinessUtils {
      */
     public static void getRoomUserInfoData(Context poContext, String mid, String uid,
         CallbackDataHandle callDataHandle) {
-        String URL = HttpNetConstants.getFullRequestUrl(HttpNetConstants.GET_ROOM_USER_INFO_URL);
+        String URL = HttpConstants.getFullRequestUrl(HttpConstants.GET_ROOM_USER_INFO_URL);
         AEntity aEntity = new BaseEntityImpl(new IReceiverImpl(callDataHandle), URL);
         aEntity.postDatas.put("mid", mid);
         aEntity.postDatas.put("uid", uid);
@@ -1103,7 +1104,7 @@ public class BusinessUtils {
     public static void userMessageCard(Context poContext, String uid,
         CallbackDataHandle callDataHandle) {
         String URL =
-            HttpNetConstants.getFullRequestUrl(HttpNetConstants.USER_MESSAGE_CARD) + "/toUid/" + uid;
+            HttpConstants.getFullRequestUrl(HttpConstants.USER_MESSAGE_CARD) + "/toUid/" + uid;
         AEntity aEntity = new BaseEntityImpl(new IReceiverImpl(callDataHandle), URL);
         sendCookieHttps(poContext, aEntity);
     }
@@ -1114,7 +1115,7 @@ public class BusinessUtils {
     public static void requestPrivateLive(Context poContext, String invitedUid,
         CallbackDataHandle callDataHandle) {
         String url =
-            HttpNetConstants.getFullRequestUrl(HttpNetConstants.PRIVATE_LIVE) + "?invitedUid=" + invitedUid;
+            HttpConstants.getFullRequestUrl(HttpConstants.PRIVATE_LIVE) + "?invitedUid=" + invitedUid;
         AEntity aEntity = new BaseEntityImpl(new IReceiverImpl(callDataHandle), url);
         sendCookieHttps(poContext, aEntity);
     }
@@ -1127,7 +1128,7 @@ public class BusinessUtils {
         Map<String, String> lmParams = new HashMap<>();
         lmParams.put("mid", uid);
         AEntity aEntity = new BaseEntityImpl(new IReceiverImpl(callDataHandle),
-            HttpNetConstants.getFullRequestUrl(HttpNetConstants.GET_GUARD_GIFT));
+            HttpConstants.getFullRequestUrl(HttpConstants.GET_GUARD_GIFT));
         aEntity.postDatas.putAll(lmParams);
         sendCookieHttps(poContext, aEntity);
     }
@@ -1141,7 +1142,7 @@ public class BusinessUtils {
         Map<String, String> lmParams = new HashMap<>();
         lmParams.put("pids", JacksonUtil.toJSon(pids));
         AEntity aEntity = new BaseEntityImpl(new IReceiverImpl(callDataHandle),
-            HttpNetConstants.getFullRequestUrl(HttpNetConstants.SORT_ALBUM));
+            HttpConstants.getFullRequestUrl(HttpConstants.SORT_ALBUM));
         aEntity.postDatas.putAll(lmParams);
         sendCookieHttps(poContext, aEntity);
     }
@@ -1155,7 +1156,7 @@ public class BusinessUtils {
         Map<String, String> lmParams = new HashMap<>();
         lmParams.put("pids", JacksonUtil.toJSon(pids));
         AEntity aEntity = new BaseEntityImpl(new IReceiverImpl(callDataHandle),
-            HttpNetConstants.getFullRequestUrl(HttpNetConstants.DELETE_ALBUM));
+            HttpConstants.getFullRequestUrl(HttpConstants.DELETE_ALBUM));
         aEntity.postDatas.putAll(lmParams);
         sendCookieHttps(poContext, aEntity);
     }
@@ -1169,7 +1170,7 @@ public class BusinessUtils {
         Map<String, String> lmParams = new HashMap<>();
         lmParams.put("pic", url);
         AEntity aEntity = new BaseEntityImpl(new IReceiverImpl(callDataHandle),
-            HttpNetConstants.getFullRequestUrl(HttpNetConstants.UPLOAD_ALBUM));
+            HttpConstants.getFullRequestUrl(HttpConstants.UPLOAD_ALBUM));
         aEntity.postDatas.putAll(lmParams);
         sendCookieHttps(poContext, aEntity);
     }
@@ -1182,7 +1183,7 @@ public class BusinessUtils {
         Map<String, String> lmParams = new HashMap<>();
         lmParams.put("uid", uid);
         AEntity aEntity = new BaseEntityImpl(new IReceiverImpl(callDataHandle),
-            HttpNetConstants.getFullRequestUrl(HttpNetConstants.GET_ALBUM));
+            HttpConstants.getFullRequestUrl(HttpConstants.GET_ALBUM));
         aEntity.postDatas.putAll(lmParams);
         sendCookieHttps(poContext, aEntity);
     }
@@ -1191,7 +1192,7 @@ public class BusinessUtils {
      * 获取http请求域名
      */
     public static void getHttpDomain(Context poContext, CallbackDataHandle callDataHandle) {
-        String url = "http://" + HttpNetConstants.BASE_HTTP_DOMAIN + "/app/getAddr";
+        String url = "http://" + HttpConstants.BASE_HTTP_DOMAIN + "/app/getAddr";
         AEntity aEntity = new BaseEntityImpl(new IReceiverImpl(callDataHandle), url);
         sendCookieHttps(poContext, aEntity);
     }
@@ -1203,7 +1204,7 @@ public class BusinessUtils {
     public static void requestVideoChat(Context poContext, CallbackDataHandle callDataHandle,
         String rid, String type, String uid, String chatType) {
         AEntity aEntity = new BaseEntityImpl(new IReceiverImpl(callDataHandle),
-            HttpNetConstants.getFullRequestUrl(HttpNetConstants.REQUEST_VIDEO_CHAT));
+            HttpConstants.getFullRequestUrl(HttpConstants.REQUEST_VIDEO_CHAT));
         aEntity.postDatas.put("rid", rid);
         aEntity.postDatas.put("type", type);
         if (!TextUtils.isEmpty(uid)) {
@@ -1220,7 +1221,7 @@ public class BusinessUtils {
     public static void cancelVideoChat(Context poContext, CallbackDataHandle callDataHandle,
         String rid, String type, String uid) {
         AEntity aEntity = new BaseEntityImpl(new IReceiverImpl(callDataHandle),
-            HttpNetConstants.getFullRequestUrl(HttpNetConstants.CANCEL_VIDEO_CHAT));
+            HttpConstants.getFullRequestUrl(HttpConstants.CANCEL_VIDEO_CHAT));
         aEntity.postDatas.put("rid", rid);
         aEntity.postDatas.put("type", type);
         if (!TextUtils.isEmpty(uid)) {
@@ -1235,7 +1236,7 @@ public class BusinessUtils {
     public static void rejectVideoChat(Context poContext, CallbackDataHandle callDataHandle,
         String rid) {
         AEntity aEntity = new BaseEntityImpl(new IReceiverImpl(callDataHandle),
-            HttpNetConstants.getFullRequestUrl(HttpNetConstants.REJECT_VIDEO_CHAT));
+            HttpConstants.getFullRequestUrl(HttpConstants.REJECT_VIDEO_CHAT));
         aEntity.postDatas.put("rid", rid);
         sendCookieHttps(poContext, aEntity);
     }
@@ -1248,7 +1249,7 @@ public class BusinessUtils {
     public static void acceptVideoChat(Context poContext, CallbackDataHandle callDataHandle,
         String rid, String type, String uid, String chatType) {
         AEntity aEntity = new BaseEntityImpl(new IReceiverImpl(callDataHandle),
-            HttpNetConstants.getFullRequestUrl(HttpNetConstants.ACCEPT_VIDEO_CHAT));
+            HttpConstants.getFullRequestUrl(HttpConstants.ACCEPT_VIDEO_CHAT));
         aEntity.postDatas.put("rid", rid);
         aEntity.postDatas.put("type", type);
         if (!TextUtils.isEmpty(uid)) {
@@ -1263,7 +1264,7 @@ public class BusinessUtils {
      */
     public static void mixStream(Context poContext, CallbackDataHandle callDataHandle, String rid) {
         AEntity aEntity = new BaseEntityImpl(new IReceiverImpl(callDataHandle),
-            HttpNetConstants.getFullRequestUrl(HttpNetConstants.REQUEST_MIX_STREAM));
+            HttpConstants.getFullRequestUrl(HttpConstants.REQUEST_MIX_STREAM));
         aEntity.postDatas.put("rid", rid);
         sendCookieHttps(poContext, aEntity);
     }
@@ -1275,7 +1276,7 @@ public class BusinessUtils {
     public static void endVideoChat(Context poContext, CallbackDataHandle callDataHandle,
         String rid, String type, String uid) {
         AEntity aEntity = new BaseEntityImpl(new IReceiverImpl(callDataHandle),
-            HttpNetConstants.getFullRequestUrl(HttpNetConstants.REQUEST_END_VIDEO_CHAT));
+            HttpConstants.getFullRequestUrl(HttpConstants.REQUEST_END_VIDEO_CHAT));
         aEntity.postDatas.put("rid", rid);
         aEntity.postDatas.put("type", type);
         if (!TextUtils.isEmpty(uid)) {
@@ -1290,7 +1291,7 @@ public class BusinessUtils {
     public static void getRedPacketCD(Context poContext, String rid,
         CallbackDataHandle callDataHandle) {
         AEntity aEntity = new BaseEntityImpl(new IReceiverImpl(callDataHandle),
-            HttpNetConstants.getFullRequestUrl(HttpNetConstants.GET_RED_PACKET_CD));
+            HttpConstants.getFullRequestUrl(HttpConstants.GET_RED_PACKET_CD));
         if (!TextUtils.isEmpty(rid)) {
             aEntity.postDatas.put("rid", rid);
         }
@@ -1303,7 +1304,7 @@ public class BusinessUtils {
     public static void getRedPacket(Context poContext, String rid,
         CallbackDataHandle callDataHandle) {
         AEntity aEntity = new BaseEntityImpl(new IReceiverImpl(callDataHandle),
-            HttpNetConstants.getFullRequestUrl(HttpNetConstants.GET_RED_PACKET));
+            HttpConstants.getFullRequestUrl(HttpConstants.GET_RED_PACKET));
         aEntity.postDatas.put("rid", rid);
         sendCookieHttps(poContext, aEntity);
     }
@@ -1314,7 +1315,7 @@ public class BusinessUtils {
     public static void postUserPosition(Context context, String lng, String lat,
         CallbackDataHandle callDataHandle) {
         AEntity aEntity = new BaseEntityImpl(new IReceiverImpl(callDataHandle),
-            HttpNetConstants.getFullRequestUrl(HttpNetConstants.POST_POSITION));
+            HttpConstants.getFullRequestUrl(HttpConstants.POST_POSITION));
         aEntity.postDatas.put("lng", lng);
         aEntity.postDatas.put("lat", lat);
         sendCookieHttps(context, aEntity);

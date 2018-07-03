@@ -15,7 +15,7 @@ public class Constants {
 	public static final String COMMON_MODEL_CONFIG_VERSION = "0";
 
 	/**
-	 * appid ,区分不同的应用，默认果酱直播。目前果酱直播“0”，土豪直播 “2”
+	 * appid ,区分不同的应用，默认咕叽直播。目前咕叽直播“0”
 	 */
 	public static final String PACKAGE_ID = "7";
 
@@ -288,7 +288,7 @@ public class Constants {
 	public static final String REGULAR_IDENEIEYCARD = "(\\d{15}$)|(\\d{17}(?:\\d|x|X)$)";
 
 	/**
-	 * # 饭圈信息正则表达式 [1,果酱大陆]
+	 * # 饭圈信息正则表达式 [1,咕叽大陆]
 	 */
 	public static final String REGULAR_GROUP_INFO = "\\[\\d+,.*?\\]";
 

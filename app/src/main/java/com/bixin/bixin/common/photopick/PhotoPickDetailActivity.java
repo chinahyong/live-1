@@ -16,13 +16,14 @@ import android.view.View;
 import android.widget.CheckBox;
 import android.widget.Toast;
 
+import com.bixin.bixin.base.act.BaseFragmentActivity;
+import com.bixin.bixin.fragments.ImagePagerFragment;
+
 import java.util.ArrayList;
 
 import tv.live.bx.R;
-import com.bixin.bixin.activities.base.BaseActionBarActivity;
-import com.bixin.bixin.fragments.ImagePagerFragment;
 
-public class PhotoPickDetailActivity extends BaseActionBarActivity {
+public class PhotoPickDetailActivity extends BaseFragmentActivity {
 
 	public static final String PICK_DATA = "PICK_DATA";
 	public static final String ALL_DATA = "ALL_DATA";
@@ -45,8 +46,7 @@ public class PhotoPickDetailActivity extends BaseActionBarActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_photo_pick_detail);
-		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+//		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 		Bundle extras = getIntent().getExtras();
 		mPickPhotos = (ArrayList<ImageInfo>) extras.getSerializable(PICK_DATA);
@@ -111,6 +111,16 @@ public class PhotoPickDetailActivity extends BaseActionBarActivity {
 		});
 
 		updateDisplay(mBegin);
+	}
+
+	@Override
+	protected int getLayoutRes() {
+		return R.layout.activity_photo_pick_detail;
+	}
+
+	@Override
+	protected void initData(Bundle savedInstanceState) {
+
 	}
 
 	@Override

@@ -16,7 +16,7 @@ import tv.guojiang.baselib.image.model.ImageSize;
 import tv.live.bx.R;
 import com.bixin.bixin.common.Constants;
 import com.bixin.bixin.common.Utils;
-import com.bixin.bixin.imageloader.ImageLoaderUtil;
+import com.bixin.bixin.common.imageloader.ImageLoaderUtil;
 
 /**
  * ClassName:NetworkImageGetter Function: TODO ADD FUNCTION. Reason: TODO ADD

@@ -23,12 +23,12 @@ import android.os.Bundle;
 import android.os.StrictMode;
 import android.util.DisplayMetrics;
 
-import com.bixin.bixin.common.bean.HttpNetConstants;
-import com.bixin.bixin.common.bean.LibConstants;
-import com.bixin.bixin.config.AppConfig;
-import com.bixin.bixin.config.DomainConfig;
-import com.bixin.bixin.config.UserInfoConfig;
-import com.bixin.bixin.imageloader.ImageLoaderUtil;
+import com.bixin.bixin.common.model.HttpConstants;
+import com.bixin.bixin.common.model.LibConstants;
+import com.bixin.bixin.common.config.AppConfig;
+import com.bixin.bixin.common.config.DomainConfig;
+import com.bixin.bixin.common.config.UserInfoConfig;
+import com.bixin.bixin.common.imageloader.ImageLoaderUtil;
 import com.bixin.bixin.library.common.CrashHandler;
 import com.bixin.bixin.library.util.EvtLog;
 import com.bixin.bixin.library.util.PackageUtil;
@@ -37,6 +37,9 @@ import com.franmontiel.persistentcookiejar.ClearableCookieJar;
 import com.franmontiel.persistentcookiejar.PersistentCookieJar;
 import com.franmontiel.persistentcookiejar.cache.SetCookieCache;
 import com.franmontiel.persistentcookiejar.persistence.SharedPrefsCookiePersistor;
+import com.lib.common.image.ConfigBuilder;
+import com.lib.common.image.ImageConfig;
+import com.lib.common.image.factory.GlideFactory;
 import com.lib.common.network.http.HttpConfig;
 import com.lib.common.network.http.interceptor.HeaderInterceptor;
 import com.lonzh.lib.network.LZCookieStore;
@@ -58,9 +61,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 import cn.jpush.android.api.JPushInterface;
-import tv.guojiang.baselib.BaseLibConfig;
-import tv.guojiang.baselib.ConfigBuilder;
-import tv.guojiang.baselib.image.factory.GlideFactory;
 import tv.live.bx.BuildConfig;
 import tv.live.bx.R;
 
@@ -127,8 +127,6 @@ public class App extends Application {
 		initHttpConfig();
 		initReadKey();
 		initConfigs();
-		MobclickAgent.openActivityDurationTrack(false);
-
 		moCookieStore = new LZCookieStore(mContext);
 		// 初始化七牛推流环境
 		StreamingEnv.init(mContext.getApplicationContext());
@@ -160,14 +158,14 @@ public class App extends Application {
 		ClearableCookieJar cookieJar =
 				new PersistentCookieJar(new SetCookieCache(), new SharedPrefsCookiePersistor(mContext));
 		new HttpConfig.Builder()
-				.baseUrl(HttpNetConstants.BASE_URL_SERVER)
+				.baseUrl(HttpConstants.BASE_URL_SERVER)
 				.interceptors(headerInterceptor)
 				.cookie(cookieJar)
 				.build();
 	}
 
 	private void initBaseLibrary() {
-		BaseLibConfig.init(new ConfigBuilder()
+		ImageConfig.init(new ConfigBuilder()
 				.imageFactory(new GlideFactory()));
 	}
 
@@ -252,6 +250,7 @@ public class App extends Application {
 	 * 初始化umeng分享
 	 */
 	private void initUmeng() {
+		MobclickAgent.openActivityDurationTrack(false);
 		// 代码设置渠道号
 		AnalyticsConfig.setChannel(ChannelUtil.getChannel(mContext));
 		Config.isJumptoAppStore = true;  //没用第三方app时进行跳转下载

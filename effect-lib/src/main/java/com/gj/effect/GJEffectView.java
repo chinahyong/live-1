@@ -33,7 +33,7 @@ import pl.droidsonroids.gif.GifImageView;
 
 /**
  * Created by Administrator on 2017/2/13.
- * 果酱直播大额礼物动效View
+ * 咕叽直播大额礼物动效View
  */
 
 public class GJEffectView extends RelativeLayout {

@@ -3,10 +3,6 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'me.tatarka.retrolambda'
 
-def initVersionName() {
-    return '1.0.0'
-}
-
 def depend = rootProject.ext.dependencies
 def andr = rootProject.ext.android
 
@@ -28,7 +24,7 @@ android {
         targetSdkVersion andr.targetSdkVersion
         versionCode 100
         //修改版本名称，切记还要修改tinkerId
-        versionName initVersionName()
+        versionName '1.0.0'
         // dex突破65535的限制,分包
         multiDexEnabled true
         multiDexKeepProguard file("keep_in_main_dex.txt")
@@ -51,9 +47,6 @@ android {
         resValue('string', 'wx_id', properties.getProperty("WX_ID." + packageId))
         resValue('string', 'wx_secret', properties.getProperty("WX_SECRET." + packageId))
     }
-//    dexOptions {
-//        javaMaxHeapSize "4g"
-//    }
     // 签名
     signingConfigs {
         config {
@@ -162,17 +155,16 @@ dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile depend.support
     compile depend.jpush
-    compile depend.album[1]
+    compile depend.album
     compile depend.ctiao_danmaku
     compile depend.baseLibrary
-    compile depend.gson
     compile depend.butterknife
     // 下拉刷新
     compile depend.smartRefreshLayout
+    compile depend.banner
     // 图片选择器
     compile project(':album')
     compile project(':common')
-    //极验验证
     repositories { flatDir { dirs 'aars' } }
     compile(name: 'LiteAVSDK_Professional_3.5.2170', ext: 'aar')
     compile project(':effect-lib')
@@ -180,8 +172,8 @@ dependencies {
 
     testCompile 'junit:junit:4.12'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
-    debugCompile 'com.squareup.leakcanary:leakcanary-android:1.5.1'
-    releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.1'
+    debugCompile 'com.squareup.leakcanary:leakcanary-android:1.5.4'
+    releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.4'
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 }
 repositories {

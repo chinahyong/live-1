@@ -16,7 +16,7 @@ import java.util.Map;
 import jp.wasabeef.glide.transformations.RoundedCornersTransformation.CornerType;
 import tv.live.bx.R;
 import com.bixin.bixin.common.Constants;
-import com.bixin.bixin.imageloader.ImageLoaderUtil;
+import com.bixin.bixin.common.imageloader.ImageLoaderUtil;
 
 /**
  * 饭圈成员适配器

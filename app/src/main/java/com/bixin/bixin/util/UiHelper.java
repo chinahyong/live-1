@@ -15,10 +15,10 @@ import android.widget.Toast;
 import com.bixin.bixin.App;
 import java.lang.reflect.Field;
 
-import com.dialog.ConfirmDialgBuilder;
-import com.dialog.CustomDialogBuilder;
-import com.dialog.LiveStatusCustomDialogBuilder;
-import com.dialog.PermissionDialogBuilder;
+import com.bixin.bixin.common.widget.dialog.ConfirmDialgBuilder;
+import com.bixin.bixin.common.widget.dialog.CustomDialogBuilder;
+import com.bixin.bixin.common.widget.dialog.LiveStatusCustomDialogBuilder;
+import com.bixin.bixin.common.widget.dialog.PermissionDialogBuilder;
 import cn.jpush.android.api.JPushInterface;
 import tv.live.bx.R;
 import com.bixin.bixin.library.util.TelephoneUtil;

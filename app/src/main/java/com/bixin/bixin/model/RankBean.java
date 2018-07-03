@@ -27,7 +27,7 @@ public class RankBean {
 		public String mid;
 		//用户id
 		public String uid;
-		//是否果酱认证
+		//是否咕叽认证
 		public boolean verified;
 		//认证信息
 		public String verifyInfo;

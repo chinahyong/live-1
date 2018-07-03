@@ -5,7 +5,7 @@
 
 package com.bixin.bixin.websocket;
 
-import com.bixin.bixin.config.AppConfig;
+import com.bixin.bixin.common.config.AppConfig;
 import com.bixin.bixin.library.util.EvtLog;
 import com.bixin.bixin.websocket.base.WebSocketEngine;
 import org.json.JSONObject;

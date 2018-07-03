@@ -20,7 +20,7 @@ import android.widget.TextView;
 
 import com.appupdate.ActivityCallBack;
 import com.appupdate.DefaultUpdateObserver;
-import com.dialog.QustomDialogBuilder;
+import com.bixin.bixin.common.widget.dialog.QustomDialogBuilder;
 import com.update.AppUpdateManager;
 import tv.live.bx.R;
 import com.bixin.bixin.common.Constants;
@@ -149,7 +149,7 @@ public class AppUpdateActivity extends FragmentActivity {
 	 * 关闭当前Activity，并退出App
 	 */
 	private void closeActivityAndExit() {
-		Intent intent = new Intent(this, CalMainActivity.class);
+		Intent intent = new Intent(this, MainActivity.class);
 		intent.putExtra(EXA_RESULT_IS_FINISH, true);
 		startActivity(intent);
 	}

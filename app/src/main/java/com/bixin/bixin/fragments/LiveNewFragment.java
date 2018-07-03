@@ -27,7 +27,7 @@ import tv.live.bx.R;
 import com.bixin.bixin.adapters.LiveNewListAdapter;
 import com.bixin.bixin.common.BusinessUtils;
 import com.bixin.bixin.common.MsgTypes;
-import com.bixin.bixin.common.OperationHelper;
+import com.bixin.bixin.common.helper.operation.OperationHelper;
 import com.bixin.bixin.common.Utils;
 import com.bixin.bixin.listeners.GoHotClickListener;
 import com.bixin.bixin.ui.LoadingProgress.onProgressClickListener;

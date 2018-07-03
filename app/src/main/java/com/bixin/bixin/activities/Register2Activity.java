@@ -29,8 +29,8 @@ import com.bixin.bixin.common.Constants;
 import com.bixin.bixin.common.Consts;
 import com.bixin.bixin.common.MsgTypes;
 import com.bixin.bixin.common.Utils;
-import com.bixin.bixin.config.AppConfig;
-import com.bixin.bixin.config.UserInfoConfig;
+import com.bixin.bixin.common.config.AppConfig;
+import com.bixin.bixin.common.config.UserInfoConfig;
 import com.bixin.bixin.library.util.TelephoneUtil;
 import com.bixin.bixin.receiver.LoginStatusChangeReceiver;
 

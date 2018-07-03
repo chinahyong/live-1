@@ -22,10 +22,10 @@ import com.gj.effect.EffectGiftLoader;
 import com.gj.effect.GJEffectView;
 
 import tv.live.bx.R;
-import com.bixin.bixin.activities.base.BaseFragmentActivity;
+import com.bixin.bixin.base.act.BaseFragmentActivity;
 import com.bixin.bixin.common.Constants;
 import com.bixin.bixin.common.Utils;
-import com.bixin.bixin.imageloader.ImageLoaderUtil;
+import com.bixin.bixin.common.imageloader.ImageLoaderUtil;
 import com.bixin.bixin.library.util.EvtLog;
 import com.bixin.bixin.ui.TypeTextView;
 import com.bixin.bixin.util.UiHelper;

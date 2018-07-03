@@ -1,7 +1,7 @@
 package com.framework.net.impl;
 
 import com.bixin.bixin.common.Constants;
-import com.bixin.bixin.common.bean.HttpNetConstants;
+import com.bixin.bixin.common.model.HttpConstants;
 import com.bixin.bixin.library.util.EvtLog;
 
 import org.json.JSONException;
@@ -23,7 +23,7 @@ public class RongCloudIReceiverImpl implements IReceiverListener {
 	public void onReceive(AEntity entity) {
 		EvtLog.e(TAG, "RongCloudIReceiverImpl result:" + entity.receiveData);
 		//请求网络接口成功，有返回数据
-		if (HttpNetConstants.SENT_STATUS_SUCCESS.equals(entity.sentStatus)) {
+		if (HttpConstants.SENT_STATUS_SUCCESS.equals(entity.sentStatus)) {
 			if (entity.receiveData != null) {
 				try {
 					JSONObject json = new JSONObject(entity.receiveData);
@@ -31,7 +31,7 @@ public class RongCloudIReceiverImpl implements IReceiverListener {
 					// 服务器返回码 正确
 					if ("200".equals(resultCode)) {
 						if (mCallbackDataHandle != null) {
-							mCallbackDataHandle.onCallback(true, HttpNetConstants.SENT_STATUS_SUCCESS, "",
+							mCallbackDataHandle.onCallback(true, HttpConstants.SENT_STATUS_SUCCESS, "",
 									json);
 						}
 						return;

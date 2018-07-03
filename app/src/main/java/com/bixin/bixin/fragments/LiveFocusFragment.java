@@ -30,7 +30,7 @@ import com.bixin.bixin.activities.LiveTypeActivity;
 import com.bixin.bixin.adapters.AnchorListAdapter;
 import com.bixin.bixin.common.BusinessUtils;
 import com.bixin.bixin.common.MsgTypes;
-import com.bixin.bixin.common.OperationHelper;
+import com.bixin.bixin.common.helper.operation.OperationHelper;
 import com.bixin.bixin.database.DatabaseUtils;
 import com.bixin.bixin.library.util.EvtLog;
 import com.bixin.bixin.listeners.GoHotClickListener;

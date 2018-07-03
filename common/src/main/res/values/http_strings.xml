@@ -1,0 +1,5 @@
+<resources>
+    <string name="response_404">请求未找到</string>
+    <string name="response_500">服务器异常</string>
+    <string name="response_no">未知异常</string>
+</resources>

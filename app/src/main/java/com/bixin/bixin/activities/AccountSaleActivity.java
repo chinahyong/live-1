@@ -12,10 +12,11 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import tv.live.bx.R;
-import com.bixin.bixin.activities.base.BaseFragmentActivity;
-import com.bixin.bixin.config.UserInfoConfig;
+import com.bixin.bixin.base.act.BaseFragmentActivity;
+import com.bixin.bixin.common.config.UserInfoConfig;
 import com.bixin.bixin.util.ActivityJumpUtil;
+
+import tv.live.bx.R;
 
 public class AccountSaleActivity extends BaseFragmentActivity implements OnClickListener {
 

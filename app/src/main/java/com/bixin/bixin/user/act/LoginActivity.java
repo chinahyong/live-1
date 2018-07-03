@@ -3,7 +3,6 @@ package com.bixin.bixin.user.act;
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.graphics.Paint;
-import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Message;
 import android.text.TextUtils;
@@ -17,16 +16,16 @@ import android.widget.Toast;
 import com.bixin.bixin.activities.PhoneBindActivity;
 import com.bixin.bixin.activities.RecommendActivity;
 import com.bixin.bixin.activities.WebViewActivity;
-import com.bixin.bixin.activities.base.BaseFragmentActivity;
+import com.bixin.bixin.base.act.BaseFragmentActivity;
 import com.bixin.bixin.callback.MyUserInfoCallbackDataHandle;
 import com.bixin.bixin.common.BusinessUtils;
 import com.bixin.bixin.common.Constants;
 import com.bixin.bixin.common.MsgTypes;
 import com.bixin.bixin.common.Utils;
-import com.bixin.bixin.common.WebConstants;
-import com.bixin.bixin.config.AppConfig;
-import com.bixin.bixin.config.UserInfoConfig;
-import com.bixin.bixin.imageloader.ImageLoaderUtil;
+import com.bixin.bixin.common.model.WebConstants;
+import com.bixin.bixin.common.config.AppConfig;
+import com.bixin.bixin.common.config.UserInfoConfig;
+import com.bixin.bixin.common.imageloader.ImageLoaderUtil;
 import com.bixin.bixin.library.util.EvtLog;
 import com.bixin.bixin.library.util.TelephoneUtil;
 import com.bixin.bixin.receiver.LoginStatusChangeReceiver;
@@ -66,7 +65,6 @@ public class LoginActivity extends BaseFragmentActivity {
     private ImageView mLoginBg;
     private ImageView moLlLoginByQq, mLoginByWeixin, mLoginByWeibo, mLoginByPhone;
     private TextView mTvProtocal;
-    private MediaPlayer mp;
 
     private AlertDialog moProgress;
     //	private long mobileBindInterval = 0;                //绑定手机提示显示间隔时间
@@ -406,7 +404,7 @@ public class LoginActivity extends BaseFragmentActivity {
                 //					break;
                 case R.id.login_ll_by_phone:
                     MobclickAgent.onEvent(mContext, "phoneLogin");
-                    gotoActivityForResult(Login2Activity.class, REQUEST_LOGIN_BY_PHONE, null, null);
+                    gotoActivityForResult(LoginPhoneActivity.class, REQUEST_LOGIN_BY_PHONE, null, null);
                     break;
                 case R.id.login_agree_protocal:
                     Map<String, String> webInfo = new HashMap<>();

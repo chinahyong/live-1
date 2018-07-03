@@ -43,7 +43,7 @@ public class LoadingDialogBuilder {
 		LayoutInflater loInflater = LayoutInflater.from(mContext);
 		View rootView = loInflater.inflate(R.layout.dialog_loading_layout, null);
 		mDialog.setView(rootView);
-//		getWindow().setContentView(R.layout.dialog_loading_layout);
+		mDialog.getWindow().setContentView(R.layout.dialog_loading_layout);
 		mDialog.setCanceledOnTouchOutside(false);
 		mDialog.setCancelable(false);
 		final ImageView ivLoading = rootView.findViewById(R.id.dialog_progress_iv);

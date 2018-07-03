@@ -14,12 +14,12 @@ import com.umeng.analytics.MobclickAgent;
 
 import com.framework.net.impl.CallbackDataHandle;
 import tv.live.bx.R;
-import com.bixin.bixin.activities.base.BaseFragmentActivity;
+import com.bixin.bixin.base.act.BaseFragmentActivity;
 import com.bixin.bixin.common.BusinessUtils;
 import com.bixin.bixin.common.Constants;
 import com.bixin.bixin.common.MsgTypes;
 import com.bixin.bixin.common.Utils;
-import com.bixin.bixin.config.UserInfoConfig;
+import com.bixin.bixin.common.config.UserInfoConfig;
 
 public class AnimSettingsActivity extends BaseFragmentActivity implements View.OnClickListener {
 	private RelativeLayout mRlSuperior, mRlNone;

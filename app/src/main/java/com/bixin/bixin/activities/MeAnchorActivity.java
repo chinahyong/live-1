@@ -12,7 +12,7 @@ import android.view.View.OnClickListener;
 import android.widget.TextView;
 
 import tv.live.bx.R;
-import com.bixin.bixin.activities.base.BaseFragmentActivity;
+import com.bixin.bixin.base.act.BaseFragmentActivity;
 import com.bixin.bixin.fragments.LiveChatFragment;
 import com.bixin.bixin.ui.ChatTextViewClickableSpan;
 

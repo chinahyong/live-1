@@ -1,6 +1,6 @@
 package com.framework.net.impl;
 
-import com.bixin.bixin.common.bean.HttpNetConstants;
+import com.bixin.bixin.common.model.HttpConstants;
 import com.framework.net.AEntity;
 import com.framework.net.IReceiverListener;
 
@@ -8,7 +8,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import com.bixin.bixin.App;
 import com.bixin.bixin.common.Constants;
-import com.bixin.bixin.config.AppConfig;
+import com.bixin.bixin.common.config.AppConfig;
 import com.bixin.bixin.library.util.EvtLog;
 import com.bixin.bixin.util.ActivityJumpUtil;
 
@@ -26,23 +26,23 @@ public class IReceiverImpl implements IReceiverListener {
 	public void onReceive(AEntity entity) {
 		EvtLog.e(TAG, "IReceiverImpl result:" + entity.receiveData);
 		//请求网络接口成功，有返回数据
-		if (HttpNetConstants.SENT_STATUS_SUCCESS.equals(entity.sentStatus)) {
+		if (HttpConstants.SENT_STATUS_SUCCESS.equals(entity.sentStatus)) {
 			if (entity.receiveData != null) {
 				try {
 					JSONObject json = new JSONObject(entity.receiveData);
-					resultCode = json.getString(HttpNetConstants.SERVER_RESULT_CODE);
-					resultMsg = json.getString(HttpNetConstants.SERVER_RESULT_MSG);
-					Object resultData = json.opt(HttpNetConstants.SERVER_RESULT_DATA);
+					resultCode = json.getString(HttpConstants.SERVER_RESULT_CODE);
+					resultMsg = json.getString(HttpConstants.SERVER_RESULT_MSG);
+					Object resultData = json.opt(HttpConstants.SERVER_RESULT_DATA);
 					// 服务器返回码 正确
-					if (HttpNetConstants.SENT_STATUS_SUCCESS.equals(resultCode)) {
+					if (HttpConstants.SENT_STATUS_SUCCESS.equals(resultCode)) {
 						if (mCallbackDataHandle != null) {
-							mCallbackDataHandle.onCallback(true, HttpNetConstants.SENT_STATUS_SUCCESS, resultMsg,
+							mCallbackDataHandle.onCallback(true, HttpConstants.SENT_STATUS_SUCCESS, resultMsg,
 									resultData);
 						}
 						return;
 					}
 					//如果未登录，跳转登录页面
-					if (HttpNetConstants.SENT_STATUS_NEED_LOGIN.equals(resultCode)) {
+					if (HttpConstants.SENT_STATUS_NEED_LOGIN.equals(resultCode)) {
 						// 设置未登录
 						AppConfig.getInstance().updateLoginStatus(false);
 						ActivityJumpUtil.toLoginActivity(App.mContext, true);

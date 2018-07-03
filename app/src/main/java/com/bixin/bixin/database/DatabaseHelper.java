@@ -3,7 +3,7 @@ package com.bixin.bixin.database;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.bixin.bixin.config.AppConfig;
+import com.bixin.bixin.common.config.AppConfig;
 import com.bixin.bixin.database.model.AnchorInfo;
 import com.bixin.bixin.database.model.BannerInfo;
 import com.bixin.bixin.database.model.PersonInfo;

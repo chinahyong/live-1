@@ -17,7 +17,7 @@ import java.io.InputStreamReader;
 import java.io.OutputStream;
 
 import tv.live.bx.R;
-import com.bixin.bixin.activities.base.BaseFragmentActivity;
+import com.bixin.bixin.base.act.BaseFragmentActivity;
 
 /**
  * Created by Administrator on 2017/3/9.

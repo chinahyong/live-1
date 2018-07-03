@@ -8,7 +8,7 @@ import android.content.Context;
 import android.text.TextUtils;
 
 import com.bixin.bixin.common.Utils;
-import com.bixin.bixin.common.bean.HttpNetConstants;
+import com.bixin.bixin.common.model.HttpConstants;
 import com.framework.net.ACommunication;
 import com.framework.net.AEntity;
 import com.framework.net.NetLogs;
@@ -71,9 +71,9 @@ public class PostCommunicationCookie extends ACommunication {
 				String strResponse = HttpSession.readContent(response);
 				entity.receiveData = strResponse;
 				entity.decodeReceiveData();
-				entity.sentStatus = HttpNetConstants.SENT_STATUS_SUCCESS;
+				entity.sentStatus = HttpConstants.SENT_STATUS_SUCCESS;
 			} else {
-				entity.sentStatus = HttpNetConstants.SENT_STATUS_ERROR_NET;
+				entity.sentStatus = HttpConstants.SENT_STATUS_ERROR_NET;
 			}
 			NetLogs.d_netstep(entity, "PostCommunication", "respcode:"
 					+ entity.sentStatus, "Get->Finish");
@@ -86,13 +86,13 @@ public class PostCommunicationCookie extends ACommunication {
 		ex.printStackTrace();
 		String msg = ex.getMessage();
 		if (msg != null && msg.indexOf("Connection timed out") > -1) {
-			entity.sentStatus = HttpNetConstants.SENT_STATUS_TIMEOUT;
+			entity.sentStatus = HttpConstants.SENT_STATUS_TIMEOUT;
 		} else if (msg != null && msg.indexOf("Connection refused") > -1) {
-			entity.sentStatus = HttpNetConstants.SENT_STATUS_ERROR_SERVER;
+			entity.sentStatus = HttpConstants.SENT_STATUS_ERROR_SERVER;
 		} else if (ex instanceof UnknownHostException) {
-			entity.sentStatus = HttpNetConstants.SENT_STATUS_DNS_ERROR;
+			entity.sentStatus = HttpConstants.SENT_STATUS_DNS_ERROR;
 		} else {
-			entity.sentStatus = HttpNetConstants.SENT_STATUS_ERROR_NET;
+			entity.sentStatus = HttpConstants.SENT_STATUS_ERROR_NET;
 		}
 	}
 

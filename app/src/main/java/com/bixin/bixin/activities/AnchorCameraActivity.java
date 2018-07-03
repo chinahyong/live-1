@@ -16,7 +16,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import tv.live.bx.R;
-import com.bixin.bixin.activities.base.BaseFragmentActivity;
+import com.bixin.bixin.base.act.BaseFragmentActivity;
 import com.bixin.bixin.fragments.AnchorVideoFragment;
 import com.bixin.bixin.fragments.AnchorVideoFragment.OnRecordFinishListener;
 import com.bixin.bixin.library.util.FileUtil;
